@@ -1,20 +1,38 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h1>Whna weac</h1>
+    <h3>
+      Counter: {{ count }}
+      <a @click="inc()" style="margin-right:10px">+</a>
+      <a @click="dec()">-</a>
+    </h3>
+
+    <HelloWorld :count="count" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { useCounter } from "@vueuse/core";
+import { defineComponent } from "@vue/composition-api";
+// import { ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+// import Vue from "vue";
+// import App from "./App.vue";
 
-@Component({
-  components: {
-    HelloWorld
+const App = defineComponent({
+  components: { HelloWorld },
+  setup() {
+    const { count, inc, dec } = useCounter();
+    return {
+      count,
+      inc,
+      dec
+    };
   }
-})
-export default class App extends Vue {}
+});
+
+export default App;
 </script>
 
 <style>
