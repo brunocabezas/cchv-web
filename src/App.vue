@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <img alt="Vue logo" src="./assets/logo.png" />
     <h1>Whna weac</h1>
     <h3>
@@ -17,10 +18,10 @@ import { useCounter } from "@vueuse/core";
 import { defineComponent } from "vue";
 import { useAsyncState } from "@vueuse/core";
 import api from "./api/client";
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "@/components/layout/Header/Header.vue";
 
 const App = defineComponent({
-  components: { HelloWorld },
+  components: { Header },
   name: "App",
   setup() {
     const { count, inc, dec } = useCounter();
