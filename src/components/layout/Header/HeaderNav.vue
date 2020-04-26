@@ -8,18 +8,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Pages, Page } from "@/types";
-
-const AboutPage: Page = { url: "", label: "about" };
-const ProgramsPage: Page = { url: "", label: "programs" };
-const CCHVTVPage: Page = { url: "", label: "TV" };
-// Defines the order of appeareance
-const navigationMenu: Pages = [AboutPage, ProgramsPage, CCHVTVPage];
+import { Pages, Page } from "@/types/index";
+import { NAVIGATION_MENU } from "@/types/static";
 
 export default defineComponent({
   setup(props) {
     return {
-      navigationMenu
+      navigationMenu: NAVIGATION_MENU
     };
   }
 });

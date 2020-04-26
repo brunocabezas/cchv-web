@@ -5,15 +5,9 @@
 </template>
 
 <script lang="ts">
-// import { defineComponent } from "vue";
-
 import { defineComponent } from "vue";
 
-const Logo = defineComponent({
-  setup() {
-    console.log("Hello asdas");
-  }
-});
+const Logo = defineComponent({});
 
 export default Logo;
 </script>

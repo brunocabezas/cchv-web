@@ -10,6 +10,7 @@
     </h3>
     <div>{{ state && state.length }}</div>
     <HelloWorld :count="count" />
+    <Footer />
   </div>
 </template>
 
@@ -19,9 +20,10 @@ import { defineComponent } from "vue";
 import { useAsyncState } from "@vueuse/core";
 import api from "./api/client";
 import Header from "@/components/layout/Header/Header.vue";
+import Footer from "@/components/layout/Footer/Footer.vue";
 
 const App = defineComponent({
-  components: { Header },
+  components: { Header, Footer },
   name: "App",
   setup() {
     const { count, inc, dec } = useCounter();
