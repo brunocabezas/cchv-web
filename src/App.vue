@@ -1,20 +1,47 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h1>Whna weac</h1>
+    <h3>
+      Counter: {{ String(ready) }}
+      <a @click="inc()" style="margin-right:10px">+</a>
+      <a @click="dec()">-</a>
+    </h3>
+    <div>{{ state && state.length }}</div>
+    <HelloWorld :count="count" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { useCounter } from "@vueuse/core";
+import { defineComponent } from "vue";
+import { useAsyncState } from "@vueuse/core";
+import api from "./api/client";
 import HelloWorld from "./components/HelloWorld.vue";
 
-@Component({
-  components: {
-    HelloWorld
+const App = defineComponent({
+  components: { HelloWorld },
+  name: "App",
+  setup() {
+    const { count, inc, dec } = useCounter();
+    const { state, ready } = useAsyncState(
+      api.get("/users").then((res: any) => {
+        console.log(res.data.users);
+        return res.data.users;
+      }),
+      []
+    );
+    return {
+      count,
+      inc,
+      state,
+      ready,
+      dec
+    };
   }
-})
-export default class App extends Vue {}
+});
+
+export default App;
 </script>
 
 <style>
