@@ -3,7 +3,8 @@ import Logo from '@/components/Logo.vue';
 import { defineComponent } from 'vue';
 
 const Header = defineComponent({
+  name: "Header",
   components: { Logo, HeaderNav }
 });
 
-export default Header 
+export default Header

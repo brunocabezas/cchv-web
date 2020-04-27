@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footerSponsors">
     [SPONSORS_GRID]
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-export default defineComponent({});
+export default defineComponent({ name: "FooterSponsors" });
 </script>
 
 <style scoped></style>

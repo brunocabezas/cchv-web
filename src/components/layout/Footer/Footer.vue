@@ -12,7 +12,7 @@
       </div>
       <div class="footerTopSection">
         <h3 class="footerTitle">
-          Redes Social
+          Redes Sociales
         </h3>
         <ul>
           <li v-bind:key="sn.name" v-for="sn in socialNetworks">
@@ -27,17 +27,18 @@
         <div>[NEWSLETTER_FORM]</div>
       </div>
     </div>
-    <Sponsors />
+    <FooterSponsors />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Sponsors from "@/components/layout/Footer/Sponsors";
-import { SOCIAL_NETWORKS } from "@/types/static";
+import FooterSponsors from "@/components/layout/Footer/FooterSponsors";
+import { SOCIAL_NETWORKS } from "@/utils/static";
 
 export default defineComponent({
-  components: { Sponsors },
+  name: "Footer",
+  components: { FooterSponsors },
   setup(props) {
     const socialNetworks = SOCIAL_NETWORKS;
 
@@ -46,4 +47,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="stylus"></style>
+<style lang="stylus" src="./footer.styl"></style>

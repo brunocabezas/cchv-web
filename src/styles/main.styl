@@ -1,30 +1,14 @@
-@import './variables.styl';
+// @import './variables.styl';
+@import './typography.styl';
 
-// Title and headings font
-@font-face
-  font-family: NoeDisplay;
-  font-style: bold;
-  src: url('../assets/fonts/Noe Display/Noe-Display-Bold.ttf');
+ul
+  list-style-type: none;
+  padding-left: 0;
 
-// Body font
-@font-face
-  font-family: NoticiaText;
-  font-style: normal;
-  src: url('../assets/fonts/Noticia Text/NoticiaText-Regular.ttf');
+#app, body, html
+  padding 0
+  margin 0
 
-// Navigation menu font
-@font-face
-  font-family: Monserrat;
-  font-style: normal;
-  src: url(../assets/fonts/Montserrat/Montserrat-Regular.otf);
-
-*
-  font-family: 'News Cycle', sans-serif;
-  line-height: 1.3em;
-
-h1, h2, h3, h4, h5, h6
-  font-family: NoeDisplay;
-  color: $white;
-
-body
-  font-family NoticiaText
+a
+  text-decoration none
+  color $text-blue
