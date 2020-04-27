@@ -1,7 +1,7 @@
 <template lang="jsx">
   <div class="headerNav">
     <div v-for="menu in navigationMenu" class="headerNavItem">
-      <a :title="menu.label" :href="menu.url">{{menu.label}}</a>
+      <router-link :title="menu.label" :to="menu.url">{{menu.label}}</router-link>
       <div v-if="menu.pages" class="headerNavItemSubLevel" >
           <div v-for="submenu in menu.pages" class="headerNavItemSubMenu">
             <a :href="submenu.url">{{submenu.label}}</a>
