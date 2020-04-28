@@ -1,56 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>Whna weac</h1>
-    <h3>
-      Counter: {{ String(ready) }}
-      <a @click="inc()" style="margin-right:10px">+</a>
-      <a @click="dec()">-</a>
-    </h3>
-    <div>{{ state && state.length }}</div>
-    <HelloWorld :count="count" />
+    <Header />
+    <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import { useCounter } from "@vueuse/core";
+// import { useCounter } from "@vueuse/core";
 import { defineComponent } from "vue";
-import { useAsyncState } from "@vueuse/core";
-import api from "./api/client";
-import HelloWorld from "./components/HelloWorld.vue";
+// import { useAsyncState } from "@vueuse/core";
+// import api from "./api/client
+import Header from "@/components/layout/Header/Header.vue";
+import Footer from "@/components/layout/Footer/Footer.vue";
 
 const App = defineComponent({
-  components: { HelloWorld },
-  name: "App",
-  setup() {
-    const { count, inc, dec } = useCounter();
-    const { state, ready } = useAsyncState(
-      api.get("/users").then((res: any) => {
-        console.log(res.data.users);
-        return res.data.users;
-      }),
-      []
-    );
-    return {
-      count,
-      inc,
-      state,
-      ready,
-      dec
-    };
-  }
+  components: { Header, Footer },
+  name: "App"
 });
 
 export default App;
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
