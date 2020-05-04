@@ -1,16 +1,19 @@
 // Wordpress works with custom fields to provide data
 // Here, they are defined
-export type CustomFields = Carousel;
+export type CustomFields = Carousel | News;
 // Every custom field has a set of attributes
-export type CustomFieldsKeys = CarouselKeys
+export type CustomFieldsKeys = CarouselKeys.images | NewsKeys.abstract | NewsKeys.date | NewsKeys.img | NewsKeys.title 
 
 //
 // HOME PAGE
 //
 
 // CAROUSEL
-export type Carousel = CarouselImage[]
 export enum CarouselKeys { images="images" }
+export type Carousel = {
+  [CarouselKeys.images]: CarouselImage[]
+}
+export type CustomFieldValues = Carousel[CarouselKeys.images] | SingleNew[NewsKeys.abstract] | SingleNew[NewsKeys.img] | SingleNew[NewsKeys.title]
 
 export interface CarouselImage {
   ID: number;
@@ -48,5 +51,15 @@ export interface ImageSizes {
   'large-height': number;
 }
 
-// Response using WPResponse
-// export interface 
+//
+// NEWS
+//
+export type News = SingleNew[]
+export enum NewsKeys { title="title", date="date", abstract="abstract", img="img" }
+
+export interface SingleNew {
+  [NewsKeys.title]: string,
+  [NewsKeys.date]: string,
+  [NewsKeys.abstract]: string,
+  [NewsKeys.img]: any
+}

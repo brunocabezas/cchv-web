@@ -1,4 +1,4 @@
-import { Carousel, CarouselKeys } from './customFieldsTypes'
+import { CustomFieldsKeys, CustomFieldValues } from './customFieldsTypes'
 
 // Wordpres response
 export type WpResponseData = WPResponseItem[]
@@ -93,5 +93,5 @@ interface Link {
 }
 
 export type WPCustomFields = {
-  [key in CarouselKeys]: Carousel
-};
+  [key in CustomFieldsKeys] : CustomFieldValues
+}

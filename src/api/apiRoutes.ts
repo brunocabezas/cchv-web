@@ -1,5 +1,6 @@
 export enum apiRoutes {
   HomeCarousel = '/home-carousel',
+  News = '/news',
   // Media = '/cchv-tv',
   // Programs = '/programas',
   // About = '/quienes-somos',

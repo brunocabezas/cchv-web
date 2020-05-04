@@ -29,7 +29,7 @@ const HomeCarousel = defineComponent({
   name: "HomeCarousel",
   components: { Loader },
   setup() {
-    const { state, ready } = useAsyncState(
+    const { state, ready } = useAsyncState<WpResponseData>(
       client.get(apiRoutes.HomeCarousel).then(t => t.data),
       initialState
     );
