@@ -1,12 +1,13 @@
-import { WPResponse } from '@/types/wordpressTypes';
+import { WPResponseItem } from '@/types/wordpressTypes';
+import { CustomFields, CustomFieldsKeys } from '@/types/customFieldsTypes';
 
 // Gets advanced custom fields values from results
-export const getAcfField = (
-  results: WPResponse,
-  fieldName: string,
+export const getCustomField = (
+  responseItem: WPResponseItem,
+  fieldName: CustomFieldsKeys,
   defaultValue: any = undefined
-): any => (results.acf_fields && results.acf_fields[fieldName]) || defaultValue
+): CustomFields => (responseItem.acf_fields && responseItem.acf_fields[fieldName]) || defaultValue
 
 // Gets wordpress post title
-export const getWPTitle = (object: WPResponse): string =>
-  (object.title && object.title.rendered) || ''
+export const getWPTitle = (responseITem: WPResponseItem): string =>
+  (responseITem.title && responseITem.title.rendered) || ''

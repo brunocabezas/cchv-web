@@ -1,17 +1,17 @@
 <template>
   <div>
     <h1>Home</h1>
-    <HomeSlides />
+    <HomeCarousel />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HomeSlides from "./HomeSlides.vue";
+import HomeCarousel from "./HomeCarousel.vue";
 
 export default defineComponent({
   name: "Home",
-  components: { HomeSlides }
+  components: { HomeCarousel }
 });
 </script>
 
