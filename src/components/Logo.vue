@@ -1,5 +1,5 @@
 <template>
-  <a class="logo" href="homeUrl" title="Inicio">
+  <a class="logo" :href="homeUrl" title="Inicio">
     <img alt="Vue logo" src="@/assets/logo.png" />
   </a>
 </template>

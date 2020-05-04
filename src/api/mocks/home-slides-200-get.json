@@ -1,0 +1,102 @@
+[
+  {
+    "id": 831,
+    "date": "2019-10-14T22:55:25",
+    "date_gmt": "2019-10-14T22:55:25",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=831"
+    },
+    "modified": "2019-10-14T23:12:29",
+    "modified_gmt": "2019-10-14T23:12:29",
+    "slug": "barrio-arte",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/barrio-arte\/",
+    "title": {
+      "rendered": "Barrio Arte"
+    },
+    "author": 4,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "images": {
+        "ID": 837,
+        "id": 837,
+        "title": "barrio arte-01",
+        "filename": "barrio-arte-01-1.png",
+        "url": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/10\/barrio-arte-01-1.png",
+        "alt": "",
+        "author": "4",
+        "description": "",
+        "caption": "",
+        "name": "barrio-arte-01-2",
+        "date": "2019-10-14 23:12:24",
+        "modified": "2019-10-14 23:12:29",
+        "mime_type": "image\/png",
+        "type": "image",
+        "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+        "width": 478,
+        "height": 333,
+        "sizes": {
+          "thumbnail": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/10\/barrio-arte-01-1-150x150.png",
+          "thumbnail-width": 150,
+          "thumbnail-height": 150,
+          "medium": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/10\/barrio-arte-01-1-300x209.png",
+          "medium-width": 300,
+          "medium-height": 209,
+          "medium_large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/10\/barrio-arte-01-1.png",
+          "medium_large-width": 478,
+          "medium_large-height": 333,
+          "large": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-content\/uploads\/2019\/10\/barrio-arte-01-1.png",
+          "large-width": 478,
+          "large-height": 333
+        }
+      },
+      "url": "http:\/\/barrioarte.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/831"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/4"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=831"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=831"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

@@ -1,6 +1,7 @@
 
 import  MockAdapter from  "axios-mock-adapter";
 import { AxiosInstance } from 'axios';
+import apiRoutes from './apiRoutes';
 
 export default (client: AxiosInstance) => {
   console.log('Setting up mocks', process.env);
@@ -10,7 +11,9 @@ export default (client: AxiosInstance) => {
 
   // Mock any GET request to /users
   // arguments for reply are (status, data, headers)
-  mock.onGet("/users").reply(200, {
-    users: [{ id: 1, name: "John Smith" }],
+  mock.onGet(apiRoutes.HomeSlides).reply(200, {
+    slides: `./mocks/${apiRoutes.HomeSlides}-200-get.json`,
   });
+
+  mock.onGet()
 }

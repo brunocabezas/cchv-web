@@ -1,5 +1,5 @@
 export enum AppUrls {
-  Home = '/inicio',
+  Home = '/',
   Media = '/cchv-tv',
   Programs = '/programas',
   About = '/quienes-somos',
