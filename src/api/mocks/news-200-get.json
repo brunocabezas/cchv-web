@@ -13,7 +13,7 @@
     "type": "sponsor",
     "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/barrio-arte\/",
     "title": {
-      "rendered": "Barrio Arte"
+      "rendered": "Las Bienales ante la propagacion del COVID-19"
     },
     "author": 4,
     "featured_media": 0,
@@ -21,10 +21,146 @@
     "template": "",
     "categories": [],
     "acf_fields": {
-      "title": "HOla",
       "date": "2019-10-14T22:55:25",
-      "abstract": "asdasdsada sdasd asd la contingencia",
-      "img": []      
+      "abstract": "La contingencia nos otorga la posibilidad de organizarnos y fortalecer lazos comunitarios. En conjunto con la Bienal de Arquitectura, hacemos un llamado a la comunidad internacional de bienales para propiciar debates en torno al cambio de paradigmas que producirá esta pandemia en nuestra cultura, política y economía. ",
+      "img": [
+        {
+          "ID": 179,
+          "id": 179,
+          "title": "IA DD Patrik",
+          "filename": "IA-DD-Patrik.jpg",
+          "url": "http://www.cchv.cl/wp-content/uploads/2020/03/Inauguracion-MNBA-4-1-e1585187863211-1024x455.jpg",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "ia-dd-patrik",
+          "date": "2019-08-30 00:42:14",
+          "modified": "2019-08-30 00:42:30",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+          "width": 1024,
+          "height": 576,
+          "sizes": {
+            "thumbnail": "http://www.cchv.cl/wp-content/uploads/2020/03/Inauguracion-MNBA-4-1-e1585187863211-1024x455.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http://www.cchv.cl/wp-content/uploads/2020/03/Inauguracion-MNBA-4-1-e1585187863211-1024x455.jpg",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "http://www.cchv.cl/wp-content/uploads/2020/03/Inauguracion-MNBA-4-1-e1585187863211-1024x455.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 432,
+            "large": "http://www.cchv.cl/wp-content/uploads/2020/03/Inauguracion-MNBA-4-1-e1585187863211-1024x455.jpg",
+            "large-width": 1024,
+            "large-height": 576
+          }
+        }
+      ]      
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors\/831"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/users\/4"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/media?parent=831"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/wp-json\/wp\/v2\/categories?post=831"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 832,
+    "date": "2019-10-14T22:55:25",
+    "date_gmt": "2019-10-14T22:55:25",
+    "guid": {
+      "rendered": "http:\/\/www.bienaldeartesmediales.cl\/14\/?post_type=sponsor&#038;p=831"
+    },
+    "modified": "2019-10-14T23:12:29",
+    "modified_gmt": "2019-10-14T23:12:29",
+    "slug": "barrio-arte",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "http:\/\/www.bienaldeartesmediales.cl\/14\/index.php\/sponsor\/barrio-arte\/",
+    "title": {
+      "rendered": "Recordamos a Néstor Olhagaray, figura pionera en las artes mediales"
+    },
+    "author": 4,
+    "featured_media": 0,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "date": "2019-10-14T22:55:25",
+      "abstract": "Fundador de la Corporación Chilena de Video y Artes Electrónicas (CChV) y pieza clave en el desarrollo de la Bienal de Artes Mediales de Santiago, despedimos a este videoartista nacional, docente, curador y gestor cultural, recordándolo con una entrevista inédita realizada en el año 2018. ",
+      "img": [
+        {
+          "ID": 179,
+          "id": 179,
+          "title": "IA DD Patrik",
+          "filename": "IA-DD-Patrik.jpg",
+          "url": "http://www.cchv.cl/wp-content/uploads/2020/03/000020-3-640x640.jpg",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "ia-dd-patrik",
+          "date": "2019-08-30 00:42:14",
+          "modified": "2019-08-30 00:42:30",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "http:\/\/www.bienaldeartesmediales.cl\/14\/wp-includes\/images\/media\/default.png",
+          "width": 1024,
+          "height": 576,
+          "sizes": {
+            "thumbnail": "http://www.cchv.cl/wp-content/uploads/2020/03/000020-3-640x640.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http://www.cchv.cl/wp-content/uploads/2020/03/000020-3-640x640.jpg",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "http://www.cchv.cl/wp-content/uploads/2020/03/000020-3-640x640.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 432,
+            "large": "http://www.cchv.cl/wp-content/uploads/2020/03/000020-3-640x640.jpg",
+            "large-width": 1024,
+            "large-height": 576
+          }
+        }
+      ]      
     },
     "_links": {
       "self": [

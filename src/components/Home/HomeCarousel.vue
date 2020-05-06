@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel">
+  <div class="home-carousel">
     <div>home slides</div>
     <Loader v-if="!ready" />
     <div v-if="ready" class="carousel">
@@ -46,4 +46,10 @@ const HomeCarousel = defineComponent({
 export default HomeCarousel;
 </script>
 
-<style scoped></style>
+<style lang="stylus" scoped>
+@import '../../styles/variables.styl';
+
+.home-carousel
+  background-color: $blue;
+  height: 'calc(100vh - %s)' % $header_height;
+</style>

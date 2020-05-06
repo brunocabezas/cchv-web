@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h1>Home</h1>
     <HomeCarousel />
     <HomeNews />
+    <div class="tv home-section">
+      <h1 class="home-section__title">CChV TV</h1>
+      <div class="video"></div>
+    </div>
   </div>
 </template>
 
@@ -17,4 +20,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style lang="stylus">
+@import '../../styles/variables.styl';
+
+.home-section
+  padding: $home_padding;
+
+  &__title
+    color: $blue;
+    margin-bottom 0
+</style>
