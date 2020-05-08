@@ -10,16 +10,27 @@
         :alt="img.name"
       />
     </div>
+    <div>
+      <carousel>
+        <slide>
+          Slide 1 Content
+        </slide>
+        <slide>
+          Slide 2 Content
+        </slide>
+      </carousel>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed } from "@vue/composition-api";
 import { useAsyncState } from "@vueuse/core";
 import apiRoutes from "../../api/apiRoutes";
 import client from "../../api/client";
 import Loader from "@/components/Loader.vue";
 import { getCustomField } from "../../utils/api";
+import { Carousel as CarouselComp, Slide } from "vue-carousel";
 import { Carousel, CarouselKeys } from "../../types/customFieldsTypes";
 import { WpResponseData, WPResponseItem } from "../../types/wordpressTypes";
 
@@ -27,17 +38,19 @@ const initialState: WpResponseData = [];
 
 const HomeCarousel = defineComponent({
   name: "HomeCarousel",
-  components: { Loader },
+  components: { Loader, Carousel: CarouselComp, Slide },
   setup() {
     const { state, ready } = useAsyncState<WpResponseData>(
       client.get(apiRoutes.HomeCarousel).then(t => t.data),
       initialState
     );
 
-    const carousel: Carousel = computed(() => {
+    // TODO fix type def
+    const carousel: any = computed(() => {
       // The first carousel will be used displayed on the home page
-      const homeCarousel: WPResponseItem = state.value[0];
-      return getCustomField(homeCarousel, CarouselKeys.images);
+      return [];
+      // const homeCarousel: WPResponseItem = state.value[0];
+      // return { images: getCustomField(homeCarousel, CarouselKeys.images) };
     });
 
     return { ready, carousel };

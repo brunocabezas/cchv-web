@@ -7,8 +7,7 @@
 </template>
 
 <script lang="ts">
-// import { useCounter } from "@vueuse/core";
-import { defineComponent } from "vue";
+import { defineComponent } from "@vue/composition-api";
 // import { useAsyncState } from "@vueuse/core";
 // import api from "./api/client
 import Header from "@/components/layout/Header/Header.vue";

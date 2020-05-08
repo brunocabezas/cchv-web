@@ -19,7 +19,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed } from "@vue/composition-api";
+// import {  computed } from "vue";
 import { useAsyncState } from "@vueuse/core";
 import apiRoutes from "../../api/apiRoutes";
 import client from "../../api/client";
@@ -39,7 +40,8 @@ const HomeNews = defineComponent({
       initialState
     );
 
-    const news: News = computed(() => {
+    // TODO fix type def
+    const news: any = computed(() => {
       return state.value
         .map(item => ({
           [NewsKeys.title]: getWPTitle(item),

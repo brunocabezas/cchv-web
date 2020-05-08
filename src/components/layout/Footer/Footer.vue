@@ -32,8 +32,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import FooterSponsors from "@/components/layout/Footer/FooterSponsors";
+import { defineComponent } from "@vue/composition-api";
+import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import { SOCIAL_NETWORKS } from "@/utils/static";
 
 export default defineComponent({
