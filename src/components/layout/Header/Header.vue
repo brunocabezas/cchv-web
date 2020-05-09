@@ -5,13 +5,25 @@
   </div>
 </template>
 
-<script lang="ts" src="./header.ts"></script>
+<script lang="ts">
+import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
+import Logo from "@/components/Logo.vue";
+import { defineComponent } from "@vue/composition-api";
+
+const Header = defineComponent({
+  name: "Header",
+  components: { Logo, HeaderNav }
+});
+
+export default Header;
+</script>
 <style scoped lang="stylus">
-@import '../../../styles/variables.styl'
+@import '../../../styles/variables.styl';
+
 .header
   display: flex;
-  height $header_height
-  align-items center
-  justify-content center
-  border-bottom 1px solid $grey
+  height: $header_height;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid $grey;
 </style>

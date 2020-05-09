@@ -1,17 +1,17 @@
 <template>
-  <div class="news home-section">
-    <h1 class="news__title home-section__title">
+  <div class="news homeSection">
+    <h1 class="news__title homeSection__title">
       noticias <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
     </h1>
     <Loader v-if="!ready" />
-    <div v-if="ready" class="news-list">
-      <div v-bind:key="post.ID" v-for="post in news" class="news-post">
+    <div v-if="ready" class="newsList">
+      <div v-bind:key="post.ID" v-for="post in news" class="newsPost">
         <div
-          class="news-post__thumbnail"
+          class="newsPost__thumbnail"
           v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
           :alt="post.title"
         />
-        <h3 class="news-post__title">{{ post.title }}</h3>
+        <h3 class="newsPost__title">{{ post.title }}</h3>
         <p>{{ post.date }}</p>
         <p>{{ post.abstract }}</p>
         <a>Leer noticia completa</a>
@@ -22,15 +22,14 @@
 
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
-// import {  computed } from "vue";
 import { useAsyncState } from "@vueuse/core";
-import apiRoutes from "../../api/apiRoutes";
+import apiRoutes from "@/api/apiRoutes";
 import Icon from "vue-awesome/components/Icon.vue";
-import client from "../../api/client";
+import client from "@/api/client";
 import Loader from "@/components/Loader.vue";
-import { getCustomField, getWPTitle } from "../../utils/api";
-import { NewsKeys } from "../../types/customFieldsTypes";
-import { WpResponseData } from "../../types/wordpressTypes";
+import { getCustomField, getWPTitle } from "@/utils/api";
+import { NewsKeys } from "@/types/customFieldsTypes";
+import { WpResponseData } from "@/types/wordpressTypes";
 
 const initialState: WpResponseData = [];
 
@@ -68,10 +67,10 @@ export default HomeNews;
   &__title
     color: $blue;
 
-  .news-list
+  .newsList
     display: flex;
 
-    .news-post
+    .newsPost
       flex: 1;
       padding: 1em;
 

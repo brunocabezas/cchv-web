@@ -2,8 +2,8 @@
   <div>
     <HomeCarousel />
     <HomeNews />
-    <div class="tv home-section">
-      <h1 class="home-section__title">CChV TV</h1>
+    <div class="tv homeSection">
+      <h1 class="homeSection__title">CChV TV</h1>
       <div class="video">
         <youtube
           height="500px"
@@ -35,7 +35,7 @@ export default defineComponent({
 <style lang="stylus">
 @import '../../styles/variables.styl';
 
-.home-section
+.homeSection
   padding: $home_padding;
 
   &__title

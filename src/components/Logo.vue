@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import AppUrls from "../utils/urls";
+import AppUrls from "@/utils/urls";
 
 const Logo = defineComponent({
   name: "Logo",

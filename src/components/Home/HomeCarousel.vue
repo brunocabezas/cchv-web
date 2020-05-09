@@ -1,5 +1,5 @@
 <template>
-  <div class="home-carousel">
+  <div class="homeCarousel">
     <Loader v-if="!ready" />
     <vue-carousel
       v-if="ready"
@@ -38,13 +38,13 @@
 import { defineComponent, computed, ref, reactive } from "@vue/composition-api";
 import { useAsyncState } from "@vueuse/core";
 import Icon from "vue-awesome/components/Icon.vue";
-import apiRoutes from "../../api/apiRoutes";
-import client from "../../api/client";
+import apiRoutes from "@/api/apiRoutes";
+import client from "@/api/client";
 import Loader from "@/components/Loader.vue";
-import { getCustomField } from "../../utils/api";
+import { getCustomField } from "@/utils/api";
 import { Carousel as VueCarousel, Slide } from "vue-carousel";
-import { Carousel, CarouselKeys, CarouselImage } from "../../types/customFieldsTypes";
-import { WpResponseData, WPResponseItem } from "../../types/wordpressTypes";
+import { Carousel, CarouselKeys, CarouselImage } from "@/types/customFieldsTypes";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 
 const initialState: WpResponseData = [];
 
@@ -100,10 +100,10 @@ export default HomeCarousel;
 // Viewport height less header height
 $carousel_height = 'calc(100vh - %s)' % $header_height;
 
-.VueCarousel-wrapper, .home-carousel
+.VueCarousel-wrapper, .homeCarousel
   height: $carousel_height;
 
-.home-carousel
+.homeCarousel
   background-color: $blue;
   position: relative;
   display: flex;
