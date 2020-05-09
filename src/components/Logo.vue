@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 import AppUrls from "@/utils/urls";
 
-const Logo = defineComponent({
+const Logo = createComponent({
   name: "Logo",
   setup() {
     return { homeUrl: AppUrls.Home };

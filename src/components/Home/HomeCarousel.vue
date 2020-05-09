@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, reactive } from "@vue/composition-api";
+import { createComponent, computed, ref, reactive } from "@vue/composition-api";
 import { useAsyncState } from "@vueuse/core";
 import Icon from "vue-awesome/components/Icon.vue";
 import apiRoutes from "@/api/apiRoutes";
@@ -48,7 +48,7 @@ import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 
 const initialState: WpResponseData = [];
 
-const HomeCarousel = defineComponent({
+const HomeCarousel = createComponent({
   name: "HomeCarousel",
   components: { Loader, VueCarousel, Slide, "v-icon": Icon },
   setup() {

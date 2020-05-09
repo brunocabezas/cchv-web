@@ -1,5 +1,5 @@
 import Home from '@/components/Home/Home.vue';
-import NewsGrid from '@/components/News/NewsGrid.vue';
+import NewsGrid from '@/components/News/NewsGrid/NewsGrid.vue';
 import AppUrls from './urls';
 import VueRouter from 'vue-router';
 

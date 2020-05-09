@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 
-export default defineComponent({
+export default createComponent({
   name: "FooterSponsors",
   setup() {
     return {

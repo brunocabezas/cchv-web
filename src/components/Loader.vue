@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 
-const Loader = defineComponent({
+const Loader = createComponent({
   props: {
     loading: {
       type: Boolean,

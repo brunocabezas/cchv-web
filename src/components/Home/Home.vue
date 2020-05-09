@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 import HomeCarousel from "./HomeCarousel.vue";
 import HomeNews from "./HomeNews.vue";
 
-export default defineComponent({
+export default createComponent({
   name: "Home",
   components: { HomeCarousel, HomeNews },
   setup() {

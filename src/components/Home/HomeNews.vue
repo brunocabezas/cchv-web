@@ -24,44 +24,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
-import { useAsyncState } from "@vueuse/core";
-import apiRoutes from "@/api/apiRoutes";
-import Icon from "vue-awesome/components/Icon.vue";
-import client from "@/api/client";
-import Loader from "@/components/Loader.vue";
-import { getCustomField, getWPTitle } from "@/utils/api";
-import { NewsKeys } from "@/types/customFieldsTypes";
-import { WpResponseData } from "@/types/wordpressTypes";
-import AppUrls from '../../utils/urls';
+import { createComponent, computed, Ref } from "@vue/composition-api"
+import { useAsyncState } from "@vueuse/core"
+import apiRoutes from "@/api/apiRoutes"
+import Icon from "vue-awesome/components/Icon.vue"
+import client from "@/api/client"
+import Loader from "@/components/Loader.vue"
+import { getCustomField, getWPTitle } from "@/utils/api"
+import { NewsKeys } from "@/types/customFieldsTypes"
+import { WpResponseData } from "@/types/wordpressTypes"
+import AppUrls from "@/utils/urls"
+import View from "@/types/viewTypes.ts"
+import helpers from "@/utils/customFields"
 
-const initialState: WpResponseData = [];
+const initialState: WpResponseData = []
 
-const HomeNews = defineComponent({
+const HomeNews = createComponent({
   name: "HomeNews",
   components: { Loader, "v-icon": Icon },
   setup() {
     const { state, ready } = useAsyncState<WpResponseData>(
-      client.get(apiRoutes.News).then(t => t.data),
+      client.get(apiRoutes.HomeNews).then((t) => t.data),
       initialState
-    );
+    )
 
-    // TODO fix type def
-    const news: any = computed(() => {
-      return state.value
-        .map(item => ({
-          [NewsKeys.title]: getWPTitle(item),
-          [NewsKeys.abstract]: getCustomField(item, NewsKeys.abstract),
-          [NewsKeys.date]: getCustomField(item, NewsKeys.date),
-          thumbnail: getCustomField(item, NewsKeys.img)[0].url
-        }))
-        .slice(0, 2);
-    });
+    const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
+      return helpers.mapNewsToView(state.value)
+    })
 
-    return { ready, news, newsGridUrl: AppUrls.News };
-  }
-});
-export default HomeNews;
+    return { ready, news, newsGridUrl: AppUrls.News }
+  },
+})
+export default HomeNews
 </script>
 
 <style lang="stylus" scoped>

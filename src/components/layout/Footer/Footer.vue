@@ -44,11 +44,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import { SOCIAL_NETWORKS, CONTACT_EMAIL } from "@/utils/static";
 
-export default defineComponent({
+export default createComponent({
   name: "Footer",
   components: { FooterSponsors },
   setup(props) {
