@@ -6,8 +6,16 @@
           Contacto
         </h3>
         <ul>
-          <li><a href="mailto:info@cchv.cl"></a>info@cchv.cl</li>
-          <li>Hipolito Irigoyen #562 Providecia, Santiago.</li>
+          <li class="footerListItem">
+            <a
+              :title="`Escribir a ${contactEmail}`"
+              :href="`mailto:${contactEmail}`"
+              >{{ contactEmail }}</a
+            >
+          </li>
+          <li class="footerListItem">
+            Hipolito Irigoyen #562 Providecia, Santiago.
+          </li>
         </ul>
       </div>
       <div class="footerTopSection">
@@ -15,7 +23,11 @@
           Redes Sociales
         </h3>
         <ul>
-          <li v-bind:key="sn.name" v-for="sn in socialNetworks">
+          <li
+            class="footerListItem"
+            v-bind:key="sn.name"
+            v-for="sn in socialNetworks"
+          >
             {{ sn.label }}
           </li>
         </ul>
@@ -34,7 +46,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
-import { SOCIAL_NETWORKS } from "@/utils/static";
+import { SOCIAL_NETWORKS, CONTACT_EMAIL } from "@/utils/static";
 
 export default defineComponent({
   name: "Footer",
@@ -42,7 +54,7 @@ export default defineComponent({
   setup(props) {
     const socialNetworks = SOCIAL_NETWORKS;
 
-    return { socialNetworks };
+    return { socialNetworks, contactEmail: CONTACT_EMAIL };
   }
 });
 </script>

@@ -1,6 +1,8 @@
 <template>
   <div class="news home-section">
-    <h1 class="news__title home-section__title">noticias</h1>
+    <h1 class="news__title home-section__title">
+      noticias <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
+    </h1>
     <Loader v-if="!ready" />
     <div v-if="ready" class="news-list">
       <div v-bind:key="post.ID" v-for="post in news" class="news-post">
@@ -23,6 +25,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 // import {  computed } from "vue";
 import { useAsyncState } from "@vueuse/core";
 import apiRoutes from "../../api/apiRoutes";
+import Icon from "vue-awesome/components/Icon.vue";
 import client from "../../api/client";
 import Loader from "@/components/Loader.vue";
 import { getCustomField, getWPTitle } from "../../utils/api";
@@ -33,7 +36,7 @@ const initialState: WpResponseData = [];
 
 const HomeNews = defineComponent({
   name: "HomeNews",
-  components: { Loader },
+  components: { Loader, "v-icon": Icon },
   setup() {
     const { state, ready } = useAsyncState<WpResponseData>(
       client.get(apiRoutes.News).then(t => t.data),
@@ -73,10 +76,10 @@ export default HomeNews;
       padding: 1em;
 
       &:first-child
-        padding-left 0
+        padding-left: 0;
 
       &:last-child
-        padding-right 0
+        padding-right: 0;
 
       &__title
         color: $blue;

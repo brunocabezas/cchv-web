@@ -12,7 +12,7 @@ import 'vue-awesome/icons/chevron-left'
 import 'vue-awesome/icons/chevron-right'
 
 Vue.use(VueRouter);
-Vue.use(VueYoutube)
+Vue.use(VueYoutube);
 Vue.use(VueCompositionApi);
 
 // eslint-disable-next-line no-new
