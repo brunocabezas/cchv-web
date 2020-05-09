@@ -2,7 +2,7 @@
 
 // Arrays
 type Team = TeamMember[];
-type HomeSlides = HomeSlide[];
+type HomeCarousel = HomeSlide[];
 type ContestVideos = ContestVideo[];
 type Sponsors = Sponsor[];
 

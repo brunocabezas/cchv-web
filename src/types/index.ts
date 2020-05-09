@@ -11,3 +11,7 @@
 // }
 
 // export type Pages = Page[]
+
+
+// HOME PAGE
+// export type 

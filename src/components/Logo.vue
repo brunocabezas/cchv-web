@@ -1,11 +1,11 @@
 <template>
-  <a class="logo" href="homeUrl" title="Inicio">
+  <a class="logo" :href="homeUrl" title="Inicio">
     <img alt="Vue logo" src="@/assets/logo.png" />
   </a>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "@vue/composition-api";
 import AppUrls from "../utils/urls";
 
 const Logo = defineComponent({

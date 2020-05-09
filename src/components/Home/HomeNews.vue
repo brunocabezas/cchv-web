@@ -1,0 +1,90 @@
+<template>
+  <div class="news home-section">
+    <h1 class="news__title home-section__title">noticias</h1>
+    <Loader v-if="!ready" />
+    <div v-if="ready" class="news-list">
+      <div v-bind:key="post.ID" v-for="post in news" class="news-post">
+        <div
+          class="news-post__thumbnail"
+          v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
+          :alt="post.title"
+        />
+        <h3 class="news-post__title">{{ post.title }}</h3>
+        <p>{{ post.date }}</p>
+        <p>{{ post.abstract }}</p>
+        <a>Leer noticia completa</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, computed } from "@vue/composition-api";
+// import {  computed } from "vue";
+import { useAsyncState } from "@vueuse/core";
+import apiRoutes from "../../api/apiRoutes";
+import client from "../../api/client";
+import Loader from "@/components/Loader.vue";
+import { getCustomField, getWPTitle } from "../../utils/api";
+import { NewsKeys } from "../../types/customFieldsTypes";
+import { WpResponseData } from "../../types/wordpressTypes";
+
+const initialState: WpResponseData = [];
+
+const HomeNews = defineComponent({
+  name: "HomeNews",
+  components: { Loader },
+  setup() {
+    const { state, ready } = useAsyncState<WpResponseData>(
+      client.get(apiRoutes.News).then(t => t.data),
+      initialState
+    );
+
+    // TODO fix type def
+    const news: any = computed(() => {
+      return state.value
+        .map(item => ({
+          [NewsKeys.title]: getWPTitle(item),
+          [NewsKeys.abstract]: getCustomField(item, NewsKeys.abstract),
+          [NewsKeys.date]: getCustomField(item, NewsKeys.date),
+          thumbnail: getCustomField(item, NewsKeys.img)[0].url
+        }))
+        .slice(0, 2);
+    });
+
+    return { ready, news };
+  }
+});
+export default HomeNews;
+</script>
+
+<style lang="stylus" scoped>
+@import '../../styles/variables.styl';
+
+.news
+  &__title
+    color: $blue;
+
+  .news-list
+    display: flex;
+
+    .news-post
+      flex: 1;
+      padding: 1em;
+
+      &:first-child
+        padding-left 0
+
+      &:last-child
+        padding-right 0
+
+      &__title
+        color: $blue;
+
+      &__thumbnail
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 100%;
+</style>
