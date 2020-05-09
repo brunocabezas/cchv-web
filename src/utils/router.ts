@@ -1,10 +1,11 @@
-import Home from '../components/Home/Home.vue';
+import Home from '@/components/Home/Home.vue';
+import NewsGrid from '@/components/News/NewsGrid.vue';
 import AppUrls from './urls';
 import VueRouter from 'vue-router';
 
 const routes = [
   { path: AppUrls.Home, component: Home },
-  // { path: '/bar', component: Bar }
+  { path: AppUrls.News, component: NewsGrid }
 ];
 
 const router = new VueRouter({

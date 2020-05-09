@@ -1,7 +1,10 @@
 <template>
   <div class="news homeSection">
     <h1 class="news__title homeSection__title">
-      noticias <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
+      <router-link :to="newsGridUrl"
+        >noticias
+        <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
+      </router-link>
     </h1>
     <Loader v-if="!ready" />
     <div v-if="ready" class="newsList">
@@ -30,6 +33,7 @@ import Loader from "@/components/Loader.vue";
 import { getCustomField, getWPTitle } from "@/utils/api";
 import { NewsKeys } from "@/types/customFieldsTypes";
 import { WpResponseData } from "@/types/wordpressTypes";
+import AppUrls from '../../utils/urls';
 
 const initialState: WpResponseData = [];
 
@@ -54,7 +58,7 @@ const HomeNews = defineComponent({
         .slice(0, 2);
     });
 
-    return { ready, news };
+    return { ready, news, newsGridUrl: AppUrls.News };
   }
 });
 export default HomeNews;
