@@ -1,5 +1,7 @@
 import AppUrls from './urls';
 
+export const CONTACT_EMAIL="info@cchv.cl";
+
 // SOCIAL NETWORKS
 export interface SocialNetwork { 
   url: string;
