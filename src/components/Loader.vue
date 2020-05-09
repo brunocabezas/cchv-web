@@ -15,9 +15,6 @@ const Loader = defineComponent({
     }
   },
   name: "Loader",
-  setup({ loading }) {
-    return { loading };
-  }
 });
 
 export default Loader;
