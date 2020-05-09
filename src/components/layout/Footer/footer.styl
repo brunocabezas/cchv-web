@@ -3,7 +3,9 @@
 
 .footer
   .footerTitle
-    color $blue
+    color: $blue;
+    font-family: Montserrat;
+
   .footerTop
     background-color: $grey;
     padding: $home_padding;
@@ -11,6 +13,18 @@
 
     .footerTopSection
       padding: 1em;
+
+    .footerListItem
+      font-family: Montserrat;
+      margin: 10px 0;
+
+      a
+        font-family: Montserrat;
+        text-decoration: none;
+        color inherit
+
+        &:hover
+          text-decoration: underline;
 
   .footerSponsors
     padding: $home_padding;
