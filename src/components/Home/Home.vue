@@ -5,14 +5,12 @@
     <div class="tv home-section">
       <h1 class="home-section__title">CChV TV</h1>
       <div class="video">
-        <iframe
+        <youtube
+          height="500px"
           width="100%"
-          height="500"
-          :src="videoUrl"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          :video-id="videoId"
+          ref="youtube"
+        ></youtube>
       </div>
     </div>
   </div>
@@ -28,7 +26,7 @@ export default defineComponent({
   components: { HomeCarousel, HomeNews },
   setup() {
     return {
-      videoUrl: "http://www.youtube.com/watch?v=A8cIR54emmY"
+      videoId: "A8cIR54emmY"
     };
   }
 });
