@@ -36,7 +36,7 @@
         <h3 class="footerTitle">
           Newsletter
         </h3>
-        <div>[NEWSLETTER_FORM]</div>
+        <FooterSubscribeForm/>
       </div>
     </div>
     <FooterSponsors />
@@ -46,11 +46,12 @@
 <script lang="ts">
 import { createComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
+import FooterSubscribeForm from "@/components/layout/Footer/FooterSubscribeForm.vue";
 import { SOCIAL_NETWORKS, CONTACT_EMAIL } from "@/utils/static";
 
 export default createComponent({
   name: "Footer",
-  components: { FooterSponsors },
+  components: { FooterSponsors, FooterSubscribeForm },
   setup(props) {
     const socialNetworks = SOCIAL_NETWORKS;
 

@@ -1,6 +1,6 @@
 <template>
   <div class="homeCarousel">
-    <Loader v-if="!ready" />
+    <Loader v-if="!ready" color="black" />
     <vue-carousel
       v-if="ready"
       class="carousel"
