@@ -6,7 +6,7 @@ declare module View {
     [NewsKeys.title]: string,
     [NewsKeys.abstract]: string,
     [NewsKeys.date]: string,
-    thumbnail: string,
+    imageUrl: string,
     id: number,
   }
 }

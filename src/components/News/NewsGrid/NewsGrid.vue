@@ -2,14 +2,14 @@
   <div class="page newsGrid">
     <div class="pageTitle">
       <h1 class="pageTitleText">Noticias</h1>
-      <Loader v-if="!ready" />
       <!-- <div class="pageTitleInput">search input</div>-->
     </div>
+    <Loader v-if="!ready" />
     <div class="newsGrid__topGrid">
       <NewsGridItem :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
     <div class="newsGrid__grid">
-      <NewsGridItem :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsGridItem small :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>
 </template>

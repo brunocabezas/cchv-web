@@ -6,6 +6,10 @@ import App from "./App.vue";
 import router from '@/utils/router'
 import './styles/main.styl';
 import './types/index';
+import * as dayjs from 'dayjs'
+import 'dayjs/locale/es' // import locale
+
+dayjs.locale('es') // use locale
 
 // only import the icons you use to reduce bundle size
 import 'vue-awesome/icons/chevron-left'

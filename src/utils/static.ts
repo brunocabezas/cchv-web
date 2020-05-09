@@ -1,5 +1,7 @@
 import AppUrls from './urls';
 
+
+export const DATE_FORMAT = 'DD [de] MMMM, YYYY'
 export const CONTACT_EMAIL="info@cchv.cl";
 
 // SOCIAL NETWORKS
