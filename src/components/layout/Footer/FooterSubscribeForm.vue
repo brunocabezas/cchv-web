@@ -86,7 +86,7 @@ export default defineComponent({
     margin-bottom 5px
 
   .subscribeFormEmailInput
-    padding 5px 0
+    padding 5px
     font-family Montserrat
     background-color: transparent;
     border-bottom: 2px solid black;

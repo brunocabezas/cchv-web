@@ -21,17 +21,14 @@
 <script lang="ts">
 import { computed, defineComponent } from "@vue/composition-api";
 import NewsGridItem from "@/components/News/NewsGrid/NewsGridItem.vue";
-import { WpResponseData } from "@/types/wordpressTypes";
 import Loader from "@/components/Loader.vue";
 import useNews from "@/factories/useNewsFactory";
 import { AsyncDataStatus } from "@/factories/useAsyncData";
 
-const initialState: WpResponseData = [];
-
 export default defineComponent({
   name: "NewsGrid",
   components: { NewsGridItem, Loader },
-  setup() {
+  setup(props) {
     const { news, fetchNews, status } = useNews();
     
     fetchNews();

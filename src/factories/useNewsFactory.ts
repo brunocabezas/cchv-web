@@ -15,5 +15,9 @@ export default function useNews() {
     return helpers.mapNewsToView(data.value)
   })
 
-  return { fetchNews, news, status: computed(() => status.value) }
+  function getNewsPostById (id : number) {
+    return news.value.find(post => post.id === id);
+  }
+
+  return { fetchNews, news, getNewsPostById, status: computed(() => status.value) }
 }
