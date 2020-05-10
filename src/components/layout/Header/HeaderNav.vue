@@ -38,10 +38,10 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api";
 import { NAVIGATION_MENU } from "@/utils/static";
 
-export default createComponent({
+export default defineComponent({
   name: "HeaderNav",
   setup() {
     // Active when a navigation menu with sub level menus is hovered

@@ -4,48 +4,42 @@
       <h1 class="pageTitleText">Noticias</h1>
       <!-- <div class="pageTitleInput">search input</div>-->
     </div>
-    <Loader v-if="!ready" />
+    <Loader v-if="loading" />
     <div class="newsGrid__topGrid">
       <NewsGridItem :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
     <div class="newsGrid__grid">
-      <NewsGridItem small :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsGridItem
+        small
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in news"
+      />
     </div>
   </div>
 </template>
-
 <script lang="ts">
-import { computed, ref, createComponent, Ref } from "@vue/composition-api";
+import { computed, defineComponent } from "@vue/composition-api";
 import NewsGridItem from "@/components/News/NewsGrid/NewsGridItem.vue";
 import { WpResponseData } from "@/types/wordpressTypes";
-import { useAsyncState } from "@vueuse/core";
-import apiRoutes from "@/api/apiRoutes";
-import client from "@/api/client";
 import Loader from "@/components/Loader.vue";
-import { AxiosResponse } from "axios";
-import { News, NewsKeys } from "@/types/customFieldsTypes";
-import { getCustomField, getWPTitle } from "@/utils/api";
-import View from "@/types/viewTypes.ts";
-import helpers from "@/utils/customFields";
+import useNews from "@/factories/useNewsFactory";
+import { AsyncDataStatus } from "@/factories/useAsyncData";
 
 const initialState: WpResponseData = [];
 
-export default createComponent({
+export default defineComponent({
   name: "NewsGrid",
   components: { NewsGridItem, Loader },
   setup() {
-    const { state, ready } = useAsyncState<WpResponseData>(
-      client
-        .get(apiRoutes.News)
-        .then((t: AxiosResponse<WpResponseData>) => t.data),
-      initialState
-    );
+    const { news, fetchNews, status } = useNews();
+    
+    fetchNews();
 
-    const news: Readonly<Ref<Readonly<View.News>>> = computed(() =>
-      helpers.mapNewsToView(state.value)
-    );
-
-    return { news, ready };
+    return {
+      news,
+      loading: computed(() => status.value === AsyncDataStatus.Loading)
+    };
   }
 });
 </script>

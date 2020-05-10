@@ -28,11 +28,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import View from "@/types/viewTypes";
 import AppUrls from "../../../utils/urls";
 
-export default createComponent({
+export default defineComponent({
   props: {
     small: {
       type: Boolean,

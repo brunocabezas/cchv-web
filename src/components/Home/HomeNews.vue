@@ -6,12 +6,12 @@
         <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
     </h1>
-    <Loader v-if="!ready" />
-    <div v-if="ready" class="newsList">
+    <Loader v-if="loading" />
+    <div v-if="!loading" class="newsList">
       <div v-bind:key="post.ID" v-for="post in news" class="newsPost">
         <div
           class="newsPost__thumbnail"
-          v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
+          v-bind:style="{ 'background-image': `url(${post.imageUrl})` }"
           :alt="post.title"
         />
         <h3 class="newsPost__title">{{ post.title }}</h3>
@@ -23,45 +23,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { createComponent, computed, Ref } from "@vue/composition-api"
-import { useAsyncState } from "@vueuse/core"
-import apiRoutes from "@/api/apiRoutes"
-import Icon from "vue-awesome/components/Icon.vue"
-import client from "@/api/client"
-import Loader from "@/components/Loader.vue"
-import { getCustomField, getWPTitle } from "@/utils/api"
-import { NewsKeys } from "@/types/customFieldsTypes"
-import { WpResponseData } from "@/types/wordpressTypes"
-import AppUrls from "@/utils/urls"
-import View from "@/types/viewTypes.ts"
-import helpers from "@/utils/customFields"
-
-const initialState: WpResponseData = []
-
-const HomeNews = createComponent({
-  name: "HomeNews",
-  components: { Loader, "v-icon": Icon },
-  setup() {
-    const { state, ready } = useAsyncState<WpResponseData>(
-      client.get(apiRoutes.HomeNews).then((t) => t.data),
-      initialState
-    )
-
-    const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
-      return helpers.mapNewsToView(state.value)
-    })
-
-    return { ready, news, newsGridUrl: AppUrls.News }
-  },
-})
-export default HomeNews
-</script>
+<script lang="ts" src="./homeNews.ts"></script>
 
 <style lang="stylus" scoped>
 @import '../../styles/variables.styl';
 
 .news
+  min-height 400px
+  
   &__title
     color: $blue;
 

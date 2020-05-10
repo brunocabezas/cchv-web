@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import HomeCarousel from "./HomeCarousel.vue";
 import HomeNews from "./HomeNews.vue";
 
-export default createComponent({
+export default defineComponent({
   name: "Home",
   components: { HomeCarousel, HomeNews },
   setup() {
@@ -37,6 +37,7 @@ export default createComponent({
 
 .homeSection
   padding: $home_padding;
+  position relative
 
   &__title
     color: $blue;

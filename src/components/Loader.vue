@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from "@vue/composition-api"
+import { defineComponent } from "@vue/composition-api"
 import BounceLoader from "vue-spinner/src/BounceLoader.vue"
 
-const Loader = createComponent({
+const Loader = defineComponent({
   components: { BounceLoader },
   props: {
     loading: {

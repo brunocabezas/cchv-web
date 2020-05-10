@@ -22,5 +22,10 @@ export default (client: AxiosInstance) => {
     newsSuccess,
   );
 
+  mock.onGet(apiRoutes.HomeNews).reply(
+    200,
+    newsSuccess,
+  );
+
   mock.onGet()
 }

@@ -7,13 +7,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from "@vue/composition-api";
-// import { useAsyncState } from "@vueuse/core";
-// import api from "./api/client
+import { defineComponent } from "@vue/composition-api";
 import Header from "@/components/layout/Header/Header.vue";
 import Footer from "@/components/layout/Footer/Footer.vue";
 
-const App = createComponent({
+const App = defineComponent({
   components: { Header, Footer },
   name: "App"
 });

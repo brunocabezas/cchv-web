@@ -63,10 +63,10 @@
 </template>
 
 <script>
-import { createComponent } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { NEWSLETTER_SUBSCRIBE_URL } from "../../../utils/static";
 
-export default createComponent({
+export default defineComponent({
   name: "FooterSubscribeForm",
   setup() {
     return { subscribeUrl: NEWSLETTER_SUBSCRIBE_URL };

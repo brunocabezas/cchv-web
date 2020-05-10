@@ -8,9 +8,9 @@
 <script lang="ts">
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
 import Logo from "@/components/Logo.vue";
-import { createComponent } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 
-const Header = createComponent({
+const Header = defineComponent({
   name: "Header",
   components: { Logo, HeaderNav }
 });
