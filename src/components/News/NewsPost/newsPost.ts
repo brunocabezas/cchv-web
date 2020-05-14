@@ -1,6 +1,6 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import useNews from "@/factories/useNewsFactory"
+import useNews from "@/factories/useNews"
 import { AsyncDataStatus } from "@/factories/useAsyncData"
 
 export default defineComponent({

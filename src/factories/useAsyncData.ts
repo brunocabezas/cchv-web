@@ -1,7 +1,7 @@
-import apiRoutes from "@/api/apiRoutes"
-import client from "@/api/client"
 import Vue from "vue"
 import VueCompositionApi, { ref, computed } from "@vue/composition-api"
+import apiRoutes from "@/api/apiRoutes"
+import client from "@/api/client"
 
 Vue.use(VueCompositionApi)
 

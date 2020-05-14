@@ -1,6 +1,6 @@
-import apiRoutes from "@/api/apiRoutes"
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import apiRoutes from "@/api/apiRoutes"
 import View from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from './useAsyncData'

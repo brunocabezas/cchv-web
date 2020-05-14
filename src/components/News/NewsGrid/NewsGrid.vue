@@ -22,7 +22,7 @@
 import { computed, defineComponent } from "@vue/composition-api";
 import NewsGridItem from "@/components/News/NewsGrid/NewsGridItem.vue";
 import Loader from "@/components/Loader.vue";
-import useNews from "@/factories/useNewsFactory";
+import useNews from "@/factories/useNews";
 import { AsyncDataStatus } from "@/factories/useAsyncData";
 
 export default defineComponent({

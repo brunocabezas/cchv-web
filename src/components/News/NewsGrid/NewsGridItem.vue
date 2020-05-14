@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import View from "@/types/viewTypes";
-import AppUrls from "../../../utils/urls";
+import AppUrls from "@/utils/urls";
 
 export default defineComponent({
   props: {
