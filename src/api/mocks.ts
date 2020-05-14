@@ -12,12 +12,17 @@ export default (client: AxiosInstance) => {
 
   // Mock any GET request to /users
   // arguments for reply are (status, data, headers)
-  mock.onGet(apiRoutes.HomeCarousel).reply(
+  mock.onGet(apiRoutes.CarouselImages).reply(
     200,
     homeCarouselSuccess,
   );
 
   mock.onGet(apiRoutes.News).reply(
+    200,
+    newsSuccess,
+  );
+
+  mock.onGet(apiRoutes.HomeNews).reply(
     200,
     newsSuccess,
   );

@@ -1,34 +1,36 @@
-import AppUrls from './urls';
+import AppUrls from "./urls"
 
-export const CONTACT_EMAIL="info@cchv.cl";
+export const DATE_FORMAT = "DD [de] MMMM, YYYY"
+export const CONTACT_EMAIL = "info@cchv.cl"
+export const NEWSLETTER_SUBSCRIBE_URL =
+  "https://bienaldeartesmediales.us11.list-manage.com/subscribe/post?u=21121cf28dc5ae821ecbf30c9&amp;id=4459a2b85e"
 
 // SOCIAL NETWORKS
-export interface SocialNetwork { 
-  url: string;
-  label: string;
-};
+export interface SocialNetwork {
+  url: string
+  label: string
+}
 
-export const SOCIAL_NETWORKS : SocialNetwork[] = [
-  { url: '', label: 'Facebook' },
-  { url: '', label: 'Instagram' },
-  { url: '', label: 'YouTube' },
+export const SOCIAL_NETWORKS: SocialNetwork[] = [
+  { url: "", label: "Facebook" },
+  { url: "", label: "Instagram" },
+  { url: "", label: "YouTube" },
 ]
-
 
 // LAYOUT
 export enum AboutPages {
   TeamPage,
-  TransparencyPage
+  TransparencyPage,
 }
 
 export interface SubPage {
-  label: string,
-  url: AppUrls, 
+  label: string
+  url: AppUrls
 }
 
 export interface Page {
-  label: string,
-  url: AppUrls, 
+  label: string
+  url: AppUrls
   pages?: SubPage[]
 }
 
@@ -40,16 +42,16 @@ const AboutPage: Page = {
   url: AppUrls.About,
   label: "Quienes Somos",
   pages: [
-    {url: AppUrls.AboutTeam, label: 'Equipo'},
-    {url: AppUrls.AboutTransparency, label: 'Transparencia'}
-  ]
-};
-const ProgramsPage: Page = { url: AppUrls.Programs, label: "Programas" };
-const TVPage: Page = { url: AppUrls.Media, label: "CCHV TV" };
-export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage, TVPage];
+    { url: AppUrls.AboutTeam, label: "Equipo" },
+    { url: AppUrls.AboutTransparency, label: "Transparencia" },
+  ],
+}
+const ProgramsPage: Page = { url: AppUrls.Programs, label: "Programas" }
+const TVPage: Page = { url: AppUrls.Media, label: "CCHV TV" }
+export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage, TVPage]
 
 // SOCIAL NETWORKS
-export interface SocialNetwork { 
-  url: string;
-  label: string;
-};
+export interface SocialNetwork {
+  url: string
+  label: string
+}

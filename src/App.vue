@@ -8,8 +8,6 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-// import { useAsyncState } from "@vueuse/core";
-// import api from "./api/client
 import Header from "@/components/layout/Header/Header.vue";
 import Footer from "@/components/layout/Footer/Footer.vue";
 
