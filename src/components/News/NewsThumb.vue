@@ -42,7 +42,7 @@ export default defineComponent({
       default: {}
     }
   },
-  name: "NewsGridItem",
+  name: "NewsThumb",
   setup() {
     function getNewsPostUrl(postId: number) {
       return `${AppUrls.NewsPost}${postId}`;
@@ -53,7 +53,7 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="stylus">
-@import '../../../styles/variables.styl';
+@import '../../styles/variables.styl';
 
 .newsPostPreview
   margin: 0 1px;

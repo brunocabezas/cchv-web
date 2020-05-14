@@ -8,17 +8,10 @@
     </h1>
     <Loader v-if="loading" />
     <div v-if="!loading" class="newsList">
-      <div v-bind:key="post.ID" v-for="post in news" class="newsPost">
-        <div
-          class="newsPost__thumbnail"
-          v-bind:style="{ 'background-image': `url(${post.imageUrl})` }"
-          :alt="post.title"
-        />
-        <h3 class="newsPost__title">{{ post.title }}</h3>
-        <p>{{ post.date }}</p>
-        <p>{{ post.abstract }}</p>
-        <a>Leer noticia completa</a>
-      </div>
+       <NewsThumb
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in news"/>
     </div>
   </div>
 </template>

@@ -1,13 +1,14 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Icon from "vue-awesome/components/Icon.vue"
 import Loader from "@/components/Loader.vue"
+import NewsThumb from "@/components/News/NewsThumb.vue"
 import AppUrls from "@/utils/urls"
 import useNews from "@/factories/useNews"
 import { AsyncDataStatus } from "@/factories/useAsyncData"
 
 const HomeNews = defineComponent({
   name: "HomeNews",
-  components: { Loader, "v-icon": Icon },
+  components: { NewsThumb, Loader, "v-icon": Icon },
   setup() {
     const { news, fetchNews, status } = useNews()
 

@@ -6,10 +6,10 @@
     </div>
     <Loader v-if="loading" />
     <div class="newsGrid__topGrid">
-      <NewsGridItem :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
     <div class="newsGrid__grid">
-      <NewsGridItem
+      <NewsThumb
         small
         :post="post"
         v-bind:key="post.id"
@@ -20,14 +20,14 @@
 </template>
 <script lang="ts">
 import { computed, defineComponent } from "@vue/composition-api";
-import NewsGridItem from "@/components/News/NewsGrid/NewsGridItem.vue";
+import NewsThumb from "@/components/News/NewsThumb.vue";
 import Loader from "@/components/Loader.vue";
 import useNews from "@/factories/useNews";
 import { AsyncDataStatus } from "@/factories/useAsyncData";
 
 export default defineComponent({
   name: "NewsGrid",
-  components: { NewsGridItem, Loader },
+  components: { NewsThumb, Loader },
   setup(props) {
     const { news, fetchNews, status } = useNews();
     
