@@ -29,7 +29,7 @@
 @import '../../styles/variables.styl';
 
 .news
-  min-height 400px
+  min-height: 400px;
   
   &__title
     color: $blue;

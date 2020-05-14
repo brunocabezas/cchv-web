@@ -54,7 +54,7 @@ const HomeCarousel = defineComponent({
   setup() {
     const activeImg = ref(0);
     const { state: asyncState, ready } = useAsyncState<WpResponseData>(
-      client.get(apiRoutes.HomeCarousel).then(t =>t.data),
+      client.get(apiRoutes.CarouselImages).then(t =>t.data),
       initialState
     );
 

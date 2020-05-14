@@ -7,10 +7,10 @@ import useAsyncData from './useAsyncData'
 import { WpResponseData } from '@/types/wordpressTypes'
 
 Vue.use(VueCompositionApi)
+
 const { data, fetch: fetchNews, status } = useAsyncData<WpResponseData>(apiRoutes.HomeNews)
 
 export default function useNews() {
-
   const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
     return helpers.mapNewsToView(data.value)
   })
