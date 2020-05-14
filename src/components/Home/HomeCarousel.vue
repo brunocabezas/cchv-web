@@ -1,8 +1,8 @@
 <template>
   <div class="homeCarousel">
-    <Loader v-if="!ready" color="black" />
+    <Loader v-if="isLoading" color="black" />
     <vue-carousel
-      v-if="ready"
+      v-if="!isLoading"
       class="carousel"
       :navigate-to="activeImg"
       :perPage="1"
@@ -36,16 +36,21 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, reactive } from "@vue/composition-api";
+import { Carousel as VueCarousel, Slide } from "vue-carousel";
 import { useAsyncState } from "@vueuse/core";
 import Icon from "vue-awesome/components/Icon.vue";
 import apiRoutes from "@/api/apiRoutes";
 import client from "@/api/client";
 import Loader from "@/components/Loader.vue";
 import { getCustomField } from "@/utils/api";
-import { Carousel as VueCarousel, Slide } from "vue-carousel";
-import { Carousel, CarouselKeys, CarouselImage } from "@/types/customFieldsTypes";
+import {
+  Carousel,
+  CarouselKeys,
+  CarouselImage
+} from "@/types/customFieldsTypes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-
+import useCarouselImages from "@/factories/useCarouselImages";
+import { AsyncDataStatus } from "../../factories/useAsyncData";
 const initialState: WpResponseData = [];
 
 const HomeCarousel = defineComponent({
@@ -53,18 +58,16 @@ const HomeCarousel = defineComponent({
   components: { Loader, VueCarousel, Slide, "v-icon": Icon },
   setup() {
     const activeImg = ref(0);
-    const { state: asyncState, ready } = useAsyncState<WpResponseData>(
-      client.get(apiRoutes.CarouselImages).then(t =>t.data),
-      initialState
-    );
+    const { carousel, status, fetchCarouselImages } = useCarouselImages();
 
-    // TODO add type def
-    const carousel = computed<WpResponseData>(() => {
-      if (!asyncState.value[0]) return [];
-      // Displaying the first carousel only
-      const wpRes: WPResponseItem = asyncState.value[0];
-      return getCustomField(wpRes, CarouselKeys.images);
-    });
+    fetchCarouselImages();
+    // // TODO add type def
+    // const carousel = computed<WpResponseData>(() => {
+    //   if (!asyncState.value[0]) return [];
+    //   // Displaying the first carousel only
+    //   const wpRes: WPResponseItem = asyncState.value[0];
+    //   return getCustomField(wpRes, CarouselKeys.images);
+    // });
 
     function goToNextImg() {
       if (activeImg.value === carousel.value.length - 1) {
@@ -83,7 +86,7 @@ const HomeCarousel = defineComponent({
     }
 
     return {
-      ready,
+      isLoading: computed(() => status.value === AsyncDataStatus.Loading),
       carousel,
       activeImg,
       goToNextImg,
