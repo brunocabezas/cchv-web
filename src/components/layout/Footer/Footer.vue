@@ -48,11 +48,14 @@ import { defineComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import FooterSubscribeForm from "@/components/layout/Footer/FooterSubscribeForm.vue";
 import { SOCIAL_NETWORKS, CONTACT_EMAIL } from "@/utils/static";
+import useSocialNetworks from "@/factories/useSocialNetworks";
 
 export default defineComponent({
   name: "Footer",
   components: { FooterSponsors, FooterSubscribeForm },
   setup(props) {
+    const { fetchSocialNetworks } = useSocialNetworks()
+    fetchSocialNetworks();
     const socialNetworks = SOCIAL_NETWORKS;
 
     return { socialNetworks, contactEmail: CONTACT_EMAIL };

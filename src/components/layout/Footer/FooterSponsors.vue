@@ -20,33 +20,43 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, computed } from "@vue/composition-api";
+import useSponsors from '@/factories/useSponsors';
+import { AsyncDataStatus } from '../../../factories/useAsyncData';
 
 export default defineComponent({
   name: "FooterSponsors",
   setup() {
+    const { sponsors, fetchSponsors, status } = useSponsors();
+    
+    fetchSponsors();
+
     return {
-      sponsors: [
-        {
-          url: "https://www.eda.admin.ch/santiago",
-          logo:
-            "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-          id: 1
-        },
-        {
-          url: "https://um.dk/en/",
-          logo:
-            "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-          id: 2
-        },
-        {
-          url: "https://english.kum.dk/",
-          logo:
-            "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-          id: 3
-        }
-      ]
+      sponsors,
+      loading: computed(() => status.value === AsyncDataStatus.Loading)
     };
+  //   return {
+  //     sponsors: [
+  //       {
+  //         url: "https://www.eda.admin.ch/santiago",
+  //         logo:
+  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
+  //         id: 1
+  //       },
+  //       {
+  //         url: "https://um.dk/en/",
+  //         logo:
+  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
+  //         id: 2
+  //       },
+  //       {
+  //         url: "https://english.kum.dk/",
+  //         logo:
+  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
+  //         id: 3
+  //       }
+  //     ]
+  //   };
   }
 });
 </script>
