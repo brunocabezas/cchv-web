@@ -1,7 +1,8 @@
 import MockAdapter from "axios-mock-adapter"
 import { AxiosInstance } from "axios"
 import apiRoutes from "./apiRoutes"
-import homeCarouselSuccess from './mocks/home-carousel-200-get.json'
+import carouselImagesSuccess from './mocks/carousel_images-200-get.json'
+import sponsorCategoriesSuccess from './mocks/sponsors_categories-200-get.json';
 import newsSuccess from './mocks/news-200-get.json'
 
 export default (client: AxiosInstance) => {
@@ -14,7 +15,7 @@ export default (client: AxiosInstance) => {
   // arguments for reply are (status, data, headers)
   mock.onGet(apiRoutes.CarouselImages).reply(
     200,
-    homeCarouselSuccess,
+    carouselImagesSuccess,
   );
 
   mock.onGet(apiRoutes.News).reply(
@@ -27,5 +28,8 @@ export default (client: AxiosInstance) => {
     newsSuccess,
   );
 
-  mock.onGet()
+  mock.onGet(apiRoutes.Sponsors).reply(
+    200,
+    sponsorCategoriesSuccess,
+  );
 }

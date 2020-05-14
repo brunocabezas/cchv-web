@@ -61,13 +61,6 @@ const HomeCarousel = defineComponent({
     const { carousel, status, fetchCarouselImages } = useCarouselImages();
 
     fetchCarouselImages();
-    // // TODO add type def
-    // const carousel = computed<WpResponseData>(() => {
-    //   if (!asyncState.value[0]) return [];
-    //   // Displaying the first carousel only
-    //   const wpRes: WPResponseItem = asyncState.value[0];
-    //   return getCustomField(wpRes, CarouselKeys.images);
-    // });
 
     function goToNextImg() {
       if (activeImg.value === carousel.value.length - 1) {
