@@ -1,72 +1,68 @@
 <template>
-  <div class="footerSponsors">
-    <h3 class="sponsorsCategory">Category</h3>
-    <div class="sponsorsGrid">
-      <a
-        class="sponsor"
-        target="_blank"
-        :href="sponsor.url"
-        :title="sponsor.name"
-        v-for="sponsor in sponsors"
-        v-bind:style="{
-          'background-image': `url(${sponsor.logo})`,
-          height: `100px`
-        }"
-        v-bind:key="sponsor.id"
-      >
-      </a>
+  <div
+    class="footerSponsors"
+    v-bind:class="{ [`footerSponsors--loading`]: isLoading }"
+  >
+    <Loader color="white" :loading="isLoading" />
+    <div v-if="!isLoading" class="sponsorCategory">
+      <h3 class="sponsorsCategory">Category</h3>
+      <div class="sponsorsGrid">
+        <a
+          class="sponsor"
+          target="_blank"
+          :href="sponsor.url"
+          :title="sponsor.name"
+          v-for="sponsor in sponsors"
+          v-bind:style="{
+            'background-image': `url(${sponsor.logo})`,
+            height: `100px`
+          }"
+          v-bind:key="sponsor.id"
+        >
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
-import useSponsors from '@/factories/useSponsors';
-import { AsyncDataStatus } from '../../../factories/useAsyncData';
+import useSponsors from "@/factories/useSponsors";
+import { AsyncDataStatus } from "@/factories/useAsyncData";
+import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
   name: "FooterSponsors",
+  components: { Loader },
   setup() {
-    const { sponsors, fetchSponsors, status } = useSponsors();
-    
-    fetchSponsors();
+    const { sponsors, fetchSponsorsAndCategories, isLoading } = useSponsors();
 
+    fetchSponsorsAndCategories();
     return {
-      sponsors,
-      loading: computed(() => status.value === AsyncDataStatus.Loading)
+      sponsors: computed(() => {
+        console.log(sponsors.value);
+        return sponsors.value;
+      }),
+      isLoading
     };
-  //   return {
-  //     sponsors: [
-  //       {
-  //         url: "https://www.eda.admin.ch/santiago",
-  //         logo:
-  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-  //         id: 1
-  //       },
-  //       {
-  //         url: "https://um.dk/en/",
-  //         logo:
-  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-  //         id: 2
-  //       },
-  //       {
-  //         url: "https://english.kum.dk/",
-  //         logo:
-  //           "http://www.bienaldeartesmediales.cl/14/wp-content/uploads/2019/10/Unesco-01-2-300x145.png",
-  //         id: 3
-  //       }
-  //     ]
-  //   };
   }
 });
 </script>
 
 <style lang="stylus" scoped>
 .footerSponsors
+  position: relative;
+  display: flex;
   color: white;
 
+  &--loading
+    justify-content: center;
+
+    .loader
+      width: auto;
+
   .sponsorsCategory
-    font-family Montserrat
+    font-family: Montserrat;
 
   .sponsorsGrid
     display: flex;

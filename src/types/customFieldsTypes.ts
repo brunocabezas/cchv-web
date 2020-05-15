@@ -8,6 +8,7 @@ export type CustomFieldsKeys =
   | NewsKeys.date
   | NewsKeys.img
   | NewsKeys.title
+  | SponsorCategoryKeys.sponsors
 
 //
 // HOME PAGE
@@ -82,3 +83,17 @@ export interface NewsPost {
   [NewsKeys.img]: any
   [NewsKeys.id]: number
 }
+
+//
+// SPONSORS
+//
+export enum SponsorCategoryKeys {
+  sponsors = "sponsors",
+}
+// export enum SponsorKeys {
+//   id = "id",
+//   title = "title",
+//   date = "date",
+//   abstract = "abstract",
+//   img = "img",
+// }

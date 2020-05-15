@@ -1,21 +1,47 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "@/api/apiRoutes"
-import useAsyncData from '@/factories/useAsyncData'
-import { WpResponseData } from '@/types/wordpressTypes'
+import useAsyncData, { AsyncDataStatus } from "@/factories/useAsyncData"
+import { WpResponseData } from "@/types/wordpressTypes"
+import { getCustomField } from "@/utils/api"
+import { SponsorCategoryKeys } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchSponsors, status } = useAsyncData<WpResponseData>(apiRoutes.Sponsors)
+const { data: sponsors, fetch: fetchSponsors, status } = useAsyncData<
+  WpResponseData
+>(apiRoutes.Sponsors)
+const {
+  data: sponsorsCategories,
+  fetch: fetchSponsorsCategories,
+  status: sponsorCategoriesStatus,
+} = useAsyncData<WpResponseData>(apiRoutes.SponsorsCategories)
 
 export default function useSponsors() {
-  // const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
-    // return helpers.mapNewsToView(data.value)
-  // })
+  const fetchSponsorsAndCategories = () =>
+    Promise.all([fetchSponsorsCategories(), fetchSponsors()])
 
-  // function getNewsPostById (id : number) {
-    // return news.value.find(post => post.id === id);
-  // }
+  const isLoading = computed(
+    () =>
+      status.value === AsyncDataStatus.Loading ||
+      sponsorCategoriesStatus.value === AsyncDataStatus.Loading
+  )
 
-  return { fetchSponsors, sponsors: data, status: computed(() => status.value) }
+  return {
+    fetchSponsorsAndCategories,
+    sponsors: computed(() => {
+      return sponsorsCategories.value.map((cat) => {
+        const categorySponsors = getCustomField(
+          cat,
+          SponsorCategoryKeys.sponsors
+        )
+        return Object.assign({}, cat, {
+          sponsors: categorySponsors.map((sponsorId: number) =>
+            sponsors.value.find((s) => s.id === sponsorId)
+          ),
+        })
+      })
+    }),
+    isLoading,
+  }
 }
