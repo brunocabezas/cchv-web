@@ -35,7 +35,6 @@ export type Sponsor = {
 
 // SOCIAL NETWORK
 export type SocialNetwork = {
-  id: number
   [SocialNetworksKeys.url]: string
 }
 

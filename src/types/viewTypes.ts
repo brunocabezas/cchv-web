@@ -3,6 +3,7 @@ import {
   SponsorCategoryKeys,
   SponsorKeys,
   CarouselImageKeys,
+  SocialNetworksKeys,
 } from "./customFieldsKeysTypes"
 //
 // Types of entities rendered by components
@@ -55,6 +56,12 @@ declare module View {
     name: string
     [CarouselImageKeys.image]: string
     [CarouselImageKeys.url]: string
+  }
+
+  interface SocialNetwork {
+    id: number
+    name: string
+    [SocialNetworksKeys.url]: string
   }
 }
 
