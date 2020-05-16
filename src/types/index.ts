@@ -1,17 +1,20 @@
+import AppUrls from "@/utils/urls"
 
 // LAYOUT
-// export enum AboutPages {
-//   TeamPage,
-//   TransparencyPage
-// }
+export enum AboutPages {
+  TeamPage,
+  TransparencyPage,
+}
 
-// export interface Page {
-//   label: string,
-//   url: string,
-// }
+export interface SubPage {
+  label: string
+  url: AppUrls
+}
 
-// export type Pages = Page[]
+export interface Page {
+  label: string
+  url: AppUrls
+  pages?: SubPage[]
+}
 
-
-// HOME PAGE
-// export type 
+export type Pages = Page[]
