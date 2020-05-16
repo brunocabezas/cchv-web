@@ -1,6 +1,8 @@
 import Home from "@/components/Home/Home.vue"
 import NewsGrid from "@/components/News/NewsGrid/NewsGrid.vue"
 import NewsPost from "@/components/News/NewsPost/NewsPost.vue"
+import Team from "@/components/Team/Team.vue"
+import Transparency from "@/components/Transparency.vue"
 import AppUrls from "./urls"
 import VueRouter, { Route } from "vue-router"
 
@@ -11,9 +13,11 @@ const routes = [
     path: `${AppUrls.NewsPost}:postId`,
     component: NewsPost,
     props: (route: Route) => ({
-      postId: parseInt(route.params.postId, 10)
+      postId: parseInt(route.params.postId, 10),
     }),
   },
+  { path: AppUrls.AboutTeam, component: Team },
+  { path: AppUrls.AboutTransparency, component: Transparency },
 ]
 
 const router = new VueRouter({
