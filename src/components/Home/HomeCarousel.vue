@@ -43,11 +43,7 @@ import apiRoutes from "@/api/apiRoutes";
 import client from "@/api/client";
 import Loader from "@/components/Loader.vue";
 import { getCustomField } from "@/utils/api";
-import {
-  Carousel,
-  CarouselKeys,
-  CarouselImage
-} from "@/types/customFieldsTypes";
+import { Carousel, CarouselImage } from "@/types/customFieldsTypes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 import useCarouselImages from "@/factories/useCarouselImages";
 import { AsyncDataStatus } from "../../factories/useAsyncData";

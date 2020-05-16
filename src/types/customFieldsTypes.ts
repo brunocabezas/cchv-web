@@ -1,23 +1,35 @@
 // Wordpress works with custom fields to provide data
+
+import {
+  CarouselKeys,
+  NewsKeys,
+  SponsorCategoryKeys,
+  SponsorKeys,
+} from "./customFieldsKeysTypes"
+
 // Here, they are defined
-export type CustomFields = Carousel | News
-// Every custom field has a set of attributes
-export type CustomFieldsKeys =
-  | CarouselKeys.images
-  | NewsKeys.abstract
-  | NewsKeys.date
-  | NewsKeys.img
-  | NewsKeys.title
-  | SponsorCategoryKeys.sponsors
+export type CustomFields = Carousel | News | SponsorsCategory | Sponsors
 
 //
 // HOME PAGE
 //
 
-// CAROUSEL
-export enum CarouselKeys {
-  images = "images",
+// SPONSORS
+export type SponsorsCategory = {
+  id: number
+  [SponsorCategoryKeys.order]: number
+  [SponsorCategoryKeys.sponsors]: Sponsors[]
 }
+
+export type Sponsors = {
+  id: number
+  [SponsorKeys.order]: number
+  [SponsorKeys.url]: string
+  // TODO Improve type def
+  [SponsorKeys.logo]: string
+}
+
+// CAROUSEL
 export type Carousel = {
   [CarouselKeys.images]: CarouselImage[]
 }
@@ -67,14 +79,6 @@ export interface ImageSizes {
 // NEWS
 //
 export type News = NewsPost[]
-export enum NewsKeys {
-  id = "id",
-  title = "title",
-  date = "date",
-  abstract = "abstract",
-  img = "img",
-}
-
 export interface NewsPost {
   [NewsKeys.title]: string
   [NewsKeys.date]: string
@@ -83,17 +87,3 @@ export interface NewsPost {
   [NewsKeys.img]: any
   [NewsKeys.id]: number
 }
-
-//
-// SPONSORS
-//
-export enum SponsorCategoryKeys {
-  sponsors = "sponsors",
-}
-// export enum SponsorKeys {
-//   id = "id",
-//   title = "title",
-//   date = "date",
-//   abstract = "abstract",
-//   img = "img",
-// }
