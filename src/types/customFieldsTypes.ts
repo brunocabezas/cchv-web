@@ -21,19 +21,13 @@ export type CustomFieldValues =
   | NewsPost[NewsKeys.img]
   | NewsPost[NewsKeys.title]
 
-//
-// HOME PAGE
-//
-
 // SPONSORS
 export type SponsorsCategory = {
-  id: number
   [SponsorCategoryKeys.order]: number
   [SponsorCategoryKeys.sponsors]: Sponsor[]
 }
 
 export type Sponsor = {
-  id: number
   [SponsorKeys.order]: number
   [SponsorKeys.url]: string
   [SponsorKeys.logo]: string
@@ -41,14 +35,12 @@ export type Sponsor = {
 
 // SOCIAL NETWORK
 export type SocialNetwork = {
-  id: number
   [SocialNetworksKeys.url]: string
 }
 
 // CAROUSEL
 export type Carousel = CarouselImage[]
 export type CarouselImage = {
-  id: number
   [CarouselImageKeys.image]: string
   [CarouselImageKeys.url]: string
 }

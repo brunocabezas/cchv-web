@@ -1,7 +1,8 @@
 import Vue from "vue"
-import VueCompositionApi, { ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
 import apiRoutes from "@/api/apiRoutes"
 import client from "@/api/client"
+import { HasDefined } from "@vue/composition-api/dist/types/basic"
 
 Vue.use(VueCompositionApi)
 
@@ -10,6 +11,14 @@ export enum AsyncDataStatus {
   Loading,
   Success,
   Error,
+}
+
+// TODO type async data
+interface asyncData<T> {
+  status: Readonly<Ref<AsyncDataStatus>>
+  isLoading: Readonly<Ref<Boolean>>
+  fetch: () => void
+  data: Ref<HasDefined<T>>
 }
 
 const status = ref(AsyncDataStatus.Initial)
@@ -23,8 +32,8 @@ export default function useAsyncData<T>(url: apiRoutes) {
       status.value = AsyncDataStatus.Loading
       client
         .get(url)
-        .then((t) => {
-          data.value = t.data
+        .then((res) => {
+          data.value = res.data
           status.value = AsyncDataStatus.Success
         })
         .catch((err) => {
@@ -33,9 +42,14 @@ export default function useAsyncData<T>(url: apiRoutes) {
     }
   }
 
+  const isLoading = computed(() => {
+    return status.value === AsyncDataStatus.Loading
+  })
+
   return {
     status: computed(() => status.value),
     data,
     fetch,
+    isLoading,
   }
 }

@@ -9,12 +9,7 @@
       <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
     <div class="newsGrid__grid">
-      <NewsThumb
-        small
-        :post="post"
-        v-bind:key="post.id"
-        v-for="post in news"
-      />
+      <NewsThumb small :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>
 </template>
@@ -30,7 +25,7 @@ export default defineComponent({
   components: { NewsThumb, Loader },
   setup(props) {
     const { news, fetchNews, status } = useNews();
-    
+
     fetchNews();
 
     return {
@@ -41,7 +36,7 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="stylus">
-@import '../../../styles/variables.styl';
+@import '../../styles/variables.styl';
 
 .newsGrid
   &__topGrid, &__grid
