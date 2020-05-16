@@ -2,7 +2,7 @@
   <div class="page transparencyPage">
     <div class="pageTitle">
       <h1 class="pageTitleText">
-        Transparencia
+        Transparencia.
       </h1>
     </div>
     <div class="pageRow">

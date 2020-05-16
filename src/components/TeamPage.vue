@@ -1,12 +1,12 @@
 <template>
   <div class="page">
     <div class="pageTitle">
-      <h1 class="pageTitleText">Equipo</h1>
+      <h1 class="pageTitleText">Equipo.</h1>
     </div>
     <Loader :loading="isLoading" />
     <div v-if="!isLoading" class="team">
       <div v-bind:key="person.id" v-for="person in team" class="teamMember">
-        <h3 class="position">{{ person.position }}</h3>
+        <span class="position">{{ person.position }}</span>
         <p class="name">{{ person.name }}</p>
       </div>
     </div>
@@ -40,12 +40,15 @@ export default defineComponent({
 
   .teamMember
     width: 50%;
-    padding: 1em;
+    padding: 1em 0;
+    font-size: 20px;
 
     .position
       color: $blue;
       margin-top: 0;
+      font-weight: bold;
 
     .name
+      margin-top: 10px;
       font-style: italic;
 </style>
