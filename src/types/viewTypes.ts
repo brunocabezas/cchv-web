@@ -1,4 +1,9 @@
-import { NewsKeys } from "./customFieldsKeysTypes"
+import {
+  NewsKeys,
+  SponsorCategoryKeys,
+  SponsorKeys,
+  CarouselImageKeys,
+} from "./customFieldsKeysTypes"
 //
 // Types of entities rendered by components
 // In most cases, entities used by components should rely
@@ -12,13 +17,44 @@ import { NewsKeys } from "./customFieldsKeysTypes"
 // They must be used when building the corresponding custom field here,
 // unless none of the custom field keys/attributes makes sense in the view layer
 declare module View {
+  // Arrays
   type News = NewsPost[]
+  type Team = TeamMember[]
+  type Carousel = CarouselImage[]
+
   interface NewsPost {
     [NewsKeys.title]: string
     [NewsKeys.abstract]: string
     [NewsKeys.date]: string
     imageUrl: string
     id: number
+  }
+
+  interface TeamMember {
+    position: string
+    name: string
+    id: number
+  }
+
+  interface SponsorsCategory {
+    name: string
+    id: number
+    [SponsorCategoryKeys.order]: number
+    [SponsorCategoryKeys.sponsors]: Sponsor[]
+  }
+
+  interface Sponsor {
+    id: number
+    [SponsorKeys.order]: number
+    [SponsorKeys.url]: string
+    [SponsorKeys.logo]: string
+  }
+
+  interface CarouselImage {
+    id: number
+    name: string
+    [CarouselImageKeys.image]: string
+    [CarouselImageKeys.url]: string
   }
 }
 

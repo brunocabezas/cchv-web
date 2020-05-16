@@ -18,6 +18,7 @@ export type CustomFieldsKeys =
   | SponsorKeys.logo
   | SponsorKeys.url
   | SocialNetworksKeys.url
+  | TeamMembersKeys.position
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -52,4 +53,9 @@ export enum SponsorKeys {
 // SOCIAL NETWORKS
 export enum SocialNetworksKeys {
   url = "url",
+}
+
+// TEAM MEMBERS
+export enum TeamMembersKeys {
+  position = "position",
 }
