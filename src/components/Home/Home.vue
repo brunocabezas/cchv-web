@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import HomeCarousel from "./HomeCarousel.vue";
+import HomeCarousel from "@/components/Home/HomeCarousel/HomeCarousel.vue";
 import HomeNews from "./HomeNews.vue";
 
 export default defineComponent({
@@ -37,7 +37,7 @@ export default defineComponent({
 
 .homeSection
   padding: $home_padding;
-  position relative
+  position: relative;
 
   &__title
     color: $blue;
