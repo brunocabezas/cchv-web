@@ -13,7 +13,7 @@ const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
   WpResponseData
 >(apiRoutes.Team)
 
-export default function useNews() {
+export default function useTeamMembers() {
   const team = computed<View.Team>(() => {
     return data.value.map((teamMemberPost) => ({
       id: teamMemberPost.id,

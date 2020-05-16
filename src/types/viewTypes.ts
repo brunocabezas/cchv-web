@@ -4,6 +4,7 @@ import {
   SponsorKeys,
   CarouselImageKeys,
   SocialNetworksKeys,
+  DocumentKeys,
 } from "./customFieldsKeysTypes"
 //
 // Types of entities rendered by components
@@ -62,6 +63,12 @@ declare module View {
     id: number
     name: string
     [SocialNetworksKeys.url]: string
+  }
+
+  interface Document {
+    id: number
+    name: string
+    [DocumentKeys.link]: string
   }
 }
 
