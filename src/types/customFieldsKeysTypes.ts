@@ -2,6 +2,8 @@
 // customFieldsKeysTypes declares the keys or attributes used by
 // the custom fields provided by the API
 
+// Only custom fields keys are declared here
+
 // All custom fields attributes together
 export type CustomFieldsKeys =
   | CarouselKeys.images
@@ -14,6 +16,7 @@ export type CustomFieldsKeys =
   | SponsorKeys.order
   | SponsorKeys.logo
   | SponsorKeys.url
+  | SocialNetworksKeys.url
 
 // CAROUSEL
 export enum CarouselKeys {
@@ -41,5 +44,10 @@ export enum SponsorCategoryKeys {
 export enum SponsorKeys {
   order = "order",
   logo = "logo",
+  url = "url",
+}
+
+// SOCIAL NETWORKS
+export enum SocialNetworksKeys {
   url = "url",
 }

@@ -5,10 +5,16 @@ import {
   NewsKeys,
   SponsorCategoryKeys,
   SponsorKeys,
+  SocialNetworksKeys,
 } from "./customFieldsKeysTypes"
 
 // Here, they are defined
-export type CustomFields = Carousel | News | SponsorsCategory | Sponsors
+export type CustomFields =
+  | Carousel
+  | News
+  | SponsorsCategory
+  | Sponsor
+  | SocialNetwork
 
 //
 // HOME PAGE
@@ -18,15 +24,21 @@ export type CustomFields = Carousel | News | SponsorsCategory | Sponsors
 export type SponsorsCategory = {
   id: number
   [SponsorCategoryKeys.order]: number
-  [SponsorCategoryKeys.sponsors]: Sponsors[]
+  [SponsorCategoryKeys.sponsors]: Sponsor[]
 }
 
-export type Sponsors = {
+export type Sponsor = {
   id: number
   [SponsorKeys.order]: number
   [SponsorKeys.url]: string
   // TODO Improve type def
   [SponsorKeys.logo]: string
+}
+
+// SOCIAL NETWORK
+export type SocialNetwork = {
+  id: number
+  [SocialNetworksKeys.url]: string
 }
 
 // CAROUSEL

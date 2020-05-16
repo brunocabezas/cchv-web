@@ -1,21 +1,34 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "@/api/apiRoutes"
-import useAsyncData from '@/factories/useAsyncData'
-import { WpResponseData } from '@/types/wordpressTypes'
+import useAsyncData, { AsyncDataStatus } from "@/factories/useAsyncData"
+import { WpResponseData } from "@/types/wordpressTypes"
+import { getCustomField, getWPTitle } from "@/utils/api"
+import { SocialNetwork } from "@/types/customFieldsTypes"
+import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchSocialNetworks, status } = useAsyncData<WpResponseData>(apiRoutes.SocialNetworks)
+const { data, fetch: fetchSocialNetworks, status } = useAsyncData<
+  WpResponseData
+>(apiRoutes.SocialNetworks)
 
 export default function useSocialNetworks() {
-  // const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
-    // return helpers.mapNewsToView(data.value)
-  // })
+  const isLoading = computed(() => status.value === AsyncDataStatus.Loading)
 
-  // function getNewsPostById (id : number) {
-    // return news.value.find(post => post.id === id);
-  // }
+  const socialNetworks: Readonly<Ref<readonly SocialNetwork[]>> = computed(
+    () => {
+      return data.value.map((socialNetwork) => ({
+        id: socialNetwork.id,
+        name: getWPTitle(socialNetwork),
+        url: getCustomField(socialNetwork, SocialNetworksKeys.url),
+      }))
+    }
+  )
 
-  return { fetchSocialNetworks, sponsors: data, status: computed(() => status.value) }
+  return {
+    fetchSocialNetworks,
+    socialNetworks,
+    isLoading,
+  }
 }
