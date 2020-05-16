@@ -65,32 +65,32 @@ export default defineComponent({
 });
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../../../styles/variables.styl';
+
+.headerNavItem
+  display: flex;
+  align-items: center;
+  padding: 0;
+  position: relative;
+
+  a
+    display: flex;
+    box-sizing: border-box;
+    height: $header_height;
+    align-items: center;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    transition: all 0.2s;
+
+    &:hover
+      background-color: $grey;
 
 .headerNav
   display: flex;
   justify-content: flex-end;
   flex: 1;
-
-  .headerNavItem
-    display: flex;
-    align-items: center;
-    padding: 0;
-    position: relative;
-
-    a
-      display: flex;
-      box-sizing: border-box;
-      height: $header_height;
-      align-items: center;
-      font-family: Montserrat;
-      text-transform: uppercase;
-      padding: 1em 2em;
-      transition: all 0.2s;
-
-      &:hover
-        background-color: $grey;
 
   .headerNavItemSubLevel
     position: absolute;
@@ -105,7 +105,7 @@ export default defineComponent({
       text-transform: uppercase;
 
       &:hover
-        background-color darken($grey,3)
+        background-color: darken($grey, 3);
 
       a
         height: auto;

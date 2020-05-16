@@ -2,6 +2,11 @@
   <div class="header">
     <Logo />
     <HeaderNav />
+    <div class="headerNavItem">
+      <a :href="youtubeChannelUrl" target="_blank" rel="noopener noreferrer">
+        CCHV TV</a
+      >
+    </div>
   </div>
 </template>
 
@@ -9,10 +14,14 @@
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
 import Logo from "@/components/Logo.vue";
 import { defineComponent } from "@vue/composition-api";
+import { YOUTUBE_CHANNEL } from "../../../utils/static";
 
 const Header = defineComponent({
   name: "Header",
-  components: { Logo, HeaderNav }
+  components: { Logo, HeaderNav },
+  setup() {
+    return { youtubeChannelUrl: YOUTUBE_CHANNEL };
+  }
 });
 
 export default Header;
