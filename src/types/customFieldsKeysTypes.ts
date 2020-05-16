@@ -63,5 +63,5 @@ export enum TeamMembersKeys {
 
 // TEAM MEMBERS
 export enum DocumentKeys {
-  link = "position",
+  link = "url",
 }

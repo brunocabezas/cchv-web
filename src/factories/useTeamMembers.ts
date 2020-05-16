@@ -15,11 +15,13 @@ const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
 
 export default function useTeamMembers() {
   const team = computed<View.Team>(() => {
-    return data.value.map((teamMemberPost) => ({
-      id: teamMemberPost.id,
-      name: getWPTitle(teamMemberPost),
-      position: getCustomField(teamMemberPost, TeamMembersKeys.position),
-    }))
+    return data.value.map(
+      (teamMemberPost): View.TeamMember => ({
+        id: teamMemberPost.id,
+        name: getWPTitle(teamMemberPost),
+        position: getCustomField(teamMemberPost, TeamMembersKeys.position),
+      })
+    )
   })
 
   return {

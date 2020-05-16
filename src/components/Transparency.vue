@@ -1,30 +1,39 @@
 <template>
-  <div>Transparency</div>
+  <div class="page">
+    <div class="pageTitle">
+      <h1 class="pageTitleText">
+        Transparencia
+      </h1>
+    </div>
+    <div class="pageRow">
+      <div class="pageLeft">left text</div>
+      <div class="pageRight">
+        <ul>
+          <li v-for="doc in documents" v-bind:key="doc.id">
+            <a :title="`Descargar ${doc.name}`" :href="doc.url"
+              >{{ doc.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import View from "@/types/viewTypes";
-import AppUrls from "@/utils/urls";
+import useDouseDocuments from "@/factories/useDocuments";
+import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
-  // props: {
-  //   small: {
-  //     type: Boolean,
-  //     default: false
-  //   },
-  //   post: {
-  //     default: {}
-  //   }
-  // },
-  name: "Transparency"
-  // setup() {
-  //   function getNewsPostUrl(postId: number) {
-  //     return `${AppUrls.NewsPost}${postId}`;
-  //   }
+  name: "Transparency",
+  components: { Loader },
+  setup() {
+    const { isLoading, documents, fetchDocuments } = useDouseDocuments();
 
-  //   return { getNewsPostUrl };
-  // }
+    fetchDocuments();
+    return { documents, isLoading };
+  }
 });
 </script>
 <style scoped lang="stylus">

@@ -15,11 +15,13 @@ const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WpResponseData>(
 
 export default function useTransparencyDocuments() {
   const documents = computed<View.Document[]>(() => {
-    return data.value.map((documentPost) => ({
-      id: documentPost.id,
-      name: getWPTitle(documentPost),
-      [DocumentKeys.link]: getCustomField(documentPost, DocumentKeys.link),
-    }))
+    return data.value.map(
+      (documentPost): View.Document => ({
+        id: documentPost.id,
+        name: getWPTitle(documentPost),
+        [DocumentKeys.link]: getCustomField(documentPost, DocumentKeys.link),
+      })
+    )
   })
 
   return {
