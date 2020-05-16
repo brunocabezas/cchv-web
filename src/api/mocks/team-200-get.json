@@ -1,0 +1,134 @@
+[
+  {
+    "id": 71,
+    "date": "2020-05-16T16:54:37",
+    "date_gmt": "2020-05-16T20:54:37",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=team_member&#038;p=71"
+    },
+    "modified": "2020-05-16T16:54:37",
+    "modified_gmt": "2020-05-16T20:54:37",
+    "slug": "enrique-rivera",
+    "status": "publish",
+    "type": "team_member",
+    "link": "http:\/\/www.cchv.cl\/futuro\/team_member\/enrique-rivera\/",
+    "title": {
+      "rendered": "Enrique rivera"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Direcicon General"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/71"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=71"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=71"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 70,
+    "date": "2020-05-16T16:53:24",
+    "date_gmt": "2020-05-16T20:53:24",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=team_member&#038;p=70"
+    },
+    "modified": "2020-05-16T16:53:24",
+    "modified_gmt": "2020-05-16T20:53:24",
+    "slug": "francisca-gabler",
+    "status": "publish",
+    "type": "team_member",
+    "link": "http:\/\/www.cchv.cl\/futuro\/team_member\/francisca-gabler\/",
+    "title": {
+      "rendered": "Francisca Gabler"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Comunicaciones"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/70"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=70"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=70"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
