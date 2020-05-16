@@ -20,7 +20,7 @@ import useTeamMembers from "@/factories/useTeamMembers";
 import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
-  name: "Team",
+  name: "TeamPage",
   components: { Loader },
   setup() {
     const { isLoading, team, fetchTeamMembers } = useTeamMembers();
