@@ -6,8 +6,8 @@
         ><v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
     </div>
-    <Loader v-if="loading" />
-    <div v-if="!loading" class="newsList">
+    <Loader v-if="isLoading" />
+    <div v-if="!isLoading" class="newsList">
       <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>

@@ -5,16 +5,20 @@ import dayjs from "dayjs"
 import View from "@/types/viewTypes"
 import { DATE_FORMAT } from "./static"
 
-const mapNewsToView = (state: WpResponseData): View.News =>
-  state.map((newsPost) => ({
-    [NewsKeys.title]: getWPTitle(newsPost),
-    [NewsKeys.abstract]: getCustomField(newsPost, NewsKeys.abstract),
-    [NewsKeys.date]: dayjs(getCustomField(newsPost, NewsKeys.date)).format(
-      DATE_FORMAT
-    ),
-    imageUrl: getCustomField(newsPost, NewsKeys.img)[0].url,
-    id: newsPost.id,
-  }))
+const mapNewsToView = (state: WpResponseData): View.NewsPost[] =>
+  state.map(
+    (newsPost): View.NewsPost => {
+      return {
+        id: newsPost.id,
+        title: getWPTitle(newsPost),
+        [NewsKeys.abstract]: getCustomField(newsPost, NewsKeys.abstract),
+        [NewsKeys.text]: getCustomField(newsPost, NewsKeys.text),
+        [NewsKeys.gallery]: getCustomField(newsPost, NewsKeys.gallery),
+        [NewsKeys.related]: getCustomField(newsPost, NewsKeys.related),
+        [NewsKeys.video_url]: getCustomField(newsPost, NewsKeys.video_url),
+      }
+    }
+  )
 
 export default {
   mapNewsToView,

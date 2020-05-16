@@ -9,9 +9,10 @@ export type CustomFieldsKeys =
   | CarouselImageKeys.image
   | CarouselImageKeys.url
   | NewsKeys.abstract
-  | NewsKeys.date
-  | NewsKeys.img
-  | NewsKeys.title
+  | NewsKeys.related
+  | NewsKeys.text
+  | NewsKeys.video_url
+  | NewsKeys.gallery
   | SponsorCategoryKeys.order
   | SponsorCategoryKeys.sponsors
   | SponsorKeys.order
@@ -31,11 +32,11 @@ export enum CarouselImageKeys {
 // NEWS
 //
 export enum NewsKeys {
-  id = "id",
-  title = "title",
-  date = "date",
+  video_url = "video_url",
+  text = "text",
+  gallery = "gallery",
   abstract = "abstract",
-  img = "img",
+  related = "related",
 }
 
 //

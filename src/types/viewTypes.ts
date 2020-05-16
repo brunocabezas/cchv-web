@@ -25,11 +25,13 @@ declare module View {
   type Carousel = CarouselImage[]
 
   interface NewsPost {
-    [NewsKeys.title]: string
-    [NewsKeys.abstract]: string
-    [NewsKeys.date]: string
-    imageUrl: string
     id: number
+    title: string
+    [NewsKeys.abstract]: string
+    [NewsKeys.text]: string
+    [NewsKeys.gallery]: any
+    [NewsKeys.related]: any
+    [NewsKeys.video_url]: string
   }
 
   interface TeamMember {

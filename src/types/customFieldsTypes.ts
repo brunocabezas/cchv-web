@@ -17,9 +17,7 @@ export type CustomFields =
 // TODO improve this type, should gather of custom fields
 export type CustomFieldValues =
   // | Carousel[CarouselImageKeys.image]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.img]
-  | NewsPost[NewsKeys.title]
+  NewsPost[NewsKeys.abstract]
 
 // SPONSORS
 export type SponsorsCategory = {
@@ -65,10 +63,9 @@ export interface ImageSizes {
 //
 export type News = NewsPost[]
 export interface NewsPost {
-  [NewsKeys.title]: string
-  [NewsKeys.date]: string
   [NewsKeys.abstract]: string
-  // TODO improve type def
-  [NewsKeys.img]: any
-  [NewsKeys.id]: number
+  [NewsKeys.text]: string
+  [NewsKeys.related]: any
+  [NewsKeys.video_url]: string
+  [NewsKeys.gallery]: any
 }

@@ -8,12 +8,12 @@ import { WpResponseData } from "@/types/wordpressTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchNews, status } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
   apiRoutes.HomeNews
 )
 
 export default function useNews() {
-  const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
+  const news = computed<View.News>(() => {
     return helpers.mapNewsToView(data.value)
   })
 
@@ -25,6 +25,6 @@ export default function useNews() {
     fetchNews,
     news,
     getNewsPostById,
-    status: computed(() => status.value),
+    isLoading: computed(() => isLoading.value),
   }
 }
