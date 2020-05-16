@@ -6,14 +6,14 @@ import View from "@/types/viewTypes"
 import { DATE_FORMAT } from "./static"
 
 const mapNewsToView = (state: WpResponseData): View.News =>
-  state.map((item) => ({
-    [NewsKeys.title]: getWPTitle(item),
-    [NewsKeys.abstract]: getCustomField(item, NewsKeys.abstract),
-    [NewsKeys.date]: dayjs(getCustomField(item, NewsKeys.date)).format(
+  state.map((newsPost) => ({
+    [NewsKeys.title]: getWPTitle(newsPost),
+    [NewsKeys.abstract]: getCustomField(newsPost, NewsKeys.abstract),
+    [NewsKeys.date]: dayjs(getCustomField(newsPost, NewsKeys.date)).format(
       DATE_FORMAT
     ),
-    imageUrl: getCustomField(item, NewsKeys.img)[0].url,
-    id: item.id,
+    imageUrl: getCustomField(newsPost, NewsKeys.img)[0].url,
+    id: newsPost.id,
   }))
 
 export default {

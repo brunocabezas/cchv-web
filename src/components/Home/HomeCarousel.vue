@@ -7,9 +7,10 @@
       :navigate-to="activeImg"
       :perPage="1"
     >
-      <slide v-bind:key="img.ID" v-for="img in carousel">
-        <img v-bind:key="img.ID" :src="img.url" />
-
+      <slide v-bind:key="img.id" v-for="img in carousel">
+        <a :title="img.name" target="_blank" :href="img.url">
+          <img v-bind:key="img.id" :src="img.image" />
+        </a>
         <button
           v-if="carousel.length > 1"
           title="Imagen anterior"
@@ -46,7 +47,6 @@ import { getCustomField } from "@/utils/api";
 import { Carousel, CarouselImage } from "@/types/customFieldsTypes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 import useCarouselImages from "@/factories/useCarouselImages";
-import { AsyncDataStatus } from "../../factories/useAsyncData";
 const initialState: WpResponseData = [];
 
 const HomeCarousel = defineComponent({
@@ -54,7 +54,7 @@ const HomeCarousel = defineComponent({
   components: { Loader, VueCarousel, Slide, "v-icon": Icon },
   setup() {
     const activeImg = ref(0);
-    const { carousel, status, fetchCarouselImages } = useCarouselImages();
+    const { carousel, fetchCarouselImages, isLoading } = useCarouselImages();
 
     fetchCarouselImages();
 
@@ -75,7 +75,7 @@ const HomeCarousel = defineComponent({
     }
 
     return {
-      isLoading: computed(() => status.value === AsyncDataStatus.Loading),
+      isLoading,
       carousel,
       activeImg,
       goToNextImg,

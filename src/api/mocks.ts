@@ -3,6 +3,7 @@ import { AxiosInstance } from "axios"
 import apiRoutes from "./apiRoutes"
 import carouselImagesSuccess from "./mocks/carousel_images-200-get.json"
 import sponsorCategoriesSuccess from "./mocks/sponsors_categories-200-get.json"
+import sponsorsSuccess from "./mocks/sponsors-200-get.json"
 import socialNetorksSuccess from "./mocks/social_networks-200-get.json"
 import newsSuccess from "./mocks/news-200-get.json"
 
@@ -16,11 +17,13 @@ export default (client: AxiosInstance) => {
   // arguments for reply are (status, data, headers)
   mock.onGet(apiRoutes.CarouselImages).reply(200, carouselImagesSuccess)
 
+  // Same reponse for now
   mock.onGet(apiRoutes.News).reply(200, newsSuccess)
-
   mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
 
-  mock.onGet(apiRoutes.Sponsors).reply(200, sponsorCategoriesSuccess)
+  mock.onGet(apiRoutes.SponsorsCategories).reply(200, sponsorCategoriesSuccess)
+
+  mock.onGet(apiRoutes.Sponsors).reply(200, sponsorsSuccess)
 
   mock.onGet(apiRoutes.SocialNetworks).reply(200, socialNetorksSuccess)
 }

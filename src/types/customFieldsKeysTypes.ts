@@ -6,7 +6,8 @@
 
 // All custom fields attributes together
 export type CustomFieldsKeys =
-  | CarouselKeys.images
+  | CarouselImageKeys.image
+  | CarouselImageKeys.url
   | NewsKeys.abstract
   | NewsKeys.date
   | NewsKeys.img
@@ -19,8 +20,9 @@ export type CustomFieldsKeys =
   | SocialNetworksKeys.url
 
 // CAROUSEL
-export enum CarouselKeys {
-  images = "images",
+export enum CarouselImageKeys {
+  image = "image",
+  url = "url",
 }
 
 //

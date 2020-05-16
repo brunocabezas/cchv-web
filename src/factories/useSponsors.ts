@@ -35,12 +35,18 @@ export default function useSponsors() {
   const categories: Readonly<Ref<readonly SponsorsCategory[]>> = computed(
     () => {
       return sponsorsCategories.value
-        .map((cat) => {
-          const sponsorsIds = getCustomField(cat, SponsorCategoryKeys.sponsors)
+        .map((sponsorCategoryPost) => {
+          const sponsorsIds = getCustomField(
+            sponsorCategoryPost,
+            SponsorCategoryKeys.sponsors
+          )
           return {
-            id: cat.id,
-            name: getWPTitle(cat),
-            order: getCustomField(cat, SponsorCategoryKeys.order),
+            id: sponsorCategoryPost.id,
+            name: getWPTitle(sponsorCategoryPost),
+            order: getCustomField(
+              sponsorCategoryPost,
+              SponsorCategoryKeys.order
+            ),
             sponsors: sponsorsIds
               .filter((sponsorId: number) =>
                 sponsors.value.find((s) => s.id === sponsorId)

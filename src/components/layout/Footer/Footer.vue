@@ -23,6 +23,17 @@
           Redes Sociales
         </h3>
         <Loader size="15px" :loading="isLoading" />
+        <ul v-if="!isLoading">
+          <li
+            class="footerListItem"
+            v-bind:key="sn.name"
+            v-for="sn in socialNetworks"
+          >
+            <a target="_blank" :title="sn.name" :href="sn.url">
+              {{ sn.name }}
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="footerTopSection">
         <h3 class="footerTitle">

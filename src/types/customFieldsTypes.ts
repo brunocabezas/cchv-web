@@ -1,20 +1,25 @@
 // Wordpress works with custom fields to provide data
-
 import {
-  CarouselKeys,
+  CarouselImageKeys,
   NewsKeys,
   SponsorCategoryKeys,
   SponsorKeys,
   SocialNetworksKeys,
 } from "./customFieldsKeysTypes"
 
-// Here, they are defined
 export type CustomFields =
   | Carousel
   | News
   | SponsorsCategory
   | Sponsor
   | SocialNetwork
+
+// TODO improve this type, should gather of custom fields
+export type CustomFieldValues =
+  // | Carousel[CarouselImageKeys.image]
+  | NewsPost[NewsKeys.abstract]
+  | NewsPost[NewsKeys.img]
+  | NewsPost[NewsKeys.title]
 
 //
 // HOME PAGE
@@ -31,7 +36,6 @@ export type Sponsor = {
   id: number
   [SponsorKeys.order]: number
   [SponsorKeys.url]: string
-  // TODO Improve type def
   [SponsorKeys.logo]: string
 }
 
@@ -42,34 +46,11 @@ export type SocialNetwork = {
 }
 
 // CAROUSEL
-export type Carousel = {
-  [CarouselKeys.images]: CarouselImage[]
-}
-export type CustomFieldValues =
-  | Carousel[CarouselKeys.images]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.img]
-  | NewsPost[NewsKeys.title]
-
-export interface CarouselImage {
-  ID: number
+export type Carousel = CarouselImage[]
+export type CarouselImage = {
   id: number
-  title: string
-  filename: string
-  url: string
-  alt: string
-  author: string
-  description: string
-  caption: string
-  name: string
-  date: string
-  modified: string
-  mime_type: string
-  type: string
-  icon: string
-  width: number
-  height: number
-  sizes: ImageSizes
+  [CarouselImageKeys.image]: string
+  [CarouselImageKeys.url]: string
 }
 
 export interface ImageSizes {

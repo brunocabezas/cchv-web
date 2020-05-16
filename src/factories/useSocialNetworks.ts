@@ -18,10 +18,10 @@ export default function useSocialNetworks() {
 
   const socialNetworks: Readonly<Ref<readonly SocialNetwork[]>> = computed(
     () => {
-      return data.value.map((socialNetwork) => ({
-        id: socialNetwork.id,
-        name: getWPTitle(socialNetwork),
-        url: getCustomField(socialNetwork, SocialNetworksKeys.url),
+      return data.value.map((socialNetworkPost) => ({
+        id: socialNetworkPost.id,
+        name: getWPTitle(socialNetworkPost),
+        url: getCustomField(socialNetworkPost, SocialNetworksKeys.url),
       }))
     }
   )
