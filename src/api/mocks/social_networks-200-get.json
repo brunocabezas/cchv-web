@@ -1,0 +1,68 @@
+[
+  {
+    "id": 14,
+    "date": "2020-05-13T01:10:42",
+    "date_gmt": "2020-05-13T05:10:42",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=social_network&#038;p=14"
+    },
+    "modified": "2020-05-13T01:10:42",
+    "modified_gmt": "2020-05-13T05:10:42",
+    "slug": "facebook",
+    "status": "publish",
+    "type": "social_network",
+    "link": "http:\/\/www.cchv.cl\/futuro\/social_network\/facebook\/",
+    "title": {
+      "rendered": "Facebook"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": "https:\/\/web.facebook.com\/corporacionchilenadevideo\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/social_networks\/14"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/social_networks"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/social_network"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=14"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=14"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "id": 56,
+    "date": "2020-05-13T23:01:50",
+    "date_gmt": "2020-05-14T03:01:50",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=sponsor_category&#038;p=56"
+    },
+    "modified": "2020-05-13T23:02:23",
+    "modified_gmt": "2020-05-14T03:02:23",
+    "slug": "56-2",
+    "status": "publish",
+    "type": "sponsor_category",
+    "link": "http:\/\/www.cchv.cl\/futuro\/sponsor_category\/56-2\/",
+    "title": {
+      "rendered": "Categoria de prueba"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "order": "-1",
+      "sponsors": [49]
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsor_categories\/56"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsor_categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor_category"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=56"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=56"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

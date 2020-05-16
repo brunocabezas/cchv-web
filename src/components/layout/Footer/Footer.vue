@@ -18,17 +18,20 @@
           </li>
         </ul>
       </div>
-      <div class="footerTopSection">
+      <div class="footerTopSection socialNetworks">
         <h3 class="footerTitle">
           Redes Sociales
         </h3>
-        <ul>
+        <Loader size="15px" :loading="isLoading" />
+        <ul v-if="!isLoading">
           <li
             class="footerListItem"
             v-bind:key="sn.name"
             v-for="sn in socialNetworks"
           >
-            {{ sn.label }}
+            <a target="_blank" :title="sn.name" :href="sn.url">
+              {{ sn.name }}
+            </a>
           </li>
         </ul>
       </div>
@@ -36,7 +39,7 @@
         <h3 class="footerTitle">
           Newsletter
         </h3>
-        <FooterSubscribeForm/>
+        <FooterSubscribeForm />
       </div>
     </div>
     <FooterSponsors />
@@ -47,15 +50,23 @@
 import { defineComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import FooterSubscribeForm from "@/components/layout/Footer/FooterSubscribeForm.vue";
-import { SOCIAL_NETWORKS, CONTACT_EMAIL } from "@/utils/static";
+import Loader from "@/components/Loader.vue";
+import { CONTACT_EMAIL } from "@/utils/static";
+import useSocialNetworks from "@/factories/useSocialNetworks";
 
 export default defineComponent({
   name: "Footer",
-  components: { FooterSponsors, FooterSubscribeForm },
+  components: { FooterSponsors, FooterSubscribeForm, Loader },
   setup(props) {
-    const socialNetworks = SOCIAL_NETWORKS;
+    const {
+      fetchSocialNetworks,
+      socialNetworks,
+      isLoading
+    } = useSocialNetworks();
 
-    return { socialNetworks, contactEmail: CONTACT_EMAIL };
+    fetchSocialNetworks();
+
+    return { socialNetworks, contactEmail: CONTACT_EMAIL, isLoading };
   }
 });
 </script>

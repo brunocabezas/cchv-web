@@ -1,50 +1,56 @@
 // Wordpress works with custom fields to provide data
-// Here, they are defined
-export type CustomFields = Carousel | News
-// Every custom field has a set of attributes
-export type CustomFieldsKeys =
-  | CarouselKeys.images
-  | NewsKeys.abstract
-  | NewsKeys.date
-  | NewsKeys.img
-  | NewsKeys.title
+import {
+  CarouselImageKeys,
+  NewsKeys,
+  SponsorCategoryKeys,
+  SponsorKeys,
+  SocialNetworksKeys,
+} from "./customFieldsKeysTypes"
+
+export type CustomFields =
+  | Carousel
+  | News
+  | SponsorsCategory
+  | Sponsor
+  | SocialNetwork
+
+// TODO improve this type, should gather of custom fields
+export type CustomFieldValues =
+  // | Carousel[CarouselImageKeys.image]
+  | NewsPost[NewsKeys.abstract]
+  | NewsPost[NewsKeys.img]
+  | NewsPost[NewsKeys.title]
 
 //
 // HOME PAGE
 //
 
-// CAROUSEL
-export enum CarouselKeys {
-  images = "images",
-}
-export type Carousel = {
-  [CarouselKeys.images]: CarouselImage[]
-}
-export type CustomFieldValues =
-  | Carousel[CarouselKeys.images]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.img]
-  | NewsPost[NewsKeys.title]
-
-export interface CarouselImage {
-  ID: number
+// SPONSORS
+export type SponsorsCategory = {
   id: number
-  title: string
-  filename: string
-  url: string
-  alt: string
-  author: string
-  description: string
-  caption: string
-  name: string
-  date: string
-  modified: string
-  mime_type: string
-  type: string
-  icon: string
-  width: number
-  height: number
-  sizes: ImageSizes
+  [SponsorCategoryKeys.order]: number
+  [SponsorCategoryKeys.sponsors]: Sponsor[]
+}
+
+export type Sponsor = {
+  id: number
+  [SponsorKeys.order]: number
+  [SponsorKeys.url]: string
+  [SponsorKeys.logo]: string
+}
+
+// SOCIAL NETWORK
+export type SocialNetwork = {
+  id: number
+  [SocialNetworksKeys.url]: string
+}
+
+// CAROUSEL
+export type Carousel = CarouselImage[]
+export type CarouselImage = {
+  id: number
+  [CarouselImageKeys.image]: string
+  [CarouselImageKeys.url]: string
 }
 
 export interface ImageSizes {
@@ -66,14 +72,6 @@ export interface ImageSizes {
 // NEWS
 //
 export type News = NewsPost[]
-export enum NewsKeys {
-  id = "id",
-  title = "title",
-  date = "date",
-  abstract = "abstract",
-  img = "img",
-}
-
 export interface NewsPost {
   [NewsKeys.title]: string
   [NewsKeys.date]: string

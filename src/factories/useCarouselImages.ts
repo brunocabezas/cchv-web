@@ -1,25 +1,29 @@
 import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
+import VueCompositionApi, { computed, Ref } from "@vue/composition-api"
 import apiRoutes from "@/api/apiRoutes"
-import useAsyncData from './useAsyncData'
-import { WpResponseData, WPResponseItem } from '@/types/wordpressTypes'
-import { getCustomField } from '@/utils/api'
-import { CarouselKeys } from '@/types/customFieldsTypes'
+import useAsyncData, { AsyncDataStatus } from "./useAsyncData"
+import { WpResponseData } from "@/types/wordpressTypes"
+import { getCustomField, getWPTitle } from "@/utils/api"
+import { CarouselImage } from "@/types/customFieldsTypes"
+import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchCarouselImages, status } = useAsyncData<WpResponseData>(apiRoutes.CarouselImages)
+const { data, fetch: fetchCarouselImages, status } = useAsyncData<
+  WpResponseData
+>(apiRoutes.CarouselImages)
 
 export default function useCarouselImages() {
-  
-  // TODO update
-  const carousel = computed<WpResponseData>(() => {
-    if (!data.value[0]) return [];
-    // Displaying the first carousel only
-    const wpRes: WPResponseItem = data.value[0];
-    return getCustomField(wpRes, CarouselKeys.images);
-  });
+  const isLoading = computed(() => status.value === AsyncDataStatus.Loading)
 
+  const carousel: Readonly<Ref<readonly CarouselImage[]>> = computed(() => {
+    return data.value.map((carouselImagePost) => ({
+      id: carouselImagePost.id,
+      name: getWPTitle(carouselImagePost),
+      image: getCustomField(carouselImagePost, CarouselImageKeys.image),
+      url: getCustomField(carouselImagePost, CarouselImageKeys.url),
+    }))
+  })
 
-  return { fetchCarouselImages, carousel, status: computed(() => status.value) }
+  return { fetchCarouselImages, carousel, isLoading }
 }
