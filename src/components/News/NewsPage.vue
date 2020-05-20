@@ -7,7 +7,7 @@
       </div>
       <Loader v-if="isLoading" />
       <div class="newsPage__topGrid">
-        <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
+        <NewsThumb :post="post" v-bind:key="post.id" v-for="post in homeNews" />
       </div>
       <div class="newsPage__grid">
         <NewsThumb
@@ -30,12 +30,13 @@ export default defineComponent({
   name: "NewsPage",
   components: { NewsThumb, Loader },
   setup(props) {
-    const { news, fetchNews, isLoading } = useNews();
+    const { news, homeNews, fetchNews, isLoading } = useNews();
 
     fetchNews();
 
     return {
       news,
+      homeNews,
       isLoading: computed(() => isLoading.value)
     };
   }

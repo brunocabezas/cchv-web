@@ -9,7 +9,7 @@ const HomeNews = defineComponent({
   name: "HomeNews",
   components: { NewsThumb, Loader, "v-icon": Icon },
   setup() {
-    const { news, fetchNews, isLoading } = useNews()
+    const { homeNews: news, fetchNews, isLoading } = useNews()
 
     fetchNews()
 

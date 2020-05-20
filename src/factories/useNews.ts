@@ -26,11 +26,14 @@ export default function useNews() {
     return `${AppUrls.NewsPost}${postId}`
   }
 
+  const homeNews = computed(() => [...news.value].slice(0, 2))
+
   return {
-    fetchNews,
     news,
+    homeNews,
+    isLoading: computed(() => isLoading.value),
     getNewsPostUrl,
     getNewsPostById,
-    isLoading: computed(() => isLoading.value),
+    fetchNews,
   }
 }
