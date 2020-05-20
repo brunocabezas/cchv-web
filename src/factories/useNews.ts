@@ -5,15 +5,16 @@ import View from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
+import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchNews, status } = useAsyncData<WpResponseData>(
-  apiRoutes.HomeNews
+const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
+  apiRoutes.News
 )
 
 export default function useNews() {
-  const news: Readonly<Ref<Readonly<View.News>>> = computed(() => {
+  const news = computed<View.News>(() => {
     return helpers.mapNewsToView(data.value)
   })
 
@@ -21,10 +22,18 @@ export default function useNews() {
     return news.value.find((post) => post.id === id)
   }
 
+  function getNewsPostUrl(postId: number): string {
+    return `${AppUrls.NewsPost}${postId}`
+  }
+
+  const homeNews = computed(() => [...news.value].slice(0, 2))
+
   return {
-    fetchNews,
     news,
+    homeNews,
+    isLoading: computed(() => isLoading.value),
+    getNewsPostUrl,
     getNewsPostById,
-    status: computed(() => status.value),
+    fetchNews,
   }
 }

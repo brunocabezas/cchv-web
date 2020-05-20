@@ -12,5 +12,5 @@ export const getCustomField = (
   defaultValue
 
 // Gets wordpress post title
-export const getWPTitle = (responseITem: WPResponseItem): string =>
-  (responseITem.title && responseITem.title.rendered) || ""
+export const getWPTitle = (responseItem: WPResponseItem): string =>
+  (responseItem.title && responseItem.title.rendered) || ""

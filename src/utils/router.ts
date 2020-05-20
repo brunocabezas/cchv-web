@@ -1,6 +1,6 @@
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage.vue"
-import NewsPost from "@/components/News/NewsPost/NewsPost.vue"
+import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
 import TeamPage from "@/components/TeamPage.vue"
 import TransparencyPage from "@/components/TransparencyPage.vue"
 import AppUrls from "./urls"
@@ -11,7 +11,7 @@ const routes = [
   { path: AppUrls.News, component: NewsPage },
   {
     path: `${AppUrls.NewsPost}:postId`,
-    component: NewsPost,
+    component: NewsPostPage,
     props: (route: Route) => ({
       postId: parseInt(route.params.postId, 10),
     }),

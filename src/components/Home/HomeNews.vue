@@ -1,17 +1,14 @@
 <template>
   <div class="news homeSection">
-    <h1 class="news__title homeSection__title">
+    <div title="Ir a noticias" class="homeSection__title">
+      <router-link :to="newsGridUrl"><h1>noticias</h1> </router-link>
       <router-link :to="newsGridUrl"
-        >noticias
-        <v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
+        ><v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
-    </h1>
-    <Loader v-if="loading" />
-    <div v-if="!loading" class="newsList">
-       <NewsThumb
-        :post="post"
-        v-bind:key="post.id"
-        v-for="post in news"/>
+    </div>
+    <Loader v-if="isLoading" />
+    <div v-if="!isLoading" class="newsList">
+      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>
 </template>
@@ -23,9 +20,21 @@
 
 .news
   min-height: 400px;
-  
-  &__title
-    color: $blue;
+
+  .homeSection__title
+    display: flex;
+
+    &:hover
+      opacity: 0.7;
+
+    a
+      font-family: NoeDisplay;
+
+      h1
+        margin: 0 10px 0 0;
+
+      svg
+        margin-top: 10px;
 
   .newsList
     display: flex;

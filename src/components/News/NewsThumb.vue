@@ -3,11 +3,17 @@
     class="newsGridItem newsPostPreview"
     v-bind:class="{ 'newsPostPreview--small': small }"
   >
-    <div
-      class="newsPostPreview__thumbnail"
-      v-bind:style="{ 'background-image': `url(${post.imageUrl})` }"
-      :alt="post.title"
-    />
+    <router-link
+      class="newsPostPreview__link"
+      :title="post.title"
+      :to="getNewsPostUrl(post.id)"
+    >
+      <div
+        class="newsPostPreview__thumbnail"
+        v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
+        :alt="post.title"
+      />
+    </router-link>
     <h3 class="newsPostPreview__title">
       <router-link
         class="newsPostPreview__link"
@@ -17,7 +23,7 @@
       >
     </h3>
     <p>{{ post.date }}</p>
-    <p>{{ post.abstract }}</p>
+    <p v-html="post.abstract"></p>
     <router-link
       :title="post.title"
       class="newsPostPreview__link"
@@ -28,9 +34,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, PropType } from "@vue/composition-api";
 import View from "@/types/viewTypes";
 import AppUrls from "@/utils/urls";
+import useNews from "../../factories/useNews";
 
 export default defineComponent({
   props: {
@@ -39,14 +46,13 @@ export default defineComponent({
       default: false
     },
     post: {
-      default: {}
+      type: Object as PropType<View.NewsPost>,
+      required: true
     }
   },
   name: "NewsThumb",
   setup() {
-    function getNewsPostUrl(postId: number) {
-      return `${AppUrls.NewsPost}${postId}`;
-    }
+    const { getNewsPostUrl } = useNews();
 
     return { getNewsPostUrl };
   }

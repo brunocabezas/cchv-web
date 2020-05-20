@@ -3,7 +3,12 @@
     <Logo />
     <HeaderNav />
     <div class="headerNavItem">
-      <a :href="youtubeChannelUrl" target="_blank" rel="noopener noreferrer">
+      <a
+        title="Canal de YouTube"
+        :href="youtubeChannelUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         CCHV TV</a
       >
     </div>

@@ -5,6 +5,7 @@ import {
   SponsorCategoryKeys,
   SponsorKeys,
   SocialNetworksKeys,
+  DocumentKeys,
 } from "./customFieldsKeysTypes"
 
 export type CustomFields =
@@ -14,12 +15,21 @@ export type CustomFields =
   | Sponsor
   | SocialNetwork
 
-// TODO improve this type, should gather of custom fields
+// TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
-  // | Carousel[CarouselImageKeys.image]
+  | CarouselImage[CarouselImageKeys.image]
+  | CarouselImage[CarouselImageKeys.url]
   | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.img]
-  | NewsPost[NewsKeys.title]
+  | NewsPost[NewsKeys.related]
+  | NewsPost[NewsKeys.video_url]
+  | NewsPost[NewsKeys.abstract]
+  | NewsPost[NewsKeys.text]
+  | SponsorsCategory[SponsorCategoryKeys.order]
+  | SponsorsCategory[SponsorCategoryKeys.sponsors]
+  | SocialNetwork[SocialNetworksKeys.url]
+  | SocialNetwork[SocialNetworksKeys.url]
+  | Document[DocumentKeys.link]
+  | any
 
 // SPONSORS
 export type SponsorsCategory = {
@@ -36,6 +46,11 @@ export type Sponsor = {
 // SOCIAL NETWORK
 export type SocialNetwork = {
   [SocialNetworksKeys.url]: string
+}
+
+// DOCUMENTS
+export type Document = {
+  [DocumentKeys.link]: string
 }
 
 // CAROUSEL
@@ -65,10 +80,9 @@ export interface ImageSizes {
 //
 export type News = NewsPost[]
 export interface NewsPost {
-  [NewsKeys.title]: string
-  [NewsKeys.date]: string
   [NewsKeys.abstract]: string
-  // TODO improve type def
-  [NewsKeys.img]: any
-  [NewsKeys.id]: number
+  [NewsKeys.text]: string
+  [NewsKeys.related]: number[]
+  [NewsKeys.video_url]: string
+  [NewsKeys.gallery]: any
 }
