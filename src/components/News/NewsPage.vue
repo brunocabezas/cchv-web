@@ -1,15 +1,22 @@
 <template>
   <div class="page newsPage">
-    <div class="pageTitle">
-      <h1 class="pageTitleText">Noticias</h1>
-      <!-- <div class="pageTitleInput">search input</div>-->
-    </div>
-    <Loader v-if="isLoading" />
-    <div class="newsPage__topGrid">
-      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
-    </div>
-    <div class="newsPage__grid">
-      <NewsThumb small :post="post" v-bind:key="post.id" v-for="post in news" />
+    <div class="pageBox">
+      <div class="pageTitle">
+        <h1 class="pageTitleText">Noticias</h1>
+        <!-- <div class="pageTitleInput">search input</div>-->
+      </div>
+      <Loader v-if="isLoading" />
+      <div class="newsPage__topGrid">
+        <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
+      </div>
+      <div class="newsPage__grid">
+        <NewsThumb
+          small
+          :post="post"
+          v-bind:key="post.id"
+          v-for="post in news"
+        />
+      </div>
     </div>
   </div>
 </template>

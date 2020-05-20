@@ -5,6 +5,7 @@ import {
   SponsorCategoryKeys,
   SponsorKeys,
   SocialNetworksKeys,
+  DocumentKeys,
 } from "./customFieldsKeysTypes"
 
 export type CustomFields =
@@ -14,10 +15,21 @@ export type CustomFields =
   | Sponsor
   | SocialNetwork
 
-// TODO improve this type, should gather of custom fields
+// TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
-  // | Carousel[CarouselImageKeys.image]
-  NewsPost[NewsKeys.abstract]
+  | CarouselImage[CarouselImageKeys.image]
+  | CarouselImage[CarouselImageKeys.url]
+  | NewsPost[NewsKeys.abstract]
+  | NewsPost[NewsKeys.related]
+  | NewsPost[NewsKeys.video_url]
+  | NewsPost[NewsKeys.abstract]
+  | NewsPost[NewsKeys.text]
+  | SponsorsCategory[SponsorCategoryKeys.order]
+  | SponsorsCategory[SponsorCategoryKeys.sponsors]
+  | SocialNetwork[SocialNetworksKeys.url]
+  | SocialNetwork[SocialNetworksKeys.url]
+  | Document[DocumentKeys.link]
+  | any
 
 // SPONSORS
 export type SponsorsCategory = {
@@ -34,6 +46,11 @@ export type Sponsor = {
 // SOCIAL NETWORK
 export type SocialNetwork = {
   [SocialNetworksKeys.url]: string
+}
+
+// DOCUMENTS
+export type Document = {
+  [DocumentKeys.link]: string
 }
 
 // CAROUSEL
@@ -65,7 +82,7 @@ export type News = NewsPost[]
 export interface NewsPost {
   [NewsKeys.abstract]: string
   [NewsKeys.text]: string
-  [NewsKeys.related]: any
+  [NewsKeys.related]: number[]
   [NewsKeys.video_url]: string
   [NewsKeys.gallery]: any
 }

@@ -12,7 +12,7 @@ export default defineComponent({
   },
   components: { Loader },
   setup(props) {
-    const { getNewsPostById, fetchNews, isLoading } = useNews()
+    const { getNewsPostById, fetchNews, isLoading, getNewsPostUrl } = useNews()
 
     fetchNews()
 
@@ -20,9 +20,6 @@ export default defineComponent({
       return getNewsPostById(props.postId)
     })
 
-    return {
-      post,
-      isLoading,
-    }
+    return { getNewsPostUrl, post, isLoading }
   },
 })

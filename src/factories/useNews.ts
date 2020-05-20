@@ -5,11 +5,12 @@ import View from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
+import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
-  apiRoutes.HomeNews
+  apiRoutes.News
 )
 
 export default function useNews() {
@@ -21,9 +22,14 @@ export default function useNews() {
     return news.value.find((post) => post.id === id)
   }
 
+  function getNewsPostUrl(postId: number): string {
+    return `${AppUrls.NewsPost}${postId}`
+  }
+
   return {
     fetchNews,
     news,
+    getNewsPostUrl,
     getNewsPostById,
     isLoading: computed(() => isLoading.value),
   }
