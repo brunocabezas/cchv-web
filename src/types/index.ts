@@ -15,6 +15,7 @@ export interface Page {
   label: string
   url: AppUrls
   pages?: SubPage[]
+  is_external?: boolean
 }
 
 export type Pages = Page[]

@@ -91,7 +91,7 @@ export enum PageKeys {
 // Programs
 export enum ProgramKeys {
   is_external = "is_external",
-  url = "url",
+  url = "external_url",
   text = "text",
   video_url = "video_url",
   gallery = "gallery",

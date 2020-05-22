@@ -14,16 +14,16 @@ const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function usePrograms() {
-  const team = computed<View.Program[]>(() => {
+  const programs = computed<View.Program[]>(() => {
     return data.value.map(
       (programPost): View.Program => ({
         id: programPost.id,
         name: getWPTitle(programPost),
+        url: getCustomField(programPost, ProgramKeys.url),
         [ProgramKeys.video_url]: getCustomField(
           programPost,
           ProgramKeys.video_url
         ),
-        [ProgramKeys.url]: getCustomField(programPost, ProgramKeys.url),
         [ProgramKeys.is_external]: getCustomField(
           programPost,
           ProgramKeys.is_external
@@ -40,7 +40,7 @@ export default function usePrograms() {
 
   return {
     fetchPrograms,
-    team,
+    programs,
     isLoading,
   }
 }

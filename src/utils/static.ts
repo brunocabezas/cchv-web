@@ -19,7 +19,14 @@ const AboutPage: Page = {
     { url: AppUrls.AboutTransparency, label: "Transparencia" },
   ],
 }
-const ProgramsPage: Page = { url: AppUrls.Programs, label: "Programas" }
+const ProgramsPage: Page = {
+  url: AppUrls.Programs,
+  label: "Programas",
+  // Program pages will get filled with API pages that are external
+  pages: [
+    { url: AppUrls.DowneyProgram, label: "Concurso Juan Downey" },
+    { url: AppUrls.SchoolProgram, label: "Escuela" },
+  ],
+}
 
-// const TVPage: Page = { url: AppUrls., label: "CCHV TV" }
 export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage]

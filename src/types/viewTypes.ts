@@ -98,10 +98,10 @@ declare module View {
   interface Program {
     id: number
     name: string
+    url: string
     [ProgramKeys.text]: string
     [ProgramKeys.gallery]: any
     [ProgramKeys.is_external]: boolean
-    [ProgramKeys.url]: string
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
   }
