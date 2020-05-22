@@ -1,27 +1,29 @@
 <template>
   <div class="page transparencyPage">
-    <div class="pageTitle">
-      <h1 class="pageTitleText">
-        Transparencia.
-      </h1>
-    </div>
-    <div class="pageRow">
-      <div class="pageLeft">
-        <div v-if="transparencyPage" v-html="transparencyPage.text"></div>
+    <div class="pageBox">
+      <div class="pageTitle">
+        <h1 class="pageTitleText">
+          Transparencia
+        </h1>
       </div>
-      <div class="pageRight">
-        <Loader :loading="isLoading" />
-        <ul v-if="!isLoading">
-          <li
-            class="transparencyDocument"
-            v-for="doc in documents"
-            v-bind:key="doc.id"
-          >
-            <a :title="`Descargar ${doc.name}`" :href="doc.url"
-              >{{ doc.name }}
-            </a>
-          </li>
-        </ul>
+      <div class="pageRow">
+        <div class="pageLeft">
+          <div v-if="transparencyPage" v-html="transparencyPage.text"></div>
+        </div>
+        <div class="pageRight">
+          <Loader :loading="isLoading" />
+          <ul v-if="!isLoading">
+            <li
+              class="transparencyDocument"
+              v-for="doc in documents"
+              v-bind:key="doc.id"
+            >
+              <a :title="`Descargar ${doc.name}`" :href="doc.url"
+                >{{ doc.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

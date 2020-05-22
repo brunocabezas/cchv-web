@@ -1,16 +1,18 @@
 <template>
   <div class="page">
-    <div class="pageTitle">
-      <h1 class="pageTitleText">Equipo.</h1>
-    </div>
-    <Loader :loading="isLoading" />
-    <div v-if="!isLoading" class="team">
-      <div v-bind:key="person.id" v-for="person in team" class="teamMember">
-        <span class="position">{{ person.position }}</span>
-        <p class="name">{{ person.name }}</p>
+    <div class="pageBox">
+      <div class="pageTitle">
+        <h1 class="pageTitleText">Equipo</h1>
       </div>
+      <Loader :loading="isLoading" />
+      <div v-if="!isLoading" class="team">
+        <div v-bind:key="person.id" v-for="person in team" class="teamMember">
+          <span class="position">{{ person.position }}</span>
+          <p class="name">{{ person.name }}</p>
+        </div>
+      </div>
+      <hr v-if="!isLoading" />
     </div>
-    <hr v-if="!isLoading" />
   </div>
 </template>
 

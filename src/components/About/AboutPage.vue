@@ -2,13 +2,14 @@
   <div class="page">
     <div class="pageBox">
       <div class="pageTitle">
-        <h1 class="pageTitleText">Quienes Somos.</h1>
+        <h1 class="pageTitleText">Quienes Somos</h1>
         <Loader :loading="isLoading" />
       </div>
-      <div class="pageRow">
+
+      <div v-if="aboutPage" class="pageRow">
         <Media />
       </div>
-      <div v-html="aboutPage.text" class="pageRow"></div>
+      <div v-if="aboutPage" v-html="aboutPage.text" class="pageRow"></div>
       <div class="pageRow">
         <a :href="teamUrl" title="Equipo" class="aboutSquareLink">
           Equipo
@@ -26,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, onMounted } from "@vue/composition-api";
 import usePages from "@/factories/usePages";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media.vue";
@@ -43,6 +44,7 @@ export default defineComponent({
     return {
       isLoading,
       aboutPage,
+      displayContent: !!aboutPage,
       transparencyUrl: AppUrls.AboutTransparency,
       teamUrl: AppUrls.AboutTeam
     };
