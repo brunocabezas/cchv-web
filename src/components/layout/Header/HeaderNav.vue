@@ -18,9 +18,11 @@
         @mouseover="onHover(menu.label)"
         @mouseleave="onHoverLeave(menu.label)"
       >
-        <router-link :title="menu.label" :to="menu.url">
-          {{ menu.label }} {{ hoverState[menu.label] }}
+        <router-link v-if="menu.url" :title="menu.label" :to="menu.url">
+          {{ menu.label }}
         </router-link>
+        <span class="headerNavItemLink" v-else>{{ menu.label }}</span>
+
         <div v-if="hoverState[menu.label]" class="headerNavItemSubLevel">
           <div
             v-bind:key="submenu.label"
@@ -28,11 +30,15 @@
             class="headerNavItemSubMenu"
           >
             <a
-              :target="submenu.is_external ? '_blank' : '_self'"
+              v-if="submenu.is_external"
+              target="_blank"
               :title="submenu.label"
               :href="submenu.url"
               >{{ submenu.label }}</a
             >
+            <router-link :to="submenu.url" v-else>{{
+              submenu.label
+            }}</router-link>
           </div>
         </div>
       </div>
@@ -51,7 +57,8 @@
   padding: 0;
   position: relative;
 
-  a
+  a, .headerNavItemLink
+    color: $blue;
     display: flex;
     box-sizing: border-box;
     height: $header_height;

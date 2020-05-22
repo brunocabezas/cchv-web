@@ -31,7 +31,7 @@ const mapNavMenuToHoverState = (navMenu: readonly Page[]): menuHoverState =>
 const addPagesToProgramsNavigationMenu = (programs: readonly View.Program[]) =>
   NAVIGATION_MENU.map((navMenu) => {
     // If menu is programs, define pages with usePrograms()
-    if (navMenu.url === AppUrls.Programs) {
+    if (navMenu.id === AppUrls.Programs) {
       const externalProgramsFromAPI = programs
         // Only getting external
         .filter((p) => p.is_external)

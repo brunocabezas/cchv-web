@@ -12,20 +12,29 @@ export const NEWSLETTER_SUBSCRIBE_URL =
 // Defines the order of appeareance
 // Uses types from app urls
 const AboutPage: Page = {
+  id: AppUrls.About,
   url: AppUrls.About,
   label: "Quienes Somos",
   pages: [
-    { url: AppUrls.AboutTeam, label: "Equipo" },
-    { url: AppUrls.AboutTransparency, label: "Transparencia" },
+    { id: AppUrls.AboutTeam, url: AppUrls.AboutTeam, label: "Equipo" },
+    {
+      id: AppUrls.AboutTransparency,
+      url: AppUrls.AboutTransparency,
+      label: "Transparencia",
+    },
   ],
 }
 const ProgramsPage: Page = {
-  url: AppUrls.Programs,
+  id: AppUrls.Programs,
   label: "Programas",
   // Program pages will get filled with API pages that are external
   pages: [
-    { url: AppUrls.DowneyProgram, label: "Concurso Juan Downey" },
-    { url: AppUrls.SchoolProgram, label: "Escuela" },
+    {
+      id: AppUrls.DowneyProgram,
+      url: AppUrls.DowneyProgram,
+      label: "Concurso Juan Downey",
+    },
+    { id: AppUrls.SchoolProgram, url: AppUrls.SchoolProgram, label: "Escuela" },
   ],
 }
 
