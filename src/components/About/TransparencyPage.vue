@@ -61,7 +61,7 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="stylus">
-@import '../styles/variables.styl';
+@import '../../styles/variables.styl';
 
 .transparencyPage
   .pageLeft

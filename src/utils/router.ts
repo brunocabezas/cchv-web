@@ -1,8 +1,9 @@
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
-import TeamPage from "@/components/TeamPage.vue"
-import TransparencyPage from "@/components/TransparencyPage.vue"
+import TeamPage from "@/components/About/TeamPage.vue"
+import AboutPage from "@/components/About/AboutPage.vue"
+import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import AppUrls from "./urls"
 import VueRouter, { Route } from "vue-router"
 
@@ -16,6 +17,7 @@ const routes = [
       postId: parseInt(route.params.postId, 10),
     }),
   },
+  { path: AppUrls.About, component: AboutPage },
   { path: AppUrls.AboutTeam, component: TeamPage },
   { path: AppUrls.AboutTransparency, component: TransparencyPage },
 ]
