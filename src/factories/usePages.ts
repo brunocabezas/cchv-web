@@ -14,7 +14,7 @@ const { data, fetch: fetchPages, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function usePages() {
-  const team = computed<View.Page[]>(() => {
+  const pages = computed<View.Page[]>(() => {
     return data.value.map(
       (pagePost): View.Page => ({
         id: pagePost.id,
@@ -29,9 +29,26 @@ export default function usePages() {
     )
   })
 
+  const aboutPage = computed<View.Page | null>(() => {
+    return (
+      pages.value.find((page) =>
+        page.name.toLocaleLowerCase().includes("somos")
+      ) || null
+    )
+  })
+
+  const transparencyPage = computed<View.Page | null>(() => {
+    return (
+      pages.value.find((page) =>
+        page.name.toLocaleLowerCase().includes("transparencia")
+      ) || null
+    )
+  })
+
   return {
     fetchPages,
-    team,
+    aboutPage,
+    transparencyPage,
     isLoading,
   }
 }

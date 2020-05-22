@@ -7,24 +7,7 @@
     </div>
     <div class="pageRow">
       <div class="pageLeft">
-        <p>
-          La Corporación Chilena de Video trabaja sobre el desarrollo de
-          actividades y programas que abordan la relación del arte, la ciencia,
-          la tecnología y la educación. Cuenta con el apoyo de diversos aliados
-          y socios, y se financia principalmente a través de los siguientes
-          programas:
-        </p>
-        <p>
-          Programa de festivales de trayectoria del Fondo del Arte y la
-          Industria Audiovisual, convocatoria 2019 - 2020.
-        </p>
-        <p>
-          Programa Otras Instituciones Colaboradoras 2019, del Ministerio de las
-          Culturas, el Arte y el Patrimonio.
-        </p>
-        <p>
-          Ley de Donaciones Culturales, Proyecto 14 Bienal de Artes Mediales
-        </p>
+        <div v-if="transparencyPage" v-html="transparencyPage.text"></div>
       </div>
       <div class="pageRight">
         <Loader :loading="isLoading" />
@@ -46,17 +29,29 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import useDouseDocuments from "@/factories/useDocuments";
+import useDocuments from "@/factories/useDocuments";
+import usePages from "@/factories/usePages";
 import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
   name: "TransparencyPage",
   components: { Loader },
   setup() {
-    const { isLoading, documents, fetchDocuments } = useDouseDocuments();
+    const {
+      isLoading: isLoadingDocuments,
+      documents,
+      fetchDocuments
+    } = useDocuments();
+    const { isLoading, fetchPages, transparencyPage } = usePages();
 
+    fetchPages();
     fetchDocuments();
-    return { documents, isLoading };
+
+    return {
+      documents,
+      isLoading: isLoading || isLoadingDocuments,
+      transparencyPage
+    };
   }
 });
 </script>
