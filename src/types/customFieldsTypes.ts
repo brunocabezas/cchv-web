@@ -6,7 +6,12 @@ import {
   SponsorKeys,
   SocialNetworksKeys,
   DocumentKeys,
+  ProgramKeys,
+  PageKeys,
+  SchoolProgramKeys,
 } from "./customFieldsKeysTypes"
+
+// TODO Analyze why team member type def is not needed here
 
 export type CustomFields =
   | Carousel
@@ -14,6 +19,9 @@ export type CustomFields =
   | SponsorsCategory
   | Sponsor
   | SocialNetwork
+  | Document
+  | Page
+  | Program
 
 // TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
@@ -31,7 +39,7 @@ export type CustomFieldValues =
   | Document[DocumentKeys.link]
   | any
 
-// SPONSORS
+// SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {
   [SponsorCategoryKeys.order]: number
   [SponsorCategoryKeys.sponsors]: Sponsor[]
@@ -48,10 +56,31 @@ export type SocialNetwork = {
   [SocialNetworksKeys.url]: string
 }
 
-// DOCUMENTS
+// DOCUMENT
 export type Document = {
   [DocumentKeys.link]: string
 }
+
+// PAGE
+export type Page = {
+  [PageKeys.text]: string
+  [PageKeys.gallery]: any
+  [PageKeys.extra_content]: PageExtraContent
+}
+
+export type PageExtraContent = "none" | "documents"
+
+// PROGRAMS
+export type Program = {
+  [ProgramKeys.is_external]: boolean
+  [ProgramKeys.url]: string
+  [ProgramKeys.video_url]: string
+  [ProgramKeys.gallery]: any
+  [ProgramKeys.text]: string
+  [ProgramKeys.extra_content]: ProgramExtraContent
+}
+
+export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
 
 // CAROUSEL
 export type Carousel = CarouselImage[]
