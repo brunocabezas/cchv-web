@@ -6,7 +6,7 @@
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media />
-      <div class="pageRow" v-html="program.text"></div>
+      <div v-if="program" class="pageRow" v-html="program.text"></div>
       <DowneyProgramVideos />
     </div>
   </div>

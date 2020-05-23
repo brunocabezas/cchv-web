@@ -8,6 +8,7 @@ import {
   TeamMembersKeys,
   PageKeys,
   ProgramKeys,
+  ProgramVideoKeys,
 } from "./customFieldsKeysTypes"
 import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
 //
@@ -105,6 +106,17 @@ declare module View {
     [ProgramKeys.is_external]: boolean
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
+  }
+
+  interface ProgramVideo {
+    id: number
+    name: string
+    [ProgramVideoKeys.text]: string
+    [ProgramVideoKeys.url]: any
+    [ProgramVideoKeys.duration]: boolean
+    [ProgramVideoKeys.author]: string
+    [ProgramVideoKeys.year]: string
+    [ProgramVideoKeys.country]: ProgramExtraContent
   }
 }
 

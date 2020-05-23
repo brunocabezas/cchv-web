@@ -1,19 +1,43 @@
 <template>
-  <div class="pageRow">
+  <div class="pageRow programVideos">
     <h2>Videos Ganadores</h2>
+    <Loader :loading="isLoading" />
+    <div class="programVideosList">
+      <div v-bind:key="video.id" v-for="video in programVideos">
+        <div class="programVideo">
+          <div class="programVideo__meta">
+            <h3 class="programVideo__title">{{ video.name }}</h3>
+            <div class="programVideo__videoData">
+              <div>Autor: {{ video.author }}</div>
+              <div>Duracion: {{ video.duration }}</div>
+              <div>Ano: {{ video.year }}</div>
+              <div>Pais: {{ video.country }}</div>
+            </div>
+            <div class="programVideo__text" v-html="video.text" />
+          </div>
+          <div class="programVideo__player">
+            <Media />
+            {{ video.url }}
+          </div>
+        </div>
+
+        <hr />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
-import View from "@/types/viewTypes";
 import Loader from "@/components/Loader.vue";
-import useProgramVideos from "@/factories/usePrograms";
+import Media from "@/components/Media.vue";
+import useProgramVideos from "@/factories/useProgramVideos";
 
 const DowneyProgramVideos = defineComponent({
   name: "DowneyProgramVideos",
   components: {
-    Loader
+    Loader,
+    Media
   },
   props: {
     slug: {
@@ -22,12 +46,11 @@ const DowneyProgramVideos = defineComponent({
     }
   },
   setup(props) {
-    const { getProgramById, isLoading } = useProgramVideos();
+    const { programVideos, isLoading, fetchProgramVideos } = useProgramVideos();
 
-    const program = computed<View.Program | undefined>(() =>
-      getProgramById(props.slug)
-    );
-    return { program, isLoading };
+    fetchProgramVideos();
+
+    return { programVideos, isLoading };
   }
 });
 
@@ -35,4 +58,32 @@ export default DowneyProgramVideos;
 </script>
 <style lang="stylus">
 @import '../../styles/variables.styl';
+
+.programVideos
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .programVideo
+    display: flex;
+
+    hr
+      width: 100%;
+      display: block;
+
+    &__text
+      text-align: justify;
+
+    &__videoData
+      color: $blue;
+
+    &__meta
+      margin: 15px;
+      width: 40%;
+      padding: 1em 0;
+
+    &__player
+      margin: 15px;
+      width: 60%;
 </style>

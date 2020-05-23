@@ -9,6 +9,7 @@ import {
   ProgramKeys,
   PageKeys,
   SchoolProgramKeys,
+  ProgramVideoKeys,
 } from "./customFieldsKeysTypes"
 
 // TODO Analyze why team member type def is not needed here
@@ -22,6 +23,7 @@ export type CustomFields =
   | Document
   | Page
   | Program
+  | ProgramVideo
 
 // TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
@@ -81,6 +83,15 @@ export type Program = {
 }
 
 export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
+
+export type ProgramVideo = {
+  [ProgramVideoKeys.url]: string
+  [ProgramVideoKeys.text]: string
+  [ProgramVideoKeys.year]: string
+  [ProgramVideoKeys.author]: string
+  [ProgramVideoKeys.country]: string
+  [ProgramVideoKeys.duration]: string
+}
 
 // CAROUSEL
 export type Carousel = CarouselImage[]

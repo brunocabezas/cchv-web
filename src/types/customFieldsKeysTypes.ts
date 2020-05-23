@@ -35,6 +35,12 @@ export type CustomFieldsKeys =
   | SchoolProgramKeys.schedule
   | SchoolProgramKeys.teachers
   | SchoolProgramKeys.pdf
+  | ProgramVideoKeys.url
+  | ProgramVideoKeys.text
+  | ProgramVideoKeys.author
+  | ProgramVideoKeys.duration
+  | ProgramVideoKeys.country
+  | ProgramVideoKeys.year
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -96,6 +102,16 @@ export enum ProgramKeys {
   video_url = "video_url",
   gallery = "gallery",
   extra_content = "extra_content",
+}
+
+// Concurso juan downey videos
+export enum ProgramVideoKeys {
+  url = "url",
+  text = "text",
+  author = "author",
+  duration = "duration",
+  year = "year",
+  country = "country",
 }
 
 // School Programs
