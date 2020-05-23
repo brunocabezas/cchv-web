@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "@/api/apiRoutes"
 import View from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
@@ -34,7 +34,7 @@ export default function usePrograms() {
         [ProgramKeys.extra_content]: getCustomField(
           programPost,
           ProgramKeys.extra_content
-        ),
+        ).value,
       })
     )
   })

@@ -34,7 +34,16 @@ const ProgramsPage: Page = {
       url: AppUrls.DowneyProgram,
       label: "Concurso Juan Downey",
     },
-    { id: AppUrls.SchoolProgram, url: AppUrls.SchoolProgram, label: "Escuela" },
+    {
+      id: AppUrls.SchoolProgram,
+      url: AppUrls.SchoolProgram,
+      label: "Escuela de la intuicion",
+    },
+    {
+      id: AppUrls.MagneticFieldsProgram,
+      url: AppUrls.MagneticFieldsProgram,
+      label: "Campos Magneticos",
+    },
   ],
 }
 

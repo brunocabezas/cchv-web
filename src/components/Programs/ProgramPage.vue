@@ -6,8 +6,12 @@
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media />
-      <div v-if="program" class="pageRow" v-html="program.text"></div>
-      <DowneyProgramVideos />
+      <div
+        v-if="program"
+        class="pageRow programText"
+        v-html="program.text"
+      ></div>
+      <DowneyProgramVideos v-if="isDowneyProgram" />
     </div>
   </div>
 </template>
@@ -39,7 +43,19 @@ const ProgramPage = defineComponent({
     const program = computed<View.Program | undefined>(() =>
       getProgramById(props.slug)
     );
-    return { program, isLoading };
+    return {
+      program,
+      isLoading,
+      isMagneticFieldsProgram: computed(
+        () => program.value && program.value.extra_content === "activities"
+      ),
+      isSchoolProgram: computed(
+        () => program.value && program.value.extra_content === "schools"
+      ),
+      isDowneyProgram: computed(
+        () => program.value && program.value.extra_content === "videos"
+      )
+    };
   }
 });
 
@@ -47,4 +63,8 @@ export default ProgramPage;
 </script>
 <style lang="stylus">
 @import '../../styles/variables.styl';
+
+.program
+  .programText.pageRow
+    display: block;
 </style>
