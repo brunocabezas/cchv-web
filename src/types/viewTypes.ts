@@ -99,6 +99,7 @@ declare module View {
     id: number
     name: string
     url: string
+    slug: string
     [ProgramKeys.text]: string
     [ProgramKeys.gallery]: any
     [ProgramKeys.is_external]: boolean

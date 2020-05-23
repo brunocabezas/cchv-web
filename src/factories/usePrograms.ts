@@ -20,6 +20,7 @@ export default function usePrograms() {
         id: programPost.id,
         name: getWPTitle(programPost),
         url: getCustomField(programPost, ProgramKeys.url),
+        slug: programPost.slug,
         [ProgramKeys.video_url]: getCustomField(
           programPost,
           ProgramKeys.video_url
@@ -38,9 +39,14 @@ export default function usePrograms() {
     )
   })
 
+  function getProgramById(slug: string): View.Program | undefined {
+    return programs.value.find((p) => p.slug === slug)
+  }
+
   return {
     fetchPrograms,
     programs,
     isLoading,
+    getProgramById,
   }
 }
