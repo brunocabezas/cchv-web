@@ -35,6 +35,9 @@ export type CustomFieldsKeys =
   | SchoolProgramKeys.schedule
   | SchoolProgramKeys.teachers
   | SchoolProgramKeys.pdf
+  | SchoolProgramKeys.video_url
+  | SchoolProgramKeys.logo
+  | SchoolProgramKeys.gallery
   | ProgramVideoKeys.url
   | ProgramVideoKeys.text
   | ProgramVideoKeys.author
@@ -120,4 +123,7 @@ export enum SchoolProgramKeys {
   schedule = "schedule",
   teachers = "teachers",
   pdf = "pdf",
+  video_url = "video_url",
+  logo = "logo",
+  gallery = "gallery",
 }

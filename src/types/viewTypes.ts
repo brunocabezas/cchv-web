@@ -9,6 +9,7 @@ import {
   PageKeys,
   ProgramKeys,
   ProgramVideoKeys,
+  SchoolProgramKeys,
 } from "./customFieldsKeysTypes"
 import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
 //
@@ -106,6 +107,18 @@ declare module View {
     [ProgramKeys.is_external]: boolean
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
+  }
+
+  interface SchoolProgram {
+    id: number
+    name: string
+    [SchoolProgramKeys.logo]: string
+    [SchoolProgramKeys.text]: string
+    [SchoolProgramKeys.gallery]: any
+    [SchoolProgramKeys.video_url]: string
+    [SchoolProgramKeys.teachers]: string
+    [SchoolProgramKeys.schedule]: string
+    [SchoolProgramKeys.pdf]: string
   }
 
   interface ProgramVideo {

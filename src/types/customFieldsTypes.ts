@@ -24,6 +24,7 @@ export type CustomFields =
   | Page
   | Program
   | ProgramVideo
+  | SchoolProgram
 
 // TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
@@ -91,6 +92,16 @@ export type ProgramVideo = {
   [ProgramVideoKeys.author]: string
   [ProgramVideoKeys.country]: string
   [ProgramVideoKeys.duration]: string
+}
+
+export type SchoolProgram = {
+  [SchoolProgramKeys.teachers]: string
+  [SchoolProgramKeys.schedule]: string
+  [SchoolProgramKeys.video_url]: string
+  [SchoolProgramKeys.pdf]: string
+  [SchoolProgramKeys.gallery]: any
+  [SchoolProgramKeys.text]: string
+  [SchoolProgramKeys.logo]: string
 }
 
 // CAROUSEL
