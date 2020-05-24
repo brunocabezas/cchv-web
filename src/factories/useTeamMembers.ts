@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
-import apiRoutes from "@/api/apiRoutes"
+import apiRoutes from "../../api/apiRoutes"
 import View from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"

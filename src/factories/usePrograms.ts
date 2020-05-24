@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
-import apiRoutes from "@/api/apiRoutes"
+import apiRoutes from "../../api/apiRoutes"
 import View from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
@@ -40,6 +40,7 @@ export default function usePrograms() {
   })
 
   function getProgramById(slug: string): View.Program | undefined {
+    console.log(slug, programs.value)
     return programs.value.find((p) => p.slug === slug)
   }
 

@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
-import apiRoutes from "@/api/apiRoutes"
-import client from "@/api/client"
+import apiRoutes from "../../api/apiRoutes"
+import client from "../../api/client"
 import { HasDefined } from "@vue/composition-api/dist/types/basic"
 
 Vue.use(VueCompositionApi)

@@ -9,24 +9,29 @@ import documentsSuccess from "./mocks/documents-200-get.json"
 import socialNetorksSuccess from "./mocks/social_networks-200-get.json"
 import newsSuccess from "./mocks/news-200-get.json"
 
+// In ms
+const DELAY = 5000
 export default (client: AxiosInstance) => {
   console.log("Setting up mocks", process.env)
-  // if (process.env.VUE_APP_BASE_URL === )
-  // This sets the mock adapter on the default instance
-  var mock = new MockAdapter(client, { delayResponse: 5000 })
 
-  // Mock any GET request to /users
-  // arguments for reply are (status, data, headers)
+  // Set mock adapter on the default axios instance (client)
+  var mock = new MockAdapter(client, { delayResponse: DELAY })
+
+  // Home Page
   mock.onGet(apiRoutes.CarouselImages).reply(200, carouselImagesSuccess)
+
+  // Footer
   mock.onGet(apiRoutes.SocialNetworks).reply(200, socialNetorksSuccess)
-
-  // Same reponse for now
-  mock.onGet(apiRoutes.News).reply(200, newsSuccess)
-  mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
-
   mock.onGet(apiRoutes.SponsorsCategories).reply(200, sponsorCategoriesSuccess)
   mock.onGet(apiRoutes.Sponsors).reply(200, sponsorsSuccess)
 
+  // News
+  mock.onGet(apiRoutes.News).reply(200, newsSuccess)
+  mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
+
+  // Pages
   mock.onGet(apiRoutes.Documents).reply(200, documentsSuccess)
   mock.onGet(apiRoutes.Team).reply(200, teamSuccess)
+
+  // Programs
 }
