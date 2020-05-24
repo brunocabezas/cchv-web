@@ -9,9 +9,9 @@
             <h3 class="programVideo__title">{{ video.name }}</h3>
             <div class="programVideo__videoData">
               <div>Autor: {{ video.author }}</div>
-              <div>Duracion: {{ video.duration }}</div>
-              <div>Ano: {{ video.year }}</div>
-              <div>Pais: {{ video.country }}</div>
+              <div>Duración: {{ video.duration }}</div>
+              <div>Año: {{ video.year }}</div>
+              <div>País: {{ video.country }}</div>
             </div>
             <div class="programVideo__text" v-html="video.text" />
           </div>

@@ -12,6 +12,7 @@
         v-html="program.text"
       ></div>
       <DowneyProgramVideos v-if="isDowneyProgram" />
+      <SchoolProgramsTabs v-if="isSchoolProgram" />
     </div>
   </div>
 </template>
@@ -23,12 +24,14 @@ import View from "@/types/viewTypes";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media.vue";
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue";
+import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue";
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
   components: {
     Loader,
     DowneyProgramVideos,
+    SchoolProgramsTabs,
     Media
   },
   props: {
