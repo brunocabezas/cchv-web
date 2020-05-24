@@ -5,8 +5,12 @@ import carouselImagesSuccess from "./mocks/carousel_images-200-get.json"
 import sponsorCategoriesSuccess from "./mocks/sponsors_categories-200-get.json"
 import sponsorsSuccess from "./mocks/sponsors-200-get.json"
 import teamSuccess from "./mocks/team-200-get.json"
-import documentsSuccess from "./mocks/documents-200-get.json"
+// import documentsSuccess from "./mocks/documents-200-get.json"
 import socialNetorksSuccess from "./mocks/social_networks-200-get.json"
+import programsSuccess from "./mocks/programs-200-get.json"
+import videosSuccess from "./mocks/videos-200-get.json"
+import pagesSuccess from "./mocks/cchv_page-200-get.json"
+import schoolProgramSuccess from "./mocks/school_program-200-get.json"
 import newsSuccess from "./mocks/news-200-get.json"
 
 // In ms
@@ -30,8 +34,12 @@ export default (client: AxiosInstance) => {
   mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
 
   // Pages
-  mock.onGet(apiRoutes.Documents).reply(200, documentsSuccess)
+  mock.onGet(apiRoutes.Pages).reply(200, pagesSuccess)
+  mock.onGet(apiRoutes.Documents).reply(200, [])
   mock.onGet(apiRoutes.Team).reply(200, teamSuccess)
 
   // Programs
+  mock.onGet(apiRoutes.Programs).reply(200, programsSuccess)
+  mock.onGet(apiRoutes.ProgramVideos).reply(200, videosSuccess)
+  mock.onGet(apiRoutes.SchoolPrograms).reply(200, schoolProgramSuccess)
 }

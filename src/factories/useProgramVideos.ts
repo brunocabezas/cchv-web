@@ -11,7 +11,7 @@ Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchProgramVideos, isLoading } = useAsyncData<
   WpResponseData
->(apiRoutes.Videos)
+>(apiRoutes.ProgramVideos)
 
 export default function usePrograms() {
   const programVideos = computed<View.ProgramVideo[]>(() => {

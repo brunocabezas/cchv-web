@@ -1,0 +1,140 @@
+[
+  {
+    "id": 133,
+    "date": "2020-05-23T00:35:02",
+    "date_gmt": "2020-05-23T04:35:02",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=133"
+    },
+    "modified": "2020-05-23T00:35:02",
+    "modified_gmt": "2020-05-23T04:35:02",
+    "slug": "escuela-mediacion-y-comunidades-prueba",
+    "status": "publish",
+    "type": "school_program",
+    "link": "http:\/\/www.cchv.cl\/futuro\/school_program\/escuela-mediacion-y-comunidades-prueba\/",
+    "title": {
+      "rendered": "Escuela Mediaci\u00f3n y Comunidades [PRUEBA]"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p class=\"has-text-color\">Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el <strong>Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, <\/strong>en el contexto de la <strong>Escuela de la Intuici\u00f3n<\/strong>.<\/p>\n<p class=\"has-text-color\">El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras <strong>Fundaci\u00f3n Caserta<\/strong> y <strong>Red Mediaci\u00f3n Art\u00edstica<\/strong>, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n<p class=\"has-text-color\">Los ejes inspiradores de la formaci\u00f3n y del dise\u00f1o de acciones girar\u00e1 en torno a la curator\u00eda general de la Bienal <em>El cuarto mundo<\/em> y su programa de mediaci\u00f3n la Escuela de la Intuici\u00f3n, que cuenta con la curator\u00eda pedag\u00f3gica del artista mexicano Abraham Cruzvillegas, quien expondr\u00e1 en Galer\u00eda Macchina en octubre en el marco de la 14 Bienal.<\/p>\n<p class=\"has-text-color\">Los participantes tendr\u00e1n acceso privilegiado a eventos de la Bienal (conciertos visuales, conversaciones con artistas, etc.), y al t\u00e9rmino del programa recibir\u00e1n un certificado de formaci\u00f3n Bienal \/ RMA \/ Caserta (constancia de asistencia), adem\u00e1s de una invitaci\u00f3n a escribir en el Cat\u00e1logo de la 14 Bienal, en el cap\u00edtulo de la Escuela de la Intuici\u00f3n, en el cual se crear\u00e1 un \u201ccoro\u201d de mediadores que desarrollen ideas, textos, ensayos, cr\u00f3nicas, sobre la mediaci\u00f3n en este encuentro.<\/p>\n",
+      "schedule": "",
+      "teachers": "",
+      "pdf": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program\/133"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/school_program"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=133"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=133"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 132,
+    "date": "2020-05-23T00:34:23",
+    "date_gmt": "2020-05-23T04:34:23",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=132"
+    },
+    "modified": "2020-05-23T00:34:23",
+    "modified_gmt": "2020-05-23T04:34:23",
+    "slug": "escuela-artes-y-oficios",
+    "status": "publish",
+    "type": "school_program",
+    "link": "http:\/\/www.cchv.cl\/futuro\/school_program\/escuela-artes-y-oficios\/",
+    "title": {
+      "rendered": "Escuela Artes y Oficios [PRUEBA]"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p class=\"has-text-color\">Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el <strong>Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, <\/strong>en el contexto de la <strong>Escuela de la Intuici\u00f3n<\/strong>.<\/p>\n<p class=\"has-text-color\">El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras <strong>Fundaci\u00f3n Caserta<\/strong> y <strong>Red Mediaci\u00f3n Art\u00edstica<\/strong>, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n<p class=\"has-text-color\">Los ejes inspiradores de la formaci\u00f3n y del dise\u00f1o de acciones girar\u00e1 en torno a la curator\u00eda general de la Bienal <em>El cuarto mundo<\/em> y su programa de mediaci\u00f3n la Escuela de la Intuici\u00f3n, que cuenta con la curator\u00eda pedag\u00f3gica del artista mexicano Abraham Cruzvillegas, quien expondr\u00e1 en Galer\u00eda Macchina en octubre en el marco de la 14 Bienal.<\/p>\n<p class=\"has-text-color\">Los participantes tendr\u00e1n acceso privilegiado a eventos de la Bienal (conciertos visuales, conversaciones con artistas, etc.), y al t\u00e9rmino del programa recibir\u00e1n un certificado de formaci\u00f3n Bienal \/ RMA \/ Caserta (constancia de asistencia), adem\u00e1s de una invitaci\u00f3n a escribir en el Cat\u00e1logo de la 14 Bienal, en el cap\u00edtulo de la Escuela de la Intuici\u00f3n, en el cual se crear\u00e1 un \u201ccoro\u201d de mediadores que desarrollen ideas, textos, ensayos, cr\u00f3nicas, sobre la mediaci\u00f3n en este encuentro.<\/p>\n",
+      "schedule": "",
+      "teachers": "",
+      "pdf": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program\/132"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/school_program"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=132"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=132"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
