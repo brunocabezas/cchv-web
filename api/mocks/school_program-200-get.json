@@ -1,0 +1,345 @@
+[
+  {
+    "id": 133,
+    "date": "2020-05-23T00:35:02",
+    "date_gmt": "2020-05-23T04:35:02",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=133"
+    },
+    "modified": "2020-05-24T17:17:27",
+    "modified_gmt": "2020-05-24T21:17:27",
+    "slug": "escuela-mediacion-y-comunidades-prueba",
+    "status": "publish",
+    "type": "school_program",
+    "link": "http:\/\/www.cchv.cl\/futuro\/school_program\/escuela-mediacion-y-comunidades-prueba\/",
+    "title": {
+      "rendered": "Escuela Mediaci\u00f3n y Comunidades [PRUEBA]"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p class=\"has-text-color\">Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el <strong>Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, <\/strong>en el contexto de la <strong>Escuela de la Intuici\u00f3n<\/strong>.<\/p>\n<p class=\"has-text-color\">El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras <strong>Fundaci\u00f3n Caserta<\/strong> y <strong>Red Mediaci\u00f3n Art\u00edstica<\/strong>, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n<p class=\"has-text-color\">Los ejes inspiradores de la formaci\u00f3n y del dise\u00f1o de acciones girar\u00e1 en torno a la curator\u00eda general de la Bienal <em>El cuarto mundo<\/em> y su programa de mediaci\u00f3n la Escuela de la Intuici\u00f3n, que cuenta con la curator\u00eda pedag\u00f3gica del artista mexicano Abraham Cruzvillegas, quien expondr\u00e1 en Galer\u00eda Macchina en octubre en el marco de la 14 Bienal.<\/p>\n<p class=\"has-text-color\">Los participantes tendr\u00e1n acceso privilegiado a eventos de la Bienal (conciertos visuales, conversaciones con artistas, etc.), y al t\u00e9rmino del programa recibir\u00e1n un certificado de formaci\u00f3n Bienal \/ RMA \/ Caserta (constancia de asistencia), adem\u00e1s de una invitaci\u00f3n a escribir en el Cat\u00e1logo de la 14 Bienal, en el cap\u00edtulo de la Escuela de la Intuici\u00f3n, en el cual se crear\u00e1 un \u201ccoro\u201d de mediadores que desarrollen ideas, textos, ensayos, cr\u00f3nicas, sobre la mediaci\u00f3n en este encuentro.<\/p>\n",
+      "schedule": "",
+      "teachers": "",
+      "pdf": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf",
+      "logo": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/Capture.png",
+      "gallery": [
+        {
+          "ID": 65,
+          "id": 65,
+          "title": "1-1-770x395",
+          "filename": "1-1-770x395-1.jpg",
+          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "1-1-770x395",
+          "date": "2020-05-16 16:00:58",
+          "modified": "2020-05-16 16:02:23",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 770,
+          "height": 395,
+          "sizes": {
+            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-300x154.jpg",
+            "medium-width": 300,
+            "medium-height": 154,
+            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-768x394.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 394,
+            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
+            "large-width": 770,
+            "large-height": 395,
+            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
+            "1536x1536-width": 770,
+            "1536x1536-height": 395,
+            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
+            "2048x2048-width": 770,
+            "2048x2048-height": 395
+          }
+        },
+        {
+          "ID": 77,
+          "id": 77,
+          "title": "sim4",
+          "filename": "sim4.png",
+          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "sim4",
+          "date": "2020-05-16 22:44:32",
+          "modified": "2020-05-24 18:10:06",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 941,
+          "height": 690,
+          "sizes": {
+            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-300x220.png",
+            "medium-width": 300,
+            "medium-height": 220,
+            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-768x563.png",
+            "medium_large-width": 768,
+            "medium_large-height": 563,
+            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
+            "large-width": 941,
+            "large-height": 690,
+            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
+            "1536x1536-width": 941,
+            "1536x1536-height": 690,
+            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
+            "2048x2048-width": 941,
+            "2048x2048-height": 690
+          }
+        }
+      ],
+      "video_url": "",
+      "abstract": "<p>Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, en el contexto de la Escuela de la Intuici\u00f3n.<\/p>\n"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program\/133"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/school_program"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=133"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=133"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 132,
+    "date": "2020-05-23T00:34:23",
+    "date_gmt": "2020-05-23T04:34:23",
+    "guid": {
+      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=132"
+    },
+    "modified": "2020-05-24T17:17:49",
+    "modified_gmt": "2020-05-24T21:17:49",
+    "slug": "escuela-artes-y-oficios",
+    "status": "publish",
+    "type": "school_program",
+    "link": "http:\/\/www.cchv.cl\/futuro\/school_program\/escuela-artes-y-oficios\/",
+    "title": {
+      "rendered": "Escuela Artes y Oficios [PRUEBA]"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p class=\"has-text-color\">Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el <strong>Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, <\/strong>en el contexto de la <strong>Escuela de la Intuici\u00f3n<\/strong>.<\/p>\n<p class=\"has-text-color\">El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras <strong>Fundaci\u00f3n Caserta<\/strong> y <strong>Red Mediaci\u00f3n Art\u00edstica<\/strong>, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n<p class=\"has-text-color\">Los ejes inspiradores de la formaci\u00f3n y del dise\u00f1o de acciones girar\u00e1 en torno a la curator\u00eda general de la Bienal <em>El cuarto mundo<\/em> y su programa de mediaci\u00f3n la Escuela de la Intuici\u00f3n, que cuenta con la curator\u00eda pedag\u00f3gica del artista mexicano Abraham Cruzvillegas, quien expondr\u00e1 en Galer\u00eda Macchina en octubre en el marco de la 14 Bienal.<\/p>\n<p class=\"has-text-color\">Los participantes tendr\u00e1n acceso privilegiado a eventos de la Bienal (conciertos visuales, conversaciones con artistas, etc.), y al t\u00e9rmino del programa recibir\u00e1n un certificado de formaci\u00f3n Bienal \/ RMA \/ Caserta (constancia de asistencia), adem\u00e1s de una invitaci\u00f3n a escribir en el Cat\u00e1logo de la 14 Bienal, en el cap\u00edtulo de la Escuela de la Intuici\u00f3n, en el cual se crear\u00e1 un \u201ccoro\u201d de mediadores que desarrollen ideas, textos, ensayos, cr\u00f3nicas, sobre la mediaci\u00f3n en este encuentro.<\/p>\n",
+      "schedule": "<p class=\"has-text-color\">\n<p class=\"has-text-color\">El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras <strong>Fundaci\u00f3n Caserta<\/strong> y <strong>Red Mediaci\u00f3n Art\u00edstica<\/strong>, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n",
+      "teachers": "<p>El programa consiste en el desarrollo de cuatro m\u00f3dulos de formaci\u00f3n te\u00f3rico-pr\u00e1ctica en los que colaboran las instituciones formadoras Fundaci\u00f3n Caserta y Red Mediaci\u00f3n Art\u00edstica, junto con el equipo de Mediaci\u00f3n y Educaci\u00f3n de la CChV y de la Galer\u00eda Macchina de la Escuela de Arte UC. Por su parte, la red de instituciones museales de la 14 Bienal de Artes Mediales ser\u00e1n las sedes de las pasant\u00edas en donde los estudiantes del programa desarrollar\u00e1n procesos de creaci\u00f3n y aplicaci\u00f3n metodol\u00f3gica en Mediaci\u00f3n Art\u00edstica.<\/p>\n",
+      "pdf": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf",
+      "logo": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/Capture.png",
+      "gallery": [
+        {
+          "ID": 87,
+          "id": 87,
+          "title": "image2-1024x768",
+          "filename": "image2-1024x768-1.jpeg",
+          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "image2-1024x768",
+          "date": "2020-05-16 22:48:41",
+          "modified": "2020-05-22 20:44:20",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1024,
+          "height": 768,
+          "sizes": {
+            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-150x150.jpeg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-300x225.jpeg",
+            "medium-width": 300,
+            "medium-height": 225,
+            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-768x576.jpeg",
+            "medium_large-width": 768,
+            "medium_large-height": 576,
+            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+            "large-width": 1024,
+            "large-height": 768,
+            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+            "1536x1536-width": 1024,
+            "1536x1536-height": 768,
+            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+            "2048x2048-width": 1024,
+            "2048x2048-height": 768
+          }
+        },
+        {
+          "ID": 82,
+          "id": 82,
+          "title": "mandragora-1024x683",
+          "filename": "mandragora-1024x683-1.jpg",
+          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "mandragora-1024x683",
+          "date": "2020-05-16 22:47:04",
+          "modified": "2020-05-16 22:47:07",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1024,
+          "height": 683,
+          "sizes": {
+            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
+            "1536x1536-width": 1024,
+            "1536x1536-height": 683,
+            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
+            "2048x2048-width": 1024,
+            "2048x2048-height": 683
+          }
+        },
+        {
+          "ID": 80,
+          "id": 80,
+          "title": "sim3",
+          "filename": "sim3.png",
+          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+          "alt": "",
+          "author": "1",
+          "description": "",
+          "caption": "",
+          "name": "sim3",
+          "date": "2020-05-16 22:45:31",
+          "modified": "2020-05-24 18:08:53",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 941,
+          "height": 530,
+          "sizes": {
+            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-300x169.png",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-768x433.png",
+            "medium_large-width": 768,
+            "medium_large-height": 433,
+            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+            "large-width": 941,
+            "large-height": 530,
+            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+            "1536x1536-width": 941,
+            "1536x1536-height": 530,
+            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+            "2048x2048-width": 941,
+            "2048x2048-height": 530
+          }
+        }
+      ],
+      "video_url": "",
+      "abstract": "<p>Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, en el contexto de la Escuela de la Intuici\u00f3n.<\/p>\n"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program\/132"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/school_program"
+        }
+      ],
+      "about": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/school_program"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=132"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=132"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

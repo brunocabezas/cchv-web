@@ -6,7 +6,13 @@ import {
   SponsorKeys,
   SocialNetworksKeys,
   DocumentKeys,
+  ProgramKeys,
+  PageKeys,
+  SchoolProgramKeys,
+  ProgramVideoKeys,
 } from "./customFieldsKeysTypes"
+
+// TODO Analyze why team member type def is not needed here
 
 export type CustomFields =
   | Carousel
@@ -14,6 +20,11 @@ export type CustomFields =
   | SponsorsCategory
   | Sponsor
   | SocialNetwork
+  | Document
+  | Page
+  | Program
+  | ProgramVideo
+  | SchoolProgram
 
 // TODO improve this type, should gather custom fields values types
 export type CustomFieldValues =
@@ -31,7 +42,7 @@ export type CustomFieldValues =
   | Document[DocumentKeys.link]
   | any
 
-// SPONSORS
+// SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {
   [SponsorCategoryKeys.order]: number
   [SponsorCategoryKeys.sponsors]: Sponsor[]
@@ -48,9 +59,50 @@ export type SocialNetwork = {
   [SocialNetworksKeys.url]: string
 }
 
-// DOCUMENTS
+// DOCUMENT
 export type Document = {
   [DocumentKeys.link]: string
+}
+
+// PAGE
+export type Page = {
+  [PageKeys.text]: string
+  [PageKeys.gallery]: any
+  [PageKeys.extra_content]: PageExtraContent
+}
+
+export type PageExtraContent = "none" | "documents"
+
+// PROGRAMS
+export type Program = {
+  [ProgramKeys.is_external]: boolean
+  [ProgramKeys.url]: string
+  [ProgramKeys.video_url]: string
+  [ProgramKeys.gallery]: any
+  [ProgramKeys.text]: string
+  [ProgramKeys.extra_content]: ProgramExtraContent
+}
+
+export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
+
+export type ProgramVideo = {
+  [ProgramVideoKeys.url]: string
+  [ProgramVideoKeys.text]: string
+  [ProgramVideoKeys.year]: string
+  [ProgramVideoKeys.author]: string
+  [ProgramVideoKeys.country]: string
+  [ProgramVideoKeys.duration]: string
+}
+
+export type SchoolProgram = {
+  [SchoolProgramKeys.teachers]: string
+  [SchoolProgramKeys.schedule]: string
+  [SchoolProgramKeys.abstract]: string
+  [SchoolProgramKeys.video_url]: string
+  [SchoolProgramKeys.pdf]: string
+  [SchoolProgramKeys.gallery]: any
+  [SchoolProgramKeys.text]: string
+  [SchoolProgramKeys.logo]: string
 }
 
 // CAROUSEL

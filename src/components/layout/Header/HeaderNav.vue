@@ -15,21 +15,30 @@
 
       <div
         v-if="menu.pages && menu.pages.length"
-        @mouseover="onHover"
-        @mouseleave="onHoverLeave"
+        @mouseover="onHover(menu.label)"
+        @mouseleave="onHoverLeave(menu.label)"
       >
-        <router-link :title="menu.label" :to="menu.url">
+        <router-link v-if="menu.url" :title="menu.label" :to="menu.url">
           {{ menu.label }}
         </router-link>
-        <div v-if="hover" class="headerNavItemSubLevel">
+        <span class="headerNavItemLink" v-else>{{ menu.label }}</span>
+
+        <div v-if="hoverState[menu.label]" class="headerNavItemSubLevel">
           <div
             v-bind:key="submenu.label"
             v-for="submenu in menu.pages"
             class="headerNavItemSubMenu"
           >
-            <a :title="submenu.label" :href="submenu.url">{{
+            <a
+              v-if="submenu.is_external"
+              target="_blank"
+              :title="submenu.label"
+              :href="submenu.url"
+              >{{ submenu.label }}</a
+            >
+            <router-link :to="submenu.url" v-else>{{
               submenu.label
-            }}</a>
+            }}</router-link>
           </div>
         </div>
       </div>
@@ -37,33 +46,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
-import { NAVIGATION_MENU } from "@/utils/static";
-
-export default defineComponent({
-  name: "HeaderNav",
-  setup() {
-    // Active when a navigation menu with sub level menus is hovered
-    const hover = ref(false);
-
-    function onHover() {
-      hover.value = true;
-    }
-
-    function onHoverLeave() {
-      hover.value = false;
-    }
-
-    return {
-      navigationMenu: NAVIGATION_MENU,
-      hover,
-      onHover,
-      onHoverLeave
-    };
-  }
-});
-</script>
+<script lang="ts" src="./headerNav.ts"></script>
 
 <style lang="stylus">
 @import '../../../styles/variables.styl';
@@ -74,7 +57,8 @@ export default defineComponent({
   padding: 0;
   position: relative;
 
-  a
+  a, .headerNavItemLink
+    color: $blue;
     display: flex;
     box-sizing: border-box;
     height: $header_height;

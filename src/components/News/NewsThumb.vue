@@ -69,10 +69,10 @@ export default defineComponent({
     height: 200px;
 
   &__thumbnail
-    height: 300px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 300px;
     width: 100%;
 
   &__link

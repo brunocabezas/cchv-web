@@ -6,21 +6,37 @@
     "guid": {
       "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=document&#038;p=73"
     },
-    "modified": "2020-05-16T16:56:53",
-    "modified_gmt": "2020-05-16T20:56:53",
+    "modified": "2020-05-22T20:47:39",
+    "modified_gmt": "2020-05-23T00:47:39",
     "slug": "memoria-anual-2018",
     "status": "publish",
     "type": "document",
     "link": "http:\/\/www.cchv.cl\/futuro\/document\/memoria-anual-2018\/",
     "title": {
-      "rendered": "Memoria anual 2018"
+      "rendered": "Memoria anual 2018 [PRUEBA]"
     },
     "author": 1,
     "parent": 0,
     "template": "",
     "categories": [],
     "acf_fields": {
-      "url": "http:\/\/www.cchv.cl\/futuro\/document\/politicas-de-acceso\/"
+      "url": {
+        "ID": 106,
+        "id": 106,
+        "title": "disen\u0303o web-mobile1",
+        "filename": "disen\u0303o-web-mobile1.pdf",
+        "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "disen%cc%83o-web-mobile1",
+        "date": "2020-05-20 03:56:54",
+        "modified": "2020-05-20 03:57:04",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      }
     },
     "_links": {
       "self": [
@@ -72,21 +88,37 @@
     "guid": {
       "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=document&#038;p=72"
     },
-    "modified": "2020-05-16T16:56:22",
-    "modified_gmt": "2020-05-16T20:56:22",
+    "modified": "2020-05-22T20:47:51",
+    "modified_gmt": "2020-05-23T00:47:51",
     "slug": "politicas-de-acceso",
     "status": "publish",
     "type": "document",
     "link": "http:\/\/www.cchv.cl\/futuro\/document\/politicas-de-acceso\/",
     "title": {
-      "rendered": "Politicas de acceso"
+      "rendered": "Politicas de acceso [PRUEBA]"
     },
     "author": 1,
     "parent": 0,
     "template": "",
     "categories": [],
     "acf_fields": {
-      "url": "http:\/\/www.cchv.cl\/futuro\/document\/politicas-de-acceso\/"
+      "url": {
+        "ID": 106,
+        "id": 106,
+        "title": "disen\u0303o web-mobile1",
+        "filename": "disen\u0303o-web-mobile1.pdf",
+        "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/disen\u0303o-web-mobile1.pdf",
+        "alt": "",
+        "author": "1",
+        "description": "",
+        "caption": "",
+        "name": "disen%cc%83o-web-mobile1",
+        "date": "2020-05-20 03:56:54",
+        "modified": "2020-05-20 03:57:04",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      }
     },
     "_links": {
       "self": [

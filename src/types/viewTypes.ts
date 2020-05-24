@@ -5,7 +5,13 @@ import {
   CarouselImageKeys,
   SocialNetworksKeys,
   DocumentKeys,
+  TeamMembersKeys,
+  PageKeys,
+  ProgramKeys,
+  ProgramVideoKeys,
+  SchoolProgramKeys,
 } from "./customFieldsKeysTypes"
+import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
 //
 // Types of entities rendered by components
 // In most cases, entities used by components should rely
@@ -45,9 +51,9 @@ declare module View {
   }
 
   interface TeamMember {
-    position: string
     name: string
     id: number
+    [TeamMembersKeys.position]: string
   }
 
   interface SponsorsCategory {
@@ -67,8 +73,8 @@ declare module View {
   interface CarouselImage {
     id: number
     name: string
-    image: string
-    url: string
+    [CarouselImageKeys.image]: string
+    [CarouselImageKeys.url]: string
   }
 
   interface SocialNetwork {
@@ -81,6 +87,50 @@ declare module View {
     id: number
     name: string
     [DocumentKeys.link]: string
+  }
+
+  interface Page {
+    id: number
+    name: string
+    [PageKeys.text]: string
+    [PageKeys.gallery]: any
+    [PageKeys.extra_content]: PageExtraContent
+  }
+
+  interface Program {
+    id: number
+    name: string
+    url: string
+    slug: string
+    [ProgramKeys.text]: string
+    [ProgramKeys.gallery]: any
+    [ProgramKeys.is_external]: boolean
+    [ProgramKeys.video_url]: string
+    [ProgramKeys.extra_content]: ProgramExtraContent
+  }
+
+  interface SchoolProgram {
+    id: number
+    name: string
+    [SchoolProgramKeys.logo]: string
+    [SchoolProgramKeys.text]: string
+    [SchoolProgramKeys.abstract]: string
+    [SchoolProgramKeys.gallery]: any
+    [SchoolProgramKeys.video_url]: string
+    [SchoolProgramKeys.teachers]: string
+    [SchoolProgramKeys.schedule]: string
+    [SchoolProgramKeys.pdf]: string
+  }
+
+  interface ProgramVideo {
+    id: number
+    name: string
+    [ProgramVideoKeys.text]: string
+    [ProgramVideoKeys.url]: any
+    [ProgramVideoKeys.duration]: boolean
+    [ProgramVideoKeys.author]: string
+    [ProgramVideoKeys.year]: string
+    [ProgramVideoKeys.country]: ProgramExtraContent
   }
 }
 

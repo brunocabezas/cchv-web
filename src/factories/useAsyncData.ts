@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
-import apiRoutes from "@/api/apiRoutes"
-import client from "@/api/client"
+import apiRoutes from "../../api/apiRoutes"
+import client from "../../api/client"
 import { HasDefined } from "@vue/composition-api/dist/types/basic"
 
 Vue.use(VueCompositionApi)
@@ -21,9 +21,8 @@ interface asyncData<T> {
   data: Ref<HasDefined<T>>
 }
 
-const status = ref(AsyncDataStatus.Initial)
-
 export default function useAsyncData<T>(url: apiRoutes) {
+  const status = ref(AsyncDataStatus.Initial)
   const data = ref<T>([])
   // Fetch data from the url with GET
   function fetch() {

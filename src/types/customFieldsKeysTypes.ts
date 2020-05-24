@@ -1,8 +1,9 @@
 //
-// customFieldsKeysTypes declares the keys or attributes used by
+// customFieldsKeysTypes declares the keys/attributes used by
 // the custom fields provided by the API
 
-// Only custom fields keys are declared here
+// Each custom field has it's keys define as enum
+// the type of each key is defined on ./customFieldTypes.ts
 
 // All custom fields attributes together
 export type CustomFieldsKeys =
@@ -21,6 +22,29 @@ export type CustomFieldsKeys =
   | SocialNetworksKeys.url
   | TeamMembersKeys.position
   | DocumentKeys.link
+  | PageKeys.text
+  | PageKeys.extra_content
+  | PageKeys.gallery
+  | ProgramKeys.is_external
+  | ProgramKeys.url
+  | ProgramKeys.text
+  | ProgramKeys.video_url
+  | ProgramKeys.gallery
+  | ProgramKeys.extra_content
+  | SchoolProgramKeys.text
+  | SchoolProgramKeys.schedule
+  | SchoolProgramKeys.teachers
+  | SchoolProgramKeys.pdf
+  | SchoolProgramKeys.video_url
+  | SchoolProgramKeys.logo
+  | SchoolProgramKeys.gallery
+  | SchoolProgramKeys.abstract
+  | ProgramVideoKeys.url
+  | ProgramVideoKeys.text
+  | ProgramVideoKeys.author
+  | ProgramVideoKeys.duration
+  | ProgramVideoKeys.country
+  | ProgramVideoKeys.year
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -65,4 +89,43 @@ export enum TeamMembersKeys {
 // TEAM MEMBERS
 export enum DocumentKeys {
   link = "url",
+}
+
+// Page
+export enum PageKeys {
+  text = "text",
+  extra_content = "extra_content",
+  gallery = "gallery",
+}
+
+// Programs
+export enum ProgramKeys {
+  is_external = "is_external",
+  url = "external_url",
+  text = "text",
+  video_url = "video_url",
+  gallery = "gallery",
+  extra_content = "extra_content",
+}
+
+// Concurso juan downey videos
+export enum ProgramVideoKeys {
+  url = "url",
+  text = "text",
+  author = "author",
+  duration = "duration",
+  year = "year",
+  country = "country",
+}
+
+// School Programs
+export enum SchoolProgramKeys {
+  text = "text",
+  abstract = "abstract",
+  schedule = "schedule",
+  teachers = "teachers",
+  pdf = "pdf",
+  video_url = "video_url",
+  logo = "logo",
+  gallery = "gallery",
 }

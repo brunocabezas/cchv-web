@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
-import apiRoutes from "@/api/apiRoutes"
+import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"

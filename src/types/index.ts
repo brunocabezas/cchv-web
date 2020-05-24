@@ -9,12 +9,15 @@ export enum AboutPages {
 export interface SubPage {
   label: string
   url: AppUrls
+  id: AppUrls
 }
 
 export interface Page {
   label: string
-  url: AppUrls
+  url?: AppUrls
+  id: AppUrls
   pages?: SubPage[]
+  is_external?: boolean
 }
 
 export type Pages = Page[]

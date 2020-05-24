@@ -2,7 +2,7 @@
   <div class="page">
     <div class="pageBox newsPostPage">
       <div v-if="post" class="newsPostPageLeft">
-        <div class="newsPostMedia"></div>
+        <Media />
 
         <h1 class="pageTitleText">{{ post.title }}</h1>
 
@@ -79,8 +79,4 @@
 
     .newsPostAbstract
       font-weight: bold;
-
-    .newsPostMedia
-      background-color: $blue;
-      height: 500px;
 </style>
