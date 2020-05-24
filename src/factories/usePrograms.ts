@@ -40,7 +40,7 @@ export default function usePrograms() {
   })
 
   function getProgramById(slug: string): View.Program | undefined {
-    console.log(slug, programs.value)
+    // console.log(slug, programs.value)
     return programs.value.find((p) => p.slug === slug)
   }
 

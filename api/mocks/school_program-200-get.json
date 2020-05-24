@@ -6,8 +6,8 @@
     "guid": {
       "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=133"
     },
-    "modified": "2020-05-24T14:10:11",
-    "modified_gmt": "2020-05-24T18:10:11",
+    "modified": "2020-05-24T17:17:27",
+    "modified_gmt": "2020-05-24T21:17:27",
     "slug": "escuela-mediacion-y-comunidades-prueba",
     "status": "publish",
     "type": "school_program",
@@ -105,7 +105,8 @@
           }
         }
       ],
-      "video_url": ""
+      "video_url": "",
+      "abstract": "<p>Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, en el contexto de la Escuela de la Intuici\u00f3n.<\/p>\n"
     },
     "_links": {
       "self": [
@@ -157,8 +158,8 @@
     "guid": {
       "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=school_program&#038;p=132"
     },
-    "modified": "2020-05-24T14:09:32",
-    "modified_gmt": "2020-05-24T18:09:32",
+    "modified": "2020-05-24T17:17:49",
+    "modified_gmt": "2020-05-24T21:17:49",
     "slug": "escuela-artes-y-oficios",
     "status": "publish",
     "type": "school_program",
@@ -295,7 +296,8 @@
           }
         }
       ],
-      "video_url": ""
+      "video_url": "",
+      "abstract": "<p>Con el objetivo de ofrecer un espacio de formaci\u00f3n con miras profesionalizantes a estudiantes y ex estudiantes de Arte y carreras afines, es que la Corporaci\u00f3n Chilena de Video (CChV), organizadora de la 14 Bienal de Artes Mediales, en alianza con la Escuela de Arte UC, ha creado el Programa de Formaci\u00f3n en Mediaci\u00f3n Art\u00edstica, en el contexto de la Escuela de la Intuici\u00f3n.<\/p>\n"
     },
     "_links": {
       "self": [

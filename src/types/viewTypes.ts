@@ -114,6 +114,7 @@ declare module View {
     name: string
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
+    [SchoolProgramKeys.abstract]: string
     [SchoolProgramKeys.gallery]: any
     [SchoolProgramKeys.video_url]: string
     [SchoolProgramKeys.teachers]: string

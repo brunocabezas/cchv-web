@@ -97,6 +97,7 @@ export type ProgramVideo = {
 export type SchoolProgram = {
   [SchoolProgramKeys.teachers]: string
   [SchoolProgramKeys.schedule]: string
+  [SchoolProgramKeys.abstract]: string
   [SchoolProgramKeys.video_url]: string
   [SchoolProgramKeys.pdf]: string
   [SchoolProgramKeys.gallery]: any
