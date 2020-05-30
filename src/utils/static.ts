@@ -2,6 +2,7 @@ import AppUrls from "./urls"
 import { Page } from "@/types"
 
 // Date format from https://github.com/iamkun/dayjs
+export const MAIN_COLOR = "#344284"
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
 export const CONTACT_EMAIL = "info@cchv.cl"
 export const YOUTUBE_CHANNEL =
@@ -33,17 +34,17 @@ const ProgramsPage: Page = {
     {
       id: AppUrls.DowneyProgram,
       url: AppUrls.DowneyProgram,
-      label: "Concurso Juan Downey",
+      label: "Concurso Internacional Juan Downey",
     },
     {
       id: AppUrls.SchoolProgram,
       url: AppUrls.SchoolProgram,
-      label: "Escuela de la intuicion",
+      label: "Escuela de la intuición",
     },
     {
       id: AppUrls.MagneticFieldsProgram,
       url: AppUrls.MagneticFieldsProgram,
-      label: "Campos Magneticos",
+      label: "Campos Magnéticos",
     },
   ],
 }
