@@ -14,8 +14,9 @@ export const NEWSLETTER_SUBSCRIBE_URL =
 const AboutPage: Page = {
   id: AppUrls.About,
   url: AppUrls.About,
-  label: "Quienes Somos",
+  label: "Somos",
   pages: [
+    { id: AppUrls.AboutHistory, url: AppUrls.AboutHistory, label: "Historia" },
     { id: AppUrls.AboutTeam, url: AppUrls.AboutTeam, label: "Equipo" },
     {
       id: AppUrls.AboutTransparency,
@@ -47,4 +48,10 @@ const ProgramsPage: Page = {
   ],
 }
 
-export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage]
+const NewsPage: Page = {
+  id: AppUrls.News,
+  url: AppUrls.News,
+  label: "Noticias",
+}
+
+export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage, NewsPage]
