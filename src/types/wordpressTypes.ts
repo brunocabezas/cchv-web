@@ -1,4 +1,4 @@
-import { CustomFieldValues } from "./customFieldsTypes"
+import { CustomFieldValues, ProgramExtraContent } from "./customFieldsTypes"
 import { CustomFieldsKeys } from "./customFieldsKeysTypes"
 
 // Wordpres response
@@ -132,3 +132,11 @@ interface WpImageSizes {
   "large-width": number
   "large-height": number
 }
+
+// export type WPSelectCustomField = WPSelectCustomFieldOption[]
+export interface WPSelectCustomFieldValue {
+  value: ProgramExtraContent
+  label: string
+}
+// export type WPSelectCustomField = WPSelectCustomFieldOption[]
+export type WPRelatedCustomFieldValue = number[]

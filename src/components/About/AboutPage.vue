@@ -9,16 +9,16 @@
       </div>
       <div v-html="aboutPage.text" class="pageRow pageBody"></div>
       <div class="pageRow">
-        <a :href="teamUrl" title="Equipo" class="aboutSquareLink">
+        <router-link :to="teamUrl" title="Equipo" class="aboutSquareLink">
           Equipo
-        </a>
-        <a
-          :href="transparencyUrl"
+        </router-link>
+        <router-link
+          :to="transparencyUrl"
           title="Transparencia"
           class="aboutSquareLink"
         >
           Transparencia
-        </a>
+        </router-link>
       </div>
     </div>
     <Loader :loading="isLoading" />

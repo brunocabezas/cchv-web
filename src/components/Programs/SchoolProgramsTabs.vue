@@ -26,7 +26,9 @@
     </div>
     <div class="pageRow schoolProgramTabsContent">
       <div v-if="displayActiveProgram" class="schoolProgram">
-        <div class="schoolProgramMedia"><Media /></div>
+        <div class="schoolProgramMedia">
+          <Media :gallery="activeProgram.gallery" />
+        </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">{{ activeProgram.name }}</h3>
           <p>{{ activeProgram.abstract }}</p>
