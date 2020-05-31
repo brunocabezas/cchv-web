@@ -2,7 +2,7 @@
   <div class="page">
     <div class="newsPostPage">
       <div v-if="post" class="newsPostPageLeft">
-        <Media />
+        <Media :gallery="post.gallery" />
 
         <h1 class="pageTitleText">{{ post.title }}</h1>
 

@@ -1,6 +1,6 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import Media from "@/components/Media.vue"
+import Media from "@/components/Media/Media.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/factories/useTabs"
 

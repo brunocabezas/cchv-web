@@ -24,7 +24,7 @@
 import { defineComponent, onMounted } from "@vue/composition-api";
 import usePages from "@/factories/usePages";
 import Loader from "@/components/Loader.vue";
-import Media from "@/components/Media.vue";
+import Media from "@/components/Media/Media.vue";
 import AppUrls from "@/utils/urls";
 
 export default defineComponent({

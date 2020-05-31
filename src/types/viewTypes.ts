@@ -11,6 +11,7 @@ import {
   ProgramVideoKeys,
   SchoolProgramKeys,
 } from "./customFieldsKeysTypes"
+import { WpImage } from "./wordpressTypes"
 import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
 //
 // Types of entities rendered by components
@@ -38,7 +39,7 @@ declare module View {
     date: string
     [NewsKeys.abstract]: string
     [NewsKeys.text]: string
-    [NewsKeys.gallery]: any
+    [NewsKeys.gallery]: WpImage[]
     [NewsKeys.related]: RelatedNewsPost[]
     [NewsKeys.video_url]: string
   }
