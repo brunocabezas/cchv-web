@@ -19,12 +19,9 @@ export default function usePages() {
       (pagePost): View.Page => ({
         id: pagePost.id,
         name: getWPTitle(pagePost),
-        [PageKeys.text]: getCustomField(pagePost, PageKeys.text),
-        [PageKeys.gallery]: getCustomField(pagePost, PageKeys.gallery),
-        [PageKeys.extra_content]: getCustomField(
-          pagePost,
-          PageKeys.extra_content
-        ),
+        text: getCustomField(pagePost, PageKeys.text),
+        gallery: getCustomField(pagePost, PageKeys.gallery),
+        extra_content: getCustomField(pagePost, PageKeys.extra_content),
       })
     )
   })

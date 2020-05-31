@@ -19,30 +19,12 @@ export default function usePrograms() {
       (programVideoPost): View.ProgramVideo => ({
         id: programVideoPost.id,
         name: getWPTitle(programVideoPost),
-        [ProgramVideoKeys.url]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.url
-        ),
-        [ProgramVideoKeys.year]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.year
-        ),
-        [ProgramVideoKeys.author]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.author
-        ),
-        [ProgramVideoKeys.text]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.text
-        ),
-        [ProgramVideoKeys.country]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.country
-        ),
-        [ProgramVideoKeys.duration]: getCustomField(
-          programVideoPost,
-          ProgramVideoKeys.duration
-        ),
+        url: getCustomField(programVideoPost, ProgramVideoKeys.url),
+        year: getCustomField(programVideoPost, ProgramVideoKeys.year),
+        author: getCustomField(programVideoPost, ProgramVideoKeys.author),
+        text: getCustomField(programVideoPost, ProgramVideoKeys.text),
+        country: getCustomField(programVideoPost, ProgramVideoKeys.country),
+        duration: getCustomField(programVideoPost, ProgramVideoKeys.duration),
       })
     )
   })
