@@ -18,12 +18,12 @@ export default function useNews() {
     return helpers.mapNewsToView(data.value)
   })
 
-  function getNewsPostById(id: number) {
-    return news.value.find((post) => post.id === id)
+  function getNewsPostBySlug(slug: string) {
+    return news.value.find((post) => post.slug === slug)
   }
 
-  function getNewsPostUrl(postId: number): string {
-    return `${AppUrls.NewsPost}${postId}`
+  function getNewsPostUrl(postSlug: string): string {
+    return `${AppUrls.NewsPost}${postSlug}`
   }
 
   const homeNews = computed(() => [...news.value].slice(0, 2))
@@ -33,7 +33,7 @@ export default function useNews() {
     homeNews,
     isLoading: computed(() => isLoading.value),
     getNewsPostUrl,
-    getNewsPostById,
+    getNewsPostBySlug,
     fetchNews,
   }
 }

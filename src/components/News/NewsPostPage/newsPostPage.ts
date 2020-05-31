@@ -6,19 +6,24 @@ import useNews from "@/factories/useNews"
 export default defineComponent({
   name: "NewsPostPage",
   props: {
-    postId: {
-      type: Number,
+    postSlug: {
+      type: String,
       required: true,
     },
   },
   components: { Loader, Media },
   setup(props) {
-    const { getNewsPostById, fetchNews, isLoading, getNewsPostUrl } = useNews()
+    const {
+      getNewsPostBySlug,
+      fetchNews,
+      isLoading,
+      getNewsPostUrl,
+    } = useNews()
 
     fetchNews()
 
     const post = computed(() => {
-      return getNewsPostById(props.postId)
+      return getNewsPostBySlug(props.postSlug)
     })
 
     return { getNewsPostUrl, post, isLoading }

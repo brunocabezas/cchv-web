@@ -13,10 +13,10 @@ const routes = [
   { path: AppUrls.Home, component: Home },
   { path: AppUrls.News, component: NewsPage },
   {
-    path: `${AppUrls.NewsPost}:postId`,
+    path: `${AppUrls.NewsPost}:postSlug`,
     component: NewsPostPage,
     props: (route: Route) => ({
-      postId: parseInt(route.params.postId, 10),
+      postSlug: route.params.postSlug,
     }),
   },
   // About

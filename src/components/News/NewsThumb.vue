@@ -6,7 +6,7 @@
     <router-link
       class="newsPostPreview__link"
       :title="post.title"
-      :to="getNewsPostUrl(post.id)"
+      :to="getNewsPostUrl(post.slug)"
     >
       <div
         class="newsPostPreview__thumbnail"
@@ -18,7 +18,7 @@
       <router-link
         class="newsPostPreview__link"
         :title="post.title"
-        :to="getNewsPostUrl(post.id)"
+        :to="getNewsPostUrl(post.slug)"
         >{{ post.title }}</router-link
       >
     </h3>
@@ -27,7 +27,7 @@
     <router-link
       :title="post.title"
       class="newsPostPreview__link"
-      :to="getNewsPostUrl(post.id)"
+      :to="getNewsPostUrl(post.slug)"
       >Leer noticia completa</router-link
     >
   </div>

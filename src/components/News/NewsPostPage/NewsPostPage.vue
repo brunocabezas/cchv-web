@@ -19,14 +19,14 @@
         <h3 class="newsPostRelatedTitle">Noticias relacionadas</h3>
         <hr />
         <div v-bind:key="post.id" v-for="post in post.related">
-          <router-link :title="post.title" :to="getNewsPostUrl(post.id)">
+          <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">
             <div
               class="newsPostRelated__thumb"
               v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
             ></div
           ></router-link>
           <h4 class="newsPostRelated__title">
-            <router-link :title="post.title" :to="getNewsPostUrl(post.id)">{{
+            <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">{{
               post.title
             }}</router-link>
           </h4>

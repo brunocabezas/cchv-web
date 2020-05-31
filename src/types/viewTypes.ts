@@ -37,6 +37,7 @@ declare module View {
     // The first image url from gallery
     thumbnail: string
     date: string
+    slug: string
     [NewsKeys.abstract]: string
     [NewsKeys.text]: string
     [NewsKeys.gallery]: WpImage[]
@@ -47,6 +48,7 @@ declare module View {
   interface RelatedNewsPost {
     id: number
     title: string
+    slug: string
     date: string
     thumbnail: string
   }
