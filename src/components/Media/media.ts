@@ -5,13 +5,24 @@ import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue"
 import { WpImage } from "@/types/wordpressTypes"
+import { getIdFromUrl } from "vue-youtube"
 
-const MediaCarousel = defineComponent({
-  name: "MediaCarousel",
+type LightBoxItem = {
+  src: string
+  thumb: string
+}
+
+const Media = defineComponent({
+  name: "Media",
   props: {
-    images: {
+    gallery: {
       type: Array as PropType<WpImage[]>,
       required: true,
+    },
+    youtubeUrl: {
+      type: String,
+      default: "",
+      required: false,
     },
   },
   components: {
@@ -24,23 +35,32 @@ const MediaCarousel = defineComponent({
   },
   setup(props) {
     const currentImage = ref<number>(0)
+    // Ref used to open lightbox
     const lightBoxRef = ref<any>(null)
-    const lightBoxData = computed(() => {
-      if (!props.images) return []
-      return props.images.map((img) => ({ src: img.url, thumb: img.url }))
-    })
+    const lightBoxData = computed<LightBoxItem[]>(() =>
+      props.gallery
+        ? props.gallery.map((img) => ({ src: img.url, thumb: img.url }))
+        : []
+    )
+    // If video is available, add to carousel data array
+    const carouselLength = props.youtubeUrl
+      ? props.gallery.length + 1
+      : props.gallery.length
+    const youtubeVideoId = computed<string>(() =>
+      getIdFromUrl(props.youtubeUrl)
+    )
 
-    function goToNextItem(): void {
-      if (currentImage.value === props.images.length - 1) {
+    function goToNextItem() {
+      if (currentImage.value === carouselLength - 1) {
         currentImage.value = 0
       } else {
         currentImage.value = currentImage.value + 1
       }
     }
 
-    function goToPrevItem(): void {
+    function goToPrevItem() {
       if (currentImage.value === 0) {
-        currentImage.value = props.images.length - 1
+        currentImage.value = carouselLength - 1
       } else {
         currentImage.value = currentImage.value - 1
       }
@@ -51,14 +71,17 @@ const MediaCarousel = defineComponent({
     }
 
     return {
+      youtubeVideoId,
+      // Carousel state
       currentImage,
-      openLightBox,
       goToPrevItem,
       goToNextItem,
+      // Lightbox for images
       lightBoxData,
       lightBoxRef,
+      openLightBox,
     }
   },
 })
 
-export default MediaCarousel
+export default Media

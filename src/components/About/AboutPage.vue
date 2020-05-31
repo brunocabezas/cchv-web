@@ -3,24 +3,25 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Somos</h1>
     </div>
-
+    <div v-if="aboutPage" class="pageContent">
+      <div class="pageRow">
+        <Media :gallery="aboutPage.gallery" />
+      </div>
+      <div v-html="aboutPage.text" class="pageRow pageBody"></div>
+      <div class="pageRow">
+        <a :href="teamUrl" title="Equipo" class="aboutSquareLink">
+          Equipo
+        </a>
+        <a
+          :href="transparencyUrl"
+          title="Transparencia"
+          class="aboutSquareLink"
+        >
+          Transparencia
+        </a>
+      </div>
+    </div>
     <Loader :loading="isLoading" />
-    <div v-if="aboutPage" class="pageRow">
-      <Media :gallery="aboutPage.gallery" />
-    </div>
-    <div
-      v-if="aboutPage"
-      v-html="aboutPage.text"
-      class="pageRow pageBody"
-    ></div>
-    <div v-if="aboutPage" class="pageRow">
-      <a :href="teamUrl" title="Equipo" class="aboutSquareLink">
-        Equipo
-      </a>
-      <a :href="transparencyUrl" title="Transparencia" class="aboutSquareLink">
-        Transparencia
-      </a>
-    </div>
   </div>
 </template>
 

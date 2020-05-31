@@ -2,8 +2,8 @@
   <progressive-background :placeholder="src" :src="src">
     <div
       v-bind:class="{
-        'imageLoaderContainer--loading': visible,
-        imageLoaderContainer: true
+        'progressiveImage--loading': visible,
+        progressiveImage: true
       }"
       slot="content"
       slot-scope="{ visible }"
@@ -35,9 +35,11 @@ export default ProgressiveImage;
 </script>
 
 <style lang="stylus">
-.progressive-background, .progressive-background-image, .imageLoaderContainer
+.progressive-background-image
+  height: 100%;
+
+.progressive-background, .progressive-background-image, .progressiveImage
   position: relative;
-  height: 300px !important;
 
   .progressive-background-placeholder
     background-position: center center !important;

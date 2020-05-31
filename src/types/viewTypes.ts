@@ -104,7 +104,7 @@ declare module View {
     url: string
     slug: string
     [ProgramKeys.text]: string
-    [ProgramKeys.gallery]: WpImage[]
+    [ProgramKeys.gallery]: WpImage[] | undefined
     [ProgramKeys.is_external]: boolean
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
@@ -116,7 +116,7 @@ declare module View {
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
     [SchoolProgramKeys.abstract]: string
-    [SchoolProgramKeys.gallery]: WpImage[]
+    [SchoolProgramKeys.gallery]: WpImage[] | undefined
     [SchoolProgramKeys.video_url]: string
     [SchoolProgramKeys.teachers]: string
     [SchoolProgramKeys.schedule]: string

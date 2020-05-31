@@ -3,17 +3,15 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Historia</h1>
     </div>
+    <div v-if="historyPage" class="pageContent">
+      <div v-if="historyPage.gallery" class="pageRow">
+        <Media :gallery="historyPage.gallery" />
+      </div>
+      <div v-html="historyPage.text" class="pageBody pageRow"></div>
+      <hr />
+    </div>
 
     <Loader :loading="isLoading" />
-    <div v-if="historyPage" class="pageRow">
-      <Media :gallery="historyPage.gallery" />
-    </div>
-    <div
-      v-if="historyPage"
-      v-html="historyPage.text"
-      class="pageBody pageRow"
-    ></div>
-    <hr />
   </div>
 </template>
 

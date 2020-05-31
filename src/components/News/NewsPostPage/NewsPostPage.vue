@@ -2,7 +2,7 @@
   <div class="page">
     <div class="newsPostPage">
       <div v-if="post" class="newsPostPageLeft">
-        <Media :gallery="post.gallery" />
+        <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
         <h1 class="pageTitleText">{{ post.title }}</h1>
 
