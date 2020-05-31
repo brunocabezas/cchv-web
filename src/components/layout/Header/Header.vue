@@ -4,8 +4,9 @@
     <HeaderNav />
     <div class="headerNavItem">
       <a
+        class="youtubeChannelLink"
         title="Canal de YouTube"
-        :href="youtubeChannelUrl"
+        :href="YOUTUBE_CHANNEL"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -19,13 +20,13 @@
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
 import Logo from "@/components/Logo.vue";
 import { defineComponent } from "@vue/composition-api";
-import { YOUTUBE_CHANNEL } from "../../../utils/static";
+import { YOUTUBE_CHANNEL } from "@/utils/static";
 
 const Header = defineComponent({
   name: "Header",
   components: { Logo, HeaderNav },
   setup() {
-    return { youtubeChannelUrl: YOUTUBE_CHANNEL };
+    return { YOUTUBE_CHANNEL };
   }
 });
 
@@ -40,4 +41,7 @@ export default Header;
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid $grey;
+
+  .youtubeChannelLink
+    font-size: 18px;
 </style>

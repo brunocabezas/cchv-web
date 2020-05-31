@@ -75,6 +75,7 @@
   display: flex;
   justify-content: flex-end;
   flex: 1;
+  font-size: 18px;
 
   .headerNavItemSubLevel
     position: absolute;
@@ -88,6 +89,7 @@
     .headerNavItemSubMenu
       border-top: 1px solid $blue;
       text-transform: uppercase;
+      font-size: 14px;
 
       &:hover
         background-color: darken($grey, 3);

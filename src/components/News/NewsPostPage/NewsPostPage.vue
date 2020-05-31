@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="pageBox newsPostPage">
+    <div class="newsPostPage">
       <div v-if="post" class="newsPostPageLeft">
         <Media />
 
@@ -73,6 +73,7 @@
 
   .newsPostPageLeft
     width: 80%;
+    flex-grow: 1;
 
     .pageTitleText
       color: $blue;

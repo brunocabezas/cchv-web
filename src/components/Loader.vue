@@ -35,11 +35,14 @@ const Loader = defineComponent({
 export default Loader;
 </script>
 <style lang="stylus">
+@import '../styles/variables.styl';
+
 .loader
   top: 50%;
   position: absolute;
   width: 100%;
   display: flex;
   align-items: center;
+  max-width: $boxed_content_max_width;
   justify-content: center;
 </style>

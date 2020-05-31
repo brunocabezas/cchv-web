@@ -7,7 +7,10 @@
 .page
   // To display loader
   min-height: 100vh;
-  padding: 1em 2em;
+  padding: 3em 5em 2em 5em;
+  box-sizing: border-box;
+  max-width: $boxed_content_max_width;
+  margin: 0 auto;
 
   .pageTitle
     display: flex;
@@ -21,10 +24,6 @@
 
     .pageLeft, .pageRight
       width: 50%;
-
-  .pageBox
-    max-width: $boxed_content_max_width;
-    margin: 0 auto;
 
   hr
     color: $blue;

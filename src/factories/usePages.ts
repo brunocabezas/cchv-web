@@ -45,10 +45,20 @@ export default function usePages() {
     )
   })
 
+  const historyPage = computed<View.Page | null>(() => {
+    return (
+      pages.value.find((page) =>
+        page.name.toLocaleLowerCase().includes("historia")
+      ) || null
+    )
+  })
+
+  console.log(pages.value)
   return {
     fetchPages,
     aboutPage,
     transparencyPage,
+    historyPage,
     isLoading,
   }
 }
