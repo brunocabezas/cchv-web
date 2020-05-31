@@ -25,7 +25,6 @@ export const addPagesToProgramsNavigationMenu = (
   programs: readonly View.Program[]
 ) =>
   NAVIGATION_MENU.map((navMenu) => {
-    console.log(programs)
     // If menu is programs, define pages with usePrograms()
     if (navMenu.id === AppUrls.Programs) {
       const externalProgramsFromAPI = programs

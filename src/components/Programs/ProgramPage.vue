@@ -4,8 +4,12 @@
     <div v-if="program" class="pageTitle">
       <h1 class="pageTitleText">{{ program.name }}</h1>
     </div>
-    <Media />
-    <div v-if="program" class="pageRow programText" v-html="program.text"></div>
+    <Media v-if="program" :gallery="program.gallery" />
+    <div
+      v-if="program"
+      class="pageRow pageBody programText"
+      v-html="program.text"
+    ></div>
     <DowneyProgramVideos v-if="isDowneyProgram" />
     <SchoolProgramsTabs v-if="isSchoolProgram" />
   </div>

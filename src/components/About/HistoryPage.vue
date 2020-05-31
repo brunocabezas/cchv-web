@@ -6,9 +6,13 @@
 
     <Loader :loading="isLoading" />
     <div v-if="historyPage" class="pageRow">
-      <Media />
+      <Media :gallery="historyPage.gallery" />
     </div>
-    <div v-if="historyPage" v-html="historyPage.text" class="pageRow"></div>
+    <div
+      v-if="historyPage"
+      v-html="historyPage.text"
+      class="pageBody pageRow"
+    ></div>
     <hr />
   </div>
 </template>

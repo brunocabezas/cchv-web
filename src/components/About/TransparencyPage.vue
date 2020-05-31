@@ -7,7 +7,11 @@
     </div>
     <div class="pageRow">
       <div class="pageLeft">
-        <div v-if="transparencyPage" v-html="transparencyPage.text"></div>
+        <div
+          class="pageBody"
+          v-if="transparencyPage"
+          v-html="transparencyPage.text"
+        ></div>
       </div>
       <div class="pageRight">
         <Loader :loading="isLoading" />

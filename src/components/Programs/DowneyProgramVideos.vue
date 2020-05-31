@@ -13,7 +13,10 @@
               <div>Año: {{ video.year }}</div>
               <div>País: {{ video.country }}</div>
             </div>
-            <div class="programVideo__text" v-html="video.text" />
+            <div
+              class="pageBody pageText programVideo__text"
+              v-html="video.text"
+            />
           </div>
           <div class="programVideo__player">
             <Media />

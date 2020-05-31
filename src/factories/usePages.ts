@@ -53,7 +53,6 @@ export default function usePages() {
     )
   })
 
-  console.log(pages.value)
   return {
     fetchPages,
     aboutPage,

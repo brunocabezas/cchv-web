@@ -10,7 +10,7 @@
 
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 
-        <div v-html="post.text"></div>
+        <div class="pageBody" v-html="post.text"></div>
       </div>
       <div
         v-if="post && post.related && post.related.length > 0"

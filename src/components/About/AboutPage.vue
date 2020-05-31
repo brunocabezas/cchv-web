@@ -6,9 +6,13 @@
 
     <Loader :loading="isLoading" />
     <div v-if="aboutPage" class="pageRow">
-      <Media />
+      <Media :gallery="aboutPage.gallery" />
     </div>
-    <div v-if="aboutPage" v-html="aboutPage.text" class="pageRow"></div>
+    <div
+      v-if="aboutPage"
+      v-html="aboutPage.text"
+      class="pageRow pageBody"
+    ></div>
     <div v-if="aboutPage" class="pageRow">
       <a :href="teamUrl" title="Equipo" class="aboutSquareLink">
         Equipo

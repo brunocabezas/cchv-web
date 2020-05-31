@@ -94,7 +94,7 @@ declare module View {
     id: number
     name: string
     [PageKeys.text]: string
-    [PageKeys.gallery]: any
+    [PageKeys.gallery]: WpImage[]
     [PageKeys.extra_content]: PageExtraContent
   }
 
@@ -104,7 +104,7 @@ declare module View {
     url: string
     slug: string
     [ProgramKeys.text]: string
-    [ProgramKeys.gallery]: any
+    [ProgramKeys.gallery]: WpImage[]
     [ProgramKeys.is_external]: boolean
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
@@ -116,7 +116,7 @@ declare module View {
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
     [SchoolProgramKeys.abstract]: string
-    [SchoolProgramKeys.gallery]: any
+    [SchoolProgramKeys.gallery]: WpImage[]
     [SchoolProgramKeys.video_url]: string
     [SchoolProgramKeys.teachers]: string
     [SchoolProgramKeys.schedule]: string

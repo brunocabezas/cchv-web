@@ -19,6 +19,7 @@ import VueYoutube from "vue-youtube";
 import MediaCarousel from "@/components/Media/MediaCarousel.vue";
 import { defineComponent, PropType } from "@vue/composition-api";
 import View from "@/types/viewTypes";
+import { WpImage } from "../../types/wordpressTypes";
 
 const Media = defineComponent({
   name: "Media",
@@ -29,7 +30,7 @@ const Media = defineComponent({
       required: false
     },
     gallery: {
-      type: Array as PropType<View.ViewGalleryImage[]>,
+      type: Array as PropType<WpImage[]>,
       default: () => [],
       required: false
     }
