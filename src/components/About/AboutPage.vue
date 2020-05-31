@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="pageTitle">
-      <h1 class="pageTitleText">Quienes Somos</h1>
+      <h1 class="pageTitleText">Somos</h1>
     </div>
 
     <Loader :loading="isLoading" />

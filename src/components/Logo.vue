@@ -19,10 +19,10 @@ export default Logo;
 </script>
 <style lang="stylus">
 .logo
-  display inline-block
-  width 300px
-  height 100%
-  padding 30px
+  display: flex;
+  width: 300px;
+  padding: 30px;
+
   img
-    width 100%
+    width: 100%;
 </style>
