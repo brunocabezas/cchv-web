@@ -1,5 +1,5 @@
 <template>
-  <div class="media carousel">
+  <div class="media carousel" v-bind:style="{ height }">
     <LightBox
       ref="lightBoxRef"
       :showLightBox="false"
@@ -10,7 +10,7 @@
       :perPage="1"
       :navigate-to="currentImage"
     >
-      <slide>
+      <slide v-if="!!youtubeVideoId">
         <youtube
           height="100%"
           width="100%"
@@ -19,14 +19,20 @@
         >
         </youtube>
       </slide>
-      <slide v-bind:key="image.id" v-for="(image, index) in gallery">
+      <slide
+        class="carouselItem"
+        v-bind:key="image.id"
+        v-for="(image, index) in gallery"
+      >
         <button
           type="button"
+          v-bind:style="{ height }"
           title="Ampliar imagen"
           class="carouselLightboxOverlay"
           @click="openLightBox(index)"
         >
-          <ProgressiveImage :src="image.url"> </ProgressiveImage>
+          <ProgressiveImage :height="height" :src="image.url">
+          </ProgressiveImage>
         </button>
       </slide>
     </vue-carousel>
@@ -60,16 +66,12 @@
   display: block;
   width: 100%;
   background-color: $blue;
-  height: 500px;
-</style>
 
-<style lang="stylus" scoped>
 .carousel
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
 
   hr
     display: none;
@@ -89,6 +91,9 @@
     background-color: transparent;
     border: none;
 
+    > div > span
+      height: 100%;
+
   .carouselButton
     z-index: 1;
     background-color: transparent;
@@ -100,24 +105,14 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-</style>
 
-<style lang="stylus">
-// @import '../../../styles/constants';
-// $carousel_height = 300px;
 .VueCarousel
   height: 100%;
   width: 100%;
   background-color: black;
 
-  .VueCarousel-slide
-    height: 500px;
-
   hr
     display: none;
-
-  .loaderContainer, .carouselButton
-    top: calc((300px / 2) - 13px);
 
   .carouselButton
     &.carouselButton--next
@@ -130,10 +125,5 @@
     position: relative;
 
   .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
-    // height: 300px !important;
-    height: 500px;
     width: 100%;
-
-  .progressive-background-image
-    height: 500px;
 </style>

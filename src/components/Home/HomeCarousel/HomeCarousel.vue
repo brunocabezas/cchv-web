@@ -57,8 +57,11 @@
 // Viewport height less header height
 $carousel_height = 'calc(100vh - %s)' % $header_height;
 
-.VueCarousel-wrapper, .homeCarousel
+.homeCarousel
   height: $carousel_height;
+
+  .VueCarousel-wrapper
+    height: $carousel_height;
 
 .homeCarousel
   background-color: $blue;

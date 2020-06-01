@@ -1,6 +1,6 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import Media from "@/components/Media/Media.vue"
+import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/factories/useTabs"
 import View from "@/types/viewTypes"
@@ -9,7 +9,7 @@ const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",
   components: {
     Loader,
-    Media,
+    ProgressiveImage,
   },
   props: {
     slug: {

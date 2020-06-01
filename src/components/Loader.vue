@@ -38,7 +38,9 @@ export default Loader;
 @import '../styles/variables.styl';
 
 .loader
+  left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
   width: 100%;
   display: flex;

@@ -24,6 +24,11 @@ const Media = defineComponent({
       default: "",
       required: false,
     },
+    height: {
+      type: String,
+      default: "500px",
+      required: false,
+    },
   },
   components: {
     VueCarousel,
@@ -43,11 +48,13 @@ const Media = defineComponent({
         : []
     )
     // If video is available, add to carousel data array
-    const carouselLength = props.youtubeUrl
-      ? props.gallery.length + 1
-      : props.gallery.length
+    const carouselLength =
+      props.youtubeUrl.length > 0
+        ? props.gallery.length + 1
+        : props.gallery.length
+
     const youtubeVideoId = computed<string>(() =>
-      getIdFromUrl(props.youtubeUrl)
+      props.youtubeUrl.length ? getIdFromUrl(props.youtubeUrl) : ""
     )
 
     function goToNextItem() {
