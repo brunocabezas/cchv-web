@@ -6,12 +6,15 @@ import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
 import View from "@/types/viewTypes"
+import { filterUndef } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
-type ObjectWithOrder = { order: number }
-const sortByOrder = (a: ObjectWithOrder, b: ObjectWithOrder) =>
-  a.order - b.order
+// type ObjectWithOrder = { order: number }
+const sortByOrder = (
+  a: View.Sponsor | View.SponsorsCategory,
+  b: View.Sponsor | View.SponsorsCategory
+) => a.order - b.order
 
 const mapWpResponseToView =
   // Mapping WpResponseItem to View.SponsorsCategory
@@ -19,28 +22,28 @@ const mapWpResponseToView =
     sponsorCategoryPost: WPResponseItem,
     sponsors: WpResponseData
   ): View.SponsorsCategory => {
-    const sponsorsIds = getCustomField(
+    const sponsorsIds = getCustomField<number[]>(
       sponsorCategoryPost,
-      SponsorCategoryKeys.sponsors
+      SponsorCategoryKeys.sponsors,
+      []
     )
+    const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
+      sponsors.find((s) => s.id === sponsorId)
+    )
+    const viewSponsors: View.Sponsor[] = filterUndef(sponsorsFromState).map(
+      (sponsor) => ({
+        id: sponsor.id,
+        order: getCustomField(sponsor, SponsorKeys.order),
+        logo: getCustomField(sponsor, SponsorKeys.logo),
+        url: getCustomField(sponsor, SponsorKeys.url),
+      })
+    )
+
     return {
       id: sponsorCategoryPost.id,
       name: getWPTitle(sponsorCategoryPost),
       order: getCustomField(sponsorCategoryPost, SponsorCategoryKeys.order),
-      sponsors: sponsorsIds
-        .filter((sponsorId: number) => sponsors.find((s) => s.id === sponsorId))
-        .map((sponsorId: number) => {
-          const spon = sponsors.find((s) => s.id === sponsorId)
-          if (spon) {
-            return {
-              id: sponsorId,
-              order: getCustomField(spon, SponsorKeys.order),
-              logo: getCustomField(spon, SponsorKeys.logo),
-              url: getCustomField(spon, SponsorKeys.url),
-            }
-          }
-        })
-        .sort(sortByOrder),
+      sponsors: viewSponsors.sort(sortByOrder),
     }
   }
 

@@ -1,24 +1,30 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import Media from "@/components/Media.vue"
+import ProgressiveImage from "@/components/ProgressiveImage.vue"
+import Media from "@/components/Media/Media.vue"
 import useNews from "@/factories/useNews"
 
 export default defineComponent({
   name: "NewsPostPage",
   props: {
-    postId: {
-      type: Number,
+    postSlug: {
+      type: String,
       required: true,
     },
   },
-  components: { Loader, Media },
+  components: { Loader, Media, ProgressiveImage },
   setup(props) {
-    const { getNewsPostById, fetchNews, isLoading, getNewsPostUrl } = useNews()
+    const {
+      getNewsPostBySlug,
+      fetchNews,
+      isLoading,
+      getNewsPostUrl,
+    } = useNews()
 
     fetchNews()
 
     const post = computed(() => {
-      return getNewsPostById(props.postId)
+      return getNewsPostBySlug(props.postSlug)
     })
 
     return { getNewsPostUrl, post, isLoading }

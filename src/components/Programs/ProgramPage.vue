@@ -1,19 +1,21 @@
 <template>
   <div class="page program">
-    <div class="pageBox">
-      <Loader v-if="!program" :loading="isLoading" />
-      <div v-if="program" class="pageTitle">
-        <h1 class="pageTitleText">{{ program.name }}</h1>
-      </div>
-      <Media />
-      <div
-        v-if="program"
-        class="pageRow programText"
-        v-html="program.text"
-      ></div>
-      <DowneyProgramVideos v-if="isDowneyProgram" />
-      <SchoolProgramsTabs v-if="isSchoolProgram" />
+    <Loader v-if="!program" :loading="isLoading" />
+    <div v-if="program" class="pageTitle">
+      <h1 class="pageTitleText">{{ program.name }}</h1>
     </div>
+    <Media
+      v-if="program"
+      :youtubeUrl="program.video_url"
+      :gallery="program.gallery"
+    />
+    <div
+      v-if="program"
+      class="pageRow pageBody programText"
+      v-html="program.text"
+    ></div>
+    <DowneyProgramVideos v-if="isDowneyProgram" />
+    <SchoolProgramsTabs v-if="isSchoolProgram" />
   </div>
 </template>
 
@@ -22,7 +24,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 import usePrograms from "@/factories/usePrograms";
 import View from "@/types/viewTypes";
 import Loader from "@/components/Loader.vue";
-import Media from "@/components/Media.vue";
+import Media from "@/components/Media/Media.vue";
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue";
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue";
 

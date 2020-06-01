@@ -31,38 +31,17 @@ export default function useSchoolPrograms() {
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         // slug: schoolProgramPost.slug,
-        [SchoolProgramKeys.logo]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.logo
-        ),
-        [SchoolProgramKeys.video_url]: getCustomField(
+        logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
+        video_url: getCustomField(
           schoolProgramPost,
           SchoolProgramKeys.video_url
         ),
-        [SchoolProgramKeys.text]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.text
-        ),
-        [SchoolProgramKeys.gallery]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.gallery
-        ),
-        [SchoolProgramKeys.teachers]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.teachers
-        ),
-        [SchoolProgramKeys.pdf]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.pdf
-        ),
-        [SchoolProgramKeys.schedule]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.schedule
-        ),
-        [SchoolProgramKeys.abstract]: getCustomField(
-          schoolProgramPost,
-          SchoolProgramKeys.abstract
-        ),
+        text: getCustomField(schoolProgramPost, SchoolProgramKeys.text),
+        gallery: getCustomField(schoolProgramPost, SchoolProgramKeys.gallery),
+        teachers: getCustomField(schoolProgramPost, SchoolProgramKeys.teachers),
+        pdf: getCustomField(schoolProgramPost, SchoolProgramKeys.pdf),
+        schedule: getCustomField(schoolProgramPost, SchoolProgramKeys.schedule),
+        abstract: getCustomField(schoolProgramPost, SchoolProgramKeys.abstract),
       })
     )
   })

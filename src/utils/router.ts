@@ -3,6 +3,7 @@ import NewsPage from "@/components/News/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
 import TeamPage from "@/components/About/TeamPage.vue"
 import AboutPage from "@/components/About/AboutPage.vue"
+import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ProgramPage from "@/components/Programs/ProgramPage.vue"
 import AppUrls from "./urls"
@@ -12,14 +13,15 @@ const routes = [
   { path: AppUrls.Home, component: Home },
   { path: AppUrls.News, component: NewsPage },
   {
-    path: `${AppUrls.NewsPost}:postId`,
+    path: `${AppUrls.NewsPost}:postSlug`,
     component: NewsPostPage,
     props: (route: Route) => ({
-      postId: parseInt(route.params.postId, 10),
+      postSlug: route.params.postSlug,
     }),
   },
   // About
   { path: AppUrls.About, component: AboutPage },
+  { path: AppUrls.AboutHistory, component: HistoryPage },
   { path: AppUrls.AboutTeam, component: TeamPage },
   { path: AppUrls.AboutTransparency, component: TransparencyPage },
   // Programs

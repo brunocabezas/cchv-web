@@ -11,6 +11,7 @@ import {
   ProgramVideoKeys,
   SchoolProgramKeys,
 } from "./customFieldsKeysTypes"
+import { WpImage } from "./wordpressTypes"
 import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
 //
 // Types of entities rendered by components
@@ -36,9 +37,10 @@ declare module View {
     // The first image url from gallery
     thumbnail: string
     date: string
+    slug: string
     [NewsKeys.abstract]: string
     [NewsKeys.text]: string
-    [NewsKeys.gallery]: any
+    [NewsKeys.gallery]: WpImage[]
     [NewsKeys.related]: RelatedNewsPost[]
     [NewsKeys.video_url]: string
   }
@@ -46,6 +48,7 @@ declare module View {
   interface RelatedNewsPost {
     id: number
     title: string
+    slug: string
     date: string
     thumbnail: string
   }
@@ -93,7 +96,7 @@ declare module View {
     id: number
     name: string
     [PageKeys.text]: string
-    [PageKeys.gallery]: any
+    [PageKeys.gallery]: WpImage[]
     [PageKeys.extra_content]: PageExtraContent
   }
 
@@ -103,7 +106,7 @@ declare module View {
     url: string
     slug: string
     [ProgramKeys.text]: string
-    [ProgramKeys.gallery]: any
+    [ProgramKeys.gallery]: WpImage[] | undefined
     [ProgramKeys.is_external]: boolean
     [ProgramKeys.video_url]: string
     [ProgramKeys.extra_content]: ProgramExtraContent
@@ -115,7 +118,7 @@ declare module View {
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
     [SchoolProgramKeys.abstract]: string
-    [SchoolProgramKeys.gallery]: any
+    [SchoolProgramKeys.gallery]: WpImage[] | undefined
     [SchoolProgramKeys.video_url]: string
     [SchoolProgramKeys.teachers]: string
     [SchoolProgramKeys.schedule]: string

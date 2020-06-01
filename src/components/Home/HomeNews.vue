@@ -3,7 +3,7 @@
     <div title="Ir a noticias" class="homeSection__title">
       <router-link :to="newsGridUrl"><h1>noticias</h1> </router-link>
       <router-link :to="newsGridUrl"
-        ><v-icon color="#00009f" name="chevron-right" scale="1.5"> </v-icon>
+        ><v-icon :color="MAIN_COLOR" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
     </div>
     <Loader v-if="isLoading" />

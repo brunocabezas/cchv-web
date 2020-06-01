@@ -75,6 +75,7 @@
   display: flex;
   justify-content: flex-end;
   flex: 1;
+  font-size: 18px;
 
   .headerNavItemSubLevel
     position: absolute;
@@ -82,11 +83,13 @@
     top: $header_height;
     left: 0;
     z-index: 2;
+    white-space: nowrap;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
     .headerNavItemSubMenu
       border-top: 1px solid $blue;
       text-transform: uppercase;
+      font-size: 14px;
 
       &:hover
         background-color: darken($grey, 3);

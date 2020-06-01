@@ -1,14 +1,15 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import Media from "@/components/Media.vue"
+import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/factories/useTabs"
+import View from "@/types/viewTypes"
 
 const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",
   components: {
     Loader,
-    Media,
+    ProgressiveImage,
   },
   props: {
     slug: {
@@ -25,10 +26,16 @@ const SchoolProgramsTabs = defineComponent({
       fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
+
     fetchSchoolPrograms()
 
-    const activeProgram = computed(() =>
+    const activeProgram = computed<View.SchoolProgram | undefined>(() =>
       getSchoolProgramById(activeTabId.value)
+    )
+
+    // Display only if an id is defined
+    const displayActiveProgram = computed<boolean>(
+      () => !!(activeProgram.value && activeProgram.value.id)
     )
 
     return {
@@ -36,9 +43,7 @@ const SchoolProgramsTabs = defineComponent({
       tabs,
       schoolPrograms,
       activeProgram,
-      displayActiveProgram: computed(
-        () => !!(activeProgram.value && activeProgram.value.id)
-      ),
+      displayActiveProgram,
       setActiveTab,
       isLoading,
     }

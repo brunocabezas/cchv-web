@@ -1,26 +1,16 @@
 <template>
   <div class="page">
     <div class="pageTitle">
-      <h1 class="pageTitleText">Somos</h1>
+      <h1 class="pageTitleText">Historia</h1>
     </div>
-    <div v-if="aboutPage" class="pageContent">
-      <div class="pageRow">
-        <Media :gallery="aboutPage.gallery" />
+    <div v-if="historyPage" class="pageContent">
+      <div v-if="historyPage.gallery" class="pageRow">
+        <Media :gallery="historyPage.gallery" />
       </div>
-      <div v-html="aboutPage.text" class="pageRow pageBody"></div>
-      <div class="pageRow">
-        <router-link :to="teamUrl" title="Equipo" class="aboutSquareLink">
-          Equipo
-        </router-link>
-        <router-link
-          :to="transparencyUrl"
-          title="Transparencia"
-          class="aboutSquareLink"
-        >
-          Transparencia
-        </router-link>
-      </div>
+      <div v-html="historyPage.text" class="pageBody pageRow"></div>
+      <hr />
     </div>
+
     <Loader :loading="isLoading" />
   </div>
 </template>
@@ -33,19 +23,16 @@ import Media from "@/components/Media/Media.vue";
 import AppUrls from "@/utils/urls";
 
 export default defineComponent({
-  name: "AboutPage",
+  name: "HistoryPage",
   components: { Loader, Media },
   setup() {
-    const { isLoading, fetchPages, aboutPage } = usePages();
+    const { isLoading, fetchPages, historyPage } = usePages();
 
     fetchPages();
 
     return {
       isLoading,
-      aboutPage,
-      displayContent: !!aboutPage,
-      transparencyUrl: AppUrls.AboutTransparency,
-      teamUrl: AppUrls.AboutTeam
+      historyPage
     };
   }
 });

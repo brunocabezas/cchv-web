@@ -13,7 +13,10 @@
               <div>Año: {{ video.year }}</div>
               <div>País: {{ video.country }}</div>
             </div>
-            <div class="programVideo__text" v-html="video.text" />
+            <div
+              class="pageBody pageText programVideo__text"
+              v-html="video.text"
+            />
           </div>
           <div class="programVideo__player">
             <Media />
@@ -30,7 +33,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
-import Media from "@/components/Media.vue";
+import Media from "@/components/Media/Media.vue";
 import useProgramVideos from "@/factories/useProgramVideos";
 
 const DowneyProgramVideos = defineComponent({

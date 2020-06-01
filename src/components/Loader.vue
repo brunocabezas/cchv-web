@@ -9,36 +9,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
-import BounceLoader from "vue-spinner/src/BounceLoader.vue"
+import { defineComponent } from "@vue/composition-api";
+import BounceLoader from "vue-spinner/src/BounceLoader.vue";
+import { MAIN_COLOR } from "@/utils/static";
 
 const Loader = defineComponent({
   components: { BounceLoader },
   props: {
     loading: {
       type: Boolean,
-      default: true,
+      default: true
     },
     color: {
       type: String,
-      default: "#00009f",
+      default: MAIN_COLOR
     },
     size: {
       type: String,
-      default: "40px",
-    },
+      default: "40px"
+    }
   },
-  name: "Loader",
-})
+  name: "Loader"
+});
 
-export default Loader
+export default Loader;
 </script>
 <style lang="stylus">
+@import '../styles/variables.styl';
+
 .loader
-  top 50%
-  position absolute
-  width 100%
-  display flex
-  align-items center
-  justify-content center
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: $boxed_content_max_width;
+  justify-content: center;
 </style>

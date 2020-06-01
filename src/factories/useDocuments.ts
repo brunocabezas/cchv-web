@@ -19,7 +19,11 @@ export default function useTransparencyDocuments() {
       (documentPost): View.Document => ({
         id: documentPost.id,
         name: getWPTitle(documentPost),
-        [DocumentKeys.link]: getCustomField(documentPost, DocumentKeys.link),
+        // TODO Update to DocumentKeys.url (as DocumentKeys.link = "url")
+        [DocumentKeys.link]: getCustomField<string>(
+          documentPost,
+          DocumentKeys.link
+        ),
       })
     )
   })

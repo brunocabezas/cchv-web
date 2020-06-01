@@ -1,16 +1,16 @@
 <template>
   <div class="page">
-    <div class="pageBox newsPostPage">
+    <div class="newsPostPage">
       <div v-if="post" class="newsPostPageLeft">
-        <Media />
+        <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
         <h1 class="pageTitleText">{{ post.title }}</h1>
 
-        <div class="">{{ post.date }}</div>
+        <div class="newsPostDate">{{ post.date }}</div>
 
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 
-        <div v-html="post.text"></div>
+        <div class="pageBody" v-html="post.text"></div>
       </div>
       <div
         v-if="post && post.related && post.related.length > 0"
@@ -19,14 +19,14 @@
         <h3 class="newsPostRelatedTitle">Noticias relacionadas</h3>
         <hr />
         <div v-bind:key="post.id" v-for="post in post.related">
-          <router-link :title="post.title" :to="getNewsPostUrl(post.id)">
+          <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">
             <div
               class="newsPostRelated__thumb"
               v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
-            ></div
-          ></router-link>
+            ></div>
+          </router-link>
           <h4 class="newsPostRelated__title">
-            <router-link :title="post.title" :to="getNewsPostUrl(post.id)">{{
+            <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">{{
               post.title
             }}</router-link>
           </h4>
@@ -47,12 +47,16 @@
 
   .newsPostPageRight
     width: 20%;
-    padding: 10px;
+    padding: 0 10px;
 
     .newsPostRelatedTitle
       color: $black;
       margin-bottom: 0;
       margin-top: 0;
+
+    hr
+      margin-top: 2px;
+      margin-bottom: 15px;
 
     .newsPostRelated__title
       margin-top: 5px;
@@ -71,8 +75,12 @@
       background-size: cover;
       background-repeat: no-repeat;
 
+      &:hover
+        opacity: 0.9;
+
   .newsPostPageLeft
     width: 80%;
+    flex-grow: 1;
 
     .pageTitleText
       color: $blue;

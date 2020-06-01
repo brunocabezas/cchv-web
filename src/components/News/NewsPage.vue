@@ -1,22 +1,15 @@
 <template>
   <div class="page newsPage">
-    <div class="pageBox">
-      <div class="pageTitle">
-        <h1 class="pageTitleText">Noticias</h1>
-        <!-- <div class="pageTitleInput">search input</div>-->
-      </div>
-      <Loader v-if="isLoading" />
-      <div class="newsPage__topGrid">
-        <NewsThumb :post="post" v-bind:key="post.id" v-for="post in homeNews" />
-      </div>
-      <div class="newsPage__grid">
-        <NewsThumb
-          small
-          :post="post"
-          v-bind:key="post.id"
-          v-for="post in news"
-        />
-      </div>
+    <div class="pageTitle">
+      <h1 class="pageTitleText">Noticias</h1>
+      <!-- <div class="pageTitleInput">search input</div>-->
+    </div>
+    <Loader v-if="isLoading" />
+    <div class="newsPage__topGrid">
+      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in homeNews" />
+    </div>
+    <div class="newsPage__grid">
+      <NewsThumb small :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>
 </template>
@@ -51,13 +44,13 @@ export default defineComponent({
     display: flex;
 
   &__topGrid
-    .newsPageItem
+    .newsGridItem
       width: 50%;
       margin: 1em 0;
       border-bottom: 1px solid #000;
 
   &__grid
-    .newsPageItem
+    .newsGridItem
       width: 33.3%;
       margin: 1em 0;
 </style>

@@ -2,6 +2,8 @@ import AppUrls from "./urls"
 import { Page } from "@/types"
 
 // Date format from https://github.com/iamkun/dayjs
+export const MAIN_COLOR = "#344284"
+export const DARKER_MAIN_COLOR = "#1a2142"
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
 export const CONTACT_EMAIL = "info@cchv.cl"
 export const YOUTUBE_CHANNEL =
@@ -14,8 +16,9 @@ export const NEWSLETTER_SUBSCRIBE_URL =
 const AboutPage: Page = {
   id: AppUrls.About,
   url: AppUrls.About,
-  label: "Quienes Somos",
+  label: "Somos",
   pages: [
+    { id: AppUrls.AboutHistory, url: AppUrls.AboutHistory, label: "Historia" },
     { id: AppUrls.AboutTeam, url: AppUrls.AboutTeam, label: "Equipo" },
     {
       id: AppUrls.AboutTransparency,
@@ -32,19 +35,25 @@ const ProgramsPage: Page = {
     {
       id: AppUrls.DowneyProgram,
       url: AppUrls.DowneyProgram,
-      label: "Concurso Juan Downey",
+      label: "Concurso Internacional Juan Downey",
     },
     {
       id: AppUrls.SchoolProgram,
       url: AppUrls.SchoolProgram,
-      label: "Escuela de la intuicion",
+      label: "Escuela de la intuición",
     },
     {
       id: AppUrls.MagneticFieldsProgram,
       url: AppUrls.MagneticFieldsProgram,
-      label: "Campos Magneticos",
+      label: "Campos Magnéticos",
     },
   ],
 }
 
-export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage]
+const NewsPage: Page = {
+  id: AppUrls.News,
+  url: AppUrls.News,
+  label: "Noticias",
+}
+
+export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage, NewsPage]

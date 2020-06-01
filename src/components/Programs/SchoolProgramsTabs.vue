@@ -25,8 +25,16 @@
       </button>
     </div>
     <div class="pageRow schoolProgramTabsContent">
-      <div v-if="displayActiveProgram" class="schoolProgram">
-        <div class="schoolProgramMedia"><Media /></div>
+      <div
+        v-if="displayActiveProgram && activeProgram.gallery[0]"
+        class="schoolProgram"
+      >
+        <div class="schoolProgramThumb">
+          <ProgressiveImage
+            height="300px"
+            :src="activeProgram.gallery[0].url"
+          />
+        </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">{{ activeProgram.name }}</h3>
           <p>{{ activeProgram.abstract }}</p>
@@ -88,18 +96,14 @@
       display: flex;
       width: 100%;
 
-      .schoolProgramMedia, .schoolProgramInfo
+      .schoolProgramThumb, .schoolProgramInfo
         flex: 1;
         padding: 0 1em;
 
-      .schoolProgramMedia
+      .schoolProgramThumb
         width: 60%;
         max-height: 300px;
         padding-left: 0;
-
-        .media
-          min-height: 250px;
-          max-height: 300px;
 
       .schoolProgramInfo
         padding-right: 0;
