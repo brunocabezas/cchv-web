@@ -19,6 +19,7 @@
         >
         </youtube>
       </slide>
+
       <slide
         class="carouselItem"
         v-bind:key="image.id"
@@ -125,5 +126,6 @@
     position: relative;
 
   .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
+    height: 100% !important;
     width: 100%;
 </style>

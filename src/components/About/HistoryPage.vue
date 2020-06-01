@@ -3,7 +3,7 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Historia</h1>
     </div>
-    <div v-if="historyPage" class="pageContent">
+    <div v-if="historyPage && historyPage.id" class="pageContent">
       <div v-if="historyPage.gallery" class="pageRow">
         <Media :gallery="historyPage.gallery" />
       </div>
