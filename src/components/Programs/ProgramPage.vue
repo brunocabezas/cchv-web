@@ -16,6 +16,7 @@
     ></div>
     <DowneyProgramVideos v-if="isDowneyProgram" />
     <SchoolProgramsTabs v-if="isSchoolProgram" />
+    <ProgramActivites v-if="isMagneticFieldsProgram" />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import View from "@/types/viewTypes";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue";
+import ProgramActivites from "@/components/Programs/ProgramActivities.vue";
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue";
 
 const ProgramPage = defineComponent({
@@ -34,6 +36,7 @@ const ProgramPage = defineComponent({
     Loader,
     DowneyProgramVideos,
     SchoolProgramsTabs,
+    ProgramActivites,
     Media
   },
   props: {
