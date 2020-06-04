@@ -1,3 +1,4 @@
+import VueRouter, { Route } from "vue-router"
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
@@ -6,8 +7,10 @@ import AboutPage from "@/components/About/AboutPage.vue"
 import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ProgramPage from "@/components/Programs/ProgramPage.vue"
+import FullWidthSliderPage, {
+  FullWidthPageDataType,
+} from "@/components/FullWidthSliderPage.vue"
 import AppUrls from "./urls"
-import VueRouter, { Route } from "vue-router"
 
 const routes = [
   { path: AppUrls.Home, component: Home },
@@ -30,6 +33,15 @@ const routes = [
     component: ProgramPage,
     props: (route: Route) => ({
       slug: route.params.slug,
+    }),
+  },
+  // Activities
+  {
+    path: `${AppUrls.Activities}:slug`,
+    component: FullWidthSliderPage,
+    props: (route: Route) => ({
+      slug: route.params.slug,
+      pageType: FullWidthPageDataType.Activity,
     }),
   },
 ]

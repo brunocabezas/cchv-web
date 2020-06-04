@@ -11,12 +11,6 @@ const SchoolProgramsTabs = defineComponent({
     Loader,
     ProgressiveImage,
   },
-  props: {
-    slug: {
-      type: String,
-      required: true,
-    },
-  },
   setup() {
     const {
       schoolPrograms,

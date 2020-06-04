@@ -31,11 +31,11 @@ export default function useActivities() {
     )
   })
 
-  function getActivityUrlBySlug(postSlug: string): string {
+  const getActivityUrlBySlug = (postSlug: string): string => {
     return `${AppUrls.Activities}${postSlug}`
   }
 
-  const getActvitiesTitleByType = (type: ActivityType) => {
+  const getActvitiesTitleByType = (type: ActivityType): string => {
     switch (type) {
       case ActivityType.Conversations:
         return "Conversatorio"
@@ -47,6 +47,7 @@ export default function useActivities() {
   }
 
   return {
+    activities,
     movies: computed(() =>
       activities.value.filter((act) => act.type === ActivityType.Movie)
     ),
