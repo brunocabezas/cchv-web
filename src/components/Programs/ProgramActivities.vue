@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="programActivities">
     <ActivitiesGrid :type="ActivityType.Movie" />
     <ActivitiesGrid :type="ActivityType.Conversations" />
   </div>

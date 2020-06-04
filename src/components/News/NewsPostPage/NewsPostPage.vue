@@ -81,6 +81,7 @@
   .newsPostPageLeft
     width: 80%;
     flex-grow: 1;
+    margin-right: 25px;
 
     .pageTitleText
       color: $blue;

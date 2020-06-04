@@ -35,10 +35,15 @@ export default defineComponent({
   }
 });
 </script>
-<style scoped lang="stylus">
+<style lang="stylus">
 @import '../../styles/variables.styl';
 
+$grid_padding = 25px;
+
 .newsPage
+  .pageTitleText
+    margin: 0;
+
   &__topGrid, &__grid
     width: 100%;
     display: flex;
@@ -47,10 +52,41 @@ export default defineComponent({
     .newsGridItem
       width: 50%;
       margin: 1em 0;
-      border-bottom: 1px solid #000;
+
+      &.newsPostPreview
+        padding: $grid_padding;
+
+      &:first-child
+        padding-left: 0;
+
+      &:last-child
+        padding-right: 0;
 
   &__grid
+    flex-wrap: wrap;
+
     .newsGridItem
+      box-sizing: border-box;
       width: 33.3%;
       margin: 1em 0;
+
+      &.newsPostPreview
+        padding: $grid_padding;
+
+      // Grid of 3 items
+      // first in the middle
+      &:nth-child(3n + 1)
+        &.newsPostPreview
+          padding-left: 0;
+
+      // item in the middle
+      &:nth-child(3n + 2)
+        &.newsPostPreview
+          hr
+            width: calc(100% - 50px);
+
+      // last in the middle
+      &:nth-child(3n)
+        &.newsPostPreview
+          padding-right: 0;
 </style>
