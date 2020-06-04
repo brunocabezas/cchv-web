@@ -10,7 +10,9 @@ import {
   PageKeys,
   SchoolProgramKeys,
   ProgramVideoKeys,
+  ActivityKeys,
 } from "./customFieldsKeysTypes"
+import { WpImage } from "./wordpressTypes"
 
 // TODO Analyze why team member type def is not needed here
 
@@ -137,4 +139,21 @@ export interface NewsPost {
   [NewsKeys.related]: number[]
   [NewsKeys.video_url]: string
   [NewsKeys.gallery]: any
+}
+
+//
+// Activities
+//
+
+export enum ActivityType {
+  Movie = "movie_session",
+  Conversations = "conversation",
+}
+
+export interface Activity {
+  [ActivityKeys.abstract]: string
+  [ActivityKeys.gallery]: WpImage[]
+  [ActivityKeys.text]: string
+  [ActivityKeys.type]: ActivityType
+  [ActivityKeys.video_url]: string
 }

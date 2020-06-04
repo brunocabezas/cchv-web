@@ -80,7 +80,7 @@ $carousel_height = 'calc(100vh - %s)' % $header_height;
   .VueCarousel
     height: 100%;
     width: 100%;
-    background-color: $purple;
+    background-color: $blue;
 
     .VueCarousel-slide
       position: relative;

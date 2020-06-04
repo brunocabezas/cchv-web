@@ -11,18 +11,13 @@ const SchoolProgramsTabs = defineComponent({
     Loader,
     ProgressiveImage,
   },
-  props: {
-    slug: {
-      type: String,
-      required: true,
-    },
-  },
   setup() {
     const {
       schoolPrograms,
       schoolProgramsTabs,
       getSchoolProgramById,
       isLoading,
+      getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
@@ -46,6 +41,7 @@ const SchoolProgramsTabs = defineComponent({
       displayActiveProgram,
       setActiveTab,
       isLoading,
+      getSchoolProgramUrlBySlug,
     }
   },
 })

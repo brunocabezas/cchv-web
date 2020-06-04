@@ -45,7 +45,11 @@ export type CustomFieldsKeys =
   | ProgramVideoKeys.duration
   | ProgramVideoKeys.country
   | ProgramVideoKeys.year
-
+  | ActivityKeys.type
+  | ActivityKeys.abstract
+  | ActivityKeys.text
+  | ActivityKeys.video_url
+  | ActivityKeys.gallery
 // CAROUSEL
 export enum CarouselImageKeys {
   image = "image",
@@ -127,5 +131,14 @@ export enum SchoolProgramKeys {
   pdf = "pdf",
   video_url = "video_url",
   logo = "logo",
+  gallery = "gallery",
+}
+
+// Activities
+export enum ActivityKeys {
+  type = "type",
+  abstract = "abstract",
+  text = "text",
+  video_url = "video_url",
   gallery = "gallery",
 }

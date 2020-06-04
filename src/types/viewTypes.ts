@@ -10,9 +10,14 @@ import {
   ProgramKeys,
   ProgramVideoKeys,
   SchoolProgramKeys,
+  ActivityKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage } from "./wordpressTypes"
-import { PageExtraContent, ProgramExtraContent } from "./customFieldsTypes"
+import {
+  PageExtraContent,
+  ProgramExtraContent,
+  ActivityType,
+} from "./customFieldsTypes"
 //
 // Types of entities rendered by components
 // In most cases, entities used by components should rely
@@ -115,6 +120,7 @@ declare module View {
   interface SchoolProgram {
     id: number
     name: string
+    slug: string
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
     [SchoolProgramKeys.abstract]: string
@@ -134,6 +140,17 @@ declare module View {
     [ProgramVideoKeys.author]: string
     [ProgramVideoKeys.year]: string
     [ProgramVideoKeys.country]: ProgramExtraContent
+  }
+
+  interface Activity {
+    id: number
+    name: string
+    slug: string
+    [ActivityKeys.type]: ActivityType
+    [ActivityKeys.abstract]: string
+    [ActivityKeys.text]: string
+    [ActivityKeys.video_url]: string
+    [ActivityKeys.gallery]: WpImage[]
   }
 }
 

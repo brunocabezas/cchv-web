@@ -19,8 +19,7 @@
             />
           </div>
           <div class="programVideo__player">
-            <Media />
-            {{ video.url }}
+            <Media :youtubeUrl="video.url" height="300px" />
           </div>
         </div>
 

@@ -36,8 +36,10 @@ export default defineComponent({
 @import '../../styles/variables.styl';
 
 .homeSection
+  max-width: $boxed_content_max_width;
   padding: $home_padding;
   position: relative;
+  margin: 0 auto;
 
   &__title
     color: $blue;

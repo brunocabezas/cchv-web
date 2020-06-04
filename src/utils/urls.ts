@@ -1,13 +1,15 @@
 // const temporaryPath = "/futuro"
 
 export enum AppUrls {
-  Home = "/futuro/",
-  News = "/futuro/noticias/",
+  Home = "/futuro",
+  News = "/futuro/noticias",
   NewsPost = "/futuro/noticias/",
   DowneyProgram = "/futuro/programas/concurso-juan-downey",
-  SchoolProgram = "/futuro/programas/escuela-de-la-intuicion",
+  SchoolPrograms = "/futuro/programas/escuela-de-la-intuicion",
+  SchoolProgram = "/futuro/programas/escuelas/",
   MagneticFieldsProgram = "/futuro/programas/campos-magneticos",
   Programs = "/futuro/programas/",
+  Activities = "/futuro/actividades/",
   About = "/futuro/somos",
   AboutHistory = "/futuro/historia",
   AboutTeam = "/futuro/equipo",

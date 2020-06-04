@@ -14,7 +14,7 @@ export enum apiRoutes {
   Sponsors = "/sponsors?per_page=100",
   SponsorsCategories = "/sponsor_categories?per_page=100",
   SocialNetworks = "/social_networks?per_page=100",
-  // TODO Add activities route
+  Activities = "/activities?per_page=100",
 }
 
 export default apiRoutes

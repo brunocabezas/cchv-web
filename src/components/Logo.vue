@@ -1,7 +1,7 @@
 <template>
-  <a class="logo" :href="homeUrl" title="Inicio">
+  <router-link class="logo" :to="homeUrl" title="Inicio">
     <img alt="Vue logo" src="@/assets/logo.png" />
-  </a>
+  </router-link>
 </template>
 
 <script lang="ts">

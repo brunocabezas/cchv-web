@@ -17,7 +17,8 @@ const Media = defineComponent({
   props: {
     gallery: {
       type: Array as PropType<WpImage[]>,
-      required: true,
+      required: false,
+      default: () => [],
     },
     youtubeUrl: {
       type: String,
@@ -43,9 +44,7 @@ const Media = defineComponent({
     // Ref used to open lightbox
     const lightBoxRef = ref<any>(null)
     const lightBoxData = computed<LightBoxItem[]>(() =>
-      props.gallery
-        ? props.gallery.map((img) => ({ src: img.url, thumb: img.url }))
-        : []
+      props.gallery.map((img) => ({ src: img.url, thumb: img.url }))
     )
     // If video is available, add to carousel data array
     const carouselLength =
