@@ -44,6 +44,15 @@ const routes = [
       pageType: FullWidthPageDataType.Activity,
     }),
   },
+  // School Program Single Page
+  {
+    path: `${AppUrls.SchoolProgram}:slug`,
+    component: FullWidthSliderPage,
+    props: (route: Route) => ({
+      slug: route.params.slug,
+      pageType: FullWidthPageDataType.SchoolProgram,
+    }),
+  },
 ]
 
 const router = new VueRouter({

@@ -7,6 +7,7 @@ import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
 import { Tab, Tabs } from "./useTabs"
+import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
@@ -30,7 +31,7 @@ export default function useSchoolPrograms() {
       (schoolProgramPost): View.SchoolProgram => ({
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
-        // slug: schoolProgramPost.slug,
+        slug: schoolProgramPost.slug,
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
         video_url: getCustomField(
           schoolProgramPost,
@@ -54,11 +55,14 @@ export default function useSchoolPrograms() {
     }))
   )
 
-  function getSchoolProgramById(
+  const getSchoolProgramById = (
     programId: number
-  ): View.SchoolProgram | undefined {
+  ): View.SchoolProgram | undefined => {
     return schoolPrograms.value.find((p) => p.id === programId)
   }
+
+  const getSchoolProgramUrlBySlug = (slug: string) =>
+    `${AppUrls.SchoolProgram}${slug}`
 
   return {
     fetchSchoolPrograms,
@@ -66,5 +70,6 @@ export default function useSchoolPrograms() {
     isLoading,
     schoolProgramsTabs,
     getSchoolProgramById,
+    getSchoolProgramUrlBySlug,
   }
 }

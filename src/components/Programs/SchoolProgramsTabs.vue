@@ -30,13 +30,21 @@
         class="schoolProgram"
       >
         <div class="schoolProgramThumb">
-          <ProgressiveImage
-            height="300px"
-            :src="activeProgram.gallery[0].url"
-          />
+          <router-link
+            :title="activeProgram.name"
+            :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
+          >
+            <ProgressiveImage height="300px" :src="activeProgram.gallery[0].url"
+          /></router-link>
         </div>
         <div class="schoolProgramInfo">
-          <h3 class="schoolProgramName">{{ activeProgram.name }}</h3>
+          <h3 class="schoolProgramName">
+            <router-link
+              :title="activeProgram.name"
+              :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
+              >{{ activeProgram.name }}</router-link
+            >
+          </h3>
           <p>{{ activeProgram.abstract }}</p>
           <a title="Descargar programa" :href="activeProgram.pdf"
             >Descargar programa completo</a

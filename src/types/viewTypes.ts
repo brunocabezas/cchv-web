@@ -120,6 +120,7 @@ declare module View {
   interface SchoolProgram {
     id: number
     name: string
+    slug: string
     [SchoolProgramKeys.logo]: string
     [SchoolProgramKeys.text]: string
     [SchoolProgramKeys.abstract]: string

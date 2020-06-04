@@ -38,8 +38,8 @@ const ProgramsPage: Page = {
       label: "Concurso Internacional Juan Downey",
     },
     {
-      id: AppUrls.SchoolProgram,
-      url: AppUrls.SchoolProgram,
+      id: AppUrls.SchoolPrograms,
+      url: AppUrls.SchoolPrograms,
       label: "Escuela de la intuición",
     },
     {

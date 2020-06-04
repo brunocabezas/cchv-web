@@ -17,6 +17,7 @@ const SchoolProgramsTabs = defineComponent({
       schoolProgramsTabs,
       getSchoolProgramById,
       isLoading,
+      getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
@@ -40,6 +41,7 @@ const SchoolProgramsTabs = defineComponent({
       displayActiveProgram,
       setActiveTab,
       isLoading,
+      getSchoolProgramUrlBySlug,
     }
   },
 })
