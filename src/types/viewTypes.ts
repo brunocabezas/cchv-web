@@ -44,6 +44,7 @@ declare module View {
     date: string
     slug: string
     [NewsKeys.abstract]: string
+    [NewsKeys.is_highlighted]: boolean
     [NewsKeys.text]: string
     [NewsKeys.gallery]: WpImage[]
     [NewsKeys.related]: RelatedNewsPost[]

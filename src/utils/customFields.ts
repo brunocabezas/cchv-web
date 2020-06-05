@@ -40,28 +40,40 @@ const mapRelatedNews = (
 }
 
 const mapNewsToView = (state: WpResponseData): View.NewsPost[] => {
-  const news = state.map(
-    (newsPost): View.NewsPost => {
-      const gallery: WpImage[] = getCustomField(newsPost, NewsKeys.gallery, [])
-      const related = getCustomField<WPRelatedCustomFieldValue>(
-        newsPost,
-        NewsKeys.related,
-        []
-      )
-      return {
-        id: newsPost.id,
-        title: getWPTitle(newsPost),
-        date: dayjs(newsPost.date).format(DATE_FORMAT),
-        thumbnail: (gallery[0] && gallery[0].url) || "",
-        slug: newsPost.slug,
-        abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
-        text: getCustomField(newsPost, NewsKeys.text, ""),
-        gallery,
-        related: mapRelatedNews(related, state),
-        video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+  const news = state
+    .map(
+      (newsPost): View.NewsPost => {
+        const gallery: WpImage[] = getCustomField(
+          newsPost,
+          NewsKeys.gallery,
+          []
+        )
+        const related = getCustomField<WPRelatedCustomFieldValue>(
+          newsPost,
+          NewsKeys.related,
+          []
+        )
+        return {
+          id: newsPost.id,
+          title: getWPTitle(newsPost),
+          date: dayjs(newsPost.date).format(DATE_FORMAT),
+          thumbnail: (gallery[0] && gallery[0].url) || "",
+          slug: newsPost.slug,
+          abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
+          text: getCustomField(newsPost, NewsKeys.text, ""),
+          gallery,
+          is_highlighted: getCustomField<boolean>(
+            newsPost,
+            NewsKeys.is_highlighted
+          ),
+          related: mapRelatedNews(related, state),
+          video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+        }
       }
-    }
-  )
+    )
+    .sort((a: View.NewsPost, b: View.NewsPost) =>
+      dayjs(a.date).diff(dayjs(b.date))
+    )
 
   return news
 }

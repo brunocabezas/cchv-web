@@ -138,6 +138,7 @@ export interface NewsPost {
   [NewsKeys.text]: string
   [NewsKeys.related]: number[]
   [NewsKeys.video_url]: string
+  [NewsKeys.is_highlighted]: boolean
   [NewsKeys.gallery]: any
 }
 

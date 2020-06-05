@@ -14,6 +14,7 @@ export type CustomFieldsKeys =
   | NewsKeys.text
   | NewsKeys.video_url
   | NewsKeys.gallery
+  | NewsKeys.is_highlighted
   | SponsorCategoryKeys.order
   | SponsorCategoryKeys.sponsors
   | SponsorKeys.order
@@ -65,6 +66,7 @@ export enum NewsKeys {
   gallery = "gallery",
   abstract = "abstract",
   related = "related",
+  is_highlighted = "is_highlighted",
 }
 
 //

@@ -18,6 +18,14 @@ export default function useNews() {
     return helpers.mapNewsToView(data.value)
   })
 
+  const homeNews = computed<View.News>(() => {
+    return news.value.filter((p) => p.is_highlighted)
+  })
+
+  const newsToGrid = computed(() => {
+    return news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
+  })
+
   function getNewsPostBySlug(slug: string) {
     return news.value.find((post) => post.slug === slug)
   }
@@ -26,10 +34,8 @@ export default function useNews() {
     return `${AppUrls.NewsPost}${postSlug}`
   }
 
-  const homeNews = computed(() => [...news.value].slice(0, 2))
-
   return {
-    news,
+    news: newsToGrid,
     homeNews,
     isLoading: computed(() => isLoading.value),
     getNewsPostUrl,
