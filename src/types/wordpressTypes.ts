@@ -1,4 +1,4 @@
-import { CustomFieldValues, ProgramExtraContent } from "./customFieldsTypes"
+import CustomFields from "./customFieldsTypes"
 import { CustomFieldsKeys } from "./customFieldsKeysTypes"
 
 // Wordpres response
@@ -93,8 +93,9 @@ interface Link {
   href: string
 }
 
+// TODO gather custom fields value types
 export type WPCustomFields = {
-  [key in CustomFieldsKeys]: CustomFieldValues
+  [key in CustomFieldsKeys]: any
 }
 
 export interface WpImage {
@@ -135,7 +136,7 @@ interface WpImageSizes {
 
 // export type WPSelectCustomField = WPSelectCustomFieldOption[]
 export interface WPSelectCustomFieldValue {
-  value: ProgramExtraContent
+  value: CustomFields.ProgramExtraContent
   label: string
 }
 // export type WPSelectCustomField = WPSelectCustomFieldOption[]

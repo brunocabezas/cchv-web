@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { Document } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
@@ -14,9 +14,9 @@ const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function useTransparencyDocuments() {
-  const documents = computed<View.Document[]>(() => {
+  const documents = computed<Document[]>(() => {
     return data.value.map(
-      (documentPost): View.Document => ({
+      (documentPost): Document => ({
         id: documentPost.id,
         name: getWPTitle(documentPost),
         // TODO Update to DocumentKeys.url (as DocumentKeys.link = "url")

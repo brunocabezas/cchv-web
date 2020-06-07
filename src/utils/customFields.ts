@@ -5,7 +5,7 @@ import {
   WpImage,
   WPRelatedCustomFieldValue,
 } from "@/types/wordpressTypes"
-import View from "@/types/viewTypes"
+import { RelatedNewsPost, NewsPost } from "@/types/viewTypes"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
@@ -13,7 +13,7 @@ import { filterUndef } from "./arrays"
 const mapRelatedNews = (
   related: WPRelatedCustomFieldValue,
   state: WpResponseData
-): View.RelatedNewsPost[] => {
+): RelatedNewsPost[] => {
   const relatedOnState = related.filter((postId: number) =>
     state.find((pst) => pst.id === postId)
   )
@@ -39,10 +39,10 @@ const mapRelatedNews = (
   )
 }
 
-const mapNewsToView = (state: WpResponseData): View.NewsPost[] => {
+const mapNewsToView = (state: WpResponseData): NewsPost[] => {
   const news = state
     .map(
-      (newsPost): View.NewsPost => {
+      (newsPost): NewsPost => {
         const gallery: WpImage[] = getCustomField(
           newsPost,
           NewsKeys.gallery,
@@ -71,9 +71,7 @@ const mapNewsToView = (state: WpResponseData): View.NewsPost[] => {
         }
       }
     )
-    .sort((a: View.NewsPost, b: View.NewsPost) =>
-      dayjs(a.date).diff(dayjs(b.date))
-    )
+    .sort((a: NewsPost, b: NewsPost) => dayjs(a.date).diff(dayjs(b.date)))
 
   return news
 }

@@ -24,16 +24,16 @@
 import { defineComponent, computed, PropType } from "@vue/composition-api";
 import AppUrls from "@/utils/urls";
 import useActivities from "@/factories/useActivities";
-import { ActivityType } from "@/types/customFieldsTypes";
+import CustomFields from "@/types/customFieldsTypes";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import View from "../../types/viewTypes";
+import View, { Activity } from "../../types/viewTypes";
 
 const ActivitiesGrid = defineComponent({
   name: "ActivitiesGrid",
   components: { ProgressiveImage },
   props: {
     type: {
-      type: String as PropType<ActivityType>,
+      type: String as PropType<CustomFields.ActivityType>,
       required: true
     }
   },
@@ -45,11 +45,11 @@ const ActivitiesGrid = defineComponent({
       getActivityUrlBySlug
     } = useActivities();
     const title = computed<string>(() => getActvitiesTitleByType(props.type));
-    const activities = computed<readonly View.Activity[]>(() => {
+    const activities = computed<readonly Activity[]>(() => {
       switch (props.type) {
-        case ActivityType.Movie:
+        case CustomFields.ActivityType.Movie:
           return movies.value;
-        case ActivityType.Conversations:
+        case CustomFields.ActivityType.Conversations:
           return conversations.value;
         default:
           return [];

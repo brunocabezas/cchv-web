@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { Program } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import {
   WpResponseData,
@@ -18,9 +18,9 @@ const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function usePrograms() {
-  const programs = computed<View.Program[]>(() => {
+  const programs = computed<Program[]>(() => {
     return data.value.map(
-      (programPost): View.Program => {
+      (programPost): Program => {
         const extraContent = getCustomField<WPSelectCustomFieldValue>(
           programPost,
           ProgramKeys.extra_content
@@ -46,7 +46,7 @@ export default function usePrograms() {
     )
   })
 
-  function getProgramById(slug: string): View.Program | undefined {
+  function getProgramById(slug: string): Program | undefined {
     // console.log(slug, programs.value)
     return programs.value.find((p) => p.slug === slug)
   }

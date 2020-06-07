@@ -46,7 +46,10 @@
             >
           </h3>
           <p>{{ activeProgram.abstract }}</p>
-          <a title="Descargar programa" :href="activeProgram.pdf"
+          <a
+            download="diseño-web-mobile1.pdf"
+            title="Descargar programa"
+            :href="activeProgram.pdf"
             >Descargar programa completo</a
           >
         </div>

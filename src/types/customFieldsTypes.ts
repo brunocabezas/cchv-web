@@ -13,8 +13,7 @@ import {
   ActivityKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage } from "./wordpressTypes"
-
-// TODO Analyze why team member type def is not needed here
+import { RelatedNewsPost } from "./viewTypes"
 
 declare module CustomFields {
   // SOCIAL NETWORK
@@ -28,143 +27,99 @@ declare module CustomFields {
     Youtube = "youtube",
     Instagram = "instagram",
   }
+
+  // ACTIVITIES
+  export interface Activity {
+    [ActivityKeys.abstract]: string
+    [ActivityKeys.gallery]: WpImage[]
+    [ActivityKeys.text]: string
+    [ActivityKeys.type]: ActivityType
+    [ActivityKeys.video_url]: string
+  }
+
+  export enum ActivityType {
+    Movie = "movie_session",
+    Conversations = "conversation",
+  }
+
+  //
+  // PROGRAMS
+  //
+  export type Program = {
+    [ProgramKeys.is_external]: boolean
+    // TODO Program.url is not needed on viewType, which extends Program
+    [ProgramKeys.url]?: string
+    [ProgramKeys.video_url]: string
+    [ProgramKeys.gallery]: any
+    [ProgramKeys.text]: string
+    [ProgramKeys.extra_content]: ProgramExtraContent
+  }
+
+  // TODO use enum
+  export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
+
+  export type SchoolProgram = {
+    [SchoolProgramKeys.teachers]: string
+    [SchoolProgramKeys.schedule]: string
+    [SchoolProgramKeys.abstract]: string
+    [SchoolProgramKeys.video_url]: string
+    [SchoolProgramKeys.pdf]: string
+    [SchoolProgramKeys.gallery]: any
+    [SchoolProgramKeys.text]: string
+    [SchoolProgramKeys.logo]: string
+  }
+
+  export type ProgramVideo = {
+    [ProgramVideoKeys.url]?: string
+    [ProgramVideoKeys.text]: string
+    [ProgramVideoKeys.year]: string
+    [ProgramVideoKeys.author]: string
+    [ProgramVideoKeys.country]: string
+    [ProgramVideoKeys.duration]: string
+  }
+
+  // DOCUMENT
+  export type Document = {
+    [DocumentKeys.link]: string
+  }
+
+  // PAGE
+  export type Page = {
+    [PageKeys.text]: string
+    [PageKeys.gallery]: any
+    [PageKeys.extra_content]: PageExtraContent
+  }
+
+  // TODO use enum
+  export type PageExtraContent = "none" | "documents"
+
+  // SPONSOR / SPONSOR CATEGORY
+  export type SponsorsCategory = {
+    [SponsorCategoryKeys.order]: number
+    [SponsorCategoryKeys.sponsors]: Sponsor[]
+  }
+
+  export type Sponsor = {
+    [SponsorKeys.order]: number
+    [SponsorKeys.url]: string
+    [SponsorKeys.logo]: string
+  }
+
+  // NEWS
+  export interface NewsPost {
+    [NewsKeys.abstract]: string
+    [NewsKeys.text]: string
+    // TODO related must be related news post in viewTypes
+    [NewsKeys.related]: number[] | RelatedNewsPost[]
+    [NewsKeys.video_url]: string
+    [NewsKeys.is_highlighted]: boolean
+    [NewsKeys.gallery]: any
+  }
+
+  export interface CarouselImage {
+    [CarouselImageKeys.image]: string
+    [CarouselImageKeys.url]: string
+  }
 }
 
 export default CustomFields
-
-export type CustomFields =
-  | Carousel
-  | News
-  | SponsorsCategory
-  | Sponsor
-  | CustomFields.SocialNetwork
-  | Document
-  | Page
-  | Program
-  | ProgramVideo
-  | SchoolProgram
-
-// TODO improve this type, should gather custom fields values types
-export type CustomFieldValues =
-  | CarouselImage[CarouselImageKeys.image]
-  | CarouselImage[CarouselImageKeys.url]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.related]
-  | NewsPost[NewsKeys.video_url]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.text]
-  | SponsorsCategory[SponsorCategoryKeys.order]
-  | SponsorsCategory[SponsorCategoryKeys.sponsors]
-  // | SocialNetwork[SocialNetworksKeys.url]
-  // | SocialNetwork[SocialNetworksKeys.url]
-  | Document[DocumentKeys.link]
-  | any
-
-// SPONSOR / SPONSOR CATEGORY
-export type SponsorsCategory = {
-  [SponsorCategoryKeys.order]: number
-  [SponsorCategoryKeys.sponsors]: Sponsor[]
-}
-
-export type Sponsor = {
-  [SponsorKeys.order]: number
-  [SponsorKeys.url]: string
-  [SponsorKeys.logo]: string
-}
-// DOCUMENT
-export type Document = {
-  [DocumentKeys.link]: string
-}
-
-// PAGE
-export type Page = {
-  [PageKeys.text]: string
-  [PageKeys.gallery]: any
-  [PageKeys.extra_content]: PageExtraContent
-}
-
-export type PageExtraContent = "none" | "documents"
-
-// PROGRAMS
-export type Program = {
-  [ProgramKeys.is_external]: boolean
-  [ProgramKeys.url]: string
-  [ProgramKeys.video_url]: string
-  [ProgramKeys.gallery]: any
-  [ProgramKeys.text]: string
-  [ProgramKeys.extra_content]: ProgramExtraContent
-}
-
-export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
-
-export type ProgramVideo = {
-  [ProgramVideoKeys.url]: string
-  [ProgramVideoKeys.text]: string
-  [ProgramVideoKeys.year]: string
-  [ProgramVideoKeys.author]: string
-  [ProgramVideoKeys.country]: string
-  [ProgramVideoKeys.duration]: string
-}
-
-export type SchoolProgram = {
-  [SchoolProgramKeys.teachers]: string
-  [SchoolProgramKeys.schedule]: string
-  [SchoolProgramKeys.abstract]: string
-  [SchoolProgramKeys.video_url]: string
-  [SchoolProgramKeys.pdf]: string
-  [SchoolProgramKeys.gallery]: any
-  [SchoolProgramKeys.text]: string
-  [SchoolProgramKeys.logo]: string
-}
-
-// CAROUSEL
-export type Carousel = CarouselImage[]
-export type CarouselImage = {
-  [CarouselImageKeys.image]: string
-  [CarouselImageKeys.url]: string
-}
-
-export interface ImageSizes {
-  thumbnail: string
-  "thumbnail-width": number
-  "thumbnail-height": number
-  medium: string
-  "medium-width": number
-  "medium-height": number
-  medium_large: string
-  "medium_large-width": number
-  "medium_large-height": number
-  large: string
-  "large-width": number
-  "large-height": number
-}
-
-//
-// NEWS
-//
-export type News = NewsPost[]
-export interface NewsPost {
-  [NewsKeys.abstract]: string
-  [NewsKeys.text]: string
-  [NewsKeys.related]: number[]
-  [NewsKeys.video_url]: string
-  [NewsKeys.is_highlighted]: boolean
-  [NewsKeys.gallery]: any
-}
-
-//
-// Activities
-//
-
-export enum ActivityType {
-  Movie = "movie_session",
-  Conversations = "conversation",
-}
-
-export interface Activity {
-  [ActivityKeys.abstract]: string
-  [ActivityKeys.gallery]: WpImage[]
-  [ActivityKeys.text]: string
-  [ActivityKeys.type]: ActivityType
-  [ActivityKeys.video_url]: string
-}

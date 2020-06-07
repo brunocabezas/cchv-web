@@ -1,7 +1,7 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { NewsPost } from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
@@ -14,11 +14,11 @@ const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function useNews() {
-  const news = computed<View.News>(() => {
+  const news = computed<NewsPost[]>(() => {
     return helpers.mapNewsToView(data.value)
   })
 
-  const homeNews = computed<View.News>(() => {
+  const homeNews = computed<NewsPost[]>(() => {
     return news.value.filter((p) => p.is_highlighted).slice(0, 2)
   })
 

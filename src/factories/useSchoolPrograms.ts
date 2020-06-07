@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { SchoolProgram } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
@@ -26,9 +26,9 @@ const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
 >(apiRoutes.SchoolPrograms)
 
 export default function useSchoolPrograms() {
-  const schoolPrograms = computed<View.SchoolProgram[]>(() => {
+  const schoolPrograms = computed<SchoolProgram[]>(() => {
     return data.value.map(
-      (schoolProgramPost): View.SchoolProgram => ({
+      (schoolProgramPost): SchoolProgram => ({
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         slug: schoolProgramPost.slug,
@@ -57,7 +57,7 @@ export default function useSchoolPrograms() {
 
   const getSchoolProgramById = (
     programId: number
-  ): View.SchoolProgram | undefined => {
+  ): SchoolProgram | undefined => {
     return schoolPrograms.value.find((p) => p.id === programId)
   }
 

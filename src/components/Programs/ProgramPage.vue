@@ -23,7 +23,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
 import usePrograms from "@/factories/usePrograms";
-import View from "@/types/viewTypes";
+import { Program } from "@/types/viewTypes";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue";
@@ -48,7 +48,7 @@ const ProgramPage = defineComponent({
   setup(props) {
     const { getProgramById, isLoading } = usePrograms();
 
-    const program = computed<View.Program | undefined>(() =>
+    const program = computed<Program | undefined>(() =>
       getProgramById(props.slug)
     );
     return {

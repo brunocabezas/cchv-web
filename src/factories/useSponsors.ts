@@ -5,23 +5,23 @@ import useAsyncData from "@/factories/useAsyncData"
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
-import View from "@/types/viewTypes"
+import { Sponsor, SponsorsCategory } from "@/types/viewTypes"
 import { filterUndef } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
-// type ObjectWithOrder = { order: number }
+// TODO move to helpers?
 const sortByOrder = (
-  a: View.Sponsor | View.SponsorsCategory,
-  b: View.Sponsor | View.SponsorsCategory
+  a: Sponsor | SponsorsCategory,
+  b: Sponsor | SponsorsCategory
 ) => a.order - b.order
 
 const mapWpResponseToView =
-  // Mapping WpResponseItem to View.SponsorsCategory
+  // Mapping WpResponseItem to SponsorsCategory
   (
     sponsorCategoryPost: WPResponseItem,
     sponsors: WpResponseData
-  ): View.SponsorsCategory => {
+  ): SponsorsCategory => {
     const sponsorsIds = getCustomField<number[]>(
       sponsorCategoryPost,
       SponsorCategoryKeys.sponsors,
@@ -30,7 +30,7 @@ const mapWpResponseToView =
     const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
       sponsors.find((s) => s.id === sponsorId)
     )
-    const viewSponsors: View.Sponsor[] = filterUndef(sponsorsFromState).map(
+    const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
       (sponsor) => ({
         id: sponsor.id,
         order: getCustomField(sponsor, SponsorKeys.order),
@@ -67,7 +67,7 @@ export default function useSponsors() {
     () => isLoadingSponsors.value || isLoadingCategories.value
   )
 
-  const sponsorsCategories = computed<View.SponsorsCategory[]>(() =>
+  const sponsorsCategories = computed<SponsorsCategory[]>(() =>
     data.value
       .map((wp) => mapWpResponseToView(wp, sponsors.value))
       .sort(sortByOrder)

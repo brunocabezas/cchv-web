@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@vue/composition-api";
-import View from "@/types/viewTypes";
+import { NewsPost } from "@/types/viewTypes";
 import Icon from "vue-awesome/components/Icon.vue";
 import AppUrls from "@/utils/urls";
 import useNews from "../../factories/useNews";
@@ -52,7 +52,7 @@ export default defineComponent({
       default: false
     },
     post: {
-      type: Object as PropType<View.NewsPost>,
+      type: Object as PropType<NewsPost>,
       required: true
     }
   },

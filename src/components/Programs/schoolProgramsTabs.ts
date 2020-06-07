@@ -3,7 +3,7 @@ import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/factories/useTabs"
-import View from "@/types/viewTypes"
+import { SchoolProgram } from "@/types/viewTypes"
 
 const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",
@@ -24,7 +24,7 @@ const SchoolProgramsTabs = defineComponent({
 
     fetchSchoolPrograms()
 
-    const activeProgram = computed<View.SchoolProgram | undefined>(() =>
+    const activeProgram = computed<SchoolProgram | undefined>(() =>
       getSchoolProgramById(activeTabId.value)
     )
 
