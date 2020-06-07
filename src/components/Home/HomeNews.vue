@@ -41,6 +41,7 @@
 
     .newsPost
       flex: 1;
+      max-width: 50%;
       padding: 1em;
 
       &:first-child

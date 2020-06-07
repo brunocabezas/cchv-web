@@ -37,7 +37,7 @@ export default defineComponent({
 
 .homeSection
   max-width: $boxed_content_max_width;
-  padding: $home_padding;
+  padding: $footer_padding;
   position: relative;
   margin: 0 auto;
 

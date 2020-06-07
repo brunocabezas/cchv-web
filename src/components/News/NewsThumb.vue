@@ -71,6 +71,7 @@ export default defineComponent({
   margin: 0 1px;
   padding: 5px 5px 15px 5px;
   position: relative;
+  max-width: 50%;
 
   hr
     position: absolute;

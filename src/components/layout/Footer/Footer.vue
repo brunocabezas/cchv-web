@@ -1,22 +1,15 @@
 <template>
   <div class="footer">
     <div class="footerTop">
-      <div class="footerTopSection">
+      <div class="footerTopSection contactMail">
         <h3 class="footerTitle">
           Contacto
         </h3>
-        <ul>
-          <li class="footerListItem">
-            <a
-              :title="`Escribir a ${contactEmail}`"
-              :href="`mailto:${contactEmail}`"
-              >{{ contactEmail }}</a
-            >
-          </li>
-          <li class="footerListItem">
-            Hipolito Irigoyen #562 Providecia, Santiago.
-          </li>
-        </ul>
+        <a
+          :title="`Escribir a ${contactEmail}`"
+          :href="`mailto:${contactEmail}`"
+          >{{ contactEmail }}
+        </a>
       </div>
       <div class="footerTopSection socialNetworks">
         <h3 class="footerTitle">
@@ -35,7 +28,7 @@
           </li>
         </ul>
       </div>
-      <div class="footerTopSection">
+      <div class="footerTopSection suscribeForm">
         <h3 class="footerTitle">
           Newsletter
         </h3>

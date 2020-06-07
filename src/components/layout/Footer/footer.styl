@@ -8,14 +8,23 @@
 
   .footerTop
     background-color: $grey;
-    padding: $home_padding;
+    padding: $footer_padding;
     display: flex;
 
     .footerTopSection
       margin: 1em;
 
+      &.contactMail
+        position: relative;
+        width: 25%;
+
       &.socialNetworks
         position: relative;
+        width: 25%;
+
+      &.suscribeForm
+        position: relative;
+        width: 50%;
 
     .footerListItem
       font-family: Montserrat;
@@ -30,6 +39,6 @@
           text-decoration: underline;
 
   .footerSponsors
-    padding: $home_padding;
+    padding: $footer_padding;
     background-color: $black;
     min-height: 300px;

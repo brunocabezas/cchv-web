@@ -19,7 +19,7 @@ export default function useNews() {
   })
 
   const homeNews = computed<View.News>(() => {
-    return news.value.filter((p) => p.is_highlighted)
+    return news.value.filter((p) => p.is_highlighted).slice(0, 2)
   })
 
   const newsToGrid = computed(() => {
