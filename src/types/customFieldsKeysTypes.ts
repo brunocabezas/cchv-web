@@ -21,6 +21,7 @@ export type CustomFieldsKeys =
   | SponsorKeys.logo
   | SponsorKeys.url
   | SocialNetworksKeys.url
+  | SocialNetworksKeys.type
   | TeamMembersKeys.position
   | DocumentKeys.link
   | PageKeys.text
@@ -51,6 +52,7 @@ export type CustomFieldsKeys =
   | ActivityKeys.text
   | ActivityKeys.video_url
   | ActivityKeys.gallery
+
 // CAROUSEL
 export enum CarouselImageKeys {
   image = "image",
@@ -76,6 +78,7 @@ export enum SponsorCategoryKeys {
   sponsors = "sponsors",
   order = "order",
 }
+
 export enum SponsorKeys {
   order = "order",
   logo = "logo",
@@ -85,6 +88,7 @@ export enum SponsorKeys {
 // SOCIAL NETWORKS
 export enum SocialNetworksKeys {
   url = "url",
+  type = "type",
 }
 
 // TEAM MEMBERS
@@ -92,7 +96,7 @@ export enum TeamMembersKeys {
   position = "position",
 }
 
-// TEAM MEMBERS
+// DOCUMENT
 export enum DocumentKeys {
   link = "url",
 }

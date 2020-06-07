@@ -16,12 +16,28 @@ import { WpImage } from "./wordpressTypes"
 
 // TODO Analyze why team member type def is not needed here
 
+declare module CustomFields {
+  // SOCIAL NETWORK
+  export type SocialNetwork = {
+    [SocialNetworksKeys.url]: string
+    [SocialNetworksKeys.type]: SocialNetworkType
+  }
+
+  export enum SocialNetworkType {
+    Facebook = "facebook",
+    Youtube = "youtube",
+    Instagram = "instagram",
+  }
+}
+
+export default CustomFields
+
 export type CustomFields =
   | Carousel
   | News
   | SponsorsCategory
   | Sponsor
-  | SocialNetwork
+  | CustomFields.SocialNetwork
   | Document
   | Page
   | Program
@@ -39,8 +55,8 @@ export type CustomFieldValues =
   | NewsPost[NewsKeys.text]
   | SponsorsCategory[SponsorCategoryKeys.order]
   | SponsorsCategory[SponsorCategoryKeys.sponsors]
-  | SocialNetwork[SocialNetworksKeys.url]
-  | SocialNetwork[SocialNetworksKeys.url]
+  // | SocialNetwork[SocialNetworksKeys.url]
+  // | SocialNetwork[SocialNetworksKeys.url]
   | Document[DocumentKeys.link]
   | any
 
@@ -55,12 +71,6 @@ export type Sponsor = {
   [SponsorKeys.url]: string
   [SponsorKeys.logo]: string
 }
-
-// SOCIAL NETWORK
-export type SocialNetwork = {
-  [SocialNetworksKeys.url]: string
-}
-
 // DOCUMENT
 export type Document = {
   [DocumentKeys.link]: string

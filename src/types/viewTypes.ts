@@ -18,6 +18,15 @@ import {
   ProgramExtraContent,
   ActivityType,
 } from "./customFieldsTypes"
+import CustomFields from "@/types/customFieldsTypes"
+
+////
+
+export interface SocialNetwork extends CustomFields.SocialNetwork {
+  id: number
+  name: string
+}
+
 //
 // Types of entities rendered by components
 // In most cases, entities used by components should rely
@@ -85,13 +94,6 @@ declare module View {
     [CarouselImageKeys.image]: string
     [CarouselImageKeys.url]: string
   }
-
-  interface SocialNetwork {
-    id: number
-    name: string
-    [SocialNetworksKeys.url]: string
-  }
-
   interface Document {
     id: number
     name: string

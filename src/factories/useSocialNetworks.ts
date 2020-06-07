@@ -5,7 +5,7 @@ import useAsyncData from "@/factories/useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes"
-import View from "@/types/viewTypes"
+import { SocialNetwork } from "@/types/viewTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -14,11 +14,12 @@ const { data, fetch: fetchSocialNetworks, isLoading } = useAsyncData<
 >(apiRoutes.SocialNetworks)
 
 export default function useSocialNetworks() {
-  const socialNetworks = computed<View.SocialNetwork[]>(() => {
+  const socialNetworks = computed<SocialNetwork[]>(() => {
     return data.value.map(
-      (socialNetworkPost): View.SocialNetwork => ({
+      (socialNetworkPost): SocialNetwork => ({
         id: socialNetworkPost.id,
         name: getWPTitle(socialNetworkPost),
+        type: getCustomField(socialNetworkPost, SocialNetworksKeys.type),
         url: getCustomField(socialNetworkPost, SocialNetworksKeys.url),
       })
     )
