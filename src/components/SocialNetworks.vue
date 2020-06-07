@@ -1,5 +1,10 @@
 <template>
-  <div class="socialNetworks">
+  <div
+    class="socialNetworks"
+    v-bind:class="{
+      'socialNetworks--small': small
+    }"
+  >
     <a
       class="socialNetwork"
       v-bind:key="sn.name"
@@ -8,7 +13,11 @@
       :title="sn.name"
       :href="sn.url"
     >
-      <v-icon :scale="small ? 1 : 4" :color="MAIN_COLOR" :name="sn.iconName" />
+      <v-icon
+        :scale="small ? 1.5 : 4"
+        :color="MAIN_COLOR"
+        :name="sn.iconName"
+      />
     </a>
   </div>
 </template>
@@ -59,4 +68,8 @@ export default SocialNetworks;
 
     &:hover
       opacity: 0.8;
+
+  &--small
+    width: auto;
+    display: inline-block;
 </style>

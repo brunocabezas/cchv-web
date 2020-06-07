@@ -21,7 +21,7 @@ export default Logo;
 .logo
   display: flex;
   width: 300px;
-  padding: 30px;
+  padding: 0 30px;
 
   img
     width: 100%;

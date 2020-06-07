@@ -27,7 +27,10 @@ export default function useAsyncData<T>(url: apiRoutes) {
   // Fetch data from the url with GET
   function fetch() {
     // Only fetch data when data status is not success
-    if (status.value !== AsyncDataStatus.Success) {
+    if (
+      status.value !== AsyncDataStatus.Success &&
+      status.value !== AsyncDataStatus.Loading
+    ) {
       status.value = AsyncDataStatus.Loading
       client
         .get(url)

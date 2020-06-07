@@ -57,11 +57,14 @@
   padding: 0;
   position: relative;
 
+  > div
+    height: 100%;
+
   a, .headerNavItemLink
     color: $blue;
     display: flex;
     box-sizing: border-box;
-    height: $header_height;
+    height: 100%;
     align-items: center;
     font-family: Montserrat;
     text-transform: uppercase;
@@ -80,7 +83,7 @@
   .headerNavItemSubLevel
     position: absolute;
     background-color: white;
-    top: $header_height;
+    top: 68px;
     left: 0;
     z-index: 2;
     white-space: nowrap;
