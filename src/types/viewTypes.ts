@@ -1,5 +1,4 @@
-import { TeamMembersKeys } from "./customFieldsKeysTypes"
-import CustomFields from "@/types/customFieldsTypes"
+import * as CustomFields from "@/types/customFieldsTypes"
 
 //
 // Types of entities rendered by components
@@ -9,9 +8,12 @@ import CustomFields from "@/types/customFieldsTypes"
 // the entity will have a type declared here, under the View module.
 // This to provide components with the right data.
 
+// Every attribute must be explained with comments, except id and name
+
 export interface SocialNetwork extends CustomFields.SocialNetwork {
   id: number
   name: string
+  iconName: string
 }
 
 export interface Activity extends CustomFields.Activity {
@@ -29,6 +31,7 @@ export interface ProgramVideo extends CustomFields.ProgramVideo {
 export interface Program extends CustomFields.Program {
   id: number
   name: string
+  // Url obtained with ProgramKeys.url as getter
   url: string
   // Slug to build urls
   slug: string
@@ -67,6 +70,7 @@ export interface NewsPost extends CustomFields.NewsPost {
   title: string
   // The first image url from gallery
   thumbnail: string
+  // Date formatted with DATE_FORMAT
   date: string
   // Slug to build urls
   slug: string
@@ -77,7 +81,9 @@ export interface RelatedNewsPost {
   title: string
   // Slug to build urls
   slug: string
+  // Date formatted with DATE_FORMAT
   date: string
+  // The first image url from gallery
   thumbnail: string
 }
 
@@ -85,18 +91,3 @@ export interface CarouselImage extends CustomFields.CarouselImage {
   id: number
   name: string
 }
-
-// TODO REMOVE
-declare module View {
-  // Arrays
-  type Team = TeamMember[]
-  interface TeamMember {
-    name: string
-    id: number
-    [TeamMembersKeys.position]: string
-  }
-
-  type Carousel = CarouselImage[]
-}
-
-export default View

@@ -1,6 +1,5 @@
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { CustomFieldsKeys } from "@/types/customFieldsKeysTypes"
-// import { CustomFieldValues } from "@/types/customFieldsTypes"
 
 // Gets advanced custom fields values from results
 export function getCustomField<T = string>(

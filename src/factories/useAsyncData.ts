@@ -16,7 +16,7 @@ export enum AsyncDataStatus {
 // TODO type async data
 interface asyncData<T> {
   status: Readonly<Ref<AsyncDataStatus>>
-  isLoading: Readonly<Ref<Boolean>>
+  isLoading: Readonly<Ref<boolean>>
   fetch: () => void
   data: Ref<HasDefined<T>>
 }

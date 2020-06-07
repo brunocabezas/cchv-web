@@ -63,7 +63,7 @@ const FullWidthSliderPage = defineComponent({
       }
     });
 
-    const isLoading = computed<Boolean>(() => {
+    const isLoading = computed<boolean>(() => {
       if (props.pageType === FullWidthPageDataType.Activity) {
         return isLoadingActivities.value;
       } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {

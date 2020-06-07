@@ -10,6 +10,7 @@ import {
 } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"
+import { ProgramExtraContent } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -21,10 +22,9 @@ export default function usePrograms() {
   const programs = computed<Program[]>(() => {
     return data.value.map(
       (programPost): Program => {
-        const extraContent = getCustomField<WPSelectCustomFieldValue>(
-          programPost,
-          ProgramKeys.extra_content
-        )
+        const extraContent = getCustomField<
+          WPSelectCustomFieldValue<ProgramExtraContent>
+        >(programPost, ProgramKeys.extra_content)
         return {
           id: programPost.id,
           name: getWPTitle(programPost),

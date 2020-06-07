@@ -8,8 +8,8 @@
 <script lang="ts">
 import { defineComponent, computed, set } from "@vue/composition-api";
 import ActivitiesGrid from "@/components/Activities/AcitvitiesGrid.vue";
-import CustomFields from "../../types/customFieldsTypes";
-import useActivities from "../../factories/useActivities";
+import useActivities from "@/factories/useActivities";
+import { ActivityType } from "../../types/customFieldsTypes";
 
 const ProgramActivities = defineComponent({
   name: "ProgramActivities",
@@ -20,7 +20,7 @@ const ProgramActivities = defineComponent({
     const { fetchActivities } = useActivities();
     fetchActivities();
     return {
-      ActivityType: CustomFields.ActivityType
+      ActivityType: ActivityType
     };
   }
 });

@@ -7,7 +7,7 @@ import { WpResponseData, WpImage } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
 import { getWPTitle, getCustomField } from "@/utils/api"
 import { ActivityKeys } from "@/types/customFieldsKeysTypes"
-import CustomFields from "@/types/customFieldsTypes"
+import { ActivityType } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -35,11 +35,11 @@ export default function useActivities() {
     return `${AppUrls.Activities}${postSlug}`
   }
 
-  const getActvitiesTitleByType = (type: CustomFields.ActivityType): string => {
+  const getActvitiesTitleByType = (type: ActivityType): string => {
     switch (type) {
-      case CustomFields.ActivityType.Conversations:
+      case ActivityType.Conversations:
         return "Conversatorio"
-      case CustomFields.ActivityType.Movie:
+      case ActivityType.Movie:
         return "Cine Foro"
       default:
         return ""
@@ -49,14 +49,10 @@ export default function useActivities() {
   return {
     activities,
     movies: computed(() =>
-      activities.value.filter(
-        (act) => act.type === CustomFields.ActivityType.Movie
-      )
+      activities.value.filter((act) => act.type === ActivityType.Movie)
     ),
     conversations: computed(() =>
-      activities.value.filter(
-        (act) => act.type === CustomFields.ActivityType.Conversations
-      )
+      activities.value.filter((act) => act.type === ActivityType.Conversations)
     ),
     isLoading: computed(() => isLoading.value),
     getActivityUrlBySlug,

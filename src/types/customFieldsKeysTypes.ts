@@ -88,7 +88,7 @@ export enum SponsorKeys {
 // SOCIAL NETWORKS
 export enum SocialNetworksKeys {
   url = "url",
-  type = "type",
+  type = "social_network_key",
 }
 
 // TEAM MEMBERS
