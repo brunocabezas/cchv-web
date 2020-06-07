@@ -92,9 +92,11 @@ export default defineComponent({
 .footerSubscribeForm
   #mc_embed_signup_scroll
     display: flex;
+    flex-wrap: wrap;
 
     .mc-field-group
-      margin: 0 2em;
+      margin-right: 2em;
+      margin-top: 10px;
 
       &:first-child
         margin-left: 0;
@@ -117,6 +119,7 @@ export default defineComponent({
 
 .subscribeFormButton
   margin-left: 2em;
+  margin-top: 10px;
   display: block;
   font-family: Montserrat;
   background-color: $blue;
