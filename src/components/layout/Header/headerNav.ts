@@ -1,18 +1,18 @@
 import { defineComponent, computed, reactive } from "@vue/composition-api"
 import usePrograms from "@/factories/usePrograms"
-import { Page } from "@/types"
 import {
   mapNavMenuToHoverState,
   addPagesToProgramsNavigationMenu,
   menuHoverState,
 } from "@/utils/headerUtils"
+import { NavigationMenu } from "@/types"
 
 export default defineComponent({
   name: "HeaderNav",
   setup() {
     const { fetchPrograms, programs } = usePrograms()
     // //  Map programs from usePograms() to navigation menu
-    const navigationMenu = computed<Page[]>(() =>
+    const navigationMenu = computed<NavigationMenu[]>(() =>
       addPagesToProgramsNavigationMenu(programs.value)
     )
 

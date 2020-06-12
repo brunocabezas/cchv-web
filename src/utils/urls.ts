@@ -10,7 +10,6 @@ export enum AppUrls {
   MagneticFieldsProgram = "/futuro/programas/campos-magneticos",
   Programs = "/futuro/programas/",
   Activities = "/futuro/actividades/",
-  About = "/futuro/somos",
   AboutHistory = "/futuro/historia",
   AboutTeam = "/futuro/equipo",
   AboutTransparency = "/futuro/transparencia",

@@ -12,12 +12,16 @@ export interface SubPage {
   id: AppUrls
 }
 
-export interface Page {
+export enum NavMenu {
+  About,
+  Programs,
+  News,
+}
+
+export interface NavigationMenu {
   label: string
   url?: AppUrls
-  id: AppUrls
+  id: NavMenu
   pages?: SubPage[]
   is_external?: boolean
 }
-
-export type Pages = Page[]

@@ -1,8 +1,7 @@
 import { NAVIGATION_MENU } from "./static"
 import { Program } from "@/types/viewTypes"
-import { Page } from "@/types"
 import { ref, Ref } from "@vue/composition-api"
-import AppUrls from "./urls"
+import { NavigationMenu, NavMenu } from "@/types"
 
 export interface menuHoverState {
   [menuLabel: string]: Ref<boolean>
@@ -10,7 +9,7 @@ export interface menuHoverState {
 
 // allows to manage hover state on headerNav
 export const mapNavMenuToHoverState = (
-  navMenu: readonly Page[]
+  navMenu: readonly NavigationMenu[]
 ): menuHoverState =>
   navMenu.reduce(
     (acc, m) =>
@@ -26,7 +25,7 @@ export const addPagesToProgramsNavigationMenu = (
 ) =>
   NAVIGATION_MENU.map((navMenu) => {
     // If menu is programs, define pages with usePrograms()
-    if (navMenu.id === AppUrls.Programs) {
+    if (navMenu.id === NavMenu.Programs) {
       const externalProgramsFromAPI = programs
         // Only getting external
         .filter((p) => p.is_external)
