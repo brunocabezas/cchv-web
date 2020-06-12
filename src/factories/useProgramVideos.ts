@@ -20,6 +20,7 @@ export default function usePrograms() {
         id: programVideoPost.id,
         name: getWPTitle(programVideoPost),
         url: getCustomField(programVideoPost, ProgramVideoKeys.url),
+        event: getCustomField(programVideoPost, ProgramVideoKeys.event),
         thumbnail: getCustomField(programVideoPost, ProgramVideoKeys.thumbnail),
         year: getCustomField(programVideoPost, ProgramVideoKeys.year),
         author: getCustomField(programVideoPost, ProgramVideoKeys.author),

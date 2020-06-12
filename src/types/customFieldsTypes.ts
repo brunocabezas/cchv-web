@@ -80,6 +80,7 @@ export type ProgramVideo = {
   [ProgramVideoKeys.author]: string
   [ProgramVideoKeys.country]: string
   [ProgramVideoKeys.thumbnail]: string
+  [ProgramVideoKeys.event]: string
   [ProgramVideoKeys.duration]: string
 }
 

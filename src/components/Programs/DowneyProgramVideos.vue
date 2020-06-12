@@ -12,6 +12,7 @@
               <div>Duración: {{ video.duration }}</div>
               <div>Año: {{ video.year }}</div>
               <div>País: {{ video.country }}</div>
+              <div v-if="video.event">Bienal: {{ video.event }}</div>
             </div>
             <div
               class="pageBody pageText programVideo__text"
