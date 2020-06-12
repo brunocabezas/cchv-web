@@ -123,4 +123,5 @@ export interface NewsPost {
 export interface CarouselImage {
   [CarouselImageKeys.image]: string
   [CarouselImageKeys.url]: string
+  [CarouselImageKeys.video_url]: string
 }

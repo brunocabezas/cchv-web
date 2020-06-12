@@ -45,7 +45,7 @@
               >{{ activeProgram.name }}</router-link
             >
           </h3>
-          <p>{{ activeProgram.abstract }}</p>
+          <p v-html="activeProgram.abstract"></p>
           <DownloadLink
             label="Descargar programa completo"
             :url="activeProgram.pdf"

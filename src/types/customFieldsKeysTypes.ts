@@ -9,6 +9,7 @@
 export type CustomFieldsKeys =
   | CarouselImageKeys.image
   | CarouselImageKeys.url
+  | CarouselImageKeys.video_url
   | NewsKeys.abstract
   | NewsKeys.related
   | NewsKeys.text
@@ -57,6 +58,7 @@ export type CustomFieldsKeys =
 export enum CarouselImageKeys {
   image = "image",
   url = "url",
+  video_url = "video_url",
 }
 
 //

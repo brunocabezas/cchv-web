@@ -9,7 +9,7 @@
     >
       <slide v-bind:key="img.id" v-for="img in carousel">
         <a
-          v-if="img.url"
+          v-if="img.url && img.image"
           target="_blank"
           class="carouselImage"
           :title="img.name"
@@ -19,12 +19,21 @@
           }"
         ></a>
         <div
-          v-if="!img.url"
+          v-if="!img.url && img.image"
           class="carouselImage"
           v-bind:style="{
             'background-image': `url(${img.image})`
           }"
         ></div>
+
+        <youtube
+          v-if="img.video_url && !img.image"
+          height="100%"
+          width="100%"
+          :video-id="getYoutubeIdFromUrl(img.video_url)"
+          ref="youtube"
+        >
+        </youtube>
       </slide>
     </vue-carousel>
     <button

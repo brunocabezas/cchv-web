@@ -20,6 +20,10 @@ export default function useCarouselImages() {
         id: carouselImagePost.id,
         name: getWPTitle(carouselImagePost),
         image: getCustomField(carouselImagePost, CarouselImageKeys.image),
+        video_url: getCustomField(
+          carouselImagePost,
+          CarouselImageKeys.video_url
+        ),
         url: getCustomField(carouselImagePost, CarouselImageKeys.url),
       })
     )
