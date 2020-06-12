@@ -61,7 +61,7 @@
         <div class="clear">
           <input
             type="submit"
-            value="Subscribirse"
+            value="Suscribirse"
             name="subscribe"
             id="mc-embedded-subscribe"
             title="Subscribirse al newsletter"

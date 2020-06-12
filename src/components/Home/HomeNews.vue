@@ -1,7 +1,7 @@
 <template>
   <div class="news homeSection">
     <div title="Ir a noticias" class="homeSection__title">
-      <router-link :to="newsGridUrl"><h1>noticias</h1> </router-link>
+      <router-link :to="newsGridUrl"><h1>Noticias</h1> </router-link>
       <router-link :to="newsGridUrl"
         ><v-icon :color="MAIN_COLOR" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>

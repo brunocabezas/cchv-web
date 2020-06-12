@@ -21,7 +21,7 @@
       </div>
       <div class="footerTopSection suscribeForm">
         <h3 class="footerTitle">
-          Newsletter
+          Boletín
         </h3>
         <FooterSubscribeForm />
       </div>
