@@ -9,7 +9,8 @@ export enum apiRoutes {
   ProgramVideos = "/videos?per_page=100",
   SchoolPrograms = "/school_program?per_page=100",
   Pages = "/cchv_page?per_page=100",
-  Team = "/team?per_page=100",
+  // TODO remove when removing useTeam()
+  Team = "/team",
   Documents = "/documents?per_page=100",
   Sponsors = "/sponsors?per_page=100",
   SponsorsCategories = "/sponsor_categories?per_page=100",
