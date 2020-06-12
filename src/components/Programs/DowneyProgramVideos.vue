@@ -19,7 +19,11 @@
             />
           </div>
           <div class="programVideo__player">
-            <Media :youtubeUrl="video.url" height="300px" />
+            <Media
+              :gallery="[{ url: video.thumbnail }]"
+              :youtubeUrl="video.url"
+              height="300px"
+            />
           </div>
         </div>
 

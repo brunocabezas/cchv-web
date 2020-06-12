@@ -39,24 +39,12 @@
   .newsList
     display: flex;
 
-    .newsPost
-      flex: 1;
-      max-width: 50%;
-      padding: 1em;
-
-      &:first-child
-        padding-left: 0;
-
-      &:last-child
-        padding-right: 0;
-
-      &__title
-        color: $blue;
-
-      &__thumbnail
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 300px;
-        width: 100%;
+    .newsPostPreview
+      hr
+        width: 99%;
+</style>
+<style lang="stylus">
+.news .newsList .newsPostPreview
+  hr
+    width: 98.5%;
 </style>

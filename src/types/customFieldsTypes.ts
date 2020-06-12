@@ -79,6 +79,7 @@ export type ProgramVideo = {
   [ProgramVideoKeys.year]: string
   [ProgramVideoKeys.author]: string
   [ProgramVideoKeys.country]: string
+  [ProgramVideoKeys.thumbnail]: string
   [ProgramVideoKeys.duration]: string
 }
 

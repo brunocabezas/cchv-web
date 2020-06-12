@@ -47,6 +47,7 @@ export type CustomFieldsKeys =
   | ProgramVideoKeys.author
   | ProgramVideoKeys.duration
   | ProgramVideoKeys.country
+  | ProgramVideoKeys.thumbnail
   | ProgramVideoKeys.year
   | ActivityKeys.type
   | ActivityKeys.abstract
@@ -128,6 +129,7 @@ export enum ProgramVideoKeys {
   duration = "duration",
   year = "year",
   country = "country",
+  thumbnail = "thumbnail",
 }
 
 // School Programs

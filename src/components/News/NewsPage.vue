@@ -62,6 +62,9 @@ $grid_padding = 25px;
       &:last-child
         padding-right: 0;
 
+      hr
+        width: 99%;
+
   &__grid
     flex-wrap: wrap;
 

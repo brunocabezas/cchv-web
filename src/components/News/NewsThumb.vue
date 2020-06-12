@@ -76,6 +76,7 @@ export default defineComponent({
   hr
     position: absolute;
     bottom: 0;
+    color: #344284;
     width: calc(100% - 30px);
 
   &__date, &__abstract
