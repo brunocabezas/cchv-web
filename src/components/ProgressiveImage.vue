@@ -1,5 +1,6 @@
 <template>
   <progressive-background
+    v-bind:style="{ height }"
     class="progressiveImage"
     :placeholder="src"
     :src="src"

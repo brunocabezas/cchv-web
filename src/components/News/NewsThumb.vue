@@ -16,11 +16,11 @@
     </router-link>
     <h3 class="newsPostPreview__title">
       <router-link
+        v-html="post.title"
         class="newsPostPreview__link"
         :title="post.title"
         :to="getNewsPostUrl(post.slug)"
-        >{{ post.title }}</router-link
-      >
+      ></router-link>
     </h3>
     <p class="newsPostPreview__date">{{ post.date }}</p>
     <p class="newsPostPreview__abstract" v-html="post.abstract"></p>
@@ -82,9 +82,16 @@ export default defineComponent({
   &__date, &__abstract
     margin: 10px 0;
 
+  &__date
+    color: darken($grey, 40);
+    margin-top: 0;
+    font-size: 14px;
+
   &__title
+    margin-bottom: 0;
+
     .newsPostPreview__link
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-family: NoeDisplay;
 
   &.newsPostPreview--small

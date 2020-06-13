@@ -10,7 +10,7 @@
         >
           <ProgressiveImage
             v-if="act.gallery"
-            height="150px"
+            height="200px"
             :src="act.gallery[0].url"
           />
           <h3 class="activitiesGridTitle">{{ act.name }}</h3>
@@ -74,7 +74,7 @@ export default ActivitiesGrid;
     .activity
       margin: 5px;
       // max-width: 100px;
-      width: 25%;
+      width: 33.3%;
 
   .activitiesGridTitle
     margin-top: 5px;

@@ -4,7 +4,7 @@
       <div v-if="post" class="newsPostPageLeft">
         <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
-        <h1 class="pageTitleText">{{ post.title }}</h1>
+        <h1 v-html="post.title" class="pageTitleText"></h1>
 
         <div class="newsPostDate">{{ post.date }}</div>
 
