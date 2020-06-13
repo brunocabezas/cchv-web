@@ -3,7 +3,11 @@
     <h2>Videos Ganadores</h2>
     <Loader :loading="isLoading" />
     <div class="programVideosList">
-      <div v-bind:key="video.id" v-for="video in programVideos">
+      <div
+        v-bind:key="video.id"
+        v-for="video in programVideos"
+        class="programVideoContainer"
+      >
         <div class="programVideo">
           <div class="programVideo__meta">
             <h3 class="programVideo__title">{{ video.name }}</h3>
@@ -27,7 +31,6 @@
             />
           </div>
         </div>
-
         <hr />
       </div>
     </div>
@@ -72,25 +75,35 @@ export default DowneyProgramVideos;
   display: flex;
   flex-direction: column;
 
-  .programVideo
-    display: flex;
+  .programVideoContainer
+    margin-bottom: 4em;
 
-    hr
-      width: 100%;
-      display: block;
+    .programVideo
+      margin: 15px 0;
+      height: 330px;
+      display: flex;
 
-    &__text
-      text-align: justify;
+      &__title
+        margin-top: 0;
 
-    &__videoData
-      color: $blue;
+      &__text
+        text-align: justify;
 
-    &__meta
-      margin: 15px;
-      width: 40%;
-      padding: 1em 0;
+      &__videoData
+        color: $blue;
 
-    &__player
-      margin: 15px;
-      width: 60%;
+      &__meta
+        width: 40%;
+        padding: 1em 0;
+        max-height: 100%;
+        overflow-y: auto;
+
+      &__player
+        margin: 15px;
+        width: 60%;
+
+  hr
+    width: 100%;
+    margin-top: 1em;
+    display: block;
 </style>
