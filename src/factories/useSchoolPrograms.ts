@@ -16,10 +16,10 @@ interface SchoolProgramTab extends Tab {
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 
-const SCHOOL_PROGRAMS_TABS: Tabs = [
-  { id: 0, title: "Artes y Oficios" },
-  { id: 1, title: "Mediacion y comunidades" },
-]
+// const SCHOOL_PROGRAMS_TABS: Tabs = [
+//   { id: 0, title: "Artes y Oficios" },
+//   { id: 1, title: "Mediacion y comunidades" },
+// ]
 
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
   WpResponseData
@@ -32,6 +32,10 @@ export default function useSchoolPrograms() {
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         slug: schoolProgramPost.slug,
+        is_workshop: !!getCustomField(
+          schoolProgramPost,
+          SchoolProgramKeys.is_workshop
+        ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
         video_url: getCustomField(
           schoolProgramPost,
@@ -47,11 +51,25 @@ export default function useSchoolPrograms() {
     )
   })
 
+  // Divinding exports by is_workshp
+  const programs = computed<SchoolProgram[]>(() =>
+    schoolPrograms.value.filter((program) => !program.is_workshop)
+  )
+  const workshops = computed<SchoolProgram[]>(() =>
+    schoolPrograms.value.filter((program) => program.is_workshop)
+  )
+
   const schoolProgramsTabs = computed<SchoolProgramTabs>(() =>
-    SCHOOL_PROGRAMS_TABS.map((t, ix) => ({
+    programs.value.map((t) => ({
       ...t,
-      logo: (schoolPrograms.value[ix] && schoolPrograms.value[ix].logo) || "",
-      id: (schoolPrograms.value[ix] && schoolPrograms.value[ix].id) || t.id,
+      title: t.name,
+    }))
+  )
+
+  const workshopsTabs = computed<SchoolProgramTabs>(() =>
+    workshops.value.map((t) => ({
+      ...t,
+      title: t.name,
     }))
   )
 
@@ -66,8 +84,10 @@ export default function useSchoolPrograms() {
 
   return {
     fetchSchoolPrograms,
-    schoolPrograms,
     isLoading,
+    workshops,
+    workshopsTabs,
+    schoolPrograms: programs,
     schoolProgramsTabs,
     getSchoolProgramById,
     getSchoolProgramUrlBySlug,

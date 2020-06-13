@@ -1,15 +1,15 @@
 <template>
-  <div class="schoolProgramTabs">
+  <div class="workshopsTabs">
     <div class="pageTitle">
-      <h2 class="pageTitleText">Escuelas</h2>
+      <h2 class="pageTitleText">Mandragoras</h2>
     </div>
     <Loader :loading="isLoading" />
-    <div class="pageRow schoolProgramTabsTitle">
+    <div class="pageRow workshopsTabsTitle">
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
           'schoolProgramTabTitle--active':
-            activeProgram && activeProgram.id === tab.id
+            activeWorkshop && activeWorkshop.id === tab.id
         }"
         class="schoolProgramTabTitle"
         v-bind:key="tab.id"
@@ -24,28 +24,30 @@
         {{ tab.title }}
       </button>
     </div>
-    <div class="pageRow schoolProgramTabsContent">
-      <div v-if="displayActiveProgram" class="schoolProgram">
+    <div class="pageRow workshopsTabsContent">
+      <div v-if="displayActiveWorkshop" class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
-            :title="activeProgram.name"
-            :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
+            :title="activeWorkshop.name"
+            :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
           >
-            <ProgressiveImage height="300px" :src="activeProgram.gallery[0].url"
+            <ProgressiveImage
+              height="300px"
+              :src="activeWorkshop.gallery[0].url"
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">
             <router-link
-              :title="activeProgram.name"
-              :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
-              >{{ activeProgram.name }}</router-link
+              :title="activeWorkshop.name"
+              :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
+              >{{ activeWorkshop.name }}</router-link
             >
           </h3>
-          <p v-html="activeProgram.abstract"></p>
+          <p v-html="activeWorkshop.abstract"></p>
           <DownloadLink
             label="Descargar programa completo"
-            :url="activeProgram.pdf"
+            :url="activeWorkshop.pdf"
           />
         </div>
       </div>
@@ -53,11 +55,11 @@
   </div>
 </template>
 
-<script lang="ts" src="./schoolProgramsTabs.ts"></script>
+<script lang="ts" src="./workshopsTabs.ts"></script>
 <style lang="stylus">
 @import '../../styles/variables.styl';
 
-.schoolProgramTabs
+.workshopsTabs
   position: relative;
 
   .pageTitle
@@ -67,7 +69,7 @@
     .pageTitleText
       margin-bottom: 0;
 
-  .schoolProgramTabsTitle
+  .workshopsTabsTitle
     justify-content: center;
     margin-bottom: 2.5em;
 
@@ -97,7 +99,7 @@
         background-size: cover;
         background-repeat: no-repeat;
 
-  .schoolProgramTabsContent
+  .workshopsTabsContent
     .schoolProgram
       display: flex;
       width: 100%;

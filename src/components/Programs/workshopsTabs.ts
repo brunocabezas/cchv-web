@@ -6,8 +6,8 @@ import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/factories/useTabs"
 import { SchoolProgram } from "@/types/viewTypes"
 
-const SchoolProgramsTabs = defineComponent({
-  name: "SchoolProgramsTabs",
+const WorkshopsTabs = defineComponent({
+  name: "WorkshopsTabs",
   components: {
     Loader,
     ProgressiveImage,
@@ -15,38 +15,38 @@ const SchoolProgramsTabs = defineComponent({
   },
   setup() {
     const {
-      schoolPrograms,
-      schoolProgramsTabs,
+      workshops,
       getSchoolProgramById,
       isLoading,
+      workshopsTabs,
       getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
-    const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
+    const { tabs, activeTabId, setActiveTab } = useTabs(workshopsTabs)
 
     fetchSchoolPrograms()
 
-    const activeProgram = computed<SchoolProgram | undefined>(() =>
+    const activeWorkshop = computed<SchoolProgram | undefined>(() =>
       getSchoolProgramById(activeTabId.value)
     )
 
     // Display only if an id is defined
-    const displayActiveProgram = computed<boolean>(
+    const displayActiveWorkshop = computed<boolean>(
       () =>
         !!(
-          activeProgram.value &&
-          activeProgram.value.id &&
-          activeProgram.value.gallery &&
-          activeProgram.value.gallery[0]
+          activeWorkshop.value &&
+          activeWorkshop.value.id &&
+          activeWorkshop.value.gallery &&
+          activeWorkshop.value.gallery[0]
         )
     )
 
     return {
       activeTabId,
       tabs,
-      schoolPrograms,
-      activeProgram,
-      displayActiveProgram,
+      workshops,
+      activeWorkshop,
+      displayActiveWorkshop,
       setActiveTab,
       isLoading,
       getSchoolProgramUrlBySlug,
@@ -54,4 +54,4 @@ const SchoolProgramsTabs = defineComponent({
   },
 })
 
-export default SchoolProgramsTabs
+export default WorkshopsTabs

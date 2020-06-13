@@ -111,6 +111,7 @@ export enum SchoolProgramKeys {
   video_url = "video_url",
   logo = "logo",
   gallery = "gallery",
+  is_workshop = "is_workshop",
 }
 
 // Activities

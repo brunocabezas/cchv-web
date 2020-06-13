@@ -26,6 +26,7 @@
         v-for="(image, index) in gallery"
       >
         <button
+          v-if="image.url"
           type="button"
           v-bind:style="{ height }"
           title="Ampliar imagen"

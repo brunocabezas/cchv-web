@@ -71,6 +71,7 @@ export type SchoolProgram = {
   [SchoolProgramKeys.gallery]: any
   [SchoolProgramKeys.text]: string
   [SchoolProgramKeys.logo]: string
+  [SchoolProgramKeys.is_workshop]: boolean
 }
 
 export type ProgramVideo = {

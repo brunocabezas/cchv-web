@@ -16,6 +16,7 @@
     ></div>
     <DowneyProgramVideos v-if="isDowneyProgram" />
     <SchoolProgramsTabs v-if="isSchoolProgram" />
+    <WorkshopsTabs v-if="isSchoolProgram" />
     <ProgramActivites v-if="isMagneticFieldsProgram" />
   </div>
 </template>

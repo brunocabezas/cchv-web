@@ -6,6 +6,7 @@ import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue"
+import WorkshopsTabs from "@/components/Programs/WorkshopsTabs.vue"
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
@@ -14,6 +15,7 @@ const ProgramPage = defineComponent({
     DowneyProgramVideos,
     SchoolProgramsTabs,
     ProgramActivites,
+    WorkshopsTabs,
     Media,
   },
   props: {
