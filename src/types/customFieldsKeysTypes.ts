@@ -2,58 +2,31 @@
 // customFieldsKeysTypes declares the keys/attributes used by
 // the custom fields provided by the API
 
+import { Document } from "./viewTypes"
+
 // Each custom field has it's keys define as enum
 // the type of each key is defined on ./customFieldTypes.ts
 
 // All custom fields attributes together
 export type CustomFieldsKeys =
-  | CarouselImageKeys.image
-  | CarouselImageKeys.url
-  | NewsKeys.abstract
-  | NewsKeys.related
-  | NewsKeys.text
-  | NewsKeys.video_url
-  | NewsKeys.gallery
-  | SponsorCategoryKeys.order
-  | SponsorCategoryKeys.sponsors
-  | SponsorKeys.order
-  | SponsorKeys.logo
-  | SponsorKeys.url
-  | SocialNetworksKeys.url
-  | TeamMembersKeys.position
-  | DocumentKeys.link
-  | PageKeys.text
-  | PageKeys.extra_content
-  | PageKeys.gallery
-  | ProgramKeys.is_external
-  | ProgramKeys.url
-  | ProgramKeys.text
-  | ProgramKeys.video_url
-  | ProgramKeys.gallery
-  | ProgramKeys.extra_content
-  | SchoolProgramKeys.text
-  | SchoolProgramKeys.schedule
-  | SchoolProgramKeys.teachers
-  | SchoolProgramKeys.pdf
-  | SchoolProgramKeys.video_url
-  | SchoolProgramKeys.logo
-  | SchoolProgramKeys.gallery
-  | SchoolProgramKeys.abstract
-  | ProgramVideoKeys.url
-  | ProgramVideoKeys.text
-  | ProgramVideoKeys.author
-  | ProgramVideoKeys.duration
-  | ProgramVideoKeys.country
-  | ProgramVideoKeys.year
-  | ActivityKeys.type
-  | ActivityKeys.abstract
-  | ActivityKeys.text
-  | ActivityKeys.video_url
-  | ActivityKeys.gallery
+  | CarouselImageKeys
+  | NewsKeys
+  | SponsorCategoryKeys
+  | SponsorKeys
+  | PageKeys
+  | SocialNetworksKeys
+  | ProgramKeys
+  | ProgramVideoKeys
+  | SchoolProgramKeys
+  | ActivityKeys
+  | DocumentKeys
+  | TeamMembersKeys
+
 // CAROUSEL
 export enum CarouselImageKeys {
   image = "image",
   url = "url",
+  video_url = "video_url",
 }
 
 //
@@ -65,6 +38,7 @@ export enum NewsKeys {
   gallery = "gallery",
   abstract = "abstract",
   related = "related",
+  is_highlighted = "is_highlighted",
 }
 
 //
@@ -74,6 +48,7 @@ export enum SponsorCategoryKeys {
   sponsors = "sponsors",
   order = "order",
 }
+
 export enum SponsorKeys {
   order = "order",
   logo = "logo",
@@ -83,6 +58,7 @@ export enum SponsorKeys {
 // SOCIAL NETWORKS
 export enum SocialNetworksKeys {
   url = "url",
+  type = "social_network_key",
 }
 
 // TEAM MEMBERS
@@ -90,7 +66,7 @@ export enum TeamMembersKeys {
   position = "position",
 }
 
-// TEAM MEMBERS
+// DOCUMENT
 export enum DocumentKeys {
   link = "url",
 }
@@ -105,11 +81,12 @@ export enum PageKeys {
 // Programs
 export enum ProgramKeys {
   is_external = "is_external",
-  url = "external_url",
+  url = "nav_menu_url",
   text = "text",
   video_url = "video_url",
   gallery = "gallery",
   extra_content = "extra_content",
+  order = "order",
 }
 
 // Concurso juan downey videos
@@ -120,6 +97,8 @@ export enum ProgramVideoKeys {
   duration = "duration",
   year = "year",
   country = "country",
+  thumbnail = "thumbnail",
+  event = "event",
 }
 
 // School Programs
@@ -132,6 +111,7 @@ export enum SchoolProgramKeys {
   video_url = "video_url",
   logo = "logo",
   gallery = "gallery",
+  is_workshop = "is_workshop",
 }
 
 // Activities

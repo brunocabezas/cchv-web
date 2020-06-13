@@ -5,7 +5,7 @@ import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
-import View from "@/types/viewTypes"
+import { CarouselImage } from "@/types/viewTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -14,12 +14,16 @@ const { data, fetch: fetchCarouselImages, isLoading } = useAsyncData<
 >(apiRoutes.CarouselImages)
 
 export default function useCarouselImages() {
-  const carousel = computed<View.Carousel>(() => {
+  const carousel = computed<CarouselImage[]>(() => {
     return data.value.map(
-      (carouselImagePost): View.CarouselImage => ({
+      (carouselImagePost): CarouselImage => ({
         id: carouselImagePost.id,
         name: getWPTitle(carouselImagePost),
         image: getCustomField(carouselImagePost, CarouselImageKeys.image),
+        video_url: getCustomField(
+          carouselImagePost,
+          CarouselImageKeys.video_url
+        ),
         url: getCustomField(carouselImagePost, CarouselImageKeys.url),
       })
     )

@@ -5,7 +5,7 @@ import {
   WpImage,
   WPRelatedCustomFieldValue,
 } from "@/types/wordpressTypes"
-import View from "@/types/viewTypes"
+import { RelatedNewsPost, NewsPost } from "@/types/viewTypes"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
@@ -13,7 +13,7 @@ import { filterUndef } from "./arrays"
 const mapRelatedNews = (
   related: WPRelatedCustomFieldValue,
   state: WpResponseData
-): View.RelatedNewsPost[] => {
+): RelatedNewsPost[] => {
   const relatedOnState = related.filter((postId: number) =>
     state.find((pst) => pst.id === postId)
   )
@@ -39,29 +39,39 @@ const mapRelatedNews = (
   )
 }
 
-const mapNewsToView = (state: WpResponseData): View.NewsPost[] => {
-  const news = state.map(
-    (newsPost): View.NewsPost => {
-      const gallery: WpImage[] = getCustomField(newsPost, NewsKeys.gallery, [])
-      const related = getCustomField<WPRelatedCustomFieldValue>(
-        newsPost,
-        NewsKeys.related,
-        []
-      )
-      return {
-        id: newsPost.id,
-        title: getWPTitle(newsPost),
-        date: dayjs(newsPost.date).format(DATE_FORMAT),
-        thumbnail: (gallery[0] && gallery[0].url) || "",
-        slug: newsPost.slug,
-        abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
-        text: getCustomField(newsPost, NewsKeys.text, ""),
-        gallery,
-        related: mapRelatedNews(related, state),
-        video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+const mapNewsToView = (state: WpResponseData): NewsPost[] => {
+  const news = state
+    .map(
+      (newsPost): NewsPost => {
+        const gallery: WpImage[] = getCustomField(
+          newsPost,
+          NewsKeys.gallery,
+          []
+        )
+        const related = getCustomField<WPRelatedCustomFieldValue>(
+          newsPost,
+          NewsKeys.related,
+          []
+        )
+        return {
+          id: newsPost.id,
+          title: getWPTitle(newsPost),
+          date: dayjs(newsPost.date).format(DATE_FORMAT),
+          thumbnail: (gallery[0] && gallery[0].url) || "",
+          slug: newsPost.slug,
+          abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
+          text: getCustomField(newsPost, NewsKeys.text, ""),
+          gallery,
+          is_highlighted: getCustomField<boolean>(
+            newsPost,
+            NewsKeys.is_highlighted
+          ),
+          related: mapRelatedNews(related, state),
+          video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+        }
       }
-    }
-  )
+    )
+    .sort((a: NewsPost, b: NewsPost) => dayjs(a.date).diff(dayjs(b.date)))
 
   return news
 }

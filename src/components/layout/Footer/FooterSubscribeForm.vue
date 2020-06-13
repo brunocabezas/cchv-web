@@ -12,6 +12,18 @@
     >
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
+          <label class="subscribeFormEmailLabel" for="mce-NAME">Nombre </label>
+          <input
+            type="name"
+            title="Ingresa tu nombre"
+            placeholder="Nombre apellido"
+            value
+            name="NAME"
+            class="subscribeFormEmailInput required name"
+            id="mce-NAME"
+          />
+        </div>
+        <div class="mc-field-group">
           <label class="subscribeFormEmailLabel" for="mce-EMAIL"
             >Direccion de email
           </label>
@@ -49,7 +61,7 @@
         <div class="clear">
           <input
             type="submit"
-            value="Subscribirse"
+            value="Suscribirse"
             name="subscribe"
             id="mc-embedded-subscribe"
             title="Subscribirse al newsletter"
@@ -78,33 +90,46 @@ export default defineComponent({
 @import '../../../styles/variables.styl';
 
 .footerSubscribeForm
-  .subscribeFormEmailLabel
-    font-family Montserrat
-    color: grey;
-    font-size: 14px;
-    display block
-    margin-bottom 5px
+  #mc_embed_signup_scroll
+    display: flex;
+    flex-wrap: wrap;
 
-  .subscribeFormEmailInput
-    padding 5px
-    font-family Montserrat
-    background-color: transparent;
-    border-bottom: 2px solid black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    .mc-field-group
+      margin-right: 2em;
+      margin-top: 10px;
 
-  .subscribeFormButton
-    display block
-    font-family Montserrat
-    background-color $blue
-    color white
-    padding 1em 2em
-    border-radius 30px
-    margin-top 1.5em
-    border 0
-    font-size 14px
-    cursor pointer
-    &:hover
-      background-color darken($blue, 10)
+      &:first-child
+        margin-left: 0;
+
+.subscribeFormEmailLabel
+  font-family: Montserrat;
+  color: grey;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+
+.subscribeFormEmailInput
+  padding: 5px 5px 5px 0;
+  font-family: Montserrat;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+.subscribeFormButton
+  margin-left: 2em;
+  margin-top: 10px;
+  display: block;
+  font-family: Montserrat;
+  background-color: $blue;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 30px;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover
+    background-color: darken($blue, 10);
 </style>

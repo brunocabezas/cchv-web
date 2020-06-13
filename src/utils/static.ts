@@ -1,5 +1,5 @@
 import AppUrls from "./urls"
-import { Page } from "@/types"
+import { NavigationMenu, NavMenu } from "@/types"
 
 // Date format from https://github.com/iamkun/dayjs
 export const MAIN_COLOR = "#344284"
@@ -13,9 +13,8 @@ export const NEWSLETTER_SUBSCRIBE_URL =
 
 // Defines the order of appeareance
 // Uses types from app urls
-const AboutPage: Page = {
-  id: AppUrls.About,
-  url: AppUrls.About,
+const AboutPage: NavigationMenu = {
+  id: NavMenu.About,
   label: "Somos",
   pages: [
     { id: AppUrls.AboutHistory, url: AppUrls.AboutHistory, label: "Historia" },
@@ -27,8 +26,8 @@ const AboutPage: Page = {
     },
   ],
 }
-const ProgramsPage: Page = {
-  id: AppUrls.Programs,
+const ProgramsPage: NavigationMenu = {
+  id: NavMenu.Programs,
   label: "Programas",
   // Program pages will get filled with API pages that are external
   pages: [
@@ -50,10 +49,14 @@ const ProgramsPage: Page = {
   ],
 }
 
-const NewsPage: Page = {
-  id: AppUrls.News,
+const NewsPage: NavigationMenu = {
+  id: NavMenu.News,
   url: AppUrls.News,
   label: "Noticias",
 }
 
-export const NAVIGATION_MENU: Page[] = [AboutPage, ProgramsPage, NewsPage]
+export const NAVIGATION_MENU: NavigationMenu[] = [
+  AboutPage,
+  ProgramsPage,
+  NewsPage,
+]

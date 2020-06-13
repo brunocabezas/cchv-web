@@ -3,13 +3,8 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Equipo</h1>
     </div>
+    <div class="pageBody" v-if="page" v-html="page.text"></div>
     <Loader :loading="isLoading" />
-    <div v-if="!isLoading" class="team">
-      <div v-bind:key="person.id" v-for="person in team" class="teamMember">
-        <span class="position">{{ person.position }}</span>
-        <p class="name">{{ person.name }}</p>
-      </div>
-    </div>
     <hr v-if="!isLoading" />
   </div>
 </template>
@@ -18,15 +13,15 @@
 import { defineComponent } from "@vue/composition-api";
 import useTeamMembers from "@/factories/useTeamMembers";
 import Loader from "@/components/Loader.vue";
+import usePages from "../../factories/usePages";
 
 export default defineComponent({
   name: "TeamPage",
   components: { Loader },
   setup() {
-    const { isLoading, team, fetchTeamMembers } = useTeamMembers();
-
-    fetchTeamMembers();
-    return { team, isLoading };
+    const { fetchPages, isLoading, teamPage } = usePages();
+    fetchPages();
+    return { isLoading, page: teamPage };
   }
 });
 </script>

@@ -12,53 +12,77 @@ import {
   ProgramVideoKeys,
   ActivityKeys,
 } from "./customFieldsKeysTypes"
-import { WpImage } from "./wordpressTypes"
+import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
+import { RelatedNewsPost } from "./viewTypes"
 
-// TODO Analyze why team member type def is not needed here
+//
+// Uses customFieldsKeysTypes to build types represnting
+// Wordpress custom fields
+// Every type declared must be exported
 
-export type CustomFields =
-  | Carousel
-  | News
-  | SponsorsCategory
-  | Sponsor
-  | SocialNetwork
-  | Document
-  | Page
-  | Program
-  | ProgramVideo
-  | SchoolProgram
+// TODO use enum
+export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
 
-// TODO improve this type, should gather custom fields values types
-export type CustomFieldValues =
-  | CarouselImage[CarouselImageKeys.image]
-  | CarouselImage[CarouselImageKeys.url]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.related]
-  | NewsPost[NewsKeys.video_url]
-  | NewsPost[NewsKeys.abstract]
-  | NewsPost[NewsKeys.text]
-  | SponsorsCategory[SponsorCategoryKeys.order]
-  | SponsorsCategory[SponsorCategoryKeys.sponsors]
-  | SocialNetwork[SocialNetworksKeys.url]
-  | SocialNetwork[SocialNetworksKeys.url]
-  | Document[DocumentKeys.link]
-  | any
-
-// SPONSOR / SPONSOR CATEGORY
-export type SponsorsCategory = {
-  [SponsorCategoryKeys.order]: number
-  [SponsorCategoryKeys.sponsors]: Sponsor[]
+// declare module CustomFields {
+export enum ActivityType {
+  Movie = "movie_session",
+  Conversations = "conversation",
 }
-
-export type Sponsor = {
-  [SponsorKeys.order]: number
-  [SponsorKeys.url]: string
-  [SponsorKeys.logo]: string
-}
-
 // SOCIAL NETWORK
+export enum SocialNetworkType {
+  Facebook = "facebook",
+  Youtube = "youtube",
+  Instagram = "instagram",
+}
+
 export type SocialNetwork = {
   [SocialNetworksKeys.url]: string
+  [SocialNetworksKeys.type]: WPSelectCustomFieldValue<SocialNetworkType>
+}
+
+// ACTIVITIES
+export interface Activity {
+  [ActivityKeys.abstract]: string
+  [ActivityKeys.gallery]: WpImage[]
+  [ActivityKeys.text]: string
+  [ActivityKeys.type]: ActivityType
+  [ActivityKeys.video_url]: string
+}
+
+//
+// PROGRAMS
+//
+export type Program = {
+  [ProgramKeys.is_external]: boolean
+  [ProgramKeys.url]: string
+  [ProgramKeys.video_url]: string
+  [ProgramKeys.gallery]: any
+  [ProgramKeys.text]: string
+  [ProgramKeys.extra_content]: ProgramExtraContent
+  [ProgramKeys.order]: number
+}
+
+export type SchoolProgram = {
+  [SchoolProgramKeys.teachers]: string
+  [SchoolProgramKeys.schedule]: string
+  [SchoolProgramKeys.abstract]: string
+  [SchoolProgramKeys.video_url]: string
+  [SchoolProgramKeys.pdf]: string
+  [SchoolProgramKeys.gallery]: any
+  [SchoolProgramKeys.text]: string
+  [SchoolProgramKeys.logo]: string
+  [SchoolProgramKeys.is_workshop]: boolean
+}
+
+export type ProgramVideo = {
+  [ProgramVideoKeys.url]?: string
+  [ProgramVideoKeys.text]: string
+  [ProgramVideoKeys.year]: string
+  [ProgramVideoKeys.author]: string
+  [ProgramVideoKeys.country]: string
+  [ProgramVideoKeys.thumbnail]: string
+  [ProgramVideoKeys.event]: string
+  [ProgramVideoKeys.duration]: string
 }
 
 // DOCUMENT
@@ -73,87 +97,34 @@ export type Page = {
   [PageKeys.extra_content]: PageExtraContent
 }
 
-export type PageExtraContent = "none" | "documents"
+// TODO use enum
+type PageExtraContent = "none" | "documents"
 
-// PROGRAMS
-export type Program = {
-  [ProgramKeys.is_external]: boolean
-  [ProgramKeys.url]: string
-  [ProgramKeys.video_url]: string
-  [ProgramKeys.gallery]: any
-  [ProgramKeys.text]: string
-  [ProgramKeys.extra_content]: ProgramExtraContent
+// SPONSOR / SPONSOR CATEGORY
+export type SponsorsCategory = {
+  [SponsorCategoryKeys.order]: number
+  [SponsorCategoryKeys.sponsors]: Sponsor[]
 }
 
-export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
-
-export type ProgramVideo = {
-  [ProgramVideoKeys.url]: string
-  [ProgramVideoKeys.text]: string
-  [ProgramVideoKeys.year]: string
-  [ProgramVideoKeys.author]: string
-  [ProgramVideoKeys.country]: string
-  [ProgramVideoKeys.duration]: string
+export type Sponsor = {
+  [SponsorKeys.order]: number
+  [SponsorKeys.url]: string
+  [SponsorKeys.logo]: string
 }
 
-export type SchoolProgram = {
-  [SchoolProgramKeys.teachers]: string
-  [SchoolProgramKeys.schedule]: string
-  [SchoolProgramKeys.abstract]: string
-  [SchoolProgramKeys.video_url]: string
-  [SchoolProgramKeys.pdf]: string
-  [SchoolProgramKeys.gallery]: any
-  [SchoolProgramKeys.text]: string
-  [SchoolProgramKeys.logo]: string
-}
-
-// CAROUSEL
-export type Carousel = CarouselImage[]
-export type CarouselImage = {
-  [CarouselImageKeys.image]: string
-  [CarouselImageKeys.url]: string
-}
-
-export interface ImageSizes {
-  thumbnail: string
-  "thumbnail-width": number
-  "thumbnail-height": number
-  medium: string
-  "medium-width": number
-  "medium-height": number
-  medium_large: string
-  "medium_large-width": number
-  "medium_large-height": number
-  large: string
-  "large-width": number
-  "large-height": number
-}
-
-//
 // NEWS
-//
-export type News = NewsPost[]
 export interface NewsPost {
   [NewsKeys.abstract]: string
   [NewsKeys.text]: string
-  [NewsKeys.related]: number[]
+  // TODO related must be related news post in viewTypes
+  [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
+  [NewsKeys.is_highlighted]: boolean
   [NewsKeys.gallery]: any
 }
 
-//
-// Activities
-//
-
-export enum ActivityType {
-  Movie = "movie_session",
-  Conversations = "conversation",
-}
-
-export interface Activity {
-  [ActivityKeys.abstract]: string
-  [ActivityKeys.gallery]: WpImage[]
-  [ActivityKeys.text]: string
-  [ActivityKeys.type]: ActivityType
-  [ActivityKeys.video_url]: string
+export interface CarouselImage {
+  [CarouselImageKeys.image]: string
+  [CarouselImageKeys.url]: string
+  [CarouselImageKeys.video_url]: string
 }

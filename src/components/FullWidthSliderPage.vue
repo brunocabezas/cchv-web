@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed } from "@vue/composition-api";
-import View from "../types/viewTypes";
+import { SchoolProgram, Activity } from "../types/viewTypes";
 import Loader from "@/components/Loader.vue";
 import useActivities from "../factories/useActivities";
 import useSchoolPrograms from "../factories/useSchoolPrograms";
@@ -51,23 +51,19 @@ const FullWidthSliderPage = defineComponent({
       fetchActivities();
     }
 
-    const page = computed<View.SchoolProgram | View.Activity | undefined>(
-      () => {
-        if (props.pageType === FullWidthPageDataType.Activity) {
-          return activities.value.find(
-            (p: View.Activity) => p.slug === props.slug
-          );
-        } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {
-          return schoolPrograms.value.find(
-            (p: View.SchoolProgram) => p.slug === props.slug
-          );
-        } else {
-          return undefined;
-        }
+    const page = computed<SchoolProgram | Activity | undefined>(() => {
+      if (props.pageType === FullWidthPageDataType.Activity) {
+        return activities.value.find((p: Activity) => p.slug === props.slug);
+      } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {
+        return schoolPrograms.value.find(
+          (p: SchoolProgram) => p.slug === props.slug
+        );
+      } else {
+        return undefined;
       }
-    );
+    });
 
-    const isLoading = computed<Boolean>(() => {
+    const isLoading = computed<boolean>(() => {
       if (props.pageType === FullWidthPageDataType.Activity) {
         return isLoadingActivities.value;
       } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {

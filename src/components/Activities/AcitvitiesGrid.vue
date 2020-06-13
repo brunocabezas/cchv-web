@@ -10,7 +10,7 @@
         >
           <ProgressiveImage
             v-if="act.gallery"
-            height="150px"
+            height="200px"
             :src="act.gallery[0].url"
           />
           <h3 class="activitiesGridTitle">{{ act.name }}</h3>
@@ -26,7 +26,7 @@ import AppUrls from "@/utils/urls";
 import useActivities from "@/factories/useActivities";
 import { ActivityType } from "@/types/customFieldsTypes";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import View from "../../types/viewTypes";
+import { Activity } from "../../types/viewTypes";
 
 const ActivitiesGrid = defineComponent({
   name: "ActivitiesGrid",
@@ -45,7 +45,7 @@ const ActivitiesGrid = defineComponent({
       getActivityUrlBySlug
     } = useActivities();
     const title = computed<string>(() => getActvitiesTitleByType(props.type));
-    const activities = computed<readonly View.Activity[]>(() => {
+    const activities = computed<readonly Activity[]>(() => {
       switch (props.type) {
         case ActivityType.Movie:
           return movies.value;
@@ -74,7 +74,7 @@ export default ActivitiesGrid;
     .activity
       margin: 5px;
       // max-width: 100px;
-      width: 25%;
+      width: 33.3%;
 
   .activitiesGridTitle
     margin-top: 5px;

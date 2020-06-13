@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { SchoolProgram } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
@@ -16,22 +16,26 @@ interface SchoolProgramTab extends Tab {
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 
-const SCHOOL_PROGRAMS_TABS: Tabs = [
-  { id: 0, title: "Artes y Oficios" },
-  { id: 1, title: "Mediacion y comunidades" },
-]
+// const SCHOOL_PROGRAMS_TABS: Tabs = [
+//   { id: 0, title: "Artes y Oficios" },
+//   { id: 1, title: "Mediacion y comunidades" },
+// ]
 
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
   WpResponseData
 >(apiRoutes.SchoolPrograms)
 
 export default function useSchoolPrograms() {
-  const schoolPrograms = computed<View.SchoolProgram[]>(() => {
+  const schoolPrograms = computed<SchoolProgram[]>(() => {
     return data.value.map(
-      (schoolProgramPost): View.SchoolProgram => ({
+      (schoolProgramPost): SchoolProgram => ({
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         slug: schoolProgramPost.slug,
+        is_workshop: !!getCustomField(
+          schoolProgramPost,
+          SchoolProgramKeys.is_workshop
+        ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
         video_url: getCustomField(
           schoolProgramPost,
@@ -47,17 +51,31 @@ export default function useSchoolPrograms() {
     )
   })
 
+  // Divinding exports by is_workshp
+  const programs = computed<SchoolProgram[]>(() =>
+    schoolPrograms.value.filter((program) => !program.is_workshop)
+  )
+  const workshops = computed<SchoolProgram[]>(() =>
+    schoolPrograms.value.filter((program) => program.is_workshop)
+  )
+
   const schoolProgramsTabs = computed<SchoolProgramTabs>(() =>
-    SCHOOL_PROGRAMS_TABS.map((t, ix) => ({
+    programs.value.map((t) => ({
       ...t,
-      logo: (schoolPrograms.value[ix] && schoolPrograms.value[ix].logo) || "",
-      id: (schoolPrograms.value[ix] && schoolPrograms.value[ix].id) || t.id,
+      title: t.name,
+    }))
+  )
+
+  const workshopsTabs = computed<SchoolProgramTabs>(() =>
+    workshops.value.map((t) => ({
+      ...t,
+      title: t.name,
     }))
   )
 
   const getSchoolProgramById = (
     programId: number
-  ): View.SchoolProgram | undefined => {
+  ): SchoolProgram | undefined => {
     return schoolPrograms.value.find((p) => p.id === programId)
   }
 
@@ -66,8 +84,10 @@ export default function useSchoolPrograms() {
 
   return {
     fetchSchoolPrograms,
-    schoolPrograms,
     isLoading,
+    workshops,
+    workshopsTabs,
+    schoolPrograms: programs,
     schoolProgramsTabs,
     getSchoolProgramById,
     getSchoolProgramUrlBySlug,

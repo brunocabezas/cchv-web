@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+// import View from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
@@ -14,14 +14,12 @@ const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
 >(apiRoutes.Team)
 
 export default function useTeamMembers() {
-  const team = computed<View.Team>(() => {
-    return data.value.map(
-      (teamMemberPost): View.TeamMember => ({
-        id: teamMemberPost.id,
-        name: getWPTitle(teamMemberPost),
-        position: getCustomField(teamMemberPost, TeamMembersKeys.position),
-      })
-    )
+  const team = computed<any>(() => {
+    return data.value.map((teamMemberPost): any => ({
+      id: teamMemberPost.id,
+      name: getWPTitle(teamMemberPost),
+      position: getCustomField(teamMemberPost, TeamMembersKeys.position),
+    }))
   })
 
   return {

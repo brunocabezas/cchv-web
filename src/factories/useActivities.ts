@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { Activity } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData, WpImage } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
@@ -16,9 +16,9 @@ const { data, fetch: fetchActivities, isLoading } = useAsyncData<
 >(apiRoutes.Activities)
 
 export default function useActivities() {
-  const activities = computed<View.Activity[]>(() => {
+  const activities = computed<Activity[]>(() => {
     return data.value.map(
-      (activity): View.Activity => ({
+      (activity): Activity => ({
         id: activity.id,
         name: getWPTitle(activity),
         slug: activity.slug,

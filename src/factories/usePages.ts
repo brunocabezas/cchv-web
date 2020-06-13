@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import View from "@/types/viewTypes"
+import { Page } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
@@ -14,9 +14,9 @@ const { data, fetch: fetchPages, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function usePages() {
-  const pages = computed<View.Page[]>(() => {
+  const pages = computed<Page[]>(() => {
     return data.value.map(
-      (pagePost): View.Page => ({
+      (pagePost): Page => ({
         id: pagePost.id,
         name: getWPTitle(pagePost),
         text: getCustomField(pagePost, PageKeys.text),
@@ -26,15 +26,15 @@ export default function usePages() {
     )
   })
 
-  const aboutPage = computed<View.Page | null>(() => {
+  const teamPage = computed<Page | null>(() => {
     return (
       pages.value.find((page) =>
-        page.name.toLocaleLowerCase().includes("somos")
+        page.name.toLocaleLowerCase().includes("equipo")
       ) || null
     )
   })
 
-  const transparencyPage = computed<View.Page | null>(() => {
+  const transparencyPage = computed<Page | null>(() => {
     return (
       pages.value.find((page) =>
         page.name.toLocaleLowerCase().includes("transparencia")
@@ -42,7 +42,7 @@ export default function usePages() {
     )
   })
 
-  const historyPage = computed<View.Page | null>(() => {
+  const historyPage = computed<Page | null>(() => {
     return (
       pages.value.find((page) =>
         page.name.toLocaleLowerCase().includes("historia")
@@ -52,7 +52,7 @@ export default function usePages() {
 
   return {
     fetchPages,
-    aboutPage,
+    teamPage,
     transparencyPage,
     historyPage,
     isLoading,
