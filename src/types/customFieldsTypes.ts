@@ -54,12 +54,12 @@ export interface Activity {
 //
 export type Program = {
   [ProgramKeys.is_external]: boolean
-  // TODO Program.url is not needed on viewType, which extends Program
-  [ProgramKeys.url]?: string
+  [ProgramKeys.url]: string
   [ProgramKeys.video_url]: string
   [ProgramKeys.gallery]: any
   [ProgramKeys.text]: string
   [ProgramKeys.extra_content]: ProgramExtraContent
+  [ProgramKeys.order]: number
 }
 
 export type SchoolProgram = {

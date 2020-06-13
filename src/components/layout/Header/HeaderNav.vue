@@ -4,26 +4,21 @@
       v-bind:key="menu.label"
       v-for="menu in navigationMenu"
       class="headerNavItem"
+      v-bind:class="{
+        'headerNavItem--nested': menu.pages && menu.pages.length
+      }"
     >
-      <router-link
-        v-if="!menu.pages || !menu.pages.length"
-        :title="menu.label"
-        :to="menu.url"
-      >
+      <router-link v-if="menu.url" :title="menu.label" :to="menu.url">
         {{ menu.label }}
       </router-link>
 
-      <div
-        v-if="menu.pages && menu.pages.length"
-        @mouseover="onHover(menu.label)"
-        @mouseleave="onHoverLeave(menu.label)"
-      >
-        <router-link v-if="menu.url" :title="menu.label" :to="menu.url">
-          {{ menu.label }}
-        </router-link>
-        <span class="headerNavItemLink" v-else>{{ menu.label }}</span>
+      <span class="headerNavItemLink" v-else>{{ menu.label }}</span>
 
-        <div v-if="hoverState[menu.label]" class="headerNavItemSubLevel">
+      <div
+        class="headerNavItemSubMenuContainer"
+        v-if="menu.pages && menu.pages.length > 0"
+      >
+        <div class="headerNavItemSubLevel">
           <div
             v-bind:key="submenu.label"
             v-for="submenu in menu.pages"
@@ -56,6 +51,13 @@
   align-items: center;
   padding: 0;
   position: relative;
+
+  &:hover
+    .headerNavItemSubMenuContainer
+      display: block;
+
+  .headerNavItemSubMenuContainer
+    display: none;
 
   > div
     height: 100%;

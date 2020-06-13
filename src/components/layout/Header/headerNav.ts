@@ -1,10 +1,6 @@
-import { defineComponent, computed, reactive } from "@vue/composition-api"
+import { defineComponent, computed } from "@vue/composition-api"
 import usePrograms from "@/factories/usePrograms"
-import {
-  mapNavMenuToHoverState,
-  addPagesToProgramsNavigationMenu,
-  menuHoverState,
-} from "@/utils/headerUtils"
+import { addPagesToProgramsNavigationMenu } from "@/utils/headerUtils"
 import { NavigationMenu } from "@/types"
 
 export default defineComponent({
@@ -12,29 +8,16 @@ export default defineComponent({
   setup() {
     const { fetchPrograms, programs } = usePrograms()
     // //  Map programs from usePograms() to navigation menu
-    const navigationMenu = computed<NavigationMenu[]>(() =>
-      addPagesToProgramsNavigationMenu(programs.value)
-    )
-
-    const hoverState = reactive<menuHoverState>(
-      mapNavMenuToHoverState(navigationMenu.value)
-    )
+    const navigationMenu = computed<NavigationMenu[]>(() => {
+      return programs.value.length > 0
+        ? addPagesToProgramsNavigationMenu(programs.value)
+        : []
+    })
 
     fetchPrograms()
 
-    function onHover(menuLabel: string) {
-      hoverState[menuLabel] = true
-    }
-
-    function onHoverLeave(menuLabel: string) {
-      hoverState[menuLabel] = false
-    }
-
     return {
       navigationMenu,
-      hoverState,
-      onHover,
-      onHoverLeave,
     }
   },
 })

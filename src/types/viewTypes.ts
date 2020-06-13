@@ -31,8 +31,6 @@ export interface ProgramVideo extends CustomFields.ProgramVideo {
 export interface Program extends CustomFields.Program {
   id: number
   name: string
-  // Url obtained with ProgramKeys.url as getter
-  url: string
   // Slug to build urls
   slug: string
 }

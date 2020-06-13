@@ -2,59 +2,25 @@
 // customFieldsKeysTypes declares the keys/attributes used by
 // the custom fields provided by the API
 
+import { Document } from "./viewTypes"
+
 // Each custom field has it's keys define as enum
 // the type of each key is defined on ./customFieldTypes.ts
 
 // All custom fields attributes together
 export type CustomFieldsKeys =
-  | CarouselImageKeys.image
-  | CarouselImageKeys.url
-  | CarouselImageKeys.video_url
-  | NewsKeys.abstract
-  | NewsKeys.related
-  | NewsKeys.text
-  | NewsKeys.video_url
-  | NewsKeys.gallery
-  | NewsKeys.is_highlighted
-  | SponsorCategoryKeys.order
-  | SponsorCategoryKeys.sponsors
-  | SponsorKeys.order
-  | SponsorKeys.logo
-  | SponsorKeys.url
-  | SocialNetworksKeys.url
-  | SocialNetworksKeys.type
-  | TeamMembersKeys.position
-  | DocumentKeys.link
-  | PageKeys.text
-  | PageKeys.extra_content
-  | PageKeys.gallery
-  | ProgramKeys.is_external
-  | ProgramKeys.url
-  | ProgramKeys.text
-  | ProgramKeys.video_url
-  | ProgramKeys.gallery
-  | ProgramKeys.extra_content
-  | SchoolProgramKeys.text
-  | SchoolProgramKeys.schedule
-  | SchoolProgramKeys.teachers
-  | SchoolProgramKeys.pdf
-  | SchoolProgramKeys.video_url
-  | SchoolProgramKeys.logo
-  | SchoolProgramKeys.gallery
-  | SchoolProgramKeys.abstract
-  | ProgramVideoKeys.url
-  | ProgramVideoKeys.text
-  | ProgramVideoKeys.author
-  | ProgramVideoKeys.duration
-  | ProgramVideoKeys.country
-  | ProgramVideoKeys.thumbnail
-  | ProgramVideoKeys.event
-  | ProgramVideoKeys.year
-  | ActivityKeys.type
-  | ActivityKeys.abstract
-  | ActivityKeys.text
-  | ActivityKeys.video_url
-  | ActivityKeys.gallery
+  | CarouselImageKeys
+  | NewsKeys
+  | SponsorCategoryKeys
+  | SponsorKeys
+  | PageKeys
+  | SocialNetworksKeys
+  | ProgramKeys
+  | ProgramVideoKeys
+  | SchoolProgramKeys
+  | ActivityKeys
+  | DocumentKeys
+  | TeamMembersKeys
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -115,11 +81,12 @@ export enum PageKeys {
 // Programs
 export enum ProgramKeys {
   is_external = "is_external",
-  url = "external_url",
+  url = "nav_menu_url",
   text = "text",
   video_url = "video_url",
   gallery = "gallery",
   extra_content = "extra_content",
+  order = "order",
 }
 
 // Concurso juan downey videos
