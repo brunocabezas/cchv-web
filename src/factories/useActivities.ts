@@ -37,23 +37,26 @@ export default function useActivities() {
 
   const getActvitiesTitleByType = (type: ActivityType): string => {
     switch (type) {
-      case ActivityType.Conversations:
+      case ActivityType.Conversation:
         return "Conversatorio"
       case ActivityType.Movie:
         return "Cine Foro"
+      case ActivityType.Concert:
+        return "Conciertos"
+      case ActivityType.Performance:
+        return "Performances"
       default:
         return ""
     }
   }
 
+  const getActvitiesByType = (type: ActivityType) => {
+    return activities.value.filter((act) => act.type === type)
+  }
+
   return {
     activities,
-    movies: computed(() =>
-      activities.value.filter((act) => act.type === ActivityType.Movie)
-    ),
-    conversations: computed(() =>
-      activities.value.filter((act) => act.type === ActivityType.Conversations)
-    ),
+    getActvitiesByType,
     isLoading: computed(() => isLoading.value),
     getActivityUrlBySlug,
     getActvitiesTitleByType,

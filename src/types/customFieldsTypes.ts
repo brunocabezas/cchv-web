@@ -25,8 +25,10 @@ export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
 
 // declare module CustomFields {
 export enum ActivityType {
-  Movie = "movie_session",
-  Conversations = "conversation",
+  Movie = "movie",
+  Conversation = "conversation",
+  Concert = "concert",
+  Performance = "performance",
 }
 // SOCIAL NETWORK
 export enum SocialNetworkType {

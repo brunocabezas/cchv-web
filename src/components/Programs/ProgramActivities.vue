@@ -1,7 +1,9 @@
 <template>
   <div class="programActivities">
     <ActivitiesGrid :type="ActivityType.Movie" />
-    <ActivitiesGrid :type="ActivityType.Conversations" />
+    <ActivitiesGrid :type="ActivityType.Conversation" />
+    <ActivitiesGrid :type="ActivityType.Concert" />
+    <ActivitiesGrid :type="ActivityType.Performance" />
   </div>
 </template>
 
@@ -27,4 +29,7 @@ const ProgramActivities = defineComponent({
 
 export default ProgramActivities;
 </script>
-<style lang="stylus"></style>
+<style lang="stylus">
+.programActivities
+  margin-top: 2em;
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="activitiesGrid">
+  <div v-if="activities.length" class="activitiesGrid">
     <h1 class="activitiesGridTitle">{{ title }}</h1>
     <div class="activitiesGridContainer">
       <div v-for="act in activities" v-bind:key="act.id" class="activity">
@@ -39,23 +39,12 @@ const ActivitiesGrid = defineComponent({
   },
   setup(props) {
     const {
-      movies,
-      conversations,
       getActvitiesTitleByType,
-      getActivityUrlBySlug
+      getActivityUrlBySlug,
+      getActvitiesByType
     } = useActivities();
     const title = computed<string>(() => getActvitiesTitleByType(props.type));
-    const activities = computed<readonly Activity[]>(() => {
-      switch (props.type) {
-        case ActivityType.Movie:
-          return movies.value;
-        case ActivityType.Conversations:
-          return conversations.value;
-        default:
-          return [];
-      }
-    });
-
+    const activities = computed(() => getActvitiesByType(props.type));
     return { activities, title, getActivityUrlBySlug };
   }
 });
