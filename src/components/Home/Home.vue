@@ -36,8 +36,8 @@ export default defineComponent({
 @import '../../styles/variables.styl';
 
 .homeSection
-  max-width: $boxed_content_max_width;
-  padding: $footer_padding;
+  width: $boxed_content_max_width;
+  page_padding();
   position: relative;
   margin: 0 auto;
 
