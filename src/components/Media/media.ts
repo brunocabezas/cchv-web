@@ -30,6 +30,11 @@ const Media = defineComponent({
       default: "500px",
       required: false,
     },
+    hideLightBox: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
   components: {
     VueCarousel,

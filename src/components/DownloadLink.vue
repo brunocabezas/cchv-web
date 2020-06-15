@@ -56,6 +56,7 @@ export default DownloadLink;
 @import '../styles/variables.styl';
 
 .downloadLink
+  font-size: 18px;
   height: auto;
 
   .downloadLinkLoading

@@ -1,6 +1,7 @@
 <template>
   <div class="media carousel" v-bind:style="{ height }">
     <LightBox
+      v-if="!hideLightBox"
       ref="lightBoxRef"
       :showLightBox="false"
       :media="lightBoxData"
@@ -26,7 +27,7 @@
         v-for="(image, index) in gallery"
       >
         <button
-          v-if="image.url"
+          v-if="image.url && !hideLightBox"
           type="button"
           v-bind:style="{ height }"
           title="Ampliar imagen"
@@ -36,6 +37,12 @@
           <ProgressiveImage :height="height" :src="image.url">
           </ProgressiveImage>
         </button>
+        <ProgressiveImage
+          v-if="image.url && hideLightBox"
+          :height="height"
+          :src="image.url"
+        >
+        </ProgressiveImage>
       </slide>
     </vue-carousel>
     <button
@@ -60,7 +67,7 @@
   </div>
 </template>
 
-<script lang="ts" src="./media"></script>
+<script lang="ts" src="./media.ts"></script>
 <style lang="stylus">
 @import '../../styles/variables.styl';
 
