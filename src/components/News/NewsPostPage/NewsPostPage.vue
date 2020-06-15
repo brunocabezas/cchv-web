@@ -12,25 +12,24 @@
 
         <div class="pageBody" v-html="post.text"></div>
       </div>
-      <div
-        v-if="post && post.related && post.related.length > 0"
-        class="newsPostPageRight newsPostRelated"
-      >
-        <h3 class="newsPostRelatedTitle">Noticias relacionadas</h3>
+      <div v-if="latestNews.length" class="newsPostPageRight latestNews">
+        <h3 class="latestNewsTitle">Últimas noticias</h3>
         <hr />
-        <div v-bind:key="post.id" v-for="post in post.related">
+        <div v-bind:key="post.id" v-for="post in latestNews">
           <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">
             <div
-              class="newsPostRelated__thumb"
+              class="latestNews__thumb"
               v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
             ></div>
           </router-link>
-          <h4 class="newsPostRelated__title">
-            <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">{{
-              post.title
-            }}</router-link>
+          <h4 class="latestNews__title">
+            <router-link
+              v-html="post.title"
+              :title="post.title"
+              :to="getNewsPostUrl(post.slug)"
+            ></router-link>
           </h4>
-          <p class="newsPostRelated__date">{{ post.date }}</p>
+          <p class="latestNews__date">{{ post.date }}</p>
         </div>
       </div>
       <Loader v-if="isLoading" />
@@ -49,26 +48,26 @@
     width: 20%;
     padding: 0 10px;
 
-    .newsPostRelatedTitle
-      color: $black;
+    .latestNewsTitle
       margin-bottom: 0;
       margin-top: 0;
 
     hr
+      color: $blue;
       margin-top: 2px;
       margin-bottom: 15px;
 
-    .newsPostRelated__title
+    .latestNews__title
       margin-top: 5px;
       margin-bottom: 5px;
 
       &:hover
         text-decoration: underline;
 
-    .newsPostRelated__date
+    .latestNews__date
       margin-top: 0;
 
-    .newsPostRelated__thumb
+    .latestNews__thumb
       height: 100px;
       background-color: $blue;
       background-position: center center;

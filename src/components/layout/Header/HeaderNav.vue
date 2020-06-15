@@ -65,7 +65,6 @@
   a, .headerNavItemLink
     color: $blue;
     display: flex;
-    box-sizing: border-box;
     height: 100%;
     align-items: center;
     font-family: Montserrat;
@@ -85,7 +84,7 @@
   .headerNavItemSubLevel
     position: absolute;
     background-color: white;
-    top: 68px;
+    top: 64px;
     left: 0;
     z-index: 2;
     white-space: nowrap;

@@ -1,4 +1,6 @@
 import VueRouter, { Route } from "vue-router"
+import Vue from "vue"
+import { DEFAULT_TITLE } from "@/utils/static"
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
@@ -13,18 +15,45 @@ import AppUrls from "./urls"
 
 const routes = [
   { path: AppUrls.Home, component: Home },
-  { path: AppUrls.News, component: NewsPage },
+  {
+    path: AppUrls.News,
+    component: NewsPage,
+    meta: {
+      title: "Noticias",
+    },
+  },
   {
     path: `${AppUrls.NewsPost}:postSlug`,
     component: NewsPostPage,
     props: (route: Route) => ({
       postSlug: route.params.postSlug,
     }),
+    meta: {
+      title: "Noticias",
+    },
   },
   // About
-  { path: AppUrls.AboutHistory, component: HistoryPage },
-  { path: AppUrls.AboutTeam, component: TeamPage },
-  { path: AppUrls.AboutTransparency, component: TransparencyPage },
+  {
+    path: AppUrls.AboutHistory,
+    component: HistoryPage,
+    meta: {
+      title: "Historia",
+    },
+  },
+  {
+    path: AppUrls.AboutTeam,
+    component: TeamPage,
+    meta: {
+      title: "Equipo",
+    },
+  },
+  {
+    path: AppUrls.AboutTransparency,
+    component: TransparencyPage,
+    meta: {
+      title: "Transparencia",
+    },
+  },
   // Programs
   {
     path: `${AppUrls.Programs}:slug`,
@@ -32,6 +61,9 @@ const routes = [
     props: (route: Route) => ({
       slug: route.params.slug,
     }),
+    meta: {
+      title: "Programas",
+    },
   },
   // Activities
   {
@@ -41,6 +73,9 @@ const routes = [
       slug: route.params.slug,
       pageType: FullWidthPageDataType.Activity,
     }),
+    meta: {
+      title: "Actividades",
+    },
   },
   // School Program Single Page
   {
@@ -50,6 +85,9 @@ const routes = [
       slug: route.params.slug,
       pageType: FullWidthPageDataType.SchoolProgram,
     }),
+    meta: {
+      title: "Escuelas",
+    },
   },
 ]
 
@@ -60,6 +98,16 @@ const router = new VueRouter({
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
+})
+
+router.afterEach((to, from) => {
+  // Use next tick to handle router history correctly
+  // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
+  Vue.nextTick(() => {
+    document.title = `${DEFAULT_TITLE}${
+      to.meta.title ? ` | ${to.meta.title}` : ""
+    }`
+  })
 })
 
 export default router

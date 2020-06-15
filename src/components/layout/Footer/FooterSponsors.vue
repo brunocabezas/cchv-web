@@ -79,7 +79,6 @@ export default defineComponent({
       flex: 1;
       margin: 2em 15px;
       max-height: 100px;
-      box-sizing: border-box;
       width: calc(20% - 30px);
       background-position: center center;
       background-repeat: no-repeat;

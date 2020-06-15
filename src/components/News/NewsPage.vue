@@ -69,7 +69,6 @@ $grid_padding = 25px;
     flex-wrap: wrap;
 
     .newsGridItem
-      box-sizing: border-box;
       width: 33.3%;
       margin: 1em 0;
 
