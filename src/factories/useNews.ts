@@ -34,9 +34,14 @@ export default function useNews() {
     return `${AppUrls.NewsPost}${postSlug}`
   }
 
+  const latestNews = computed<NewsPost[]>(() => {
+    return news.value.slice(0, 5)
+  })
+
   return {
     news: newsToGrid,
     homeNews,
+    latestNews,
     isLoading: computed(() => isLoading.value),
     getNewsPostUrl,
     getNewsPostBySlug,

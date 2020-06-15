@@ -19,6 +19,7 @@ export default defineComponent({
       fetchNews,
       isLoading,
       getNewsPostUrl,
+      latestNews,
     } = useNews()
 
     fetchNews()
@@ -27,6 +28,6 @@ export default defineComponent({
       return getNewsPostBySlug(props.postSlug)
     })
 
-    return { getNewsPostUrl, post, isLoading }
+    return { getNewsPostUrl, latestNews, post, isLoading }
   },
 })
