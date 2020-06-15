@@ -1,9 +1,10 @@
 import AppUrls from "./urls"
 import { NavigationMenu, NavMenu } from "@/types"
 
-// Date format from https://github.com/iamkun/dayjs
+export const DEFAULT_TITLE = "CChV"
 export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
+// Date format from https://github.com/iamkun/dayjs
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
 export const CONTACT_EMAIL = "info@cchv.cl"
 export const YOUTUBE_CHANNEL =
