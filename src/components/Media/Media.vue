@@ -36,9 +36,6 @@
         >
           <ProgressiveImage :height="height" :src="image.url">
           </ProgressiveImage>
-          <span v-if="image.description" class="carouselItemLegend">{{
-            image.description
-          }}</span>
         </button>
         <ProgressiveImage
           v-if="image.url && hideLightBox"
@@ -46,6 +43,9 @@
           :src="image.url"
         >
         </ProgressiveImage>
+        <span v-if="image.description" class="carouselItemLegend">{{
+          image.description
+        }}</span>
       </slide>
     </vue-carousel>
     <button
@@ -94,18 +94,21 @@
   .carouselButton--prev
     left: 0;
 
-  .carouselItemLegend
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    color: $bg_color;
-    font-family: NoticiaText;
-    padding: 4px 6px;
-    background-color: alpha($blue, 0.8);
-    // background-color: $blue;
-    opacity: 0.6;
-    z-index: 1;
+  .carouselItem
+    position: relative;
+
+    .carouselItemLegend
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      color: $bg_color;
+      font-family: NoticiaText;
+      padding: 2px 6px;
+      background-color: alpha($blue, 1);
+      // background-color: $blue;
+      opacity: 0.7;
+      z-index: 1;
 
   .carouselLightboxOverlay
     cursor: pointer;

@@ -23,7 +23,9 @@
       ></router-link>
     </h3>
     <p class="newsPostPreview__date">{{ post.date }}</p>
-    <p class="newsPostPreview__abstract" v-html="post.abstract"></p>
+    <p v-ellipsis="6" class="newsPostPreview__abstract">
+      {{ post.abstract }}
+    </p>
     <router-link
       :title="post.title"
       class="newsPostPreview__link"
