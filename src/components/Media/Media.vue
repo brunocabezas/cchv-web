@@ -36,6 +36,9 @@
         >
           <ProgressiveImage :height="height" :src="image.url">
           </ProgressiveImage>
+          <span v-if="image.description" class="carouselItemLegend">{{
+            image.description
+          }}</span>
         </button>
         <ProgressiveImage
           v-if="image.url && hideLightBox"
@@ -91,6 +94,19 @@
   .carouselButton--prev
     left: 0;
 
+  .carouselItemLegend
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    color: $bg_color;
+    font-family: NoticiaText;
+    padding: 4px 6px;
+    background-color: alpha($blue, 0.8);
+    // background-color: $blue;
+    opacity: 0.6;
+    z-index: 1;
+
   .carouselLightboxOverlay
     cursor: pointer;
     display: block;
@@ -110,11 +126,6 @@
     position: absolute;
     cursor: pointer;
 
-  .carouselImage
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
 .VueCarousel
   height: 100%;
   width: 100%;
@@ -133,7 +144,7 @@
   .VueCarousel-wrapper
     position: relative;
 
-  .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
+  .VueCarousel-wrapper, .VueCarousel-inner
     height: 100% !important;
     width: 100%;
 </style>

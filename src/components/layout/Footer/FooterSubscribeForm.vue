@@ -58,7 +58,7 @@
             value
           />
         </div>
-        <div class="clear">
+        <div class="mc-field-group clear">
           <input
             type="submit"
             value="Suscribirse"
@@ -118,13 +118,12 @@ export default defineComponent({
   border-right: none;
 
 .subscribeFormButton
-  margin-left: 2em;
   margin-top: 10px;
   display: block;
   font-family: Montserrat;
   background-color: $blue;
   color: white;
-  padding: 1em 2em;
+  padding: 1em 1em;
   border-radius: 30px;
   border: 0;
   font-size: 14px;

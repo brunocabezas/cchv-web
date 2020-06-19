@@ -14,7 +14,7 @@
       :href="sn.url"
     >
       <v-icon
-        :scale="small ? 1.5 : 4"
+        :scale="small ? 1.5 : 3"
         :color="MAIN_COLOR"
         :name="sn.iconName"
       />
