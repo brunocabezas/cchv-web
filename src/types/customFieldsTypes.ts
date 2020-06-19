@@ -90,6 +90,7 @@ export type ProgramVideo = {
 // DOCUMENT
 export type Document = {
   [DocumentKeys.link]: CustomFieldDocument
+  [DocumentKeys.order]: number
 }
 
 export type CustomFieldDocument = {
@@ -147,4 +148,5 @@ export interface CarouselImage {
   [CarouselImageKeys.image]: string
   [CarouselImageKeys.url]: string
   [CarouselImageKeys.video_url]: string
+  [CarouselImageKeys.order]: number
 }

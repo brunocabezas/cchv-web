@@ -5,6 +5,7 @@
         Transparencia
       </h1>
     </div>
+    <Loader :loading="isLoading" />
     <div class="pageRow">
       <div class="pageLeft">
         <div
@@ -14,7 +15,6 @@
         ></div>
       </div>
       <div class="pageRight">
-        <Loader :loading="isLoading" />
         <ul v-if="!isLoading">
           <li
             class="transparencyDocument"
@@ -30,7 +30,7 @@
         </ul>
       </div>
     </div>
-    <hr />
+    <hr v-if="!isLoading" />
   </div>
 </template>
 

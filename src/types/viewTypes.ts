@@ -46,6 +46,7 @@ export interface Document {
   id: number
   name: string
   documentUrl: string
+  order: number
 }
 
 export interface Page extends CustomFields.Page {

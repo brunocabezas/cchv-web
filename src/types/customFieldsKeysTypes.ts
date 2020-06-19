@@ -27,6 +27,7 @@ export enum CarouselImageKeys {
   image = "image",
   url = "url",
   video_url = "video_url",
+  order = "order",
 }
 
 //
@@ -69,6 +70,7 @@ export enum TeamMembersKeys {
 // DOCUMENT
 export enum DocumentKeys {
   link = "url",
+  order = "order",
 }
 
 // Page
