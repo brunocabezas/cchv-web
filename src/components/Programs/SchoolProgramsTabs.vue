@@ -20,8 +20,6 @@
           class="schoolProgramTabLogo"
           v-bind:style="{ 'background-image': `url(${tab.logo})` }"
         ></div>
-
-        {{ tab.title }}
       </button>
     </div>
     <div class="pageRow schoolProgramTabsContent">
@@ -31,7 +29,11 @@
             :title="activeProgram.name"
             :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
           >
-            <ProgressiveImage height="300px" :src="activeProgram.gallery[0].url"
+            <ProgressiveImage
+              height="300px"
+              :src="
+                (activeProgram.gallery && activeProgram.gallery[0].url) || ''
+              "
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
@@ -44,6 +46,7 @@
           </h3>
           <p v-html="activeProgram.abstract"></p>
           <DownloadLink
+            v-if="activeProgram.pdf"
             label="Descargar programa completo"
             :url="activeProgram.pdf"
           />

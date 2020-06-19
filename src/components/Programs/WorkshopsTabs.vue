@@ -1,7 +1,9 @@
 <template>
   <div class="workshopsTabs">
     <div class="pageTitle">
-      <h2 class="pageTitleText">Mandragoras</h2>
+      <h2 class="pageTitleText">
+        Mandrágoras. Tecnologías para la conversación
+      </h2>
     </div>
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
@@ -33,7 +35,9 @@
           >
             <ProgressiveImage
               height="300px"
-              :src="activeWorkshop.gallery[0].url"
+              :src="
+                (activeWorkshop.gallery && activeWorkshop.gallery[0].url) || ''
+              "
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
@@ -46,6 +50,7 @@
           </h3>
           <p v-html="activeWorkshop.abstract"></p>
           <DownloadLink
+            v-if="activeWorkshop.pdf"
             label="Descargar programa completo"
             :url="activeWorkshop.pdf"
           />

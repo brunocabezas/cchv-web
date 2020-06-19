@@ -32,13 +32,7 @@ const WorkshopsTabs = defineComponent({
 
     // Display only if an id is defined
     const displayActiveWorkshop = computed<boolean>(
-      () =>
-        !!(
-          activeWorkshop.value &&
-          activeWorkshop.value.id &&
-          activeWorkshop.value.gallery &&
-          activeWorkshop.value.gallery[0]
-        )
+      () => !!(activeWorkshop.value && activeWorkshop.value.id)
     )
 
     return {

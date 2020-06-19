@@ -44,9 +44,14 @@
 .newsPostPage
   display: flex;
 
+  .newsPostPageLeft
+    width: calc(1280px * 0.5);
+
   .newsPostPageRight
-    width: 20%;
+    top: 0;
+    right: calc(1280px * -0.2);
     padding: 0 10px;
+    width: calc(1280px * 0.2);
 
     .latestNewsTitle
       margin-bottom: 0;

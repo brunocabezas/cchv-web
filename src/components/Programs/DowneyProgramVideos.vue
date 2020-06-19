@@ -10,13 +10,15 @@
       >
         <div class="programVideo">
           <div class="programVideo__meta">
+            <h2 v-if="video.event" class="programVideo__title">
+              {{ video.event }}
+            </h2>
             <h3 class="programVideo__title">{{ video.name }}</h3>
             <div class="programVideo__videoData">
               <div>Autor: {{ video.author }}</div>
               <div>Duración: {{ video.duration }}</div>
               <div>Año: {{ video.year }}</div>
               <div>País: {{ video.country }}</div>
-              <div v-if="video.event">Bienal: {{ video.event }}</div>
             </div>
             <div
               class="pageBody pageText programVideo__text"

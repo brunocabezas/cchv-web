@@ -32,13 +32,7 @@ const SchoolProgramsTabs = defineComponent({
 
     // Display only if an id is defined
     const displayActiveProgram = computed<boolean>(
-      () =>
-        !!(
-          activeProgram.value &&
-          activeProgram.value.id &&
-          activeProgram.value.gallery &&
-          activeProgram.value.gallery[0]
-        )
+      () => !!(activeProgram.value && activeProgram.value.id)
     )
 
     return {
