@@ -11,7 +11,7 @@ import { filterUndef } from "@/utils/arrays"
 Vue.use(VueCompositionApi)
 
 // TODO move to helpers?
-const sortByOrder = (
+const sortSponsorByOrder = (
   a: Sponsor | SponsorsCategory,
   b: Sponsor | SponsorsCategory
 ) => a.order - b.order
@@ -33,7 +33,7 @@ const mapWpResponseToView =
     const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
       (sponsor) => ({
         id: sponsor.id,
-        order: getCustomField(sponsor, SponsorKeys.order),
+        order: getCustomField<number>(sponsor, SponsorKeys.order),
         logo: getCustomField(sponsor, SponsorKeys.logo),
         url: getCustomField(sponsor, SponsorKeys.url),
       })
@@ -42,8 +42,11 @@ const mapWpResponseToView =
     return {
       id: sponsorCategoryPost.id,
       name: getWPTitle(sponsorCategoryPost),
-      order: getCustomField(sponsorCategoryPost, SponsorCategoryKeys.order),
-      sponsors: viewSponsors.sort(sortByOrder),
+      order: getCustomField<number>(
+        sponsorCategoryPost,
+        SponsorCategoryKeys.order
+      ),
+      sponsors: viewSponsors.sort(sortSponsorByOrder),
     }
   }
 
@@ -70,7 +73,7 @@ export default function useSponsors() {
   const sponsorsCategories = computed<SponsorsCategory[]>(() =>
     data.value
       .map((wp) => mapWpResponseToView(wp, sponsors.value))
-      .sort(sortByOrder)
+      .sort(sortSponsorByOrder)
   )
 
   return {

@@ -58,7 +58,7 @@ export type Program = {
   [ProgramKeys.is_external]: boolean
   [ProgramKeys.url]: string
   [ProgramKeys.video_url]: string
-  [ProgramKeys.gallery]: any
+  [ProgramKeys.gallery]?: WpImage[]
   [ProgramKeys.text]: string
   [ProgramKeys.extra_content]: ProgramExtraContent
   [ProgramKeys.order]: number
@@ -70,7 +70,7 @@ export type SchoolProgram = {
   [SchoolProgramKeys.abstract]: string
   [SchoolProgramKeys.video_url]: string
   [SchoolProgramKeys.pdf]: string
-  [SchoolProgramKeys.gallery]: any
+  [SchoolProgramKeys.gallery]: WpImage[]
   [SchoolProgramKeys.text]: string
   [SchoolProgramKeys.logo]: string
   [SchoolProgramKeys.is_workshop]: boolean
@@ -113,12 +113,12 @@ export type CustomFieldDocument = {
 // PAGE
 export type Page = {
   [PageKeys.text]: string
-  [PageKeys.gallery]: any
+  [PageKeys.gallery]: WpImage[]
   [PageKeys.extra_content]: PageExtraContent
 }
 
 // TODO use enum
-type PageExtraContent = "none" | "documents"
+export type PageExtraContent = "none" | "documents"
 
 // SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {
@@ -140,7 +140,7 @@ export interface NewsPost {
   [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
   [NewsKeys.is_highlighted]: boolean
-  [NewsKeys.gallery]: any
+  [NewsKeys.gallery]: WpImage[]
 }
 
 export interface CarouselImage {
