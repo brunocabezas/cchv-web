@@ -89,7 +89,25 @@ export type ProgramVideo = {
 
 // DOCUMENT
 export type Document = {
-  [DocumentKeys.link]: string
+  [DocumentKeys.link]: CustomFieldDocument
+}
+
+export type CustomFieldDocument = {
+  ID: number
+  id: number
+  title: string
+  filename: string
+  url: string
+  alt: string
+  author: string
+  description: string
+  caption: string
+  name: string
+  date: string
+  modified: string
+  mime_type: string
+  type: string
+  icon: string
 }
 
 // PAGE

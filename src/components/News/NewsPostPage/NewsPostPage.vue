@@ -45,13 +45,13 @@
   display: flex;
 
   .newsPostPageLeft
-    width: calc(1280px * 0.5);
+    width: 'calc(%s * 0.5)' % $boxed_content_max_width;
 
   .newsPostPageRight
     top: 0;
-    right: calc(1280px * -0.2);
+    right: 'calc(%s * -0.2)' % $boxed_content_max_width;
     padding: 0 10px;
-    width: calc(1280px * 0.2);
+    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
 
     .latestNewsTitle
       margin-bottom: 0;

@@ -16,5 +16,5 @@ $text-blue = $blue;
 page_padding()
   padding-top: 3em;
   padding-bottom: 2em;
-  padding-left: calc(0.15 * 1280px);
-  padding-right: calc(0.15 * 1280px);
+  padding-left: 'calc(0.15 * %s)' % $boxed_content_max_width;
+  padding-right: 'calc(0.15 * %s)' % $boxed_content_max_width;

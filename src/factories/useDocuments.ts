@@ -6,6 +6,7 @@ import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { DocumentKeys } from "@/types/customFieldsKeysTypes"
+import { CustomFieldDocument } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -19,8 +20,10 @@ export default function useTransparencyDocuments() {
       (documentPost): Document => ({
         id: documentPost.id,
         name: getWPTitle(documentPost),
-        // TODO Update to DocumentKeys.url (as DocumentKeys.link = "url")
-        [DocumentKeys.link]: getCustomField(documentPost, DocumentKeys.link),
+        documentUrl: getCustomField<CustomFieldDocument>(
+          documentPost,
+          DocumentKeys.link
+        ).url,
       })
     )
   })
