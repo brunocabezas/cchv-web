@@ -11,6 +11,7 @@ export const YOUTUBE_CHANNEL =
   "https://www.youtube.com/channel/UC3aHIBlFx2pWVt1_tvnibCw/videos"
 export const NEWSLETTER_SUBSCRIBE_URL =
   "https://bienaldeartesmediales.us11.list-manage.com/subscribe/post?u=21121cf28dc5ae821ecbf30c9&amp;id=4459a2b85e"
+export const DEFAULT_ORDER = 0
 
 // Defines the order of appeareance
 // Uses types from app urls

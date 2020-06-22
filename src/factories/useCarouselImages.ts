@@ -6,6 +6,8 @@ import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
 import { CarouselImage } from "@/types/viewTypes"
+import { DEFAULT_ORDER } from "@/utils/static"
+import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
@@ -29,11 +31,11 @@ export default function useCarouselImages() {
             getCustomField<number>(
               carouselImagePost,
               CarouselImageKeys.order
-            ) || 0,
+            ) || DEFAULT_ORDER,
           url: getCustomField(carouselImagePost, CarouselImageKeys.url),
         })
       )
-      .sort((a: CarouselImage, b: CarouselImage) => b.order - a.order)
+      .sort(sortByOrder)
   })
   return { fetchCarouselImages, carousel, isLoading }
 }
