@@ -1,8 +1,10 @@
 <template>
   <div class="downloadLink">
-    <span class="downloadLinkLoading" v-if="isLoading">Descargando ... </span>
+    <span class="downloadLinkLoading" v-if="isLoading"
+      >Preparando descarga ...
+    </span>
     <a
-      :title="label || url"
+      :title="linkTitle"
       v-if="!isLoading"
       :href="url"
       v-text="label || url"
@@ -24,10 +26,14 @@ const DownloadLink = defineComponent({
     label: {
       type: String,
       required: false
+    },
+    title: {
+      type: String,
+      required: false
     }
   },
   name: "DownloadLink",
-  setup() {
+  setup(props) {
     const loading = ref(false);
     function downloadItem(url: string, label: string) {
       loading.value = true;
@@ -45,7 +51,8 @@ const DownloadLink = defineComponent({
 
     return {
       downloadItem,
-      isLoading: loading
+      isLoading: loading,
+      linkTitle: props.title || props.label || props.url
     };
   }
 });
@@ -62,6 +69,6 @@ export default DownloadLink;
   .downloadLinkLoading
     font-size: 16px;
     color: #344284;
-    font-family: NoticiaText;
+    font-family: OpenSans;
     font-size: 18px;
 </style>

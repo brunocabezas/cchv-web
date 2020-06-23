@@ -3,9 +3,10 @@ import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Page } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WpResponseData, WpImage } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { PageKeys } from "@/types/customFieldsKeysTypes"
+import { PageExtraContent } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -20,8 +21,11 @@ export default function usePages() {
         id: pagePost.id,
         name: getWPTitle(pagePost),
         text: getCustomField(pagePost, PageKeys.text),
-        gallery: getCustomField(pagePost, PageKeys.gallery),
-        extra_content: getCustomField(pagePost, PageKeys.extra_content),
+        gallery: getCustomField<WpImage[]>(pagePost, PageKeys.gallery),
+        extra_content: getCustomField<PageExtraContent>(
+          pagePost,
+          PageKeys.extra_content
+        ),
       })
     )
   })

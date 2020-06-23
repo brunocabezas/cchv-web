@@ -6,60 +6,57 @@ import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
 import { Sponsor, SponsorsCategory } from "@/types/viewTypes"
-import { filterUndef } from "@/utils/arrays"
+import { filterUndef, sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
-// TODO move to helpers?
-const sortByOrder = (
-  a: Sponsor | SponsorsCategory,
-  b: Sponsor | SponsorsCategory
-) => a.order - b.order
+// Map WpResponseItem to SponsorsCategory
+const mapWpResponseToView = (
+  sponsorCategoryPost: WPResponseItem,
+  sponsors: WpResponseData
+): SponsorsCategory => {
+  const sponsorsIds = getCustomField<number[]>(
+    sponsorCategoryPost,
+    SponsorCategoryKeys.sponsors,
+    []
+  )
+  const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
+    sponsors.find((s) => s.id === sponsorId)
+  )
 
-const mapWpResponseToView =
-  // Mapping WpResponseItem to SponsorsCategory
-  (
-    sponsorCategoryPost: WPResponseItem,
-    sponsors: WpResponseData
-  ): SponsorsCategory => {
-    const sponsorsIds = getCustomField<number[]>(
+  const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
+    (sponsor) => ({
+      id: sponsor.id,
+      order: getCustomField<number>(sponsor, SponsorKeys.order),
+      logo: getCustomField(sponsor, SponsorKeys.logo),
+      url: getCustomField(sponsor, SponsorKeys.url),
+    })
+  )
+
+  return {
+    id: sponsorCategoryPost.id,
+    name: getWPTitle(sponsorCategoryPost),
+    order: getCustomField<number>(
       sponsorCategoryPost,
-      SponsorCategoryKeys.sponsors,
-      []
-    )
-    const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
-      sponsors.find((s) => s.id === sponsorId)
-    )
-    const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
-      (sponsor) => ({
-        id: sponsor.id,
-        order: getCustomField(sponsor, SponsorKeys.order),
-        logo: getCustomField(sponsor, SponsorKeys.logo),
-        url: getCustomField(sponsor, SponsorKeys.url),
-      })
-    )
-
-    return {
-      id: sponsorCategoryPost.id,
-      name: getWPTitle(sponsorCategoryPost),
-      order: getCustomField(sponsorCategoryPost, SponsorCategoryKeys.order),
-      sponsors: viewSponsors.sort(sortByOrder),
-    }
+      SponsorCategoryKeys.order
+    ),
+    sponsors: viewSponsors.sort(sortByOrder),
   }
-
-const {
-  data: sponsors,
-  fetch: fetchSponsors,
-  isLoading: isLoadingSponsors,
-} = useAsyncData<WpResponseData>(apiRoutes.Sponsors)
-
-const {
-  data,
-  fetch: fetchSponsorsCategories,
-  isLoading: isLoadingCategories,
-} = useAsyncData<WpResponseData>(apiRoutes.SponsorsCategories)
+}
 
 export default function useSponsors() {
+  const {
+    data: sponsors,
+    fetch: fetchSponsors,
+    isLoading: isLoadingSponsors,
+  } = useAsyncData<WpResponseData>(apiRoutes.Sponsors)
+
+  const {
+    data,
+    fetch: fetchSponsorsCategories,
+    isLoading: isLoadingCategories,
+  } = useAsyncData<WpResponseData>(apiRoutes.SponsorsCategories)
+
   const fetchSponsorsAndCategories = () =>
     Promise.all([fetchSponsorsCategories(), fetchSponsors()])
 

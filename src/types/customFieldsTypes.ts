@@ -29,6 +29,7 @@ export enum ActivityType {
   Conversation = "conversation",
   Concert = "concert",
   Performance = "performance",
+  None = "none",
 }
 // SOCIAL NETWORK
 export enum SocialNetworkType {
@@ -58,7 +59,7 @@ export type Program = {
   [ProgramKeys.is_external]: boolean
   [ProgramKeys.url]: string
   [ProgramKeys.video_url]: string
-  [ProgramKeys.gallery]: any
+  [ProgramKeys.gallery]?: WpImage[]
   [ProgramKeys.text]: string
   [ProgramKeys.extra_content]: ProgramExtraContent
   [ProgramKeys.order]: number
@@ -70,10 +71,11 @@ export type SchoolProgram = {
   [SchoolProgramKeys.abstract]: string
   [SchoolProgramKeys.video_url]: string
   [SchoolProgramKeys.pdf]: string
-  [SchoolProgramKeys.gallery]: any
+  [SchoolProgramKeys.gallery]: WpImage[]
   [SchoolProgramKeys.text]: string
   [SchoolProgramKeys.logo]: string
   [SchoolProgramKeys.is_workshop]: boolean
+  [SchoolProgramKeys.is_active]: boolean
 }
 
 export type ProgramVideo = {
@@ -89,18 +91,37 @@ export type ProgramVideo = {
 
 // DOCUMENT
 export type Document = {
-  [DocumentKeys.link]: string
+  [DocumentKeys.link]: CustomFieldDocument
+  [DocumentKeys.order]: number
+}
+
+export type CustomFieldDocument = {
+  ID: number
+  id: number
+  title: string
+  filename: string
+  url: string
+  alt: string
+  author: string
+  description: string
+  caption: string
+  name: string
+  date: string
+  modified: string
+  mime_type: string
+  type: string
+  icon: string
 }
 
 // PAGE
 export type Page = {
   [PageKeys.text]: string
-  [PageKeys.gallery]: any
+  [PageKeys.gallery]: WpImage[]
   [PageKeys.extra_content]: PageExtraContent
 }
 
 // TODO use enum
-type PageExtraContent = "none" | "documents"
+export type PageExtraContent = "none" | "documents"
 
 // SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {
@@ -122,11 +143,13 @@ export interface NewsPost {
   [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
   [NewsKeys.is_highlighted]: boolean
-  [NewsKeys.gallery]: any
+  [NewsKeys.is_activity]: ActivityType
+  [NewsKeys.gallery]: WpImage[]
 }
 
 export interface CarouselImage {
   [CarouselImageKeys.image]: string
   [CarouselImageKeys.url]: string
   [CarouselImageKeys.video_url]: string
+  [CarouselImageKeys.order]: number
 }

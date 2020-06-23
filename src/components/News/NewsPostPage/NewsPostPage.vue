@@ -44,9 +44,14 @@
 .newsPostPage
   display: flex;
 
+  .newsPostPageLeft
+    width: 'calc(%s * 0.5)' % $boxed_content_max_width;
+
   .newsPostPageRight
-    width: 20%;
+    top: 0;
+    right: 'calc(%s * -0.2)' % $boxed_content_max_width;
     padding: 0 10px;
+    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
 
     .latestNewsTitle
       margin-bottom: 0;

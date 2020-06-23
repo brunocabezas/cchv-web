@@ -3,7 +3,7 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { SchoolProgram } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WpResponseData, WpImage } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
 import { Tab, Tabs } from "./useTabs"
@@ -32,9 +32,13 @@ export default function useSchoolPrograms() {
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         slug: schoolProgramPost.slug,
-        is_workshop: !!getCustomField(
+        is_workshop: getCustomField<boolean>(
           schoolProgramPost,
           SchoolProgramKeys.is_workshop
+        ),
+        is_active: getCustomField<boolean>(
+          schoolProgramPost,
+          SchoolProgramKeys.is_active
         ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
         video_url: getCustomField(
@@ -42,7 +46,10 @@ export default function useSchoolPrograms() {
           SchoolProgramKeys.video_url
         ),
         text: getCustomField(schoolProgramPost, SchoolProgramKeys.text),
-        gallery: getCustomField(schoolProgramPost, SchoolProgramKeys.gallery),
+        gallery: getCustomField<WpImage[]>(
+          schoolProgramPost,
+          SchoolProgramKeys.gallery
+        ),
         teachers: getCustomField(schoolProgramPost, SchoolProgramKeys.teachers),
         pdf: getCustomField(schoolProgramPost, SchoolProgramKeys.pdf),
         schedule: getCustomField(schoolProgramPost, SchoolProgramKeys.schedule),
@@ -82,6 +89,8 @@ export default function useSchoolPrograms() {
   const getSchoolProgramUrlBySlug = (slug: string) =>
     `${AppUrls.SchoolProgram}${slug}`
 
+  const getWorkshopUrlBySlug = (slug: string) => `${AppUrls.Workshop}${slug}`
+
   return {
     fetchSchoolPrograms,
     isLoading,
@@ -91,5 +100,6 @@ export default function useSchoolPrograms() {
     schoolProgramsTabs,
     getSchoolProgramById,
     getSchoolProgramUrlBySlug,
+    getWorkshopUrlBySlug,
   }
 }

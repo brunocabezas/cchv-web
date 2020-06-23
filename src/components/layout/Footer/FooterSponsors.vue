@@ -9,7 +9,7 @@
       v-bind:key="cat.id"
       class="sponsorCategory"
     >
-      <h3 class="sponsorsCategory">{{ cat.name }}</h3>
+      <h3 class="sponsorCategoryTitle">{{ cat.name }}</h3>
       <div class="sponsorsGrid">
         <a
           class="sponsor"
@@ -59,6 +59,7 @@ export default defineComponent({
   position: relative;
   display: flex;
   color: white;
+  flex-direction: column;
 
   &--loading
     justify-content: center;
@@ -66,8 +67,13 @@ export default defineComponent({
     .loader
       width: auto;
 
-  .sponsorsCategory
-    font-family: Montserrat;
+  .sponsorCategory
+    min-width: 100%;
+    display: block;
+    flex: 1;
+
+    .sponsorCategoryTitle
+      font-family: Montserrat;
 
   .sponsorsGrid
     display: flex;
@@ -76,10 +82,9 @@ export default defineComponent({
     justify-content: flex-start;
 
     .sponsor
-      flex: 1;
       margin: 2em 15px;
       max-height: 100px;
-      width: calc(20% - 30px);
+      width: 20%;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain;

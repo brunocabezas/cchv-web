@@ -6,7 +6,12 @@
     :src="src"
   >
     <div slot="content" slot-scope="{ visible }" v-bind:style="{ height }">
-      <Loader :color="loaderColor" size="20px" :loading="visible" />
+      <Loader
+        :color="loaderColor"
+        size="20px"
+        v-if="!!src && visible"
+        :loading="visible"
+      />
     </div>
   </progressive-background>
 </template>

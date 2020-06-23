@@ -5,6 +5,7 @@
         Transparencia
       </h1>
     </div>
+    <Loader :loading="isLoading" />
     <div class="pageRow">
       <div class="pageLeft">
         <div
@@ -14,21 +15,22 @@
         ></div>
       </div>
       <div class="pageRight">
-        <Loader :loading="isLoading" />
         <ul v-if="!isLoading">
           <li
             class="transparencyDocument"
             v-for="doc in documents"
             v-bind:key="doc.id"
           >
-            <a :title="`Descargar ${doc.name}`" :href="doc.url"
-              >{{ doc.name }}
-            </a>
+            <DownloadLink
+              :title="`Descargar PDF: ${doc.name}`"
+              :label="doc.name"
+              :url="doc.documentUrl"
+            />
           </li>
         </ul>
       </div>
     </div>
-    <hr />
+    <hr v-if="!isLoading" />
   </div>
 </template>
 
@@ -37,10 +39,11 @@ import { defineComponent } from "@vue/composition-api";
 import useDocuments from "@/factories/useDocuments";
 import usePages from "@/factories/usePages";
 import Loader from "@/components/Loader.vue";
+import DownloadLink from "@/components/DownloadLink.vue";
 
 export default defineComponent({
   name: "TransparencyPage",
-  components: { Loader },
+  components: { Loader, DownloadLink },
   setup() {
     const {
       isLoading: isLoadingDocuments,

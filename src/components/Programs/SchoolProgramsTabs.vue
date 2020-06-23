@@ -8,6 +8,8 @@
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
+          'schoolProgramTabTitle--disabled':
+            activeProgram && !activeProgram.is_active,
           'schoolProgramTabTitle--active':
             activeProgram && activeProgram.id === tab.id
         }"
@@ -20,18 +22,23 @@
           class="schoolProgramTabLogo"
           v-bind:style="{ 'background-image': `url(${tab.logo})` }"
         ></div>
-
-        {{ tab.title }}
       </button>
     </div>
-    <div class="pageRow schoolProgramTabsContent">
-      <div v-if="displayActiveProgram" class="schoolProgram">
+    <div
+      v-if="displayActiveProgram && activeProgram.is_active"
+      class="pageRow schoolProgramTabsContent"
+    >
+      <div class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
             :title="activeProgram.name"
             :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
           >
-            <ProgressiveImage height="300px" :src="activeProgram.gallery[0].url"
+            <ProgressiveImage
+              height="300px"
+              :src="
+                (activeProgram.gallery && activeProgram.gallery[0].url) || ''
+              "
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
@@ -44,6 +51,7 @@
           </h3>
           <p v-html="activeProgram.abstract"></p>
           <DownloadLink
+            v-if="activeProgram.pdf"
             label="Descargar programa completo"
             :url="activeProgram.pdf"
           />
@@ -85,6 +93,9 @@
         color: $blue;
         opacity: 0.9;
 
+      &--disabled
+        cursor: initial;
+
       &--active
         color: $blue;
         text-decoration: underline;
@@ -93,6 +104,8 @@
         margin: 0 auto;
         height: 180px;
         width: 180px;
+        background-color: $blue;
+        border-radius: 50%;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;

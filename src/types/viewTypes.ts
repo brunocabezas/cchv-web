@@ -42,9 +42,11 @@ export interface SchoolProgram extends CustomFields.SchoolProgram {
   slug: string
 }
 
-export interface Document extends CustomFields.Document {
+export interface Document {
   id: number
   name: string
+  documentUrl: string
+  order: number
 }
 
 export interface Page extends CustomFields.Page {

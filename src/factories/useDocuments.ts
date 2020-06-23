@@ -1,11 +1,14 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Document } from "@/types/viewTypes"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
+import { DEFAULT_ORDER } from "@/utils/static"
 import { DocumentKeys } from "@/types/customFieldsKeysTypes"
+import { CustomFieldDocument } from "@/types/customFieldsTypes"
+import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
@@ -15,14 +18,21 @@ const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WpResponseData>(
 
 export default function useTransparencyDocuments() {
   const documents = computed<Document[]>(() => {
-    return data.value.map(
-      (documentPost): Document => ({
-        id: documentPost.id,
-        name: getWPTitle(documentPost),
-        // TODO Update to DocumentKeys.url (as DocumentKeys.link = "url")
-        [DocumentKeys.link]: getCustomField(documentPost, DocumentKeys.link),
-      })
-    )
+    return data.value
+      .map(
+        (documentPost): Document => ({
+          id: documentPost.id,
+          name: getWPTitle(documentPost),
+          documentUrl: getCustomField<CustomFieldDocument>(
+            documentPost,
+            DocumentKeys.link
+          ).url,
+          order:
+            getCustomField<number>(documentPost, DocumentKeys.order) ||
+            DEFAULT_ORDER,
+        })
+      )
+      .sort(sortByOrder)
   })
 
   return {

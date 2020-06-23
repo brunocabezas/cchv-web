@@ -9,6 +9,7 @@ import { RelatedNewsPost, NewsPost } from "@/types/viewTypes"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
+import { ActivityType } from "@/types/customFieldsTypes"
 
 const mapRelatedNews = (
   related: WPRelatedCustomFieldValue,
@@ -60,6 +61,10 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
           thumbnail: (gallery[0] && gallery[0].url) || "",
           slug: newsPost.slug,
           abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
+          is_activity: getCustomField<ActivityType>(
+            newsPost,
+            NewsKeys.is_activity
+          ),
           text: getCustomField(newsPost, NewsKeys.text, ""),
           gallery,
           is_highlighted: getCustomField<boolean>(

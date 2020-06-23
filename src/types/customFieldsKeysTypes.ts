@@ -27,6 +27,7 @@ export enum CarouselImageKeys {
   image = "image",
   url = "url",
   video_url = "video_url",
+  order = "order",
 }
 
 //
@@ -39,6 +40,7 @@ export enum NewsKeys {
   abstract = "abstract",
   related = "related",
   is_highlighted = "is_highlighted",
+  is_activity = "is_activity",
 }
 
 //
@@ -69,6 +71,7 @@ export enum TeamMembersKeys {
 // DOCUMENT
 export enum DocumentKeys {
   link = "url",
+  order = "order",
 }
 
 // Page
@@ -112,6 +115,7 @@ export enum SchoolProgramKeys {
   logo = "logo",
   gallery = "gallery",
   is_workshop = "is_workshop",
+  is_active = "is_active",
 }
 
 // Activities

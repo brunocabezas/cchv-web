@@ -12,6 +12,7 @@
     "npm": "6.14.4"
   },
   "dependencies": {
+    "@hyjiacan/vue-ellipsis": "^1.1.6",
     "@vueuse/core": "^2.0.27",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",

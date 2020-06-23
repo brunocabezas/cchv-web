@@ -1,7 +1,9 @@
 <template>
   <div class="workshopsTabs">
     <div class="pageTitle">
-      <h2 class="pageTitleText">Mandragoras</h2>
+      <h2 class="pageTitleText">
+        Mandrágoras. Tecnologías para la conversación
+      </h2>
     </div>
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
@@ -20,8 +22,6 @@
           class="schoolProgramTabLogo"
           v-bind:style="{ 'background-image': `url(${tab.logo})` }"
         ></div>
-
-        {{ tab.title }}
       </button>
     </div>
     <div class="pageRow workshopsTabsContent">
@@ -29,23 +29,26 @@
         <div class="schoolProgramThumb">
           <router-link
             :title="activeWorkshop.name"
-            :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
+            :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
           >
             <ProgressiveImage
               height="300px"
-              :src="activeWorkshop.gallery[0].url"
+              :src="
+                (activeWorkshop.gallery && activeWorkshop.gallery[0].url) || ''
+              "
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">
             <router-link
               :title="activeWorkshop.name"
-              :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
+              :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
               >{{ activeWorkshop.name }}</router-link
             >
           </h3>
           <p v-html="activeWorkshop.abstract"></p>
           <DownloadLink
+            v-if="activeWorkshop.pdf"
             label="Descargar programa completo"
             :url="activeWorkshop.pdf"
           />
@@ -95,6 +98,8 @@
         margin: 0 auto;
         height: 180px;
         width: 180px;
+        background-color: $blue;
+        border-radius: 50%;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;

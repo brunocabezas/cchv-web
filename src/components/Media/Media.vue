@@ -43,6 +43,9 @@
           :src="image.url"
         >
         </ProgressiveImage>
+        <span v-if="image.description" class="carouselItemLegend">{{
+          image.description
+        }}</span>
       </slide>
     </vue-carousel>
     <button
@@ -91,6 +94,22 @@
   .carouselButton--prev
     left: 0;
 
+  .carouselItem
+    position: relative;
+
+    .carouselItemLegend
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      color: $bg_color;
+      font-family: OpenSans;
+      padding: 2px 6px;
+      background-color: alpha($blue, 1);
+      // background-color: $blue;
+      opacity: 0.7;
+      z-index: 1;
+
   .carouselLightboxOverlay
     cursor: pointer;
     display: block;
@@ -110,15 +129,10 @@
     position: absolute;
     cursor: pointer;
 
-  .carouselImage
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
 .VueCarousel
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: $blue;
 
   hr
     display: none;
@@ -133,7 +147,7 @@
   .VueCarousel-wrapper
     position: relative;
 
-  .VueCarousel-wrapper, .carouselImage, .VueCarousel-inner
+  .VueCarousel-wrapper, .VueCarousel-inner
     height: 100% !important;
     width: 100%;
 </style>

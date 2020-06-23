@@ -9,12 +9,12 @@ $footer_padding = 2.5em 6em;
 $blue = #344284;
 $grey = #ececec;
 $black = #080808;
-$bg = #fcfcfc;
+$bg_color = #fcfcfc;
 $text-black = #000000;
 $text-blue = $blue;
 
-page_padding()
-  padding-top: 3em;
-  padding-bottom: 2em;
-  padding-left: calc(0.15 * 100%);
-  padding-right: calc(0.15 * 100%);
+page_padding($padding_top = 3em, $padding_bottom = 2em)
+  padding-top: $padding_top;
+  padding-bottom: $padding_bottom;
+  padding-left: 'calc(0.15 * %s)' % $boxed_content_max_width;
+  padding-right: 'calc(0.15 * %s)' % $boxed_content_max_width;
