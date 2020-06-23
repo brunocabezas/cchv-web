@@ -69,6 +69,12 @@ export default SocialNetworks;
     &:hover
       opacity: 0.8;
 
+    &:first-child
+      margin-left: 0;
+
+    &:last-child
+      margin-right: 0;
+
   &--small
     width: auto;
     display: inline-block;
