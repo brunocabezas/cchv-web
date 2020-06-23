@@ -69,6 +69,6 @@ export default DownloadLink;
   .downloadLinkLoading
     font-size: 16px;
     color: #344284;
-    font-family: NoticiaText;
+    font-family: OpenSans;
     font-size: 18px;
 </style>

@@ -36,6 +36,10 @@ export default function useSchoolPrograms() {
           schoolProgramPost,
           SchoolProgramKeys.is_workshop
         ),
+        is_active: getCustomField<boolean>(
+          schoolProgramPost,
+          SchoolProgramKeys.is_active
+        ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
         video_url: getCustomField(
           schoolProgramPost,

@@ -103,7 +103,7 @@
       right: 0;
       width: auto;
       color: $bg_color;
-      font-family: NoticiaText;
+      font-family: OpenSans;
       padding: 2px 6px;
       background-color: alpha($blue, 1);
       // background-color: $blue;

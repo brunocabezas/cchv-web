@@ -8,6 +8,8 @@
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
+          'schoolProgramTabTitle--disabled':
+            activeProgram && !activeProgram.is_active,
           'schoolProgramTabTitle--active':
             activeProgram && activeProgram.id === tab.id
         }"
@@ -22,8 +24,11 @@
         ></div>
       </button>
     </div>
-    <div class="pageRow schoolProgramTabsContent">
-      <div v-if="displayActiveProgram" class="schoolProgram">
+    <div
+      v-if="displayActiveProgram && activeProgram.is_active"
+      class="pageRow schoolProgramTabsContent"
+    >
+      <div class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
             :title="activeProgram.name"
@@ -87,6 +92,9 @@
         text-decoration: underline;
         color: $blue;
         opacity: 0.9;
+
+      &--disabled
+        cursor: initial;
 
       &--active
         color: $blue;
