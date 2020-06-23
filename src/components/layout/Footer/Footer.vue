@@ -7,9 +7,9 @@
         </h3>
         <div>
           <a
-            :title="`Escribir a ${contactEmail}`"
-            :href="`mailto:${contactEmail}`"
-            >{{ contactEmail }}
+            :title="`Escribir a ${CONTACT_EMAIL}`"
+            :href="`mailto:${CONTACT_EMAIL}`"
+            >{{ CONTACT_EMAIL }}
           </a>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default defineComponent({
   name: "Footer",
   components: { FooterSponsors, FooterSubscribeForm, SocialNetworks },
   setup(props) {
-    return { contactEmail: CONTACT_EMAIL };
+    return { CONTACT_EMAIL };
   }
 });
 </script>

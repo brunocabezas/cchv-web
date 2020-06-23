@@ -16,7 +16,6 @@
           <input
             type="name"
             title="Ingresa tu nombre"
-            placeholder="Nombre apellido"
             value
             name="NAME"
             class="subscribeFormEmailInput required name"
@@ -25,7 +24,7 @@
         </div>
         <div class="mc-field-group">
           <label class="subscribeFormEmailLabel" for="mce-EMAIL"
-            >Direccion de email
+            >Dirección de email
           </label>
           <input
             type="email"
@@ -95,7 +94,9 @@ export default defineComponent({
     flex-wrap: wrap;
 
     .mc-field-group
-      margin-right: 2em;
+      &:not(.clear)
+        margin-right: 2em;
+
       margin-top: 10px;
 
       &:first-child

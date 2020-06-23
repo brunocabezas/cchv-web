@@ -10,13 +10,14 @@
     background-color: $grey;
     padding: $footer_padding;
     display: flex;
+    justify-content: space-between;
 
     .footerTopSection
       margin: 1em;
 
       &.contactMail
         position: relative;
-        flex: 0.2;
+        max-width: 170px;
 
         a
           font-size: 18px;
@@ -26,13 +27,13 @@
 
       &.socialNetworks
         position: relative;
-        flex: 0.3;
+        flex: 1;
+        max-width: 250px;
 
       &.suscribeForm
         position: relative;
-        flex: 0.5;
+        min-width: 565px;
         margin-left: 2em;
-        flex-grow: 1;
 
     .footerListItem
       font-family: Montserrat;
