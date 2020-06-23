@@ -7,6 +7,7 @@ export enum AppUrls {
   DowneyProgram = "/futuro/programas/concurso-juan-downey",
   SchoolPrograms = "/futuro/programas/escuela-de-la-intuicion",
   SchoolProgram = "/futuro/programas/escuelas/",
+  Workshop = "/fututuro/programas/mandragoras/",
   MagneticFieldsProgram = "/futuro/programas/campos-magneticos",
   Programs = "/futuro/programas/",
   Activities = "/futuro/actividades/",

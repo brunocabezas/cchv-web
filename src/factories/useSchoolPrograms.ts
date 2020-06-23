@@ -85,6 +85,8 @@ export default function useSchoolPrograms() {
   const getSchoolProgramUrlBySlug = (slug: string) =>
     `${AppUrls.SchoolProgram}${slug}`
 
+  const getWorkshopUrlBySlug = (slug: string) => `${AppUrls.Workshop}${slug}`
+
   return {
     fetchSchoolPrograms,
     isLoading,
@@ -94,5 +96,6 @@ export default function useSchoolPrograms() {
     schoolProgramsTabs,
     getSchoolProgramById,
     getSchoolProgramUrlBySlug,
+    getWorkshopUrlBySlug,
   }
 }

@@ -31,7 +31,7 @@
       class="newsPostPreview__link"
       :to="getNewsPostUrl(post.slug)"
     >
-      <i>leer más ...</i>
+      <i>Leer más ...</i>
       <v-icon :color="MAIN_COLOR" name="chevron-right" scale="1 "> </v-icon>
     </router-link>
     <hr />

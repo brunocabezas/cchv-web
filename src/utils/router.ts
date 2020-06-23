@@ -89,6 +89,18 @@ const routes = [
       title: "Escuelas",
     },
   },
+  // Workshops Single Page
+  {
+    path: `${AppUrls.Workshop}:slug`,
+    component: FullWidthSliderPage,
+    props: (route: Route) => ({
+      slug: route.params.slug,
+      pageType: FullWidthPageDataType.Workshop,
+    }),
+    meta: {
+      title: "Mandragoras",
+    },
+  },
 ]
 
 const router = new VueRouter({

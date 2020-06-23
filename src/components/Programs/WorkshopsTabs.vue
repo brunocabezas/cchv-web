@@ -22,8 +22,6 @@
           class="schoolProgramTabLogo"
           v-bind:style="{ 'background-image': `url(${tab.logo})` }"
         ></div>
-
-        {{ tab.title }}
       </button>
     </div>
     <div class="pageRow workshopsTabsContent">
@@ -31,7 +29,7 @@
         <div class="schoolProgramThumb">
           <router-link
             :title="activeWorkshop.name"
-            :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
+            :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
           >
             <ProgressiveImage
               height="300px"
@@ -44,7 +42,7 @@
           <h3 class="schoolProgramName">
             <router-link
               :title="activeWorkshop.name"
-              :to="getSchoolProgramUrlBySlug(activeWorkshop.slug)"
+              :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
               >{{ activeWorkshop.name }}</router-link
             >
           </h3>
@@ -100,6 +98,8 @@
         margin: 0 auto;
         height: 180px;
         width: 180px;
+        background-color: $blue;
+        border-radius: 50%;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;

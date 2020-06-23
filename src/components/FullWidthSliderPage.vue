@@ -15,7 +15,7 @@
 
     <div v-if="page" class="pageContent">
       <div v-html="page.text" class="pageBody"></div>
-      <div class="pageBody">
+      <div v-if="page.pdf" class="pageBody">
         <DownloadLink label="Descargar programa completo" :url="page.pdf" />
       </div>
     </div>
@@ -33,8 +33,11 @@ import useSchoolPrograms from "../factories/useSchoolPrograms";
 
 export enum FullWidthPageDataType {
   Activity = "activity",
-  SchoolProgram = "school_program"
+  SchoolProgram = "school_program",
+  Workshop = "workshop"
 }
+
+type FullWidthPageData = SchoolProgram | Activity;
 
 const FullWidthSliderPage = defineComponent({
   name: "FullWidthSliderPage",
@@ -53,6 +56,7 @@ const FullWidthSliderPage = defineComponent({
     const {
       isLoading: isLoadingSchoolPrograms,
       schoolPrograms,
+      workshops,
       fetchSchoolPrograms
     } = useSchoolPrograms();
     const {
@@ -63,29 +67,34 @@ const FullWidthSliderPage = defineComponent({
 
     if (props.pageType === FullWidthPageDataType.Activity) {
       fetchActivities();
-    } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {
+    } else if (
+      props.pageType === FullWidthPageDataType.SchoolProgram ||
+      props.pageType === FullWidthPageDataType.Workshop
+    ) {
       fetchSchoolPrograms();
     }
 
-    const page = computed<SchoolProgram | Activity | undefined>(() => {
-      if (props.pageType === FullWidthPageDataType.Activity) {
-        return activities.value.find((p: Activity) => p.slug === props.slug);
-      } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {
-        return schoolPrograms.value.find(
-          (p: SchoolProgram) => p.slug === props.slug
-        );
-      } else {
-        return undefined;
+    const page = computed<FullWidthPageData | undefined>(() => {
+      switch (props.pageType) {
+        case FullWidthPageDataType.Workshop:
+          return workshops.value.find(p => p.slug === props.slug);
+        case FullWidthPageDataType.Activity:
+          return activities.value.find(p => p.slug === props.slug);
+        case FullWidthPageDataType.SchoolProgram:
+          return schoolPrograms.value.find(p => p.slug === props.slug);
+        default:
+          return undefined;
       }
     });
 
     const isLoading = computed<boolean>(() => {
-      if (props.pageType === FullWidthPageDataType.Activity) {
-        return isLoadingActivities.value;
-      } else if (props.pageType === FullWidthPageDataType.SchoolProgram) {
-        return isLoadingSchoolPrograms.value;
-      } else {
-        return false;
+      switch (props.pageType) {
+        case FullWidthPageDataType.Activity || FullWidthPageDataType.Workshop:
+          return isLoadingActivities.value;
+        case FullWidthPageDataType.SchoolProgram:
+          return isLoadingSchoolPrograms.value;
+        default:
+          return false;
       }
     });
 
@@ -100,4 +109,7 @@ export default FullWidthSliderPage;
 </script>
 <style lang="stylus">
 @import '../styles/variables.styl';
+
+.pageFullWidthSlider
+  background-color: $blue;
 </style>

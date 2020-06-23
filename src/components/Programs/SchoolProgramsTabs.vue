@@ -96,6 +96,8 @@
         margin: 0 auto;
         height: 180px;
         width: 180px;
+        background-color: $blue;
+        border-radius: 50%;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;

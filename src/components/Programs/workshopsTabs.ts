@@ -19,7 +19,7 @@ const WorkshopsTabs = defineComponent({
       getSchoolProgramById,
       isLoading,
       workshopsTabs,
-      getSchoolProgramUrlBySlug,
+      getWorkshopUrlBySlug,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(workshopsTabs)
@@ -43,7 +43,7 @@ const WorkshopsTabs = defineComponent({
       displayActiveWorkshop,
       setActiveTab,
       isLoading,
-      getSchoolProgramUrlBySlug,
+      getWorkshopUrlBySlug,
     }
   },
 })
