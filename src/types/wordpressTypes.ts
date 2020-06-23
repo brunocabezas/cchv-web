@@ -1,5 +1,4 @@
 import { CustomFieldsKeys } from "./customFieldsKeysTypes"
-import { ProgramExtraContent } from "./customFieldsTypes"
 
 // Wordpres response
 export type WpResponseData = WPResponseItem[]

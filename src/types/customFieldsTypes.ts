@@ -29,6 +29,7 @@ export enum ActivityType {
   Conversation = "conversation",
   Concert = "concert",
   Performance = "performance",
+  None = "none",
 }
 // SOCIAL NETWORK
 export enum SocialNetworkType {
@@ -141,6 +142,7 @@ export interface NewsPost {
   [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
   [NewsKeys.is_highlighted]: boolean
+  [NewsKeys.is_activity]: ActivityType
   [NewsKeys.gallery]: WpImage[]
 }
 

@@ -40,6 +40,7 @@ export enum NewsKeys {
   abstract = "abstract",
   related = "related",
   is_highlighted = "is_highlighted",
+  is_activity = "is_activity",
 }
 
 //

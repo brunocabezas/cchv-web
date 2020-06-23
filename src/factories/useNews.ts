@@ -1,11 +1,13 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { NewsPost } from "@/types/viewTypes"
+import { NewsPost, Activity } from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from "./useAsyncData"
 import { WpResponseData } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
+import { ActivityType } from "@/types/customFieldsTypes"
+import { NewsKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -38,10 +40,31 @@ export default function useNews() {
     return news.value.slice(0, 5)
   })
 
+  // Maps news with NewsKeys.is_activity
+  const activityNews = computed<Activity[]>(() => {
+    const newsAsActivities = news.value.filter(
+      (n: NewsPost) => n[NewsKeys.is_activity] !== ActivityType.None
+    )
+
+    return newsAsActivities.map(
+      (n: NewsPost): Activity => ({
+        id: n.id,
+        name: n.title,
+        slug: n.slug,
+        type: n.is_activity,
+        abstract: n.abstract,
+        gallery: n.gallery,
+        text: n.text,
+        video_url: n.video_url,
+      })
+    )
+  })
+
   return {
     news: newsToGrid,
     homeNews,
     latestNews,
+    activityNews,
     isLoading: computed(() => isLoading.value),
     getNewsPostUrl,
     getNewsPostBySlug,
