@@ -1,6 +1,6 @@
 <template>
   <div class="pageRow programVideos">
-    <h2>Videos Ganadores</h2>
+    <h1>Videos Ganadores</h1>
     <Loader :loading="isLoading" />
     <div class="programVideosList">
       <div

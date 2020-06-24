@@ -18,10 +18,11 @@
         @click="setActiveTab(tab.id)"
         v-for="tab in tabs"
       >
-        <div
-          class="schoolProgramTabLogo"
-          v-bind:style="{ 'background-image': `url(${tab.logo})` }"
-        ></div>
+        <ProgressiveImage
+          height="180px"
+          className="schoolProgramTabLogo"
+          :src="tab.logo"
+        />
       </button>
     </div>
     <div
@@ -31,15 +32,15 @@
       <div class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
+            v-if="activeWorkshop.gallery && activeWorkshop.gallery[0]"
             :title="activeProgram.name"
             :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
           >
             <ProgressiveImage
               height="300px"
-              :src="
-                (activeProgram.gallery && activeProgram.gallery[0].url) || ''
-              "
-          /></router-link>
+              :src="activeProgram.gallery[0].url"
+            />
+          </router-link>
         </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">
@@ -91,7 +92,7 @@
       &:hover
         text-decoration: underline;
         color: $blue;
-        opacity: 0.9;
+        opacity: 0.7;
 
       &--disabled
         cursor: initial;
@@ -117,16 +118,18 @@
 
       .schoolProgramThumb, .schoolProgramInfo
         flex: 1;
-        padding: 0 1em;
 
       .schoolProgramThumb
         width: 60%;
-        max-height: 300px;
         padding-left: 0;
+        height: 300px;
+        background-color: $blue;
+        margin-right: 1em;
 
       .schoolProgramInfo
         padding-right: 0;
         font-size: 18px;
+        padding: 0 1em;
 
         .schoolProgramName
           color: $blue;
