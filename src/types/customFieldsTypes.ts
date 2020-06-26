@@ -11,6 +11,7 @@ import {
   SchoolProgramKeys,
   ProgramVideoKeys,
   ActivityKeys,
+  VideoKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
 import { RelatedNewsPost } from "./viewTypes"
@@ -152,4 +153,9 @@ export interface CarouselImage {
   [CarouselImageKeys.url]: string
   [CarouselImageKeys.video_url]: string
   [CarouselImageKeys.order]: number
+}
+
+export interface Video {
+  [VideoKeys.video_url]: string
+  [VideoKeys.order]: number
 }

@@ -91,3 +91,8 @@ export interface CarouselImage extends CustomFields.CarouselImage {
   id: number
   name: string
 }
+
+export interface Video extends CustomFields.Video {
+  id: number
+  name: string
+}

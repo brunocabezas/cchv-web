@@ -16,7 +16,7 @@
 <script lang="ts" src="./homeNews.ts"></script>
 
 <style lang="stylus" scoped>
-@import '../../styles/variables.styl';
+@import '../../../styles/variables.styl';
 
 .news
   min-height: 400px;

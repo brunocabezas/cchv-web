@@ -32,7 +32,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
 import useSponsors from "@/factories/useSponsors";
-import { AsyncDataStatus } from "@/factories/useAsyncData";
+import { AsyncDataStatus } from "@/utils/useAsyncData";
 import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
