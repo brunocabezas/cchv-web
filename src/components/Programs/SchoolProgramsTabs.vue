@@ -8,8 +8,6 @@
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
-          'schoolProgramTabTitle--disabled':
-            activeProgram && !activeProgram.is_active,
           'schoolProgramTabTitle--active':
             activeProgram && activeProgram.id === tab.id
         }"
@@ -25,14 +23,15 @@
         />
       </button>
     </div>
-    <div
-      v-if="displayActiveProgram && activeProgram.is_active"
-      class="pageRow schoolProgramTabsContent"
-    >
+    <div v-if="displayActiveProgram" class="pageRow schoolProgramTabsContent">
       <div class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
-            v-if="activeWorkshop.gallery && activeWorkshop.gallery[0]"
+            v-if="
+              activeProgram.is_active &&
+                activeProgram.gallery &&
+                activeProgram.gallery[0]
+            "
             :title="activeProgram.name"
             :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
           >
@@ -41,14 +40,21 @@
               :src="activeProgram.gallery[0].url"
             />
           </router-link>
+          <ProgressiveImage
+            v-else-if="activeProgram.gallery && activeProgram.gallery[0]"
+            height="300px"
+            :src="activeProgram.gallery[0].url"
+          />
         </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">
             <router-link
+              v-if="activeProgram.is_active"
               :title="activeProgram.name"
               :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
               >{{ activeProgram.name }}</router-link
             >
+            {{ !activeProgram.is_active && activeProgram.name }}
           </h3>
           <p v-html="activeProgram.abstract"></p>
           <DownloadLink
@@ -93,9 +99,6 @@
         text-decoration: underline;
         color: $blue;
         opacity: 0.7;
-
-      &--disabled
-        cursor: initial;
 
       &--active
         color: $blue;
