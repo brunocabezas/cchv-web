@@ -75,6 +75,7 @@ export type SchoolProgram = {
   [SchoolProgramKeys.gallery]: WpImage[]
   [SchoolProgramKeys.text]: string
   [SchoolProgramKeys.logo]: string
+  [SchoolProgramKeys.active_school_logo]: string
   [SchoolProgramKeys.is_workshop]: boolean
   [SchoolProgramKeys.is_active]: boolean
 }

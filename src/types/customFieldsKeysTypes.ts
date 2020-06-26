@@ -108,6 +108,7 @@ export enum SchoolProgramKeys {
   teachers = "teachers",
   pdf = "pdf",
   video_url = "video_url",
+  active_school_logo = "active_school_logo",
   logo = "logo",
   gallery = "gallery",
   is_workshop = "is_workshop",

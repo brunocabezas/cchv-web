@@ -41,6 +41,10 @@ export default function useSchoolPrograms() {
           SchoolProgramKeys.is_active
         ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
+        active_school_logo: getCustomField(
+          schoolProgramPost,
+          SchoolProgramKeys.active_school_logo
+        ),
         video_url: getCustomField(
           schoolProgramPost,
           SchoolProgramKeys.video_url

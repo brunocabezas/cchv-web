@@ -17,6 +17,17 @@
         v-for="tab in tabs"
       >
         <ProgressiveImage
+          v-if="
+            activeProgram &&
+              activeProgram.id === tab.id &&
+              tab.active_school_logo
+          "
+          height="180px"
+          className="schoolProgramTabLogo"
+          :src="tab.active_school_logo"
+        />
+        <ProgressiveImage
+          v-else
           height="180px"
           className="schoolProgramTabLogo"
           :src="tab.logo"
