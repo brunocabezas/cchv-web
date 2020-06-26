@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/factories/useAsyncData"
+import useAsyncData from "@/utils/useAsyncData"
 import {
   WpResponseData,
   WPSelectCustomFieldValue,
