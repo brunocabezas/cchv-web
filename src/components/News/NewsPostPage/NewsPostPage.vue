@@ -15,7 +15,7 @@
       <div v-if="latestNews.length" class="newsPostPageRight latestNews">
         <h3 class="latestNewsTitle">Últimas noticias</h3>
         <hr />
-        <div v-bind:key="post.id" v-for="post in latestNews">
+        <div v-bind:key="post.id" v-for="(post, index) in latestNews">
           <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">
             <div
               class="latestNews__thumb"
@@ -30,6 +30,7 @@
             ></router-link>
           </h4>
           <p class="latestNews__date">{{ post.date }}</p>
+          <hr v-if="latestNews.length > index + 1" />
         </div>
       </div>
       <Loader v-if="isLoading" />
@@ -58,7 +59,7 @@
       margin-top: 0;
 
     hr
-      color: $blue;
+      border: 1px solid #868686;
       margin-top: 2px;
       margin-bottom: 15px;
 
@@ -71,6 +72,9 @@
 
     .latestNews__date
       margin-top: 0;
+      color: #868686;
+      margin-bottom: 8px;
+      font-size: 14px;
 
     .latestNews__thumb
       height: 100px;
@@ -92,4 +96,7 @@
 
     .newsPostAbstract
       font-weight: bold;
+
+    .newsPostDate
+      color: #868686;
 </style>

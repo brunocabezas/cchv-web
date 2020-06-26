@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
+import VueCompositionApi, { computed, Ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { NewsPost, Activity } from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
@@ -36,9 +36,20 @@ export default function useNews() {
     return `${AppUrls.NewsPost}${postSlug}`
   }
 
-  const latestNews = computed<NewsPost[]>(() => {
-    return news.value.slice(0, 5)
-  })
+  function getLatestNews(
+    mainPost: Readonly<Ref<Readonly<NewsPost | undefined>>>
+  ): NewsPost[] {
+    return (
+      news.value
+        // Filter the main post id to not repeat it on latest news
+        .filter((lastesNewsPost) =>
+          mainPost && mainPost.value
+            ? lastesNewsPost.id !== mainPost.value.id
+            : true
+        )
+        .slice(0, 5)
+    )
+  }
 
   // Maps news with NewsKeys.is_activity
   const activityNews = computed<Activity[]>(() => {
@@ -63,7 +74,7 @@ export default function useNews() {
   return {
     news: newsToGrid,
     homeNews,
-    latestNews,
+    getLatestNews,
     activityNews,
     isLoading: computed(() => isLoading.value),
     getNewsPostUrl,

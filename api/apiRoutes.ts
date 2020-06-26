@@ -4,7 +4,6 @@ export enum apiRoutes {
   CarouselImages = "/carousel_images?per_page=100",
   HomeNews = "/news?per_page=2",
   News = "/news?per_page=100",
-  NewsPost = "/news?per_page=100",
   Programs = "/program?per_page=100",
   ProgramVideos = "/videos?per_page=100",
   SchoolPrograms = "/school_program?per_page=100",
