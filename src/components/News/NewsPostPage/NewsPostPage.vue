@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts" src="./newsPostPage.ts"></script>
-<style scoped lang="stylus">
+<style lang="stylus">
 @import '../../../styles/variables.styl';
 
 .newsPostPage
@@ -90,6 +90,9 @@
     width: 80%;
     flex-grow: 1;
     margin-right: 25px;
+
+    .pageBody p
+      font-size: 11pt;
 
     .pageTitleText
       color: $blue;

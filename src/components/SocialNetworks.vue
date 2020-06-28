@@ -77,6 +77,6 @@ export default SocialNetworks;
       margin-right: 0;
 
   &--small
-    width: auto;
-    display: inline-block;
+    width: 180px;
+    display: inline-flex;
 </style>
