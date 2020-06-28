@@ -11,8 +11,9 @@ import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
-interface SchoolProgramTab extends Tab {
+export interface SchoolProgramTab extends Tab {
   logo: string
+  active_school_logo: string
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 

@@ -24,9 +24,7 @@ export default defineComponent({
 
     fetchNews()
 
-    const post = computed(() => {
-      return getNewsPostBySlug(props.postSlug)
-    })
+    const post = computed(() => getNewsPostBySlug(props.postSlug))
 
     const filteredLatestNews = computed(() => getLatestNews(post))
 

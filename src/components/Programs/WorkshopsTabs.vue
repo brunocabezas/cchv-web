@@ -16,23 +16,17 @@
         class="schoolProgramTabTitle"
         v-bind:key="tab.id"
         @click="setActiveTab(tab.id)"
-        v-for="tab in tabs"
+        v-for="(tab, index) in tabs"
       >
         <ProgressiveImage
-          v-if="
-            activeWorkshop &&
-              activeWorkshop.id === tab.id &&
-              tab.active_school_logo
+          height="180px"
+          :src="
+            (activeWorkshop && activeWorkshop.id === tab.id) ||
+            (!activeWorkshop && index === 0)
+              ? tab.active_school_logo
+              : tab.logo
           "
-          height="180px"
           className="schoolProgramTabLogo"
-          :src="tab.active_school_logo"
-        />
-        <ProgressiveImage
-          v-else
-          height="180px"
-          className="schoolProgramTabLogo"
-          :src="tab.logo"
         />
       </button>
     </div>
@@ -75,7 +69,7 @@
 
 .workshopsTabs
   position: relative;
-  min-height: 400px;
+  min-height: 800px;
 
   .pageTitle
     text-align: center;
@@ -131,6 +125,9 @@
         padding: 0;
         margin-right: 1em;
 
+        &:hover
+          opacity: 0.8;
+
       .schoolProgramInfo
         padding-right: 0;
         font-size: 18px;
@@ -139,4 +136,7 @@
         .schoolProgramName
           color: $blue;
           margin-top: 0;
+
+          a:hover
+            text-decoration: underline;
 </style>

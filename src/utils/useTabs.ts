@@ -1,4 +1,4 @@
-import { ref, Ref, watch } from "@vue/composition-api"
+import { ref, Ref, watch, computed, reactive } from "@vue/composition-api"
 
 export type Tabs = Tab[]
 export type Tab = {
@@ -8,20 +8,21 @@ export type Tab = {
 
 // recieves tabs with reference
 export default function useTabs(tabs: Readonly<Ref<Readonly<Tabs>>>) {
-  let activeTabId = ref((tabs.value[0] && tabs.value[0].id) || 0)
+  const firstTabId = computed(() => (tabs.value[0] && tabs.value[0].id) || 0)
+  const activeTab = reactive({ id: firstTabId.value })
 
   // Every time tabs change, the activeTabId is set to the first tab
   watch(tabs, (tabs) => {
-    // console.log(tabs)
-    activeTabId.value = (tabs[0] && tabs[0].id) || 0
+    const firstTabId = (tabs[0] && tabs[0].id) || undefined
+    activeTab.id = firstTabId || 0
   })
 
   function setActiveTab(tabId: number) {
-    activeTabId.value = tabId
+    activeTab.id = tabId
   }
 
   return {
-    activeTabId,
+    activeTabId: computed(() => activeTab.id),
     tabs,
     setActiveTab,
   }
