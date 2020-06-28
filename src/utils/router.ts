@@ -8,9 +8,9 @@ import TeamPage from "@/components/About/TeamPage.vue"
 import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ProgramPage from "@/components/Programs/ProgramPage.vue"
-import FullWidthSliderPage, {
-  FullWidthPageDataType,
-} from "@/components/FullWidthSliderPage.vue"
+import SinglePostPage, {
+  SinglePostDataType,
+} from "@/components/common/SinglePostPage/SinglePostPage.vue"
 import AppUrls from "./urls"
 
 const routes = [
@@ -68,10 +68,10 @@ const routes = [
   // Activities
   {
     path: `${AppUrls.Activities}:slug`,
-    component: FullWidthSliderPage,
+    component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
-      pageType: FullWidthPageDataType.Activity,
+      pageType: SinglePostDataType.Activity,
     }),
     meta: {
       title: "Actividades",
@@ -80,10 +80,10 @@ const routes = [
   // School Program Single Page
   {
     path: `${AppUrls.SchoolProgram}:slug`,
-    component: FullWidthSliderPage,
+    component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
-      pageType: FullWidthPageDataType.SchoolProgram,
+      pageType: SinglePostDataType.SchoolProgram,
     }),
     meta: {
       title: "Escuelas",
@@ -92,10 +92,10 @@ const routes = [
   // Workshops Single Page
   {
     path: `${AppUrls.Workshop}:slug`,
-    component: FullWidthSliderPage,
+    component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
-      pageType: FullWidthPageDataType.Workshop,
+      pageType: SinglePostDataType.Workshop,
     }),
     meta: {
       title: "Mandragoras",

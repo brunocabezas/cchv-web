@@ -16,17 +16,16 @@ const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
 )
 
 export default function useNews() {
-  const news = computed<NewsPost[]>(() => {
-    return helpers.mapNewsToView(data.value)
-  })
+  const news = computed<NewsPost[]>(() => helpers.mapNewsToView(data.value))
 
-  const homeNews = computed<NewsPost[]>(() => {
-    return news.value.filter((p) => p.is_highlighted).slice(0, 2)
-  })
+  // Home news are highlighted with is_highlighted set to true. Limit to two
+  const homeNews = computed<NewsPost[]>(() =>
+    news.value.filter((p) => p.is_highlighted).slice(0, 2)
+  )
 
-  const newsToGrid = computed(() => {
-    return news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
-  })
+  const newsToGrid = computed(() =>
+    news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
+  )
 
   function getNewsPostBySlug(slug: string) {
     return news.value.find((post) => post.slug === slug)
@@ -36,6 +35,7 @@ export default function useNews() {
     return `${AppUrls.NewsPost}${postSlug}`
   }
 
+  // Top five latest news
   function getLatestNews(
     mainPost: Readonly<Ref<Readonly<NewsPost | undefined>>>
   ): NewsPost[] {
@@ -51,10 +51,11 @@ export default function useNews() {
     )
   }
 
-  // Maps news with NewsKeys.is_activity
+  // Some news can be defined as also activities
+  // Map news with NewsKeys.is_activity field set to true
   const activityNews = computed<Activity[]>(() => {
     const newsAsActivities = news.value.filter(
-      (n: NewsPost) => n[NewsKeys.is_activity] !== ActivityType.None
+      (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
     )
 
     return newsAsActivities.map(
@@ -76,7 +77,7 @@ export default function useNews() {
     homeNews,
     getLatestNews,
     activityNews,
-    isLoading: computed(() => isLoading.value),
+    isLoading,
     getNewsPostUrl,
     getNewsPostBySlug,
     fetchNews,
