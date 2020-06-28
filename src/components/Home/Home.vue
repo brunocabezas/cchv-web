@@ -2,10 +2,7 @@
   <div>
     <HomeCarousel />
     <HomeNews />
-    <div class="tv homeSection">
-      <h1 class="homeSection__title">CChV TV</h1>
-      <div class="video" v-bind:style="{ height: '500px' }"></div>
-    </div>
+    <HomeVideos />
   </div>
 </template>
 

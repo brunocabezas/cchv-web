@@ -2,7 +2,7 @@
   <div class="homeCarousel">
     <Loader v-if="isLoading" color="black" />
     <vue-carousel
-      loop
+      :loop="true"
       v-if="!isLoading"
       class="carousel"
       :navigate-to="activeImg"
@@ -111,10 +111,14 @@ $carousel_height = 'calc(100vh - %s)' % $header_height;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: 0.2s background-color;
 
   &.carouselButton--next
     right: 15px;
 
   &.carouselButton--prev
     left: 15px;
+
+  &:hover
+    background-color: darken($blue, 10);
 </style>

@@ -1,4 +1,4 @@
-import { ref } from "@vue/composition-api"
+import { ref, Ref, computed } from "@vue/composition-api"
 
 export type Tabs = Tab[]
 export type Tab = {
@@ -7,11 +7,11 @@ export type Tab = {
 }
 
 // recieves tabs with reference
-export default function useCarousel(carouselLength: number) {
+export default function useCarousel(carouselLength: Ref<Readonly<number>>) {
   const activeSlide = ref(0)
 
   function goToNextSlide() {
-    if (activeSlide.value === carouselLength - 1) {
+    if (activeSlide.value === carouselLength.value - 1) {
       activeSlide.value = 0
     } else {
       activeSlide.value = activeSlide.value + 1
@@ -20,14 +20,20 @@ export default function useCarousel(carouselLength: number) {
 
   function goToPrevSlide() {
     if (activeSlide.value === 0) {
-      activeSlide.value = carouselLength - 1
+      activeSlide.value = carouselLength.value - 1
     } else {
       activeSlide.value = activeSlide.value - 1
     }
   }
 
+  const isOnFirstSlide = computed(() => activeSlide.value === 0)
+  const isOnLastSlide = computed(
+    () => activeSlide.value + 1 === carouselLength.value
+  )
   return {
     activeSlide,
+    isOnFirstSlide,
+    isOnLastSlide,
     goToNextSlide,
     goToPrevSlide,
   }

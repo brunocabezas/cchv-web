@@ -15,7 +15,6 @@ export default function useVideos() {
   )
 
   const videos = computed<Video[]>(() => {
-    console.log(data.value[0])
     return data.value.map(
       (video): Video => ({
         id: video.id,
