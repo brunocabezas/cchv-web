@@ -5,7 +5,7 @@
         <h3 class="footerTitle">
           Contacto
         </h3>
-        <div>
+        <div class="contactMailContainer">
           <a
             :title="`Escribir a ${CONTACT_EMAIL}`"
             :href="`mailto:${CONTACT_EMAIL}`"
@@ -23,7 +23,7 @@
         <h3 class="footerTitle">
           Boletín
         </h3>
-        <FooterSubscribeForm />
+        <FooterSuscribeForm />
       </div>
     </div>
     <FooterSponsors />
@@ -34,12 +34,12 @@
 import { defineComponent } from "@vue/composition-api";
 import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import SocialNetworks from "@/components/SocialNetworks.vue";
-import FooterSubscribeForm from "@/components/layout/Footer/FooterSubscribeForm.vue";
+import FooterSuscribeForm from "@/components/layout/Footer/FooterSuscribeForm.vue";
 import { CONTACT_EMAIL } from "@/utils/static";
 
 export default defineComponent({
   name: "Footer",
-  components: { FooterSponsors, FooterSubscribeForm, SocialNetworks },
+  components: { FooterSponsors, FooterSuscribeForm, SocialNetworks },
   setup(props) {
     return { CONTACT_EMAIL };
   }

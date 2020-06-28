@@ -1,29 +1,29 @@
 <template>
   <!-- Begin Mailchimp Signup Form -->
-  <div class="footerSubscribeForm" id="mc_embed_signup">
+  <div class="footerSuscribeForm" id="mc_embed_signup">
     <form
-      :action="subscribeUrl"
+      :action="suscribeUrl"
       method="post"
-      id="mc-embedded-subscribe-form"
-      name="mc-embedded-subscribe-form"
+      id="mc-embedded-suscribe-form"
+      name="mc-embedded-suscribe-form"
       class="validate"
       target="_blank"
       novalidate
     >
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
-          <label class="subscribeFormEmailLabel" for="mce-NAME">Nombre </label>
+          <label class="suscribeFormEmailLabel" for="mce-NAME">Nombre </label>
           <input
             type="name"
             title="Ingresa tu nombre"
             value
             name="NAME"
-            class="subscribeFormEmailInput required name"
+            class="suscribeFormEmailInput required name"
             id="mce-NAME"
           />
         </div>
         <div class="mc-field-group">
-          <label class="subscribeFormEmailLabel" for="mce-EMAIL"
+          <label class="suscribeFormEmailLabel" for="mce-EMAIL"
             >Dirección de email
           </label>
           <input
@@ -32,7 +32,7 @@
             placeholder="tudireccion@correo.com"
             value
             name="EMAIL"
-            class="subscribeFormEmailInput required email"
+            class="suscribeFormEmailInput required email"
             id="mce-EMAIL"
           />
         </div>
@@ -61,10 +61,10 @@
           <input
             type="submit"
             value="Suscribirse"
-            name="subscribe"
-            id="mc-embedded-subscribe"
-            title="Subscribirse al newsletter"
-            class="button subscribeFormButton"
+            name="suscribe"
+            id="mc-embedded-suscribe"
+            title="Suscribirse al newsletter"
+            class="button suscribeFormButton"
           />
         </div>
       </div>
@@ -75,12 +75,12 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-import { NEWSLETTER_SUBSCRIBE_URL } from "../../../utils/static";
+import { NEWSLETTER_SUSCRIBE_URL } from "../../../utils/static";
 
 export default defineComponent({
-  name: "FooterSubscribeForm",
+  name: "FooterSuscribeForm",
   setup() {
-    return { subscribeUrl: NEWSLETTER_SUBSCRIBE_URL };
+    return { suscribeUrl: NEWSLETTER_SUSCRIBE_URL };
   }
 });
 </script>
@@ -88,29 +88,36 @@ export default defineComponent({
 <style lang="stylus" scoped>
 @import '../../../styles/variables.styl';
 
-.footerSubscribeForm
+.footerSuscribeForm
   #mc_embed_signup_scroll
+    height: $footer_form_height;
     display: flex;
     flex-wrap: wrap;
 
     .mc-field-group
-      &:not(.clear)
-        margin-right: 2em;
+      display: flex;
+      align-items: center;
+      position: relative;
 
-      margin-top: 10px;
+      &:not(.clear)
+        margin-right: 3em;
 
       &:first-child
         margin-left: 0;
 
-.subscribeFormEmailLabel
-  font-family: Montserrat;
+.suscribeFormEmailLabel
+  position: absolute;
+  left: 0;
+  top: -20px;
   color: grey;
-  font-size: 14px;
+  font-size: 13px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 
-.subscribeFormEmailInput
-  padding: 5px 5px 5px 0;
+.suscribeFormEmailInput
+  height: $footer_form_height;
+  padding: 0;
+  font-size: 16px;
   font-family: Montserrat;
   background-color: transparent;
   border-bottom: 2px solid black;
@@ -118,13 +125,12 @@ export default defineComponent({
   border-left: none;
   border-right: none;
 
-.subscribeFormButton
-  margin-top: 10px;
+.suscribeFormButton
   display: block;
   font-family: Montserrat;
   background-color: $blue;
   color: white;
-  padding: 1em 1em;
+  padding: 12px 2em;
   border-radius: 30px;
   border: 0;
   font-size: 14px;

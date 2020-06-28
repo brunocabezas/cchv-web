@@ -5,6 +5,7 @@
   .footerTitle
     color: $blue;
     font-family: Montserrat;
+    margin-bottom: 35px;
 
   .footerTop
     background-color: $grey;
@@ -19,18 +20,29 @@
         position: relative;
         max-width: 170px;
 
-        a
-          font-size: 18px;
-          margin-top: 2em;
-          display: block;
-          font-family: Montserrat;
+        .contactMailContainer
+          height: $footer_form_height;
+          display: flex;
+          align-items: center;
+
+          a
+            font-size: 18px;
+            display: block;
+            font-family: Montserrat;
+            color: $black;
 
       &.socialNetworks
+        .socialNetworks
+          height: $footer_form_height;
+
         position: relative;
         flex: 1;
         max-width: 250px;
 
       &.suscribeForm
+        .footerSuscribeForm
+          height: $footer_form_height;
+
         position: relative;
         min-width: 565px;
         margin-left: 2em;

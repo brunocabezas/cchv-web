@@ -14,6 +14,7 @@ export interface SocialNetwork extends CustomFields.SocialNetwork {
   id: number
   name: string
   iconName: string
+  scale: number
 }
 
 export interface Activity extends CustomFields.Activity {

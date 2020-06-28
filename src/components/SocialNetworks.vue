@@ -14,7 +14,7 @@
       :href="sn.url"
     >
       <v-icon
-        :scale="small ? 1.5 : 3"
+        :scale="small ? 1.5 : sn.scale"
         :color="MAIN_COLOR"
         :name="sn.iconName"
       />
@@ -62,6 +62,7 @@ export default SocialNetworks;
 
   .socialNetwork
     flex: 1;
+    display: flex;
     border: none;
     margin: 0 1em;
     transition: all 0.2s;
