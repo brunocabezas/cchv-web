@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/factories/useAsyncData"
+import useAsyncData from "@/utils/useAsyncData"
 import {
   WpResponseData,
   WPSelectCustomFieldValue,
@@ -32,6 +32,18 @@ export default function useSocialNetworks() {
         return ""
     }
   }
+  const getIconScaleByType = (
+    socialNetworkType: WPSelectCustomFieldValue<SocialNetworkType>
+  ): number => {
+    switch (socialNetworkType.value) {
+      // Youtube icon height is smaller than the rest; therefore
+      // the ratio is bigger to compensate a display icons of same height
+      case SocialNetworkType.Youtube:
+        return 3.3
+      default:
+        return 2.7
+    }
+  }
   const socialNetworks = computed<SocialNetwork[]>(() => {
     return data.value.map(
       (socialNetworkPost): SocialNetwork => {
@@ -44,6 +56,7 @@ export default function useSocialNetworks() {
           id: socialNetworkPost.id,
           name: getWPTitle(socialNetworkPost),
           iconName,
+          scale: getIconScaleByType(type),
           [SocialNetworksKeys.type]: type,
           url: getCustomField(socialNetworkPost, SocialNetworksKeys.url),
         }

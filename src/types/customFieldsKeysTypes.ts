@@ -1,13 +1,8 @@
 //
-// customFieldsKeysTypes declares the keys/attributes used by
-// the custom fields provided by the API
+// Declares keys/attributes used to get
+// custom fields values from the API
+// The type of each key is defined on ./customFieldTypes.ts
 
-import { Document } from "./viewTypes"
-
-// Each custom field has it's keys define as enum
-// the type of each key is defined on ./customFieldTypes.ts
-
-// All custom fields attributes together
 export type CustomFieldsKeys =
   | CarouselImageKeys
   | NewsKeys
@@ -21,6 +16,7 @@ export type CustomFieldsKeys =
   | ActivityKeys
   | DocumentKeys
   | TeamMembersKeys
+  | VideoKeys
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -112,6 +108,7 @@ export enum SchoolProgramKeys {
   teachers = "teachers",
   pdf = "pdf",
   video_url = "video_url",
+  active_school_logo = "active_school_logo",
   logo = "logo",
   gallery = "gallery",
   is_workshop = "is_workshop",
@@ -125,4 +122,10 @@ export enum ActivityKeys {
   text = "text",
   video_url = "video_url",
   gallery = "gallery",
+}
+
+// Videos displayed on home
+export enum VideoKeys {
+  video_url = "video_url",
+  order = "order",
 }

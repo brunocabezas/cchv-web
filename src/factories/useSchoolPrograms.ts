@@ -2,17 +2,18 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { SchoolProgram } from "@/types/viewTypes"
-import useAsyncData from "./useAsyncData"
+import useAsyncData from "../utils/useAsyncData"
 import { WpResponseData, WpImage } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
-import { Tab, Tabs } from "./useTabs"
+import { Tab, Tabs } from "../utils/useTabs"
 import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
-interface SchoolProgramTab extends Tab {
+export interface SchoolProgramTab extends Tab {
   logo: string
+  active_school_logo: string
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 
@@ -41,6 +42,10 @@ export default function useSchoolPrograms() {
           SchoolProgramKeys.is_active
         ),
         logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
+        active_school_logo: getCustomField(
+          schoolProgramPost,
+          SchoolProgramKeys.active_school_logo
+        ),
         video_url: getCustomField(
           schoolProgramPost,
           SchoolProgramKeys.video_url

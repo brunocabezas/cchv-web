@@ -1,7 +1,7 @@
 <template>
   <progressive-background
     v-bind:style="{ height }"
-    class="progressiveImage"
+    :class="`progressiveImage ${className}`"
     :placeholder="src"
     :src="src"
   >
@@ -32,6 +32,11 @@ const ProgressiveImage = defineComponent({
     height: {
       type: String,
       default: "300px",
+      required: false
+    },
+    className: {
+      type: String,
+      default: "",
       required: false
     }
   },

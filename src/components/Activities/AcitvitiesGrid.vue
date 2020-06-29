@@ -13,7 +13,7 @@
             height="200px"
             :src="act.gallery[0].url"
           />
-          <h3 class="activitiesGridTitle">{{ act.name }}</h3>
+          <h3 v-html="act.name" class="activitiesGridTitle"></h3>
         </router-link>
       </div>
     </div>

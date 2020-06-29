@@ -2,6 +2,7 @@
   <div class="homeCarousel">
     <Loader v-if="isLoading" color="black" />
     <vue-carousel
+      :loop="true"
       v-if="!isLoading"
       class="carousel"
       :navigate-to="activeImg"
@@ -9,25 +10,22 @@
     >
       <slide v-bind:key="img.id" v-for="img in carousel">
         <a
-          v-if="img.url && img.image"
+          v-if="img.image && img.url"
           target="_blank"
-          class="carouselImage"
           :title="img.name"
           :href="img.url"
-          v-bind:style="{
-            'background-image': `url(${img.image})`
-          }"
-        ></a>
-        <div
-          v-if="!img.url && img.image"
-          class="carouselImage"
-          v-bind:style="{
-            'background-image': `url(${img.image})`
-          }"
-        ></div>
+        >
+          <ProgressiveImage :src="img.image" height="100%" />
+        </a>
+
+        <ProgressiveImage
+          v-if="img.image && !img.url"
+          :src="img.image"
+          height="100%"
+        />
 
         <youtube
-          v-if="img.video_url && !img.image"
+          v-if="!img.image && img.video_url"
           height="100%"
           width="100%"
           :video-id="getYoutubeIdFromUrl(img.video_url)"
@@ -38,7 +36,7 @@
     </vue-carousel>
     <button
       v-if="carousel.length > 1"
-      title="Imagen anterior"
+      title="Atrás"
       class="carouselButton carouselButton--prev"
       type="button"
       @click="goToPrevImg"
@@ -47,7 +45,7 @@
     </button>
     <button
       v-if="carousel.length > 1"
-      title="Siguiente imagen"
+      title="Siguiente"
       class="carouselButton carouselButton--next"
       type="button"
       @keyup.right="goToNextImg"
@@ -113,10 +111,14 @@ $carousel_height = 'calc(100vh - %s)' % $header_height;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: 0.2s background-color;
 
   &.carouselButton--next
     right: 15px;
 
   &.carouselButton--prev
     left: 15px;
+
+  &:hover
+    background-color: darken($blue, 10);
 </style>

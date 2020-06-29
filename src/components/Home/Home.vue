@@ -2,33 +2,19 @@
   <div>
     <HomeCarousel />
     <HomeNews />
-    <div class="tv homeSection">
-      <h1 class="homeSection__title">CChV TV</h1>
-      <div class="video">
-        <youtube
-          height="500px"
-          width="100%"
-          :video-id="videoId"
-          ref="youtube"
-        ></youtube>
-      </div>
-    </div>
+    <HomeVideos />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import HomeCarousel from "@/components/Home/HomeCarousel/HomeCarousel.vue";
-import HomeNews from "./HomeNews.vue";
+import HomeNews from "@/components/Home/HomeNews/HomeNews.vue";
+import HomeVideos from "@/components/Home/HomeVideosCarousel/HomeVideosCarousel.vue";
 
 export default defineComponent({
   name: "Home",
-  components: { HomeCarousel, HomeNews },
-  setup() {
-    return {
-      videoId: "A8cIR54emmY"
-    };
-  }
+  components: { HomeCarousel, HomeNews, HomeVideos }
 });
 </script>
 

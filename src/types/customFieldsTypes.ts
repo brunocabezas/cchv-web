@@ -11,6 +11,7 @@ import {
   SchoolProgramKeys,
   ProgramVideoKeys,
   ActivityKeys,
+  VideoKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
 import { RelatedNewsPost } from "./viewTypes"
@@ -74,6 +75,7 @@ export type SchoolProgram = {
   [SchoolProgramKeys.gallery]: WpImage[]
   [SchoolProgramKeys.text]: string
   [SchoolProgramKeys.logo]: string
+  [SchoolProgramKeys.active_school_logo]: string
   [SchoolProgramKeys.is_workshop]: boolean
   [SchoolProgramKeys.is_active]: boolean
 }
@@ -152,4 +154,9 @@ export interface CarouselImage {
   [CarouselImageKeys.url]: string
   [CarouselImageKeys.video_url]: string
   [CarouselImageKeys.order]: number
+}
+
+export interface Video {
+  [VideoKeys.video_url]: string
+  [VideoKeys.order]: number
 }

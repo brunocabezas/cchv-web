@@ -19,15 +19,15 @@ export default defineComponent({
       fetchNews,
       isLoading,
       getNewsPostUrl,
-      latestNews,
+      getLatestNews,
     } = useNews()
 
     fetchNews()
 
-    const post = computed(() => {
-      return getNewsPostBySlug(props.postSlug)
-    })
+    const post = computed(() => getNewsPostBySlug(props.postSlug))
 
-    return { getNewsPostUrl, latestNews, post, isLoading }
+    const filteredLatestNews = computed(() => getLatestNews(post))
+
+    return { getNewsPostUrl, latestNews: filteredLatestNews, post, isLoading }
   },
 })

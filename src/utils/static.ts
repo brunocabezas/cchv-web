@@ -6,10 +6,10 @@ export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
 // Date format from https://github.com/iamkun/dayjs
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
-export const CONTACT_EMAIL = "info@cchv.cl"
+export const CONTACT_EMAIL = "contacto@cchv.cl"
 export const YOUTUBE_CHANNEL =
   "https://www.youtube.com/channel/UC3aHIBlFx2pWVt1_tvnibCw/videos"
-export const NEWSLETTER_SUBSCRIBE_URL =
+export const NEWSLETTER_SUSCRIBE_URL =
   "https://bienaldeartesmediales.us11.list-manage.com/subscribe/post?u=21121cf28dc5ae821ecbf30c9&amp;id=4459a2b85e"
 export const DEFAULT_ORDER = 0
 

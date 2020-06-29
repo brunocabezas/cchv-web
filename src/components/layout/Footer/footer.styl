@@ -5,34 +5,47 @@
   .footerTitle
     color: $blue;
     font-family: Montserrat;
+    margin-bottom: 35px;
 
   .footerTop
     background-color: $grey;
     padding: $footer_padding;
     display: flex;
+    justify-content: space-between;
 
     .footerTopSection
       margin: 1em;
 
       &.contactMail
         position: relative;
-        flex: 0.2;
+        max-width: 170px;
 
-        a
-          font-size: 18px;
-          margin-top: 2em;
-          display: block;
-          font-family: Montserrat;
+        .contactMailContainer
+          height: $footer_form_height;
+          display: flex;
+          align-items: center;
+
+          a
+            font-size: 18px;
+            display: block;
+            font-family: Montserrat;
+            color: $black;
 
       &.socialNetworks
+        .socialNetworks
+          height: $footer_form_height;
+
         position: relative;
-        flex: 0.3;
+        flex: 1;
+        max-width: 250px;
 
       &.suscribeForm
+        .footerSuscribeForm
+          height: $footer_form_height;
+
         position: relative;
-        flex: 0.5;
+        min-width: 565px;
         margin-left: 2em;
-        flex-grow: 1;
 
     .footerListItem
       font-family: Montserrat;

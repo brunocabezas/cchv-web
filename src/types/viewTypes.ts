@@ -14,6 +14,7 @@ export interface SocialNetwork extends CustomFields.SocialNetwork {
   id: number
   name: string
   iconName: string
+  scale: number
 }
 
 export interface Activity extends CustomFields.Activity {
@@ -88,6 +89,11 @@ export interface RelatedNewsPost {
 }
 
 export interface CarouselImage extends CustomFields.CarouselImage {
+  id: number
+  name: string
+}
+
+export interface Video extends CustomFields.Video {
   id: number
   name: string
 }

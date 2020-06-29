@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Program } from "@/types/viewTypes"
-import useAsyncData from "./useAsyncData"
+import useAsyncData from "../utils/useAsyncData"
 import {
   WpResponseData,
   WpImage,

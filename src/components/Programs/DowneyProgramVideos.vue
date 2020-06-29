@@ -1,6 +1,6 @@
 <template>
   <div class="pageRow programVideos">
-    <h2>Videos Ganadores</h2>
+    <h1 class="pageTitle">Videos Ganadores</h1>
     <Loader :loading="isLoading" />
     <div class="programVideosList">
       <div
@@ -29,7 +29,7 @@
             <Media
               :gallery="[{ url: video.thumbnail }]"
               :youtubeUrl="video.url"
-              height="300px"
+              height="100%"
             />
           </div>
         </div>
@@ -71,6 +71,8 @@ export default DowneyProgramVideos;
 <style lang="stylus">
 @import '../../styles/variables.styl';
 
+$margin_between_videos = 2em;
+
 .programVideos
   min-height: 500px;
   position: relative;
@@ -78,7 +80,7 @@ export default DowneyProgramVideos;
   flex-direction: column;
 
   .programVideoContainer
-    margin-bottom: 4em;
+    margin-bottom: $margin_between_videos;
 
     .programVideo
       margin: 15px 0;
@@ -87,6 +89,7 @@ export default DowneyProgramVideos;
 
       &__title
         margin-top: 0;
+        margin-bottom: 5px;
 
       &__text
         text-align: justify;
@@ -95,17 +98,18 @@ export default DowneyProgramVideos;
         color: $blue;
 
       &__meta
+        padding-right: 10px;
         width: 40%;
-        padding: 1em 0;
         max-height: 100%;
         overflow-y: auto;
 
       &__player
-        margin: 15px;
+        margin-left: 15px;
+        height: 100%;
         width: 60%;
 
   hr
     width: 100%;
-    margin-top: 1em;
+    margin-top: $margin_between_videos;
     display: block;
 </style>

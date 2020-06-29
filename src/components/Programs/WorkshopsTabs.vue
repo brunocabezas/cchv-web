@@ -1,10 +1,9 @@
 <template>
   <div class="workshopsTabs">
-    <div class="pageTitle">
-      <h2 class="pageTitleText">
-        Mandrágoras. Tecnologías para la conversación
-      </h2>
-    </div>
+    <h1 class="pageTitle">
+      Mandrágoras. Tecnologías para la conversación
+    </h1>
+
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
       <button
@@ -16,26 +15,31 @@
         class="schoolProgramTabTitle"
         v-bind:key="tab.id"
         @click="setActiveTab(tab.id)"
-        v-for="tab in tabs"
+        v-for="(tab, index) in tabs"
       >
-        <div
-          class="schoolProgramTabLogo"
-          v-bind:style="{ 'background-image': `url(${tab.logo})` }"
-        ></div>
+        <ProgressiveImage
+          height="180px"
+          :src="
+            (activeWorkshop && activeWorkshop.id === tab.id) ||
+            (!activeWorkshop && index === 0)
+              ? tab.active_school_logo
+              : tab.logo
+          "
+          className="schoolProgramTabLogo"
+        />
       </button>
     </div>
     <div class="pageRow workshopsTabsContent">
       <div v-if="displayActiveWorkshop" class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
+            v-if="activeWorkshop.gallery && activeWorkshop.gallery[0]"
             :title="activeWorkshop.name"
             :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
           >
             <ProgressiveImage
               height="300px"
-              :src="
-                (activeWorkshop.gallery && activeWorkshop.gallery[0].url) || ''
-              "
+              :src="activeWorkshop.gallery[0].url"
           /></router-link>
         </div>
         <div class="schoolProgramInfo">
@@ -46,7 +50,7 @@
               >{{ activeWorkshop.name }}</router-link
             >
           </h3>
-          <p v-html="activeWorkshop.abstract"></p>
+          <p class="schoolProgramAbstract" v-html="activeWorkshop.abstract"></p>
           <DownloadLink
             v-if="activeWorkshop.pdf"
             label="Descargar programa completo"
@@ -63,14 +67,14 @@
 @import '../../styles/variables.styl';
 
 .workshopsTabs
+  margin-top: 4em;
   position: relative;
+  min-height: 800px;
 
   .pageTitle
     text-align: center;
     margin-bottom: 1.5em;
-
-    .pageTitleText
-      margin-bottom: 0;
+    justify-content: center;
 
   .workshopsTabsTitle
     justify-content: center;
@@ -88,7 +92,7 @@
       &:hover
         text-decoration: underline;
         color: $blue;
-        opacity: 0.9;
+        opacity: 0.7;
 
       &--active
         color: $blue;
@@ -111,18 +115,31 @@
 
       .schoolProgramThumb, .schoolProgramInfo
         flex: 1;
-        padding: 0 1em;
 
       .schoolProgramThumb
         width: 60%;
-        max-height: 300px;
-        padding-left: 0;
+        height: 300px;
+        background-color: $blue;
+        padding: 0;
+        margin-right: 1em;
+
+        &:hover
+          opacity: 0.8;
 
       .schoolProgramInfo
         padding-right: 0;
         font-size: 18px;
+        padding: 0 1em;
+
+        .schoolProgramAbstract
+          margin-top: 0;
+          text-align: justify;
 
         .schoolProgramName
           color: $blue;
           margin-top: 0;
+          margin-bottom: 0;
+
+          a:hover
+            text-decoration: underline;
 </style>
