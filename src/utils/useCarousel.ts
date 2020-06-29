@@ -6,7 +6,7 @@ export type Tab = {
   id: number
 }
 
-// recieves tabs with reference
+// carouselLength as computed
 export default function useCarousel(carouselLength: Ref<Readonly<number>>) {
   const activeSlide = ref(0)
 

@@ -1,10 +1,9 @@
 <template>
   <div class="workshopsTabs">
-    <div class="pageTitle">
-      <h2 class="pageTitleText">
-        Mandrágoras. Tecnologías para la conversación
-      </h2>
-    </div>
+    <h1 class="pageTitle">
+      Mandrágoras. Tecnologías para la conversación
+    </h1>
+
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
       <button
@@ -51,7 +50,7 @@
               >{{ activeWorkshop.name }}</router-link
             >
           </h3>
-          <p v-html="activeWorkshop.abstract"></p>
+          <p class="schoolProgramAbstract" v-html="activeWorkshop.abstract"></p>
           <DownloadLink
             v-if="activeWorkshop.pdf"
             label="Descargar programa completo"
@@ -68,15 +67,14 @@
 @import '../../styles/variables.styl';
 
 .workshopsTabs
+  margin-top: 4em;
   position: relative;
   min-height: 800px;
 
   .pageTitle
     text-align: center;
     margin-bottom: 1.5em;
-
-    .pageTitleText
-      margin-bottom: 0;
+    justify-content: center;
 
   .workshopsTabsTitle
     justify-content: center;
@@ -133,9 +131,14 @@
         font-size: 18px;
         padding: 0 1em;
 
+        .schoolProgramAbstract
+          margin-top: 0;
+          text-align: justify;
+
         .schoolProgramName
           color: $blue;
           margin-top: 0;
+          margin-bottom: 0;
 
           a:hover
             text-decoration: underline;

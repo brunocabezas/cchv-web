@@ -1,8 +1,6 @@
 <template>
   <div class="schoolProgramTabs">
-    <div class="pageTitle">
-      <h2 class="pageTitleText">Escuelas</h2>
-    </div>
+    <h1 class="pageTitle">Escuelas</h1>
     <Loader :loading="isLoading" />
     <div class="pageRow schoolProgramTabsTitle">
       <button
@@ -67,7 +65,7 @@
             >
             {{ !activeProgram.is_active && activeProgram.name }}
           </h3>
-          <p v-html="activeProgram.abstract"></p>
+          <p class="schoolProgramAbstract" v-html="activeProgram.abstract"></p>
           <DownloadLink
             v-if="activeProgram.pdf"
             label="Descargar programa completo"
@@ -84,14 +82,14 @@
 @import '../../styles/variables.styl';
 
 .schoolProgramTabs
+  margin-top: 2em;
   position: relative;
+  min-height: 600px;
 
   .pageTitle
     text-align: center;
     margin-bottom: 1.5em;
-
-    .pageTitleText
-      margin-bottom: 0;
+    justify-content: center;
 
   .schoolProgramTabsTitle
     justify-content: center;
@@ -145,7 +143,12 @@
         font-size: 18px;
         padding: 0 1em;
 
+        .schoolProgramAbstract
+          margin-top: 0;
+          text-align: justify;
+
         .schoolProgramName
           color: $blue;
           margin-top: 0;
+          margin-bottom: 0;
 </style>

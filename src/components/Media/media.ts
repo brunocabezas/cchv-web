@@ -6,6 +6,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue"
 import { WpImage } from "@/types/wordpressTypes"
 import { getIdFromUrl } from "vue-youtube"
+import useCarousel from "@/utils/useCarousel"
 
 type LightBoxItem = {
   src: string
@@ -45,37 +46,27 @@ const Media = defineComponent({
     "v-icon": Icon,
   },
   setup(props) {
-    const currentImage = ref<number>(0)
     // Ref used to open lightbox
     const lightBoxRef = ref<any>(null)
     const lightBoxData = computed<LightBoxItem[]>(() =>
       props.gallery.map((img) => ({ src: img.url, thumb: img.url }))
     )
     // If video is available, add to carousel data array
-    const carouselLength =
+    const carouselLength = computed<number>(() =>
       props.youtubeUrl.length > 0
         ? props.gallery.length + 1
         : props.gallery.length
+    )
 
     const youtubeVideoId = computed<string>(() =>
       props.youtubeUrl.length ? getIdFromUrl(props.youtubeUrl) : ""
     )
 
-    function goToNextItem() {
-      if (currentImage.value === carouselLength - 1) {
-        currentImage.value = 0
-      } else {
-        currentImage.value = currentImage.value + 1
-      }
-    }
-
-    function goToPrevItem() {
-      if (currentImage.value === 0) {
-        currentImage.value = carouselLength - 1
-      } else {
-        currentImage.value = currentImage.value - 1
-      }
-    }
+    const {
+      goToNextSlide,
+      activeSlide: currentImage,
+      goToPrevSlide,
+    } = useCarousel(carouselLength)
 
     function openLightBox(index: number) {
       lightBoxRef.value.showImage(index)
@@ -85,8 +76,8 @@ const Media = defineComponent({
       youtubeVideoId,
       // Carousel state
       currentImage,
-      goToPrevItem,
-      goToNextItem,
+      goToPrevItem: goToPrevSlide,
+      goToNextItem: goToNextSlide,
       // Lightbox for images
       lightBoxData,
       lightBoxRef,
