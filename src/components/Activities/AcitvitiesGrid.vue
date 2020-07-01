@@ -6,7 +6,11 @@
         <router-link
           class="activitiesGridLink"
           :title="act.name"
-          :to="getActivityUrlBySlug(act.slug)"
+          :to="
+            act.isNewsPost
+              ? getNewsPostUrlBySlug(act.slug)
+              : getActivityUrlBySlug(act.slug)
+          "
         >
           <ProgressiveImage
             v-if="act.gallery"
@@ -27,6 +31,7 @@ import useActivities from "@/factories/useActivities";
 import { ActivityType } from "@/types/customFieldsTypes";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import { Activity } from "../../types/viewTypes";
+import useNews from "../../factories/useNews";
 
 const ActivitiesGrid = defineComponent({
   name: "ActivitiesGrid",
@@ -43,9 +48,10 @@ const ActivitiesGrid = defineComponent({
       getActivityUrlBySlug,
       getActvitiesByType
     } = useActivities();
+    const { getNewsPostUrlBySlug } = useNews();
     const title = computed<string>(() => getActvitiesTitleByType(props.type));
     const activities = computed(() => getActvitiesByType(props.type));
-    return { activities, title, getActivityUrlBySlug };
+    return { activities, title, getNewsPostUrlBySlug, getActivityUrlBySlug };
   }
 });
 

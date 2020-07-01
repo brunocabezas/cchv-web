@@ -16,7 +16,10 @@
         <h3 class="latestNewsTitle">Últimas noticias</h3>
         <hr />
         <div v-bind:key="post.id" v-for="(post, index) in latestNews">
-          <router-link :title="post.title" :to="getNewsPostUrl(post.slug)">
+          <router-link
+            :title="post.title"
+            :to="getNewsPostUrlBySlug(post.slug)"
+          >
             <div
               class="latestNews__thumb"
               v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
@@ -26,7 +29,7 @@
             <router-link
               v-html="post.title"
               :title="post.title"
-              :to="getNewsPostUrl(post.slug)"
+              :to="getNewsPostUrlBySlug(post.slug)"
             ></router-link>
           </h4>
           <p class="latestNews__date">{{ post.date }}</p>
@@ -90,9 +93,6 @@
     width: 80%;
     flex-grow: 1;
     margin-right: 25px;
-
-    .pageBody p
-      font-size: 11pt;
 
     .pageTitleText
       color: $blue;

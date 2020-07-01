@@ -69,11 +69,11 @@
 .workshopsTabs
   margin-top: 4em;
   position: relative;
-  min-height: 800px;
+  min-height: 630px;
 
   .pageTitle
     text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 10px;
     justify-content: center;
 
   .workshopsTabsTitle

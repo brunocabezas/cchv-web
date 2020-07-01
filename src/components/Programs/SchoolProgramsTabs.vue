@@ -12,23 +12,17 @@
         class="schoolProgramTabTitle"
         v-bind:key="tab.id"
         @click="setActiveTab(tab.id)"
-        v-for="tab in tabs"
+        v-for="(tab, index) in tabs"
       >
         <ProgressiveImage
-          v-if="
-            activeProgram &&
-              activeProgram.id === tab.id &&
-              tab.active_school_logo
+          height="180px"
+          :src="
+            (activeProgram && activeProgram.id === tab.id) ||
+            (!activeProgram && index === 0)
+              ? tab.active_school_logo
+              : tab.logo
           "
-          height="180px"
           className="schoolProgramTabLogo"
-          :src="tab.active_school_logo"
-        />
-        <ProgressiveImage
-          v-else
-          height="180px"
-          className="schoolProgramTabLogo"
-          :src="tab.logo"
         />
       </button>
     </div>
@@ -88,7 +82,7 @@
 
   .pageTitle
     text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 10px;
     justify-content: center;
 
   .schoolProgramTabsTitle

@@ -18,7 +18,7 @@ export default defineComponent({
       getNewsPostBySlug,
       fetchNews,
       isLoading,
-      getNewsPostUrl,
+      getNewsPostUrlBySlug,
       getLatestNews,
     } = useNews()
 
@@ -28,6 +28,11 @@ export default defineComponent({
 
     const filteredLatestNews = computed(() => getLatestNews(post))
 
-    return { getNewsPostUrl, latestNews: filteredLatestNews, post, isLoading }
+    return {
+      getNewsPostUrlBySlug,
+      latestNews: filteredLatestNews,
+      post,
+      isLoading,
+    }
   },
 })

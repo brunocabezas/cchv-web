@@ -22,6 +22,7 @@ export interface Activity extends CustomFields.Activity {
   name: string
   // Slug to build urls
   slug: string
+  isNewsPost: boolean
 }
 
 export interface ProgramVideo extends CustomFields.ProgramVideo {

@@ -6,7 +6,7 @@
     <router-link
       class="newsPostPreview__link"
       :title="post.title"
-      :to="getNewsPostUrl(post.slug)"
+      :to="getNewsPostUrlBySlug(post.slug)"
     >
       <div
         class="newsPostPreview__thumbnail"
@@ -19,7 +19,7 @@
         v-html="post.title"
         class="newsPostPreview__link"
         :title="post.title"
-        :to="getNewsPostUrl(post.slug)"
+        :to="getNewsPostUrlBySlug(post.slug)"
       ></router-link>
     </h3>
     <p class="newsPostPreview__date">{{ post.date }}</p>
@@ -29,7 +29,7 @@
     <router-link
       :title="post.title"
       class="newsPostPreview__link"
-      :to="getNewsPostUrl(post.slug)"
+      :to="getNewsPostUrlBySlug(post.slug)"
     >
       <i>Leer más ...</i>
       <v-icon :color="MAIN_COLOR" name="chevron-right" scale="1 "> </v-icon>
@@ -60,9 +60,9 @@ export default defineComponent({
   },
   components: { "v-icon": Icon },
   setup() {
-    const { getNewsPostUrl } = useNews();
+    const { getNewsPostUrlBySlug } = useNews();
 
-    return { getNewsPostUrl, MAIN_COLOR };
+    return { getNewsPostUrlBySlug, MAIN_COLOR };
   }
 });
 </script>
