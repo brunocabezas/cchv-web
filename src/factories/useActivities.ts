@@ -47,9 +47,9 @@ export default function useActivities() {
   const getActvitiesTitleByType = (type: ActivityType): string => {
     switch (type) {
       case ActivityType.Conversation:
-        return "Conversatorio"
+        return "Conversatorios"
       case ActivityType.Movie:
-        return "Cine Foro"
+        return "Cine Foros"
       case ActivityType.Concert:
         return "Conciertos"
       case ActivityType.Performance:

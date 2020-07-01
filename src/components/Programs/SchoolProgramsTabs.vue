@@ -82,7 +82,7 @@
 
   .pageTitle
     text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 10px;
     justify-content: center;
 
   .schoolProgramTabsTitle
