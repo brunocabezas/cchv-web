@@ -52,6 +52,8 @@
 .homeVideos
   &.homeSection
     margin-bottom: 2em;
+    margin-top: 0;
+    padding-top: 0;
 
   .homeVideosCarousel
     position: relative;

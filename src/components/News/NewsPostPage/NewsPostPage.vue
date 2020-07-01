@@ -91,9 +91,6 @@
     flex-grow: 1;
     margin-right: 25px;
 
-    .pageBody p
-      font-size: 11pt;
-
     .pageTitleText
       color: $blue;
 

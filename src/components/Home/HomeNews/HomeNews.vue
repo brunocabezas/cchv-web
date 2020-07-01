@@ -6,7 +6,7 @@
         ><v-icon :color="MAIN_COLOR" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
     </div>
-    <Loader v-if="isLoading" />
+    <Loader size="30px" v-if="isLoading" />
     <div v-if="!isLoading" class="newsList">
       <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
@@ -19,7 +19,7 @@
 @import '../../../styles/variables.styl';
 
 .news
-  min-height: 400px;
+  min-height: 500px;
 
   .homeSection__title
     display: flex;
@@ -29,12 +29,11 @@
 
     a
       font-family: NoeDisplay;
+      display: flex;
+      align-items: center;
 
       h1
         margin: 0 10px 0 0;
-
-      svg
-        margin-top: 10px;
 
   .newsList
     display: flex;
