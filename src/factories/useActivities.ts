@@ -26,6 +26,7 @@ export default function useActivities() {
       ...data.value.map(
         (activity): Activity => ({
           id: activity.id,
+          isNewsPost: false,
           name: getWPTitle(activity),
           slug: activity.slug,
           abstract: getCustomField(activity, ActivityKeys.abstract),

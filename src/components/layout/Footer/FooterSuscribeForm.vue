@@ -12,7 +12,9 @@
     >
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
-          <label class="suscribeFormEmailLabel" for="mce-NAME">Nombre </label>
+          <label class="suscribeFormEmailLabel" for="mce-NAME"
+            >Nombre Apellido</label
+          >
           <input
             type="name"
             title="Ingresa tu nombre"
@@ -29,7 +31,7 @@
           <input
             type="email"
             title="Ingresa tu correo"
-            placeholder="tudireccion@correo.com"
+            placeholder=""
             value
             name="EMAIL"
             class="suscribeFormEmailInput required email"
@@ -95,15 +97,18 @@ export default defineComponent({
     flex-wrap: wrap;
 
     .mc-field-group
-      display: flex;
+      display: inline-flex;
       align-items: center;
       position: relative;
 
       &:not(.clear)
-        margin-right: 3em;
+        margin-right: 2.5em;
 
       &:first-child
         margin-left: 0;
+
+      input:not([type=submit])
+        width: 200px;
 
 .suscribeFormEmailLabel
   position: absolute;

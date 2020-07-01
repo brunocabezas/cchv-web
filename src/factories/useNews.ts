@@ -31,7 +31,7 @@ export default function useNews() {
     return news.value.find((post) => post.slug === slug)
   }
 
-  function getNewsPostUrl(postSlug: string): string {
+  function getNewsPostUrlBySlug(postSlug: string): string {
     return `${AppUrls.NewsPost}${postSlug}`
   }
 
@@ -64,6 +64,7 @@ export default function useNews() {
         name: n.title,
         slug: n.slug,
         type: n.is_activity,
+        isNewsPost: true,
         abstract: n.abstract,
         gallery: n.gallery,
         text: n.text,
@@ -78,7 +79,7 @@ export default function useNews() {
     getLatestNews,
     activityNews,
     isLoading,
-    getNewsPostUrl,
+    getNewsPostUrlBySlug,
     getNewsPostBySlug,
     fetchNews,
   }
