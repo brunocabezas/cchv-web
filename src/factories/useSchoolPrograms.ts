@@ -17,14 +17,13 @@ export interface SchoolProgramTab extends Tab {
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 
-// const SCHOOL_PROGRAMS_TABS: Tabs = [
-//   { id: 0, title: "Artes y Oficios" },
-//   { id: 1, title: "Mediacion y comunidades" },
-// ]
-
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
   WpResponseData
 >(apiRoutes.SchoolPrograms)
+
+// The text to introduce workshops (displayed above the workshop tabs)
+// is included on a workshop from schoolPrograms with this specific title
+const WORKSHOP_ABSTRACT_POST_NAME = "MANDRAGORA_TEXTO"
 
 export default function useSchoolPrograms() {
   const schoolPrograms = computed<SchoolProgram[]>(() => {
@@ -68,8 +67,19 @@ export default function useSchoolPrograms() {
     schoolPrograms.value.filter((program) => !program.is_workshop)
   )
   const workshops = computed<SchoolProgram[]>(() =>
-    schoolPrograms.value.filter((program) => program.is_workshop)
+    schoolPrograms.value
+      .filter((program) => program.is_workshop)
+      // Remvove workshop that contains the abstract text
+      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
   )
+
+  const workshopsAbstract = computed(() => {
+    const postWithText = schoolPrograms.value.find(
+      (p) => p.name === WORKSHOP_ABSTRACT_POST_NAME
+    )
+
+    return postWithText ? postWithText.text : ""
+  })
 
   const schoolProgramsTabs = computed<SchoolProgramTabs>(() =>
     programs.value.map((t) => ({
@@ -100,6 +110,7 @@ export default function useSchoolPrograms() {
     fetchSchoolPrograms,
     isLoading,
     workshops,
+    workshopsAbstract,
     workshopsTabs,
     schoolPrograms: programs,
     schoolProgramsTabs,

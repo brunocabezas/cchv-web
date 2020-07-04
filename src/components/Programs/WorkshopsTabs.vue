@@ -1,9 +1,9 @@
 <template>
   <div class="workshopsTabs">
+    <div class="pageBody" v-html="workshopsAbstract"></div>
     <h1 class="pageTitle">
       Mandrágoras. Tecnologías para la conversación
     </h1>
-
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
       <button
