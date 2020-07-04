@@ -5,6 +5,9 @@
   >
     <Loader color="white" :loading="isLoading" />
     <div
+      v-bind:class="{
+        'sponsorCategory--big': cat.name === 'Financia'
+      }"
       v-for="cat in sponsorsCategories"
       v-bind:key="cat.id"
       class="sponsorCategory"
@@ -18,8 +21,7 @@
           :title="sponsor.name"
           v-for="sponsor in cat.sponsors"
           v-bind:style="{
-            'background-image': `url(${sponsor.logo})`,
-            height: `100px`
+            'background-image': `url(${sponsor.logo})`
           }"
           v-bind:key="sponsor.id"
         >
@@ -55,6 +57,9 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
+$big_sponsor_category_height = 200px;
+$sponsor_height = 100px;
+
 .footerSponsors
   position: relative;
   display: flex;
@@ -75,6 +80,14 @@ export default defineComponent({
     .sponsorCategoryTitle
       font-family: Montserrat;
 
+    &--big
+      .sponsorsGrid
+        justify-content: center;
+
+        .sponsor
+          height: $big_sponsor_category_height;
+          width: 30%;
+
   .sponsorsGrid
     display: flex;
     align-items: center;
@@ -83,9 +96,9 @@ export default defineComponent({
 
     .sponsor
       margin: 2em 15px;
-      max-height: 100px;
       width: 20%;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain;
+      height: $sponsor_height;
 </style>
