@@ -1,6 +1,7 @@
 import AppUrls from "./urls"
 import { NavigationMenu, NavMenu } from "@/types"
 
+export const DOMAIN = "cchv.cl"
 export const DEFAULT_TITLE = "CChV"
 export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"

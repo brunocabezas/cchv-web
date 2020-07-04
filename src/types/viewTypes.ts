@@ -92,6 +92,7 @@ export interface RelatedNewsPost {
 export interface CarouselImage extends CustomFields.CarouselImage {
   id: number
   name: string
+  isInternal: boolean
 }
 
 export interface Video extends CustomFields.Video {

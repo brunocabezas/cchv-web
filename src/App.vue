@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div class="app" id="app">
     <Header />
-    <router-view></router-view>
+    <router-view class="appContent"></router-view>
     <Footer />
   </div>
 </template>
@@ -18,3 +18,11 @@ const App = defineComponent({
 
 export default App;
 </script>
+
+<style lang="stylus" scoped>
+@import './styles/variables.styl';
+
+.app
+  .appContent
+    margin-top: $header_height;
+</style>

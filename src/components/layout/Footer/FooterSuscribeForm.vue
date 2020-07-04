@@ -12,16 +12,16 @@
     >
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
-          <label class="suscribeFormEmailLabel" for="mce-NAME"
+          <label class="suscribeFormEmailLabel" for="mce-MMERGE1"
             >Nombre Apellido</label
           >
           <input
             type="name"
             title="Ingresa tu nombre"
-            value
-            name="NAME"
+            value=""
+            name="MMERGE1"
             class="suscribeFormEmailInput required name"
-            id="mce-NAME"
+            id="mce-MMERGE1"
           />
         </div>
         <div class="mc-field-group">
@@ -32,7 +32,7 @@
             type="email"
             title="Ingresa tu correo"
             placeholder=""
-            value
+            value=""
             name="EMAIL"
             class="suscribeFormEmailInput required email"
             id="mce-EMAIL"

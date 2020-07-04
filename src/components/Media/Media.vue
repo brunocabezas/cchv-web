@@ -106,7 +106,7 @@
       font-family: OpenSans;
       padding: 2px 6px;
       background-color: alpha($blue, 1);
-      // background-color: $blue;
+      font-size: 11pt;
       opacity: 0.7;
       z-index: 1;
 

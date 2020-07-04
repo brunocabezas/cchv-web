@@ -9,11 +9,18 @@
       :perPage="1"
     >
       <slide v-bind:key="img.id" v-for="img in carousel">
+        <router-link
+          v-if="img.image && img.url && img.isInternal"
+          :title="img.name"
+          :to="img.url"
+        >
+          <ProgressiveImage :src="img.image" height="100%" />
+        </router-link>
         <a
-          v-if="img.image && img.url"
-          target="_blank"
+          v-if="img.image && img.url && !img.isInternal"
           :title="img.name"
           :href="img.url"
+          target="_blank"
         >
           <ProgressiveImage :src="img.image" height="100%" />
         </a>

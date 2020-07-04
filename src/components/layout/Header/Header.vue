@@ -46,7 +46,13 @@ export default Header;
 @import '../../../styles/variables.styl';
 
 .header
+  background-color: $bg_color;
+  z-index: 10;
   display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: $header_height;
   align-items: center;
   padding: 0 10px;
