@@ -28,13 +28,13 @@ export default function useCarouselImages() {
           const isInternal = imgUrl.includes(DOMAIN)
           let url = imgUrl
 
+          // Internal urls already inlcude DOMAIN,
+          // should be removed to be used with <router-link />
           if (isInternal) {
             const urlSlices = url.split(`${DOMAIN}/`)
-            urlSlices.shift()
+            urlSlices.shift() // remove domain name
             url = urlSlices.join("")
           }
-
-          console.log(url)
 
           return {
             id: carouselImagePost.id,

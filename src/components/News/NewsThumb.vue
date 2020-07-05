@@ -8,10 +8,10 @@
       :title="post.title"
       :to="getNewsPostUrlBySlug(post.slug)"
     >
-      <div
+      <ProgressiveImage
         class="newsPostPreview__thumbnail"
-        v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
-        :alt="post.title"
+        :src="post.thumbnail"
+        :height="small ? `150px` : `300px`"
       />
     </router-link>
     <h3 class="newsPostPreview__title">
@@ -40,11 +40,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@vue/composition-api";
-import { NewsPost } from "@/types/viewTypes";
 import Icon from "vue-awesome/components/Icon.vue";
+import { NewsPost } from "@/types/viewTypes";
 import AppUrls from "@/utils/urls";
-import useNews from "../../factories/useNews";
-import { MAIN_COLOR } from "../../utils/static";
+import useNews from "@/factories/useNews";
+import ProgressiveImage from "@/components/ProgressiveImage.vue";
+import { MAIN_COLOR } from "@/utils/static";
 
 export default defineComponent({
   name: "NewsThumb",
@@ -58,7 +59,7 @@ export default defineComponent({
       required: true
     }
   },
-  components: { "v-icon": Icon },
+  components: { ProgressiveImage, "v-icon": Icon },
   setup() {
     const { getNewsPostUrlBySlug } = useNews();
 
@@ -99,17 +100,6 @@ export default defineComponent({
   &.newsPostPreview--small
     .newsPostPreview__title
       font-size: 18px;
-
-    .newsPostPreview__thumbnail
-      height: 150px;
-
-  &__thumbnail
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: 100%;
-    transition: all 0.2s;
 
     &:hover
       opacity: 0.85;

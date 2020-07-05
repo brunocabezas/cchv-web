@@ -3,7 +3,7 @@ import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import client from "../../api/client"
 import { HasDefined } from "@vue/composition-api/dist/types/basic"
-import { AxiosPromise, AxiosResponse } from "axios"
+import { AxiosResponse } from "axios"
 
 Vue.use(VueCompositionApi)
 
@@ -35,8 +35,16 @@ export default function useAsyncData<T>(url: apiRoutes) {
     // If pagination is defined as true, res.data is pushed to data
     pagination: boolean = false
   ): Promise<AxiosResponse<T>> {
-    // Only fetch data when data status is not success
-    if (status.value !== AsyncDataStatus.Loading) {
+    // Normally, fetch is avoided when status is loading or success
+    // If pagination is active, data is fetched when status is different from loading
+    const fetchData =
+      (status.value !== AsyncDataStatus.Loading &&
+        status.value !== AsyncDataStatus.Success) ||
+      (status.value !== AsyncDataStatus.Loading && pagination)
+
+    if (fetchData) {
+      status.value = AsyncDataStatus.Loading
+
       return client
         .get(url, {
           params: {

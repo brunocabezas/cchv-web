@@ -12,7 +12,7 @@ const HomeNews = defineComponent({
   setup() {
     const { homeNews: news, fetchNews, isLoading } = useNews()
 
-    fetchNews()
+    fetchNews({ per_page: 5 })
 
     return { isLoading, news, newsGridUrl: AppUrls.News, MAIN_COLOR }
   },
