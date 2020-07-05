@@ -12,26 +12,15 @@ import {
   ProgramVideoKeys,
   ActivityKeys,
   VideoKeys,
+  TeamMembersKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
 import { RelatedNewsPost } from "./viewTypes"
-
 //
 // Uses customFieldsKeysTypes to build types represnting
 // Wordpress custom fields
 // Every type declared must be exported
 
-// TODO use enum
-export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
-
-// declare module CustomFields {
-export enum ActivityType {
-  Movie = "movie",
-  Conversation = "conversation",
-  Concert = "concert",
-  Performance = "performance",
-  None = "none",
-}
 // SOCIAL NETWORK
 export enum SocialNetworkType {
   Facebook = "facebook",
@@ -44,7 +33,26 @@ export type SocialNetwork = {
   [SocialNetworksKeys.type]: WPSelectCustomFieldValue<SocialNetworkType>
 }
 
+// TEAM
+export enum TeamMemberType {
+  Staff = "staff",
+  Team = "team",
+}
+export interface TeamMember {
+  [TeamMembersKeys.order]: number
+  [TeamMembersKeys.position]: string
+  [TeamMembersKeys.type]: TeamMemberType
+}
+
 // ACTIVITIES
+export enum ActivityType {
+  Movie = "movie",
+  Conversation = "conversation",
+  Concert = "concert",
+  Performance = "performance",
+  None = "none",
+}
+
 export interface Activity {
   [ActivityKeys.abstract]: string
   [ActivityKeys.gallery]: WpImage[]
@@ -56,6 +64,10 @@ export interface Activity {
 //
 // PROGRAMS
 //
+
+// TODO use enum
+export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
+
 export type Program = {
   [ProgramKeys.is_external]: boolean
   [ProgramKeys.url]: string

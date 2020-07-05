@@ -3,9 +3,43 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Equipo</h1>
     </div>
-    <div class="pageBody" v-if="page" v-html="page.text"></div>
+    <div class="teamPositions">
+      <div
+        v-bind:key="position.name"
+        v-for="position in team"
+        class="teamPosition"
+      >
+        <h5 class="teamPositionName">{{ position.name }}</h5>
+        <p
+          v-for="person in position.members"
+          v-bind:key="person.id"
+          class="teamPositionMember"
+        >
+          {{ person.name }}
+        </p>
+      </div>
+    </div>
     <Loader :loading="isLoading" />
-    <hr v-if="!isLoading" />
+
+    <div class="pageTitle" v-if="!isLoading">
+      <h1 class="pageTitleText">Directorio</h1>
+    </div>
+    <div class="teamPositions">
+      <div
+        v-bind:key="position.name"
+        v-for="position in staff"
+        class="teamPosition"
+      >
+        <h5 class="teamPositionName">{{ position.name }}</h5>
+        <p
+          v-for="person in position.members"
+          v-bind:key="person.id"
+          class="teamPositionMember"
+        >
+          {{ person.name }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -13,37 +47,39 @@
 import { defineComponent } from "@vue/composition-api";
 import useTeamMembers from "@/factories/useTeamMembers";
 import Loader from "@/components/Loader.vue";
-import usePages from "../../factories/usePages";
 
 export default defineComponent({
   name: "TeamPage",
   components: { Loader },
   setup() {
-    const { fetchPages, isLoading, teamPage } = usePages();
-    fetchPages();
-    return { isLoading, page: teamPage };
+    const { team, staff, isLoading, fetchTeamMembers } = useTeamMembers();
+
+    fetchTeamMembers();
+    return { isLoading, team, staff };
   }
 });
 </script>
 <style scoped lang="stylus">
 @import '../../styles/variables.styl';
 
-.team
-  max-width: 50%;
-  display: flex;
-  flex-wrap: wrap;
+.page
+  .teamPositions
+    flex-wrap: wrap;
+    display: flex;
 
-  .teamMember
-    width: 50%;
-    padding: 1em 0;
-    font-size: 20px;
+    .teamPosition
+      width: 50%;
+      padding: 0.5em 0;
+      font-size: 20px;
 
-    .position
-      color: $blue;
-      margin-top: 0;
-      font-weight: bold;
+      .teamPositionName
+        color: $blue;
+        margin-top: 0;
+        font-weight: bold;
+        font-family: OpenSans;
+        margin-bottom: 0;
 
-    .name
-      margin-top: 10px;
-      font-style: italic;
+      .teamPositionMember
+        margin-top: 5px;
+        margin-bottom: 5px;
 </style>

@@ -17,6 +17,12 @@ export interface SocialNetwork extends CustomFields.SocialNetwork {
   scale: number
 }
 
+// Sponsors
+export interface TeamMember extends CustomFields.TeamMember {
+  name: string
+  id: number
+}
+
 export interface Activity extends CustomFields.Activity {
   id: number
   name: string

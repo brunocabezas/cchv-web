@@ -8,7 +8,6 @@ export enum apiRoutes {
   SchoolPrograms = "/school_program",
   Pages = "/cchv_page",
   Videos = "/home_videos",
-  // TODO remove when removing useTeam()
   Team = "/team",
   Documents = "/documents",
   Sponsors = "/sponsors",

@@ -30,13 +30,13 @@ export default function usePages() {
     )
   })
 
-  const teamPage = computed<Page | null>(() => {
-    return (
-      pages.value.find((page) =>
-        page.name.toLocaleLowerCase().includes("equipo")
-      ) || null
-    )
-  })
+  // const teamPage = computed<Page | null>(() => {
+  //   return (
+  //     pages.value.find((page) =>
+  //       page.name.toLocaleLowerCase().includes("equipo")
+  //     ) || null
+  //   )
+  // })
 
   const transparencyPage = computed<Page | null>(() => {
     return (
@@ -56,7 +56,7 @@ export default function usePages() {
 
   return {
     fetchPages,
-    teamPage,
+    // teamPage,
     transparencyPage,
     historyPage,
     isLoading,

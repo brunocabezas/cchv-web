@@ -62,6 +62,8 @@ export enum SocialNetworksKeys {
 // TEAM MEMBERS
 export enum TeamMembersKeys {
   position = "position",
+  order = "order",
+  type = "type",
 }
 
 // DOCUMENT
