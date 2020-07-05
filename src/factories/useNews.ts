@@ -4,14 +4,14 @@ import apiRoutes from "../../api/apiRoutes"
 import { NewsPost, Activity } from "@/types/viewTypes"
 import helpers from "@/utils/customFields"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchNews, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.News
 )
 

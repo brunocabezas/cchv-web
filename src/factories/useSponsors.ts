@@ -49,13 +49,13 @@ export default function useSponsors() {
     data: sponsors,
     fetch: fetchSponsors,
     isLoading: isLoadingSponsors,
-  } = useAsyncData<WpResponseData>(apiRoutes.Sponsors)
+  } = useAsyncData<WPResponseItem>(apiRoutes.Sponsors)
 
   const {
     data,
     fetch: fetchSponsorsCategories,
     isLoading: isLoadingCategories,
-  } = useAsyncData<WpResponseData>(apiRoutes.SponsorsCategories)
+  } = useAsyncData<WPResponseItem>(apiRoutes.SponsorsCategories)
 
   const fetchSponsorsAndCategories = () =>
     Promise.all([fetchSponsorsCategories(), fetchSponsors()])

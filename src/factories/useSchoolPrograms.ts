@@ -3,7 +3,7 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { SchoolProgram } from "@/types/viewTypes"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData, WpImage } from "@/types/wordpressTypes"
+import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
 import { Tab, Tabs } from "../utils/useTabs"
@@ -18,7 +18,7 @@ export interface SchoolProgramTab extends Tab {
 type SchoolProgramTabs = SchoolProgramTab[]
 
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.SchoolPrograms)
 
 // The text to introduce workshops (displayed above the workshop tabs)

@@ -1,16 +1,16 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Page } from "@/types/viewTypes"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData, WpImage } from "@/types/wordpressTypes"
+import { WPResponseItem, WpImage } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { PageKeys } from "@/types/customFieldsKeysTypes"
 import { PageExtraContent } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchPages, isLoading } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchPages, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Pages
 )
 

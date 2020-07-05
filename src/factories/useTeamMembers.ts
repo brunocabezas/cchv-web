@@ -1,16 +1,15 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-// import View from "@/types/viewTypes"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { TeamMembersKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.Team)
 
 export default function useTeamMembers() {

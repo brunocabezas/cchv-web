@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
 import { CarouselImage } from "@/types/viewTypes"
@@ -12,7 +12,7 @@ import { sortByOrder } from "@/utils/arrays"
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchCarouselImages, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.CarouselImages)
 
 export default function useCarouselImages() {
