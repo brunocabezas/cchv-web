@@ -82,11 +82,10 @@ $sponsor_height = 100px;
 
     &--big
       .sponsorsGrid
-        justify-content: center;
-
         .sponsor
           height: $big_sponsor_category_height;
           width: 30%;
+          margin-left: 84px;
 
   .sponsorsGrid
     display: flex;

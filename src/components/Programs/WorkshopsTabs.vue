@@ -1,9 +1,9 @@
 <template>
   <div class="workshopsTabs">
-    <div class="pageBody" v-html="workshopsAbstract"></div>
     <h1 class="pageTitle">
       Mandrágoras. Tecnologías para la conversación
     </h1>
+    <div class="pageBody" v-html="workshopsAbstract"></div>
     <Loader :loading="isLoading" />
     <div class="pageRow workshopsTabsTitle">
       <button
@@ -73,7 +73,7 @@
 
   .pageTitle
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     justify-content: center;
 
   .workshopsTabsTitle
