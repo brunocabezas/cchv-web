@@ -65,11 +65,11 @@ export default ActivitiesGrid;
 
   .activitiesGridContainer
     display: flex;
+    flex-wrap: wrap;
 
     .activity
       margin: 5px;
-      // max-width: 100px;
-      width: 33.3%;
+      width: calc(33.333333% - 10px);
 
   .activitiesGridTitle
     margin-top: 5px;
