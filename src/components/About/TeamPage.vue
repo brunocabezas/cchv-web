@@ -3,7 +3,7 @@
     <div class="pageTitle">
       <h1 class="pageTitleText">Equipo</h1>
     </div>
-    <div class="teamPositions">
+    <div class="teamPositions" v-if="team.length">
       <div
         v-bind:key="position.name"
         v-for="position in team"
@@ -21,10 +21,10 @@
     </div>
     <Loader :loading="isLoading" />
 
-    <div class="pageTitle" v-if="!isLoading">
+    <div class="pageTitle" v-if="!isLoading && staff.length">
       <h1 class="pageTitleText">Directorio</h1>
     </div>
-    <div class="teamPositions">
+    <div class="teamPositions" v-if="staff.length">
       <div
         v-bind:key="position.name"
         v-for="position in staff"

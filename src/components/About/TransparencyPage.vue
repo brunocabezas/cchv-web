@@ -63,7 +63,7 @@ export default defineComponent({
   }
 });
 </script>
-<style scoped lang="stylus">
+<style lang="stylus">
 @import '../../styles/variables.styl';
 
 .transparencyPage
@@ -76,12 +76,14 @@ export default defineComponent({
     margin-left: 20px;
 
   .transparencyDocument
-    padding: 0 0 1em 0;
+    margin-bottom: 5px;
 
-    a
-      text-transform: uppercase;
-      font-size: 20px;
-      font-family: Montserrat;
+    .downloadLinkLoading
+      font-size: 16px;
+
+    .downloadLink
+      a
+        font-size: 16px;
 
       &:hover
         color: darken($blue, 10);

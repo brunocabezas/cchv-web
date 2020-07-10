@@ -61,6 +61,7 @@ export default function useAsyncData<T>(url: apiRoutes) {
         })
         .catch((err) => {
           status.value = AsyncDataStatus.Error
+          console.error(err)
           return err
         })
     }
