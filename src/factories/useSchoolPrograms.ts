@@ -24,6 +24,7 @@ const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
 // The text to introduce workshops (displayed above the workshop tabs)
 // is included on a workshop from schoolPrograms with this specific title
 const WORKSHOP_ABSTRACT_POST_NAME = "MANDRAGORA_TEXTO"
+const SCHOOL_ABSTRACT_POST_NAME = "ESCUELAS_TEXTO"
 
 export default function useSchoolPrograms() {
   const schoolPrograms = computed<SchoolProgram[]>(() => {
@@ -62,20 +63,34 @@ export default function useSchoolPrograms() {
     )
   })
 
-  // Divinding exports by is_workshp
+  // Programs have is_workshop set false
   const programs = computed<SchoolProgram[]>(() =>
-    schoolPrograms.value.filter((program) => !program.is_workshop)
+    schoolPrograms.value
+      .filter((program) => !program.is_workshop)
+      // Remove workshop that contains the abstract text
+      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
   )
+
   const workshops = computed<SchoolProgram[]>(() =>
     schoolPrograms.value
       .filter((program) => program.is_workshop)
-      // Remvove workshop that contains the abstract text
+      // Remove workshop that contains the abstract text
       .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
   )
 
   const workshopsAbstract = computed(() => {
     const postWithText = schoolPrograms.value.find(
       (p) => p.name === WORKSHOP_ABSTRACT_POST_NAME
+    )
+
+    return postWithText ? postWithText.text : ""
+  })
+
+  const schoolProgramsAbstract = computed(() => {
+    const postWithText = schoolPrograms.value.find(
+      (p) => p.name === SCHOOL_ABSTRACT_POST_NAME
     )
 
     return postWithText ? postWithText.text : ""
@@ -112,6 +127,7 @@ export default function useSchoolPrograms() {
     workshops,
     workshopsAbstract,
     workshopsTabs,
+    schoolProgramsAbstract,
     schoolPrograms: programs,
     schoolProgramsTabs,
     getSchoolProgramById,

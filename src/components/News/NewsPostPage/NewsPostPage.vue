@@ -47,6 +47,7 @@
 
 .newsPostPage
   display: flex;
+  padding-top: 2em;
 
   .newsPostPageLeft
     width: 'calc(%s * 0.5)' % $boxed_content_max_width;

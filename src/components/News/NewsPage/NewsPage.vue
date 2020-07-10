@@ -26,7 +26,7 @@ $grid_padding = 25px;
 
 .newsPage
   .pageTitleText
-    margin: 0;
+    margin-bottom: 0;
 
   &__topGrid, &__grid
     width: 100%;

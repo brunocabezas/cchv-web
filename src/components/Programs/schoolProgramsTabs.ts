@@ -21,6 +21,7 @@ const SchoolProgramsTabs = defineComponent({
       isLoading,
       getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
+      schoolProgramsAbstract,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
 
@@ -34,13 +35,13 @@ const SchoolProgramsTabs = defineComponent({
     const displayActiveProgram = computed<boolean>(
       () => !!(activeProgram.value && activeProgram.value.id)
     )
-
     return {
       activeTabId,
       tabs,
       schoolPrograms,
       activeProgram,
       displayActiveProgram,
+      schoolProgramsAbstract,
       setActiveTab,
       isLoading,
       getSchoolProgramUrlBySlug,
