@@ -1,6 +1,6 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import usePrograms from "@/factories/usePrograms"
-import { Program } from "@/types/viewTypes"
+import { Program } from "@/types"
 import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"

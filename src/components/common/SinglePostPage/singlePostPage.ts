@@ -1,5 +1,5 @@
 import { defineComponent, PropType, computed } from "@vue/composition-api"
-import { SchoolProgram, Activity } from "@/types/viewTypes"
+import { SchoolProgram, Activity } from "@/types"
 import Loader from "@/components/Loader.vue"
 import useActivities from "@/factories/useActivities"
 import Media from "@/components/Media/Media.vue"

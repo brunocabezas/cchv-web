@@ -5,7 +5,7 @@ import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { TeamMembersKeys } from "@/types/customFieldsKeysTypes"
-import { TeamMember } from "@/types/viewTypes"
+import { TeamMember } from "@/types"
 import { TeamMemberPosition } from "@/utils/teamMembers"
 import { TeamMemberType } from "@/types/customFieldsTypes"
 import {

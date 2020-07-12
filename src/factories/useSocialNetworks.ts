@@ -8,7 +8,7 @@ import {
 } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes"
-import { SocialNetwork } from "@/types/viewTypes"
+import { SocialNetwork } from "@/types"
 import { SocialNetworkType } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)

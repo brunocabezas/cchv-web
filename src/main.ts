@@ -11,7 +11,7 @@ import VueProgressiveImage from "vue-progressive-image"
 import router from "@/utils/router"
 import "vue-image-lightbox/dist/vue-image-lightbox.min.css"
 import "./styles/main.styl"
-import "./types/index"
+import "./types"
 import "./utils/icons"
 import * as dayjs from "dayjs"
 import "dayjs/locale/es" // import locale

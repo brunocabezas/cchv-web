@@ -15,7 +15,7 @@ import {
   TeamMembersKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
-import { RelatedNewsPost } from "./viewTypes"
+import { RelatedNewsPost } from "./"
 //
 // Uses customFieldsKeysTypes to build types represnting
 // Wordpress custom fields
@@ -153,7 +153,7 @@ export type Sponsor = {
 export interface NewsPost {
   [NewsKeys.abstract]: string
   [NewsKeys.text]: string
-  // TODO related must be related news post in viewTypes
+  // TODO related must be related news post in types/index
   [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
   [NewsKeys.is_highlighted]: boolean

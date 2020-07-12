@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { Activity } from "@/types/viewTypes"
+import { Activity } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"

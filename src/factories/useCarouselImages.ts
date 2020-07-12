@@ -5,7 +5,7 @@ import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
-import { CarouselImage } from "@/types/viewTypes"
+import { CarouselImage } from "@/types"
 import { DEFAULT_ORDER, DOMAIN } from "@/utils/static"
 import { sortByOrder } from "@/utils/arrays"
 

@@ -30,7 +30,7 @@ import AppUrls from "@/utils/urls";
 import useActivities from "@/factories/useActivities";
 import { ActivityType } from "@/types/customFieldsTypes";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import { Activity } from "../../types/viewTypes";
+import { Activity } from "../../types";
 import useNews from "../../factories/useNews";
 
 const ActivitiesGrid = defineComponent({

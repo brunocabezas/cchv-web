@@ -5,7 +5,7 @@ import {
   WpImage,
   WPRelatedCustomFieldValue,
 } from "@/types/wordpressTypes"
-import { RelatedNewsPost, NewsPost } from "@/types/viewTypes"
+import { RelatedNewsPost, NewsPost } from "@/types"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
