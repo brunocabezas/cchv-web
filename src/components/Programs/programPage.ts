@@ -26,10 +26,10 @@ const ProgramPage = defineComponent({
     },
   },
   setup(props) {
-    const { getProgramById, isLoading } = usePrograms()
+    const { getProgramBySlug, isLoading } = usePrograms()
 
     const program = computed<Program | undefined>(() =>
-      getProgramById(props.slug)
+      getProgramBySlug(props.slug)
     )
     return {
       program,

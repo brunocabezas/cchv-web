@@ -8,11 +8,14 @@ import TeamPage from "@/components/About/TeamPage.vue"
 import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ProgramPage from "@/components/Programs/ProgramPage.vue"
+import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
 import AppUrls from "./urls"
+import useActivities from "@/factories/useActivities"
 
+const { getTypeBySlug } = useActivities()
 const routes = [
   { path: AppUrls.Home, component: Home },
   {
@@ -63,6 +66,18 @@ const routes = [
     }),
     meta: {
       title: "Programas",
+    },
+  },
+  // Programs Activities
+  {
+    path: `${AppUrls.Programs}campos-magneticos/:activityType`,
+    component: ActivitiesGridPage,
+    props: (route: Route) => ({
+      // Prop of ActivitiesGridPage
+      activityType: getTypeBySlug(route.params.activityType),
+    }),
+    meta: {
+      title: "Actividades",
     },
   },
   // Activities
