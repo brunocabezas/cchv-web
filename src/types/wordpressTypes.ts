@@ -140,3 +140,21 @@ export interface WPSelectCustomFieldValue<T> {
 }
 // export type WPSelectCustomField = WPSelectCustomFieldOption[]
 export type WPRelatedCustomFieldValue = number[]
+
+export type WPDocument = {
+  ID: number
+  id: number
+  title: string
+  filename: string
+  url: string
+  alt: string
+  author: string
+  description: string
+  caption: string
+  name: string
+  date: string
+  modified: string
+  mime_type: string
+  type: string
+  icon: string
+}

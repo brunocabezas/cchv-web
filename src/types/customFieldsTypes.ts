@@ -14,7 +14,7 @@ import {
   VideoKeys,
   TeamMembersKeys,
 } from "./customFieldsKeysTypes"
-import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
+import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
 import { RelatedNewsPost } from "./"
 //
 // Uses customFieldsKeysTypes to build types represnting
@@ -64,9 +64,12 @@ export interface Activity {
 //
 // PROGRAMS
 //
-
-// TODO use enum
-export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
+export enum ProgramExtraContent {
+  None = "none",
+  Videos = "videos",
+  Schools = "schools",
+  Activities = "activities",
+}
 
 export type Program = {
   [ProgramKeys.is_external]: boolean
@@ -105,26 +108,8 @@ export type ProgramVideo = {
 
 // DOCUMENT
 export type Document = {
-  [DocumentKeys.link]: CustomFieldDocument
+  [DocumentKeys.link]: WPDocument
   [DocumentKeys.order]: number
-}
-
-export type CustomFieldDocument = {
-  ID: number
-  id: number
-  title: string
-  filename: string
-  url: string
-  alt: string
-  author: string
-  description: string
-  caption: string
-  name: string
-  date: string
-  modified: string
-  mime_type: string
-  type: string
-  icon: string
 }
 
 // PAGE
@@ -134,8 +119,10 @@ export type Page = {
   [PageKeys.extra_content]: PageExtraContent
 }
 
-// TODO use enum
-export type PageExtraContent = "none" | "documents"
+export enum PageExtraContent {
+  None = "none",
+  Documents = "documents",
+}
 
 // SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {

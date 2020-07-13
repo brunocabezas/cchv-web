@@ -3,11 +3,10 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Document } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WPResponseItem } from "@/types/wordpressTypes"
+import { WPResponseItem, WPDocument } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { DEFAULT_ORDER } from "@/utils/static"
 import { DocumentKeys } from "@/types/customFieldsKeysTypes"
-import { CustomFieldDocument } from "@/types/customFieldsTypes"
 import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
@@ -23,7 +22,7 @@ export default function useTransparencyDocuments() {
         (documentPost): Document => ({
           id: documentPost.id,
           name: getWPTitle(documentPost),
-          documentUrl: getCustomField<CustomFieldDocument>(
+          documentUrl: getCustomField<WPDocument>(
             documentPost,
             DocumentKeys.link
           ).url,

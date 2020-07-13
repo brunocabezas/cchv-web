@@ -2,7 +2,6 @@ import Vue from "vue"
 import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import client from "../../api/client"
-import { HasDefined } from "@vue/composition-api/dist/types/basic"
 import { AxiosResponse } from "axios"
 
 Vue.use(VueCompositionApi)
@@ -14,19 +13,21 @@ export enum AsyncDataStatus {
   Error,
 }
 
-// TODO type async data
 interface asyncData<T> {
   status: Readonly<Ref<AsyncDataStatus>>
   isLoading: Readonly<Ref<boolean>>
-  fetch: () => void
-  data: Ref<HasDefined<T>>
+  fetch: (
+    urlParams?: AxiosParams | undefined,
+    pagination?: boolean
+  ) => Promise<AxiosResponse<T>>
+  data: Ref<T[]>
 }
 
 interface AxiosParams {
   [paramKey: string]: string | number
 }
 
-export default function useAsyncData<T>(url: apiRoutes) {
+export default function useAsyncData<T>(url: apiRoutes): asyncData<T> {
   const status = ref(AsyncDataStatus.Initial)
   const data = ref<Array<T>>([])
   // Fetch data from the url with GET
