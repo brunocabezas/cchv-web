@@ -4,7 +4,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/utils/useTabs"
-import { SchoolProgram } from "@/types/viewTypes"
+import { SchoolProgram } from "@/types"
 
 const WorkshopsTabs = defineComponent({
   name: "WorkshopsTabs",
@@ -19,6 +19,7 @@ const WorkshopsTabs = defineComponent({
       getSchoolProgramById,
       isLoading,
       workshopsTabs,
+      workshopsAbstract,
       getWorkshopUrlBySlug,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
@@ -39,6 +40,7 @@ const WorkshopsTabs = defineComponent({
       activeTabId,
       tabs,
       workshops,
+      workshopsAbstract,
       activeWorkshop,
       displayActiveWorkshop,
       setActiveTab,

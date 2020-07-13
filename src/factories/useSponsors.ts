@@ -5,7 +5,7 @@ import useAsyncData from "@/utils/useAsyncData"
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
-import { Sponsor, SponsorsCategory } from "@/types/viewTypes"
+import { Sponsor, SponsorsCategory } from "@/types"
 import { filterUndef, sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
@@ -49,13 +49,13 @@ export default function useSponsors() {
     data: sponsors,
     fetch: fetchSponsors,
     isLoading: isLoadingSponsors,
-  } = useAsyncData<WpResponseData>(apiRoutes.Sponsors)
+  } = useAsyncData<WPResponseItem>(apiRoutes.Sponsors)
 
   const {
     data,
     fetch: fetchSponsorsCategories,
     isLoading: isLoadingCategories,
-  } = useAsyncData<WpResponseData>(apiRoutes.SponsorsCategories)
+  } = useAsyncData<WPResponseItem>(apiRoutes.SponsorsCategories)
 
   const fetchSponsorsAndCategories = () =>
     Promise.all([fetchSponsorsCategories(), fetchSponsors()])

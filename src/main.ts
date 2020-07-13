@@ -1,35 +1,38 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import VueYoutube from "vue-youtube"
-import { ellipsisDirective, ellipsisComponent } from "@hyjiacan/vue-ellipsis"
+import { ellipsisDirective } from "@hyjiacan/vue-ellipsis"
 import VueCompositionApi from "@vue/composition-api"
 import App from "./App.vue"
 import VueLazyLoad from "vue-lazyload"
 import VueAnalytics from "vue-ua"
+import InfiniteLoading from "vue-infinite-loading"
 import VueProgressiveImage from "vue-progressive-image"
 import router from "@/utils/router"
 import "vue-image-lightbox/dist/vue-image-lightbox.min.css"
 import "./styles/main.styl"
-import "./types/index"
+import "./types"
 import "./utils/icons"
 import * as dayjs from "dayjs"
 import "dayjs/locale/es" // import locale
 
 dayjs.locale("es") // use locale
-// For directive usage
+
 Vue.directive(ellipsisDirective.name, ellipsisDirective)
+
 Vue.use(VueRouter)
-Vue.component(ellipsisComponent.name, ellipsisComponent)
 Vue.use(VueYoutube)
 Vue.use(VueCompositionApi)
 Vue.use(VueProgressiveImage)
+Vue.use(InfiniteLoading)
 // Required by vue-image-lightbox
 Vue.use(VueLazyLoad)
 
 // Your Google Analytics tracking ID.
 const trackingId = process.env.VUE_APP_GOOGLE_ANALYTICS || ""
+const setupAnaylitics = trackingId && process.env.NODE_ENV === "production"
 
-if (trackingId && process.env.NODE_ENV === "production") {
+if (setupAnaylitics) {
   console.log("setting up Google analytics")
   Vue.use(VueAnalytics, {
     // [Required] The name of your app as specified in Google Analytics.
@@ -42,7 +45,6 @@ if (trackingId && process.env.NODE_ENV === "production") {
   })
 }
 
-// eslint-disable-next-line no-new
 new Vue({
   el: "#app",
   render: (h) => h(App),

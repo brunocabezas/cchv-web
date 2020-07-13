@@ -2,17 +2,17 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
-import { CarouselImage } from "@/types/viewTypes"
+import { CarouselImage } from "@/types"
 import { DEFAULT_ORDER, DOMAIN } from "@/utils/static"
 import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchCarouselImages, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.CarouselImages)
 
 export default function useCarouselImages() {
@@ -28,13 +28,13 @@ export default function useCarouselImages() {
           const isInternal = imgUrl.includes(DOMAIN)
           let url = imgUrl
 
+          // Internal urls already inlcude DOMAIN,
+          // should be removed to be used with <router-link />
           if (isInternal) {
-            const urlSlices = url.split(`${DOMAIN}/`)
-            urlSlices.shift()
+            const urlSlices = url.split(`${DOMAIN}/futuro/`)
+            urlSlices.shift() // remove domain name
             url = urlSlices.join("")
           }
-
-          console.log(url)
 
           return {
             id: carouselImagePost.id,

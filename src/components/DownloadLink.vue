@@ -46,6 +46,7 @@ const DownloadLink = defineComponent({
           link.click();
           URL.revokeObjectURL(link.href);
         })
+        .catch(err => console.error(err))
         .finally(() => (loading.value = false));
     }
 

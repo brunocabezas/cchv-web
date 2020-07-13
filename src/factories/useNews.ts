@@ -1,19 +1,21 @@
 import Vue from "vue"
-import VueCompositionApi, { computed, Ref } from "@vue/composition-api"
+import VueCompositionApi, { computed, Ref, ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { NewsPost, Activity } from "@/types/viewTypes"
+import { NewsPost, Activity } from "@/types"
 import helpers from "@/utils/customFields"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchNews, isLoading } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchNews, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.News
 )
+// Page number used to fetch data using vue-infinite-loading
+const newsPage = ref(1)
 
 export default function useNews() {
   const news = computed<NewsPost[]>(() => helpers.mapNewsToView(data.value))
@@ -26,6 +28,28 @@ export default function useNews() {
   const newsToGrid = computed(() =>
     news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
   )
+
+  // Some news can be defined as also activities
+  // Map news with NewsKeys.is_activity field set to true
+  const activityNews = computed<Activity[]>(() => {
+    const newsAsActivities = news.value.filter(
+      (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
+    )
+
+    return newsAsActivities.map(
+      (n: NewsPost): Activity => ({
+        id: n.id,
+        name: n.title,
+        slug: n.slug,
+        type: n.is_activity,
+        isNewsPost: true,
+        abstract: n.abstract,
+        gallery: n.gallery,
+        text: n.text,
+        video_url: n.video_url,
+      })
+    )
+  })
 
   function getNewsPostBySlug(slug: string) {
     return news.value.find((post) => post.slug === slug)
@@ -51,27 +75,9 @@ export default function useNews() {
     )
   }
 
-  // Some news can be defined as also activities
-  // Map news with NewsKeys.is_activity field set to true
-  const activityNews = computed<Activity[]>(() => {
-    const newsAsActivities = news.value.filter(
-      (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
-    )
-
-    return newsAsActivities.map(
-      (n: NewsPost): Activity => ({
-        id: n.id,
-        name: n.title,
-        slug: n.slug,
-        type: n.is_activity,
-        isNewsPost: true,
-        abstract: n.abstract,
-        gallery: n.gallery,
-        text: n.text,
-        video_url: n.video_url,
-      })
-    )
-  })
+  function setNewsPage(pageNumber: number) {
+    newsPage.value = pageNumber
+  }
 
   return {
     news: newsToGrid,
@@ -82,5 +88,8 @@ export default function useNews() {
     getNewsPostUrlBySlug,
     getNewsPostBySlug,
     fetchNews,
+    // Pagination
+    setNewsPage,
+    currentPage: newsPage,
   }
 }

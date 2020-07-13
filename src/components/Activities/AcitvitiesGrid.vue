@@ -30,7 +30,7 @@ import AppUrls from "@/utils/urls";
 import useActivities from "@/factories/useActivities";
 import { ActivityType } from "@/types/customFieldsTypes";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import { Activity } from "../../types/viewTypes";
+import { Activity } from "../../types";
 import useNews from "../../factories/useNews";
 
 const ActivitiesGrid = defineComponent({
@@ -65,11 +65,11 @@ export default ActivitiesGrid;
 
   .activitiesGridContainer
     display: flex;
+    flex-wrap: wrap;
 
     .activity
       margin: 5px;
-      // max-width: 100px;
-      width: 33.3%;
+      width: calc(33.333333% - 10px);
 
   .activitiesGridTitle
     margin-top: 5px;

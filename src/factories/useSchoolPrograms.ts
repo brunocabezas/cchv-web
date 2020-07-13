@@ -1,9 +1,9 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { SchoolProgram } from "@/types/viewTypes"
+import { SchoolProgram } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData, WpImage } from "@/types/wordpressTypes"
+import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
 import { Tab, Tabs } from "../utils/useTabs"
@@ -17,14 +17,14 @@ export interface SchoolProgramTab extends Tab {
 }
 type SchoolProgramTabs = SchoolProgramTab[]
 
-// const SCHOOL_PROGRAMS_TABS: Tabs = [
-//   { id: 0, title: "Artes y Oficios" },
-//   { id: 1, title: "Mediacion y comunidades" },
-// ]
-
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.SchoolPrograms)
+
+// The text to introduce workshops (displayed above the workshop tabs)
+// is included on a workshop from schoolPrograms with this specific title
+const WORKSHOP_ABSTRACT_POST_NAME = "MANDRAGORA_TEXTO"
+const SCHOOL_ABSTRACT_POST_NAME = "ESCUELAS_TEXTO"
 
 export default function useSchoolPrograms() {
   const schoolPrograms = computed<SchoolProgram[]>(() => {
@@ -63,13 +63,38 @@ export default function useSchoolPrograms() {
     )
   })
 
-  // Divinding exports by is_workshp
+  // Programs have is_workshop set false
   const programs = computed<SchoolProgram[]>(() =>
-    schoolPrograms.value.filter((program) => !program.is_workshop)
+    schoolPrograms.value
+      .filter((program) => !program.is_workshop)
+      // Remove workshop that contains the abstract text
+      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
   )
+
   const workshops = computed<SchoolProgram[]>(() =>
-    schoolPrograms.value.filter((program) => program.is_workshop)
+    schoolPrograms.value
+      .filter((program) => program.is_workshop)
+      // Remove workshop that contains the abstract text
+      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
   )
+
+  const workshopsAbstract = computed(() => {
+    const postWithText = schoolPrograms.value.find(
+      (p) => p.name === WORKSHOP_ABSTRACT_POST_NAME
+    )
+
+    return postWithText ? postWithText.text : ""
+  })
+
+  const schoolProgramsAbstract = computed(() => {
+    const postWithText = schoolPrograms.value.find(
+      (p) => p.name === SCHOOL_ABSTRACT_POST_NAME
+    )
+
+    return postWithText ? postWithText.text : ""
+  })
 
   const schoolProgramsTabs = computed<SchoolProgramTabs>(() =>
     programs.value.map((t) => ({
@@ -100,7 +125,9 @@ export default function useSchoolPrograms() {
     fetchSchoolPrograms,
     isLoading,
     workshops,
+    workshopsAbstract,
     workshopsTabs,
+    schoolProgramsAbstract,
     schoolPrograms: programs,
     schoolProgramsTabs,
     getSchoolProgramById,

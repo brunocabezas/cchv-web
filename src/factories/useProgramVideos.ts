@@ -1,16 +1,16 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { ProgramVideo } from "@/types/viewTypes"
+import { ProgramVideo } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { ProgramVideoKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchProgramVideos, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.ProgramVideos)
 
 export default function usePrograms() {

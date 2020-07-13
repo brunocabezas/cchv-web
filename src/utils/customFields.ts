@@ -5,7 +5,7 @@ import {
   WpImage,
   WPRelatedCustomFieldValue,
 } from "@/types/wordpressTypes"
-import { RelatedNewsPost, NewsPost } from "@/types/viewTypes"
+import { RelatedNewsPost, NewsPost } from "@/types"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
@@ -40,6 +40,12 @@ const mapRelatedNews = (
   )
 }
 
+const getTextFromHtmlString = (htmlString: string): string => {
+  var el = document.createElement("html")
+  el.innerHTML = htmlString
+  return el.innerHTML
+}
+
 const mapNewsToView = (state: WpResponseData): NewsPost[] => {
   const news = state
     .map(
@@ -54,13 +60,17 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
           NewsKeys.related,
           []
         )
+
         return {
           id: newsPost.id,
           title: getWPTitle(newsPost),
           date: dayjs(newsPost.date).format(DATE_FORMAT),
           thumbnail: (gallery[0] && gallery[0].url) || "",
           slug: newsPost.slug,
-          abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
+          // As abstract is displayed with v-ellipsis, text needs to be parsed before the view
+          abstract: getTextFromHtmlString(
+            getCustomField(newsPost, NewsKeys.abstract, "")
+          ),
           is_activity: getCustomField<ActivityType>(
             newsPost,
             NewsKeys.is_activity

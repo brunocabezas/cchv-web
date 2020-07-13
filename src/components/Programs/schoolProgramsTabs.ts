@@ -4,7 +4,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
 import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/utils/useTabs"
-import { SchoolProgram } from "@/types/viewTypes"
+import { SchoolProgram } from "@/types"
 
 const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",
@@ -21,6 +21,7 @@ const SchoolProgramsTabs = defineComponent({
       isLoading,
       getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
+      schoolProgramsAbstract,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
 
@@ -34,13 +35,13 @@ const SchoolProgramsTabs = defineComponent({
     const displayActiveProgram = computed<boolean>(
       () => !!(activeProgram.value && activeProgram.value.id)
     )
-
     return {
       activeTabId,
       tabs,
       schoolPrograms,
       activeProgram,
       displayActiveProgram,
+      schoolProgramsAbstract,
       setActiveTab,
       isLoading,
       getSchoolProgramUrlBySlug,

@@ -1,6 +1,14 @@
 <template>
   <div class="schoolProgramTabs">
     <h1 class="pageTitle">Escuelas</h1>
+    <!-- &#8221; => '' is used to filter  https://www.codetable.net/decimal/8221 -->
+    <div
+      class="pageBody"
+      v-if="
+        schoolProgramsAbstract && !schoolProgramsAbstract.includes(`&#8221;`)
+      "
+      v-html="schoolProgramsAbstract"
+    ></div>
     <Loader :loading="isLoading" />
     <div class="pageRow schoolProgramTabsTitle">
       <button

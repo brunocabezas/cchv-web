@@ -12,26 +12,15 @@ import {
   ProgramVideoKeys,
   ActivityKeys,
   VideoKeys,
+  TeamMembersKeys,
 } from "./customFieldsKeysTypes"
-import { WpImage, WPSelectCustomFieldValue } from "./wordpressTypes"
-import { RelatedNewsPost } from "./viewTypes"
-
+import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
+import { RelatedNewsPost } from "./"
 //
 // Uses customFieldsKeysTypes to build types represnting
 // Wordpress custom fields
 // Every type declared must be exported
 
-// TODO use enum
-export type ProgramExtraContent = "none" | "videos" | "schools" | "activities"
-
-// declare module CustomFields {
-export enum ActivityType {
-  Movie = "movie",
-  Conversation = "conversation",
-  Concert = "concert",
-  Performance = "performance",
-  None = "none",
-}
 // SOCIAL NETWORK
 export enum SocialNetworkType {
   Facebook = "facebook",
@@ -44,7 +33,26 @@ export type SocialNetwork = {
   [SocialNetworksKeys.type]: WPSelectCustomFieldValue<SocialNetworkType>
 }
 
+// TEAM
+export enum TeamMemberType {
+  Staff = "staff",
+  Team = "team",
+}
+export interface TeamMember {
+  [TeamMembersKeys.order]: number
+  [TeamMembersKeys.position]: string
+  [TeamMembersKeys.type]: TeamMemberType
+}
+
 // ACTIVITIES
+export enum ActivityType {
+  Movie = "movie",
+  Conversation = "conversation",
+  Concert = "concert",
+  Performance = "performance",
+  None = "none",
+}
+
 export interface Activity {
   [ActivityKeys.abstract]: string
   [ActivityKeys.gallery]: WpImage[]
@@ -56,6 +64,13 @@ export interface Activity {
 //
 // PROGRAMS
 //
+export enum ProgramExtraContent {
+  None = "none",
+  Videos = "videos",
+  Schools = "schools",
+  Activities = "activities",
+}
+
 export type Program = {
   [ProgramKeys.is_external]: boolean
   [ProgramKeys.url]: string
@@ -93,26 +108,8 @@ export type ProgramVideo = {
 
 // DOCUMENT
 export type Document = {
-  [DocumentKeys.link]: CustomFieldDocument
+  [DocumentKeys.link]: WPDocument
   [DocumentKeys.order]: number
-}
-
-export type CustomFieldDocument = {
-  ID: number
-  id: number
-  title: string
-  filename: string
-  url: string
-  alt: string
-  author: string
-  description: string
-  caption: string
-  name: string
-  date: string
-  modified: string
-  mime_type: string
-  type: string
-  icon: string
 }
 
 // PAGE
@@ -122,8 +119,10 @@ export type Page = {
   [PageKeys.extra_content]: PageExtraContent
 }
 
-// TODO use enum
-export type PageExtraContent = "none" | "documents"
+export enum PageExtraContent {
+  None = "none",
+  Documents = "documents",
+}
 
 // SPONSOR / SPONSOR CATEGORY
 export type SponsorsCategory = {
@@ -141,7 +140,7 @@ export type Sponsor = {
 export interface NewsPost {
   [NewsKeys.abstract]: string
   [NewsKeys.text]: string
-  // TODO related must be related news post in viewTypes
+  // TODO related must be related news post in types/index
   [NewsKeys.related]: number[] | RelatedNewsPost[]
   [NewsKeys.video_url]: string
   [NewsKeys.is_highlighted]: boolean

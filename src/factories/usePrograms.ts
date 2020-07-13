@@ -1,10 +1,10 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { Program } from "@/types/viewTypes"
+import { Program } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import {
-  WpResponseData,
+  WPResponseItem,
   WpImage,
   WPSelectCustomFieldValue,
 } from "@/types/wordpressTypes"
@@ -15,7 +15,7 @@ import AppUrls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Programs
 )
 

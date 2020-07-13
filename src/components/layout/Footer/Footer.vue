@@ -17,7 +17,7 @@
         <h3 class="footerTitle">
           Redes Sociales
         </h3>
-        <SocialNetworks />
+        <SocialNetworks small />
       </div>
       <div class="footerTopSection suscribeForm">
         <h3 class="footerTitle">

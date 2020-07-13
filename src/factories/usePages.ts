@@ -1,16 +1,16 @@
 import Vue from "vue"
-import VueCompositionApi, { Ref, computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { Page } from "@/types/viewTypes"
+import { Page } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData, WpImage } from "@/types/wordpressTypes"
+import { WPResponseItem, WpImage } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { PageKeys } from "@/types/customFieldsKeysTypes"
 import { PageExtraContent } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchPages, isLoading } = useAsyncData<WpResponseData>(
+const { data, fetch: fetchPages, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Pages
 )
 
@@ -27,14 +27,6 @@ export default function usePages() {
           PageKeys.extra_content
         ),
       })
-    )
-  })
-
-  const teamPage = computed<Page | null>(() => {
-    return (
-      pages.value.find((page) =>
-        page.name.toLocaleLowerCase().includes("equipo")
-      ) || null
     )
   })
 
@@ -56,7 +48,6 @@ export default function usePages() {
 
   return {
     fetchPages,
-    teamPage,
     transparencyPage,
     historyPage,
     isLoading,

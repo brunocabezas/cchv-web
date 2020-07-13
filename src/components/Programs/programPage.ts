@@ -1,12 +1,13 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import usePrograms from "@/factories/usePrograms"
-import { Program } from "@/types/viewTypes"
+import { Program } from "@/types"
 import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue"
 import WorkshopsTabs from "@/components/Programs/WorkshopsTabs.vue"
+import { ProgramExtraContent } from "@/types/customFieldsTypes"
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
@@ -34,13 +35,19 @@ const ProgramPage = defineComponent({
       program,
       isLoading,
       isMagneticFieldsProgram: computed(
-        () => program.value && program.value.extra_content === "activities"
+        () =>
+          program.value &&
+          program.value.extra_content === ProgramExtraContent.Activities
       ),
       isSchoolProgram: computed(
-        () => program.value && program.value.extra_content === "schools"
+        () =>
+          program.value &&
+          program.value.extra_content === ProgramExtraContent.Schools
       ),
       isDowneyProgram: computed(
-        () => program.value && program.value.extra_content === "videos"
+        () =>
+          program.value &&
+          program.value.extra_content === ProgramExtraContent.Videos
       ),
     }
   },

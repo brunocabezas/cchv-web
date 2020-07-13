@@ -31,7 +31,7 @@ export default (client: AxiosInstance) => {
 
   // News
   mock.onGet(apiRoutes.News).reply(200, newsSuccess)
-  mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
+  // mock.onGet(apiRoutes.HomeNews).reply(200, newsSuccess)
 
   // Pages
   mock.onGet(apiRoutes.Pages).reply(200, pagesSuccess)

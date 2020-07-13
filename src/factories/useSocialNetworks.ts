@@ -3,18 +3,18 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/utils/useAsyncData"
 import {
-  WpResponseData,
   WPSelectCustomFieldValue,
+  WPResponseItem,
 } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes"
-import { SocialNetwork } from "@/types/viewTypes"
+import { SocialNetwork } from "@/types"
 import { SocialNetworkType } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchSocialNetworks, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.SocialNetworks)
 
 export default function useSocialNetworks() {

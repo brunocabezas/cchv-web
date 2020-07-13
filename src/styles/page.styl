@@ -7,9 +7,12 @@
 .page
   // To display loader
   min-height: 100vh;
-  page_padding();
+  page_padding(0);
   max-width: $boxed_content_max_width;
   margin: 0 auto;
+
+  &.singlePostPage
+    padding-top: 2em;
 
   .pageTitle
     display: flex;

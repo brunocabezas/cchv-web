@@ -1,5 +1,5 @@
 import { NAVIGATION_MENU } from "./static"
-import { Program } from "@/types/viewTypes"
+import { Program } from "@/types"
 import { Ref } from "@vue/composition-api"
 import { NavMenu } from "@/types"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"

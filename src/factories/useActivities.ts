@@ -1,9 +1,9 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { Activity } from "@/types/viewTypes"
+import { Activity } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData, WpImage } from "@/types/wordpressTypes"
+import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import AppUrls from "@/utils/urls"
 import { getWPTitle, getCustomField } from "@/utils/api"
 import { ActivityKeys } from "@/types/customFieldsKeysTypes"
@@ -13,7 +13,7 @@ import useNews from "./useNews"
 Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchActivities, isLoading } = useAsyncData<
-  WpResponseData
+  WPResponseItem
 >(apiRoutes.Activities)
 
 export default function useActivities() {

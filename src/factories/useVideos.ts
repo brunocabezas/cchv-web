@@ -1,16 +1,16 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { Video } from "@/types/viewTypes"
+import { Video } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
-import { WpResponseData } from "@/types/wordpressTypes"
+import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { VideoKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
 
 export default function useVideos() {
-  const { data, fetch: fetchVideos, isLoading } = useAsyncData<WpResponseData>(
+  const { data, fetch: fetchVideos, isLoading } = useAsyncData<WPResponseItem>(
     apiRoutes.Videos
   )
 
