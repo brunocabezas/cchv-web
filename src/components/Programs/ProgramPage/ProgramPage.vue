@@ -16,15 +16,15 @@
     ></div>
     <DowneyProgramVideos v-if="isDowneyProgram" />
     <SchoolProgramsTabs v-if="isSchoolProgram" />
-    <WorkshopsTabs v-if="isSchoolProgram" />
+    <SchoolProgramWorkshopsTabs v-if="isSchoolProgram" />
+    <Editions v-if="isArtScienceAndCultureProgram" />
     <ProgramActivites v-if="isMagneticFieldsProgram" />
   </div>
 </template>
 
 <script lang="ts" src="./programPage.ts"></script>
 <style lang="stylus">
-@import '../../styles/variables.styl';
-
+// @import '../../styles/variables.styl';
 .program
   .programText.pageRow
     display: block;

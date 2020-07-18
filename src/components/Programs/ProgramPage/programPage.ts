@@ -5,8 +5,8 @@ import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
-import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs.vue"
-import WorkshopsTabs from "@/components/Programs/WorkshopsTabs.vue"
+import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue"
+import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 
 const ProgramPage = defineComponent({
@@ -16,7 +16,7 @@ const ProgramPage = defineComponent({
     DowneyProgramVideos,
     SchoolProgramsTabs,
     ProgramActivites,
-    WorkshopsTabs,
+    SchoolProgramWorkshopsTabs,
     Media,
   },
   props: {

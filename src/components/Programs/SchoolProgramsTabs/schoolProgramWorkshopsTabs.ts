@@ -6,8 +6,8 @@ import useSchoolPrograms from "@/factories/useSchoolPrograms"
 import useTabs from "@/utils/useTabs"
 import { SchoolProgram } from "@/types"
 
-const WorkshopsTabs = defineComponent({
-  name: "WorkshopsTabs",
+const SchoolProgramWorkshopsTabs = defineComponent({
+  name: "SchoolProgramWorkshopsTabs",
   components: {
     Loader,
     ProgressiveImage,
@@ -50,4 +50,4 @@ const WorkshopsTabs = defineComponent({
   },
 })
 
-export default WorkshopsTabs
+export default SchoolProgramWorkshopsTabs
