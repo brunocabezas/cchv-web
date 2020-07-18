@@ -36,15 +36,9 @@ const SinglePostPage = defineComponent({
       workshops,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
-    const {
-      activities,
-      fetchActivities,
-      isLoading: isLoadingActivities,
-    } = useActivities()
+    const { activities, isLoading: isLoadingActivities } = useActivities()
 
-    if (props.pageType === SinglePostDataType.Activity) {
-      fetchActivities()
-    } else if (
+    if (
       props.pageType === SinglePostDataType.SchoolProgram ||
       props.pageType === SinglePostDataType.Workshop
     ) {

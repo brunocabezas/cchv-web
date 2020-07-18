@@ -13,7 +13,7 @@ export enum apiRoutes {
   Sponsors = "/sponsors",
   SponsorsCategories = "/sponsor_categories",
   SocialNetworks = "/social_networks",
-  Activities = "/activities",
+  // Activities = "/activities",
 }
 
 export default apiRoutes
