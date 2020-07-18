@@ -37,3 +37,4 @@ npm run build
 ## TODO
 
 - add i18n, organize string labels
+- filter activities by type on activities page
