@@ -1,8 +1,10 @@
 # web-cchv
 
-#### TODO
+Web Corporacion Chilena de Video: https://www.cchv.cl
 
-TBD
+Based on [VUE CLI](https://cli.vuejs.org)
+
+![Web Corporacion Chilena de Video](web-cchv.jpg)
 
 ## Project setup
 
@@ -32,12 +34,6 @@ VUE_APP_GOOGLE_ANALYTICS // Google analytics tracking id
 npm run build
 ```
 
-### Lints and fixes files
+## TODO
 
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- add i18n, organize string labels

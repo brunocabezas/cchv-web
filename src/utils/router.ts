@@ -1,6 +1,7 @@
 import VueRouter, { Route } from "vue-router"
 import Vue from "vue"
 import { DEFAULT_TITLE } from "@/utils/static"
+import Urls from "./urls"
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
@@ -12,7 +13,6 @@ import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
-import Urls from "./urls"
 import useActivities from "@/factories/useActivities"
 
 const { getTypeBySlug } = useActivities()
@@ -131,9 +131,9 @@ router.afterEach((to, from) => {
   // Use next tick to handle router history correctly
   // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
   Vue.nextTick(() => {
-    document.title = `${DEFAULT_TITLE}${
-      to.meta.title ? ` | ${to.meta.title}` : ""
-    }`
+    // Display title depending on each route meta information meta.title
+    const metaTitle = to.meta.title ? ` | ${to.meta.title}` : ""
+    document.title = `${DEFAULT_TITLE}${metaTitle}`
   })
 })
 
