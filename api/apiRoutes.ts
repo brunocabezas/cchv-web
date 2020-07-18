@@ -1,19 +1,18 @@
 // Routes that provide data from api
 export enum apiRoutes {
-  // Home
-  CarouselImages = "/carousel_images",
+  CarouselImages = "/carousel-images",
   News = "/news",
-  Programs = "/program",
-  ProgramVideos = "/videos",
-  SchoolPrograms = "/school_program",
-  Pages = "/cchv_page",
-  Videos = "/home_videos",
+  Programs = "/programs",
+  ProgramVideos = "/program-videos",
+  SchoolPrograms = "/school-programs",
+  Pages = "/custom-pages",
+  Videos = "/home-videos",
   Team = "/team",
   Documents = "/documents",
   Sponsors = "/sponsors",
-  SponsorsCategories = "/sponsor_categories",
-  SocialNetworks = "/social_networks",
-  // Activities = "/activities",
+  Editions = "/editions",
+  SponsorsCategories = "/sponsor-categories",
+  SocialNetworks = "/social-networks",
 }
 
 export default apiRoutes

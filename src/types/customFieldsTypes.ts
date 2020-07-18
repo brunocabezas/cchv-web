@@ -69,6 +69,7 @@ export enum ProgramExtraContent {
   Videos = "videos",
   Schools = "schools",
   Activities = "activities",
+  ArtScienceAndCulture = "editions",
 }
 
 export type Program = {

@@ -49,6 +49,12 @@ const ProgramPage = defineComponent({
           program.value &&
           program.value.extra_content === ProgramExtraContent.Videos
       ),
+      isArtScienceAndCultureProgram: computed(
+        () =>
+          program.value &&
+          program.value.extra_content ===
+            ProgramExtraContent.ArtScienceAndCulture
+      ),
     }
   },
 })
