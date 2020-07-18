@@ -1,4 +1,4 @@
-import AppUrls from "./urls"
+import Urls from "./urls"
 import { NavigationMenu, NavMenu } from "@/types"
 
 export const DOMAIN = "cchv.cl"
@@ -20,11 +20,11 @@ const AboutPage: NavigationMenu = {
   id: NavMenu.About,
   label: "Somos",
   pages: [
-    { id: AppUrls.AboutHistory, url: AppUrls.AboutHistory, label: "Historia" },
-    { id: AppUrls.AboutTeam, url: AppUrls.AboutTeam, label: "Equipo" },
+    { id: Urls.AboutHistory, url: Urls.AboutHistory, label: "Historia" },
+    { id: Urls.AboutTeam, url: Urls.AboutTeam, label: "Equipo" },
     {
-      id: AppUrls.AboutTransparency,
-      url: AppUrls.AboutTransparency,
+      id: Urls.AboutTransparency,
+      url: Urls.AboutTransparency,
       label: "Transparencia",
     },
   ],
@@ -35,18 +35,18 @@ const ProgramsPage: NavigationMenu = {
   // Program pages will get filled with API pages that are external
   pages: [
     {
-      id: AppUrls.DowneyProgram,
-      url: AppUrls.DowneyProgram,
+      id: Urls.DowneyProgram,
+      url: Urls.DowneyProgram,
       label: "Concurso Internacional Juan Downey",
     },
     {
-      id: AppUrls.SchoolPrograms,
-      url: AppUrls.SchoolPrograms,
+      id: Urls.SchoolPrograms,
+      url: Urls.SchoolPrograms,
       label: "Escuela de la intuición",
     },
     {
-      id: AppUrls.MagneticFieldsProgram,
-      url: AppUrls.MagneticFieldsProgram,
+      id: Urls.MagneticFieldsProgram,
+      url: Urls.MagneticFieldsProgram,
       label: "Campos Magnéticos",
     },
   ],
@@ -54,7 +54,7 @@ const ProgramsPage: NavigationMenu = {
 
 const NewsPage: NavigationMenu = {
   id: NavMenu.News,
-  url: AppUrls.News,
+  url: Urls.News,
   label: "Noticias",
 }
 

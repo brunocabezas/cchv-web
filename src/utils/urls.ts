@@ -1,4 +1,5 @@
-export enum AppUrls {
+// App urls
+enum Urls {
   Home = "/",
   News = "/noticias",
   NewsPost = "/noticias/",
@@ -14,4 +15,4 @@ export enum AppUrls {
   AboutTransparency = "/transparencia",
 }
 
-export default AppUrls
+export default Urls

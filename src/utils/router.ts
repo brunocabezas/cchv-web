@@ -12,21 +12,21 @@ import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
-import AppUrls from "./urls"
+import Urls from "./urls"
 import useActivities from "@/factories/useActivities"
 
 const { getTypeBySlug } = useActivities()
 const routes = [
-  { path: AppUrls.Home, component: Home },
+  { path: Urls.Home, component: Home },
   {
-    path: AppUrls.News,
+    path: Urls.News,
     component: NewsPage,
     meta: {
       title: "Noticias",
     },
   },
   {
-    path: `${AppUrls.NewsPost}:postSlug`,
+    path: `${Urls.NewsPost}:postSlug`,
     component: NewsPostPage,
     props: (route: Route) => ({
       postSlug: route.params.postSlug,
@@ -37,21 +37,21 @@ const routes = [
   },
   // About
   {
-    path: AppUrls.AboutHistory,
+    path: Urls.AboutHistory,
     component: HistoryPage,
     meta: {
       title: "Historia",
     },
   },
   {
-    path: AppUrls.AboutTeam,
+    path: Urls.AboutTeam,
     component: TeamPage,
     meta: {
       title: "Equipo",
     },
   },
   {
-    path: AppUrls.AboutTransparency,
+    path: Urls.AboutTransparency,
     component: TransparencyPage,
     meta: {
       title: "Transparencia",
@@ -59,7 +59,7 @@ const routes = [
   },
   // Programs
   {
-    path: `${AppUrls.Programs}:slug`,
+    path: `${Urls.Programs}:slug`,
     component: ProgramPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -70,7 +70,7 @@ const routes = [
   },
   // Programs Activities
   {
-    path: `${AppUrls.Programs}campos-magneticos/:activityType`,
+    path: `${Urls.Programs}campos-magneticos/:activityType`,
     component: ActivitiesGridPage,
     props: (route: Route) => ({
       // Prop of ActivitiesGridPage
@@ -82,7 +82,7 @@ const routes = [
   },
   // Activities
   {
-    path: `${AppUrls.Activities}:slug`,
+    path: `${Urls.Activities}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -94,7 +94,7 @@ const routes = [
   },
   // School Program Single Page
   {
-    path: `${AppUrls.SchoolProgram}:slug`,
+    path: `${Urls.SchoolProgram}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -106,7 +106,7 @@ const routes = [
   },
   // Workshops Single Page
   {
-    path: `${AppUrls.Workshop}:slug`,
+    path: `${Urls.Workshop}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,

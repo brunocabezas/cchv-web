@@ -7,7 +7,7 @@ import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
 import { Tab, Tabs } from "../utils/useTabs"
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
@@ -117,9 +117,9 @@ export default function useSchoolPrograms() {
   }
 
   const getSchoolProgramUrlBySlug = (slug: string) =>
-    `${AppUrls.SchoolProgram}${slug}`
+    `${Urls.SchoolProgram}${slug}`
 
-  const getWorkshopUrlBySlug = (slug: string) => `${AppUrls.Workshop}${slug}`
+  const getWorkshopUrlBySlug = (slug: string) => `${Urls.Workshop}${slug}`
 
   return {
     fetchSchoolPrograms,

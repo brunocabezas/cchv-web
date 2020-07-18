@@ -4,7 +4,7 @@ import apiRoutes from "../../api/apiRoutes"
 import { Activity } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 import { getWPTitle, getCustomField } from "@/utils/api"
 import { ActivityKeys } from "@/types/customFieldsKeysTypes"
 import { ActivityType } from "@/types/customFieldsTypes"
@@ -41,11 +41,11 @@ export default function useActivities() {
   })
 
   const getActivityUrlBySlug = (postSlug: string): string => {
-    return `${AppUrls.Activities}${postSlug}`
+    return `${Urls.Activities}${postSlug}`
   }
 
   const getActivitiesGridUrlByActivityType = (type: ActivityType): string => {
-    return `${AppUrls.Programs}campos-magneticos/${getSlugByType(type)}`
+    return `${Urls.Programs}campos-magneticos/${getSlugByType(type)}`
   }
 
   const getActvitiesTitleByType = (type: ActivityType): string => {

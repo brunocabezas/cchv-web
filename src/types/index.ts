@@ -1,4 +1,4 @@
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 import * as CustomFields from "@/types/customFieldsTypes"
 
 // LAYOUT
@@ -9,8 +9,8 @@ export enum AboutPages {
 
 export interface SubPage {
   label: string
-  url: AppUrls
-  id: AppUrls
+  url: Urls
+  id: Urls
 }
 
 export enum NavMenu {
@@ -21,7 +21,7 @@ export enum NavMenu {
 
 export interface NavigationMenu {
   label: string
-  url?: AppUrls
+  url?: Urls
   id: NavMenu
   pages?: SubPage[]
   is_external?: boolean

@@ -11,7 +11,7 @@ import {
 import { getCustomField, getWPTitle } from "@/utils/api"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
 
@@ -38,7 +38,7 @@ export default function usePrograms() {
             // If program is not external, url is build with the slug
             nav_menu_url: isExternal
               ? getCustomField(programPost, ProgramKeys.url)
-              : `${AppUrls.Programs}${programPost.slug}`,
+              : `${Urls.Programs}${programPost.slug}`,
             slug: programPost.slug,
             video_url: getCustomField(programPost, ProgramKeys.video_url),
             is_external: isExternal,

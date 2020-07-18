@@ -6,12 +6,12 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import AppUrls from "@/utils/urls";
+import Urls from "@/utils/urls";
 
 const Logo = defineComponent({
   name: "Logo",
   setup() {
-    return { homeUrl: AppUrls.Home };
+    return { homeUrl: Urls.Home };
   }
 });
 
