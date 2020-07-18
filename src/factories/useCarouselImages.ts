@@ -31,7 +31,7 @@ export default function useCarouselImages() {
           // Internal urls already inlcude DOMAIN,
           // should be removed to be used with <router-link />
           if (isInternal) {
-            const urlSlices = url.split(`${DOMAIN}/futuro/`)
+            const urlSlices = url.split(`${DOMAIN}/`)
             urlSlices.shift() // remove domain name
             url = urlSlices.join("")
           }

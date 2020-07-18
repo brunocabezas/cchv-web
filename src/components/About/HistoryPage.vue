@@ -20,7 +20,7 @@ import { defineComponent, onMounted } from "@vue/composition-api";
 import usePages from "@/factories/usePages";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
-import AppUrls from "@/utils/urls";
+import Urls from "@/utils/urls";
 
 export default defineComponent({
   name: "HistoryPage",

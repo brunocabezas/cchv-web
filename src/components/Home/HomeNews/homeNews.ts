@@ -3,7 +3,7 @@ import Icon from "vue-awesome/components/Icon.vue"
 import { MAIN_COLOR } from "@/utils/static"
 import Loader from "@/components/Loader.vue"
 import NewsThumb from "@/components/News/NewsThumb.vue"
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 import useNews from "@/factories/useNews"
 
 const HomeNews = defineComponent({
@@ -14,7 +14,7 @@ const HomeNews = defineComponent({
 
     fetchNews({ per_page: 5 })
 
-    return { isLoading, news, newsGridUrl: AppUrls.News, MAIN_COLOR }
+    return { isLoading, news, newsGridUrl: Urls.News, MAIN_COLOR }
   },
 })
 export default HomeNews

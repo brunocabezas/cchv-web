@@ -5,7 +5,7 @@ import { NewsPost, Activity } from "@/types"
 import helpers from "@/utils/customFields"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
-import AppUrls from "@/utils/urls"
+import Urls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
 
@@ -56,7 +56,7 @@ export default function useNews() {
   }
 
   function getNewsPostUrlBySlug(postSlug: string): string {
-    return `${AppUrls.NewsPost}${postSlug}`
+    return `${Urls.NewsPost}${postSlug}`
   }
 
   // Top five latest news

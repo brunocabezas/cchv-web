@@ -1,6 +1,7 @@
 import VueRouter, { Route } from "vue-router"
 import Vue from "vue"
 import { DEFAULT_TITLE } from "@/utils/static"
+import Urls from "./urls"
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage/NewsPage.vue"
 import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
@@ -8,22 +9,24 @@ import TeamPage from "@/components/About/TeamPage.vue"
 import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ProgramPage from "@/components/Programs/ProgramPage.vue"
+import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
-import AppUrls from "./urls"
+import useActivities from "@/factories/useActivities"
 
+const { getTypeBySlug } = useActivities()
 const routes = [
-  { path: AppUrls.Home, component: Home },
+  { path: Urls.Home, component: Home },
   {
-    path: AppUrls.News,
+    path: Urls.News,
     component: NewsPage,
     meta: {
       title: "Noticias",
     },
   },
   {
-    path: `${AppUrls.NewsPost}:postSlug`,
+    path: `${Urls.NewsPost}:postSlug`,
     component: NewsPostPage,
     props: (route: Route) => ({
       postSlug: route.params.postSlug,
@@ -34,21 +37,21 @@ const routes = [
   },
   // About
   {
-    path: AppUrls.AboutHistory,
+    path: Urls.AboutHistory,
     component: HistoryPage,
     meta: {
       title: "Historia",
     },
   },
   {
-    path: AppUrls.AboutTeam,
+    path: Urls.AboutTeam,
     component: TeamPage,
     meta: {
       title: "Equipo",
     },
   },
   {
-    path: AppUrls.AboutTransparency,
+    path: Urls.AboutTransparency,
     component: TransparencyPage,
     meta: {
       title: "Transparencia",
@@ -56,7 +59,7 @@ const routes = [
   },
   // Programs
   {
-    path: `${AppUrls.Programs}:slug`,
+    path: `${Urls.Programs}:slug`,
     component: ProgramPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -65,9 +68,21 @@ const routes = [
       title: "Programas",
     },
   },
+  // Programs Activities
+  {
+    path: `${Urls.Programs}campos-magneticos/:activityType`,
+    component: ActivitiesGridPage,
+    props: (route: Route) => ({
+      // Prop of ActivitiesGridPage
+      activityType: getTypeBySlug(route.params.activityType),
+    }),
+    meta: {
+      title: "Actividades",
+    },
+  },
   // Activities
   {
-    path: `${AppUrls.Activities}:slug`,
+    path: `${Urls.Activities}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -79,7 +94,7 @@ const routes = [
   },
   // School Program Single Page
   {
-    path: `${AppUrls.SchoolProgram}:slug`,
+    path: `${Urls.SchoolProgram}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -91,7 +106,7 @@ const routes = [
   },
   // Workshops Single Page
   {
-    path: `${AppUrls.Workshop}:slug`,
+    path: `${Urls.Workshop}:slug`,
     component: SinglePostPage,
     props: (route: Route) => ({
       slug: route.params.slug,
@@ -116,9 +131,9 @@ router.afterEach((to, from) => {
   // Use next tick to handle router history correctly
   // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
   Vue.nextTick(() => {
-    document.title = `${DEFAULT_TITLE}${
-      to.meta.title ? ` | ${to.meta.title}` : ""
-    }`
+    // Display title depending on each route meta information meta.title
+    const metaTitle = to.meta.title ? ` | ${to.meta.title}` : ""
+    document.title = `${DEFAULT_TITLE}${metaTitle}`
   })
 })
 
