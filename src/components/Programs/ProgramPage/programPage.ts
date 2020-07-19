@@ -10,6 +10,12 @@ import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolP
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 
+// Returns true if program has contentType
+const matchProgramContent = (
+  contentType: ProgramExtraContent,
+  program: Program
+) => !!(program && program.extra_content === contentType)
+
 const ProgramPage = defineComponent({
   name: "ProgramPage",
   components: {
@@ -33,30 +39,36 @@ const ProgramPage = defineComponent({
     const program = computed<Program | undefined>(() =>
       getProgramBySlug(props.slug)
     )
+
+    const isArtScienceAndCultureProgram = computed<boolean>(() =>
+      program.value
+        ? matchProgramContent(
+            ProgramExtraContent.ArtScienceAndCulture,
+            program.value
+          )
+        : false
+    )
+
     return {
       program,
       isLoading,
-      isMagneticFieldsProgram: computed(
-        () =>
-          program.value &&
-          program.value.extra_content === ProgramExtraContent.Activities
+      isMagneticFieldsProgram: computed<boolean>(() =>
+        program.value
+          ? matchProgramContent(ProgramExtraContent.Activities, program.value)
+          : false
       ),
-      isSchoolProgram: computed(
-        () =>
-          program.value &&
-          program.value.extra_content === ProgramExtraContent.Schools
+      isSchoolProgram: computed<boolean>(() =>
+        program.value
+          ? matchProgramContent(ProgramExtraContent.Schools, program.value)
+          : false
       ),
-      isDowneyProgram: computed(
-        () =>
-          program.value &&
-          program.value.extra_content === ProgramExtraContent.Videos
+      isDowneyProgram: computed<boolean>(() =>
+        program.value
+          ? matchProgramContent(ProgramExtraContent.Videos, program.value)
+          : false
       ),
-      isArtScienceAndCultureProgram: computed(
-        () =>
-          program.value &&
-          program.value.extra_content ===
-            ProgramExtraContent.ArtScienceAndCulture
-      ),
+      isArtScienceAndCultureProgram: isArtScienceAndCultureProgram,
+      pageHasFullWidth: isArtScienceAndCultureProgram,
     }
   },
 })
