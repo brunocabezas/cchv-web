@@ -12,7 +12,13 @@
         height="200px"
       />
       <h4>{{ residency.date }}</h4>
-      <h2>{{ residency.name }}</h2>
+      <h2>
+        <router-link
+          :title="residency.name"
+          :to="getResidencyUrlBySlug(residency.slug)"
+          >{{ residency.name }}</router-link
+        >
+      </h2>
     </div>
   </div>
 </template>
@@ -29,18 +35,17 @@ const Residencies = defineComponent({
     Loader,
     ProgressiveImage
   },
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
   setup(props) {
-    const { residencies, fetchResidencies, isLoading } = useResidencies();
+    const {
+      residencies,
+      fetchResidencies,
+      getResidencyUrlBySlug,
+      isLoading
+    } = useResidencies();
 
     fetchResidencies();
 
-    return { residencies, isLoading };
+    return { residencies, isLoading, getResidencyUrlBySlug };
   }
 });
 

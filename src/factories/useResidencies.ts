@@ -4,6 +4,7 @@ import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomField, getWPTitle } from "@/utils/api"
+import Urls from "@/utils/urls"
 import { ResidencyKeys } from "@/types/customFieldsKeysTypes"
 import { Residency } from "@/types"
 
@@ -16,6 +17,7 @@ const { data, fetch: fetchResidencies, isLoading } = useAsyncData<
 const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
   return {
     id: wordpressPost.id,
+    slug: wordpressPost.slug,
     name: getWPTitle(wordpressPost),
     video_url: getCustomField(wordpressPost, ResidencyKeys.video_url),
     gallery: getCustomField(wordpressPost, ResidencyKeys.gallery),
@@ -29,8 +31,15 @@ export default function useResidencies() {
     data.value.map(mapResidenciesFromWpPost)
   )
 
+  // TODO getResidencyBySlug
+
+  function getResidencyUrlBySlug(slug: string): string {
+    return `${Urls.Residencies}/${slug}`
+  }
+
   return {
     fetchResidencies,
+    getResidencyUrlBySlug,
     residencies,
     isLoading,
   }

@@ -141,4 +141,5 @@ export interface Edition extends CustomFields.Edition {
 export interface Residency extends CustomFields.Residency {
   id: number
   name: string
+  slug: string
 }

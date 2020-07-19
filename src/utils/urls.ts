@@ -13,6 +13,7 @@ enum Urls {
   AboutHistory = "/historia",
   AboutTeam = "/equipo",
   AboutTransparency = "/transparencia",
+  Residencies = "/residencias",
 }
 
 export default Urls
