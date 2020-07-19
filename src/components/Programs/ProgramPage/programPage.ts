@@ -6,6 +6,7 @@ import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
 import Editions from "@/components/Programs/Editions.vue"
+import Residencies from "@/components/Programs/Residencies/Residencies.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue"
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
@@ -25,6 +26,7 @@ const ProgramPage = defineComponent({
     ProgramActivites,
     SchoolProgramWorkshopsTabs,
     Media,
+    Residencies,
     Editions,
   },
   props: {
@@ -65,6 +67,11 @@ const ProgramPage = defineComponent({
       isDowneyProgram: computed<boolean>(() =>
         program.value
           ? matchProgramContent(ProgramExtraContent.Videos, program.value)
+          : false
+      ),
+      isResidencies: computed<boolean>(() =>
+        program.value
+          ? matchProgramContent(ProgramExtraContent.Residencies, program.value)
           : false
       ),
       isArtScienceAndCultureProgram: isArtScienceAndCultureProgram,

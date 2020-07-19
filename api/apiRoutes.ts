@@ -12,6 +12,7 @@ export enum apiRoutes {
   Sponsors = "/sponsors",
   Editions = "/editions",
   SponsorsCategories = "/sponsor-categories",
+  Residencies = "/residencies",
   SocialNetworks = "/social-networks",
 }
 

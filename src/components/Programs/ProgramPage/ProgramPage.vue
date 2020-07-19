@@ -22,6 +22,7 @@
       <SchoolProgramsTabs v-if="isSchoolProgram" />
       <SchoolProgramWorkshopsTabs v-if="isSchoolProgram" />
       <ProgramActivites v-if="isMagneticFieldsProgram" />
+      <Residencies v-if="isResidencies" />
     </div>
     <Editions v-if="isArtScienceAndCultureProgram" />
   </div>

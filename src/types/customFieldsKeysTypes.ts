@@ -18,6 +18,7 @@ export type CustomFieldsKeys =
   | TeamMembersKeys
   | VideoKeys
   | EditionKeys
+  | ResidencyKeys
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -139,4 +140,12 @@ export enum EditionKeys {
   gallery = "gallery",
   video_url = "video_url",
   order = "order",
+}
+
+// Videos displayed on home
+export enum ResidencyKeys {
+  text = "text",
+  gallery = "gallery",
+  video_url = "video_url",
+  date = "date",
 }

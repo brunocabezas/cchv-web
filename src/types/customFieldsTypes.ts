@@ -14,6 +14,7 @@ import {
   VideoKeys,
   TeamMembersKeys,
   EditionKeys,
+  ResidencyKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
 import { RelatedNewsPost } from "./"
@@ -71,6 +72,7 @@ export enum ProgramExtraContent {
   Schools = "schools",
   Activities = "activities",
   ArtScienceAndCulture = "editions",
+  Residencies = "residencies",
 }
 
 export type Program = {
@@ -167,4 +169,11 @@ export interface Edition {
   [EditionKeys.gallery]: string
   [EditionKeys.video_url]: string
   [EditionKeys.text]: string
+}
+
+export interface Residency {
+  [ResidencyKeys.gallery]: string
+  [ResidencyKeys.date]: string
+  [ResidencyKeys.video_url]: string
+  [ResidencyKeys.text]: string
 }

@@ -14,14 +14,14 @@ const { data, fetch: fetchEditions, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Editions
 )
 
-const mapEditionsFromWpPost = (socialNetworkPost: WPResponseItem): Edition => {
+const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
   return {
-    id: socialNetworkPost.id,
-    name: getWPTitle(socialNetworkPost),
-    video_url: getCustomField(socialNetworkPost, EditionKeys.video_url),
-    gallery: getCustomField(socialNetworkPost, EditionKeys.gallery),
-    text: getCustomField(socialNetworkPost, EditionKeys.text),
-    order: getCustomField(socialNetworkPost, EditionKeys.order),
+    id: editionPost.id,
+    name: getWPTitle(editionPost),
+    video_url: getCustomField(editionPost, EditionKeys.video_url),
+    gallery: getCustomField(editionPost, EditionKeys.gallery),
+    text: getCustomField(editionPost, EditionKeys.text),
+    order: getCustomField(editionPost, EditionKeys.order),
   }
 }
 
