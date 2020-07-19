@@ -1,4 +1,5 @@
 import { TeamMember } from "@/types/customFieldsTypes"
+import { sortByOrder } from "./arrays"
 
 export interface TeamMemberPosition {
   name: string
@@ -34,8 +35,8 @@ export const sortGrouptedTeamMembers = (
   groupedTeamMembers: MembersGroupedByPosition
 ): TeamMemberPosition[] =>
   Object.values(groupedTeamMembers)
-    .sort((p1, p2) => p1.order - p2.order)
+    .sort(sortByOrder)
     .map((position) => ({
       ...position,
-      members: position.members.sort((p1, p2) => p1.order - p2.order),
+      members: position.members.sort(sortByOrder),
     }))

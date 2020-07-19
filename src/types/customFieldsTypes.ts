@@ -13,6 +13,7 @@ import {
   ActivityKeys,
   VideoKeys,
   TeamMembersKeys,
+  EditionKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
 import { RelatedNewsPost } from "./"
@@ -159,4 +160,11 @@ export interface CarouselImage {
 export interface Video {
   [VideoKeys.video_url]: string
   [VideoKeys.order]: number
+}
+
+export interface Edition {
+  [EditionKeys.order]: number
+  [EditionKeys.gallery]: string
+  [EditionKeys.video_url]: string
+  [EditionKeys.text]: string
 }

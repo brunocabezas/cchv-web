@@ -12,6 +12,7 @@ import { getCustomField, getWPTitle } from "@/utils/api"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import Urls from "@/utils/urls"
+import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
@@ -24,7 +25,6 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
     WPSelectCustomFieldValue<ProgramExtraContent>
   >(programPost, ProgramKeys.extra_content)
 
-  console.log(extraContent)
   const isExternal = getCustomField<boolean>(
     programPost,
     ProgramKeys.is_external
@@ -51,9 +51,7 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
 
 export default function usePrograms() {
   const programs = computed<Program[]>(() => {
-    return data.value
-      .map(mapProgramFromWpPost)
-      .sort((a, b) => a.order - b.order)
+    return data.value.map(mapProgramFromWpPost).sort(sortByOrder)
   })
 
   function getProgramBySlug(slug: string): Program | undefined {
