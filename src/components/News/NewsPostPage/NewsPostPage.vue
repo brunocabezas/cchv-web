@@ -13,26 +13,27 @@
         <div class="pageBody" v-html="post.text"></div>
       </div>
       <div v-if="latestNews.length" class="newsPostPageRight latestNews">
-        <h3 class="latestNewsTitle">Últimas noticias</h3>
+        <h3 class="latestPostsTitle">Últimas noticias</h3>
         <hr />
-        <div v-bind:key="post.id" v-for="(post, index) in latestNews">
+        <div
+          class="latestPostsItem"
+          v-bind:key="post.id"
+          v-for="(post, index) in latestNews"
+        >
           <router-link
             :title="post.title"
             :to="getNewsPostUrlBySlug(post.slug)"
           >
-            <div
-              class="latestNews__thumb"
-              v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
-            ></div>
+            <ProgressiveImage :src="post.thumbnail" height="100px" />
           </router-link>
-          <h4 class="latestNews__title">
+          <h4 class="latestPostsItem__title">
             <router-link
               v-html="post.title"
               :title="post.title"
               :to="getNewsPostUrlBySlug(post.slug)"
             ></router-link>
           </h4>
-          <p class="latestNews__date">{{ post.date }}</p>
+          <p class="latestPostsItem__date">{{ post.date }}</p>
           <hr v-if="latestNews.length > index + 1" />
         </div>
       </div>
@@ -49,47 +50,7 @@
   display: flex;
   padding-top: 2em;
 
-  .newsPostPageLeft
-    width: 'calc(%s * 0.5)' % $boxed_content_max_width;
-
-  .newsPostPageRight
-    top: 0;
-    right: 'calc(%s * -0.2)' % $boxed_content_max_width;
-    padding: 0 10px;
-    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
-
-    .latestNewsTitle
-      margin-bottom: 0;
-      margin-top: 0;
-
-    hr
-      border: 1px solid #868686;
-      margin-top: 2px;
-      margin-bottom: 15px;
-
-    .latestNews__title
-      margin-top: 5px;
-      margin-bottom: 5px;
-
-      &:hover
-        text-decoration: underline;
-
-    .latestNews__date
-      margin-top: 0;
-      color: #868686;
-      margin-bottom: 8px;
-      font-size: 14px;
-
-    .latestNews__thumb
-      height: 100px;
-      background-color: $blue;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      &:hover
-        opacity: 0.9;
-
+  // Single news post content
   .newsPostPageLeft
     width: 80%;
     flex-grow: 1;
@@ -102,5 +63,9 @@
       font-weight: bold;
 
     .newsPostDate
-      color: #868686;
+      color: $latest_posts_grey;
+
+  // Latest news
+  .newsPostPageRight
+    latest_posts();
 </style>

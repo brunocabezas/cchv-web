@@ -12,32 +12,13 @@ import useNews from "./useNews"
 
 Vue.use(VueCompositionApi)
 
-const { data, fetch: fetchActivities, isLoading } = useAsyncData<
-  WPResponseItem
->(apiRoutes.Activities)
-
 export default function useActivities() {
   const { activityNews, fetchNews, isLoading: isLoadingNews } = useNews()
   // There could be also news that are activities
   fetchNews()
 
   const activities = computed<Activity[]>(() => {
-    return [
-      ...data.value.map(
-        (activity): Activity => ({
-          id: activity.id,
-          isNewsPost: false,
-          name: getWPTitle(activity),
-          slug: activity.slug,
-          abstract: getCustomField(activity, ActivityKeys.abstract),
-          gallery: getCustomField<WpImage[]>(activity, ActivityKeys.gallery),
-          text: getCustomField(activity, ActivityKeys.text),
-          type: getCustomField(activity, ActivityKeys.type),
-          video_url: getCustomField(activity, ActivityKeys.video_url),
-        })
-      ),
-      ...activityNews.value,
-    ]
+    return [...activityNews.value]
   })
 
   const getActivityUrlBySlug = (postSlug: string): string => {
@@ -101,11 +82,10 @@ export default function useActivities() {
     activities,
     getActvitiesByType,
     // Include news fetch in loading state
-    isLoading: computed(() => isLoading.value || isLoadingNews.value || false),
+    isLoading: computed(() => isLoadingNews.value || false),
     getActivityUrlBySlug,
     getTypeBySlug,
     getActvitiesTitleByType,
     getActivitiesGridUrlByActivityType,
-    fetchActivities,
   }
 }

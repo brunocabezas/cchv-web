@@ -1,16 +1,21 @@
 <template>
-  <div class="workshopsTabs">
-    <h1 class="pageTitle">
-      Mandrágoras. Tecnologías para la conversación
-    </h1>
-    <div class="pageBody" v-html="workshopsAbstract"></div>
+  <div class="schoolProgramTabs">
+    <h1 class="pageTitle">Escuelas</h1>
+    <!-- &#8221; => '' is used to filter  https://www.codetable.net/decimal/8221 -->
+    <div
+      class="pageBody"
+      v-if="
+        schoolProgramsAbstract && !schoolProgramsAbstract.includes(`&#8221;`)
+      "
+      v-html="schoolProgramsAbstract"
+    ></div>
     <Loader :loading="isLoading" />
-    <div class="pageRow workshopsTabsTitle">
+    <div class="pageRow schoolProgramTabsTitle">
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
           'schoolProgramTabTitle--active':
-            activeWorkshop && activeWorkshop.id === tab.id
+            activeProgram && activeProgram.id === tab.id
         }"
         class="schoolProgramTabTitle"
         v-bind:key="tab.id"
@@ -20,8 +25,8 @@
         <ProgressiveImage
           height="180px"
           :src="
-            (activeWorkshop && activeWorkshop.id === tab.id) ||
-            (!activeWorkshop && index === 0)
+            (activeProgram && activeProgram.id === tab.id) ||
+            (!activeProgram && index === 0)
               ? tab.active_school_logo
               : tab.logo
           "
@@ -29,32 +34,44 @@
         />
       </button>
     </div>
-    <div class="pageRow workshopsTabsContent">
-      <div v-if="displayActiveWorkshop" class="schoolProgram">
+    <div v-if="displayActiveProgram" class="pageRow schoolProgramTabsContent">
+      <div class="schoolProgram">
         <div class="schoolProgramThumb">
           <router-link
-            v-if="activeWorkshop.gallery && activeWorkshop.gallery[0]"
-            :title="activeWorkshop.name"
-            :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
+            v-if="
+              activeProgram.is_active &&
+                activeProgram.gallery &&
+                activeProgram.gallery[0]
+            "
+            :title="activeProgram.name"
+            :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
           >
             <ProgressiveImage
               height="300px"
-              :src="activeWorkshop.gallery[0].url"
-          /></router-link>
+              :src="activeProgram.gallery[0].url"
+            />
+          </router-link>
+          <ProgressiveImage
+            v-else-if="activeProgram.gallery && activeProgram.gallery[0]"
+            height="300px"
+            :src="activeProgram.gallery[0].url"
+          />
         </div>
         <div class="schoolProgramInfo">
           <h3 class="schoolProgramName">
             <router-link
-              :title="activeWorkshop.name"
-              :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
-              >{{ activeWorkshop.name }}</router-link
+              v-if="activeProgram.is_active"
+              :title="activeProgram.name"
+              :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
+              >{{ activeProgram.name }}</router-link
             >
+            {{ !activeProgram.is_active && activeProgram.name }}
           </h3>
-          <p class="schoolProgramAbstract" v-html="activeWorkshop.abstract"></p>
+          <p class="schoolProgramAbstract" v-html="activeProgram.abstract"></p>
           <DownloadLink
-            v-if="activeWorkshop.pdf"
+            v-if="activeProgram.pdf"
             label="Descargar programa completo"
-            :url="activeWorkshop.pdf"
+            :url="activeProgram.pdf"
           />
         </div>
       </div>
@@ -62,21 +79,21 @@
   </div>
 </template>
 
-<script lang="ts" src="./workshopsTabs.ts"></script>
+<script lang="ts" src="./schoolProgramsTabs.ts"></script>
 <style lang="stylus">
-@import '../../styles/variables.styl';
+@import '../../../styles/variables.styl';
 
-.workshopsTabs
-  margin-top: 4em;
+.schoolProgramTabs
+  margin-top: 2em;
   position: relative;
-  min-height: 630px;
+  min-height: 600px;
 
   .pageTitle
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     justify-content: center;
 
-  .workshopsTabsTitle
+  .schoolProgramTabsTitle
     justify-content: center;
     margin-bottom: 2.5em;
 
@@ -108,7 +125,7 @@
         background-size: cover;
         background-repeat: no-repeat;
 
-  .workshopsTabsContent
+  .schoolProgramTabsContent
     .schoolProgram
       display: flex;
       width: 100%;
@@ -118,13 +135,10 @@
 
       .schoolProgramThumb
         width: 60%;
+        padding-left: 0;
         height: 300px;
         background-color: $blue;
-        padding: 0;
         margin-right: 1em;
-
-        &:hover
-          opacity: 0.8;
 
       .schoolProgramInfo
         padding-right: 0;
@@ -139,7 +153,4 @@
           color: $blue;
           margin-top: 0;
           margin-bottom: 0;
-
-          a:hover
-            text-decoration: underline;
 </style>

@@ -19,8 +19,6 @@ const ProgramActivities = defineComponent({
     ActivitiesGrid
   },
   setup() {
-    const { fetchActivities } = useActivities();
-    fetchActivities();
     return {
       ActivityType: ActivityType
     };

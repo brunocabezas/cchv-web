@@ -8,7 +8,8 @@ import NewsPostPage from "@/components/News/NewsPostPage/NewsPostPage.vue"
 import TeamPage from "@/components/About/TeamPage.vue"
 import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
-import ProgramPage from "@/components/Programs/ProgramPage.vue"
+import ResidencyPage from "@/components/Programs/Residencies/Residency.vue"
+import ProgramPage from "@/components/Programs/ProgramPage/ProgramPage.vue"
 import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
@@ -114,6 +115,17 @@ const routes = [
     }),
     meta: {
       title: "Mandragoras",
+    },
+  },
+  // Residency Single Page
+  {
+    path: `${Urls.Residencies}/:slug`,
+    component: ResidencyPage,
+    props: (route: Route) => ({
+      slug: route.params.slug,
+    }),
+    meta: {
+      title: "Residencias",
     },
   },
 ]

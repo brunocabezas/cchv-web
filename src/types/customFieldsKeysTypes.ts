@@ -17,6 +17,8 @@ export type CustomFieldsKeys =
   | DocumentKeys
   | TeamMembersKeys
   | VideoKeys
+  | EditionKeys
+  | ResidencyKeys
 
 // CAROUSEL
 export enum CarouselImageKeys {
@@ -40,7 +42,7 @@ export enum NewsKeys {
 }
 
 //
-// SPONSORS
+// Sponsors and categories
 //
 export enum SponsorCategoryKeys {
   sponsors = "sponsors",
@@ -53,20 +55,20 @@ export enum SponsorKeys {
   url = "url",
 }
 
-// SOCIAL NETWORKS
+// Social Networks
 export enum SocialNetworksKeys {
   url = "url",
   type = "social_network_key",
 }
 
-// TEAM MEMBERS
+// Team members
 export enum TeamMembersKeys {
   position = "position",
   order = "order",
   type = "type",
 }
 
-// DOCUMENT
+// Documents
 export enum DocumentKeys {
   link = "url",
   order = "order",
@@ -130,4 +132,19 @@ export enum ActivityKeys {
 export enum VideoKeys {
   video_url = "video_url",
   order = "order",
+}
+
+export enum EditionKeys {
+  text = "text",
+  gallery = "gallery",
+  video_url = "video_url",
+  order = "order",
+}
+
+export enum ResidencyKeys {
+  text = "text",
+  gallery = "gallery",
+  video_url = "video_url",
+  date = "date",
+  readable_date = "readable_date",
 }

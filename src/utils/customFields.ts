@@ -8,7 +8,7 @@ import {
 import { RelatedNewsPost, NewsPost } from "@/types"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
-import { filterUndef } from "./arrays"
+import { filterUndef, sortByDate } from "./arrays"
 import { ActivityType } from "@/types/customFieldsTypes"
 
 const mapRelatedNews = (
@@ -47,7 +47,7 @@ const getTextFromHtmlString = (htmlString: string): string => {
 }
 
 const mapNewsToView = (state: WpResponseData): NewsPost[] => {
-  const news = state
+  return state
     .map(
       (newsPost): NewsPost => {
         const gallery: WpImage[] = getCustomField(
@@ -86,9 +86,9 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
         }
       }
     )
-    .sort((a: NewsPost, b: NewsPost) => dayjs(a.date).diff(dayjs(b.date)))
-
-  return news
+    .sort((a: NewsPost, b: NewsPost): number => {
+      return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT))
+    })
 }
 
 export default {

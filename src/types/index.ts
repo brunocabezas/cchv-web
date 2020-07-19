@@ -132,3 +132,14 @@ export interface Video extends CustomFields.Video {
   id: number
   name: string
 }
+
+export interface Edition extends CustomFields.Edition {
+  id: number
+  name: string
+}
+
+export interface Residency extends CustomFields.Residency {
+  id: number
+  name: string
+  slug: string
+}
