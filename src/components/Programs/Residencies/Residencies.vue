@@ -55,19 +55,17 @@ export default Residencies;
 <style lang="stylus">
 @import '../../../styles/variables.styl';
 
-$margin_between_videos = 2em;
-
 .residencies
   position: relative;
   margin-top: 2em;
   display: flex;
   flex-wrap: wrap;
 
-  // edition has different background colors
   .residency
     width: 33.3%;
     padding-right: 20px;
 
+    // The last of a row made of three
     &:nth-child(3n+1)
       padding-right: 0;
 

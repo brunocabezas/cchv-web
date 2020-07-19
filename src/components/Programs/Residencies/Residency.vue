@@ -11,10 +11,10 @@
         <div class="pageBody" v-html="residency.text"></div>
       </div>
       <div v-if="latestResidencies.length" class="latestResidencies">
-        <h3 class="latestTitle">Últimas residencias</h3>
+        <h3 class="latestPostsTitle">Últimas residencias</h3>
         <hr />
         <div
-          class="latestItem"
+          class="latestPostsItem"
           v-bind:key="post.id"
           v-for="(post, index) in latestResidencies"
         >
@@ -27,14 +27,14 @@
               height="100px"
             />
           </router-link>
-          <h4 class="latestItem__title">
+          <h4 class="latestPostsItem__title">
             <router-link
               v-html="post.name"
               :title="post.name"
               :to="getResidencyUrlBySlug(post.slug)"
             ></router-link>
           </h4>
-          <p class="latestItem__date">{{ post.date }}</p>
+          <p class="latestPostsItem__date">{{ post.date }}</p>
           <hr v-if="latestResidencies.length > index + 1" />
         </div>
       </div>
@@ -48,7 +48,6 @@
 @import '../../../styles/variables.styl';
 
 $margin_between_videos = 2em;
-$grey = #868686;
 
 .residency
   display: flex;
@@ -61,31 +60,5 @@ $grey = #868686;
 
   // Based on news post page newsPostPageRight
   .latestResidencies
-    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
-
-    .latestTitle
-      margin-bottom: 0;
-      margin-top: 0;
-
-    .latestItem
-      .progressiveImage:hover
-        opacity: 0.9;
-
-      .latestItem__title
-        margin-top: 5px;
-        margin-bottom: 5px;
-
-        &:hover
-          text-decoration: underline;
-
-      .latestItem__date
-        margin-top: 0;
-        color: $grey;
-        margin-bottom: 8px;
-        font-size: 14px;
-
-    hr
-      border: 1px solid $grey;
-      margin-top: 2px;
-      margin-bottom: 15px;
+    latest_posts();
 </style>
