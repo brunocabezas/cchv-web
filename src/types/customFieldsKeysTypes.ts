@@ -42,7 +42,7 @@ export enum NewsKeys {
 }
 
 //
-// SPONSORS
+// Sponsors and categories
 //
 export enum SponsorCategoryKeys {
   sponsors = "sponsors",
@@ -55,20 +55,20 @@ export enum SponsorKeys {
   url = "url",
 }
 
-// SOCIAL NETWORKS
+// Social Networks
 export enum SocialNetworksKeys {
   url = "url",
   type = "social_network_key",
 }
 
-// TEAM MEMBERS
+// Team members
 export enum TeamMembersKeys {
   position = "position",
   order = "order",
   type = "type",
 }
 
-// DOCUMENT
+// Documents
 export enum DocumentKeys {
   link = "url",
   order = "order",
@@ -134,7 +134,6 @@ export enum VideoKeys {
   order = "order",
 }
 
-// Videos displayed on home
 export enum EditionKeys {
   text = "text",
   gallery = "gallery",
@@ -142,10 +141,10 @@ export enum EditionKeys {
   order = "order",
 }
 
-// Videos displayed on home
 export enum ResidencyKeys {
   text = "text",
   gallery = "gallery",
   video_url = "video_url",
   date = "date",
+  readable_date = "readable_date",
 }

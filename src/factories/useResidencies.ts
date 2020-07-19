@@ -7,6 +7,7 @@ import { getCustomField, getWPTitle } from "@/utils/api"
 import Urls from "@/utils/urls"
 import { ResidencyKeys } from "@/types/customFieldsKeysTypes"
 import { Residency } from "@/types"
+import { sortByDate } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)
 
@@ -15,6 +16,7 @@ const { data, fetch: fetchResidencies, isLoading } = useAsyncData<
 >(apiRoutes.Residencies)
 
 const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
+  console.log(getCustomField(wordpressPost, ResidencyKeys.date))
   return {
     id: wordpressPost.id,
     slug: wordpressPost.slug,
@@ -23,12 +25,13 @@ const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
     gallery: getCustomField(wordpressPost, ResidencyKeys.gallery),
     text: getCustomField(wordpressPost, ResidencyKeys.text),
     date: getCustomField(wordpressPost, ResidencyKeys.date),
+    readable_date: getCustomField(wordpressPost, ResidencyKeys.readable_date),
   }
 }
 
 export default function useResidencies() {
   const residencies = computed<Residency[]>(() =>
-    data.value.map(mapResidenciesFromWpPost)
+    data.value.map(mapResidenciesFromWpPost).sort(sortByDate)
   )
 
   function getResidencyBySlug(slug: string): Residency | undefined {

@@ -5,15 +5,19 @@ import {
   Sponsor,
   Program,
   Edition,
+  Residency,
 } from "@/types"
 import { TeamMember } from "@/types/customFieldsTypes"
 import { TeamMemberPosition } from "@/utils/teamMembers"
-
+import dayjs from "dayjs"
+import customParseFormat from "dayjs/plugin/customParseFormat"
+import { CUSTOM_FIELDS_DATE_FORMAT } from "./static"
 export function filterUndef<T>(ts: (T | undefined)[]): T[] {
   return ts.filter((t: T | undefined): t is T => !!t)
 }
 
-type Sortable =
+dayjs.extend(customParseFormat)
+type SortableByOrder =
   | Program
   | Document
   | CarouselImage
@@ -23,6 +27,14 @@ type Sortable =
   | TeamMember
   | TeamMemberPosition
 
-export function sortByOrder(a: Sortable, b: Sortable): number {
+export function sortByOrder(a: SortableByOrder, b: SortableByOrder): number {
   return a.order - b.order
+}
+
+type SortableByDate = Residency
+
+export function sortByDate(a: SortableByDate, b: SortableByDate): number {
+  return dayjs(b.date, CUSTOM_FIELDS_DATE_FORMAT).diff(
+    dayjs(a.date, CUSTOM_FIELDS_DATE_FORMAT)
+  )
 }

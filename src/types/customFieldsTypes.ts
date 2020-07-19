@@ -176,4 +176,5 @@ export interface Residency {
   [ResidencyKeys.date]: string
   [ResidencyKeys.video_url]: string
   [ResidencyKeys.text]: string
+  [ResidencyKeys.readable_date]: string
 }

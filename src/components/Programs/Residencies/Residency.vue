@@ -6,7 +6,9 @@
 
         <h1 v-html="residency.name" class="pageTitleText"></h1>
 
-        <div class="residencyDate">{{ residency.date }}</div>
+        <div class="residencyDate">
+          {{ residency.readable_date || residency.date }}
+        </div>
 
         <div class="pageBody" v-html="residency.text"></div>
       </div>

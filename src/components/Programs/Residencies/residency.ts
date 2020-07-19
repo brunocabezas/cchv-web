@@ -4,6 +4,7 @@ import Media from "@/components/Media/Media.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useResidencies from "@/factories/useResidencies"
 import { Residency } from "../../../types"
+import { sortByDate } from "@/utils/arrays"
 
 const Residency = defineComponent({
   name: "Residency",
@@ -35,7 +36,10 @@ const Residency = defineComponent({
 
     // Returns residencies occurring ahead from today, the closest one goes first
     const latestResidencies = computed<Residency[]>(() =>
-      residencies.value.filter((res) => res.slug !== props.slug).slice(0, 3)
+      residencies.value
+        .filter((res) => res.slug !== props.slug)
+        .slice(0, 3)
+        .sort(sortByDate)
     )
 
     return { residency, isLoading, latestResidencies, getResidencyUrlBySlug }

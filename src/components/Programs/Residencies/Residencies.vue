@@ -19,7 +19,9 @@
           >{{ residency.name }}</router-link
         >
       </h2>
-      <p class="residencyDate">{{ residency.date }}</p>
+      <p class="residencyDate">
+        {{ residency.readable_date || residency.date }}
+      </p>
     </div>
   </div>
 </template>

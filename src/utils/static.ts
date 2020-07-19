@@ -7,6 +7,7 @@ export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
 // Date format from https://github.com/iamkun/dayjs
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
+export const CUSTOM_FIELDS_DATE_FORMAT = "DD/MM/YYYY"
 export const CONTACT_EMAIL = "contacto@cchv.cl"
 export const YOUTUBE_CHANNEL =
   "https://www.youtube.com/channel/UC3aHIBlFx2pWVt1_tvnibCw/videos"
