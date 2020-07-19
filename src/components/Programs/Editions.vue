@@ -54,7 +54,7 @@ const Editions = defineComponent({
 
 export default Editions;
 </script>
-<style lang="stylus">
+<style scoped lang="stylus">
 @import '../../styles/variables.styl';
 
 $margin_between_videos = 2em;

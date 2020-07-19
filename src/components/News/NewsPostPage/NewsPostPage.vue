@@ -20,10 +20,7 @@
             :title="post.title"
             :to="getNewsPostUrlBySlug(post.slug)"
           >
-            <div
-              class="latestNews__thumb"
-              v-bind:style="{ 'background-image': `url(${post.thumbnail})` }"
-            ></div>
+            <ProgressiveImage :src="post.thumbnail" height="100px" />
           </router-link>
           <h4 class="latestNews__title">
             <router-link
@@ -45,51 +42,13 @@
 <style lang="stylus">
 @import '../../../styles/variables.styl';
 
+$grey = #868686;
+
 .newsPostPage
   display: flex;
   padding-top: 2em;
 
-  .newsPostPageLeft
-    width: 'calc(%s * 0.5)' % $boxed_content_max_width;
-
-  .newsPostPageRight
-    top: 0;
-    right: 'calc(%s * -0.2)' % $boxed_content_max_width;
-    padding: 0 10px;
-    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
-
-    .latestNewsTitle
-      margin-bottom: 0;
-      margin-top: 0;
-
-    hr
-      border: 1px solid #868686;
-      margin-top: 2px;
-      margin-bottom: 15px;
-
-    .latestNews__title
-      margin-top: 5px;
-      margin-bottom: 5px;
-
-      &:hover
-        text-decoration: underline;
-
-    .latestNews__date
-      margin-top: 0;
-      color: #868686;
-      margin-bottom: 8px;
-      font-size: 14px;
-
-    .latestNews__thumb
-      height: 100px;
-      background-color: $blue;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      &:hover
-        opacity: 0.9;
-
+  // Single news post content
   .newsPostPageLeft
     width: 80%;
     flex-grow: 1;
@@ -102,5 +61,34 @@
       font-weight: bold;
 
     .newsPostDate
-      color: #868686;
+      color: $grey;
+
+  // Latest news
+  .newsPostPageRight
+    width: 'calc(%s * 0.2)' % $boxed_content_max_width;
+
+    .latestNewsTitle
+      margin-bottom: 0;
+      margin-top: 0;
+
+    hr
+      border: 1px solid $grey;
+      margin-top: 2px;
+      margin-bottom: 15px;
+
+    .latestNews__title
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      &:hover
+        text-decoration: underline;
+
+    .latestNews__date
+      margin-top: 0;
+      color: $grey;
+      margin-bottom: 8px;
+      font-size: 14px;
+
+    .progressiveImage:hover
+      opacity: 0.9;
 </style>

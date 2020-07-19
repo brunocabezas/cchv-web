@@ -31,7 +31,9 @@ export default function useResidencies() {
     data.value.map(mapResidenciesFromWpPost)
   )
 
-  // TODO getResidencyBySlug
+  function getResidencyBySlug(slug: string): Residency | undefined {
+    return residencies.value.find((res) => res.slug === slug)
+  }
 
   function getResidencyUrlBySlug(slug: string): string {
     return `${Urls.Residencies}/${slug}`
@@ -39,6 +41,7 @@ export default function useResidencies() {
 
   return {
     fetchResidencies,
+    getResidencyBySlug,
     getResidencyUrlBySlug,
     residencies,
     isLoading,

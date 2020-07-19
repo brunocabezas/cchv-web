@@ -166,13 +166,13 @@ export interface Video {
 
 export interface Edition {
   [EditionKeys.order]: number
-  [EditionKeys.gallery]: string
+  [EditionKeys.gallery]: WpImage[]
   [EditionKeys.video_url]: string
   [EditionKeys.text]: string
 }
 
 export interface Residency {
-  [ResidencyKeys.gallery]: string
+  [ResidencyKeys.gallery]: WpImage[]
   [ResidencyKeys.date]: string
   [ResidencyKeys.video_url]: string
   [ResidencyKeys.text]: string

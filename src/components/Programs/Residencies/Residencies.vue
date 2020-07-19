@@ -6,19 +6,20 @@
       v-bind:key="residency.id"
       v-for="residency in residencies"
     >
-      <ProgressiveImage
-        v-if="residency.gallery"
-        :src="residency.gallery[0].url"
-        height="200px"
-      />
-      <h4>{{ residency.date }}</h4>
-      <h2>
+      <router-link
+        :title="residency.name"
+        :to="getResidencyUrlBySlug(residency.slug)"
+      >
+        <ProgressiveImage :src="residency.gallery[0].url" height="200px" />
+      </router-link>
+      <h2 class="residencyName">
         <router-link
           :title="residency.name"
           :to="getResidencyUrlBySlug(residency.slug)"
           >{{ residency.name }}</router-link
         >
       </h2>
+      <p class="residencyDate">{{ residency.date }}</p>
     </div>
   </div>
 </template>
@@ -69,4 +70,13 @@ $margin_between_videos = 2em;
 
     &:nth-child(3n+1)
       padding-right: 0;
+
+    .residencyName
+      margin-bottom: 0;
+
+      &:hover
+        text-decoration: underline;
+
+    .residencyDate
+      margin-top: 0;
 </style>
