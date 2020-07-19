@@ -8,7 +8,7 @@ import {
 import { RelatedNewsPost, NewsPost } from "@/types"
 import dayjs from "dayjs"
 import { DATE_FORMAT } from "./static"
-import { filterUndef, sortByDate } from "./arrays"
+import { filterUndef } from "./arrays"
 import { ActivityType } from "@/types/customFieldsTypes"
 
 const mapRelatedNews = (

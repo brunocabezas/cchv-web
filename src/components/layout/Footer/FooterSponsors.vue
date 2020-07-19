@@ -6,7 +6,7 @@
     <Loader color="white" :loading="isLoading" />
     <div
       v-bind:class="{
-        'sponsorCategory--big': cat.name === 'Financia'
+        'sponsorCategory--big': cat.name === BIG_SPONSOR_CATEGORY_LABEL
       }"
       v-for="cat in sponsorsCategories"
       v-bind:key="cat.id"
@@ -34,6 +34,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
 import useSponsors from "@/factories/useSponsors";
+import { BIG_SPONSOR_CATEGORY_LABEL } from "@/utils/static";
 import { AsyncDataStatus } from "@/utils/useAsyncData";
 import Loader from "@/components/Loader.vue";
 
@@ -50,13 +51,15 @@ export default defineComponent({
     fetchSponsorsAndCategories();
     return {
       sponsorsCategories,
-      isLoading
+      isLoading,
+      BIG_SPONSOR_CATEGORY_LABEL
     };
   }
 });
 </script>
 
 <style lang="stylus" scoped>
+// Related to BIG_SPONSOR_CATEGORY_LABEL
 $big_sponsor_category_height = 200px;
 $sponsor_height = 100px;
 
@@ -84,7 +87,7 @@ $sponsor_height = 100px;
       .sponsorsGrid
         .sponsor
           height: $big_sponsor_category_height;
-          width: 30%;
+          width: 50%;
           margin-left: 84px;
 
   .sponsorsGrid
