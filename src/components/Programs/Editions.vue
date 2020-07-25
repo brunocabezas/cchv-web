@@ -62,7 +62,9 @@ $margin_between_videos = 2em;
 
   // edition has different background colors
   .editionContainer
-    background-color: $white;
+    max-width: $boxed_content_max_width;
+    margin: 0 auto;
+    page_padding(0, 0);
 
     &:nth-child(odd)
       background-color: $grey;
@@ -80,7 +82,7 @@ $margin_between_videos = 2em;
 
       .editionInfo
         text-align: justify;
-        padding: 0 2em;
+        padding-right: 1em;
         overflow-y: auto;
 
         .editionName

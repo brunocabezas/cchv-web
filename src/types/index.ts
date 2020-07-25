@@ -61,9 +61,11 @@ export interface Activity {
   gallery: WpImage[]
   text: string
   video_url: string
-  activity_date: string
+  activity_date: String
   activity_calendar_url: string
   type: CustomFields.ActivityType
+  // If an activity is disabled, so does the link to the calendar
+  isDisabled: boolean
 }
 
 export interface ProgramVideo extends CustomFields.ProgramVideo {

@@ -25,11 +25,17 @@
         </router-link>
         <div v-if="act.activity_date" class="activitySchedule">
           <p class="activityDate">{{ act.activity_date }}</p>
-          <div v-if="act.activity_calendar_url" class="activityCalendar">
+          <div
+            class="activityCalendar"
+            v-bind:class="{
+              'activityCalendar--disabled': act.isDisabled
+            }"
+          >
             <a
-              target="_blank"
+              :disabled="true"
+              :target="!act.isDisabled ? '_blank' : ''"
               class="activityCalendarLink"
-              :href="act.activity_calendar_url"
+              :href="!act.isDisabled ? act.activity_calendar_url : '#'"
               >Agéndalo</a
             >
           </div>
@@ -72,20 +78,37 @@
         flex: 1;
 
       .activitySchedule
-        border: 1px solid $blue;
         display: flex;
         align-items: center;
 
         .activityDate, .activityCalendar
           font-weight: bold;
+          height: 40px;
 
         .activityDate
+          border-top: 1px solid $blue;
+          border-left: 1px solid $blue;
+          border-bottom: 1px solid $blue;
           padding: 10px;
           margin: 0;
           flex: 1;
           color: $blue;
 
         .activityCalendar
+          display: flex;
+          border-top: 1px solid $blue;
+          border-right: 1px solid $blue;
+          border-bottom: 1px solid $blue;
+
+          &.activityCalendar--disabled
+            border-color: $latest_posts_grey;
+
+            .activityCalendarLink
+              background-color: $latest_posts_grey;
+
+              &:hover
+                cursor: not-allowed;
+
           .activityCalendarLink
             background-color: $blue;
             padding: 10px;

@@ -51,6 +51,5 @@
     .program--full-width-boxed
       max-width: $boxed_content_max_width;
       margin: 0 auto;
-      padding-left: 'calc(%s * 0.15)' % $boxed_content_max_width;
-      padding-right: 'calc(%s * 0.15)' % $boxed_content_max_width;
+      page_padding(0, 0);
 </style>
