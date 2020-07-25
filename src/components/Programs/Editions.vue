@@ -37,18 +37,15 @@ const Editions = defineComponent({
     Loader,
     Media
   },
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
-  setup(props) {
+  setup() {
     const { editions, fetchEditions, isLoading } = useEditions();
 
     fetchEditions();
 
-    return { editions, isLoading };
+    return {
+      editions,
+      isLoading
+    };
   }
 });
 
@@ -74,7 +71,6 @@ $margin_between_videos = 2em;
       min-height: 500px;
       max-height: 700px;
       padding: 3em 0;
-      max-width: $boxed_content_max_width;
       margin: 0 auto;
       display: flex;
       flex-direction: row;
@@ -84,7 +80,7 @@ $margin_between_videos = 2em;
 
       .editionInfo
         text-align: justify;
-        padding-right: 2em;
+        padding: 0 2em;
         overflow-y: auto;
 
         .editionName
