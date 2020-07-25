@@ -10,7 +10,6 @@ import {
   PageKeys,
   SchoolProgramKeys,
   ProgramVideoKeys,
-  ActivityKeys,
   VideoKeys,
   TeamMembersKeys,
   EditionKeys,
@@ -53,14 +52,6 @@ export enum ActivityType {
   Concert = "concert",
   Performance = "performance",
   None = "none",
-}
-
-export interface Activity {
-  [ActivityKeys.abstract]: string
-  [ActivityKeys.gallery]: WpImage[]
-  [ActivityKeys.text]: string
-  [ActivityKeys.type]: ActivityType
-  [ActivityKeys.video_url]: string
 }
 
 //
@@ -150,6 +141,8 @@ export interface NewsPost {
   [NewsKeys.is_highlighted]: boolean
   [NewsKeys.is_activity]: ActivityType
   [NewsKeys.gallery]: WpImage[]
+  [NewsKeys.activity_date]: string
+  [NewsKeys.activity_calendar_url]: string
 }
 
 export interface CarouselImage {

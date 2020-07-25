@@ -1,12 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
-import apiRoutes from "../../api/apiRoutes"
 import { Activity } from "@/types"
-import useAsyncData from "../utils/useAsyncData"
-import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
-import { getWPTitle, getCustomField } from "@/utils/api"
-import { ActivityKeys } from "@/types/customFieldsKeysTypes"
 import { ActivityType } from "@/types/customFieldsTypes"
 import useNews from "./useNews"
 
@@ -59,8 +54,8 @@ export default function useActivities() {
     }
   }
 
-  const getTypeBySlug = (type: string): ActivityType => {
-    switch (type) {
+  const getTypeBySlug = (slug: string): ActivityType => {
+    switch (slug) {
       case "conversatorios":
         return ActivityType.Conversation
       case "cine-foros":

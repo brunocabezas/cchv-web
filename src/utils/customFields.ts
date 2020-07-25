@@ -83,6 +83,12 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
           ),
           related: mapRelatedNews(related, state),
           video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+          activity_calendar_url: getCustomField(
+            newsPost,
+            NewsKeys.activity_calendar_url,
+            ""
+          ),
+          activity_date: getCustomField(newsPost, NewsKeys.activity_date, ""),
         }
       }
     )

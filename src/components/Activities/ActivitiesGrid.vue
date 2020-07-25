@@ -23,6 +23,17 @@
           />
           <h3 v-html="act.name" class="activitiesGridTitle"></h3>
         </router-link>
+        <div v-if="act.activity_date" class="activitySchedule">
+          <p class="activityDate">{{ act.activity_date }}</p>
+          <div v-if="act.activity_calendar_url" class="activityCalendar">
+            <a
+              target="_blank"
+              class="activityCalendarLink"
+              :href="act.activity_calendar_url"
+              >Agéndalo</a
+            >
+          </div>
+        </div>
       </div>
       <div v-if="!onPage" class="activitiesGridGoToPageButtonContainer">
         <router-link
@@ -50,8 +61,36 @@
     flex-wrap: wrap;
 
     .activity
-      margin: 5px;
-      width: calc(33.333333% - 10px);
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      width: 33.3%;
+      padding: 5px 20px;
+      display: flex;
+      flex-direction: column;
+
+      .activitiesGridLink
+        flex: 1;
+
+      .activitySchedule
+        border: 1px solid $blue;
+        display: flex;
+        align-items: center;
+
+        .activityDate, .activityCalendar
+          font-weight: bold;
+
+        .activityDate
+          padding: 10px;
+          margin: 0;
+          flex: 1;
+          color: $blue;
+
+        .activityCalendar
+          .activityCalendarLink
+            background-color: $blue;
+            padding: 10px;
+            color: white;
+            font-style: italic;
 
   .activitiesGridTitle
     margin-top: 5px;

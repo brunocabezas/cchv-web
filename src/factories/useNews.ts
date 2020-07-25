@@ -47,6 +47,8 @@ export default function useNews() {
         gallery: n.gallery,
         text: n.text,
         video_url: n.video_url,
+        activity_date: n.activity_date,
+        activity_calendar_url: n.activity_calendar_url,
       })
     )
   })
