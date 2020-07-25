@@ -8,6 +8,12 @@ import Urls from "@/utils/urls"
 import { ResidencyKeys } from "@/types/customFieldsKeysTypes"
 import { Residency } from "@/types"
 import { sortByDate } from "@/utils/arrays"
+import {
+  DATE_FORMAT,
+  SHORT_DATE_FORMAT,
+  CUSTOM_FIELDS_DATE_FORMAT,
+} from "@/utils/static"
+import dayjs from "dayjs"
 
 Vue.use(VueCompositionApi)
 
@@ -16,7 +22,25 @@ const { data, fetch: fetchResidencies, isLoading } = useAsyncData<
 >(apiRoutes.Residencies)
 
 const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
-  console.log(getCustomField(wordpressPost, ResidencyKeys.date))
+  const hasDateRange = !!getCustomField(wordpressPost, ResidencyKeys.end_date)
+  // Date format
+  const dateObject = dayjs(
+    getCustomField(wordpressPost, ResidencyKeys.date),
+    CUSTOM_FIELDS_DATE_FORMAT
+  )
+  const date = dateObject.format(DATE_FORMAT)
+  const short_date = dateObject.format(SHORT_DATE_FORMAT)
+
+  // End date format
+  const endDateObject = dayjs(
+    getCustomField(wordpressPost, ResidencyKeys.end_date),
+    CUSTOM_FIELDS_DATE_FORMAT
+  )
+  const end_date = hasDateRange ? endDateObject.format(DATE_FORMAT) : ""
+  const short_end_date = hasDateRange
+    ? endDateObject.format(SHORT_DATE_FORMAT)
+    : ""
+
   return {
     id: wordpressPost.id,
     slug: wordpressPost.slug,
@@ -24,8 +48,11 @@ const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
     video_url: getCustomField(wordpressPost, ResidencyKeys.video_url),
     gallery: getCustomField(wordpressPost, ResidencyKeys.gallery),
     text: getCustomField(wordpressPost, ResidencyKeys.text),
-    date: getCustomField(wordpressPost, ResidencyKeys.date),
-    readable_date: getCustomField(wordpressPost, ResidencyKeys.readable_date),
+    date,
+    end_date,
+    // Same as date and end_date but with shorter format
+    short_date,
+    short_end_date,
   }
 }
 

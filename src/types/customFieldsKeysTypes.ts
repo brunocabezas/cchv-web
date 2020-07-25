@@ -138,5 +138,5 @@ export enum ResidencyKeys {
   gallery = "gallery",
   video_url = "video_url",
   date = "date",
-  readable_date = "readable_date",
+  end_date = "end_date",
 }

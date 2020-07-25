@@ -7,6 +7,7 @@ export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
 // Date format from https://github.com/iamkun/dayjs
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
+export const SHORT_DATE_FORMAT = "DD [de] MMM"
 export const CUSTOM_FIELDS_DATE_FORMAT = "DD/MM/YYYY"
 export const CONTACT_EMAIL = "contacto@cchv.cl"
 // A specific sponsor is bigger than others; this is due it's category

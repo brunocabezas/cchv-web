@@ -6,8 +6,12 @@
 
         <h1 v-html="residency.name" class="pageTitleText"></h1>
 
-        <div class="residencyDate">
-          {{ residency.readable_date || residency.date }}
+        <div v-if="!residency.end_date" class="residencyDate">
+          {{ residency.date }}
+        </div>
+        <div v-else class="residencyDate">
+          <p>Desde: {{ residency.date }}</p>
+          <p>Hasta: {{ residency.end_date }}</p>
         </div>
 
         <div class="pageBody" v-html="residency.text"></div>
@@ -36,7 +40,13 @@
               :to="getResidencyUrlBySlug(post.slug)"
             ></router-link>
           </h4>
-          <p class="latestPostsItem__date">{{ post.date }}</p>
+          <p v-if="post.end_date" class="latestPostsItem__date">
+            {{ post.short_date }}
+            {{ post.short_end_date ? ` - ${post.short_end_date}` : "" }}
+          </p>
+          <p v-else>
+            {{ post.date }}
+          </p>
           <hr v-if="latestResidencies.length > index + 1" />
         </div>
       </div>
@@ -63,4 +73,13 @@ $margin_between_videos = 2em;
   // Based on news post page newsPostPageRight
   .latestResidencies
     latest_posts();
+
+  .pageTitleText
+    margin-bottom: 0;
+
+  .residencyDate
+    color: #868686;
+
+    > p
+      color: #868686;
 </style>

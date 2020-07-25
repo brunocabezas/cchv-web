@@ -152,4 +152,7 @@ export interface Residency extends CustomFields.Residency {
   id: number
   name: string
   slug: string
+  // Sames as dates, but with SHORT_DATE_FORMAT
+  short_date: string
+  short_end_date: string
 }
