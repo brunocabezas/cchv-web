@@ -1,23 +1,57 @@
 import { ref, Ref, watch, computed, reactive } from "@vue/composition-api"
+import useWindowSize from "./useWindowsSize"
+
+export enum Viewport {
+  SM,
+  MD,
+  LG,
+}
+
+interface ViewportSize {
+  name: Viewport
+  size: number
+}
+
+const SM: ViewportSize = {
+  name: Viewport.SM,
+  size: 500,
+}
+
+const MD: ViewportSize = {
+  name: Viewport.MD,
+  size: 800,
+}
+const LG: ViewportSize = {
+  name: Viewport.LG,
+  // as $boxed_content_max_width
+  size: 1280,
+}
+
+const getViewportSizeByWidth = (width: number) => {
+  if (width >= LG.size) {
+    return LG
+  } else if (width <= SM.size) {
+    return SM
+  } else {
+    return MD
+  }
+}
 
 // recieves tabs with reference
 export default function useMediaQueries() {
-  const firstTabId = computed(() => ()
-  const activeTab = reactive({ id: firstTabId.value })
-
-  // Every time tabs change, the activeTabId is set to the first tab
-  watch(tabs, (tabs) => {
-    const firstTabId = (tabs[0] && tabs[0].id) || undefined
-    activeTab.id = firstTabId || 0
+  const { width } = useWindowSize()
+  const viewport = computed<Viewport>(() => {
+    console.log(width.value, getViewportSizeByWidth(width.value).name)
+    return getViewportSizeByWidth(width.value).name
   })
-
-  function setActiveTab(tabId: number) {
-    activeTab.id = tabId
-  }
+  const onSmallScreen = computed<boolean>(() => viewport.value === Viewport.SM)
+  const onMediumScreen = computed<boolean>(() => viewport.value === Viewport.MD)
+  const onBigScreen = computed<boolean>(() => viewport.value === Viewport.LG)
 
   return {
-    activeTabId: computed(() => activeTab.id),
-    tabs,
-    setActiveTab,
+    viewport,
+    onSmallScreen,
+    onBigScreen,
+    onMediumScreen,
   }
 }
