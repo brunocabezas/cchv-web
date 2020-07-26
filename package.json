@@ -19,6 +19,7 @@
     "dayjs": "^1.8.26",
     "vue": "^2.6.11",
     "vue-awesome": "^4.0.2",
+    "vue-burger-button": "^0.1.2",
     "vue-carousel": "^0.18.0",
     "vue-class-component": "^7.2.3",
     "vue-ellipsis": "^1.2.0",

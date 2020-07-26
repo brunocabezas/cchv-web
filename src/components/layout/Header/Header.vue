@@ -4,16 +4,20 @@
       <Logo />
     </div>
 
-    <burger-button
-      v-if="displayNavigationMenuButton"
-      class="burgerButton"
-      :active="isOpen"
-      :bar-color="isOpen ? 'white' : 'black'"
-      :bar-height="4"
-      :bar-width="30"
-      @click="toggleMenu"
-      type="button"
-    />
+    <div
+      v-if="!displayNavigationMenuButton"
+      class="headerRightSection headerRightSection--only-button"
+    >
+      <burger-button
+        class="burgerButton"
+        :active="isMenuOpen"
+        :bar-color="isMenuOpen ? 'white' : 'black'"
+        :bar-height="4"
+        :bar-width="30"
+        @click="toggleMenu"
+        type="button"
+      />
+    </div>
     <div v-if="displayNavigationMenuButton" class="headerRightSection">
       <div class="socialNetworkContainer">
         <SocialNetworks small />
@@ -36,25 +40,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import BurgerButton from "vue-burger-button";
-import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
-import Logo from "@/components/Logo.vue";
-import SocialNetworks from "@/components/SocialNetworks.vue";
-import { defineComponent } from "@vue/composition-api";
-import { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL } from "@/utils/static";
-import "vue-burger-button/dist/vue-burger-button.css";
-
-const Header = defineComponent({
-  name: "Header",
-  components: { Logo, HeaderNav, SocialNetworks, BurgerButton },
-  setup() {
-    return { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL };
-  }
-});
-
-export default Header;
-</script>
+<script lang="ts" src="./header.ts"></script>
 <style scoped lang="stylus">
 @import '../../../styles/variables.styl';
 
@@ -69,20 +55,25 @@ export default Header;
   height: $header_height;
   align-items: center;
   padding: 0 10px;
-  justify-content: center;
   border-bottom: 2px solid $grey;
 
   .headerLeftSection
     display: flex;
     height: $header_height;
     align-items: center;
-    width: 30%;
+    width: 300px;
 
   .headerRightSection
     display: flex;
+    flex: 1;
     height: $header_height;
     width: 70%;
     flex-direction: column;
+
+    &--only-button
+      padding-right: 10px;
+      justify-content: center;
+      align-items: flex-end;
 
     .headerNavContainer
       display: flex;

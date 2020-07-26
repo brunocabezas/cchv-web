@@ -1,4 +1,4 @@
-import { ref, Ref, watch, computed, reactive } from "@vue/composition-api"
+import { computed } from "@vue/composition-api"
 import useWindowSize from "./useWindowsSize"
 
 export enum Viewport {
@@ -14,7 +14,7 @@ interface ViewportSize {
 
 const SM: ViewportSize = {
   name: Viewport.SM,
-  size: 500,
+  size: 550,
 }
 
 const MD: ViewportSize = {
@@ -37,21 +37,23 @@ const getViewportSizeByWidth = (width: number) => {
   }
 }
 
-// recieves tabs with reference
 export default function useMediaQueries() {
   const { width } = useWindowSize()
-  const viewport = computed<Viewport>(() => {
-    console.log(width.value, getViewportSizeByWidth(width.value).name)
-    return getViewportSizeByWidth(width.value).name
-  })
+  const viewport = computed<Viewport>(
+    () => getViewportSizeByWidth(width.value).name
+  )
   const onSmallScreen = computed<boolean>(() => viewport.value === Viewport.SM)
   const onMediumScreen = computed<boolean>(() => viewport.value === Viewport.MD)
   const onBigScreen = computed<boolean>(() => viewport.value === Viewport.LG)
+  const onBiggerThanMediumScreen = computed<boolean>(
+    () => onBigScreen.value || onMediumScreen.value
+  )
 
   return {
     viewport,
     onSmallScreen,
     onBigScreen,
     onMediumScreen,
+    onBiggerThanMediumScreen,
   }
 }
