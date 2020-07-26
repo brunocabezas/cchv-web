@@ -53,6 +53,9 @@ const ProgramPage = defineComponent({
 
     return {
       program,
+      displaySmallTitle: computed<boolean>(
+        () => isArtScienceAndCultureProgram.value
+      ),
       isLoading,
       isMagneticFieldsProgram: computed<boolean>(() =>
         program.value

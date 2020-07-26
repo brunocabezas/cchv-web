@@ -8,6 +8,7 @@ import { WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
+import { dateIsPast } from "@/utils/date"
 
 Vue.use(VueCompositionApi)
 
@@ -30,7 +31,7 @@ export default function useNews() {
   )
 
   // Some news can be defined as also activities
-  // Map news with NewsKeys.is_activity field set to true
+  // Map news with NewsKeys.is_activity field set !act.activity_calendar_url || dateInPast(activity_date)to true
   const activityNews = computed<Activity[]>(() => {
     const newsAsActivities = news.value.filter(
       (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
@@ -47,6 +48,9 @@ export default function useNews() {
         gallery: n.gallery,
         text: n.text,
         video_url: n.video_url,
+        activity_date: n.activity_date,
+        activity_calendar_url: n.activity_calendar_url,
+        isDisabled: !n.activity_calendar_url || dateIsPast(n.activity_date),
       })
     )
   })

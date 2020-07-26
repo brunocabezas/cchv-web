@@ -19,8 +19,16 @@
           >{{ residency.name }}</router-link
         >
       </h2>
-      <p class="residencyDate">
-        {{ residency.readable_date || residency.date }}
+      <p
+        class="residencyDate"
+        :title="
+          `${residency.date} ${
+            residency.end_date ? ` - ${residency.end_date}` : ``
+          }`
+        "
+      >
+        {{ residency.end_date ? residency.short_date : residency.date }}
+        {{ residency.short_end_date ? ` - ${residency.short_end_date}` : "" }}
       </p>
     </div>
   </div>
@@ -79,4 +87,5 @@ export default Residencies;
 
     .residencyDate
       margin-top: 0;
+      color: $latest_posts_grey;
 </style>

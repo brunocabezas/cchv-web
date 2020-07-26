@@ -13,7 +13,6 @@ export type CustomFieldsKeys =
   | ProgramKeys
   | ProgramVideoKeys
   | SchoolProgramKeys
-  | ActivityKeys
   | DocumentKeys
   | TeamMembersKeys
   | VideoKeys
@@ -39,6 +38,8 @@ export enum NewsKeys {
   related = "related",
   is_highlighted = "is_highlighted",
   is_activity = "is_activity",
+  activity_date = "activity_date",
+  activity_calendar_url = "activity_calendar_url",
 }
 
 //
@@ -119,15 +120,6 @@ export enum SchoolProgramKeys {
   is_active = "is_active",
 }
 
-// Activities
-export enum ActivityKeys {
-  type = "type",
-  abstract = "abstract",
-  text = "text",
-  video_url = "video_url",
-  gallery = "gallery",
-}
-
 // Videos displayed on home
 export enum VideoKeys {
   video_url = "video_url",
@@ -146,5 +138,5 @@ export enum ResidencyKeys {
   gallery = "gallery",
   video_url = "video_url",
   date = "date",
-  readable_date = "readable_date",
+  end_date = "end_date",
 }

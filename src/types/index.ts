@@ -1,5 +1,6 @@
 import Urls from "@/utils/urls"
 import * as CustomFields from "@/types/customFieldsTypes"
+import { WpImage } from "./wordpressTypes"
 
 // LAYOUT
 export enum AboutPages {
@@ -50,12 +51,21 @@ export interface TeamMember extends CustomFields.TeamMember {
   id: number
 }
 
-export interface Activity extends CustomFields.Activity {
+export interface Activity {
   id: number
   name: string
   // Slug to build urls
-  slug: string
+  slug: String
   isNewsPost: boolean
+  abstract: string
+  gallery: WpImage[]
+  text: string
+  video_url: string
+  activity_date: String
+  activity_calendar_url: string
+  type: CustomFields.ActivityType
+  // If an activity is disabled, so does the link to the calendar
+  isDisabled: boolean
 }
 
 export interface ProgramVideo extends CustomFields.ProgramVideo {
@@ -142,4 +152,7 @@ export interface Residency extends CustomFields.Residency {
   id: number
   name: string
   slug: string
+  // Sames as dates, but with SHORT_DATE_FORMAT
+  short_date: string
+  short_end_date: string
 }

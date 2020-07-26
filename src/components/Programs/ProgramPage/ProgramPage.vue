@@ -1,6 +1,9 @@
 <template>
   <div
-    v-bind:class="{ 'program--full-width': pageHasFullWidth }"
+    v-bind:class="{
+      'program--full-width': pageHasFullWidth,
+      'program--small-title': displaySmallTitle
+    }"
     class="page program"
   >
     <div class="program--full-width-boxed">
@@ -36,6 +39,10 @@
   .programText.pageRow
     display: block;
 
+&.program--small-title
+  .pageTitleText
+    font-size: 38px;
+
   &.program--full-width
     width: 100% !important;
     padding: 0;
@@ -44,6 +51,5 @@
     .program--full-width-boxed
       max-width: $boxed_content_max_width;
       margin: 0 auto;
-      padding-left: 'calc(%s * 0.15)' % $boxed_content_max_width;
-      padding-right: 'calc(%s * 0.15)' % $boxed_content_max_width;
+      page_padding(0, 0);
 </style>

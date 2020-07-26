@@ -13,11 +13,7 @@
             <div class="pageBody" v-html="event.text"></div>
           </div>
           <div class="editionMedia">
-            <Media
-              :youtubeUrl="event.video_url"
-              height="100%"
-              :gallery="event.gallery"
-            />
+            <Media height="100%" />
           </div>
         </div>
       </div>
@@ -37,18 +33,15 @@ const Editions = defineComponent({
     Loader,
     Media
   },
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
-  setup(props) {
+  setup() {
     const { editions, fetchEditions, isLoading } = useEditions();
 
     fetchEditions();
 
-    return { editions, isLoading };
+    return {
+      editions,
+      isLoading
+    };
   }
 });
 
@@ -65,7 +58,9 @@ $margin_between_videos = 2em;
 
   // edition has different background colors
   .editionContainer
-    background-color: $white;
+    max-width: $boxed_content_max_width;
+    margin: 0 auto;
+    page_padding(0, 0);
 
     &:nth-child(odd)
       background-color: $grey;
@@ -74,7 +69,6 @@ $margin_between_videos = 2em;
       min-height: 500px;
       max-height: 700px;
       padding: 3em 0;
-      max-width: $boxed_content_max_width;
       margin: 0 auto;
       display: flex;
       flex-direction: row;
@@ -84,7 +78,7 @@ $margin_between_videos = 2em;
 
       .editionInfo
         text-align: justify;
-        padding-right: 2em;
+        padding-right: 1em;
         overflow-y: auto;
 
         .editionName
