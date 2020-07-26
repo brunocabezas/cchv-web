@@ -13,11 +13,7 @@
             <div class="pageBody" v-html="event.text"></div>
           </div>
           <div class="editionMedia">
-            <Media
-              :youtubeUrl="event.video_url"
-              height="100%"
-              :gallery="event.gallery"
-            />
+            <Media height="100%" />
           </div>
         </div>
       </div>
