@@ -19,7 +19,7 @@ const SM: ViewportSize = {
 
 const MD: ViewportSize = {
   name: Viewport.MD,
-  size: 800,
+  size: 850,
 }
 const LG: ViewportSize = {
   name: Viewport.LG,
@@ -55,5 +55,7 @@ export default function useMediaQueries() {
     onBigScreen,
     onMediumScreen,
     onBiggerThanMediumScreen,
+    //
+    displayMediaBeforeTitle: computed(() => onSmallScreen.value),
   }
 }

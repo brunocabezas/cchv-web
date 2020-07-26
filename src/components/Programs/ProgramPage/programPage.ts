@@ -10,6 +10,7 @@ import Residencies from "@/components/Programs/Residencies/Residencies.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue"
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 // Returns true if program has contentType
 const matchProgramContent = (
@@ -36,6 +37,7 @@ const ProgramPage = defineComponent({
     },
   },
   setup(props) {
+    const { displayMediaBeforeTitle } = useMediaQueries()
     const { getProgramBySlug, isLoading } = usePrograms()
 
     const program = computed<Program | undefined>(() =>
@@ -79,6 +81,7 @@ const ProgramPage = defineComponent({
       ),
       isArtScienceAndCultureProgram: isArtScienceAndCultureProgram,
       pageHasFullWidth: isArtScienceAndCultureProgram,
+      displayMediaBeforeTitle,
     }
   },
 })

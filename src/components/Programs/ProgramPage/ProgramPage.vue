@@ -8,7 +8,7 @@
   >
     <div class="program--full-width-boxed">
       <Loader v-if="!program" :loading="isLoading" />
-      <div v-if="program" class="pageTitle">
+      <div v-if="program && !displayMediaBeforeTitle" class="pageTitle">
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media
@@ -16,6 +16,9 @@
         :youtubeUrl="program.video_url"
         :gallery="program.gallery"
       />
+      <div v-if="program && displayMediaBeforeTitle" class="pageTitle">
+        <h1 class="pageTitleText">{{ program.name }}</h1>
+      </div>
       <div
         v-if="program"
         class="pageRow pageBody programText"

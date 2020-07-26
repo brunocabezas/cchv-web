@@ -51,12 +51,6 @@ const DowneyProgramVideos = defineComponent({
     Loader,
     Media
   },
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
   setup(props) {
     const { programVideos, isLoading, fetchProgramVideos } = useProgramVideos();
 

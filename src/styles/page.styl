@@ -1,7 +1,6 @@
 @import './variables.styl';
 
 .pageTitleText
-  font-size: 45px;
   color: $blue;
 
 .page
@@ -18,14 +17,30 @@
     display: flex;
     align-items: center;
 
+    @media (max-width: $sm)
+      padding: 10px;
+
     .pageTitleText
       flex: 1;
+      @media (max-width: $sm)
+        margin 10px 0
 
   .pageRow
     display: flex;
 
+    @media (max-width: $sm)
+      padding: 10px;
+
+    &:not(.schoolProgramTabsTitle)
+      @media (max-width: $md)
+        flex-direction: column;
+
     .pageLeft, .pageRight
       width: 50%;
+
+      @media (max-width: $md)
+        width: 100%;
+        margin: 0;
 
   // Used to render html from WYSYWIG editors
   .pageBody
