@@ -1,6 +1,7 @@
 import Urls from "./urls"
 import { NavigationMenu, NavMenu } from "@/types"
 
+export const YOUTUBE_CHANNEL_LABEL = "NOTV"
 export const DOMAIN = "cchv.cl"
 export const DEFAULT_TITLE = "CChV"
 export const MAIN_COLOR = "#344284"

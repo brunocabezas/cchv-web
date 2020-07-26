@@ -44,7 +44,7 @@
             {{ post.short_date }}
             {{ post.short_end_date ? ` - ${post.short_end_date}` : "" }}
           </p>
-          <p v-else>
+          <p v-else class="latestPostsItem__date">
             {{ post.date }}
           </p>
           <hr v-if="latestResidencies.length > index + 1" />

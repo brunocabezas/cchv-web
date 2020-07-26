@@ -1,6 +1,6 @@
 <template>
   <div class="homeVideos homeSection">
-    <h1 class="homeSection__title">CChV TV</h1>
+    <h1 class="homeSection__title">{{ YOUTUBE_CHANNEL_LABEL }}</h1>
     <div class="homeVideosCarousel">
       <Loader v-if="isLoading" />
       <carousel
