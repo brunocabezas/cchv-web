@@ -1,10 +1,10 @@
 import { defineComponent, computed, ref } from "@vue/composition-api"
 import { Carousel, Slide } from "vue-carousel"
 import Icon from "vue-awesome/components/Icon.vue"
-import useVideos from "@/factories/useVideos"
+import useVideos from "@/models/useVideos"
 import Loader from "@/components/Loader.vue"
-import useCarousel from "@/utils/useCarousel"
 import { YOUTUBE_CHANNEL_LABEL } from "@/utils/static"
+import useCarousel from "@/hooks/useCarousel"
 import { getIdFromUrl as getYoutubeIdFromUrl } from "vue-youtube"
 
 const HomeVideosCarousel = defineComponent({

@@ -1,7 +1,7 @@
 import { computed, defineComponent, ref } from "@vue/composition-api"
 import NewsThumb from "@/components/News/NewsThumb.vue"
 import Loader from "@/components/Loader.vue"
-import useNews from "@/factories/useNews"
+import useNews from "@/models/useNews"
 
 // Used with infinite loading
 const NEWS_PER_PAGE = 6

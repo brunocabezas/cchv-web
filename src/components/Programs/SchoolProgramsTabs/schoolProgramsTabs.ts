@@ -2,8 +2,8 @@ import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
-import useSchoolPrograms from "@/factories/useSchoolPrograms"
-import useTabs from "@/utils/useTabs"
+import useSchoolPrograms from "@/models/useSchoolPrograms"
+import useTabs from "@/hooks/useTabs"
 import { SchoolProgram } from "@/types"
 
 const SchoolProgramsTabs = defineComponent({

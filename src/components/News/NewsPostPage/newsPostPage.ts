@@ -3,8 +3,8 @@ import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Media from "@/components/Media/Media.vue"
 import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
-import useNews from "@/factories/useNews"
 import { INITIAL_NEWS_BY_PAGE } from "../NewsPage/newsPage"
+import useNews from "@/models/useNews"
 
 export default defineComponent({
   name: "NewsPostPage",

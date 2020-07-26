@@ -14,7 +14,7 @@ import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
-import useActivities from "@/factories/useActivities"
+import useActivities from "@/models/useActivities"
 
 const { getTypeBySlug } = useActivities()
 const routes = [

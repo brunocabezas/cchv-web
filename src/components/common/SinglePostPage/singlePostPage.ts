@@ -1,10 +1,10 @@
 import { defineComponent, PropType, computed } from "@vue/composition-api"
 import { SchoolProgram, Activity } from "@/types"
 import Loader from "@/components/Loader.vue"
-import useActivities from "@/factories/useActivities"
+import useActivities from "@/models/useActivities"
 import Media from "@/components/Media/Media.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
-import useSchoolPrograms from "@/factories/useSchoolPrograms"
+import useSchoolPrograms from "@/models/useSchoolPrograms"
 
 export enum SinglePostDataType {
   Activity = "activity",

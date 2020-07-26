@@ -38,7 +38,7 @@
 import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import useResidencies from "@/factories/useResidencies";
+import useResidencies from "@/models/useResidencies";
 
 const Residencies = defineComponent({
   name: "Residencies",

@@ -48,7 +48,7 @@ import { defineComponent, PropType } from "@vue/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { NewsPost } from "@/types";
 import Urls from "@/utils/urls";
-import useNews from "@/factories/useNews";
+import useNews from "@/models/useNews";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import { MAIN_COLOR } from "@/utils/static";
 

@@ -1,5 +1,5 @@
 import { defineComponent, computed } from "@vue/composition-api"
-import usePrograms from "@/factories/usePrograms"
+import usePrograms from "@/models/usePrograms"
 import { addPagesToProgramsNavigationMenu } from "@/utils/headerUtils"
 import { NavigationMenu } from "@/types"
 

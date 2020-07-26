@@ -1,8 +1,8 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "../utils/useAsyncData"
-import { WpCategory, WpResponseData } from "@/types/wordpressTypes"
+import useAsyncData from "@/hooks/useAsyncData"
+import { WpCategory } from "@/types/wordpressTypes"
 import { ActivityType } from "@/types/customFieldsTypes"
 
 Vue.use(VueCompositionApi)

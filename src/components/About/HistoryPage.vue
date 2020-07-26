@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from "@vue/composition-api";
-import usePages from "@/factories/usePages";
+import usePages from "@/models/usePages";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import Urls from "@/utils/urls";

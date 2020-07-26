@@ -4,7 +4,7 @@ import { MAIN_COLOR } from "@/utils/static"
 import Loader from "@/components/Loader.vue"
 import NewsThumb from "@/components/News/NewsThumb.vue"
 import Urls from "@/utils/urls"
-import useNews from "@/factories/useNews"
+import useNews from "@/models/useNews"
 
 const HomeNews = defineComponent({
   name: "HomeNews",

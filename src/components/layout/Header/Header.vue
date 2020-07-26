@@ -3,7 +3,18 @@
     <div class="headerLeftSection">
       <Logo />
     </div>
-    <div class="headerRightSection">
+
+    <burger-button
+      v-if="displayNavigationMenuButton"
+      class="burgerButton"
+      :active="isOpen"
+      :bar-color="isOpen ? 'white' : 'black'"
+      :bar-height="4"
+      :bar-width="30"
+      @click="toggleMenu"
+      type="button"
+    />
+    <div v-if="displayNavigationMenuButton" class="headerRightSection">
       <div class="socialNetworkContainer">
         <SocialNetworks small />
       </div>
@@ -26,15 +37,17 @@
 </template>
 
 <script lang="ts">
+import BurgerButton from "vue-burger-button";
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
 import Logo from "@/components/Logo.vue";
 import SocialNetworks from "@/components/SocialNetworks.vue";
 import { defineComponent } from "@vue/composition-api";
 import { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL } from "@/utils/static";
+import "vue-burger-button/dist/vue-burger-button.css";
 
 const Header = defineComponent({
   name: "Header",
-  components: { Logo, HeaderNav, SocialNetworks },
+  components: { Logo, HeaderNav, SocialNetworks, BurgerButton },
   setup() {
     return { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL };
   }

@@ -43,7 +43,7 @@
 import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
-import useProgramVideos from "@/factories/useProgramVideos";
+import useProgramVideos from "@/models/useProgramVideos";
 
 const DowneyProgramVideos = defineComponent({
   name: "DowneyProgramVideos",

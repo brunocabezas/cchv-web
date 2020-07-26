@@ -44,7 +44,7 @@ import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import { MAIN_COLOR } from "@/utils/static";
 import Icon from "vue-awesome/components/Icon.vue";
-import useEditions from "@/factories/useEditions";
+import useEditions from "@/models/useEditions";
 
 const Editions = defineComponent({
   name: "Editions",

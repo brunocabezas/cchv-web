@@ -26,7 +26,7 @@
 import { defineComponent } from "@vue/composition-api";
 import { MAIN_COLOR } from "@/utils/static";
 import Icon from "vue-awesome/components/Icon.vue";
-import useSocialNetworks from "@/factories/useSocialNetworks";
+import useSocialNetworks from "@/models/useSocialNetworks";
 
 const SocialNetworks = defineComponent({
   name: "SocialNetworks",

@@ -33,9 +33,9 @@
 
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
-import useSponsors from "@/factories/useSponsors";
+import useSponsors from "@/models/useSponsors";
 import { BIG_SPONSOR_CATEGORY_LABEL } from "@/utils/static";
-import { AsyncDataStatus } from "@/utils/useAsyncData";
+import { AsyncDataStatus } from "@/hooks/useAsyncData";
 import Loader from "@/components/Loader.vue";
 
 export default defineComponent({

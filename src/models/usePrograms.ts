@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Program } from "@/types"
-import useAsyncData from "../utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import {
   WPResponseItem,
   WpImage,

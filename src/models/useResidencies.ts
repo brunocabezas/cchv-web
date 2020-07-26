@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import Urls from "@/utils/urls"

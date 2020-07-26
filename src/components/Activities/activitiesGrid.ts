@@ -1,12 +1,12 @@
 import { defineComponent, computed, PropType } from "@vue/composition-api"
-import useActivities from "@/factories/useActivities"
+import useActivities from "@/models/useActivities"
 import { ActivityType } from "@/types/customFieldsTypes"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import { Activity } from "@/types"
-import useNews from "@/factories/useNews"
-import useWpCategories from "@/factories/useWpCategories"
+import useWpCategories from "@/models/useWpCategories"
 import { WpCategory } from "@/types/wordpressTypes"
+import useNews from "@/models/useNews"
 
 // While onPages prop is set false, max acitivities to be displayed will be determined by MAX_ACTIVITIES
 const MAX_ACTIVITIES = 3

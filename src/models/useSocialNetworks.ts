@@ -1,6 +1,6 @@
 import { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import {
   WPSelectCustomFieldValue,
   WPResponseItem,
