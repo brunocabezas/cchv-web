@@ -7,9 +7,10 @@ import {
 } from "@/types/wordpressTypes"
 import { RelatedNewsPost, NewsPost } from "@/types"
 import dayjs from "dayjs"
-import { DATE_FORMAT } from "./static"
+import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./static"
 import { filterUndef } from "./arrays"
 import { ActivityType } from "@/types/customFieldsTypes"
+import { dateIsPast } from "./date"
 
 const mapRelatedNews = (
   related: WPRelatedCustomFieldValue,
@@ -60,6 +61,14 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
           NewsKeys.related,
           []
         )
+        const activityDate = getCustomField(
+          newsPost,
+          NewsKeys.activity_date,
+          ""
+        )
+        const activity_date = activityDate
+          ? dayjs(activityDate, CUSTOM_FIELDS_DATE_FORMAT).format(DATE_FORMAT)
+          : ""
 
         return {
           id: newsPost.id,
@@ -88,7 +97,10 @@ const mapNewsToView = (state: WpResponseData): NewsPost[] => {
             NewsKeys.activity_calendar_url,
             ""
           ),
-          activity_date: getCustomField(newsPost, NewsKeys.activity_date, ""),
+          activity_date,
+          isDisabled:
+            !getCustomField(newsPost, NewsKeys.activity_calendar_url, "") ||
+            dateIsPast(activityDate),
         }
       }
     )

@@ -38,19 +38,19 @@ export default function useNews() {
     )
 
     return newsAsActivities.map(
-      (n: NewsPost): Activity => ({
-        id: n.id,
-        name: n.title,
-        slug: n.slug,
-        type: n.is_activity,
+      (newsPost: NewsPost): Activity => ({
+        id: newsPost.id,
+        name: newsPost.title,
+        slug: newsPost.slug,
+        type: newsPost.is_activity,
         isNewsPost: true,
-        abstract: n.abstract,
-        gallery: n.gallery,
-        text: n.text,
-        video_url: n.video_url,
-        activity_date: n.activity_date,
-        activity_calendar_url: n.activity_calendar_url,
-        isDisabled: !n.activity_calendar_url || dateIsPast(n.activity_date),
+        abstract: newsPost.abstract,
+        gallery: newsPost.gallery,
+        text: newsPost.text,
+        video_url: newsPost.video_url,
+        activity_date: newsPost.activity_date,
+        isDisabled: newsPost.isDisabled,
+        activity_calendar_url: newsPost.activity_calendar_url,
       })
     )
   })

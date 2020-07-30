@@ -7,6 +7,11 @@
     </h1>
     <div class="activitiesGridContainer">
       <div v-for="act in activities" v-bind:key="act.id" class="activity">
+        <ActivitySchedule
+          :calendarUrl="act.activity_calendar_url"
+          :date="act.activity_date"
+          :isDisabled="act.isDisabled"
+        />
         <router-link
           class="activitiesGridLink"
           :title="act.name"
@@ -23,23 +28,6 @@
           />
           <h3 v-html="act.name" class="activitiesGridTitle"></h3>
         </router-link>
-        <div v-if="act.activity_date" class="activitySchedule">
-          <p class="activityDate">{{ act.activity_date }}</p>
-          <div
-            class="activityCalendar"
-            v-bind:class="{
-              'activityCalendar--disabled': act.isDisabled
-            }"
-          >
-            <a
-              :disabled="true"
-              :target="!act.isDisabled ? '_blank' : ''"
-              class="activityCalendarLink"
-              :href="!act.isDisabled ? act.activity_calendar_url : '#'"
-              >Agéndalo</a
-            >
-          </div>
-        </div>
       </div>
       <div v-if="!onPage" class="activitiesGridGoToPageButtonContainer">
         <router-link
@@ -76,44 +64,6 @@
 
       .activitiesGridLink
         flex: 1;
-
-      .activitySchedule
-        display: flex;
-        align-items: center;
-
-        .activityDate, .activityCalendar
-          font-weight: bold;
-          height: 40px;
-
-        .activityDate
-          border-top: 1px solid $blue;
-          border-left: 1px solid $blue;
-          border-bottom: 1px solid $blue;
-          padding: 10px;
-          margin: 0;
-          flex: 1;
-          color: $blue;
-
-        .activityCalendar
-          display: flex;
-          border-top: 1px solid $blue;
-          border-right: 1px solid $blue;
-          border-bottom: 1px solid $blue;
-
-          &.activityCalendar--disabled
-            border-color: $latest_posts_grey;
-
-            .activityCalendarLink
-              background-color: $latest_posts_grey;
-
-              &:hover
-                cursor: not-allowed;
-
-          .activityCalendarLink
-            background-color: $blue;
-            padding: 10px;
-            color: white;
-            font-style: italic;
 
   .activitiesGridTitle
     margin-top: 5px;

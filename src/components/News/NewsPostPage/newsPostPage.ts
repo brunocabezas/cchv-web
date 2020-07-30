@@ -2,6 +2,7 @@ import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Media from "@/components/Media/Media.vue"
+import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import useNews from "@/factories/useNews"
 
 export default defineComponent({
@@ -12,7 +13,7 @@ export default defineComponent({
       required: true,
     },
   },
-  components: { Loader, Media, ProgressiveImage },
+  components: { Loader, Media, ProgressiveImage, ActivitySchedule },
   setup(props) {
     const {
       getNewsPostBySlug,

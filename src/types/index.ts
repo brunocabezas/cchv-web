@@ -119,6 +119,8 @@ export interface NewsPost extends CustomFields.NewsPost {
   date: string
   // Slug to build urls
   slug: string
+  // If an activity is disabled, so does the link to the calendar
+  isDisabled: boolean
 }
 
 export interface RelatedNewsPost {

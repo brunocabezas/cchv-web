@@ -131,6 +131,7 @@ export enum EditionKeys {
   gallery = "gallery",
   video_url = "video_url",
   order = "order",
+  date = "date",
 }
 
 export enum ResidencyKeys {

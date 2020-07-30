@@ -22,6 +22,7 @@ const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
     gallery: getCustomField(editionPost, EditionKeys.gallery),
     text: getCustomField(editionPost, EditionKeys.text),
     order: getCustomField(editionPost, EditionKeys.order),
+    date: getCustomField(editionPost, EditionKeys.date),
   }
 }
 

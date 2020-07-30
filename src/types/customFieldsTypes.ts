@@ -162,6 +162,7 @@ export interface Edition {
   [EditionKeys.gallery]: WpImage[]
   [EditionKeys.video_url]: string
   [EditionKeys.text]: string
+  [EditionKeys.date]: string
 }
 
 export interface Residency {
