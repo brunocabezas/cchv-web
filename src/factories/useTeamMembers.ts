@@ -3,7 +3,7 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { TeamMembersKeys } from "@/types/customFieldsKeysTypes"
 import { TeamMember } from "@/types"
 import { TeamMemberPosition } from "@/utils/teamMembers"
@@ -12,6 +12,7 @@ import {
   groupTeamMembersByPosition,
   sortGrouptedTeamMembers,
 } from "@/utils/teamMembers"
+import { DEFAULT_ORDER } from "@/utils/static"
 
 Vue.use(VueCompositionApi)
 
@@ -25,9 +26,21 @@ export default function useTeamMembers() {
       (teamMemberPost): TeamMember => ({
         id: teamMemberPost.id,
         name: getWPTitle(teamMemberPost),
-        position: getCustomField(teamMemberPost, TeamMembersKeys.position),
-        order: getCustomField<number>(teamMemberPost, TeamMembersKeys.order),
-        type: getCustomField(teamMemberPost, TeamMembersKeys.type),
+        position: getCustomFieldFromPost(
+          teamMemberPost,
+          TeamMembersKeys.position,
+          ""
+        ),
+        order: getCustomFieldFromPost<number>(
+          teamMemberPost,
+          TeamMembersKeys.order,
+          DEFAULT_ORDER
+        ),
+        type: getCustomFieldFromPost(
+          teamMemberPost,
+          TeamMembersKeys.type,
+          TeamMemberType.Staff
+        ),
       })
     )
   })

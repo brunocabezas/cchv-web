@@ -12,11 +12,13 @@ import { TeamMemberPosition } from "@/utils/teamMembers"
 import dayjs from "dayjs"
 import customParseFormat from "dayjs/plugin/customParseFormat"
 import { CUSTOM_FIELDS_DATE_FORMAT } from "./static"
+
+dayjs.extend(customParseFormat)
+
 export function filterUndef<T>(ts: (T | undefined)[]): T[] {
   return ts.filter((t: T | undefined): t is T => !!t)
 }
 
-dayjs.extend(customParseFormat)
 type SortableByOrder =
   | Program
   | Document

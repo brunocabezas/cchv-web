@@ -1,6 +1,7 @@
 import Urls from "@/utils/urls"
 import * as CustomFields from "@/types/customFieldsTypes"
 import { WpImage } from "./wordpressTypes"
+import { SponsorCategoryKeys, ProgramKeys } from "./customFieldsKeysTypes"
 
 // LAYOUT
 export enum AboutPages {
@@ -73,11 +74,13 @@ export interface ProgramVideo extends CustomFields.ProgramVideo {
   name: string
 }
 
-export interface Program extends CustomFields.Program {
+export interface Program
+  extends Omit<CustomFields.Program, ProgramKeys.extra_content> {
   id: number
   name: string
   // Slug to build urls
   slug: string
+  extra_content: string
 }
 
 export interface SchoolProgram extends CustomFields.SchoolProgram {
@@ -99,14 +102,16 @@ export interface Page extends CustomFields.Page {
   name: string
 }
 
-// Sponsors
-export interface SponsorsCategory extends CustomFields.SponsorsCategory {
-  name: string
+export interface Sponsor extends CustomFields.Sponsor {
   id: number
 }
 
-export interface Sponsor extends CustomFields.Sponsor {
+// Sponsors
+export interface SponsorsCategory
+  extends Omit<CustomFields.SponsorsCategory, SponsorCategoryKeys.sponsors> {
+  name: string
   id: number
+  sponsors: Sponsor[]
 }
 
 // News
@@ -123,6 +128,7 @@ export interface NewsPost extends CustomFields.NewsPost {
   activity_date_has_passed: boolean
 }
 
+// Not used
 export interface RelatedNewsPost {
   id: number
   title: string

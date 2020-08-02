@@ -3,10 +3,11 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/utils/useAsyncData"
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
 import { Sponsor, SponsorsCategory } from "@/types"
 import { filterUndef, sortByOrder } from "@/utils/arrays"
+import { DEFAULT_ORDER } from "@/utils/static"
 
 Vue.use(VueCompositionApi)
 
@@ -15,7 +16,7 @@ const mapWpResponseToView = (
   sponsorCategoryPost: WPResponseItem,
   sponsors: WpResponseData
 ): SponsorsCategory => {
-  const sponsorsIds = getCustomField<number[]>(
+  const sponsorsIds = getCustomFieldFromPost<number[]>(
     sponsorCategoryPost,
     SponsorCategoryKeys.sponsors,
     []
@@ -25,20 +26,25 @@ const mapWpResponseToView = (
   )
 
   const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
-    (sponsor) => ({
+    (sponsor): Sponsor => ({
       id: sponsor.id,
-      order: getCustomField<number>(sponsor, SponsorKeys.order),
-      logo: getCustomField(sponsor, SponsorKeys.logo),
-      url: getCustomField(sponsor, SponsorKeys.url),
+      order: getCustomFieldFromPost<number>(
+        sponsor,
+        SponsorKeys.order,
+        DEFAULT_ORDER
+      ),
+      logo: getCustomFieldFromPost(sponsor, SponsorKeys.logo, ""),
+      url: getCustomFieldFromPost(sponsor, SponsorKeys.url, ""),
     })
   )
 
   return {
     id: sponsorCategoryPost.id,
     name: getWPTitle(sponsorCategoryPost),
-    order: getCustomField<number>(
+    order: getCustomFieldFromPost<number>(
       sponsorCategoryPost,
-      SponsorCategoryKeys.order
+      SponsorCategoryKeys.order,
+      DEFAULT_ORDER
     ),
     sponsors: viewSponsors.sort(sortByOrder),
   }

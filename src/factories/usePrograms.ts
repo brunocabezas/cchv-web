@@ -8,11 +8,12 @@ import {
   WpImage,
   WPSelectCustomFieldValue,
 } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import Urls from "@/utils/urls"
 import { sortByOrder } from "@/utils/arrays"
+import { DEFAULT_ORDER } from "@/utils/static"
 
 Vue.use(VueCompositionApi)
 
@@ -21,29 +22,38 @@ const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WPResponseItem>(
 )
 
 const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
-  const extraContent = getCustomField<
+  const extraContent = getCustomFieldFromPost<
     WPSelectCustomFieldValue<ProgramExtraContent>
-  >(programPost, ProgramKeys.extra_content)
+  >(programPost, ProgramKeys.extra_content, {
+    label: "",
+    value: ProgramExtraContent.None,
+  })
 
-  const isExternal = getCustomField<boolean>(
+  const isExternal = getCustomFieldFromPost<boolean>(
     programPost,
-    ProgramKeys.is_external
+    ProgramKeys.is_external,
+    false
   )
   return {
     id: programPost.id,
     name: getWPTitle(programPost),
-    order: getCustomField(programPost, ProgramKeys.order),
+    order: getCustomFieldFromPost(
+      programPost,
+      ProgramKeys.order,
+      DEFAULT_ORDER
+    ),
     // If program is not external, url is build with the slug
     nav_menu_url: isExternal
-      ? getCustomField(programPost, ProgramKeys.url)
+      ? getCustomFieldFromPost(programPost, ProgramKeys.url, "")
       : `${Urls.Programs}${programPost.slug}`,
     slug: programPost.slug,
-    video_url: getCustomField(programPost, ProgramKeys.video_url),
+    video_url: getCustomFieldFromPost(programPost, ProgramKeys.video_url, ""),
     is_external: isExternal,
-    text: getCustomField(programPost, ProgramKeys.text),
-    gallery: getCustomField<WpImage[] | undefined>(
+    text: getCustomFieldFromPost(programPost, ProgramKeys.text, ""),
+    gallery: getCustomFieldFromPost<WpImage[]>(
       programPost,
-      ProgramKeys.gallery
+      ProgramKeys.gallery,
+      []
     ),
     extra_content: (extraContent && extraContent.value) || "",
   }

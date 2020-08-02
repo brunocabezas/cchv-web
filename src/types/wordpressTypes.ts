@@ -1,7 +1,10 @@
 import { CustomFieldsKeys } from "./customFieldsKeysTypes"
+import { CustomFieldsValue } from "./customFieldsTypes"
 
 // Wordpres response
 export type WpResponseData = WPResponseItem[]
+
+// Similar to a wordpress post, but with custom fields defined
 export interface WPResponseItem {
   id: number
   date: string
@@ -24,6 +27,7 @@ export interface WPResponseItem {
   ping_status: string
   template: string
   meta: any[]
+  // Custom fields
   acf_fields: WPCustomFields
   _links: WPLinks
 }
@@ -92,11 +96,11 @@ interface Link {
   href: string
 }
 
-// TODO gather custom fields value types
 export type WPCustomFields = {
-  [key in CustomFieldsKeys]: any
+  [key in CustomFieldsKeys]: CustomFieldsValue
 }
 
+// Image uploaded in wordpres media
 export interface WpImage {
   ID: number
   id: number
@@ -133,14 +137,16 @@ interface WpImageSizes {
   "large-height": number
 }
 
-// export type WPSelectCustomField = WPSelectCustomFieldOption[]
+// Select input
 export interface WPSelectCustomFieldValue<T> {
   value: T
   label: string
 }
-// export type WPSelectCustomField = WPSelectCustomFieldOption[]
+
+// Not used for now
 export type WPRelatedCustomFieldValue = number[]
 
+// Wordpress media uploaded documents
 export type WPDocument = {
   ID: number
   id: number
@@ -157,4 +163,22 @@ export type WPDocument = {
   mime_type: string
   type: string
   icon: string
+}
+
+export const DEFAULT_WP_DOCUMENT = {
+  ID: 0,
+  id: 0,
+  title: "",
+  filename: "",
+  url: "",
+  alt: "",
+  author: "",
+  description: "",
+  caption: "",
+  name: "",
+  date: "",
+  modified: "",
+  mime_type: "",
+  type: "",
+  icon: "",
 }

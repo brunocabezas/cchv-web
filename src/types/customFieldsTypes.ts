@@ -16,7 +16,19 @@ import {
   ResidencyKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
-import { RelatedNewsPost } from "./"
+
+export type CustomFieldsValue =
+  | string
+  | number
+  | boolean
+  | WpImage[]
+  | WPDocument
+  | number[]
+  | ActivityType
+  | WPSelectCustomFieldValue<SocialNetworkType>
+  | WPSelectCustomFieldValue<ProgramExtraContent>
+  | TeamMemberType
+
 //
 // Uses customFieldsKeysTypes to build types represnting
 // Wordpress custom fields
@@ -62,7 +74,7 @@ export type Program = {
   [ProgramKeys.video_url]: string
   [ProgramKeys.gallery]?: WpImage[]
   [ProgramKeys.text]: string
-  [ProgramKeys.extra_content]: ProgramExtraContent
+  [ProgramKeys.extra_content]: WPSelectCustomFieldValue<ProgramExtraContent>
   [ProgramKeys.order]: number
 }
 
@@ -115,7 +127,7 @@ export type Document = {
 // categories and sponsors inside them are sorted by it's order attribute
 export type SponsorsCategory = {
   [SponsorCategoryKeys.order]: number
-  [SponsorCategoryKeys.sponsors]: Sponsor[]
+  [SponsorCategoryKeys.sponsors]: number[]
 }
 
 export type Sponsor = {

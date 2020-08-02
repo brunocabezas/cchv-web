@@ -4,7 +4,7 @@ import apiRoutes from "../../api/apiRoutes"
 import { Page } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem, WpImage } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { PageKeys } from "@/types/customFieldsKeysTypes"
 import { PageExtraContent } from "@/types/customFieldsTypes"
 
@@ -20,11 +20,16 @@ export default function usePages() {
       (pagePost): Page => ({
         id: pagePost.id,
         name: getWPTitle(pagePost),
-        text: getCustomField(pagePost, PageKeys.text),
-        gallery: getCustomField<WpImage[]>(pagePost, PageKeys.gallery),
-        extra_content: getCustomField<PageExtraContent>(
+        text: getCustomFieldFromPost(pagePost, PageKeys.text, ""),
+        gallery: getCustomFieldFromPost<WpImage[]>(
           pagePost,
-          PageKeys.extra_content
+          PageKeys.gallery,
+          []
+        ),
+        extra_content: getCustomFieldFromPost<PageExtraContent>(
+          pagePost,
+          PageKeys.extra_content,
+          PageExtraContent.None
         ),
       })
     )

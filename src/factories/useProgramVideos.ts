@@ -4,7 +4,7 @@ import apiRoutes from "../../api/apiRoutes"
 import { ProgramVideo } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { ProgramVideoKeys } from "@/types/customFieldsKeysTypes"
 
 Vue.use(VueCompositionApi)
@@ -19,14 +19,42 @@ export default function usePrograms() {
       (programVideoPost): ProgramVideo => ({
         id: programVideoPost.id,
         name: getWPTitle(programVideoPost),
-        url: getCustomField(programVideoPost, ProgramVideoKeys.url),
-        event: getCustomField(programVideoPost, ProgramVideoKeys.event),
-        thumbnail: getCustomField(programVideoPost, ProgramVideoKeys.thumbnail),
-        year: getCustomField(programVideoPost, ProgramVideoKeys.year),
-        author: getCustomField(programVideoPost, ProgramVideoKeys.author),
-        text: getCustomField(programVideoPost, ProgramVideoKeys.text),
-        country: getCustomField(programVideoPost, ProgramVideoKeys.country),
-        duration: getCustomField(programVideoPost, ProgramVideoKeys.duration),
+        url: getCustomFieldFromPost(programVideoPost, ProgramVideoKeys.url, ""),
+        event: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.event,
+          ""
+        ),
+        thumbnail: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.thumbnail,
+          ""
+        ),
+        year: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.year,
+          ""
+        ),
+        author: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.author,
+          ""
+        ),
+        text: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.text,
+          ""
+        ),
+        country: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.country,
+          ""
+        ),
+        duration: getCustomFieldFromPost(
+          programVideoPost,
+          ProgramVideoKeys.duration,
+          ""
+        ),
       })
     )
   })
