@@ -1,0 +1,333 @@
+[
+  {
+    "id": 299,
+    "date": "2020-06-02T18:59:58",
+    "date_gmt": "2020-06-02T22:59:58",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=cchv_page&#038;p=299"
+    },
+    "modified": "2020-07-01T15:48:47",
+    "modified_gmt": "2020-07-01T19:48:47",
+    "slug": "equipo",
+    "status": "publish",
+    "type": "cchv_page",
+    "link": "https:\/\/cchv.cl\/futuro\/cchv_page\/equipo\/",
+    "title": {
+      "rendered": "Equipo"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p><strong>Direcci\u00f3n General<\/strong><br \/>\nEnrique Rivera<\/p>\n<p><strong>Direcci\u00f3n Ejecutiva<br \/>\n<\/strong>Catalina Ossa<\/p>\n<p><strong>Coordinaci\u00f3n Editorial<br \/>\n<\/strong>Manuela Ossa<\/p>\n<p><strong>Aprendizajes y Comunidades<br \/>\n<\/strong>B\u00e1rbara Ch\u00e1vez<\/p>\n<p><strong>Producci\u00f3n<br \/>\n<\/strong>Eugenio Gonz\u00e1lez<\/p>\n<p><strong>Comunicaciones<br \/>\n<\/strong>Francisca Gabler<\/p>\n<p><strong>Dise\u00f1o Gr\u00e1fico<br \/>\n<\/strong>Sim\u00f3n Barrera<\/p>\n<p><strong>Producci\u00f3n Audiovisual<br \/>\n<\/strong>Benjam\u00edn Matte<br \/>\nGabriel Ortega<\/p>\n<p><strong>Administraci\u00f3n y Log\u00edstica<br \/>\n<\/strong>Ray\u00e9n Carim\u00e1n<\/p>\n<p><strong>Colaboradores<\/strong><br \/>\nAmalia Pascal<br \/>\nMirko Petrovich<br \/>\nMauricio Campos<\/p>\n",
+      "extra_content": {
+        "value": "none",
+        "label": "Ninguno"
+      },
+      "gallery": false
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages\/299"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/cchv_page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=299"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=299"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 170,
+    "date": "2020-05-30T20:06:13",
+    "date_gmt": "2020-05-31T00:06:13",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=cchv_page&#038;p=170"
+    },
+    "modified": "2020-07-01T11:06:05",
+    "modified_gmt": "2020-07-01T15:06:05",
+    "slug": "historia",
+    "status": "publish",
+    "type": "cchv_page",
+    "link": "https:\/\/cchv.cl\/futuro\/cchv_page\/historia\/",
+    "title": {
+      "rendered": "Historia"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<div class=\"e781-7 x-column x-sm x-1-2\">\n<div class=\"e781-8 x-text\">\n<p>La\u00a0<strong>Corporaci\u00f3n Chilena de Video y Artes Electr\u00f3nicas (CChV)<\/strong> se fund\u00f3 en 1993 bajo la direcci\u00f3n del videoartista, acad\u00e9mico y te\u00f3rico N\u00e9stor Olhagaray (1946 &#8211; 2020). Su creaci\u00f3n respondi\u00f3 a la necesidad de dar continuidad al legado del Festival Franco-Chileno de Videoarte, un hito para la difusi\u00f3n y desarrollo de las artes mediales en Chile que, con el apoyo de la Embajada de Francia, ofrec\u00eda a los artistas nacionales un espacio de libertad creativa y una posibilidad de di\u00e1logo con otros creadores y realizadores franceses.<\/p>\n<\/div>\n<p>Con la llegada de la democracia, algunos artistas que hab\u00edan integrado la Sociedad Chilena de Video -entre ellos Olhagaray-, decidieron fundar la Corporaci\u00f3n Chilena de Video, desde donde inauguraron la Primera Bienal de Video del pa\u00eds, como un nuevo espacio de exhibici\u00f3n que permitiera la difusi\u00f3n de obras de artistas nacionales e internacionales.<\/p>\n<div class=\"e781-8 x-text\">\n<p>A partir de entonces, la CChV se ha dedicado a impulsar a trav\u00e9s de distintos programas y proyectos -la Bienal de Artes Mediales de Santiago, el Concurso Internacional Juan Downey, la Escuela de la Intuici\u00f3n y Mediateca Libre, entre otros- la formaci\u00f3n, investigaci\u00f3n, producci\u00f3n y difusi\u00f3n de las artes mediales en el pa\u00eds, as\u00ed como tambi\u00e9n a fomentar la uni\u00f3n entre arte y ciencia, basada en un intercambio cultural entre Chile y otros pa\u00edses.<\/p>\n<\/div>\n<p>Hoy, con casi 30 a\u00f1os de funcionamiento, es uno de las principales organismos nacionales que, de manera sistem\u00e1tica y sostenida, ha ofrecido una vitrina para pr\u00e1cticas an\u00e1logas y digitales, constituy\u00e9ndose en un referente para comprender la evoluci\u00f3n de las artes mediales en Chile, as\u00ed como tambi\u00e9n para percibir la forma en que nuevas generaciones se abren a distintas convergencias disciplinares entre las artes y las ciencias.<\/p>\n<\/div>\n",
+      "extra_content": {
+        "value": "none",
+        "label": "Ninguno"
+      },
+      "gallery": [
+        {
+          "ID": 637,
+          "id": 637,
+          "title": "catalogo_i",
+          "filename": "catalogo_i.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i.jpg",
+          "alt": "",
+          "author": "3",
+          "description": "Portada cat\u00e1logo 1\u00ba Bienal de Video de Santiago, 1993",
+          "caption": "",
+          "name": "catalogo_i",
+          "date": "2020-06-12 16:57:19",
+          "modified": "2020-06-25 21:33:29",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i-300x169.jpg",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i-768x432.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/catalogo_i.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 770,
+          "id": 770,
+          "title": "MC0072704(1)",
+          "filename": "MC00727041.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Nest\u00f3r Olhagaray durante inauguraci\u00f3n de la segunda bienal.",
+          "caption": "",
+          "name": "mc00727041",
+          "date": "2020-06-25 21:29:54",
+          "modified": "2020-06-25 21:37:00",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1390,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041-300x217.jpg",
+            "medium-width": 300,
+            "medium-height": 217,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041-768x556.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 556,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041-1024x741.jpg",
+            "large-width": 1024,
+            "large-height": 741,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041-1536x1112.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1112,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MC00727041.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1390
+          }
+        },
+        {
+          "ID": 756,
+          "id": 756,
+          "title": "62259741_2457764824234797_846166659629580288_o",
+          "filename": "62259741_2457764824234797_846166659629580288_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Encuentro con artistas en el Museo Nacional de Bellas Artes, 14 Bienal de Artes Mediales de Santiago.",
+          "caption": "",
+          "name": "62259741_2457764824234797_846166659629580288_o",
+          "date": "2020-06-21 01:21:51",
+          "modified": "2020-07-01 15:39:25",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1365,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-1024x683.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
+          }
+        }
+      ]
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages\/170"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/cchv_page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=170"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=170"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 110,
+    "date": "2020-05-20T00:29:05",
+    "date_gmt": "2020-05-20T04:29:05",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=cchv_page&#038;p=110"
+    },
+    "modified": "2020-06-01T13:37:54",
+    "modified_gmt": "2020-06-01T17:37:54",
+    "slug": "transparencia-2",
+    "status": "publish",
+    "type": "cchv_page",
+    "link": "https:\/\/cchv.cl\/futuro\/cchv_page\/transparencia-2\/",
+    "title": {
+      "rendered": "Transparencia"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "text": "<p>La Corporaci\u00f3n Chilena de Video y Artes Electr\u00f3nicas (CChV) trabaja sobre el desarrollo de actividades y programas que abordan la relaci\u00f3n del arte, la ciencia, la tecnolog\u00eda y la educaci\u00f3n. Cuenta con el apoyo de diversos aliados y socios, y se financia principalmente a trav\u00e9s de los siguientes programas:<\/p>\n<p>&#8211; Programa de festivales de trayectoria del Fondo del Arte y la Industria Audiovisual, convocatoria 2019-2020.<\/p>\n<p>&#8211; Programa Otras Instituciones Colaboradoras 2019, del Ministerio de las Culturas, el Arte y el Patrimonio.<\/p>\n<p>&#8211; Ley de Donaciones Culturales, Proyecto 14 Bienal de Artes Mediales de Santiago.<\/p>\n",
+      "extra_content": {
+        "value": "documents",
+        "label": "Documentos de transparencia"
+      },
+      "gallery": false
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages\/110"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/custom-pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/cchv_page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=110"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=110"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

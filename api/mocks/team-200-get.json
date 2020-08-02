@@ -1,59 +1,61 @@
 [
   {
-    "id": 71,
-    "date": "2020-05-16T16:54:37",
-    "date_gmt": "2020-05-16T20:54:37",
+    "id": 854,
+    "date": "2020-07-06T11:53:05",
+    "date_gmt": "2020-07-06T15:53:05",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=team_member&#038;p=71"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=854"
     },
-    "modified": "2020-05-16T16:54:37",
-    "modified_gmt": "2020-05-16T20:54:37",
-    "slug": "enrique-rivera",
+    "modified": "2020-07-06T11:53:05",
+    "modified_gmt": "2020-07-06T15:53:05",
+    "slug": "amalia-pascal",
     "status": "publish",
     "type": "team_member",
-    "link": "http:\/\/www.cchv.cl\/futuro\/team_member\/enrique-rivera\/",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/amalia-pascal\/",
     "title": {
-      "rendered": "Enrique rivera"
+      "rendered": "Amalia Pascal"
     },
-    "author": 1,
+    "author": 2,
     "parent": 0,
     "template": "",
     "categories": [],
     "acf_fields": {
-      "position": "Direcicon General"
+      "position": "Colaboradores",
+      "type": "team",
+      "order": "10"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/71"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/854"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=71"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=854"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=71"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=854"
         }
       ],
       "curies": [
@@ -66,18 +68,630 @@
     }
   },
   {
-    "id": 70,
-    "date": "2020-05-16T16:53:24",
-    "date_gmt": "2020-05-16T20:53:24",
+    "id": 853,
+    "date": "2020-07-06T11:52:44",
+    "date_gmt": "2020-07-06T15:52:44",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=team_member&#038;p=70"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=853"
     },
-    "modified": "2020-05-16T16:53:24",
-    "modified_gmt": "2020-05-16T20:53:24",
-    "slug": "francisca-gabler",
+    "modified": "2020-07-06T11:52:44",
+    "modified_gmt": "2020-07-06T15:52:44",
+    "slug": "mirko-petrovich",
     "status": "publish",
     "type": "team_member",
-    "link": "http:\/\/www.cchv.cl\/futuro\/team_member\/francisca-gabler\/",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/mirko-petrovich\/",
+    "title": {
+      "rendered": "Mirko Petrovich"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Colaboradores",
+      "type": "team",
+      "order": "10"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/853"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=853"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=853"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 852,
+    "date": "2020-07-06T11:52:21",
+    "date_gmt": "2020-07-06T15:52:21",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=852"
+    },
+    "modified": "2020-07-06T11:52:21",
+    "modified_gmt": "2020-07-06T15:52:21",
+    "slug": "mauricio-campos",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/mauricio-campos\/",
+    "title": {
+      "rendered": "Mauricio Campos"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Colaboradores",
+      "type": "team",
+      "order": "10"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/852"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=852"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=852"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 850,
+    "date": "2020-07-06T11:10:41",
+    "date_gmt": "2020-07-06T15:10:41",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=850"
+    },
+    "modified": "2020-07-06T11:10:41",
+    "modified_gmt": "2020-07-06T15:10:41",
+    "slug": "benjamin-matte",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/benjamin-matte\/",
+    "title": {
+      "rendered": "Benjam\u00edn Matte"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Producci\u00f3n Audiovisual",
+      "type": "team",
+      "order": "7"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/850"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=850"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=850"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 849,
+    "date": "2020-07-06T10:56:09",
+    "date_gmt": "2020-07-06T14:56:09",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=849"
+    },
+    "modified": "2020-07-06T10:56:09",
+    "modified_gmt": "2020-07-06T14:56:09",
+    "slug": "rayen-cariman",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/rayen-cariman\/",
+    "title": {
+      "rendered": "Ray\u00e9n Carim\u00e1n"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Administraci\u00f3n y Log\u00edstica",
+      "type": "team",
+      "order": "9"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/849"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=849"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=849"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 848,
+    "date": "2020-07-06T10:55:11",
+    "date_gmt": "2020-07-06T14:55:11",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=848"
+    },
+    "modified": "2020-07-06T11:05:06",
+    "modified_gmt": "2020-07-06T15:05:06",
+    "slug": "gabriel-ortega",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/gabriel-ortega\/",
+    "title": {
+      "rendered": "Gabriel Ortega"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Producci\u00f3n Audiovisual",
+      "type": "team",
+      "order": "7"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/848"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=848"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=848"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 846,
+    "date": "2020-07-06T10:53:37",
+    "date_gmt": "2020-07-06T14:53:37",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=846"
+    },
+    "modified": "2020-07-06T11:05:47",
+    "modified_gmt": "2020-07-06T15:05:47",
+    "slug": "simon-barrera",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/simon-barrera\/",
+    "title": {
+      "rendered": "Sim\u00f3n Barrera"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Dise\u00f1o Gr\u00e1fico",
+      "type": "team",
+      "order": "8"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/846"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=846"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=846"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 845,
+    "date": "2020-07-06T10:52:06",
+    "date_gmt": "2020-07-06T14:52:06",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=845"
+    },
+    "modified": "2020-07-06T10:52:06",
+    "modified_gmt": "2020-07-06T14:52:06",
+    "slug": "eugenio-gonzalez",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/eugenio-gonzalez\/",
+    "title": {
+      "rendered": "Eugenio Gonz\u00e1lez"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Producci\u00f3n",
+      "type": "team",
+      "order": "5"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/845"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=845"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=845"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 843,
+    "date": "2020-07-06T10:48:22",
+    "date_gmt": "2020-07-06T14:48:22",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=843"
+    },
+    "modified": "2020-07-07T18:06:57",
+    "modified_gmt": "2020-07-07T22:06:57",
+    "slug": "barbara-chavez",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/barbara-chavez\/",
+    "title": {
+      "rendered": "B\u00e1rbara Ch\u00e1vez"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Aprendizajes y Comunidades",
+      "type": "team",
+      "order": "4"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/843"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=843"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=843"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 842,
+    "date": "2020-07-06T10:11:33",
+    "date_gmt": "2020-07-06T14:11:33",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=842"
+    },
+    "modified": "2020-07-06T10:11:33",
+    "modified_gmt": "2020-07-06T14:11:33",
+    "slug": "manuela-ossa",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/manuela-ossa\/",
+    "title": {
+      "rendered": "Manuela Ossa"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": " Coordinaci\u00f3n Editorial",
+      "type": "team",
+      "order": "3"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/842"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=842"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=842"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 837,
+    "date": "2020-07-05T19:28:43",
+    "date_gmt": "2020-07-05T23:28:43",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=837"
+    },
+    "modified": "2020-07-06T10:52:28",
+    "modified_gmt": "2020-07-06T14:52:28",
+    "slug": "primera-persona",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/primera-persona\/",
     "title": {
       "rendered": "Francisca Gabler"
     },
@@ -86,40 +700,246 @@
     "template": "",
     "categories": [],
     "acf_fields": {
-      "position": "Comunicaciones"
+      "position": "Comunicaciones",
+      "type": "team",
+      "order": "6"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/70"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/837"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=70"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=837"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=70"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=837"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 834,
+    "date": "2020-07-05T19:01:38",
+    "date_gmt": "2020-07-05T23:01:38",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=834"
+    },
+    "modified": "2020-07-06T09:45:37",
+    "modified_gmt": "2020-07-06T13:45:37",
+    "slug": "persona-2",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/persona-2\/",
+    "title": {
+      "rendered": "Catalina Ossa"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Direcci\u00f3n Ejecutiva",
+      "type": "team",
+      "order": "2"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/834"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=834"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=834"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 833,
+    "date": "2020-07-05T19:01:00",
+    "date_gmt": "2020-07-05T23:01:00",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=833"
+    },
+    "modified": "2020-07-06T09:29:57",
+    "modified_gmt": "2020-07-06T13:29:57",
+    "slug": "persona-1",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/persona-1\/",
+    "title": {
+      "rendered": "Enrique Rivera"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Direcci\u00f3n General",
+      "type": "team",
+      "order": "1"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/833"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=833"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=833"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 914,
+    "date": "2020-07-01T18:23:11",
+    "date_gmt": "2020-07-01T22:23:11",
+    "guid": {
+      "rendered": "http:\/\/cchv.cl\/futuro\/?post_type=team_member&#038;p=914"
+    },
+    "modified": "2020-07-20T18:24:08",
+    "modified_gmt": "2020-07-20T22:24:08",
+    "slug": "javier-vasquez",
+    "status": "publish",
+    "type": "team_member",
+    "link": "https:\/\/cchv.cl\/futuro\/team_member\/javier-vasquez\/",
+    "title": {
+      "rendered": "Javier V\u00e1squez"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "position": "Colaboradores",
+      "type": "team",
+      "order": "10"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team\/914"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/team"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/team_member"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=914"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=914"
         }
       ],
       "curies": [

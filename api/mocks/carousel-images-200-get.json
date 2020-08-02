@@ -1,0 +1,485 @@
+[
+  {
+    "id": 625,
+    "date": "2020-06-14T12:46:07",
+    "date_gmt": "2020-06-14T16:46:07",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=625"
+    },
+    "modified": "2020-07-07T18:01:04",
+    "modified_gmt": "2020-07-07T22:01:04",
+    "slug": "bienal-1",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/bienal-1\/",
+    "title": {
+      "rendered": "bienal"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/bienal_lectura1.jpg",
+      "url": "http:\/\/www.bienaldeartesmediales.cl",
+      "video_url": "",
+      "order": "1"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/625"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=625"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=625"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 670,
+    "date": "2020-06-13T17:08:31",
+    "date_gmt": "2020-06-13T21:08:31",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=670"
+    },
+    "modified": "2020-07-14T21:40:44",
+    "modified_gmt": "2020-07-15T01:40:44",
+    "slug": "concurso",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/concurso\/",
+    "title": {
+      "rendered": "concurso"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/juandowney_lectura1.jpg",
+      "url": "https:\/\/cchv.cl\/programas\/concurso-juan-downey",
+      "video_url": "",
+      "order": "2"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/670"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=670"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=670"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 672,
+    "date": "2020-06-12T17:21:34",
+    "date_gmt": "2020-06-12T21:21:34",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=672"
+    },
+    "modified": "2020-07-14T21:40:56",
+    "modified_gmt": "2020-07-15T01:40:56",
+    "slug": "672-2",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/672-2\/",
+    "title": {
+      "rendered": "escuela"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-1.jpg",
+      "url": "https:\/\/cchv.cl\/programas\/escuela-de-la-intuicion",
+      "video_url": "",
+      "order": "3"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/672"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=672"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=672"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 674,
+    "date": "2020-06-11T17:22:10",
+    "date_gmt": "2020-06-11T21:22:10",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=674"
+    },
+    "modified": "2020-07-14T21:40:28",
+    "modified_gmt": "2020-07-15T01:40:28",
+    "slug": "campos-2",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/campos-2\/",
+    "title": {
+      "rendered": "campos"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos-1.jpg",
+      "url": "https:\/\/cchv.cl\/programas\/campos-magneticos",
+      "video_url": "",
+      "order": "4"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/674"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=674"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=674"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 720,
+    "date": "2020-06-10T13:29:18",
+    "date_gmt": "2020-06-10T17:29:18",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=720"
+    },
+    "modified": "2020-07-23T17:31:26",
+    "modified_gmt": "2020-07-23T21:31:26",
+    "slug": "encuentro-arte-y-ciencia",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/encuentro-arte-y-ciencia\/",
+    "title": {
+      "rendered": "Encuentro Arte y ciencia"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/arteyciencia.jpg",
+      "url": "https:\/\/cchv.cl\/programas\/encuentro-de-arte-ciencia-y-cultura-digital",
+      "video_url": "",
+      "order": "5"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/720"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=720"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=720"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 718,
+    "date": "2020-06-09T13:28:51",
+    "date_gmt": "2020-06-09T17:28:51",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=718"
+    },
+    "modified": "2020-07-23T17:31:54",
+    "modified_gmt": "2020-07-23T21:31:54",
+    "slug": "residencias",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/residencias\/",
+    "title": {
+      "rendered": "Residencias"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/residencias.jpg",
+      "url": "https:\/\/cchv.cl\/programas\/exploraciones-y-residencias",
+      "video_url": "",
+      "order": "6"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/718"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=718"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=718"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 676,
+    "date": "2020-06-08T17:22:55",
+    "date_gmt": "2020-06-08T21:22:55",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=carousel_image&#038;p=676"
+    },
+    "modified": "2020-06-20T20:56:30",
+    "modified_gmt": "2020-06-21T00:56:30",
+    "slug": "mediateca",
+    "status": "publish",
+    "type": "carousel_image",
+    "link": "https:\/\/cchv.cl\/futuro\/carousel_image\/mediateca\/",
+    "title": {
+      "rendered": "mediateca"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "image": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/mediateca-1.jpg",
+      "url": "http:\/\/www.mediatecalibre.cl",
+      "video_url": "",
+      "order": "7"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images\/676"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/carousel-images"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/carousel_image"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=676"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=676"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

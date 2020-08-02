@@ -1,19 +1,134 @@
 [
   {
+    "id": 888,
+    "date": "2020-07-18T17:53:04",
+    "date_gmt": "2020-07-18T21:53:04",
+    "guid": {
+      "rendered": "http:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=888"
+    },
+    "modified": "2020-07-23T17:14:46",
+    "modified_gmt": "2020-07-23T21:14:46",
+    "slug": "encuentro-de-arte-ciencia-y-cultura-digital",
+    "status": "publish",
+    "type": "program",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/encuentro-de-arte-ciencia-y-cultura-digital\/",
+    "title": {
+      "rendered": "Encuentro de Arte, Ciencia y Cultura Digital"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "nav_menu_url": "https:\/\/cchv.cl\/programas\/encuentro-de-arte-ciencia-y-cultura-digital\/",
+      "order": "5",
+      "is_external": false,
+      "text": "<p><span class=\"\">El Encuentro de Artes, Ciencia y Cultura Digital (EACCD) re\u00fane cada dos a\u00f1os a diversos agentes de la cultura, la ciencia y las artes para abrir conversaciones sobre las transformaciones sociales, culturales y cient\u00edficas que enfrenta Chile.<\/span><\/p>\n<p>Su objetivo se fundamenta en abrir un espacio de di\u00e1logo abierto a la comunidad, en el cual se refleje la producci\u00f3n actual de artistas e investigadores chilenos relacionados con la ciencia y la tecnolog\u00eda, as\u00ed como tambi\u00e9n extender y fomentar la discusi\u00f3n y reflexi\u00f3n te\u00f3rica, relacionada a estas tem\u00e1ticas.<\/p>\n<p><span class=\"\">La iniciativa contempla una agenda de actividades con una programaci\u00f3n compuesta por ponencias, mesas de trabajo, laboratorios y conciertos visuales, as\u00ed como tambi\u00e9n la presentaci\u00f3n de documentales y el desarrollo de una publicaci\u00f3n que se plantea como una recomendaci\u00f3n que surge del sector transdisciplinario del arte y ciencia.<\/span><\/p>\n<p>&nbsp;<\/p>\n",
+      "video_url": "",
+      "gallery": [
+        {
+          "ID": 923,
+          "id": 923,
+          "title": "imagen-encuentro",
+          "filename": "imagen-encuentro.jpeg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro.jpeg",
+          "alt": "",
+          "author": "2",
+          "description": "",
+          "caption": "",
+          "name": "imagen-encuentro",
+          "date": "2020-07-23 21:14:29",
+          "modified": "2020-07-23 21:14:36",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1280,
+          "height": 853,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro-150x150.jpeg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro-300x200.jpeg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro-768x512.jpeg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro-1024x682.jpeg",
+            "large-width": 1024,
+            "large-height": 682,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro.jpeg",
+            "1536x1536-width": 1280,
+            "1536x1536-height": 853,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/imagen-encuentro.jpeg",
+            "2048x2048-width": 1280,
+            "2048x2048-height": 853
+          }
+        }
+      ],
+      "extra_content": {
+        "value": "editions",
+        "label": "Ediciones"
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/888"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=888"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=888"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
     "id": 131,
     "date": "2020-05-22T22:16:59",
     "date_gmt": "2020-05-23T02:16:59",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=program&#038;p=131"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=131"
     },
-    "modified": "2020-05-22T22:17:13",
-    "modified_gmt": "2020-05-23T02:17:13",
+    "modified": "2020-07-14T21:37:55",
+    "modified_gmt": "2020-07-15T01:37:55",
     "slug": "escuela-de-la-intuicion",
     "status": "publish",
     "type": "program",
-    "link": "http:\/\/www.cchv.cl\/futuro\/program\/escuela-de-la-intuicion\/",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/escuela-de-la-intuicion\/",
     "title": {
-      "rendered": "Escuela de la intuicion [PRUEBA]"
+      "rendered": "Escuela de la Intuici\u00f3n"
     },
     "author": 1,
     "parent": 0,
@@ -21,124 +136,202 @@
     "categories": [],
     "acf_fields": {
       "is_external": false,
-      "text": "<p class=\"has-text-color\">Este 2019 la Corporaci\u00f3n Chilena de Video dise\u00f1\u00f3 Secretos de la Naturaleza, una nueva <em>tecnolog\u00eda para la conversaci\u00f3n<\/em>. Inspirada en la relaci\u00f3n arte\/naturaleza, y en el marco de la Escuela de la Intuici\u00f3n -programa de mediaci\u00f3n de la 14 Bienal de Artes Mediales-, la metodolog\u00eda es un juego para pensar, compartir y proponer ideas sobre c\u00f3mo las artes y la educaci\u00f3n art\u00edstica pueden hacer frente a los actuales desaf\u00edos medioambientales.<\/p>\n<p class=\"has-text-color\">La celebraci\u00f3n de la VII Semana de la Educaci\u00f3n Art\u00edstica \u201cArte y Naturaleza \/ Conciencia en Acci\u00f3n\u201d (SEA 2019), organizada por el Ministerio de las Culturas, las Artes y el Patrimonio, la UNESCO, Balmaceda Arte Joven y la Universidad de Chile, fue la ocasi\u00f3n para aplicar por primera vez Secretos de la Naturaleza, reuniendo a m\u00e1s de 80 ni\u00f1as\/os, educadores\/as, mediadores\/as, artistas, acad\u00e9micos y representantes del sector p\u00fablico y ONGs vinculadas a la educaci\u00f3n art\u00edstica y medioambiental.<\/p>\n<p class=\"has-text-color\">Los datos sobre el impacto de la acci\u00f3n humana en el planeta son hoy innegables y alarmantes. Informes como el <em>GEO-6 Healthy Planet, Healthy People<\/em> de la ONU (2019) a nivel global, y <em>El Antropoceno en Chile: evidencias y formas de avanzar <\/em>del CR2 a nivel local advierten que los niveles de emisiones y producci\u00f3n de contaminaci\u00f3n, amenazan la continuidad de la vida humana y la biodiversidad del planeta en todas sus dimensiones. 400 millones de pl\u00e1stico desechados al a\u00f1o, de los cuales s\u00f3lo un 9% es reciclado (1); el aumento de las temperaturas y del consecuente nivel del mar han provocado ya la desaparici\u00f3n completa de \u00a0cinco islas del Pac\u00edfico -al norte del archipi\u00e9lago de las Islas Salom\u00f3n- en las \u00faltimas siete d\u00e9cadas (2); la disminuci\u00f3n en un 60% de los vertebrados del planeta ha ocurrido entre 1970 y 2014 (3); y localmente, en el centro y sur de Chile los bosques nativos llegan s\u00f3lo al 50% (4). En su informe GEO-6, la ONU plantea que si no se toman medidas urgentes de protecci\u00f3n al medioambiente, la poblaci\u00f3n humana -junto con los ecosistemas que habita- se ver\u00e1 dr\u00e1sticamente amenazada en 2050, tanto por la contaminaci\u00f3n de los flujos h\u00eddricos y el aire, como por la consecuente resistencia antimicrobiana que afectar\u00e1 fertilidad, desarrollo neurol\u00f3gico y resistencia a enfermedades letales.<\/p>\n<p class=\"has-text-color\">Dado este contexto de urgencia, Secretos de la Naturaleza en la SEA 2019 se plante\u00f3 como objetivo la elaboraci\u00f3n de un documento con recomendaciones y propuestas desde la educaci\u00f3n art\u00edstica para hacer frente a la crisis ecol\u00f3gica, que ser\u00e1 publicado y difundido por el Ministerio y la UNESCO, con intenciones de presentarlo a la COP25, que tendr\u00e1 lugar en Chile en diciembre del presente a\u00f1o.<br \/>\nAsimismo, esta <em>tecnolog\u00eda para la conversaci\u00f3n<\/em> tendr\u00e1 continuidad en la Escuela de la Intuici\u00f3n de la 14 Bienal de Artes Mediales, donde seguir\u00e1 activando a agentes de la cultura, la ciencia y la educaci\u00f3n para pensar y proponer formas que, desde la integraci\u00f3n de los saberes, la re-valoraci\u00f3n conocimiento sensible y la sabidur\u00eda popular, delineen caminos para rebalancear el planeta.<\/p>\n<p class=\"has-text-color\"><strong>Bienvenida Situada<\/strong><\/p>\n<p class=\"has-text-color\">La jornada tuvo lugar el s\u00e1bado 11 de mayo en el marco del Congreso de Pr\u00e1cticas de Educaci\u00f3n Art\u00edstica SEA 2019. El encuentro se inici\u00f3 en el Museo Nacional de Historia Natural, donde nos reunimos bajo la ballena \u201cGreta\u201d, que lleva su nombre por Grete Motsny, directora de ese museo entre 1964 y 1982, pionera en la concepci\u00f3n de un museo inclusivo, \u00a0y quien hizo las gestiones para que se realizara la Mesa Redonda de Santiago en 1972, instancia en la que representantes de UNESCO y del Consejo Internacional de Museos se reunieron para examinar la necesidad de que los museos se articularan en relaci\u00f3n a su contexto. Al respecto, Soledad Garc\u00eda, coordinadora de Programas P\u00fablicos del Museo de la Solidaridad Salvador Allende, nos coment\u00f3 sobre la vigencia de los acuerdos emanados de la Mesa Redonda de Santiago del 72\u2019.<\/p>\n<figure class=\"wp-block-image\"><img class=\"wp-image-1528\" src=\"http:\/\/www.cchv.cl\/wp-content\/uploads\/2019\/05\/3-1024x576.jpg\" alt=\"\" \/><\/figure>\n<figure class=\"wp-block-image\"><img class=\"wp-image-1526\" src=\"http:\/\/www.cchv.cl\/wp-content\/uploads\/2019\/05\/1-1024x574.jpg\" alt=\"\" \/><\/figure>\n<p class=\"has-text-color\">A continuaci\u00f3n, Mar\u00eda Paz Undurraga, coordinadora de Estudios de la Subdirecci\u00f3n de Museos, present\u00f3 los avances y desaf\u00edos de los museos en Chile seg\u00fan el estudio reci\u00e9n realizado por el Ministerio, haciendo \u00e9nfasis en la importancia de su rol educativo y en la l\u00f3gica del \u201cMuseo Integral\u201d planteada en la Mesa de Santiago del 72\u2019.<\/p>\n<p class=\"has-text-color\">Saliendo del museo, una parada frente al monumento de Alexander Von Humboldt fue el momento en que Catalina Vald\u00e9s, historiadora del arte y co-curadora de la 14 Bienal de Artes Mediales, hizo menci\u00f3n del investigador quien, mediante sus viajes y m\u00faltiples expediciones exploratorias, hizo un llamado a los artistas a ser tambi\u00e9n naturalistas, marcando as\u00ed una estrecha relaci\u00f3n entre las artes y las ciencias para la producci\u00f3n de conocimientos.<\/p>\n<p class=\"has-text-color\"><em>\u201cSi de la pintura de paisaje ha tratarse aqu\u00ed, es \u00fanicamente en el sentido de que nos auxilia en la contemplaci\u00f3n de la fisonom\u00eda de las plantas en los diferentes espacios de la tierra; porque favorece la afici\u00f3n a los viajes lejanos, y nos invita de una manera tan instructiva como agradable a entrar en comunicaci\u00f3n con la naturaleza libre\u201d<\/em><br \/>\n<em>Humboldt, 2011 [1808], 233 (5)<\/em><\/p>\n<figure class=\"wp-block-image\"><img class=\"wp-image-1527\" src=\"http:\/\/www.cchv.cl\/wp-content\/uploads\/2019\/05\/2-1024x576.jpg\" alt=\"\" \/><\/figure>\n",
+      "text": "<h5 style=\"text-align: right;\"><strong><i>El educando\/docente es tambi\u00e9n investigador, en el sentido acad\u00e9mico \u2014no polic\u00edaco\u2014 del mismo.<br \/>\n<\/i><\/strong><strong><i>La Escuela de la Intuici\u00f3n no es multidisciplinaria, no es interdisciplinaria, tampoco es transdisciplinaria. Es <\/i><i>indisciplinaria.<\/i><\/strong><br \/>\n<strong><i>La Escuela de la Intuici\u00f3n no ofrece servicios, pero opera en la esfera de la <\/i><i>consciencia<\/i><i> de sus metas y procedimientos.<\/i><\/strong><\/h5>\n<h5 style=\"text-align: right;\">Extracto &#8220;Manifiesto de la Escuela de la Intuici\u00f3n&#8221; de Abraham Cruzvillegas<\/h5>\n<p>La Escuela de la Intuici\u00f3n es el programa de comunidades y aprendizajes de la Corporaci\u00f3n Chilena de Video y Artes Electr\u00f3nicas (CChV), desde donde se incuban estrategias y metodolog\u00edas basadas en la educaci\u00f3n no formal y el aprendizaje activo en artes, ciencias y cultura digital. Como laboratorio de pr\u00e1cticas educativas y comunitarias experimentales, la Escuela de la Intuici\u00f3n invita a plantear preguntas y procesos que cuestionen las formas en que aprendemos.<\/p>\n<p>Las posibilidades de construir conocimientos a partir de los contextos que habitamos; en conexio\u0301n con las infinitas complejidades sociales, ambientales, econo\u0301micas y poli\u0301ticas; en virtud y respeto de las motivaciones y voluntades intri\u0301nsecas de quien aprende, son las que la intuicio\u0301n naturalmente nos dispone. La Escuela busca abrir y dar espacio a experiencias que, en su sintoni\u0301a intuitiva y activa con el entorno, faciliten integraciones disciplinares para la construccio\u0301n de conocimientos situados. En ese marco, las artes entran en relacio\u0301n de espiral a provocar y construir conocimientos, marcando caminos hacia modelos de escuela y sociedad integrales.<\/p>\n<p>Actualmente, la Escuela de la Intuici\u00f3n desarrolla estrategias de formaci\u00f3n alternativas -laboratorios y\u00a0 talleres en diversas instituciones y espacios aut\u00f3nomos-\u00a0 para docentes escolares, mediadores culturales, p\u00fablicos especializados en arte, ciencia y cultura digital, y p\u00fablicos generales de los diversos programas de la CChV.<\/p>\n",
       "video_url": "",
       "gallery": [
         {
-          "ID": 88,
-          "id": 88,
-          "title": "artistas-1024x768",
-          "filename": "artistas-1024x768-1.jpg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
+          "ID": 631,
+          "id": 631,
+          "title": "escuela1",
+          "filename": "escuela1.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "3",
+          "description": "Mandr\u00e1gora Secretos de la Naturaleza.",
           "caption": "",
-          "name": "artistas-1024x768",
-          "date": "2020-05-16 22:49:11",
-          "modified": "2020-05-23 02:13:55",
+          "name": "escuela1",
+          "date": "2020-06-12 16:50:57",
+          "modified": "2020-07-01 15:34:31",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 1024,
-          "height": 768,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-150x150.jpg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-300x225.jpg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-300x169.jpg",
             "medium-width": 300,
-            "medium-height": 225,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-768x576.jpg",
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 576,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-1024x576.jpg",
             "large-width": 1024,
-            "large-height": 768,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
-            "1536x1536-width": 1024,
-            "1536x1536-height": 768,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
-            "2048x2048-width": 1024,
-            "2048x2048-height": 768
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela1.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
           }
         },
         {
-          "ID": 65,
-          "id": 65,
-          "title": "1-1-770x395",
-          "filename": "1-1-770x395-1.jpg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
+          "ID": 633,
+          "id": 633,
+          "title": "escuela3",
+          "filename": "escuela3-1.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "3",
+          "description": "Intervenci\u00f3n \"Bit\u00e1coras del cuarto mundo\" de la 14 Bienal de Artes Mediales de Santiago.",
           "caption": "",
-          "name": "1-1-770x395",
-          "date": "2020-05-16 16:00:58",
-          "modified": "2020-05-16 16:02:23",
+          "name": "escuela3-2",
+          "date": "2020-06-12 16:51:06",
+          "modified": "2020-07-01 15:38:38",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 770,
-          "height": 395,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-150x150.jpg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-300x154.jpg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1-300x169.jpg",
             "medium-width": 300,
-            "medium-height": 154,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1-768x394.jpg",
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 394,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
-            "large-width": 770,
-            "large-height": 395,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
-            "1536x1536-width": 770,
-            "1536x1536-height": 395,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/1-1-770x395-1.jpg",
-            "2048x2048-width": 770,
-            "2048x2048-height": 395
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela3-1.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
           }
         },
         {
-          "ID": 77,
-          "id": 77,
-          "title": "sim4",
-          "filename": "sim4.png",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
+          "ID": 634,
+          "id": 634,
+          "title": "escuela4",
+          "filename": "escuela4-1.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "3",
+          "description": "Encuentro con el artista y curador mexicano Abraham Cruzvillegas.",
           "caption": "",
-          "name": "sim4",
-          "date": "2020-05-16 22:44:32",
-          "modified": "2020-05-23 02:15:58",
-          "mime_type": "image\/png",
+          "name": "escuela4-2",
+          "date": "2020-06-12 16:51:10",
+          "modified": "2020-07-01 15:39:00",
+          "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 941,
-          "height": 690,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-150x150.png",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-300x220.png",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1-300x169.jpg",
             "medium-width": 300,
-            "medium-height": 220,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4-768x563.png",
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 563,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
-            "large-width": 941,
-            "large-height": 690,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
-            "1536x1536-width": 941,
-            "1536x1536-height": 690,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim4.png",
-            "2048x2048-width": 941,
-            "2048x2048-height": 690
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/escuela4-1.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 756,
+          "id": 756,
+          "title": "62259741_2457764824234797_846166659629580288_o",
+          "filename": "62259741_2457764824234797_846166659629580288_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Encuentro con artistas en el Museo Nacional de Bellas Artes, 14 Bienal de Artes Mediales de Santiago.",
+          "caption": "",
+          "name": "62259741_2457764824234797_846166659629580288_o",
+          "date": "2020-06-21 01:21:51",
+          "modified": "2020-07-01 15:39:25",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1365,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-1024x683.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62259741_2457764824234797_846166659629580288_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
+          }
+        },
+        {
+          "ID": 757,
+          "id": 757,
+          "title": "79951924_2844394282238514_624659317680766976_o",
+          "filename": "79951924_2844394282238514_624659317680766976_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Sesi\u00f3n de Mandr\u00e1gora en el marco del sexto encuentro de la Asociaci\u00f3n Internacional de Bienales.",
+          "caption": "",
+          "name": "79951924_2844394282238514_624659317680766976_o",
+          "date": "2020-06-21 01:23:08",
+          "modified": "2020-07-01 15:37:38",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1365,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o-1024x683.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79951924_2844394282238514_624659317680766976_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
           }
         }
       ],
@@ -146,40 +339,41 @@
         "value": "schools",
         "label": "Escuelas"
       },
-      "external_url": ""
+      "nav_menu_url": "https:\/\/cchv.cl\/programas\/escuela-de-la-intuicion",
+      "order": "3"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program\/131"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/131"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=131"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=131"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=131"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=131"
         }
       ],
       "curies": [
@@ -196,16 +390,16 @@
     "date": "2020-05-22T22:14:57",
     "date_gmt": "2020-05-23T02:14:57",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=program&#038;p=130"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=130"
     },
-    "modified": "2020-05-22T22:17:35",
-    "modified_gmt": "2020-05-23T02:17:35",
+    "modified": "2020-07-14T21:38:05",
+    "modified_gmt": "2020-07-15T01:38:05",
     "slug": "campos-magneticos",
     "status": "publish",
     "type": "program",
-    "link": "http:\/\/www.cchv.cl\/futuro\/program\/campos-magneticos\/",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/campos-magneticos\/",
     "title": {
-      "rendered": "Campos Magneticos [PRUEBA]"
+      "rendered": "Campos Magn\u00e9ticos"
     },
     "author": 1,
     "parent": 0,
@@ -213,163 +407,280 @@
     "categories": [],
     "acf_fields": {
       "is_external": false,
-      "text": "<div class=\"e744-60 x-text split-menu-item x-text-headline\">\n<div class=\"x-text-content\">\n<div class=\"x-text-content-text\">\n<div>Seminario Docente<\/div>\n<div>Bienal de Artes Mediales<\/div>\n<h3 class=\"x-text-content-text-primary\">Agosto &#8211; Octubre 2019<\/h3>\n<p>En su cuarta versi\u00f3n, el Seminario Docente 2019 se proyecta como una instancia de formaci\u00f3n metodol\u00f3gica para docentes. Mediante 4 laboratorios intensivos, profesores y profesoras de distintas asignaturas ser\u00e1n formados en metodolog\u00edas de aprendizaje activo y transdisciplinar STEAM.<\/p>\n<h2 class=\"x-text-content-text-subheadline\">Siguiendo la l\u00ednea del docente como agente investigador y multiplicador, se abrir\u00e1 la invitaci\u00f3n para que propongan sus propias metodolog\u00edas para abordar la Bienal de Artes Mediales desde sus necesidades curriculares y contextuales.<\/h2>\n<\/div>\n<\/div>\n<\/div>\n<div class=\"e744-61 x-text split-menu-item x-text-headline\">\n<div class=\"x-text-content\">\n<div class=\"x-text-content-text\">\n<div>PUBLICACI\u00d3N<\/div>\n<h3 class=\"x-text-content-text-primary\">Cruces Bienal y Escuela, metodolog\u00edas actuales:<\/h3>\n<p class=\"x-text-content-text-subheadline\">El proceso formativo con docentes contempla la publicaci\u00f3n de un material que contenga los lineamientos del modelo educativo de la Corporaci\u00f3n Chilena de Video, a la vez que re\u00fana las propuestas metodol\u00f3gicas y las experiencias de los y las docentes participantes.<\/p>\n<\/div>\n<\/div>\n<\/div>\n<div class=\"e744-62 x-text split-menu-item x-text-headline\">\n<div class=\"x-text-content\">\n<div class=\"x-text-content-text\">\n<div>Escuela de Mediadores<\/div>\n<div>La mediaci\u00f3n del V\u00e9rtigo<\/div>\n<h3 class=\"x-text-content-text-primary\">Agosto &#8211; Noviembre 2019<\/h3>\n<h2 class=\"x-text-content-text-subheadline\">Orientada a mediadores art\u00edsticos y culturales que tengan inter\u00e9s en desarrollar nuevas herramientas, dispositivos y aplicaciones para mediar las Artes Mediales. En formato de laboratorios de co-formaci\u00f3n, se utilizar\u00e1 la curator\u00eda de la 14 Bienal de Artes Mediales &#8211; V\u00e9rtigo &#8211; como disparadora para la alfabetizaci\u00f3n en lenguajes cient\u00edficos y tecnol\u00f3gicos, y la creaci\u00f3n de estrategias afectivas y vinculantes para diversos p\u00fablicos y comunidades.<\/h2>\n<\/div>\n<\/div>\n<\/div>\n<div class=\"e744-63 x-text split-menu-item x-text-headline\">\n<div class=\"x-text-content\">\n<div class=\"x-text-content-text\">\n<div>PUBLICACI\u00d3N<\/div>\n<h3 class=\"x-text-content-text-primary\">Manual | Mediador de V\u00e9rtigos:<\/h3>\n<p class=\"x-text-content-text-subheadline\">El proceso formativo culminar\u00e1 con la publicaci\u00f3n e impresi\u00f3n de un manual con informaci\u00f3n y metodolog\u00edas para mediar desde las Artes Mediale<\/p>\n<\/div>\n<\/div>\n<\/div>\n",
+      "text": "<p style=\"text-align: left;\">Campos Magn\u00e9ticos es el programa de acciones ef\u00edmeras de la Corporaci\u00f3n Chilena de Video (CChV), a trav\u00e9s del cual se realizan conversatorios, seminarios, conciertos y performances visuales y sonoras. Su prop\u00f3sito es entretejer los contenidos de la Corporaci\u00f3n con artistas, te\u00f3ricos, acad\u00e9micos y diversos agentes culturales y cient\u00edficos, velando por la pregnancia y permanencia de \u00e9stos en el consciente colectivo.<\/p>\n",
       "video_url": "",
       "gallery": [
         {
-          "ID": 80,
-          "id": 80,
-          "title": "sim3",
-          "filename": "sim3.png",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+          "ID": 751,
+          "id": 751,
+          "title": "79325617_2844394315571844_6210813294618345472_o",
+          "filename": "79325617_2844394315571844_6210813294618345472_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "2",
+          "description": "Sexto encuentro anual de la Asociaci\u00f3n Internacional de Bienales (IBA), Cineteca Nacional de Chile",
           "caption": "",
-          "name": "sim3",
-          "date": "2020-05-16 22:45:31",
-          "modified": "2020-05-22 20:44:26",
-          "mime_type": "image\/png",
-          "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 941,
-          "height": 530,
-          "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-150x150.png",
-            "thumbnail-width": 150,
-            "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-300x169.png",
-            "medium-width": 300,
-            "medium-height": 169,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-768x433.png",
-            "medium_large-width": 768,
-            "medium_large-height": 433,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "large-width": 941,
-            "large-height": 530,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "1536x1536-width": 941,
-            "1536x1536-height": 530,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "2048x2048-width": 941,
-            "2048x2048-height": 530
-          }
-        },
-        {
-          "ID": 82,
-          "id": 82,
-          "title": "mandragora-1024x683",
-          "filename": "mandragora-1024x683-1.jpg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
-          "alt": "",
-          "author": "1",
-          "description": "",
-          "caption": "",
-          "name": "mandragora-1024x683",
-          "date": "2020-05-16 22:47:04",
-          "modified": "2020-05-16 22:47:07",
+          "name": "79325617_2844394315571844_6210813294618345472_o",
+          "date": "2020-06-21 01:05:49",
+          "modified": "2020-07-01 15:23:52",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 1024,
-          "height": 683,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1367,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-150x150.jpg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-300x200.jpg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o-300x200.jpg",
             "medium-width": 300,
             "medium-height": 200,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1-768x512.jpg",
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o-768x513.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 513,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o-1024x684.jpg",
+            "large-width": 1024,
+            "large-height": 684,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o-1536x1025.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1025,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79325617_2844394315571844_6210813294618345472_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1367
+          }
+        },
+        {
+          "ID": 753,
+          "id": 753,
+          "title": "CINE FORO 3-19",
+          "filename": "CINE-FORO-3-19.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-scaled.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Cine foro \"Dusk Chorus\", Cineteca Nacional de Chile",
+          "caption": "",
+          "name": "cine-foro-3-19",
+          "date": "2020-06-21 01:16:44",
+          "modified": "2020-07-01 15:23:44",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2560,
+          "height": 1707,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-768x512.jpg",
             "medium_large-width": 768,
             "medium_large-height": 512,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-1024x683.jpg",
             "large-width": 1024,
             "large-height": 683,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
-            "1536x1536-width": 1024,
-            "1536x1536-height": 683,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/mandragora-1024x683-1.jpg",
-            "2048x2048-width": 1024,
-            "2048x2048-height": 683
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/CINE-FORO-3-19-2048x1365.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
           }
         },
         {
-          "ID": 87,
-          "id": 87,
-          "title": "image2-1024x768",
-          "filename": "image2-1024x768-1.jpeg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+          "ID": 752,
+          "id": 752,
+          "title": "INSTAGRAM 5",
+          "filename": "INSTAGRAM-5.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-scaled.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "2",
+          "description": "Cine foro \"Donna Haraway: Story Telling for Earthly Survival\", Cineteca Nacional de Chile",
           "caption": "",
-          "name": "image2-1024x768",
-          "date": "2020-05-16 22:48:41",
-          "modified": "2020-05-22 20:44:20",
+          "name": "instagram-5",
+          "date": "2020-06-21 01:12:16",
+          "modified": "2020-07-01 15:25:50",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 1024,
-          "height": 768,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2560,
+          "height": 1710,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-150x150.jpeg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-300x225.jpeg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-300x200.jpg",
             "medium-width": 300,
-            "medium-height": 225,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-768x576.jpeg",
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-768x513.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 576,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+            "medium_large-height": 513,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-1024x684.jpg",
             "large-width": 1024,
-            "large-height": 768,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
-            "1536x1536-width": 1024,
-            "1536x1536-height": 768,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
-            "2048x2048-width": 1024,
-            "2048x2048-height": 768
+            "large-height": 684,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-1536x1026.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1026,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/INSTAGRAM-5-2048x1368.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1368
           }
         },
         {
-          "ID": 88,
-          "id": 88,
-          "title": "artistas-1024x768",
-          "filename": "artistas-1024x768-1.jpg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
+          "ID": 520,
+          "id": 520,
+          "title": "campos2",
+          "filename": "campos2.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "2",
+          "description": "Performance en el marco de la exposici\u00f3n \"Mundo situado\", Museo de Artes Visuales (MAVI)",
           "caption": "",
-          "name": "artistas-1024x768",
-          "date": "2020-05-16 22:49:11",
-          "modified": "2020-05-23 02:13:55",
+          "name": "campos2",
+          "date": "2020-06-10 21:16:17",
+          "modified": "2020-07-01 15:23:06",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 1024,
-          "height": 768,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-150x150.jpg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-300x225.jpg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2-300x169.jpg",
             "medium-width": 300,
-            "medium-height": 225,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1-768x576.jpg",
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 576,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2-1024x576.jpg",
             "large-width": 1024,
-            "large-height": 768,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
-            "1536x1536-width": 1024,
-            "1536x1536-height": 768,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/artistas-1024x768-1.jpg",
-            "2048x2048-width": 1024,
-            "2048x2048-height": 768
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/campos2.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 748,
+          "id": 748,
+          "title": "79665916_2850196648324944_1378349030710444032_o",
+          "filename": "79665916_2850196648324944_1378349030710444032_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Performance \"Ascospora\" de Alexandra Mabes, en la inauguraci\u00f3n de \"\u221e (Infinita)\", Museo Benjam\u00edn Vicu\u00f1a Mackenna.",
+          "caption": "",
+          "name": "79665916_2850196648324944_1378349030710444032_o",
+          "date": "2020-06-21 01:04:47",
+          "modified": "2020-07-01 15:23:14",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1365,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o-1024x683.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/79665916_2850196648324944_1378349030710444032_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
+          }
+        },
+        {
+          "ID": 749,
+          "id": 749,
+          "title": "62313129_2457772087567404_5883339913952231424_o",
+          "filename": "62313129_2457772087567404_5883339913952231424_o.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Performance de Nicol\u00e1s Matzner y Nicol\u00e1s Sandoval en encuentro de artistas.",
+          "caption": "",
+          "name": "62313129_2457772087567404_5883339913952231424_o",
+          "date": "2020-06-21 01:05:06",
+          "modified": "2020-07-01 15:24:47",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2048,
+          "height": 1365,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o-768x512.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 512,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o-1024x683.jpg",
+            "large-width": 1024,
+            "large-height": 683,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o-1536x1024.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1024,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/62313129_2457772087567404_5883339913952231424_o.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1365
+          }
+        },
+        {
+          "ID": 755,
+          "id": 755,
+          "title": "MARCHA KINDER-14",
+          "filename": "MARCHA-KINDER-14.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-scaled.jpg",
+          "alt": "",
+          "author": "2",
+          "description": "Marcha del Kinder Planetario, homenaje a Sergio Larrain.",
+          "caption": "",
+          "name": "marcha-kinder-14",
+          "date": "2020-06-21 01:21:00",
+          "modified": "2020-07-01 15:27:06",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 2560,
+          "height": 1710,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-300x200.jpg",
+            "medium-width": 300,
+            "medium-height": 200,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-768x513.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 513,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-1024x684.jpg",
+            "large-width": 1024,
+            "large-height": 684,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-1536x1026.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 1026,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MARCHA-KINDER-14-2048x1368.jpg",
+            "2048x2048-width": 2048,
+            "2048x2048-height": 1368
           }
         }
       ],
@@ -377,40 +688,41 @@
         "value": "activities",
         "label": "Conversatorios y foros"
       },
-      "external_url": ""
+      "nav_menu_url": "https:\/\/cchv.cl\/programas\/campos-magneticos",
+      "order": "4"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program\/130"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/130"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=130"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=130"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=130"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=130"
         }
       ],
       "curies": [
@@ -427,16 +739,16 @@
     "date": "2020-05-22T16:45:30",
     "date_gmt": "2020-05-22T20:45:30",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=program&#038;p=124"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=124"
     },
-    "modified": "2020-05-22T16:45:30",
-    "modified_gmt": "2020-05-22T20:45:30",
+    "modified": "2020-07-23T17:29:32",
+    "modified_gmt": "2020-07-23T21:29:32",
     "slug": "mediateca",
     "status": "publish",
     "type": "program",
-    "link": "http:\/\/www.cchv.cl\/futuro\/program\/mediateca\/",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/mediateca\/",
     "title": {
-      "rendered": "Mediateca"
+      "rendered": "Mediateca Libre"
     },
     "author": 1,
     "parent": 0,
@@ -451,40 +763,41 @@
         "value": "none",
         "label": "Ninguno"
       },
-      "external_url": "http:\/\/mediatecalibre.cl\/"
+      "nav_menu_url": "http:\/\/mediatecalibre.cl\/",
+      "order": "7"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program\/124"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/124"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=124"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=124"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=124"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=124"
         }
       ],
       "curies": [
@@ -501,16 +814,16 @@
     "date": "2020-05-22T16:44:34",
     "date_gmt": "2020-05-22T20:44:34",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=program&#038;p=123"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=123"
     },
-    "modified": "2020-05-22T20:50:27",
-    "modified_gmt": "2020-05-23T00:50:27",
+    "modified": "2020-07-15T20:47:48",
+    "modified_gmt": "2020-07-16T00:47:48",
     "slug": "concurso-juan-downey",
     "status": "publish",
     "type": "program",
-    "link": "http:\/\/www.cchv.cl\/futuro\/program\/concurso-juan-downey\/",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/concurso-juan-downey\/",
     "title": {
-      "rendered": "Concurso Juan Downey [PRUEBA]"
+      "rendered": "Concurso Internacional Juan Downey"
     },
     "author": 1,
     "parent": 0,
@@ -518,85 +831,397 @@
     "categories": [],
     "acf_fields": {
       "is_external": false,
-      "text": "<div class=\"e18-10 x-section\">\n<div class=\"e18-11 x-container max width\">\n<div class=\"e18-12 x-column x-sm x-1-2\">\n<div class=\"e18-13 x-text\">\n<p>La Bienal de Artes Mediales es un espacio de di\u00e1logo entre arte y tecnolog\u00eda en el marco del arte medial contempor\u00e1neo, que privilegia el concepto de obra, los estatutos de producci\u00f3n, la autor\u00eda, sistemas de lecturas y circulaci\u00f3n, como tambi\u00e9n las po\u00e9ticas simb\u00f3licas. El evento es una vitrina peri\u00f3dica sobre la producci\u00f3n nacional e internacional en las \u00e1reas audiovisuales y de nuevos medios, fomenta el encuentro entre artistas del rubro y se preocupa por abordar los desaf\u00edos te\u00f3ricos de la relaci\u00f3n arte contempor\u00e1neo y nuevas tecnolog\u00edas.<\/p>\n<p>El Concurso Internacional a la Creaci\u00f3n en artes Audiovisuales Juan Downey se origin\u00f3 en el marco de la primera Bienal de Artes Mediales \u00a0el a\u00f1o 1993, en homenaje a uno de los artistas m\u00e1s importantes de las artes mediales de Chile.\u00a0Juan Downey \u00a0(1940-1993), arquitecto y artista chileno, pionero en el videoarte, video ensayo, el cine expandido y las instalaciones interactivas, tanto en Chile como en el resto del mundo. Downey fue un realizador inquieto y vers\u00e1til, donde el proceso en la exploraci\u00f3n de medios y contenidos era tan importante como el resultado final de la obra. Su trabajo ha sido exhibido en la Bienal de Venecia, en museos de Holanda, Estados Unidos, Espa\u00f1a y Chile. El encuentro se plantea y dispone como una instancia de di\u00e1logo, diseminaci\u00f3n e intercambio de trabajos en artes mediales generando un cruce entre los distintos campos y disciplinas que hacen converger al arte, tecnolog\u00eda y ciencia.<\/p>\n<\/div>\n<\/div>\n<div class=\"e18-14 x-column x-sm x-1-2\"><\/div>\n<\/div>\n<\/div>\n",
+      "text": "<div class=\"e18-10 x-section\">\n<div class=\"e18-11 x-container max width\">\n<div class=\"e18-12 x-column x-sm x-1-2\">\n<div class=\"e18-13 x-text\">\n<p>El <strong>Concurso Internacional Juan Downey<\/strong> se origin\u00f3 el a\u00f1o 1993 en el marco de la primera Bienal de Video de Santiago como una instancia de di\u00e1logo, diseminaci\u00f3n e intercambio de trabajos en artes mediales.<\/p>\n<p><span class=\"gmail_default\">\u200bEl certamen se realiza \u200b<\/span>como homenaje a Juan Downey (1940-1993), arquitecto y artista chileno, pionero en el videoarte, <span class=\"gmail_default\">\u200bel \u200b<\/span>video ensayo, el cine expandido y las instalaciones interactivas<span class=\"gmail_default\">\u200b, cuyo \u200b<\/span>trabajo ha sido exhibido en diversos museos de Chile, as\u00ed como tambi\u00e9n en la Bienal de Venecia y en museos de Holanda, Estados Unidos y Espa\u00f1a, entre otros.<\/p>\n<\/div>\n<\/div>\n<\/div>\n<\/div>\n",
       "video_url": "",
       "gallery": [
         {
-          "ID": 87,
-          "id": 87,
-          "title": "image2-1024x768",
-          "filename": "image2-1024x768-1.jpeg",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+          "ID": 630,
+          "id": 630,
+          "title": "rostrohumano",
+          "filename": "rostrohumano.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "3",
+          "description": "\"Rostro Humano\" (2019), Javier Gonz\u00e1lez Pesce",
           "caption": "",
-          "name": "image2-1024x768",
-          "date": "2020-05-16 22:48:41",
-          "modified": "2020-05-22 20:44:20",
+          "name": "rostrohumano",
+          "date": "2020-06-12 16:49:31",
+          "modified": "2020-06-19 15:30:08",
           "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 1024,
-          "height": 768,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-150x150.jpeg",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-300x225.jpeg",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano-300x169.jpg",
             "medium-width": 300,
-            "medium-height": 225,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1-768x576.jpeg",
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 576,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano-1024x576.jpg",
             "large-width": 1024,
-            "large-height": 768,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
-            "1536x1536-width": 1024,
-            "1536x1536-height": 768,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/image2-1024x768-1.jpeg",
-            "2048x2048-width": 1024,
-            "2048x2048-height": 768
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/rostrohumano.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
           }
         },
         {
-          "ID": 80,
-          "id": 80,
-          "title": "sim3",
-          "filename": "sim3.png",
-          "url": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
+          "ID": 629,
+          "id": 629,
+          "title": "latidosmarinos",
+          "filename": "latidosmarinos.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos.jpg",
           "alt": "",
-          "author": "1",
-          "description": "",
+          "author": "3",
+          "description": "\"Latidos Marinos\" (2019), Colectivo ECOS",
           "caption": "",
-          "name": "sim3",
-          "date": "2020-05-16 22:45:31",
-          "modified": "2020-05-22 20:44:26",
-          "mime_type": "image\/png",
+          "name": "latidosmarinos",
+          "date": "2020-06-12 16:49:26",
+          "modified": "2020-06-19 15:23:48",
+          "mime_type": "image\/jpeg",
           "type": "image",
-          "icon": "http:\/\/www.cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
-          "width": 941,
-          "height": 530,
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
           "sizes": {
-            "thumbnail": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-150x150.png",
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos-150x150.jpg",
             "thumbnail-width": 150,
             "thumbnail-height": 150,
-            "medium": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-300x169.png",
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos-300x169.jpg",
             "medium-width": 300,
             "medium-height": 169,
-            "medium_large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3-768x433.png",
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos-768x432.jpg",
             "medium_large-width": 768,
-            "medium_large-height": 433,
-            "large": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "large-width": 941,
-            "large-height": 530,
-            "1536x1536": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "1536x1536-width": 941,
-            "1536x1536-height": 530,
-            "2048x2048": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/sim3.png",
-            "2048x2048-width": 941,
-            "2048x2048-height": 530
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/latidosmarinos.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 627,
+          "id": 627,
+          "title": "airetierragua",
+          "filename": "airetierragua.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua.jpg",
+          "alt": "",
+          "author": "3",
+          "description": "\"Ya sea en el aire, en la tierra o en el agua\" (2017), B\u00e1rbara Oettinger",
+          "caption": "",
+          "name": "airetierragua",
+          "date": "2020-06-12 16:49:18",
+          "modified": "2020-06-19 15:29:37",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua-300x169.jpg",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua-768x432.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/airetierragua.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 628,
+          "id": 628,
+          "title": "existe",
+          "filename": "existe.jpg",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe.jpg",
+          "alt": "",
+          "author": "3",
+          "description": "\"Existe\" (2013), Mario Z",
+          "caption": "",
+          "name": "existe-2",
+          "date": "2020-06-12 16:49:22",
+          "modified": "2020-06-19 15:24:44",
+          "mime_type": "image\/jpeg",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1920,
+          "height": 1080,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe-150x150.jpg",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe-300x169.jpg",
+            "medium-width": 300,
+            "medium-height": 169,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe-768x432.jpg",
+            "medium_large-width": 768,
+            "medium_large-height": 432,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe-1024x576.jpg",
+            "large-width": 1024,
+            "large-height": 576,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe-1536x864.jpg",
+            "1536x1536-width": 1536,
+            "1536x1536-height": 864,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/existe.jpg",
+            "2048x2048-width": 1920,
+            "2048x2048-height": 1080
+          }
+        },
+        {
+          "ID": 506,
+          "id": 506,
+          "title": "condorstation",
+          "filename": "condorstation.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"C\u00f3ndor Station\" (2010), Gabriel del Favero Bannen",
+          "caption": "",
+          "name": "condorstation",
+          "date": "2020-06-08 21:48:39",
+          "modified": "2020-06-19 15:25:12",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 1273,
+          "height": 715,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation-300x168.png",
+            "medium-width": 300,
+            "medium-height": 168,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation-768x431.png",
+            "medium_large-width": 768,
+            "medium_large-height": 431,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation-1024x575.png",
+            "large-width": 1024,
+            "large-height": 575,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation.png",
+            "1536x1536-width": 1273,
+            "1536x1536-height": 715,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/condorstation.png",
+            "2048x2048-width": 1273,
+            "2048x2048-height": 715
+          }
+        },
+        {
+          "ID": 503,
+          "id": 503,
+          "title": "uyuni",
+          "filename": "uyuni.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"Uyuni\" (2005), Andr\u00e9s Denegri",
+          "caption": "",
+          "name": "uyuni",
+          "date": "2020-06-08 21:16:34",
+          "modified": "2020-06-19 15:26:22",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 774,
+          "height": 509,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni-300x197.png",
+            "medium-width": 300,
+            "medium-height": 197,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni-768x505.png",
+            "medium_large-width": 768,
+            "medium_large-height": 505,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni.png",
+            "large-width": 774,
+            "large-height": 509,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni.png",
+            "1536x1536-width": 774,
+            "1536x1536-height": 509,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/uyuni.png",
+            "2048x2048-width": 774,
+            "2048x2048-height": 509
+          }
+        },
+        {
+          "ID": 501,
+          "id": 501,
+          "title": "elcuerpo",
+          "filename": "elcuerpo.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"El Cuerpo\" (2005), Nicol\u00e1s Grum",
+          "caption": "",
+          "name": "elcuerpo",
+          "date": "2020-06-08 21:10:53",
+          "modified": "2020-06-19 15:26:59",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 693,
+          "height": 519,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo-300x225.png",
+            "medium-width": 300,
+            "medium-height": 225,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo.png",
+            "medium_large-width": 693,
+            "medium_large-height": 519,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo.png",
+            "large-width": 693,
+            "large-height": 519,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo.png",
+            "1536x1536-width": 693,
+            "1536x1536-height": 519,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/elcuerpo.png",
+            "2048x2048-width": 693,
+            "2048x2048-height": 519
+          }
+        },
+        {
+          "ID": 497,
+          "id": 497,
+          "title": "MALDITOAMOR",
+          "filename": "MALDITOAMOR.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"Maldito Amor 2.0\" (2003), Fernando Arredondo y Luis Horta",
+          "caption": "",
+          "name": "malditoamor",
+          "date": "2020-06-08 20:53:38",
+          "modified": "2020-06-19 15:27:25",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 627,
+          "height": 466,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR-300x223.png",
+            "medium-width": 300,
+            "medium-height": 223,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR.png",
+            "medium_large-width": 627,
+            "medium_large-height": 466,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR.png",
+            "large-width": 627,
+            "large-height": 466,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR.png",
+            "1536x1536-width": 627,
+            "1536x1536-height": 466,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/MALDITOAMOR.png",
+            "2048x2048-width": 627,
+            "2048x2048-height": 466
+          }
+        },
+        {
+          "ID": 736,
+          "id": 736,
+          "title": "adentroafuera",
+          "filename": "adentroafuera.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"Adentro y afuera, al mismo tiempo\" (1999), Mar\u00eda Soledad Ram\u00edrez",
+          "caption": "",
+          "name": "adentroafuera",
+          "date": "2020-06-19 15:04:56",
+          "modified": "2020-06-19 15:30:00",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 759,
+          "height": 502,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera-300x198.png",
+            "medium-width": 300,
+            "medium-height": 198,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera.png",
+            "medium_large-width": 759,
+            "medium_large-height": 502,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera.png",
+            "large-width": 759,
+            "large-height": 502,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera.png",
+            "1536x1536-width": 759,
+            "1536x1536-height": 502,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/adentroafuera.png",
+            "2048x2048-width": 759,
+            "2048x2048-height": 502
+          }
+        },
+        {
+          "ID": 493,
+          "id": 493,
+          "title": "comunion",
+          "filename": "comunion.png",
+          "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion.png",
+          "alt": "",
+          "author": "2",
+          "description": "\"Comuni\u00f3n\" (1997), Guillermo Cifuentes",
+          "caption": "",
+          "name": "comunion",
+          "date": "2020-06-08 20:33:10",
+          "modified": "2020-06-19 15:28:24",
+          "mime_type": "image\/png",
+          "type": "image",
+          "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/default.png",
+          "width": 931,
+          "height": 624,
+          "sizes": {
+            "thumbnail": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion-150x150.png",
+            "thumbnail-width": 150,
+            "thumbnail-height": 150,
+            "medium": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion-300x201.png",
+            "medium-width": 300,
+            "medium-height": 201,
+            "medium_large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion-768x515.png",
+            "medium_large-width": 768,
+            "medium_large-height": 515,
+            "large": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion.png",
+            "large-width": 931,
+            "large-height": 624,
+            "1536x1536": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion.png",
+            "1536x1536-width": 931,
+            "1536x1536-height": 624,
+            "2048x2048": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/comunion.png",
+            "2048x2048-width": 931,
+            "2048x2048-height": 624
           }
         }
       ],
@@ -604,40 +1229,41 @@
         "value": "videos",
         "label": "Videos Juan Downey"
       },
-      "external_url": ""
+      "nav_menu_url": "https:\/\/cchv.cl\/programas\/concurso-juan-downey",
+      "order": "2"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program\/123"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/123"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=123"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=123"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=123"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=123"
         }
       ],
       "curies": [
@@ -654,16 +1280,16 @@
     "date": "2020-05-20T00:31:53",
     "date_gmt": "2020-05-20T04:31:53",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=program&#038;p=112"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=program&#038;p=112"
     },
-    "modified": "2020-05-22T16:43:49",
-    "modified_gmt": "2020-05-22T20:43:49",
+    "modified": "2020-06-13T16:42:48",
+    "modified_gmt": "2020-06-13T20:42:48",
     "slug": "bienal-de-artes-mediales",
     "status": "publish",
     "type": "program",
-    "link": "http:\/\/www.cchv.cl\/futuro\/program\/bienal-de-artes-mediales\/",
+    "link": "https:\/\/cchv.cl\/futuro\/program\/bienal-de-artes-mediales\/",
     "title": {
-      "rendered": "Bienal de artes mediales"
+      "rendered": "Bienal de Artes Mediales de Santiago"
     },
     "author": 1,
     "parent": 0,
@@ -678,40 +1304,41 @@
         "label": "Ninguno"
       },
       "text": "",
-      "external_url": "http:\/\/bienaldeartesmediales.cl\/14"
+      "nav_menu_url": "http:\/\/bienaldeartesmediales.cl\/14",
+      "order": "1"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program\/112"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs\/112"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/programs"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/program"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=112"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=112"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=112"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=112"
         }
       ],
       "curies": [
