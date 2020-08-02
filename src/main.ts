@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import VueYoutube from "vue-youtube"
-import { ellipsisDirective } from "@hyjiacan/vue-ellipsis"
+import VueEllipsis from "vue-ellipsis"
 import VueCompositionApi from "@vue/composition-api"
 import App from "./App.vue"
 import VueLazyLoad from "vue-lazyload"
@@ -20,8 +20,7 @@ import "dayjs/locale/es" // import locale
 dayjs.locale("es") // use locale
 dayjs.extend(customParseFormat)
 
-Vue.directive(ellipsisDirective.name, ellipsisDirective)
-
+Vue.use(VueEllipsis)
 Vue.use(VueRouter)
 Vue.use(VueYoutube)
 Vue.use(VueCompositionApi)

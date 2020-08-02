@@ -21,7 +21,7 @@
         target="_blank"
         class="activityCalendarLink"
         title="Ver calendario"
-        :href="calendaUrl"
+        :href="calendarUrl"
         >Agéndalo</a
       >
     </div>
@@ -53,7 +53,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../../styles/variables.styl';
 
 .activitySchedule
@@ -69,16 +69,18 @@ export default defineComponent({
     border-top: 1px solid $blue;
     border-left: 1px solid $blue;
     border-bottom: 1px solid $blue;
-    padding: 10px;
+    padding: 10px 5px;
     margin: 0;
     flex: 1;
     color: $blue;
+    font-size: 14px;
 
   .activityCalendar
     display: flex;
     border-top: 1px solid $blue;
     border-right: 1px solid $blue;
     border-bottom: 1px solid $blue;
+    transition: background-color 0.2s;
 
     &.activityCalendar--disabled
       border-color: $latest_posts_grey;
@@ -92,4 +94,8 @@ export default defineComponent({
       padding: 10px;
       color: white;
       font-style: italic;
+      font-size: 14px;
+
+    &:hover
+      opacity: 0.8;
 </style>

@@ -80,16 +80,15 @@
   .activitiesGridGoToPageButtonContainer
     width: 100%;
     display: flex;
-    justify-content: flex-end;
 
     .activitiesGridGoToPageButton
       background-color: $blue;
       color: white;
       border: none;
       display: inline-block;
-      width: 33.333%;
+      width: calc(100% - 40px);
       padding: 5px 0;
-      transform: background-color 0.2;
+      transition: background-color 0.2s;
 
       &:hover
         background-color: darken($blue, 10);

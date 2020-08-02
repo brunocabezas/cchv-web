@@ -30,4 +30,10 @@ export default ProgramActivities;
 <style lang="stylus">
 .programActivities
   margin-top: 2em;
+
+  .activitiesGrid
+    margin-bottom: 2.5em;
+
+    &:last-child
+      margin-bottom: 0;
 </style>
