@@ -8,7 +8,7 @@
         <ActivitySchedule
           :calendarUrl="post.activity_calendar_url"
           :date="post.activity_date"
-          :isDisabled="post.isDisabled"
+          :isDisabled="post.activity_date_has_passed"
         />
         <div class="newsPostDate">Publicado el {{ post.date }}</div>
 

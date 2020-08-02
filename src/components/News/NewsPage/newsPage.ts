@@ -27,10 +27,11 @@ export default defineComponent({
       currentPage: page,
       setNewsPage,
     } = useNews()
-    const initialDataLoading = ref(false)
+    const initialDataLoading = ref(true)
 
     if (news.value.length === 0) {
       initialDataLoading.value = true
+
       // Fetch
       fetchNews(
         { per_page: INITIAL_NEWS_BY_PAGE, page: page.value },

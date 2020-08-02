@@ -49,7 +49,7 @@ export default function useNews() {
         text: newsPost.text,
         video_url: newsPost.video_url,
         activity_date: newsPost.activity_date,
-        isDisabled: newsPost.isDisabled,
+        activity_date_has_passed: newsPost.activity_date_has_passed,
         activity_calendar_url: newsPost.activity_calendar_url,
       })
     )

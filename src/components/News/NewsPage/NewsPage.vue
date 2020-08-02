@@ -2,9 +2,8 @@
   <div class="page newsPage">
     <div class="pageTitle">
       <h1 class="pageTitleText">Noticias</h1>
-      <!-- <div class="pageTitleInput">search input</div>-->
     </div>
-    <Loader v-if="initialDataLoading" />
+    <Loader :loading="initialDataLoading" />
     <div class="newsPage__topGrid">
       <NewsThumb :post="post" v-bind:key="post.id" v-for="post in homeNews" />
     </div>
@@ -14,7 +13,11 @@
         <div slot="spinner"></div>
         <div slot="no-more"></div>
       </infinite-loading>
-      <Loader v-if="!initialDataLoading" :loading="isLoading" size="20px" />
+      <Loader
+        v-if="!initialDataLoading && news.length"
+        :loading="isLoading"
+        size="20px"
+      />
     </div>
   </div>
 </template>

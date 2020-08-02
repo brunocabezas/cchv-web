@@ -10,7 +10,7 @@
         <ActivitySchedule
           :calendarUrl="act.activity_calendar_url"
           :date="act.activity_date"
-          :isDisabled="act.isDisabled"
+          :isDisabled="act.activity_date_has_passed"
         />
         <router-link
           class="activitiesGridLink"
