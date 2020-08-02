@@ -1,61 +1,609 @@
 [
   {
-    "id": 49,
-    "date": "2020-05-13T22:59:45",
-    "date_gmt": "2020-05-14T02:59:45",
+    "id": 860,
+    "date": "2020-07-08T11:45:31",
+    "date_gmt": "2020-07-08T15:45:31",
     "guid": {
-      "rendered": "http:\/\/www.cchv.cl\/futuro\/?post_type=sponsor&#038;p=49"
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=860"
     },
-    "modified": "2020-05-13T22:59:45",
-    "modified_gmt": "2020-05-14T02:59:45",
-    "slug": "sponsor-de-prueba",
+    "modified": "2020-07-08T11:48:41",
+    "modified_gmt": "2020-07-08T15:48:41",
+    "slug": "pam",
     "status": "publish",
     "type": "sponsor",
-    "link": "http:\/\/www.cchv.cl\/futuro\/sponsor\/sponsor-de-prueba\/",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/pam\/",
     "title": {
-      "rendered": "Sponsor de prueba"
+      "rendered": "PAM"
     },
-    "author": 1,
+    "author": 3,
     "parent": 0,
     "template": "",
     "categories": [],
     "acf_fields": {
-      "logo": "http:\/\/www.cchv.cl\/futuro\/wp-content\/uploads\/2020\/05\/logo.png",
-      "order": "-1",
-      "url": "https:\/\/www.cchv.cl"
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/LOGO-PAM.png",
+      "order": "6",
+      "url": "http:\/\/www.arteymedios.org\/"
     },
     "_links": {
       "self": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/49"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/860"
         }
       ],
       "collection": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
         }
       ],
       "about": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
         }
       ],
       "author": [
         {
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
         }
       ],
       "wp:attachment": [
         {
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=49"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=860"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "http:\/\/www.cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=49"
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=860"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 822,
+    "date": "2020-07-02T13:07:23",
+    "date_gmt": "2020-07-02T17:07:23",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=822"
+    },
+    "modified": "2020-07-02T13:07:23",
+    "modified_gmt": "2020-07-02T17:07:23",
+    "slug": "endemico",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/endemico\/",
+    "title": {
+      "rendered": "End\u00e9mico"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/LOGO-ENDEMICO-1.png",
+      "order": "5",
+      "url": "https:\/\/www.endemico.org\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/822"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=822"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=822"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 809,
+    "date": "2020-06-30T16:35:27",
+    "date_gmt": "2020-06-30T20:35:27",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=809"
+    },
+    "modified": "2020-06-30T16:35:27",
+    "modified_gmt": "2020-06-30T20:35:27",
+    "slug": "iba",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/iba\/",
+    "title": {
+      "rendered": "IBA"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-IBA.png",
+      "order": "1",
+      "url": "https:\/\/biennialassociation.org\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/809"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=809"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=809"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 806,
+    "date": "2020-06-30T14:46:28",
+    "date_gmt": "2020-06-30T18:46:28",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=806"
+    },
+    "modified": "2020-06-30T16:22:36",
+    "modified_gmt": "2020-06-30T20:22:36",
+    "slug": "mavi",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/mavi\/",
+    "title": {
+      "rendered": "MAVI"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-MAVI-1.png",
+      "order": "2",
+      "url": "https:\/\/www.mavi.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/806"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=806"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=806"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 805,
+    "date": "2020-06-30T14:45:42",
+    "date_gmt": "2020-06-30T18:45:42",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=805"
+    },
+    "modified": "2020-06-30T16:22:22",
+    "modified_gmt": "2020-06-30T20:22:22",
+    "slug": "mnba",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/mnba\/",
+    "title": {
+      "rendered": "MNBA"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-MNBA-1.png",
+      "order": "1",
+      "url": "https:\/\/www.mnba.gob.cl\/sitio\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/805"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=805"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=805"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 804,
+    "date": "2020-06-30T14:45:08",
+    "date_gmt": "2020-06-30T18:45:08",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=804"
+    },
+    "modified": "2020-06-30T16:22:58",
+    "modified_gmt": "2020-06-30T20:22:58",
+    "slug": "red-de-mediacion-artistica",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/red-de-mediacion-artistica\/",
+    "title": {
+      "rendered": "Red de mediaci\u00f3n art\u00edstica"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-RMA-1.png",
+      "order": "3",
+      "url": "http:\/\/www.redmediacionartistica.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/804"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=804"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=804"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 799,
+    "date": "2020-06-30T14:44:17",
+    "date_gmt": "2020-06-30T18:44:17",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=799"
+    },
+    "modified": "2020-06-30T16:22:11",
+    "modified_gmt": "2020-06-30T20:22:11",
+    "slug": "antena",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/antena\/",
+    "title": {
+      "rendered": "Antena"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-ANTENNA-1.png",
+      "order": "4",
+      "url": "https:\/\/www.antenna.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/799"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=799"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=799"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 738,
+    "date": "2020-06-19T11:20:14",
+    "date_gmt": "2020-06-19T15:20:14",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=738"
+    },
+    "modified": "2020-06-30T14:48:49",
+    "modified_gmt": "2020-06-30T18:48:49",
+    "slug": "mincap-2",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/mincap-2\/",
+    "title": {
+      "rendered": "MINCAP 2"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [
+      2
+    ],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/LOGO-MIN-ART-1-1.png",
+      "order": "2",
+      "url": "https:\/\/www.cultura.gob.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/738"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=738"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=738"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 737,
+    "date": "2020-06-19T11:19:18",
+    "date_gmt": "2020-06-19T15:19:18",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=sponsor&#038;p=737"
+    },
+    "modified": "2020-07-10T13:45:11",
+    "modified_gmt": "2020-07-10T17:45:11",
+    "slug": "mincap",
+    "status": "publish",
+    "type": "sponsor",
+    "link": "https:\/\/cchv.cl\/futuro\/sponsor\/mincap\/",
+    "title": {
+      "rendered": "MINCAP"
+    },
+    "author": 3,
+    "parent": 0,
+    "template": "",
+    "categories": [
+      2
+    ],
+    "acf_fields": {
+      "logo": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/07\/LOGO-MIN-ART-POIC.png",
+      "order": "1",
+      "url": "https:\/\/www.cultura.gob.cl\/"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors\/737"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/sponsors"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/sponsor"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/3"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=737"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=737"
         }
       ],
       "curies": [

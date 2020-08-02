@@ -8,7 +8,8 @@ import { WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
-import { dateIsPast } from "@/utils/date"
+import { DATE_FORMAT } from "@/utils/static"
+import dayjs from "dayjs"
 
 Vue.use(VueCompositionApi)
 
@@ -19,7 +20,13 @@ const { data, fetch: fetchNews, isLoading } = useAsyncData<WPResponseItem>(
 const newsPage = ref(1)
 
 export default function useNews() {
-  const news = computed<NewsPost[]>(() => helpers.mapNewsToView(data.value))
+  const news = computed<NewsPost[]>(() =>
+    data.value
+      .map((newsPost) => helpers.mapNewsToView(newsPost))
+      .sort((a: NewsPost, b: NewsPost): number => {
+        return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT))
+      })
+  )
 
   // Home news are highlighted with is_highlighted set to true. Limit to two
   const homeNews = computed<NewsPost[]>(() =>
@@ -38,19 +45,19 @@ export default function useNews() {
     )
 
     return newsAsActivities.map(
-      (n: NewsPost): Activity => ({
-        id: n.id,
-        name: n.title,
-        slug: n.slug,
-        type: n.is_activity,
+      (newsPost: NewsPost): Activity => ({
+        id: newsPost.id,
+        name: newsPost.title,
+        slug: newsPost.slug,
+        type: newsPost.is_activity,
         isNewsPost: true,
-        abstract: n.abstract,
-        gallery: n.gallery,
-        text: n.text,
-        video_url: n.video_url,
-        activity_date: n.activity_date,
-        activity_calendar_url: n.activity_calendar_url,
-        isDisabled: !n.activity_calendar_url || dateIsPast(n.activity_date),
+        abstract: newsPost.abstract,
+        gallery: newsPost.gallery,
+        text: newsPost.text,
+        video_url: newsPost.video_url,
+        activity_date: newsPost.activity_date,
+        activity_date_has_passed: newsPost.activity_date_has_passed,
+        activity_calendar_url: newsPost.activity_calendar_url,
       })
     )
   })

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve:mocks": "VUE_APP_ENABLE_MOCKS=true vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -12,7 +13,6 @@
     "npm": "6.14.4"
   },
   "dependencies": {
-    "@hyjiacan/vue-ellipsis": "^1.1.6",
     "@vueuse/core": "^2.0.27",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
@@ -21,6 +21,7 @@
     "vue-awesome": "^4.0.2",
     "vue-carousel": "^0.18.0",
     "vue-class-component": "^7.2.3",
+    "vue-ellipsis": "^1.2.0",
     "vue-image-lightbox": "^7.1.0",
     "vue-infinite-loading": "^2.4.5",
     "vue-progressive-image": "^3.2.0",

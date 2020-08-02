@@ -17,7 +17,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            CCHV TV
+            {{ YOUTUBE_CHANNEL_LABEL }}
           </a>
         </div>
       </div>
@@ -30,13 +30,13 @@ import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
 import Logo from "@/components/Logo.vue";
 import SocialNetworks from "@/components/SocialNetworks.vue";
 import { defineComponent } from "@vue/composition-api";
-import { YOUTUBE_CHANNEL } from "@/utils/static";
+import { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL } from "@/utils/static";
 
 const Header = defineComponent({
   name: "Header",
   components: { Logo, HeaderNav, SocialNetworks },
   setup() {
-    return { YOUTUBE_CHANNEL };
+    return { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL };
   }
 });
 

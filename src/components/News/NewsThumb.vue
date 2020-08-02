@@ -23,9 +23,14 @@
       ></router-link>
     </h3>
     <p class="newsPostPreview__date">{{ post.date }}</p>
-    <p v-ellipsis="6" class="newsPostPreview__abstract">
-      {{ post.abstract }}
-    </p>
+
+    <ellipsis
+      class="newsPostPreview__abstract"
+      :data="post.abstract"
+      :line-clamp="6"
+    >
+    </ellipsis>
+
     <router-link
       :title="post.title"
       class="newsPostPreview__link"
@@ -84,6 +89,9 @@ export default defineComponent({
 
   &__date, &__abstract
     margin: 10px 0;
+
+  &__abstract
+    text-align: justify;
 
   &__date
     color: darken($grey, 40);

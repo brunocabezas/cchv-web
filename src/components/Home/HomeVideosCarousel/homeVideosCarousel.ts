@@ -4,6 +4,7 @@ import Icon from "vue-awesome/components/Icon.vue"
 import useVideos from "@/factories/useVideos"
 import Loader from "@/components/Loader.vue"
 import useCarousel from "@/utils/useCarousel"
+import { YOUTUBE_CHANNEL_LABEL } from "@/utils/static"
 import { getIdFromUrl as getYoutubeIdFromUrl } from "vue-youtube"
 
 const HomeVideosCarousel = defineComponent({
@@ -27,6 +28,7 @@ const HomeVideosCarousel = defineComponent({
       videos,
       isLoading,
       getYoutubeIdFromUrl,
+      YOUTUBE_CHANNEL_LABEL,
     }
   },
 })

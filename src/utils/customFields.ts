@@ -1,100 +1,55 @@
-import { getWPTitle, getCustomField } from "./api"
+import { getWPTitle, getCustomFieldFromPost as getCustomField } from "./api"
 import { NewsKeys } from "@/types/customFieldsKeysTypes"
-import {
-  WpResponseData,
-  WpImage,
-  WPRelatedCustomFieldValue,
-} from "@/types/wordpressTypes"
-import { RelatedNewsPost, NewsPost } from "@/types"
+import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
+import { NewsPost } from "@/types"
 import dayjs from "dayjs"
-import { DATE_FORMAT } from "./static"
-import { filterUndef } from "./arrays"
+import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./static"
 import { ActivityType } from "@/types/customFieldsTypes"
+import { dateIsPast } from "./date"
 
-const mapRelatedNews = (
-  related: WPRelatedCustomFieldValue,
-  state: WpResponseData
-): RelatedNewsPost[] => {
-  const relatedOnState = related.filter((postId: number) =>
-    state.find((pst) => pst.id === postId)
+const mapNewsToView = (newsPost: WPResponseItem): NewsPost => {
+  const gallery = getCustomField<WpImage[]>(newsPost, NewsKeys.gallery, [])
+  const activityDate = getCustomField<string>(
+    newsPost,
+    NewsKeys.activity_date,
+    ""
   )
 
-  return filterUndef(
-    relatedOnState.map((postId: number) => {
-      const post = state.find((pst) => pst.id === postId)
-      if (post) {
-        const relatedGallery = getCustomField<WpImage[]>(
-          post,
-          NewsKeys.gallery,
-          []
-        )
-        return {
-          title: getWPTitle(post),
-          id: post.id,
-          slug: post.slug,
-          date: dayjs(post.date).format(DATE_FORMAT),
-          thumbnail: (relatedGallery[0] && relatedGallery[0].url) || "",
-        }
-      } else return undefined
-    })
+  const activity_date = activityDate
+    ? dayjs(activityDate, CUSTOM_FIELDS_DATE_FORMAT).format(DATE_FORMAT)
+    : ""
+
+  const activity_calendar_url = getCustomField<string>(
+    newsPost,
+    NewsKeys.activity_calendar_url,
+    ""
   )
-}
 
-const getTextFromHtmlString = (htmlString: string): string => {
-  var el = document.createElement("html")
-  el.innerHTML = htmlString
-  return el.innerHTML
-}
-
-const mapNewsToView = (state: WpResponseData): NewsPost[] => {
-  return state
-    .map(
-      (newsPost): NewsPost => {
-        const gallery: WpImage[] = getCustomField(
-          newsPost,
-          NewsKeys.gallery,
-          []
-        )
-        const related = getCustomField<WPRelatedCustomFieldValue>(
-          newsPost,
-          NewsKeys.related,
-          []
-        )
-
-        return {
-          id: newsPost.id,
-          title: getWPTitle(newsPost),
-          date: dayjs(newsPost.date).format(DATE_FORMAT),
-          thumbnail: (gallery[0] && gallery[0].url) || "",
-          slug: newsPost.slug,
-          // As abstract is displayed with v-ellipsis, text needs to be parsed before the view
-          abstract: getTextFromHtmlString(
-            getCustomField(newsPost, NewsKeys.abstract, "")
-          ),
-          is_activity: getCustomField<ActivityType>(
-            newsPost,
-            NewsKeys.is_activity
-          ),
-          text: getCustomField(newsPost, NewsKeys.text, ""),
-          gallery,
-          is_highlighted: getCustomField<boolean>(
-            newsPost,
-            NewsKeys.is_highlighted
-          ),
-          related: mapRelatedNews(related, state),
-          video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
-          activity_calendar_url: getCustomField(
-            newsPost,
-            NewsKeys.activity_calendar_url,
-            ""
-          ),
-          activity_date: getCustomField(newsPost, NewsKeys.activity_date, ""),
-        }
-      }
-    )
-    .sort((a: NewsPost, b: NewsPost): number => {
-      return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT))
-    })
+  return {
+    id: newsPost.id,
+    title: getWPTitle(newsPost),
+    slug: newsPost.slug,
+    date: dayjs(newsPost.date).format(DATE_FORMAT),
+    thumbnail: (gallery[0] && gallery[0].url) || "",
+    abstract: getCustomField(newsPost, NewsKeys.abstract, ""),
+    is_activity: getCustomField<ActivityType>(
+      newsPost,
+      NewsKeys.is_activity,
+      ActivityType.None
+    ),
+    text: getCustomField(newsPost, NewsKeys.text, ""),
+    is_highlighted: getCustomField<boolean>(
+      newsPost,
+      NewsKeys.is_highlighted,
+      false
+    ),
+    video_url: getCustomField(newsPost, NewsKeys.video_url, ""),
+    gallery,
+    activity_calendar_url,
+    activity_date,
+    activity_date_has_passed:
+      !activity_calendar_url || dateIsPast(activityDate),
+  }
 }
 
 export default {

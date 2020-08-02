@@ -5,8 +5,13 @@
         <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
         <h1 v-html="post.title" class="pageTitleText"></h1>
-
-        <div class="newsPostDate">{{ post.date }}</div>
+        <ActivitySchedule
+          v-if="post.activity_date"
+          :calendarUrl="post.activity_calendar_url"
+          :date="post.activity_date"
+          :isDisabled="post.activity_date_has_passed"
+        />
+        <div v-else class="newsPostDate">Publicado el {{ post.date }}</div>
 
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 

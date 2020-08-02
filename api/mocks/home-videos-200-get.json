@@ -1,0 +1,404 @@
+[
+  {
+    "id": 931,
+    "date": "2020-07-27T12:07:36",
+    "date_gmt": "2020-07-27T16:07:36",
+    "guid": {
+      "rendered": "http:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=931"
+    },
+    "modified": "2020-07-27T12:07:36",
+    "modified_gmt": "2020-07-27T16:07:36",
+    "slug": "conversatorio-la-desaparicion-del-tiempo-sesion-1",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/conversatorio-la-desaparicion-del-tiempo-sesion-1\/",
+    "title": {
+      "rendered": "Conversatorio &#8220;La desaparici\u00f3n del tiempo. Sesi\u00f3n 1&#8221;"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/www.youtube.com\/watch?v=nmmNwCZF4Os",
+      "order": "0"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/931"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=931"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=931"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 911,
+    "date": "2020-07-20T12:29:32",
+    "date_gmt": "2020-07-20T16:29:32",
+    "guid": {
+      "rendered": "http:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=911"
+    },
+    "modified": "2020-07-20T12:29:32",
+    "modified_gmt": "2020-07-20T16:29:32",
+    "slug": "conversatorio-hola-como-estas-primera-llamada",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/conversatorio-hola-como-estas-primera-llamada\/",
+    "title": {
+      "rendered": "Conversatorio &#8220;Hola, \u00bfc\u00f3mo est\u00e1s? Primera llamada&#8221;"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/youtu.be\/mwX0hgAuHxk",
+      "order": "0"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/911"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=911"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=911"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 813,
+    "date": "2020-07-01T11:50:41",
+    "date_gmt": "2020-07-01T15:50:41",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=813"
+    },
+    "modified": "2020-07-01T11:50:41",
+    "modified_gmt": "2020-07-01T15:50:41",
+    "slug": "conversatorio-micelios-y-redes-de-aprendizajes",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/conversatorio-micelios-y-redes-de-aprendizajes\/",
+    "title": {
+      "rendered": "Conversatorio Micelios y redes de aprendizajes"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/youtu.be\/4gS8HJp2Y2Y",
+      "order": "0"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/813"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=813"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=813"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 798,
+    "date": "2020-06-29T16:38:34",
+    "date_gmt": "2020-06-29T20:38:34",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=798"
+    },
+    "modified": "2020-06-29T16:38:34",
+    "modified_gmt": "2020-06-29T20:38:34",
+    "slug": "mandragora-arte-y-ciencia-tecnologias-para-la-conversacion",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/mandragora-arte-y-ciencia-tecnologias-para-la-conversacion\/",
+    "title": {
+      "rendered": "Mandr\u00e1gora | Arte y Ciencia &#8211; Tecnolog\u00edas para la conversaci\u00f3n"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/www.youtube.com\/watch?v=lMw6Qr9iyCc",
+      "order": "2"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/798"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=798"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=798"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 784,
+    "date": "2020-06-26T02:47:38",
+    "date_gmt": "2020-06-26T06:47:38",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=784"
+    },
+    "modified": "2020-06-29T16:36:32",
+    "modified_gmt": "2020-06-29T20:36:32",
+    "slug": "segundo-video",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/segundo-video\/",
+    "title": {
+      "rendered": "Concurso Juan Downey | Javier Gonz\u00e1lez Pesce &#8211; Rostro Humano"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/www.youtube.com\/watch?v=KWA-jp0Rnzo",
+      "order": "1"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/784"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=784"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=784"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 783,
+    "date": "2020-06-26T02:47:14",
+    "date_gmt": "2020-06-26T06:47:14",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=home_video&#038;p=783"
+    },
+    "modified": "2020-06-29T16:35:05",
+    "modified_gmt": "2020-06-29T20:35:05",
+    "slug": "primer-video",
+    "status": "publish",
+    "type": "home_video",
+    "link": "https:\/\/cchv.cl\/futuro\/home_video\/primer-video\/",
+    "title": {
+      "rendered": "N\u00e9stor Olhagaray &#8211; Inicios Festival Franco Chileno de Video y Bienal de Artes Mediales"
+    },
+    "author": 1,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "video_url": "https:\/\/www.youtube.com\/watch?v=ulX16Gfa_yI",
+      "order": "0"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos\/783"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/home-videos"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/home_video"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/1"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=783"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=783"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

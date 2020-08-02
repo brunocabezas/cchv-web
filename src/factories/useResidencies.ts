@@ -3,7 +3,7 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import Urls from "@/utils/urls"
 import { ResidencyKeys } from "@/types/customFieldsKeysTypes"
 import { Residency } from "@/types"
@@ -22,18 +22,23 @@ const { data, fetch: fetchResidencies, isLoading } = useAsyncData<
 >(apiRoutes.Residencies)
 
 const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
-  const hasDateRange = !!getCustomField(wordpressPost, ResidencyKeys.end_date)
+  const hasDateRange = !!getCustomFieldFromPost(
+    wordpressPost,
+    ResidencyKeys.end_date,
+    ""
+  )
   // Date format
   const dateObject = dayjs(
-    getCustomField(wordpressPost, ResidencyKeys.date),
-    CUSTOM_FIELDS_DATE_FORMAT
+    getCustomFieldFromPost(wordpressPost, ResidencyKeys.date, ""),
+    CUSTOM_FIELDS_DATE_FORMAT,
+    ""
   )
   const date = dateObject.format(DATE_FORMAT)
   const short_date = dateObject.format(SHORT_DATE_FORMAT)
 
   // End date format
   const endDateObject = dayjs(
-    getCustomField(wordpressPost, ResidencyKeys.end_date),
+    getCustomFieldFromPost(wordpressPost, ResidencyKeys.end_date, ""),
     CUSTOM_FIELDS_DATE_FORMAT
   )
   const end_date = hasDateRange ? endDateObject.format(DATE_FORMAT) : ""
@@ -45,9 +50,13 @@ const mapResidenciesFromWpPost = (wordpressPost: WPResponseItem): Residency => {
     id: wordpressPost.id,
     slug: wordpressPost.slug,
     name: getWPTitle(wordpressPost),
-    video_url: getCustomField(wordpressPost, ResidencyKeys.video_url),
-    gallery: getCustomField(wordpressPost, ResidencyKeys.gallery),
-    text: getCustomField(wordpressPost, ResidencyKeys.text),
+    video_url: getCustomFieldFromPost(
+      wordpressPost,
+      ResidencyKeys.video_url,
+      ""
+    ),
+    gallery: getCustomFieldFromPost(wordpressPost, ResidencyKeys.gallery, []),
+    text: getCustomFieldFromPost(wordpressPost, ResidencyKeys.text, ""),
     date,
     end_date,
     // Same as date and end_date but with shorter format

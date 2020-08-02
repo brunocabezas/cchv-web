@@ -16,7 +16,19 @@ import {
   ResidencyKeys,
 } from "./customFieldsKeysTypes"
 import { WpImage, WPSelectCustomFieldValue, WPDocument } from "./wordpressTypes"
-import { RelatedNewsPost } from "./"
+
+export type CustomFieldsValue =
+  | string
+  | number
+  | boolean
+  | WpImage[]
+  | WPDocument
+  | number[]
+  | ActivityType
+  | WPSelectCustomFieldValue<SocialNetworkType>
+  | WPSelectCustomFieldValue<ProgramExtraContent>
+  | TeamMemberType
+
 //
 // Uses customFieldsKeysTypes to build types represnting
 // Wordpress custom fields
@@ -44,16 +56,6 @@ export interface TeamMember {
   [TeamMembersKeys.position]: string
   [TeamMembersKeys.type]: TeamMemberType
 }
-
-// ACTIVITIES
-export enum ActivityType {
-  Movie = "movie",
-  Conversation = "conversation",
-  Concert = "concert",
-  Performance = "performance",
-  None = "none",
-}
-
 //
 // PROGRAMS
 //
@@ -72,7 +74,7 @@ export type Program = {
   [ProgramKeys.video_url]: string
   [ProgramKeys.gallery]?: WpImage[]
   [ProgramKeys.text]: string
-  [ProgramKeys.extra_content]: ProgramExtraContent
+  [ProgramKeys.extra_content]: WPSelectCustomFieldValue<ProgramExtraContent>
   [ProgramKeys.order]: number
 }
 
@@ -101,13 +103,8 @@ export type ProgramVideo = {
   [ProgramVideoKeys.duration]: string
 }
 
-// DOCUMENT
-export type Document = {
-  [DocumentKeys.link]: WPDocument
-  [DocumentKeys.order]: number
-}
-
 // PAGE
+// Static pages as team or transparency
 export type Page = {
   [PageKeys.text]: string
   [PageKeys.gallery]: WpImage[]
@@ -119,10 +116,18 @@ export enum PageExtraContent {
   Documents = "documents",
 }
 
+// DOCUMENT
+export type Document = {
+  [DocumentKeys.link]: WPDocument
+  [DocumentKeys.order]: number
+}
+
 // SPONSOR / SPONSOR CATEGORY
+// N sponsors can belong to 1 sponsor category
+// categories and sponsors inside them are sorted by it's order attribute
 export type SponsorsCategory = {
   [SponsorCategoryKeys.order]: number
-  [SponsorCategoryKeys.sponsors]: Sponsor[]
+  [SponsorCategoryKeys.sponsors]: number[]
 }
 
 export type Sponsor = {
@@ -132,17 +137,31 @@ export type Sponsor = {
 }
 
 // NEWS
+// A news post can also be an activity
 export interface NewsPost {
   [NewsKeys.abstract]: string
   [NewsKeys.text]: string
-  // TODO related must be related news post in types/index
-  [NewsKeys.related]: number[] | RelatedNewsPost[]
-  [NewsKeys.video_url]: string
+  // Disabled
+  // [NewsKeys.related]: number[] | RelatedNewsPost[]
+  // Whether is on
   [NewsKeys.is_highlighted]: boolean
-  [NewsKeys.is_activity]: ActivityType
+  // Media
   [NewsKeys.gallery]: WpImage[]
+  [NewsKeys.video_url]: string
+  // Activity date fields
+  [NewsKeys.is_activity]: ActivityType
   [NewsKeys.activity_date]: string
   [NewsKeys.activity_calendar_url]: string
+}
+
+// ACTIVITIES
+// A type of NewsPost, each activty has a date, a calendar link
+export enum ActivityType {
+  Movie = "movie",
+  Conversation = "conversation",
+  Concert = "concert",
+  Performance = "performance",
+  None = "none",
 }
 
 export interface CarouselImage {
@@ -162,6 +181,7 @@ export interface Edition {
   [EditionKeys.gallery]: WpImage[]
   [EditionKeys.video_url]: string
   [EditionKeys.text]: string
+  [EditionKeys.date]: string
 }
 
 export interface Residency {

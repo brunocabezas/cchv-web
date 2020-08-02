@@ -1,5 +1,5 @@
 import { TeamMember } from "@/types/customFieldsTypes"
-import { sortByOrder } from "./arrays"
+import { sortByOrder } from "@/utils/arrays"
 
 export interface TeamMemberPosition {
   name: string

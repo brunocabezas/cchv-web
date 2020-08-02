@@ -1,17 +1,14 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
+import { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/utils/useAsyncData"
 import {
   WPSelectCustomFieldValue,
   WPResponseItem,
 } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes"
 import { SocialNetwork } from "@/types"
 import { SocialNetworkType } from "@/types/customFieldsTypes"
-
-Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchSocialNetworks, isLoading } = useAsyncData<
   WPResponseItem
@@ -47,9 +44,12 @@ export default function useSocialNetworks() {
   const socialNetworks = computed<SocialNetwork[]>(() => {
     return data.value.map(
       (socialNetworkPost): SocialNetwork => {
-        const type = getCustomField<
+        const type = getCustomFieldFromPost<
           WPSelectCustomFieldValue<SocialNetworkType>
-        >(socialNetworkPost, SocialNetworksKeys.type)
+        >(socialNetworkPost, SocialNetworksKeys.type, {
+          value: SocialNetworkType.Facebook,
+          label: "",
+        })
         const iconName = getIconNameByType(type)
 
         return {
@@ -58,7 +58,11 @@ export default function useSocialNetworks() {
           iconName,
           scale: getIconScaleByType(type),
           [SocialNetworksKeys.type]: type,
-          url: getCustomField(socialNetworkPost, SocialNetworksKeys.url),
+          url: getCustomFieldFromPost(
+            socialNetworkPost,
+            SocialNetworksKeys.url,
+            ""
+          ),
         }
       }
     )

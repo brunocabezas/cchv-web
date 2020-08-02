@@ -7,13 +7,16 @@
         v-for="event in editions"
         class="editionContainer"
       >
-        <div class="edition">
-          <div class="editionInfo">
-            <h1 class="editionName">{{ event.name }}</h1>
-            <div class="pageBody" v-html="event.text"></div>
-          </div>
-          <div class="editionMedia">
-            <Media height="100%" />
+        <div class="editionContainerWrapper">
+          <div class="edition">
+            <div class="editionInfo">
+              <h1 class="editionName">{{ event.name }}</h1>
+              <p class="editionDate" v-if="event.date">{{ event.date }}</p>
+              <div class="pageBody" v-html="event.text"></div>
+            </div>
+            <div class="editionMedia">
+              <Media height="100%" />
+            </div>
           </div>
         </div>
       </div>
@@ -58,33 +61,40 @@ $margin_between_videos = 2em;
 
   // edition has different background colors
   .editionContainer
-    max-width: $boxed_content_max_width;
-    margin: 0 auto;
-    page_padding(0, 0);
-
     &:nth-child(odd)
       background-color: $grey;
 
-    .edition
-      min-height: 500px;
-      max-height: 700px;
-      padding: 3em 0;
+    .editionContainerWrapper
+      max-width: $boxed_content_max_width;
       margin: 0 auto;
-      display: flex;
-      flex-direction: row;
+      page_padding(0, 0);
 
-      .editionInfo, .editionMedia
-        width: 50%;
-
-      .editionInfo
-        text-align: justify;
-        padding-right: 1em;
-        overflow-y: auto;
-
-        .editionName
-          margin-top: 0;
-
-      .editionMedia
+      .edition
         min-height: 500px;
-        background-color: $blue;
+        max-height: 700px;
+        padding: 3em 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+
+        .editionInfo, .editionMedia
+          width: 50%;
+
+        .editionInfo
+          text-align: justify;
+          padding-right: 1em;
+          overflow-y: auto;
+
+          .editionName
+            margin-top: 0;
+            margin-bottom: 10px;
+
+          .editionDate
+            color: $latest_posts_grey;
+            font-size: 16px;
+            margin-top: 10px;
+
+        .editionMedia
+          min-height: 500px;
+          background-color: $blue;
 </style>

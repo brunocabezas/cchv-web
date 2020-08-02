@@ -3,7 +3,7 @@ import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
 import { CarouselImage } from "@/types"
 import { DEFAULT_ORDER, DOMAIN } from "@/utils/static"
@@ -20,13 +20,13 @@ export default function useCarouselImages() {
     return data.value
       .map(
         (carouselImagePost): CarouselImage => {
-          const imgUrl = getCustomField(
+          const imgUrl = getCustomFieldFromPost(
             carouselImagePost,
             CarouselImageKeys.url,
             ""
           )
           const isInternal = imgUrl.includes(DOMAIN)
-          let url = imgUrl
+          let url: string = imgUrl
 
           // Internal urls already inlcude DOMAIN,
           // should be removed to be used with <router-link />
@@ -39,16 +39,21 @@ export default function useCarouselImages() {
           return {
             id: carouselImagePost.id,
             name: getWPTitle(carouselImagePost),
-            image: getCustomField(carouselImagePost, CarouselImageKeys.image),
-            video_url: getCustomField(
+            image: getCustomFieldFromPost(
               carouselImagePost,
-              CarouselImageKeys.video_url
+              CarouselImageKeys.image,
+              ""
             ),
-            order:
-              getCustomField<number>(
-                carouselImagePost,
-                CarouselImageKeys.order
-              ) || DEFAULT_ORDER,
+            video_url: getCustomFieldFromPost(
+              carouselImagePost,
+              CarouselImageKeys.video_url,
+              ""
+            ),
+            order: getCustomFieldFromPost<number>(
+              carouselImagePost,
+              CarouselImageKeys.order,
+              DEFAULT_ORDER
+            ),
             url,
             isInternal,
           }

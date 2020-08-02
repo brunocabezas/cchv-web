@@ -4,9 +4,9 @@ import apiRoutes from "../../api/apiRoutes"
 import { SchoolProgram } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomField, getWPTitle } from "@/utils/api"
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
-import { Tab, Tabs } from "../utils/useTabs"
+import { Tab } from "../utils/useTabs"
 import Urls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)
@@ -33,32 +33,61 @@ export default function useSchoolPrograms() {
         id: schoolProgramPost.id,
         name: getWPTitle(schoolProgramPost),
         slug: schoolProgramPost.slug,
-        is_workshop: getCustomField<boolean>(
+        is_workshop: getCustomFieldFromPost<boolean>(
           schoolProgramPost,
-          SchoolProgramKeys.is_workshop
+          SchoolProgramKeys.is_workshop,
+          false
         ),
-        is_active: getCustomField<boolean>(
+        is_active: getCustomFieldFromPost<boolean>(
           schoolProgramPost,
-          SchoolProgramKeys.is_active
+          SchoolProgramKeys.is_active,
+          false
         ),
-        logo: getCustomField(schoolProgramPost, SchoolProgramKeys.logo),
-        active_school_logo: getCustomField(
+        logo: getCustomFieldFromPost(
           schoolProgramPost,
-          SchoolProgramKeys.active_school_logo
+          SchoolProgramKeys.logo,
+          ""
         ),
-        video_url: getCustomField(
+        active_school_logo: getCustomFieldFromPost(
           schoolProgramPost,
-          SchoolProgramKeys.video_url
+          SchoolProgramKeys.active_school_logo,
+          ""
         ),
-        text: getCustomField(schoolProgramPost, SchoolProgramKeys.text),
-        gallery: getCustomField<WpImage[]>(
+        video_url: getCustomFieldFromPost(
           schoolProgramPost,
-          SchoolProgramKeys.gallery
+          SchoolProgramKeys.video_url,
+          ""
         ),
-        teachers: getCustomField(schoolProgramPost, SchoolProgramKeys.teachers),
-        pdf: getCustomField(schoolProgramPost, SchoolProgramKeys.pdf),
-        schedule: getCustomField(schoolProgramPost, SchoolProgramKeys.schedule),
-        abstract: getCustomField(schoolProgramPost, SchoolProgramKeys.abstract),
+        text: getCustomFieldFromPost(
+          schoolProgramPost,
+          SchoolProgramKeys.text,
+          ""
+        ),
+        gallery: getCustomFieldFromPost<WpImage[]>(
+          schoolProgramPost,
+          SchoolProgramKeys.gallery,
+          []
+        ),
+        teachers: getCustomFieldFromPost(
+          schoolProgramPost,
+          SchoolProgramKeys.teachers,
+          ""
+        ),
+        pdf: getCustomFieldFromPost(
+          schoolProgramPost,
+          SchoolProgramKeys.pdf,
+          ""
+        ),
+        schedule: getCustomFieldFromPost(
+          schoolProgramPost,
+          SchoolProgramKeys.schedule,
+          ""
+        ),
+        abstract: getCustomFieldFromPost(
+          schoolProgramPost,
+          SchoolProgramKeys.abstract,
+          ""
+        ),
       })
     )
   })
