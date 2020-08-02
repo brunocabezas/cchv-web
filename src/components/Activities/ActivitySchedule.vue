@@ -1,6 +1,7 @@
 <template>
   <div class="activitySchedule">
     <p v-if="date" class="activityDate">
+      <v-icon :color="MAIN_COLOR" name="calendar-alt" />
       {{ date }}
     </p>
     <div
@@ -30,8 +31,11 @@
 
 <script>
 import { defineComponent, PropType } from "@vue/composition-api";
+import Icon from "vue-awesome/components/Icon.vue";
+import { MAIN_COLOR } from "@/utils/static";
 
 export default defineComponent({
+  components: { "v-icon": Icon },
   name: "ActivitySchedule",
   props: {
     date: {
@@ -48,7 +52,7 @@ export default defineComponent({
     }
   },
   setup() {
-    return {};
+    return { MAIN_COLOR };
   }
 });
 </script>
@@ -69,11 +73,16 @@ export default defineComponent({
     border-top: 1px solid $blue;
     border-left: 1px solid $blue;
     border-bottom: 1px solid $blue;
-    padding: 10px 5px;
+    padding: 10px 5px 10px 10px;
     margin: 0;
     flex: 1;
     color: $blue;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    .fa-icon
+      margin-right: 10px;
 
   .activityCalendar
     display: flex;

@@ -6,11 +6,12 @@
 
         <h1 v-html="post.title" class="pageTitleText"></h1>
         <ActivitySchedule
+          v-if="post.activity_date"
           :calendarUrl="post.activity_calendar_url"
           :date="post.activity_date"
           :isDisabled="post.activity_date_has_passed"
         />
-        <div class="newsPostDate">Publicado el {{ post.date }}</div>
+        <div v-else class="newsPostDate">Publicado el {{ post.date }}</div>
 
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 
