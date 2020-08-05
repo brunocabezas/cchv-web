@@ -1,27 +1,36 @@
 import BurgerButton from "vue-burger-button"
+import { Slide } from "vue-burger-menu" // import the CSS transitions you wish to use, in this case we are using `Slide`
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue"
 import Logo from "@/components/Logo.vue"
 import SocialNetworks from "@/components/SocialNetworks.vue"
 import { defineComponent, ref, computed } from "@vue/composition-api"
-import { YOUTUBE_CHANNEL } from "@/utils/static"
+import { YOUTUBE_CHANNEL_LABEL, YOUTUBE_CHANNEL_URL } from "@/utils/static"
 import useMediaQueries from "@/hooks/useMediaQueries"
 import "vue-burger-button/dist/vue-burger-button.css"
 
 const Header = defineComponent({
   name: "Header",
-  components: { Logo, HeaderNav, SocialNetworks, BurgerButton },
+  components: { Logo, HeaderNav, SocialNetworks, BurgerButton, Slide },
   setup() {
-    const isMenuOpen = ref(false)
+    const isNavOpen = ref(false)
+    const { onBigScreen } = useMediaQueries()
 
-    function toggleMenu () {
-      isMenuOpen.value = !isMenuOpen.value
+    function toggleMenu(e: MouseEvent) {
+      e.stopPropagation()
+      isNavOpen.value = !isNavOpen.value
     }
-    const { onBiggerThanMediumScreen } = useMediaQueries()
+
+    function onMenuChange(state: boolean) {
+      isNavOpen.value = state
+    }
+
     return {
-      YOUTUBE_CHANNEL,
-      isMenuOpen,
+      YOUTUBE_CHANNEL_LABEL,
+      YOUTUBE_CHANNEL_URL,
+      isNavOpen: computed(() => isNavOpen.value),
       toggleMenu,
-      displayNavigationMenuButton: computed(()=> onBiggerThanMediumScreen.value),
+      onMenuChange,
+      onBigScreen: computed(() => onBigScreen.value),
     }
   },
 })

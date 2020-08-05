@@ -19,7 +19,7 @@ import newsSuccess from "./mocks/news-200-get.json"
 const DELAY = 5000
 
 export default (client: AxiosInstance) => {
-  console.log("Setting up mocks", process.env)
+  console.log("Setting up mocks")
 
   // Set mock adapter on the default axios instance (client)
   var mock = new MockAdapter(client, { delayResponse: DELAY })

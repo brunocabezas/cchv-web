@@ -15,7 +15,7 @@
     >
       <v-icon
         :scale="small ? 1.5 : sn.scale"
-        :color="MAIN_COLOR"
+        :color="color"
         :name="sn.iconName"
       />
     </a>
@@ -35,6 +35,10 @@ const SocialNetworks = defineComponent({
     small: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: MAIN_COLOR
     }
   },
   setup() {
