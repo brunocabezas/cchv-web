@@ -180,8 +180,10 @@ export interface Edition {
   [EditionKeys.order]: number
   [EditionKeys.gallery]: WpImage[]
   [EditionKeys.video_url]: string
+  [EditionKeys.video_url]: string
   [EditionKeys.text]: string
   [EditionKeys.date]: string
+  [EditionKeys.brochure_url]: string
 }
 
 export interface Residency {

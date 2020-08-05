@@ -13,9 +13,23 @@
               <h1 class="editionName">{{ event.name }}</h1>
               <p class="editionDate" v-if="event.date">{{ event.date }}</p>
               <div class="pageBody" v-html="event.text"></div>
+              <div v-if="!!event.brochure_url" class="editionBrochure">
+                <a
+                  class="editionBrochureLink"
+                  target="_blank"
+                  title="Ver el catálogo"
+                  :href="event.brochure_url"
+                  >Ver catálogo
+                  <v-icon :color="MAIN_COLOR" name="external-link-alt"> </v-icon
+                ></a>
+              </div>
             </div>
             <div class="editionMedia">
-              <Media height="100%" />
+              <Media
+                height="100%"
+                :gallery="event.gallery"
+                :youtubeUrl="event.video_url"
+              />
             </div>
           </div>
         </div>
@@ -28,13 +42,16 @@
 import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
+import { MAIN_COLOR } from "@/utils/static";
+import Icon from "vue-awesome/components/Icon.vue";
 import useEditions from "@/factories/useEditions";
 
 const Editions = defineComponent({
   name: "Editions",
   components: {
     Loader,
-    Media
+    Media,
+    "v-icon": Icon
   },
   setup() {
     const { editions, fetchEditions, isLoading } = useEditions();
@@ -43,7 +60,8 @@ const Editions = defineComponent({
 
     return {
       editions,
-      isLoading
+      isLoading,
+      MAIN_COLOR
     };
   }
 });
@@ -70,8 +88,8 @@ $margin_between_videos = 2em;
       page_padding(0, 0);
 
       .edition
-        min-height: 500px;
-        max-height: 700px;
+        box-sizing: content-box;
+        height: 500px;
         padding: 3em 0;
         margin: 0 auto;
         display: flex;
@@ -94,7 +112,24 @@ $margin_between_videos = 2em;
             font-size: 16px;
             margin-top: 10px;
 
+          .editionBrochure
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .editionBrochureLink
+              display: flex;
+              align-items: center;
+              transition: all 0.2s;
+
+              &:hover
+                opacity: 0.7;
+
+              .fa-icon
+                margin-left: 10px;
+
         .editionMedia
           min-height: 500px;
+          padding: 100px 0;
           background-color: $blue;
 </style>

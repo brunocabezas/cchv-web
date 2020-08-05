@@ -22,6 +22,11 @@ const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
     video_url: getCustomFieldFromPost(editionPost, EditionKeys.video_url, ""),
     gallery: getCustomFieldFromPost(editionPost, EditionKeys.gallery, []),
     text: getCustomFieldFromPost(editionPost, EditionKeys.text, ""),
+    brochure_url: getCustomFieldFromPost(
+      editionPost,
+      EditionKeys.brochure_url,
+      ""
+    ),
     order: getCustomFieldFromPost(
       editionPost,
       EditionKeys.order,

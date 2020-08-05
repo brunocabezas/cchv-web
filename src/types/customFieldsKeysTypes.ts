@@ -132,6 +132,7 @@ export enum EditionKeys {
   video_url = "video_url",
   order = "order",
   date = "date",
+  brochure_url = "brochure_url",
 }
 
 export enum ResidencyKeys {
