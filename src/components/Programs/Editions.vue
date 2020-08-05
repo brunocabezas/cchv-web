@@ -15,7 +15,11 @@
               <div class="pageBody" v-html="event.text"></div>
             </div>
             <div class="editionMedia">
-              <Media height="100%" />
+              <Media
+                height="100%"
+                :gallery="event.gallery"
+                :youtubeUrl="event.video_url"
+              />
             </div>
           </div>
         </div>
@@ -70,8 +74,8 @@ $margin_between_videos = 2em;
       page_padding(0, 0);
 
       .edition
-        min-height: 500px;
-        max-height: 700px;
+        box-sizing: content-box;
+        height: 500px;
         padding: 3em 0;
         margin: 0 auto;
         display: flex;
@@ -96,5 +100,6 @@ $margin_between_videos = 2em;
 
         .editionMedia
           min-height: 500px;
+          padding: 100px 0;
           background-color: $blue;
 </style>
