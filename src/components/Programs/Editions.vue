@@ -13,6 +13,16 @@
               <h1 class="editionName">{{ event.name }}</h1>
               <p class="editionDate" v-if="event.date">{{ event.date }}</p>
               <div class="pageBody" v-html="event.text"></div>
+              <div v-if="!!event.brochure_url" class="editionBrochure">
+                <a
+                  class="editionBrochureLink"
+                  target="_blank"
+                  title="Ver el catálogo"
+                  :href="event.brochure_url"
+                  >Ver catálogo
+                  <v-icon :color="MAIN_COLOR" name="external-link-alt"> </v-icon
+                ></a>
+              </div>
             </div>
             <div class="editionMedia">
               <Media
@@ -32,13 +42,16 @@
 import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
+import { MAIN_COLOR } from "@/utils/static";
+import Icon from "vue-awesome/components/Icon.vue";
 import useEditions from "@/factories/useEditions";
 
 const Editions = defineComponent({
   name: "Editions",
   components: {
     Loader,
-    Media
+    Media,
+    "v-icon": Icon
   },
   setup() {
     const { editions, fetchEditions, isLoading } = useEditions();
@@ -47,7 +60,8 @@ const Editions = defineComponent({
 
     return {
       editions,
-      isLoading
+      isLoading,
+      MAIN_COLOR
     };
   }
 });
@@ -97,6 +111,22 @@ $margin_between_videos = 2em;
             color: $latest_posts_grey;
             font-size: 16px;
             margin-top: 10px;
+
+          .editionBrochure
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .editionBrochureLink
+              display: flex;
+              align-items: center;
+              transition: all 0.2s;
+
+              &:hover
+                opacity: 0.7;
+
+              .fa-icon
+                margin-left: 10px;
 
         .editionMedia
           min-height: 500px;
