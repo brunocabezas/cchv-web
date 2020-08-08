@@ -9,6 +9,12 @@ import newsHelpers from "@/utils/news"
 
 Vue.use(VueCompositionApi)
 
+// Activities, one per activity type
+const conversations = ref<WPResponseItem[]>([])
+const perfomances = ref<WPResponseItem[]>([])
+const concerts = ref<WPResponseItem[]>([])
+const movies = ref<WPResponseItem[]>([])
+
 export default function useActivities(fetchData?: ActivityType) {
   const {
     activityCategories,
@@ -17,19 +23,13 @@ export default function useActivities(fetchData?: ActivityType) {
   } = useWpCategories()
   const { fetchNews } = useNews()
   const isLoadingActivities = ref(false)
-  // Activities, one per activity type
-  const conversations = ref<WPResponseItem[]>([])
-  const perfomances = ref<WPResponseItem[]>([])
-  const concerts = ref<WPResponseItem[]>([])
-  const movies = ref<WPResponseItem[]>([])
-
   // Initial data fetch
   if (fetchData && fetchData !== ActivityType.None) {
     fetchCategories().then(() => {
       const category = activityCategories.value.find(
         (cat) => cat.slug === fetchData
       )
-      console.log(category, activityCategories.value, fetchData)
+
       if (category && category.count > 0) {
         fetchActivities(fetchData)
       }
@@ -38,6 +38,7 @@ export default function useActivities(fetchData?: ActivityType) {
     fetchCategories()
   }
 
+  // Based on wp categories, news of a speficic categories (activity types) are fetched/set
   function fetchActivities(activityType: ActivityType) {
     const category = activityCategories.value.find(
       (cat) => cat.slug === activityType
@@ -127,13 +128,13 @@ export default function useActivities(fetchData?: ActivityType) {
   const getActvitiesByType = (type: ActivityType) => {
     switch (type) {
       case ActivityType.Concert:
-        return newsHelpers.mapNewsPostToActivity(concerts.value)
+        return newsHelpers.mapNewsPostsToActivityType(concerts.value)
       case ActivityType.Conversation:
-        return newsHelpers.mapNewsPostToActivity(conversations.value)
+        return newsHelpers.mapNewsPostsToActivityType(conversations.value)
       case ActivityType.Performance:
-        return newsHelpers.mapNewsPostToActivity(perfomances.value)
+        return newsHelpers.mapNewsPostsToActivityType(perfomances.value)
       case ActivityType.Movie:
-        return newsHelpers.mapNewsPostToActivity(movies.value)
+        return newsHelpers.mapNewsPostsToActivityType(movies.value)
       default:
         return []
     }

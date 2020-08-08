@@ -59,7 +59,6 @@ const mapNewsToActivities = (newsPost: NewsPost): Activity => ({
   name: newsPost.title,
   slug: newsPost.slug,
   type: newsPost.is_activity,
-  isNewsPost: true,
   abstract: newsPost.abstract,
   gallery: newsPost.gallery,
   text: newsPost.text,
@@ -69,7 +68,7 @@ const mapNewsToActivities = (newsPost: NewsPost): Activity => ({
   activity_calendar_url: newsPost.activity_calendar_url,
 })
 
-const mapNewsPostToActivity = (newsPosts: WPResponseItem[]): Activity[] =>
+const mapNewsPostsToActivityType = (newsPosts: WPResponseItem[]): Activity[] =>
   newsPosts
     .map((newsPost) => mapNewsCustomFieldsToNews(newsPost))
     .filter(
@@ -79,6 +78,6 @@ const mapNewsPostToActivity = (newsPosts: WPResponseItem[]): Activity[] =>
 
 const newsHelpers = {
   mapNewsCustomFieldsToNews,
-  mapNewsPostToActivity,
+  mapNewsPostsToActivityType,
 }
 export default newsHelpers
