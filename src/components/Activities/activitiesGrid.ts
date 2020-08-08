@@ -5,6 +5,8 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import { Activity } from "@/types"
 import useNews from "@/factories/useNews"
+import useWpCategories from "@/factories/useWpCategories"
+import { WpCategory } from "@/types/wordpressTypes"
 
 // While onPages prop is set false, max acitivities to be displayed will be determined by MAX_ACTIVITIES
 const MAX_ACTIVITIES = 3
@@ -28,9 +30,22 @@ const ActivitiesGrid = defineComponent({
       getActvitiesTitleByType,
       getActivityUrlBySlug,
       getActvitiesByType,
+      isLoading,
       getActivitiesGridUrlByActivityType,
-    } = useActivities()
+    } = useActivities(props.type)
+
+    const { activityCategories } = useWpCategories()
+
+    const cat = computed<WpCategory | undefined>(() =>
+      activityCategories.value.find((cat) => cat.slug === props.type)
+    )
+
+    const catEmpty = computed<boolean>(() =>
+      cat.value ? !!cat.value.count : false
+    )
+
     const { getNewsPostUrlBySlug } = useNews()
+
     const title = computed<string>(() => getActvitiesTitleByType(props.type))
     // Limit Activities to MAX_ACTIVITIES
     const activities = computed<Activity[]>(() =>
@@ -51,6 +66,8 @@ const ActivitiesGrid = defineComponent({
     return {
       activities,
       title,
+      noActivitiesToDisplay: catEmpty,
+      loading: isLoading,
       getNewsPostUrlBySlug,
       getActivityUrlBySlug,
       activitiesGridUrl,

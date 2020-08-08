@@ -1,20 +1,75 @@
 import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
-import { Activity } from "@/types"
+import VueCompositionApi, { computed, ref } from "@vue/composition-api"
 import Urls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import useNews from "./useNews"
+import useWpCategories from "./useWpCategories"
+import { WPResponseItem } from "@/types/wordpressTypes"
+import newsHelpers from "@/utils/news"
 
 Vue.use(VueCompositionApi)
 
-export default function useActivities() {
-  const { activityNews, fetchNews, isLoading: isLoadingNews } = useNews()
-  // There could be also news that are activities
-  fetchNews()
+export default function useActivities(fetchData?: ActivityType) {
+  const {
+    activityCategories,
+    fetchCategories,
+    isLoading: isLoadingCategories,
+  } = useWpCategories()
+  const { fetchNews } = useNews()
+  const isLoadingActivities = ref(false)
+  // Activities, one per activity type
+  const conversations = ref<WPResponseItem[]>([])
+  const perfomances = ref<WPResponseItem[]>([])
+  const concerts = ref<WPResponseItem[]>([])
+  const movies = ref<WPResponseItem[]>([])
 
-  const activities = computed<Activity[]>(() => {
-    return [...activityNews.value]
-  })
+  // Initial data fetch
+  if (fetchData && fetchData !== ActivityType.None) {
+    fetchCategories().then(() => {
+      const category = activityCategories.value.find(
+        (cat) => cat.slug === fetchData
+      )
+      console.log(category, activityCategories.value, fetchData)
+      if (category && category.count > 0) {
+        fetchActivities(fetchData)
+      }
+    })
+  } else {
+    fetchCategories()
+  }
+
+  function fetchActivities(activityType: ActivityType) {
+    const category = activityCategories.value.find(
+      (cat) => cat.slug === activityType
+    )
+    if (!category) {
+      return
+    } else if (category.count === 0) {
+      return console.warn("Category without any posts, skip fetchNews()")
+    }
+
+    isLoadingActivities.value = true
+    fetchNews({ categories: category.id }, false, true)
+      .then((response) => {
+        switch (fetchData) {
+          case ActivityType.Concert:
+            concerts.value = response.data
+            return
+          case ActivityType.Conversation:
+            conversations.value = response.data
+            return
+          case ActivityType.Performance:
+            perfomances.value = response.data
+            return
+          case ActivityType.Movie:
+            movies.value = response.data
+            return
+          default:
+            return
+        }
+      })
+      .finally(() => (isLoadingActivities.value = false))
+  }
 
   const getActivityUrlBySlug = (postSlug: string): string => {
     return `${Urls.Activities}${postSlug}`
@@ -70,14 +125,28 @@ export default function useActivities() {
   }
 
   const getActvitiesByType = (type: ActivityType) => {
-    return activities.value.filter((act) => act.type === type)
+    switch (type) {
+      case ActivityType.Concert:
+        return newsHelpers.mapNewsPostToActivity(concerts.value)
+      case ActivityType.Conversation:
+        return newsHelpers.mapNewsPostToActivity(conversations.value)
+      case ActivityType.Performance:
+        return newsHelpers.mapNewsPostToActivity(perfomances.value)
+      case ActivityType.Movie:
+        return newsHelpers.mapNewsPostToActivity(movies.value)
+      default:
+        return []
+    }
   }
 
   return {
-    activities,
+    // activities,
     getActvitiesByType,
+    fetchActivities,
     // Include news fetch in loading state
-    isLoading: computed(() => isLoadingNews.value || false),
+    isLoading: computed(
+      () => isLoadingCategories.value || isLoadingActivities.value
+    ),
     getActivityUrlBySlug,
     getTypeBySlug,
     getActvitiesTitleByType,
