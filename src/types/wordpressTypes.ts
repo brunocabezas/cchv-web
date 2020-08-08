@@ -1,8 +1,8 @@
 import { CustomFieldsKeys } from "./customFieldsKeysTypes"
-import { CustomFieldsValue } from "./customFieldsTypes"
+import { CustomFieldsValue, ActivityType } from "./customFieldsTypes"
 
 // Wordpres response
-export type WpResponseData = WPResponseItem[]
+export type WpResponseData<T = WPResponseItem> = Array<T>
 
 // Similar to a wordpress post, but with custom fields defined
 export interface WPResponseItem {
@@ -29,6 +29,7 @@ export interface WPResponseItem {
   meta: any[]
   // Custom fields
   acf_fields: WPCustomFields
+  // Post elements
   _links: WPLinks
 }
 
@@ -55,11 +56,11 @@ export interface WPLinks {
   collection: Link[]
   about: Link[]
   author: Author[]
-  replies: Reply[]
-  "version-history": VersionHistory[]
-  "predecessor-version": PredecessorVersion[]
-  "wp:attachment": WpAttachment[]
   curies: Cury[]
+  replies?: Reply[]
+  "version-history"?: VersionHistory[]
+  "predecessor-version"?: PredecessorVersion[]
+  "wp:attachment"?: WpAttachment[]
 }
 
 interface Author {
@@ -95,9 +96,22 @@ interface Cury {
 interface Link {
   href: string
 }
-
+// Custom fields values
 export type WPCustomFields = {
   [key in CustomFieldsKeys]: CustomFieldsValue
+}
+
+export interface WpCategory {
+  id: number
+  count: number
+  description: string
+  link: string
+  name: string
+  slug: ActivityType
+  taxonomy: string
+  parent: number
+  meta: any[]
+  _links: WPLinks
 }
 
 // Image uploaded in wordpres media

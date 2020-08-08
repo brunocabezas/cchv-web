@@ -72,10 +72,10 @@ export default Editions;
 @import '../../styles/variables.styl';
 
 $margin_between_videos = 2em;
+$height = 300px;
 
 .editions
   position: relative;
-  margin-top: 2em;
 
   // edition has different background colors
   .editionContainer
@@ -89,7 +89,7 @@ $margin_between_videos = 2em;
 
       .edition
         box-sizing: content-box;
-        height: 500px;
+        height: $height;
         padding: 3em 0;
         margin: 0 auto;
         display: flex;
@@ -97,6 +97,7 @@ $margin_between_videos = 2em;
 
         .editionInfo, .editionMedia
           width: 50%;
+          height: $height;
 
         .editionInfo
           text-align: justify;
@@ -129,7 +130,7 @@ $margin_between_videos = 2em;
                 margin-left: 10px;
 
         .editionMedia
-          min-height: 500px;
-          padding: 100px 0;
+          height: $height;
+          padding: 0;
           background-color: $blue;
 </style>

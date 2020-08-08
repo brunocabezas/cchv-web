@@ -6,7 +6,7 @@ import useNews from "@/factories/useNews"
 // Used with infinite loading
 const NEWS_PER_PAGE = 6
 // Initial news per page used to fetch first five news
-const INITIAL_NEWS_BY_PAGE = 5
+export const INITIAL_NEWS_BY_PAGE = 5
 const TOTAL_PAGES_HEADER = "x-wp-totalpages"
 
 interface infiniteHandlerState {
@@ -18,7 +18,7 @@ interface infiniteHandlerState {
 export default defineComponent({
   name: "NewsPage",
   components: { NewsThumb, Loader },
-  setup(props) {
+  setup() {
     const {
       news,
       homeNews,
@@ -27,7 +27,8 @@ export default defineComponent({
       currentPage: page,
       setNewsPage,
     } = useNews()
-    const initialDataLoading = ref(true)
+
+    const initialDataLoading = ref(false)
 
     if (news.value.length === 0) {
       initialDataLoading.value = true

@@ -4,6 +4,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Media from "@/components/Media/Media.vue"
 import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import useNews from "@/factories/useNews"
+import { INITIAL_NEWS_BY_PAGE } from "../NewsPage/newsPage"
 
 export default defineComponent({
   name: "NewsPostPage",
@@ -16,16 +17,16 @@ export default defineComponent({
   components: { Loader, Media, ProgressiveImage, ActivitySchedule },
   setup(props) {
     const {
-      getNewsPostBySlug,
+      fetchSingleNewsPost,
       fetchNews,
-      isLoading,
+      isLoadingSingleNewsPost: isLoading,
       getNewsPostUrlBySlug,
       getLatestNews,
+      singleNewsPost: post,
     } = useNews()
 
-    fetchNews()
-
-    const post = computed(() => getNewsPostBySlug(props.postSlug))
+    fetchSingleNewsPost({ per_page: 1, slug: props.postSlug })
+    fetchNews({ per_page: INITIAL_NEWS_BY_PAGE, page: 1 })
 
     const filteredLatestNews = computed(() => getLatestNews(post))
 

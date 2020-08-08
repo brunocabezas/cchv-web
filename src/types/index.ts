@@ -57,7 +57,6 @@ export interface Activity {
   name: string
   // Slug to build urls
   slug: String
-  isNewsPost: boolean
   abstract: string
   gallery: WpImage[]
   text: string

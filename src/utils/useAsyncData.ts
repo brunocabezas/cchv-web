@@ -3,6 +3,7 @@ import VueCompositionApi, { ref, computed, Ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import client from "../../api/client"
 import { AxiosResponse } from "axios"
+import { WpResponseData } from "@/types/wordpressTypes"
 
 Vue.use(VueCompositionApi)
 
@@ -18,27 +19,30 @@ interface asyncData<T> {
   isLoading: Readonly<Ref<boolean>>
   fetch: (
     urlParams?: AxiosParams | undefined,
-    pagination?: boolean
+    pagination?: boolean,
+    forceFetch?: boolean
   ) => Promise<AxiosResponse<T>>
-  data: Ref<T[]>
+  data: Ref<T>
 }
 
 interface AxiosParams {
   [paramKey: string]: string | number
 }
 
-export default function useAsyncData<T>(url: apiRoutes): asyncData<T> {
+export default function useAsyncData<T>(url: apiRoutes): asyncData<T[]> {
   const status = ref(AsyncDataStatus.Initial)
-  const data = ref<Array<T>>([])
+  const data = ref<WpResponseData<T>>([])
   // Fetch data from the url with GET
   function fetch(
     urlParams?: AxiosParams,
     // If pagination is defined as true, res.data is pushed to data
-    pagination: boolean = false
-  ): Promise<AxiosResponse<T>> {
+    pagination: boolean = false,
+    forceFetch: boolean = false
+  ): Promise<AxiosResponse<T[]>> {
     // Normally, fetch is avoided when status is loading or success
     // If pagination is active, data is fetched when status is different from loading
     const fetchData =
+      forceFetch ||
       (status.value !== AsyncDataStatus.Loading &&
         status.value !== AsyncDataStatus.Success) ||
       (status.value !== AsyncDataStatus.Loading && pagination)
@@ -53,7 +57,7 @@ export default function useAsyncData<T>(url: apiRoutes): asyncData<T> {
             ...urlParams,
           },
         })
-        .then((res: AxiosResponse<Array<T>>) => {
+        .then((res: AxiosResponse<WpResponseData<T>>) => {
           const val = [...data.value, ...res.data]
           data.value = !pagination ? res.data : val
           status.value = AsyncDataStatus.Success

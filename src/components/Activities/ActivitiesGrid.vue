@@ -1,5 +1,5 @@
 <template>
-  <div v-if="activities.length" class="activitiesGrid">
+  <div v-if="noActivitiesToDisplay" class="activitiesGrid">
     <h1 v-if="!onPage" class="activitiesGridTitle">
       <router-link :title="pageLinkTitle" :to="activitiesGridUrl">
         {{ title }}</router-link
@@ -15,11 +15,7 @@
         <router-link
           class="activitiesGridLink"
           :title="act.name"
-          :to="
-            act.isNewsPost
-              ? getNewsPostUrlBySlug(act.slug)
-              : getActivityUrlBySlug(act.slug)
-          "
+          :to="getNewsPostUrlBySlug(act.slug)"
         >
           <ProgressiveImage
             v-if="act.gallery"
