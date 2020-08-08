@@ -78,6 +78,7 @@ const mapNewsPostToActivity = (newsPosts: WPResponseItem[]): Activity[] =>
     .map((newsPost) => mapNewsToActivities(newsPost))
 
 const newsHelpers = {
+  mapNewsCustomFieldsToNews,
   mapNewsPostToActivity,
 }
 export default newsHelpers

@@ -15,14 +15,11 @@ const ActivitiesGridPage = defineComponent({
     },
   },
   setup(props) {
-    const {
-      getActvitiesTitleByType,
-      getActvitiesByType,
-      isLoading,
-    } = useActivities()
-    const title = computed(() => getActvitiesTitleByType(props.activityType))
-    const activities = computed(() => getActvitiesByType(props.activityType))
-    return { activities, title, isLoading }
+    const { getActvitiesGridTitleByType, isLoading } = useActivities()
+    const title = computed(() =>
+      getActvitiesGridTitleByType(props.activityType)
+    )
+    return { title, isLoading }
   },
 })
 

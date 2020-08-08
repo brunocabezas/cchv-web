@@ -27,7 +27,7 @@ const ActivitiesGrid = defineComponent({
   },
   setup(props) {
     const {
-      getActvitiesTitleByType,
+      getActvitiesGridTitleByType,
       getActivityUrlBySlug,
       getActvitiesByType,
       isLoading,
@@ -46,7 +46,9 @@ const ActivitiesGrid = defineComponent({
 
     const { getNewsPostUrlBySlug } = useNews()
 
-    const title = computed<string>(() => getActvitiesTitleByType(props.type))
+    const title = computed<string>(() =>
+      getActvitiesGridTitleByType(props.type)
+    )
     // Limit Activities to MAX_ACTIVITIES
     const activities = computed<Activity[]>(() =>
       !props.onPage

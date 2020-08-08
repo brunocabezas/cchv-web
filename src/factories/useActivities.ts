@@ -79,7 +79,7 @@ export default function useActivities(fetchData?: ActivityType) {
     return `${Urls.Programs}campos-magneticos/${getSlugByType(type)}`
   }
 
-  const getActvitiesTitleByType = (type: ActivityType): string => {
+  const getActvitiesGridTitleByType = (type: ActivityType): string => {
     switch (type) {
       case ActivityType.Conversation:
         return "Conversatorios"
@@ -139,8 +139,15 @@ export default function useActivities(fetchData?: ActivityType) {
     }
   }
 
+  const activities = computed(() => [
+    ...getActvitiesByType(ActivityType.Concert),
+    ...getActvitiesByType(ActivityType.Performance),
+    ...getActvitiesByType(ActivityType.Movie),
+    ...getActvitiesByType(ActivityType.Conversation),
+  ])
+
   return {
-    // activities,
+    activities,
     getActvitiesByType,
     fetchActivities,
     // Include news fetch in loading state
@@ -149,7 +156,7 @@ export default function useActivities(fetchData?: ActivityType) {
     ),
     getActivityUrlBySlug,
     getTypeBySlug,
-    getActvitiesTitleByType,
+    getActvitiesGridTitleByType,
     getActivitiesGridUrlByActivityType,
   }
 }

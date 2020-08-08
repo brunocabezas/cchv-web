@@ -1,31 +1,46 @@
 import Vue from "vue"
 import VueCompositionApi, { computed, Ref, ref } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import { NewsPost, Activity } from "@/types"
-import helpers from "@/utils/customFields"
+import { NewsPost } from "@/types"
 import useAsyncData from "../utils/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
-import { ActivityType } from "@/types/customFieldsTypes"
-import { NewsKeys } from "@/types/customFieldsKeysTypes"
 import { DATE_FORMAT } from "@/utils/static"
 import dayjs from "dayjs"
+import useWpCategories from "./useWpCategories"
+import newsHelpers from "@/utils/news"
 
 Vue.use(VueCompositionApi)
 
+// state to manage news posts
 const { data, fetch: fetchNews, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.News
 )
+// state to a single news post
+const {
+  data: singleNewsPostData,
+  fetch: fetchSingleNewsPost,
+  isLoading: isLoadingSingleNewsPost,
+} = useAsyncData<WPResponseItem>(apiRoutes.News)
+
 // Page number used to fetch data using vue-infinite-loading
-const newsPage = ref(1)
+const newsPage = ref<number>(1)
 
 export default function useNews() {
+  const { fetchCategories } = useWpCategories()
+
+  fetchCategories()
+
   const news = computed<NewsPost[]>(() =>
     data.value
-      .map((newsPost) => helpers.mapNewsToView(newsPost))
+      .map((newsPost) => newsHelpers.mapNewsCustomFieldsToNews(newsPost))
       .sort((a: NewsPost, b: NewsPost): number => {
         return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT))
       })
+  )
+
+  const singleNewsPost = computed(() =>
+    newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
   )
 
   // Home news are highlighted with is_highlighted set to true. Limit to two
@@ -36,35 +51,6 @@ export default function useNews() {
   const newsToGrid = computed(() =>
     news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
   )
-
-  // Some news can be defined as also activities
-  // Map news with NewsKeys.is_activity field set !act.activity_calendar_url || dateInPast(activity_date)to true
-  const activityNews = computed<Activity[]>(() => {
-    const newsAsActivities = news.value.filter(
-      (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
-    )
-
-    return newsAsActivities.map(
-      (newsPost: NewsPost): Activity => ({
-        id: newsPost.id,
-        name: newsPost.title,
-        slug: newsPost.slug,
-        type: newsPost.is_activity,
-        isNewsPost: true,
-        abstract: newsPost.abstract,
-        gallery: newsPost.gallery,
-        text: newsPost.text,
-        video_url: newsPost.video_url,
-        activity_date: newsPost.activity_date,
-        activity_date_has_passed: newsPost.activity_date_has_passed,
-        activity_calendar_url: newsPost.activity_calendar_url,
-      })
-    )
-  })
-
-  function getNewsPostBySlug(slug: string) {
-    return news.value.find((post) => post.slug === slug)
-  }
 
   function getNewsPostUrlBySlug(postSlug: string): string {
     return `${Urls.NewsPost}${postSlug}`
@@ -93,12 +79,14 @@ export default function useNews() {
   return {
     news: newsToGrid,
     homeNews,
+    singleNewsPost,
     getLatestNews,
-    activityNews,
     isLoading,
+    isLoadingSingleNewsPost,
     getNewsPostUrlBySlug,
-    getNewsPostBySlug,
+    // Fetch methods
     fetchNews,
+    fetchSingleNewsPost,
     // Pagination
     setNewsPage,
     currentPage: newsPage,
