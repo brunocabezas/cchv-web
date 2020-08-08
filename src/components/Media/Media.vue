@@ -150,4 +150,8 @@
   .VueCarousel-wrapper, .VueCarousel-inner
     height: 100% !important;
     width: 100%;
+
+  .VueCarousel-slide
+    min-width: 100%;
+    width: 100%;
 </style>

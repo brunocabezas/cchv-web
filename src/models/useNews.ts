@@ -7,7 +7,7 @@ import { WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
 import { DATE_FORMAT } from "@/utils/static"
 import dayjs from "dayjs"
-import useWpCategories from "./useWpCategories"
+import useWpCategories from "@/models/useWpCategories"
 import newsHelpers from "@/utils/news"
 
 Vue.use(VueCompositionApi)
