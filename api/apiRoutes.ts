@@ -14,6 +14,8 @@ export enum apiRoutes {
   SponsorsCategories = "/sponsor-categories",
   Residencies = "/residencies",
   SocialNetworks = "/social-networks",
+  // wordpres routes
+  WpCategories = "/categories",
 }
 
 export default apiRoutes

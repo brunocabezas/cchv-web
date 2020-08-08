@@ -27,6 +27,7 @@ export default defineComponent({
       currentPage: page,
       setNewsPage,
     } = useNews()
+
     const initialDataLoading = ref(true)
 
     if (news.value.length === 0) {
