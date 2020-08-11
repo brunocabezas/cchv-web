@@ -7,23 +7,43 @@
     font-family: Montserrat;
     margin-bottom: 35px;
 
+    @media (max-width: $md)
+      margin-bottom: 5px;
+      margin-top: 0;
+
   .footerTop
     background-color: $grey;
     padding: $footer_padding;
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: $md)
+      flex-direction: column;
+      padding: 1em 6em;
+
     .footerTopSection
       margin: 1em;
+
+      @media (max-width: $md)
+        margin: 0;
 
       &.contactMail
         position: relative;
         max-width: 170px;
 
+        @media (max-width: $md)
+          border-bottom: 1px solid $blue;
+          padding-bottom: 1em;
+          max-width: none;
+
         .contactMailContainer
           height: $footer_form_height;
           display: flex;
           align-items: center;
+
+          @media (max-width: $md)
+            height: auto;
+            width: 100%;
 
           a
             font-size: 18px;
@@ -31,21 +51,39 @@
             font-family: Montserrat;
             color: $blue;
 
-      &.socialNetworks
-        .socialNetworks
-          height: $footer_form_height;
+            @media (max-width: $md)
+              color: black;
 
+      &.socialNetworks
         position: relative;
         flex: 1;
         max-width: 200px;
+        height: $footer_form_height;
+
+        @media (max-width: $md)
+          max-width: none;
+          margin-top: 0;
+
+        .footerTitle
+          @media (max-width: $md)
+            margin-top: 1em;
+
+        .socialNetworks
+          justify-content: center;
+
+          .socialNetwork
+            flex: initial;
 
       &.suscribeForm
-        .footerSuscribeForm
-          height: $footer_form_height;
-
         position: relative;
         min-width: 565px;
         margin-left: 2em;
+
+        @media (max-width: $md)
+          display: none;
+
+        .footerSuscribeForm
+          height: $footer_form_height;
 
     .footerListItem
       font-family: Montserrat;

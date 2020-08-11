@@ -28,17 +28,19 @@
   align-items: center;
   padding: 0 10px;
   border-bottom: 2px solid $grey;
-  transition: 0.2s;
+  transition: all 0.2s;
 
   &.header--small
     background-color: $blue;
     height: $header_mobile_height;
+    border-color: $dark-blue;
 
     .headerLeftSection, .headerRightSection
       height: $header_mobile_height;
 
       @media (max-width: $md)
         width: 100%;
+        height: auto;
 
     .headerLeftSection
       @media (max-width: $md)

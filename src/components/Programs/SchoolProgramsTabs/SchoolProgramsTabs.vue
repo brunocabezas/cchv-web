@@ -104,7 +104,7 @@
       text-align: center;
       font-size: 18px;
       padding: 1em;
-      transition: 0.2 all;
+      transition: all 0.2s;
 
       &:hover
         text-decoration: underline;

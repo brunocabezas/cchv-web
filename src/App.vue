@@ -25,4 +25,7 @@ export default App;
 .app
   .appContent
     margin-top: $header_height;
+
+    @media (max-width: $md)
+      margin-top: $header_mobile_height;
 </style>
