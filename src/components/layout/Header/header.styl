@@ -1,11 +1,15 @@
 
 @import '../../../styles/variables.styl';
 
+// burger menu
 .bm-menu
   background-color: $dark-blue;
-  height: 500px;
+  // Height is determined by its content
+  height: auto;
+  max-height: 'calc(100vh - %s)' % $header_mobile_height;
+  overflow-y: auto;
   padding-top: 0;
-  margin-top: $header_mobile_height;
+  margin-top: 'calc(%s - 2px)' % $header_mobile_height;
 
   .bm-item-list
     padding-left: 0;
@@ -29,10 +33,16 @@
   &.header--small
     background-color: $blue;
     height: $header_mobile_height;
-    position: relative;
 
     .headerLeftSection, .headerRightSection
       height: $header_mobile_height;
+
+      @media (max-width: $md)
+        width: 100%;
+
+    .headerLeftSection
+      @media (max-width: $md)
+        height: inherit;
 
   .headerLeftSection
     display: flex;
@@ -49,6 +59,7 @@
 
     @media (max-width: $md)
       width: 100%;
+      height: auto;
 
     &--with-button
       @media (max-width: $md)
