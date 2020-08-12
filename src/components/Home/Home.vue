@@ -29,6 +29,7 @@ export default defineComponent({
 
   @media (max-width: $md)
     width: auto;
+    padding-top: 0;
 
   &__title
     color: $blue;
@@ -36,5 +37,5 @@ export default defineComponent({
 
     @media (max-width: $md)
       padding: 0 15px;
-      margin 10px 0
+      margin: 10px 0;
 </style>

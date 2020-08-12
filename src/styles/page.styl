@@ -4,11 +4,13 @@
   color: $blue;
 
 .page
-  // To display loader
   min-height: 100vh;
   page_padding(0);
   max-width: $boxed_content_max_width;
   margin: 0 auto;
+
+  @media (max-width: $md)
+    min-height: 300px;
 
   &.singlePostPage
     padding-top: 2em;
@@ -22,8 +24,9 @@
 
     .pageTitleText
       flex: 1;
+
       @media (max-width: $sm)
-        margin 10px 0
+        margin: 10px 0;
 
   .pageRow
     display: flex;
@@ -42,6 +45,10 @@
         width: 100%;
         margin: 0;
 
+    &.pageRow--with-media
+      @media (max-width: $md)
+        padding: 0;
+
   // Used to render html from WYSYWIG editors
   .pageBody
     img
@@ -51,3 +58,6 @@
 
   hr
     color: $blue;
+
+    @media (max-width: $md)
+      display: none;

@@ -53,7 +53,6 @@
   &.homeSection
     margin-bottom: 2em;
     margin-top: 0;
-    padding-top: 0;
 
     @media (max-width: $md)
       border-top: 1px solid black;

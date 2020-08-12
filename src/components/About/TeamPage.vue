@@ -67,6 +67,9 @@ export default defineComponent({
     flex-wrap: wrap;
     display: flex;
 
+    @media (max-width: $md)
+      padding: 10px;
+
     .teamPosition
       width: 50%;
       padding: 0.5em 0;

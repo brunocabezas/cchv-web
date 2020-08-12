@@ -81,6 +81,10 @@ $margin_between_videos = 2em;
       height: 330px;
       display: flex;
 
+      @media (max-width: $md)
+        flex-direction: column;
+        height auto
+
       &__title
         margin-top: 0;
         margin-bottom: 5px;
@@ -97,10 +101,19 @@ $margin_between_videos = 2em;
         max-height: 100%;
         overflow-y: auto;
 
+        @media (max-width: $md)
+          width: 100%;
+          padding-right 0
+
       &__player
         margin-left: 15px;
         height: 100%;
         width: 60%;
+
+        @media (max-width: $md)
+          width: 100%;
+          margin-left 0
+          height 300px
 
   hr
     width: 100%;
