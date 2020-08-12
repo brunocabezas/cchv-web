@@ -37,7 +37,7 @@ const ProgramPage = defineComponent({
     },
   },
   setup(props) {
-    const { displayMediaBeforeTitle } = useMediaQueries()
+    const { onBigScreen } = useMediaQueries()
     const { getProgramBySlug, isLoading } = usePrograms()
 
     const program = computed<Program | undefined>(() =>
@@ -59,6 +59,7 @@ const ProgramPage = defineComponent({
         () => isArtScienceAndCultureProgram.value
       ),
       isLoading,
+      onBigScreen,
       isMagneticFieldsProgram: computed<boolean>(() =>
         program.value
           ? matchProgramContent(ProgramExtraContent.Activities, program.value)
@@ -81,7 +82,6 @@ const ProgramPage = defineComponent({
       ),
       isArtScienceAndCultureProgram: isArtScienceAndCultureProgram,
       pageHasFullWidth: isArtScienceAndCultureProgram,
-      displayMediaBeforeTitle,
     }
   },
 })

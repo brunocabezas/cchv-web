@@ -59,7 +59,5 @@ export default function useMediaQueries() {
     onBigScreen,
     onMediumScreen,
     onScreenBiggerThanSmall,
-    //
-    displayMediaBeforeTitle: computed(() => onBigScreen.value),
   }
 }

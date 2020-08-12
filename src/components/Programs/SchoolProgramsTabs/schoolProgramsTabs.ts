@@ -3,8 +3,10 @@ import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
 import useSchoolPrograms from "@/models/useSchoolPrograms"
+import SchoolProgramThumbnail from "@/components/Programs/SchoolProgramsTabs/SchoolProgramThumbnail.vue"
 import useTabs from "@/hooks/useTabs"
 import { SchoolProgram } from "@/types"
+import useMediaQueries from '@/hooks/useMediaQueries'
 
 const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",
@@ -12,6 +14,7 @@ const SchoolProgramsTabs = defineComponent({
     Loader,
     ProgressiveImage,
     DownloadLink,
+    SchoolProgramThumbnail,
   },
   setup() {
     const {
@@ -19,11 +22,11 @@ const SchoolProgramsTabs = defineComponent({
       schoolProgramsTabs,
       getSchoolProgramById,
       isLoading,
-      getSchoolProgramUrlBySlug,
       fetchSchoolPrograms,
       schoolProgramsAbstract,
     } = useSchoolPrograms()
     const { tabs, activeTabId, setActiveTab } = useTabs(schoolProgramsTabs)
+    const { onBigScreen } = useMediaQueries()
 
     fetchSchoolPrograms()
 
@@ -44,7 +47,7 @@ const SchoolProgramsTabs = defineComponent({
       schoolProgramsAbstract,
       setActiveTab,
       isLoading,
-      getSchoolProgramUrlBySlug,
+      onBigScreen,
     }
   },
 })

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, set } from "@vue/composition-api";
-import ActivitiesGrid from "@/components/Activities/ActivitiesGrid.vue";
+import ActivitiesGrid from "@/components/Activities/ActivitiesGrid/ActivitiesGrid.vue";
 import useActivities from "@/models/useActivities";
 import { ActivityType } from "../../types/customFieldsTypes";
 

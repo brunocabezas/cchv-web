@@ -3,14 +3,14 @@
     <h1 class="pageTitle">Escuelas</h1>
     <!-- &#8221; => '' is used to filter  https://www.codetable.net/decimal/8221 -->
     <div
-      class="pageBody"
+      class="pageBody schoolProgramsAbstract"
       v-if="
         schoolProgramsAbstract && !schoolProgramsAbstract.includes(`&#8221;`)
       "
       v-html="schoolProgramsAbstract"
     ></div>
     <Loader :loading="isLoading" />
-    <div class="pageRow schoolProgramTabsTitle">
+    <div v-if="onBigScreen" class="pageRow schoolProgramTabsTitle">
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
@@ -34,47 +34,18 @@
         />
       </button>
     </div>
-    <div v-if="displayActiveProgram" class="pageRow schoolProgramTabsContent">
-      <div class="schoolProgram">
-        <div class="schoolProgramThumb">
-          <router-link
-            v-if="
-              activeProgram.is_active &&
-                activeProgram.gallery &&
-                activeProgram.gallery[0]
-            "
-            :title="activeProgram.name"
-            :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
-          >
-            <ProgressiveImage
-              height="300px"
-              :src="activeProgram.gallery[0].url"
-            />
-          </router-link>
-          <ProgressiveImage
-            v-else-if="activeProgram.gallery && activeProgram.gallery[0]"
-            height="300px"
-            :src="activeProgram.gallery[0].url"
-          />
-        </div>
-        <div class="schoolProgramInfo">
-          <h3 class="schoolProgramName">
-            <router-link
-              v-if="activeProgram.is_active"
-              :title="activeProgram.name"
-              :to="getSchoolProgramUrlBySlug(activeProgram.slug)"
-              >{{ activeProgram.name }}</router-link
-            >
-            {{ !activeProgram.is_active && activeProgram.name }}
-          </h3>
-          <p class="schoolProgramAbstract" v-html="activeProgram.abstract"></p>
-          <DownloadLink
-            v-if="activeProgram.pdf"
-            label="Descargar programa completo"
-            :url="activeProgram.pdf"
-          />
-        </div>
-      </div>
+    <div
+      v-if="displayActiveProgram && onBigScreen"
+      class="pageRow schoolProgramTabsContent"
+    >
+      <SchoolProgramThumbnail :program="activeProgram" />
+    </div>
+    <div v-if="!onBigScreen">
+      <SchoolProgramThumbnail
+        v-for="program in schoolPrograms"
+        :program="program"
+        v-bind:key="program.id"
+      />
     </div>
   </div>
 </template>
@@ -89,9 +60,15 @@
   min-height: 600px;
 
   .pageTitle
-    text-align: center;
     margin-bottom: 10px;
     justify-content: center;
+
+    @media (max-width: $md)
+      justify-content: flex-start;
+
+  .schoolProgramsAbstract
+    @media (max-width: $md)
+      padding: 1em;
 
   .schoolProgramTabsTitle
     justify-content: center;
@@ -124,33 +101,4 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-
-  .schoolProgramTabsContent
-    .schoolProgram
-      display: flex;
-      width: 100%;
-
-      .schoolProgramThumb, .schoolProgramInfo
-        flex: 1;
-
-      .schoolProgramThumb
-        width: 60%;
-        padding-left: 0;
-        height: 300px;
-        background-color: $blue;
-        margin-right: 1em;
-
-      .schoolProgramInfo
-        padding-right: 0;
-        font-size: 18px;
-        padding: 0 1em;
-
-        .schoolProgramAbstract
-          margin-top: 0;
-          text-align: justify;
-
-        .schoolProgramName
-          color: $blue;
-          margin-top: 0;
-          margin-bottom: 0;
 </style>

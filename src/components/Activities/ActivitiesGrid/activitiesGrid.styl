@@ -1,0 +1,108 @@
+
+@import '../../../styles/variables.styl';
+
+.activitiesGrid
+  width: 100%;
+  text-align: center;
+  display: block;
+
+  .activitiesGridContainer
+    display: flex;
+    flex-wrap: wrap;
+
+    // On small screens, activites are listed
+    // using the full width their container
+    @media (max-width: $md)
+      flex-direction: column;
+
+    .activity
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      width: 33.3%;
+      padding: 5px 20px;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: $md)
+        width: 100%;
+        border-bottom: 1px solid $blue;
+        flex-direction: row;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+      .activitiesGridLink
+        flex: 1;
+
+        @media (max-width: $md)
+          display: flex;
+
+        // An specific activity title
+        .activitiesGridTitle
+          @media (max-width: $md)
+            display: none;
+
+      .activitiesMobileSchedule
+        flex: 1.5;
+        text-align: left;
+        padding: 0 10px;
+        display: none;
+        flex-direction: column;
+
+        @media (max-width: $md)
+          display: flex;
+
+        .activitiesMobileScheduleTitle
+          margin-top: 0;
+          color: black;
+          margin-bottom: 0;
+
+        .activitiesMobileScheduleDate
+          margin: 0;
+
+        .activitiesMobileScheduleCalendarLinkContainer
+          flex-grow: 1;
+          display: flex;
+
+          .activitiesMobileScheduleCalendarLink
+            background-color: $blue;
+            color: white;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+            height: 30px;
+
+  // Title of the activity types
+  .activitiesGridTitle
+    margin-top: 5px;
+
+    &:hover
+      text-decoration: underline;
+
+    @media (max-width: $md)
+      text-align: left;
+      padding: 0 10px;
+      margin-top: 0;
+
+  .activitiesGridLink
+    display: block;
+
+    &:hover
+      text-decoration: underline;
+
+  .activitiesGridGoToPageButtonContainer
+    width: 100%;
+    display: flex;
+
+    .activitiesGridGoToPageButton
+      background-color: $blue;
+      color: white;
+      border: none;
+      display: inline-block;
+      width: 100%;
+      padding: 5px 0;
+      transition: background-color 0.2s;
+
+      &:hover
+        background-color: darken($blue, 10);

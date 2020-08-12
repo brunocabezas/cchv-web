@@ -8,17 +8,16 @@
   >
     <div class="program--full-width-boxed">
       <Loader v-if="!program" :loading="isLoading" />
-      <div v-if="program && !displayMediaBeforeTitle" class="pageTitle">
+      <div class="pageTitle">
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media
+        :height="onBigScreen ? '500px' : '300px'"
         v-if="program"
         :youtubeUrl="program.video_url"
         :gallery="program.gallery"
       />
-      <div v-if="program && displayMediaBeforeTitle" class="pageTitle">
-        <h1 class="pageTitleText">{{ program.name }}</h1>
-      </div>
+
       <div
         v-if="program"
         class="pageRow pageBody programText"
