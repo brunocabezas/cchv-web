@@ -9,12 +9,15 @@
         <ProgressiveImage height="100%" :src="post.gallery[0].url" />
       </router-link>
     </div>
-    <div class="newsPostInfo">
-      <h5 class="newsPostTitle">
+    <div v-if="post" class="newsPostInfo">
+      <div class="newsPostBadge">
+        {{ getActvitiesGridTitleByType(post.is_activity).slice(0, -1) }}
+      </div>
+      <h4 class="newsPostTitle">
         <router-link :title="post.name" :to="getNewsPostUrlBySlug(post.slug)">{{
           post.title
         }}</router-link>
-      </h5>
+      </h4>
       <p>{{ post.date }}</p>
     </div>
   </div>
@@ -24,6 +27,7 @@
 import { defineComponent, computed } from "@vue/composition-api";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import useNews from "@/models/useNews";
+import useActivities from "@/models/useActivities";
 
 const NewsPostMobileThumbnail = defineComponent({
   name: "NewsPostMobileThumbnail",
@@ -34,9 +38,11 @@ const NewsPostMobileThumbnail = defineComponent({
     post: Object
   },
   setup() {
+    const { getActvitiesGridTitleByType } = useActivities();
     const { getNewsPostUrlBySlug } = useNews();
     return {
-      getNewsPostUrlBySlug
+      getNewsPostUrlBySlug,
+      getActvitiesGridTitleByType
     };
   }
 });
@@ -67,6 +73,14 @@ export default NewsPostMobileThumbnail;
     padding-right: 0;
     font-size: 18px;
     padding: 0 1em;
+
+    .newsPostBadge
+      background-color: $blue;
+      color: white;
+      padding: 5px 10px;
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 5px;
 
     .newsPostTitle
       margin-top: 0;

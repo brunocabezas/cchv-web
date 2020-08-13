@@ -91,7 +91,7 @@ export default function useActivities(fetchData?: ActivityType) {
       case ActivityType.Performance:
         return "Performances"
       default:
-        return ""
+        return "Noticias"
     }
   }
 

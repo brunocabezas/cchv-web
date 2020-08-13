@@ -2,13 +2,27 @@
   <div class="news homeSection">
     <div title="Ir a noticias" class="homeSection__title">
       <router-link :to="newsGridUrl"><h1>Noticias</h1> </router-link>
-      <router-link :to="newsGridUrl"
+      <router-link v-if="onBigScreen" :to="newsGridUrl"
         ><v-icon :color="MAIN_COLOR" name="chevron-right" scale="1.5"> </v-icon>
       </router-link>
     </div>
     <Loader size="30px" v-if="isLoading" />
-    <div v-if="!isLoading" class="newsList">
-      <NewsPostThumbnail :post="post" v-bind:key="post.id" v-for="post in news" />
+    <div v-if="!isLoading && onBigScreen" class="newsList">
+      <NewsPostThumbnail
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in news"
+      />
+    </div>
+    <div v-else-if="!isLoading && !onBigScreen" class="newsList">
+      <NewsPostMobileThumbnail
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in news"
+      />
+    </div>
+    <div class="newsLinkContainer" v-if="!onBigScreen">
+      <router-link class="newsLink" :to="newsGridUrl">Ver todas</router-link>
     </div>
   </div>
 </template>
@@ -20,6 +34,9 @@
 
 .news
   min-height: 500px;
+
+  @media (max-width: $md)
+    min-height: auto;
 
   .homeSection__title
     display: flex;
@@ -37,10 +54,25 @@
 
   .newsList
     display: flex;
+    padding: 0 10px;
+
+    @media (max-width: $md)
+      flex-direction: column;
 
     .newsPostPreview
       hr
         width: 99%;
+
+  .newsLinkContainer
+    text-align: center;
+    padding: 10px;
+
+    .newsLink
+      background-color: $blue;
+      color: white;
+      padding: 10px;
+      margin: 0 auto;
+      display: block;
 </style>
 <style lang="stylus">
 .news .newsList .newsPostPreview
