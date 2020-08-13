@@ -82,8 +82,9 @@
         font-size: 18px;
 
 .customHeaderNavItem
-  // Display a line on the bottom of each menu
-  border-bottom: 1px solid white;
+  @media (max-width: $md)
+    // Display a line on the bottom of each menu
+    border-bottom: 1px solid white;
 
   .headerNavItemLink
     color: $blue;

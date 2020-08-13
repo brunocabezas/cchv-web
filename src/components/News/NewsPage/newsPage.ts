@@ -2,6 +2,7 @@ import { computed, defineComponent, ref } from "@vue/composition-api"
 import NewsThumb from "@/components/News/NewsThumb.vue"
 import Loader from "@/components/Loader.vue"
 import useNews from "@/models/useNews"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 // Used with infinite loading
 const NEWS_PER_PAGE = 6
@@ -27,7 +28,7 @@ export default defineComponent({
       currentPage: page,
       setNewsPage,
     } = useNews()
-
+    const { onBigScreen } = useMediaQueries()
     const initialDataLoading = ref(false)
 
     if (news.value.length === 0) {
@@ -72,6 +73,7 @@ export default defineComponent({
       infiniteHandler,
       initialDataLoading,
       isLoading: computed(() => isLoading.value),
+      onBigScreen,
     }
   },
 })

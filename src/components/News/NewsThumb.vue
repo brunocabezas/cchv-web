@@ -33,7 +33,7 @@
 
     <router-link
       :title="post.title"
-      class="newsPostPreview__link"
+      class="newsPostPreview__link newsPostPreview__readMoreLink"
       :to="getNewsPostUrlBySlug(post.slug)"
     >
       <i>Leer más ...</i>
@@ -81,6 +81,10 @@ export default defineComponent({
   position: relative;
   max-width: 50%;
 
+  @media (max-width: $md)
+    max-width: none;
+    padding: 5px 15px;
+
   hr
     position: absolute;
     bottom: 0;
@@ -93,10 +97,18 @@ export default defineComponent({
   &__abstract
     text-align: justify;
 
+    @media (max-width: $md)
+      display: none;
+
   &__date
     color: darken($grey, 40);
     margin-top: 0;
     font-size: 14px;
+
+    @media (max-width: $md)
+      color: black;
+      padding-bottom 10px
+      border-bottom 1px solid $blue
 
   &__title
     margin-bottom: 0;
@@ -112,11 +124,15 @@ export default defineComponent({
     &:hover
       opacity: 0.85;
 
-  &__link
+  .newsPostPreview__link
     color: $blue;
     transition: all 0.2s;
     display: block;
     position: relative;
+
+    &.newsPostPreview__readMoreLink
+      @media (max-width: $md)
+        display: none;
 
     .fa-icon
       position: absolute;

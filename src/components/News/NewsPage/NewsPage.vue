@@ -5,7 +5,12 @@
     </div>
     <Loader :loading="initialDataLoading" />
     <div class="newsPage__topGrid">
-      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in homeNews" />
+      <NewsThumb
+        :small="!onBigScreen"
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in homeNews"
+      />
     </div>
     <div class="newsPage__grid">
       <NewsThumb small :post="post" v-bind:key="post.id" v-for="post in news" />
@@ -26,28 +31,48 @@
 @import '../../../styles/variables.styl';
 
 $grid_padding = 25px;
+$mobile_grid_padding = '10px %s' % $grid_padding;
 
 .newsPage
   .pageTitleText
     margin-bottom: 0;
 
+    @media (max-width: $md)
+      padding-left: 15px;
+
   &__topGrid, &__grid
     width: 100%;
     display: flex;
+
+    @media (max-width: $md)
+      flex-direction: column;
 
   &__topGrid
     .newsGridItem
       width: 50%;
       margin: 1em 0;
 
+      @media (max-width: $md)
+        width: 100%;
+
       &.newsPostPreview
         padding: $grid_padding;
+
+        @media (max-width: $md)
+          margin: 0;
+          padding: $mobile_grid_padding;
 
       &:first-child
         padding-left: 0;
 
+        @media (max-width: $md)
+          padding-left: $grid_padding;
+
       &:last-child
         padding-right: 0;
+
+        @media (max-width: $md)
+          padding-left: $grid_padding;
 
       hr
         width: 99%;
@@ -70,14 +95,24 @@ $grid_padding = 25px;
       width: 33.3%;
       margin: 1em 0;
 
+      @media (max-width: $md)
+        width: 100%;
+
       &.newsPostPreview
         padding: $grid_padding;
+
+        @media (max-width: $md)
+          padding: $mobile_grid_padding;
+          margin: 0;
 
       // Grid of 3 items
       // first in the middle
       &:nth-child(3n + 1)
         &.newsPostPreview
           padding-left: 0;
+
+          @media (max-width: $md)
+            padding-left: $grid_padding;
 
       // item in the middle
       &:nth-child(3n + 2)
@@ -89,4 +124,7 @@ $grid_padding = 25px;
       &:nth-child(3n)
         &.newsPostPreview
           padding-right: 0;
+
+          @media (max-width: $md)
+            padding-right: $grid_padding;
 </style>
