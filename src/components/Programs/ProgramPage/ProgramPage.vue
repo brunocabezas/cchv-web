@@ -8,7 +8,7 @@
   >
     <div class="program--full-width-boxed">
       <Loader v-if="!program" :loading="isLoading" />
-      <div class="pageTitle">
+      <div v-if="program" class="pageTitle">
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media
