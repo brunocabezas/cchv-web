@@ -3,7 +3,7 @@ import { Slide } from "vue-burger-menu" // import the CSS transitions you wish t
 import HeaderNav from "@/components/layout/Header/HeaderNav.vue"
 import Logo from "@/components/Logo.vue"
 import SocialNetworks from "@/components/SocialNetworks.vue"
-import { defineComponent, ref, computed } from "@vue/composition-api"
+import { defineComponent, ref, computed, watch } from "@vue/composition-api"
 import { YOUTUBE_CHANNEL_LABEL, YOUTUBE_CHANNEL_URL } from "@/utils/static"
 import useMediaQueries from "@/hooks/useMediaQueries"
 import "vue-burger-button/dist/vue-burger-button.css"
@@ -23,6 +23,15 @@ const Header = defineComponent({
     function onMenuChange(state: boolean) {
       isNavOpen.value = state
     }
+
+    watch(
+      onBigScreen,
+      (newValue, oldValue) => {
+        if (!newValue) {
+          onMenuChange(false)
+        }
+      }
+    )
 
     return {
       YOUTUBE_CHANNEL_LABEL,

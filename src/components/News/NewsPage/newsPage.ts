@@ -1,5 +1,5 @@
 import { computed, defineComponent, ref } from "@vue/composition-api"
-import NewsThumb from "@/components/News/NewsThumb.vue"
+import NewsPostThumbnail from "@/components/News/NewsPostThumbnail.vue"
 import Loader from "@/components/Loader.vue"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
@@ -18,7 +18,7 @@ interface infiniteHandlerState {
 
 export default defineComponent({
   name: "NewsPage",
-  components: { NewsThumb, Loader },
+  components: { NewsPostThumbnail, Loader },
   setup() {
     const {
       news,

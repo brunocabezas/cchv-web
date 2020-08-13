@@ -17,7 +17,10 @@
 
         <div class="pageBody" v-html="post.text"></div>
       </div>
-      <div v-if="latestNews.length" class="newsPostPageRight latestNews">
+      <div
+        v-if="latestNews.length && onBigScreen"
+        class="newsPostPageRight latestNews"
+      >
         <h3 class="latestPostsTitle">Últimas noticias</h3>
         <hr />
         <div
@@ -42,6 +45,17 @@
           <hr v-if="latestNews.length > index + 1" />
         </div>
       </div>
+      <div
+        v-else-if="latestNews.length && !onBigScreen"
+        class="newsPostPageRight"
+      >
+        <h3 class="latestPostsTitle">Últimas noticias</h3>
+        <NewsPostMobileThumbnail
+          v-for="post in latestNews"
+          v-bind:key="post.id"
+          :post="post"
+        />
+      </div>
       <Loader v-if="isLoading" />
     </div>
   </div>
@@ -55,11 +69,20 @@
   display: flex;
   padding-top: 2em;
 
+  @media (max-width: $md)
+    flex-direction: column;
+    padding: 1em;
+
   // Single news post content
   .newsPostPageLeft
     width: 80%;
     flex-grow: 1;
     margin-right: 25px;
+
+    @media (max-width: $md)
+      width: 100%;
+      border-bottom: 2px solid $blue;
+      margin-bottom: 1em;
 
     .pageTitleText
       color: $blue;
@@ -72,5 +95,14 @@
 
   // Latest news
   .newsPostPageRight
+    @media (max-width: $md)
+      width: 100%;
+
+    .latestPostsTitle
+      @media (max-width: $md)
+        width: 100%;
+        border-bottom: 1px solid darken($grey, 10);
+        margin-bottom: 1em !important;
+
     latest_posts();
 </style>

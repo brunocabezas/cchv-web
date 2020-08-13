@@ -20,7 +20,7 @@
         >
           <ProgressiveImage
             v-if="act.gallery"
-            :height="onBigScreen ? '200px' : '130px'"
+            :height="imageSize"
             :src="act.gallery[0].url"
           />
           <h3 v-html="act.name" class="activitiesGridTitle"></h3>

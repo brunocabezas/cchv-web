@@ -5,7 +5,7 @@
     </div>
     <Loader :loading="initialDataLoading" />
     <div class="newsPage__topGrid">
-      <NewsThumb
+      <NewsPostThumbnail
         :small="!onBigScreen"
         :post="post"
         v-bind:key="post.id"
@@ -13,7 +13,7 @@
       />
     </div>
     <div class="newsPage__grid">
-      <NewsThumb small :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsPostThumbnail small :post="post" v-bind:key="post.id" v-for="post in news" />
       <infinite-loading @infinite="infiniteHandler">
         <div slot="spinner"></div>
         <div slot="no-more"></div>

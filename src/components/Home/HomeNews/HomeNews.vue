@@ -8,7 +8,7 @@
     </div>
     <Loader size="30px" v-if="isLoading" />
     <div v-if="!isLoading" class="newsList">
-      <NewsThumb :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsPostThumbnail :post="post" v-bind:key="post.id" v-for="post in news" />
     </div>
   </div>
 </template>

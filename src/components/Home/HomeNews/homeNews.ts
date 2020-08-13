@@ -2,13 +2,13 @@ import { defineComponent } from "@vue/composition-api"
 import Icon from "vue-awesome/components/Icon.vue"
 import { MAIN_COLOR } from "@/utils/static"
 import Loader from "@/components/Loader.vue"
-import NewsThumb from "@/components/News/NewsThumb.vue"
+import NewsPostThumbnail from "@/components/News/NewsPostThumbnail.vue"
 import Urls from "@/utils/urls"
 import useNews from "@/models/useNews"
 
 const HomeNews = defineComponent({
   name: "HomeNews",
-  components: { NewsThumb, Loader, "v-icon": Icon },
+  components: { NewsPostThumbnail, Loader, "v-icon": Icon },
   setup() {
     const { homeNews: news, fetchNews, isLoading } = useNews()
 

@@ -76,6 +76,7 @@ const ActivitiesGrid = defineComponent({
       getActivityUrlBySlug,
       activitiesGridUrl,
       pageLinkTitle,
+      imageSize: computed(() => (onBigScreen.value ? "200px" : "130px")),
     }
   },
 })
