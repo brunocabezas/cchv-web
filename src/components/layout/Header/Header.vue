@@ -1,5 +1,5 @@
 <template>
-  <div class="header" v-bind:class="{ 'header--small': !onBigScreen }">
+  <header class="header" v-bind:class="{ 'header--small': !onBigScreen }">
     <div class="headerLeftSection"><Logo /></div>
     <div
       v-if="!onBigScreen"
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 <script lang="ts" src="./header.ts"></script>
 <style lang="stylus" src="./header.styl"></style>

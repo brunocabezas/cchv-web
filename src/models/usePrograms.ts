@@ -55,6 +55,7 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
       ProgramKeys.gallery,
       []
     ),
+    short_name: getCustomFieldFromPost(programPost, ProgramKeys.short_name, ""),
     extra_content: (extraContent && extraContent.value) || "",
   }
 }

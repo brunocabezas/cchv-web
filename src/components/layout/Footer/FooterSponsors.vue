@@ -3,8 +3,45 @@
     class="footerSponsors"
     v-bind:class="{ [`footerSponsors--loading`]: isLoading }"
   >
-    <Loader color="white" :loading="isLoading" />
+    <Loader size="30px" color="white" :loading="isLoading" />
+    <a
+      title="Ver colaboradores"
+      class="footerToggleButton"
+      v-if="!onBigScreen && !isLoading"
+      @click="toggleFooterSponsors"
+    >
+      Colaboradores <v-icon name="chevron-down"> </v-icon>
+    </a>
+    <collapse-transition v-if="!onBigScreen">
+      <div v-show="isFooterOpen">
+        <div
+          v-bind:class="{
+            'sponsorCategory--big': cat.name === BIG_SPONSOR_CATEGORY_LABEL
+          }"
+          v-for="cat in sponsorsCategories"
+          v-bind:key="cat.id"
+          class="sponsorCategory"
+        >
+          <h3 class="sponsorCategoryTitle">{{ cat.name }}</h3>
+          <div class="sponsorsGrid">
+            <a
+              class="sponsor"
+              target="_blank"
+              :href="sponsor.url"
+              :title="sponsor.name"
+              v-for="sponsor in cat.sponsors"
+              v-bind:style="{
+                'background-image': `url(${sponsor.logo})`
+              }"
+              v-bind:key="sponsor.id"
+            >
+            </a>
+          </div>
+        </div>
+      </div>
+    </collapse-transition>
     <div
+      v-else
       v-bind:class="{
         'sponsorCategory--big': cat.name === BIG_SPONSOR_CATEGORY_LABEL
       }"
@@ -32,26 +69,41 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, computed, ref } from "@vue/composition-api";
 import useSponsors from "@/models/useSponsors";
+import Icon from "vue-awesome/components/Icon.vue";
+import CollapseTransition from "@ivanv/vue-collapse-transition";
 import { BIG_SPONSOR_CATEGORY_LABEL } from "@/utils/static";
 import { AsyncDataStatus } from "@/hooks/useAsyncData";
 import Loader from "@/components/Loader.vue";
+import useMediaQueries from "@/hooks/useMediaQueries";
 
 export default defineComponent({
   name: "FooterSponsors",
-  components: { Loader },
+  components: {
+    Loader,
+    "v-icon": Icon,
+    "collapse-transition": CollapseTransition
+  },
   setup() {
     const {
       sponsorsCategories,
       fetchSponsorsAndCategories,
       isLoading
     } = useSponsors();
+    const isFooterOpen = ref(false);
 
+    const { onBigScreen } = useMediaQueries();
+    function toggleFooterSponsors() {
+      isFooterOpen.value = !isFooterOpen.value;
+    }
     fetchSponsorsAndCategories();
     return {
       sponsorsCategories,
       isLoading,
+      onBigScreen,
+      isFooterOpen,
+      toggleFooterSponsors,
       BIG_SPONSOR_CATEGORY_LABEL
     };
   }
@@ -59,15 +111,39 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
+@import '../../../styles/variables.styl';
+
 // Related to BIG_SPONSOR_CATEGORY_LABEL
 $big_sponsor_category_height = 200px;
 $sponsor_height = 100px;
+
+.footerToggleButton
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: all 0.2;
+  cursor: pointer;
+
+  .fa-icon
+    margin-left: 10px;
+
+  &:hover
+    opacity: 0.8;
 
 .footerSponsors
   position: relative;
   display: flex;
   color: white;
   flex-direction: column;
+  padding: $footer_padding;
+  background-color: $black;
+  min-height: 300px;
+
+  @media (max-width: $md)
+    padding-top: 1em !important;
+    min-height: auto !important;
+    padding-bottom: 1em;
+    margin-bottom: 0;
 
   &--loading
     justify-content: center;
@@ -82,6 +158,7 @@ $sponsor_height = 100px;
 
     .sponsorCategoryTitle
       font-family: Montserrat;
+      color: white;
 
     &--big
       .sponsorsGrid
@@ -90,11 +167,18 @@ $sponsor_height = 100px;
           width: 50%;
           margin-left: 84px;
 
+          @media (max-width: $md)
+            width: 100%;
+            margin: 0;
+
   .sponsorsGrid
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
+
+    @media (max-width: $md)
+      flex-wrap: no-wrap;
 
     .sponsor
       margin: 2em 15px;
@@ -103,4 +187,8 @@ $sponsor_height = 100px;
       background-repeat: no-repeat;
       background-size: contain;
       height: $sponsor_height;
+
+      @media (max-width: $md)
+        width: 100%;
+        margin: 10px 0;
 </style>

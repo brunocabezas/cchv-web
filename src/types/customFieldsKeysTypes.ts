@@ -91,6 +91,7 @@ export enum ProgramKeys {
   gallery = "gallery",
   extra_content = "extra_content",
   order = "order",
+  short_name = "short_name"
 }
 
 // Concurso juan downey videos

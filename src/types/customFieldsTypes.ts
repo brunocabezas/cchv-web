@@ -76,6 +76,7 @@ export type Program = {
   [ProgramKeys.text]: string
   [ProgramKeys.extra_content]: WPSelectCustomFieldValue<ProgramExtraContent>
   [ProgramKeys.order]: number
+  [ProgramKeys.short_name]: string
 }
 
 export type SchoolProgram = {

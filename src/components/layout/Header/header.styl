@@ -3,20 +3,20 @@
 
 // burger menu
 .bm-menu
-  background-color: $dark-blue;
+  background-color: $dark-blue !important; 
   // Height is determined by its content
-  height: auto;
-  max-height: 'calc(100vh - %s)' % $header_mobile_height;
-  overflow-y: auto;
-  padding-top: 0;
-  margin-top: 'calc(%s - 2px)' % $header_mobile_height;
+  height: auto !important;
+  max-height: 'calc(100vh - %s)' % $header_mobile_height !important;
+  overflow-y: auto !important;
+  padding-top: 0 !important;
+  margin-top: 'calc(%s - 2px)' % $header_mobile_height !important;
 
   .bm-item-list
     padding-left: 0;
     margin-left: 0;
     padding: 5px 10px;
 
-.header
+header.header
   background-color: $bg_color;
   z-index: 10;
   display: flex;
