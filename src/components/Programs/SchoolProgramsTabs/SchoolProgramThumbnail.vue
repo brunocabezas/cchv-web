@@ -4,7 +4,7 @@
       <router-link
         v-if="program.is_active && program.gallery && program.gallery[0]"
         :title="program.name"
-        :to="getSchoolProgramUrlBySlug(program.slug)"
+        :to="getUrlBySlug(program.slug)"
       >
         <ProgressiveImage height="300px" :src="program.gallery[0].url" />
       </router-link>
@@ -14,15 +14,15 @@
         :src="program.gallery[0].url"
       />
     </div>
-    <div class="schoolProgramInfo">
+    <div v-if="program" class="schoolProgramInfo">
       <h3 class="schoolProgramName">
         <router-link
           v-if="program.is_active"
           :title="program.name"
-          :to="getSchoolProgramUrlBySlug(program.slug)"
+          :to="getUrlBySlug(program.slug)"
           >{{ program.name }}</router-link
         >
-        {{ !program.is_active && program.name }}
+        {{ !program.is_active ? program.name : "" }}
       </h3>
       <p class="schoolProgramAbstract" v-html="program.abstract"></p>
       <DownloadLink
@@ -48,12 +48,21 @@ const SchoolProgramThumbnail = defineComponent({
     DownloadLink
   },
   props: {
-    program: Object
+    program: Object,
+    isWorkshop: {
+      type: Boolean,
+      default: false
+    }
   },
-  setup() {
-    const { getSchoolProgramUrlBySlug } = useSchoolPrograms();
+  setup(props) {
+    const {
+      getSchoolProgramUrlBySlug,
+      getWorkshopUrlBySlug
+    } = useSchoolPrograms();
     return {
-      getSchoolProgramUrlBySlug
+      getUrlBySlug: computed(() =>
+        props.isWorkshop ? getWorkshopUrlBySlug : getSchoolProgramUrlBySlug
+      )
     };
   }
 });

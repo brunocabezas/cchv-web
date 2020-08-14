@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="newsPostPage">
-      <div v-if="post" class="newsPostPageLeft">
+      <div v-if="post && !isLoading" class="newsPostPageLeft">
         <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
         <h1 v-html="post.title" class="pageTitleText"></h1>
@@ -18,7 +18,7 @@
         <div class="pageBody" v-html="post.text"></div>
       </div>
       <div
-        v-if="latestNews.length && onBigScreen"
+        v-if="latestNews.length && onBigScreen && !isLoading"
         class="newsPostPageRight latestNews"
       >
         <h3 class="latestPostsTitle">Últimas noticias</h3>

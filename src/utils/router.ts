@@ -69,25 +69,13 @@ const routes = [
       title: "Programas",
     },
   },
-  // Programs Activities
+  // Program Activities
   {
     path: `${Urls.Programs}campos-magneticos/:activityType`,
     component: ActivitiesGridPage,
     props: (route: Route) => ({
       // Prop of ActivitiesGridPage
       activityType: getTypeBySlug(route.params.activityType),
-    }),
-    meta: {
-      title: "Actividades",
-    },
-  },
-  // Activities
-  {
-    path: `${Urls.Activities}:slug`,
-    component: SinglePostPage,
-    props: (route: Route) => ({
-      slug: route.params.slug,
-      pageType: SinglePostDataType.Activity,
     }),
     meta: {
       title: "Actividades",

@@ -30,10 +30,10 @@
       </button>
     </div>
     <div v-if="onBigScreen" class="pageRow workshopsTabsContent">
-      <SchoolProgramThumbnail :program="activeWorkshop" />
+      <SchoolProgramThumbnail isWorkshop :program="activeWorkshop" />
     </div>
     <div v-if="!onBigScreen">
-      <SchoolProgramThumbnail
+      <SchoolProgramThumbnail isWorkshop
         v-for="program in workshops"
         :program="program"
         v-bind:key="program.id"
