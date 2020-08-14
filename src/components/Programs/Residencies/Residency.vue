@@ -24,30 +24,34 @@
           v-bind:key="post.id"
           v-for="(post, index) in latestResidencies"
         >
-          <router-link
-            :title="post.name"
-            :to="getResidencyUrlBySlug(post.slug)"
-          >
-            <ProgressiveImage
-              :src="post.gallery ? post.gallery[0].url : ''"
-              height="100px"
-            />
-          </router-link>
-          <h4 class="latestPostsItem__title">
+          <div class="latestPostMedia">
             <router-link
-              v-html="post.name"
               :title="post.name"
               :to="getResidencyUrlBySlug(post.slug)"
-            ></router-link>
-          </h4>
-          <p v-if="post.end_date" class="latestPostsItem__date">
-            {{ post.short_date }}
-            {{ post.short_end_date ? ` - ${post.short_end_date}` : "" }}
-          </p>
-          <p v-else class="latestPostsItem__date">
-            {{ post.date }}
-          </p>
-          <hr v-if="latestResidencies.length > index + 1" />
+            >
+              <ProgressiveImage
+                :src="post.gallery ? post.gallery[0].url : ''"
+                height="100px"
+              />
+            </router-link>
+          </div>
+          <div class="latestPostInfo">
+            <h4 class="latestPostsItem__title">
+              <router-link
+                v-html="post.name"
+                :title="post.name"
+                :to="getResidencyUrlBySlug(post.slug)"
+              ></router-link>
+            </h4>
+            <p v-if="post.end_date" class="latestPostsItem__date">
+              {{ post.short_date }}
+              {{ post.short_end_date ? ` - ${post.short_end_date}` : "" }}
+            </p>
+            <p v-else class="latestPostsItem__date">
+              {{ post.date }}
+            </p>
+            <hr v-if="latestResidencies.length > index + 1" />
+          </div>
         </div>
       </div>
       <Loader v-if="isLoading" />
@@ -65,21 +69,60 @@ $margin_between_videos = 2em;
   display: flex;
   padding-top: 2em;
 
+  @media (max-width: $md)
+    flex-direction: column;
+    padding-top: 0;
+
   .residencyContent
     width: 80%;
     flex-grow: 1;
     margin-right: 25px;
 
+    @media (max-width: $md)
+      width: 100%;
+      margin-bottom: 1em;
+
+    .pageTitleText, .residencyDate, .pageBody
+      @media (max-width: $md)
+        padding: 0 10px;
+
+    .pageTitleText
+      margin-bottom: 0;
+
+    .residencyDate
+      color: #868686;
+
+      > p
+        color: #868686;
+
   // Based on news post page newsPostPageRight
   .latestResidencies
+    @media (max-width: $md)
+      width: 100%;
+      padding: 0 10px;
+
+    .latestPostsItem
+      @media (max-width: $md)
+        display: flex;
+
+      .latestPostMedia, .latestPostInfo
+        @media (max-width: $md)
+          flex: 1;
+          padding-bottom: 10px;
+          border-bottom: 1px solid black;
+
+      .latestPostInfo
+        @media (max-width: $md)
+          padding: 0 1em;
+
+        .latestPostsItem__title
+          @media (max-width: $md)
+            margin-top: 0;
+
+          a
+            @media (max-width: $md)
+              color: black;
+              font-family: Montserrat;
+
     latest_posts();
-
-  .pageTitleText
-    margin-bottom: 0;
-
-  .residencyDate
-    color: #868686;
-
-    > p
-      color: #868686;
 </style>
