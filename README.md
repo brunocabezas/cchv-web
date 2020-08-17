@@ -47,6 +47,11 @@ Compiles and minifies for production:
 npm run build
 ```
 
+### References
+
+- https://github.com/vuejs/composition-api
+- https://vue-composition-api-rfc.netlify.app/
+
 ## TODO
 
 - add i18n, organize string labels

@@ -17,7 +17,7 @@
     </div>
     <Slide
       v-if="!onBigScreen"
-      width="350"
+      width="300"
       @closeMenu="onMenuChange"
       :isOpen="isNavOpen"
       :right="true"

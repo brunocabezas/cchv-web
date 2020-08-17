@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="asda"
     class="footerSponsors"
     v-bind:class="{ [`footerSponsors--loading`]: isLoading }"
   >
@@ -10,7 +11,8 @@
       v-if="!onBigScreen && !isLoading"
       @click="toggleFooterSponsors"
     >
-      Colaboradores <v-icon name="chevron-down"> </v-icon>
+      Colaboradores <v-icon v-if="isFooterOpen" name="chevron-up"> </v-icon>
+      <v-icon v-if="!isFooterOpen" name="chevron-down"> </v-icon>
     </a>
     <collapse-transition v-if="!onBigScreen">
       <div v-show="isFooterOpen">
@@ -92,11 +94,13 @@ export default defineComponent({
       isLoading
     } = useSponsors();
     const isFooterOpen = ref(false);
-
     const { onBigScreen } = useMediaQueries();
+
     function toggleFooterSponsors() {
-      isFooterOpen.value = !isFooterOpen.value;
+      const newValue = !isFooterOpen.value;
+      isFooterOpen.value = newValue;
     }
+
     fetchSponsorsAndCategories();
     return {
       sponsorsCategories,
@@ -123,6 +127,8 @@ $sponsor_height = 100px;
   align-items: center;
   transition: all 0.2;
   cursor: pointer;
+  padding: 1em;
+  justify-content: center;
 
   .fa-icon
     margin-left: 10px;
@@ -140,9 +146,8 @@ $sponsor_height = 100px;
   min-height: 300px;
 
   @media (max-width: $md)
-    padding-top: 1em !important;
+    padding: 1em !important;
     min-height: auto !important;
-    padding-bottom: 1em;
     margin-bottom: 0;
 
   &--loading
@@ -160,6 +165,7 @@ $sponsor_height = 100px;
       font-family: Montserrat;
       color: white;
 
+    // First sponsor is bigger than others
     &--big
       .sponsorsGrid
         .sponsor
@@ -191,4 +197,5 @@ $sponsor_height = 100px;
       @media (max-width: $md)
         width: 100%;
         margin: 10px 0;
+        height: $sponsor_height * 2;
 </style>

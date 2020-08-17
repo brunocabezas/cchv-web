@@ -26,7 +26,13 @@
           <h3 v-html="act.name" class="activitiesGridTitle"></h3>
         </router-link>
         <div class="activitiesMobileSchedule">
-          <h4 v-html="act.name" class="activitiesMobileScheduleTitle"></h4>
+          <router-link
+            class="activitiesGridLink"
+            :title="act.name"
+            :to="getNewsPostUrlBySlug(act.slug)"
+          >
+            <h4 v-html="act.name" class="activitiesMobileScheduleTitle"></h4>
+          </router-link>
           <p class="activitiesMobileScheduleDate">
             {{ act.activity_date }}
           </p>
