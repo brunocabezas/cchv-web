@@ -2,12 +2,14 @@
   <div class="edition">
     <div class="editionInfo">
       <h1
+        title="Ver descripción"
         class="editionName"
         v-if="!onBigScreen"
         @click="toggleIsOpen"
       >
         {{ edition.name }}
-        <v-icon name="chevron-down"> </v-icon>
+        <v-icon v-if="!isOpen" name="chevron-down"> </v-icon>
+        <v-icon v-else name="chevron-up"> </v-icon>
       </h1>
       <h1 class="editionName" v-if="onBigScreen">
         {{ edition.name }}

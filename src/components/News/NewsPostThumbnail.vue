@@ -107,8 +107,8 @@ export default defineComponent({
 
     @media (max-width: $md)
       color: black;
-      padding-bottom 10px
-      border-bottom 1px solid $blue
+      padding-bottom: 10px;
+      border-bottom: 1px solid $blue;
 
   &__title
     margin-bottom: 0;
@@ -116,6 +116,9 @@ export default defineComponent({
     .newsPostPreview__link
       margin-bottom: 5px;
       font-family: NoeDisplay;
+
+      &:hover
+        text-decoration: underline;
 
   &.newsPostPreview--small
     .newsPostPreview__title

@@ -3,6 +3,7 @@
 import "vue-awesome/icons/chevron-left"
 import "vue-awesome/icons/chevron-right"
 import "vue-awesome/icons/chevron-down"
+import "vue-awesome/icons/chevron-up"
 
 import "vue-awesome/icons/brands/facebook-square"
 import "vue-awesome/icons/brands/instagram"

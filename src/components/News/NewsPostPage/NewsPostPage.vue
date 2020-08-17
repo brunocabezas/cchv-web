@@ -46,7 +46,7 @@
         </div>
       </div>
       <div
-        v-else-if="latestNews.length && !onBigScreen"
+        v-else-if="latestNews.length && !onBigScreen && !isLoading"
         class="newsPostPageRight"
       >
         <h3 class="latestPostsTitle">Últimas noticias</h3>
