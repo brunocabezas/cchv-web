@@ -2,11 +2,11 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { SchoolProgram } from "@/types"
-import useAsyncData from "../utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
-import { Tab } from "../utils/useTabs"
+import { Tab } from "@/hooks/useTabs"
 import Urls from "@/utils/urls"
 
 Vue.use(VueCompositionApi)

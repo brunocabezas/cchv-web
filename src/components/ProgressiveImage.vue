@@ -60,6 +60,5 @@ export default ProgressiveImage;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: center;
   background-color: $blue;
 </style>

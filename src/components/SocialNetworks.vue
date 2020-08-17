@@ -15,7 +15,7 @@
     >
       <v-icon
         :scale="small ? 1.5 : sn.scale"
-        :color="MAIN_COLOR"
+        :color="color"
         :name="sn.iconName"
       />
     </a>
@@ -26,7 +26,7 @@
 import { defineComponent } from "@vue/composition-api";
 import { MAIN_COLOR } from "@/utils/static";
 import Icon from "vue-awesome/components/Icon.vue";
-import useSocialNetworks from "@/factories/useSocialNetworks";
+import useSocialNetworks from "@/models/useSocialNetworks";
 
 const SocialNetworks = defineComponent({
   name: "SocialNetworks",
@@ -35,6 +35,10 @@ const SocialNetworks = defineComponent({
     small: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: MAIN_COLOR
     }
   },
   setup() {

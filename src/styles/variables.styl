@@ -1,53 +1,24 @@
+@import './mixings.styl';
+
 $boxed_content_max_width = 1280px;
 $header_height = 110px;
+$header_mobile_height = 70px;
 $home_padding = 3em;
 // Footer is not boxed with $boxed_content_max_width,
 // so padding must be bigger than home padding
 $footer_padding = 2.5em 6em;
 // Height of the row where the suscribe form is displayed
 $footer_form_height = 40px;
+// Media queries
+$sm = 550px;
+$md = 750px;
+$lg = 1280px;
 // Colors
 $blue = #344284;
+$dark-blue = darken($blue, 5);
 $grey = #ececec;
 $black = #080808;
 $bg_color = #fcfcfc;
 $text-black = #000000;
 $text-blue = $blue;
 $latest_posts_grey = #868686;
-
-page_padding($padding_top = 3em, $padding_bottom = 2em)
-  padding-top: $padding_top;
-  padding-bottom: $padding_bottom;
-  padding-left: 'calc(0.15 * %s)' % $boxed_content_max_width;
-  padding-right: 'calc(0.15 * %s)' % $boxed_content_max_width;
-
-// Provide a way to display a column of latests posts
-// Used on single residency or news post pages
-latest_posts()
-  width: 'calc(%s * 0.2)' % $boxed_content_max_width;
-
-  .latestPostsTitle
-    margin-bottom: 0;
-    margin-top: 0;
-
-  .latestPostsItem
-    .progressiveImage:hover
-      opacity: 0.9;
-
-    .latestPostsItem__title
-      margin-top: 5px;
-      margin-bottom: 5px;
-
-      &:hover
-        text-decoration: underline;
-
-    .latestPostsItem__date
-      margin-top: 0;
-      color: $latest_posts_grey;
-      margin-bottom: 8px;
-      font-size: 14px;
-
-  hr
-    border: 1px solid $latest_posts_grey;
-    margin-top: 2px;
-    margin-bottom: 15px;

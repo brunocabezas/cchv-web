@@ -1,4 +1,4 @@
-import { NAVIGATION_MENU } from "./static"
+import { NAVIGATION_MENU } from "./navigationMenu"
 import { Program } from "@/types"
 import { Ref } from "@vue/composition-api"
 import { NavMenu } from "@/types"
@@ -10,14 +10,15 @@ export interface menuHoverState {
 
 // Adds pages from api that has is_external as true
 export const addPagesToProgramsNavigationMenu = (
-  programs: readonly Program[]
+  programs: readonly Program[],
+  onBigScreen?: boolean
 ) =>
   NAVIGATION_MENU.map((navMenu) => {
     // If menu is programs, define pages with programs
     if (navMenu.id === NavMenu.Programs) {
       const externalProgramsFromAPI = programs.map((p) => ({
         is_external: p.is_external,
-        label: p.name,
+        label: !onBigScreen ? p.short_name || p.name : p.name,
         url: p[ProgramKeys.url],
       }))
       return Object.assign({}, navMenu, {

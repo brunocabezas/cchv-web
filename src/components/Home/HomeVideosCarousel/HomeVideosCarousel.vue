@@ -53,11 +53,16 @@
   &.homeSection
     margin-bottom: 2em;
     margin-top: 0;
-    padding-top: 0;
+
+    @media (max-width: $md)
+      border-top: 1px solid black;
 
   .homeVideosCarousel
     position: relative;
     height: 500px;
+
+    @media (max-width: $md)
+      height: 300px;
 
     &:hover
       .VueCarousel
@@ -74,9 +79,18 @@
     position: absolute;
     top: 240px;
 
+    @media (max-width: $md)
+      top: 140px;
+
     &--next
       right: -60px;
 
+      @media (max-width: $md)
+        display: none;
+
     &--prev
       left: -60px;
+
+      @media (max-width: $md)
+        display: none;
 </style>

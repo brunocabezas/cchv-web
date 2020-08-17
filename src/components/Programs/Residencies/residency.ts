@@ -2,7 +2,7 @@ import { defineComponent, computed } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
-import useResidencies from "@/factories/useResidencies"
+import useResidencies from "@/models/useResidencies"
 import { Residency } from "../../../types"
 import { sortByDate } from "@/utils/arrays"
 

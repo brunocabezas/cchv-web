@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueCompositionApi, { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Program } from "@/types"
-import useAsyncData from "../utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import {
   WPResponseItem,
   WpImage,
@@ -55,6 +55,7 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
       ProgramKeys.gallery,
       []
     ),
+    short_name: getCustomFieldFromPost(programPost, ProgramKeys.short_name, ""),
     extra_content: (extraContent && extraContent.value) || "",
   }
 }

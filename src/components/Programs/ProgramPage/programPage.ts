@@ -1,15 +1,16 @@
 import { defineComponent, computed } from "@vue/composition-api"
-import usePrograms from "@/factories/usePrograms"
+import usePrograms from "@/models/usePrograms"
 import { Program } from "@/types"
 import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
-import Editions from "@/components/Programs/Editions.vue"
+import Editions from "@/components/Programs/Editions/Editions.vue"
 import Residencies from "@/components/Programs/Residencies/Residencies.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue"
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 // Returns true if program has contentType
 const matchProgramContent = (
@@ -36,6 +37,7 @@ const ProgramPage = defineComponent({
     },
   },
   setup(props) {
+    const { onBigScreen } = useMediaQueries()
     const { getProgramBySlug, isLoading } = usePrograms()
 
     const program = computed<Program | undefined>(() =>
@@ -57,6 +59,7 @@ const ProgramPage = defineComponent({
         () => isArtScienceAndCultureProgram.value
       ),
       isLoading,
+      onBigScreen,
       isMagneticFieldsProgram: computed<boolean>(() =>
         program.value
           ? matchProgramContent(ProgramExtraContent.Activities, program.value)

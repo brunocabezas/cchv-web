@@ -27,7 +27,15 @@ export default defineComponent({
   position: relative;
   margin: 0 auto;
 
+  @media (max-width: $md)
+    width: auto;
+    padding-top: 0;
+
   &__title
     color: $blue;
     margin-bottom: 15px;
+
+    @media (max-width: $md)
+      padding: 0 15px;
+      margin: 10px 0;
 </style>

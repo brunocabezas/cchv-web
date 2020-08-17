@@ -36,8 +36,8 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import useDocuments from "@/factories/useDocuments";
-import usePages from "@/factories/usePages";
+import useDocuments from "@/models/useDocuments";
+import usePages from "@/models/usePages";
 import Loader from "@/components/Loader.vue";
 import DownloadLink from "@/components/DownloadLink.vue";
 

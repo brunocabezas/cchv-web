@@ -17,7 +17,7 @@
         <h3 class="footerTitle">
           Redes Sociales
         </h3>
-        <SocialNetworks small />
+        <SocialNetworks :small="onBigScreen" />
       </div>
       <div class="footerTopSection suscribeForm">
         <h3 class="footerTitle">
@@ -36,12 +36,14 @@ import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
 import SocialNetworks from "@/components/SocialNetworks.vue";
 import FooterSuscribeForm from "@/components/layout/Footer/FooterSuscribeForm.vue";
 import { CONTACT_EMAIL } from "@/utils/static";
+import useMediaQueries from "@/hooks/useMediaQueries";
 
 export default defineComponent({
   name: "Footer",
   components: { FooterSponsors, FooterSuscribeForm, SocialNetworks },
   setup(props) {
-    return { CONTACT_EMAIL };
+    const { onBigScreen } = useMediaQueries();
+    return { CONTACT_EMAIL, onBigScreen };
   }
 });
 </script>

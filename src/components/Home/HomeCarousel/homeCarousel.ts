@@ -3,9 +3,9 @@ import { Carousel as VueCarousel, Slide } from "vue-carousel"
 import Icon from "vue-awesome/components/Icon.vue"
 import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
-import useCarouselImages from "@/factories/useCarouselImages"
+import useCarouselImages from "@/models/useCarouselImages"
 import { getIdFromUrl as getYoutubeIdFromUrl } from "vue-youtube"
-import useCarousel from "@/utils/useCarousel"
+import useCarousel from "@/hooks/useCarousel"
 
 const HomeCarousel = defineComponent({
   name: "HomeCarousel",

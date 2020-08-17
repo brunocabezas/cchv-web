@@ -12,10 +12,12 @@
         <h1 class="pageTitleText">{{ program.name }}</h1>
       </div>
       <Media
+        :height="onBigScreen ? '500px' : '300px'"
         v-if="program"
         :youtubeUrl="program.video_url"
         :gallery="program.gallery"
       />
+
       <div
         v-if="program"
         class="pageRow pageBody programText"

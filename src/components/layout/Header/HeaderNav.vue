@@ -8,7 +8,12 @@
         'headerNavItem--nested': menu.pages && menu.pages.length
       }"
     >
-      <router-link v-if="menu.url" :title="menu.label" :to="menu.url">
+      <router-link
+        class="headerNavItemLink"
+        v-if="menu.url"
+        :title="menu.label"
+        :to="menu.url"
+      >
         {{ menu.label }}
       </router-link>
 
@@ -25,13 +30,14 @@
             class="headerNavItemSubMenu"
           >
             <a
+              class="headerNavItemLink"
               v-if="submenu.is_external"
               target="_blank"
               :title="submenu.label"
               :href="submenu.url"
               >{{ submenu.label }}</a
             >
-            <router-link :to="submenu.url" v-else>{{
+            <router-link class="headerNavItemLink" :to="submenu.url" v-else>{{
               submenu.label
             }}</router-link>
           </div>
@@ -40,64 +46,5 @@
     </div>
   </div>
 </template>
-
 <script lang="ts" src="./headerNav.ts"></script>
-
-<style lang="stylus">
-@import '../../../styles/variables.styl';
-
-.headerNavItem
-  display: flex;
-  align-items: center;
-  padding: 0;
-  position: relative;
-
-  &:hover
-    .headerNavItemSubMenuContainer
-      display: block;
-
-  .headerNavItemSubMenuContainer
-    display: none;
-
-  > div
-    height: 100%;
-
-  a, .headerNavItemLink
-    color: $blue;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    font-family: Montserrat;
-    text-transform: uppercase;
-    padding: 1em 2em;
-    transition: all 0.2s;
-
-    &:hover
-      background-color: $grey;
-
-.headerNav
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
-  font-size: 18px;
-
-  .headerNavItemSubLevel
-    position: absolute;
-    background-color: white;
-    top: 64px;
-    left: 0;
-    z-index: 2;
-    white-space: nowrap;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-
-    .headerNavItemSubMenu
-      border-top: 1px solid $blue;
-      text-transform: uppercase;
-      font-size: 14px;
-
-      &:hover
-        background-color: darken($grey, 3);
-
-      a
-        height: auto;
-</style>
+<style scoped lang="stylus" src="./headerNav.styl"></style>

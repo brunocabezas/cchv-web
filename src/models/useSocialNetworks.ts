@@ -1,6 +1,6 @@
 import { computed } from "@vue/composition-api"
 import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/utils/useAsyncData"
+import useAsyncData from "@/hooks/useAsyncData"
 import {
   WPSelectCustomFieldValue,
   WPResponseItem,
@@ -34,7 +34,7 @@ export default function useSocialNetworks() {
   ): number => {
     switch (socialNetworkType.value) {
       // Youtube icon height is smaller than the rest; therefore
-      // the ratio is bigger to compensate a display icons of same height
+      // the ratio must be bigger to compensate and have same height as other icons
       case SocialNetworkType.Youtube:
         return 3.3
       default:

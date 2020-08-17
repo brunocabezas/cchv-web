@@ -6,7 +6,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue"
 import { WpImage } from "@/types/wordpressTypes"
 import { getIdFromUrl } from "vue-youtube"
-import useCarousel from "@/utils/useCarousel"
+import useCarousel from "@/hooks/useCarousel"
 
 type LightBoxItem = {
   src: string

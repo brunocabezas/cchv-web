@@ -1,8 +1,8 @@
 import { defineComponent, computed, PropType } from "@vue/composition-api"
-import useActivities from "@/factories/useActivities"
+import useActivities from "@/models/useActivities"
 import { ActivityType } from "@/types/customFieldsTypes"
 import Loader from "@/components/Loader.vue"
-import ActivitiesGrid from "@/components/Activities/ActivitiesGrid.vue"
+import ActivitiesGrid from "@/components/Activities/ActivitiesGrid/ActivitiesGrid.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 
 const ActivitiesGridPage = defineComponent({

@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import useTeamMembers from "@/factories/useTeamMembers";
+import useTeamMembers from "@/models/useTeamMembers";
 import Loader from "@/components/Loader.vue";
 
 export default defineComponent({
@@ -66,6 +66,9 @@ export default defineComponent({
   .teamPositions
     flex-wrap: wrap;
     display: flex;
+
+    @media (max-width: $md)
+      padding: 10px;
 
     .teamPosition
       width: 50%;

@@ -1,19 +1,75 @@
 <template>
-  <div class="header">
-    <div class="headerLeftSection">
-      <Logo />
+  <header class="header" v-bind:class="{ 'header--small': !onBigScreen }">
+    <div class="headerLeftSection"><Logo /></div>
+    <div
+      v-if="!onBigScreen"
+      class="headerRightSection headerRightSection--with-button"
+    >
+      <burger-button
+        class="burgerButton"
+        :active="isNavOpen"
+        bar-color="white"
+        :bar-height="4"
+        :bar-width="30"
+        @click="toggleMenu"
+        type="button"
+      />
     </div>
-    <div class="headerRightSection">
+    <Slide
+      v-if="!onBigScreen"
+      width="300"
+      @closeMenu="onMenuChange"
+      :isOpen="isNavOpen"
+      :right="true"
+      :closeOnNavigation="true"
+      :burgerIcon="false"
+      :crossIcon="false"
+    >
+      <div class="headerRightSection">
+        <div v-if="onBigScreen" class="socialNetworkContainer">
+          <SocialNetworks small />
+        </div>
+        <div class="headerNavContainer">
+          <HeaderNav />
+          <div class="customHeaderNavItem">
+            <a
+              class="headerNavItemLink youtubeChannelLink"
+              title="Canal de YouTube"
+              :href="YOUTUBE_CHANNEL_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ YOUTUBE_CHANNEL_LABEL }}
+            </a>
+          </div>
+          <div v-if="!onBigScreen" class="socialNetworkContainer">
+            <div class="socialNetworkContainerTitle headerNavItem">
+              Redes Sociales
+            </div>
+            <SocialNetworks color="white" />
+          </div>
+          <div class="contactContainer">
+            <div class="contactContainerTitle headerNavItem">
+              Contacto
+            </div>
+            <a class="headerNavItemLink" href="mailto:info@cchv.cl"
+              >info@cchv.cl</a
+            >
+          </div>
+        </div>
+      </div>
+    </Slide>
+    <div v-else class="headerRightSection">
       <div class="socialNetworkContainer">
         <SocialNetworks small />
       </div>
       <div class="headerNavContainer">
         <HeaderNav />
-        <div class="customHeaderNavItem headerNavItem">
+        <div class="customHeaderNavItem">
           <a
-            class="youtubeChannelLink"
+            class="headerNavItemLink youtubeChannelLink"
             title="Canal de YouTube"
-            :href="YOUTUBE_CHANNEL"
+            :href="YOUTUBE_CHANNEL_URL"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -22,71 +78,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
-
-<script lang="ts">
-import HeaderNav from "@/components/layout/Header/HeaderNav.vue";
-import Logo from "@/components/Logo.vue";
-import SocialNetworks from "@/components/SocialNetworks.vue";
-import { defineComponent } from "@vue/composition-api";
-import { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL } from "@/utils/static";
-
-const Header = defineComponent({
-  name: "Header",
-  components: { Logo, HeaderNav, SocialNetworks },
-  setup() {
-    return { YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_LABEL };
-  }
-});
-
-export default Header;
-</script>
-<style scoped lang="stylus">
-@import '../../../styles/variables.styl';
-
-.header
-  background-color: $bg_color;
-  z-index: 10;
-  display: flex;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: $header_height;
-  align-items: center;
-  padding: 0 10px;
-  justify-content: center;
-  border-bottom: 2px solid $grey;
-
-  .headerLeftSection
-    display: flex;
-    height: $header_height;
-    align-items: center;
-    width: 30%;
-
-  .headerRightSection
-    display: flex;
-    height: $header_height;
-    width: 70%;
-    flex-direction: column;
-
-    .headerNavContainer
-      display: flex;
-      flex: 1;
-
-      .youtubeChannelLink
-        font-size: 18px;
-
-    .socialNetworkContainer
-      text-align: right;
-      display: block;
-      width: 100%;
-
-  .customHeaderNavItem
-    display: flex;
-</style>
-
+<script lang="ts" src="./header.ts"></script>
+<style lang="stylus" src="./header.styl"></style>
 <style lang="stylus">
 @import '../../../styles/variables.styl';
 

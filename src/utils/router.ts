@@ -14,7 +14,7 @@ import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
-import useActivities from "@/factories/useActivities"
+import useActivities from "@/models/useActivities"
 
 const { getTypeBySlug } = useActivities()
 const routes = [
@@ -69,25 +69,13 @@ const routes = [
       title: "Programas",
     },
   },
-  // Programs Activities
+  // Program Activities
   {
     path: `${Urls.Programs}campos-magneticos/:activityType`,
     component: ActivitiesGridPage,
     props: (route: Route) => ({
       // Prop of ActivitiesGridPage
       activityType: getTypeBySlug(route.params.activityType),
-    }),
-    meta: {
-      title: "Actividades",
-    },
-  },
-  // Activities
-  {
-    path: `${Urls.Activities}:slug`,
-    component: SinglePostPage,
-    props: (route: Route) => ({
-      slug: route.params.slug,
-      pageType: SinglePostDataType.Activity,
     }),
     meta: {
       title: "Actividades",

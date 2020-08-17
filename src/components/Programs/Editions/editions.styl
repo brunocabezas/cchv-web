@@ -1,0 +1,84 @@
+@import '../../../styles/variables.styl';
+
+$margin_between_videos = 2em;
+$height = 300px;
+
+.editions
+  position: relative;
+
+  @media (max-width: $md)
+    padding: 0 1em;
+
+  // edition has different background colors
+  .editionContainer
+    &:nth-child(odd)
+      background-color: $grey;
+
+      @media (max-width: $md)
+        background-color: white;
+
+    .editionContainerWrapper
+      max-width: $boxed_content_max_width;
+      margin: 0 auto;
+      page_padding(0, 0);
+
+      .edition
+        box-sizing: content-box;
+        height: $height;
+        padding: 3em 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: $md)
+          height: auto;
+          flex-direction: column-reverse;
+          border-bottom: 1px solid #000;
+
+        .editionInfo, .editionMedia
+          width: 50%;
+          height: $height;
+
+          @media (max-width: $md)
+            width: 100%;
+            height: auto;
+
+        .editionInfo
+          text-align: justify;
+          padding-right: 1em;
+          overflow-y: auto;
+
+          .editionName
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+
+            &:hover
+              text-decoration: underline;
+              cursor pointer
+
+          .editionDate
+            color: $latest_posts_grey;
+            font-size: 16px;
+            margin-top: 10px;
+
+          .editionBrochure
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .editionBrochureLink
+              display: flex;
+              align-items: center;
+              transition: all 0.2s;
+
+              &:hover
+                opacity: 0.7;
+
+              .fa-icon
+                margin-left: 10px;
+
+        .editionMedia
+          height: $height;
+          padding: 0;
+          background-color: $blue;

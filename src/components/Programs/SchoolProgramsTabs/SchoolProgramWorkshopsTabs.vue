@@ -3,9 +3,9 @@
     <h1 class="pageTitle">
       Mandrágoras. Tecnologías para la conversación
     </h1>
-    <div class="pageBody" v-html="workshopsAbstract"></div>
+    <div class="pageBody workshopsAbstract" v-html="workshopsAbstract"></div>
     <Loader :loading="isLoading" />
-    <div class="pageRow workshopsTabsTitle">
+    <div v-if="onBigScreen" class="pageRow workshopsTabsTitle">
       <button
         :title="`Ver ${tab.title}`"
         v-bind:class="{
@@ -29,35 +29,15 @@
         />
       </button>
     </div>
-    <div class="pageRow workshopsTabsContent">
-      <div v-if="displayActiveWorkshop" class="schoolProgram">
-        <div class="schoolProgramThumb">
-          <router-link
-            v-if="activeWorkshop.gallery && activeWorkshop.gallery[0]"
-            :title="activeWorkshop.name"
-            :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
-          >
-            <ProgressiveImage
-              height="300px"
-              :src="activeWorkshop.gallery[0].url"
-          /></router-link>
-        </div>
-        <div class="schoolProgramInfo">
-          <h3 class="schoolProgramName">
-            <router-link
-              :title="activeWorkshop.name"
-              :to="getWorkshopUrlBySlug(activeWorkshop.slug)"
-              >{{ activeWorkshop.name }}</router-link
-            >
-          </h3>
-          <p class="schoolProgramAbstract" v-html="activeWorkshop.abstract"></p>
-          <DownloadLink
-            v-if="activeWorkshop.pdf"
-            label="Descargar programa completo"
-            :url="activeWorkshop.pdf"
-          />
-        </div>
-      </div>
+    <div v-if="onBigScreen" class="pageRow workshopsTabsContent">
+      <SchoolProgramThumbnail isWorkshop :program="activeWorkshop" />
+    </div>
+    <div v-if="!onBigScreen">
+      <SchoolProgramThumbnail isWorkshop
+        v-for="program in workshops"
+        :program="program"
+        v-bind:key="program.id"
+      />
     </div>
   </div>
 </template>
@@ -72,9 +52,15 @@
   min-height: 630px;
 
   .pageTitle
-    text-align: center;
     margin-bottom: 25px;
     justify-content: center;
+
+    @media (max-width: $md)
+      justify-content: flex-start;
+
+  .workshopsAbstract
+    @media (max-width: $md)
+      padding: 1em;
 
   .workshopsTabsTitle
     justify-content: center;
@@ -87,7 +73,7 @@
       text-align: center;
       font-size: 18px;
       padding: 1em;
-      transition: 0.2 all;
+      transition: all 0.2;
 
       &:hover
         text-decoration: underline;
@@ -107,39 +93,4 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
-
-  .workshopsTabsContent
-    .schoolProgram
-      display: flex;
-      width: 100%;
-
-      .schoolProgramThumb, .schoolProgramInfo
-        flex: 1;
-
-      .schoolProgramThumb
-        width: 60%;
-        height: 300px;
-        background-color: $blue;
-        padding: 0;
-        margin-right: 1em;
-
-        &:hover
-          opacity: 0.8;
-
-      .schoolProgramInfo
-        padding-right: 0;
-        font-size: 18px;
-        padding: 0 1em;
-
-        .schoolProgramAbstract
-          margin-top: 0;
-          text-align: justify;
-
-        .schoolProgramName
-          color: $blue;
-          margin-top: 0;
-          margin-bottom: 0;
-
-          a:hover
-            text-decoration: underline;
 </style>

@@ -1,31 +1,51 @@
 @import './variables.styl';
 
 .pageTitleText
-  font-size: 45px;
   color: $blue;
 
 .page
-  // To display loader
+  position relative
   min-height: 100vh;
   page_padding(0);
   max-width: $boxed_content_max_width;
   margin: 0 auto;
 
-  &.singlePostPage
-    padding-top: 2em;
+  @media (max-width: $md)
+    min-height: 300px;
 
   .pageTitle
     display: flex;
     align-items: center;
 
+    @media (max-width: $md)
+      padding: 10px;
+
     .pageTitleText
       flex: 1;
+
+      @media (max-width: $md)
+        margin: 10px 0;
 
   .pageRow
     display: flex;
 
+    @media (max-width: $md)
+      padding: 10px;
+
+    &:not(.schoolProgramTabsTitle)
+      @media (max-width: $md)
+        flex-direction: column;
+
     .pageLeft, .pageRight
       width: 50%;
+
+      @media (max-width: $md)
+        width: 100%;
+        margin: 0;
+
+    &.pageRow--with-media
+      @media (max-width: $md)
+        padding: 0;
 
   // Used to render html from WYSYWIG editors
   .pageBody
@@ -36,3 +56,6 @@
 
   hr
     color: $blue;
+
+    @media (max-width: $md)
+      display: none;
