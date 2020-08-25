@@ -65,9 +65,8 @@ export default defineComponent({
   align-items: center;
   justify-content: flex-end;
 
-  // Hide on small screens
   @media (max-width: $md)
-    display: none;
+    padding: 1em;
 
   .activityDate, .activityCalendar
     font-weight: bold;

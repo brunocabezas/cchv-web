@@ -17,26 +17,8 @@ import SinglePostPage, {
 import useActivities from "@/models/useActivities"
 
 const { getTypeBySlug } = useActivities()
-const routes = [
-  { path: Urls.Home, component: Home },
-  {
-    path: Urls.News,
-    component: NewsPage,
-    meta: {
-      title: "Noticias",
-    },
-  },
-  {
-    path: `${Urls.NewsPost}:postSlug`,
-    component: NewsPostPage,
-    props: (route: Route) => ({
-      postSlug: route.params.postSlug,
-    }),
-    meta: {
-      title: "Noticias",
-    },
-  },
-  // About
+
+const aboutRoutes = [
   {
     path: Urls.AboutHistory,
     component: HistoryPage,
@@ -58,6 +40,9 @@ const routes = [
       title: "Transparencia",
     },
   },
+]
+
+const programRoutes = [
   // Programs
   {
     path: `${Urls.Programs}:slug`,
@@ -93,34 +78,59 @@ const routes = [
       title: "Escuelas",
     },
   },
-  // Workshops Single Page
+]
+
+const newsRoutes = [
   {
-    path: `${Urls.Workshop}:slug`,
-    component: SinglePostPage,
-    props: (route: Route) => ({
-      slug: route.params.slug,
-      pageType: SinglePostDataType.Workshop,
-    }),
+    path: Urls.News,
+    component: NewsPage,
     meta: {
-      title: "Mandragoras",
+      title: "Noticias",
     },
   },
-  // Residency Single Page
   {
-    path: `${Urls.Residencies}/:slug`,
-    component: ResidencyPage,
+    path: `${Urls.NewsPost}:postSlug`,
+    component: NewsPostPage,
     props: (route: Route) => ({
-      slug: route.params.slug,
+      postSlug: route.params.postSlug,
     }),
     meta: {
-      title: "Residencias",
+      title: "Noticias",
     },
   },
 ]
 
 const router = new VueRouter({
   mode: "history",
-  routes,
+  routes:  [
+    { path: Urls.Home, component: Home },
+    ...newsRoutes,
+    ...aboutRoutes,
+    ...programRoutes,
+    // Workshops Single Page
+    {
+      path: `${Urls.Workshop}:slug`,
+      component: SinglePostPage,
+      props: (route: Route) => ({
+        slug: route.params.slug,
+        pageType: SinglePostDataType.Workshop,
+      }),
+      meta: {
+        title: "Mandragoras",
+      },
+    },
+    // Residency Single Page
+    {
+      path: `${Urls.Residencies}/:slug`,
+      component: ResidencyPage,
+      props: (route: Route) => ({
+        slug: route.params.slug,
+      }),
+      meta: {
+        title: "Residencias",
+      },
+    },
+  ],
   // Always set page to top when changing route
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }

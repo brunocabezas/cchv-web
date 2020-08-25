@@ -1,5 +1,6 @@
 <template>
   <div class="workshopsTabs">
+    <hr class="workshopTabSeparator" v-if="!onBigScreen" />
     <h1 class="pageTitle">
       Mandrágoras. Tecnologías para la conversación
     </h1>
@@ -33,7 +34,8 @@
       <SchoolProgramThumbnail isWorkshop :program="activeWorkshop" />
     </div>
     <div v-if="!onBigScreen">
-      <SchoolProgramThumbnail isWorkshop
+      <SchoolProgramThumbnail
+        isWorkshop
         v-for="program in workshops"
         :program="program"
         v-bind:key="program.id"
@@ -50,6 +52,12 @@
   margin-top: 4em;
   position: relative;
   min-height: 630px;
+
+  @media (max-width: $md)
+    margin-top: 2em;
+
+  .workshopTabSeparator
+    width: calc(100% - 1em);
 
   .pageTitle
     margin-bottom: 25px;
