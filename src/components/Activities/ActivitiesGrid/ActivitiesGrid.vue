@@ -9,6 +9,7 @@
       <div v-for="act in activities" v-bind:key="act.id" class="activity">
         {{/* not visible on small screens*/}}
         <ActivitySchedule
+          v-if="onBigScreen"
           :calendarUrl="act.activity_calendar_url"
           :date="act.activity_date"
           :isDisabled="act.activity_date_has_passed"

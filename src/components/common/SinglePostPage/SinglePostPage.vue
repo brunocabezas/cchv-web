@@ -3,7 +3,7 @@
     <Loader :loading="isLoading" />
     <div v-if="page">
       <Media
-        :height="MEDIA_HEIGHT"
+        :height="mediaHeight"
         :youtubeUrl="page.video_url"
         :gallery="page.gallery"
       />

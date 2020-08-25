@@ -49,7 +49,7 @@
     </div>
     <div class="editionMedia">
       <Media
-        height="100%"
+        height="200px"
         :gallery="edition.gallery"
         :youtubeUrl="edition.video_url"
       />

@@ -5,6 +5,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useResidencies from "@/models/useResidencies"
 import { Residency } from "../../../types"
 import { sortByDate } from "@/utils/arrays"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 const Residency = defineComponent({
   name: "Residency",
@@ -27,6 +28,7 @@ const Residency = defineComponent({
       residencies,
       isLoading,
     } = useResidencies()
+    const { onBigScreen } = useMediaQueries()
 
     fetchResidencies()
 
@@ -42,7 +44,13 @@ const Residency = defineComponent({
         .sort(sortByDate)
     )
 
-    return { residency, isLoading, latestResidencies, getResidencyUrlBySlug }
+    return {
+      residency,
+      isLoading,
+      latestResidencies,
+      getResidencyUrlBySlug,
+      mediaHeight: computed(() => (onBigScreen.value ? "500px" : "250px")),
+    }
   },
 })
 

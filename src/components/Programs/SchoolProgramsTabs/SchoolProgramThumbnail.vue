@@ -6,11 +6,11 @@
         :title="program.name"
         :to="getUrlBySlug(program.slug)"
       >
-        <ProgressiveImage height="300px" :src="program.gallery[0].url" />
+        <ProgressiveImage :height="mediaHeight" :src="program.gallery[0].url" />
       </router-link>
       <ProgressiveImage
         v-else-if="program.gallery && program.gallery[0]"
-        height="300px"
+        :height="mediaHeight"
         :src="program.gallery[0].url"
       />
     </div>
@@ -40,6 +40,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import DownloadLink from "@/components/DownloadLink.vue";
 import useSchoolPrograms from "@/models/useSchoolPrograms";
 import { SchoolProgram } from "@/types";
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 const SchoolProgramThumbnail = defineComponent({
   name: "SchoolProgramThumbnail",
@@ -55,6 +56,7 @@ const SchoolProgramThumbnail = defineComponent({
     }
   },
   setup(props) {
+    const { onBigScreen } = useMediaQueries()
     const {
       getSchoolProgramUrlBySlug,
       getWorkshopUrlBySlug
@@ -62,7 +64,8 @@ const SchoolProgramThumbnail = defineComponent({
     return {
       getUrlBySlug: computed(() =>
         props.isWorkshop ? getWorkshopUrlBySlug : getSchoolProgramUrlBySlug
-      )
+      ),
+      mediaHeight: computed(() => (onBigScreen.value ? "300px" : "180px")),
     };
   }
 });
@@ -85,8 +88,6 @@ export default SchoolProgramThumbnail;
   .schoolProgramMedia
     width: 60%;
     padding-left: 0;
-    height: 300px;
-    background-color: $blue;
     margin-right: 1em;
 
     @media (max-width: $md)

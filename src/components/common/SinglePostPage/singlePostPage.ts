@@ -5,6 +5,7 @@ import useActivities from "@/models/useActivities"
 import Media from "@/components/Media/Media.vue"
 import DownloadLink from "@/components/DownloadLink.vue"
 import useSchoolPrograms from "@/models/useSchoolPrograms"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 export enum SinglePostDataType {
   SchoolProgram = "school_program",
@@ -36,7 +37,7 @@ const SinglePostPage = defineComponent({
       fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { activities, isLoading: isLoadingActivities } = useActivities()
-
+    const { onBigScreen } = useMediaQueries()
     if (
       props.pageType === SinglePostDataType.SchoolProgram ||
       props.pageType === SinglePostDataType.Workshop
@@ -71,7 +72,7 @@ const SinglePostPage = defineComponent({
     return {
       page,
       isLoading,
-      MEDIA_HEIGHT,
+      mediaHeight: computed(() => (onBigScreen.value ? "500px" : "250px")),
     }
   },
 })

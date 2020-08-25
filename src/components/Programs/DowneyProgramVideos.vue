@@ -119,13 +119,11 @@ $margin_between_videos = 2em;
 
       &__player
         margin-left: 15px;
-        height: 100%;
         width: 60%;
 
         @media (max-width: $md)
           width: 100%;
           margin-left: 0;
-          height: 300px;
 
   hr
     width: 100%;
