@@ -7,6 +7,8 @@ import Icon from "vue-awesome/components/Icon.vue"
 import { WpImage } from "@/types/wordpressTypes"
 import { getIdFromUrl } from "vue-youtube"
 import useCarousel from "@/hooks/useCarousel"
+import useMediaQueries from "@/hooks/useMediaQueries"
+import { MEDIA_MOBILE_HEIGHT } from '@/utils/static'
 
 type LightBoxItem = {
   src: string
@@ -46,6 +48,7 @@ const Media = defineComponent({
     "v-icon": Icon,
   },
   setup(props) {
+    const { onBigScreen } = useMediaQueries()
     // Ref used to open lightbox
     const lightBoxRef = ref<any>(null)
     const lightBoxData = computed<LightBoxItem[]>(() =>
@@ -72,6 +75,10 @@ const Media = defineComponent({
       lightBoxRef.value.showImage(index)
     }
 
+    const mediaHeight = computed(() => {
+      return onBigScreen.value ? props.height : MEDIA_MOBILE_HEIGHT
+    })
+
     return {
       youtubeVideoId,
       // Carousel state
@@ -82,6 +89,7 @@ const Media = defineComponent({
       lightBoxData,
       lightBoxRef,
       openLightBox,
+      mediaHeight,
     }
   },
 })

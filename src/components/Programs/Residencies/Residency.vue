@@ -2,14 +2,8 @@
   <div class="page">
     <div class="residency">
       <div v-if="residency" class="residencyContent">
-        <Media
-          :height="mediaHeight"
-          :youtubeUrl="residency.video_url"
-          :gallery="residency.gallery"
-        />
-
+        <Media :youtubeUrl="residency.video_url" :gallery="residency.gallery" />
         <h1 v-html="residency.name" class="pageTitleText"></h1>
-
         <div v-if="!residency.end_date" class="residencyDate">
           {{ residency.date }}
         </div>

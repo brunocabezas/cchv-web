@@ -1,5 +1,5 @@
 <template>
-  <div class="media carousel" v-bind:style="{ height }">
+  <div class="media carousel" v-bind:style="{ height: mediaHeight }">
     <LightBox
       v-if="!hideLightBox"
       ref="lightBoxRef"
@@ -29,17 +29,17 @@
         <button
           v-if="image.url && !hideLightBox"
           type="button"
-          v-bind:style="{ height }"
+          v-bind:style="{ height: mediaHeight }"
           title="Ampliar imagen"
           class="carouselLightboxOverlay"
           @click="openLightBox(index)"
         >
-          <ProgressiveImage :height="height" :src="image.url">
+          <ProgressiveImage :height="mediaHeight" :src="image.url">
           </ProgressiveImage>
         </button>
         <ProgressiveImage
           v-if="image.url && hideLightBox"
-          :height="height"
+          :height="mediaHeight"
           :src="image.url"
         >
         </ProgressiveImage>
@@ -71,87 +71,4 @@
 </template>
 
 <script lang="ts" src="./media.ts"></script>
-<style lang="stylus">
-@import '../../styles/variables.styl';
-
-.media
-  display: block;
-  width: 100%;
-  background-color: $blue;
-
-.carousel
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  hr
-    display: none;
-
-  .carouselButton--next
-    right: 0;
-
-  .carouselButton--prev
-    left: 0;
-
-  .carouselItem
-    position: relative;
-
-    .carouselItemLegend
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: auto;
-      color: $bg_color;
-      font-family: OpenSans;
-      padding: 2px 6px;
-      background-color: alpha($blue, 1);
-      font-size: 10pt;
-      opacity: 0.7;
-      z-index: 1;
-
-  .carouselLightboxOverlay
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    border: none;
-
-    > div > span
-      height: 100%;
-
-  .carouselButton
-    z-index: 1;
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    cursor: pointer;
-
-.VueCarousel
-  height: 100%;
-  width: 100%;
-  background-color: $blue;
-
-  hr
-    display: none;
-
-  .carouselButton
-    &.carouselButton--next
-      right: 10px;
-
-    &.carouselButton--prev
-      left: 10px;
-
-  .VueCarousel-wrapper
-    position: relative;
-
-  .VueCarousel-wrapper, .VueCarousel-inner
-    height: 100% !important;
-    width: 100%;
-
-  .VueCarousel-slide
-    min-width: 100%;
-    width: 100%;
-</style>
+<style lang="stylus" src="./media.styl"></style>

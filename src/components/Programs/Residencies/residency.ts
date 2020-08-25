@@ -49,7 +49,6 @@ const Residency = defineComponent({
       isLoading,
       latestResidencies,
       getResidencyUrlBySlug,
-      mediaHeight: computed(() => (onBigScreen.value ? "500px" : "250px")),
     }
   },
 })

@@ -2,11 +2,7 @@
   <div class="page">
     <div class="newsPostPage">
       <div v-if="post && !isLoading" class="newsPostPageLeft">
-        <Media
-          :height="mediaHeight"
-          :youtubeUrl="post.video_url"
-          :gallery="post.gallery"
-        />
+        <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
 
         <h1 v-html="post.title" class="pageTitleText"></h1>
         <ActivitySchedule

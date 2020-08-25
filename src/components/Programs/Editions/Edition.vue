@@ -49,7 +49,7 @@
     </div>
     <div class="editionMedia">
       <Media
-        height="200px"
+        :height="onBigScreen ? '300px' : '200px'"
         :gallery="edition.gallery"
         :youtubeUrl="edition.video_url"
       />

@@ -1,18 +1,18 @@
 <template>
   <div
-    ref="asda"
     class="footerSponsors"
     v-bind:class="{ [`footerSponsors--loading`]: isLoading }"
   >
-    <Loader size="30px" color="white" :loading="isLoading" />
     <a
       title="Ver colaboradores"
       class="footerToggleButton"
-      v-if="!onBigScreen && !isLoading"
+      v-if="!onBigScreen"
       @click="toggleFooterSponsors"
     >
-      Colaboradores <v-icon v-if="isFooterOpen" name="chevron-up"> </v-icon>
-      <v-icon v-if="!isFooterOpen" name="chevron-down"> </v-icon>
+      Colaboradores
+      <v-icon v-if="!isLoading && isFooterOpen" name="chevron-up"> </v-icon>
+      <v-icon v-if="!isLoading && !isFooterOpen" name="chevron-down"> </v-icon>
+      <Loader size="16px" color="white" :loading="isLoading" />
     </a>
     <collapse-transition v-if="!onBigScreen">
       <div v-show="isFooterOpen">
@@ -125,7 +125,7 @@ $sponsor_height = 100px;
   color: white;
   display: flex;
   align-items: center;
-  transition: all 0.2;
+  transition: all 0.2s;
   cursor: pointer;
   padding: 1em;
   justify-content: center;
@@ -144,6 +144,7 @@ $sponsor_height = 100px;
   padding: $footer_padding;
   background-color: $black;
   min-height: 300px;
+  justify-content: center;
 
   @media (max-width: $md)
     padding: $mobile_padding !important;
@@ -151,10 +152,12 @@ $sponsor_height = 100px;
     margin-bottom: 0;
 
   &--loading
-    justify-content: center;
-
-    .loader
-      width: auto;
+    @media (max-width: $md)
+      .loader
+        transform: none;
+        position: initial;
+        width: auto;
+        margin-left: 10px;
 
   .sponsorCategory
     min-width: 100%;

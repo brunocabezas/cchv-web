@@ -53,7 +53,6 @@ export default defineComponent({
       post,
       isLoading,
       onBigScreen,
-      mediaHeight: computed(() => (onBigScreen.value ? "500px" : "250px")),
     }
   },
 })

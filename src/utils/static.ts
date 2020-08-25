@@ -16,6 +16,7 @@ export const DEFAULT_ORDER = 0
 export const MOBILE_IMG_HEIGHT = "110px"
 export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
+export const MEDIA_MOBILE_HEIGHT = "250px"
 
 // Date format compatible with https://github.com/iamkun/dayjs
 export const DATE_FORMAT = "DD [de] MMMM, YYYY"
