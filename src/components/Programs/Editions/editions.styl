@@ -1,13 +1,13 @@
 @import '../../../styles/variables.styl';
 
 $margin_between_videos = 2em;
-$height = 300px;
+$edition_height = 300px;
 
 .editions
   position: relative;
 
   @media (max-width: $md)
-    padding: 0 1em;
+    padding: 0 $mobile_padding;
 
   // edition has different background colors
   .editionContainer
@@ -17,6 +17,10 @@ $height = 300px;
       @media (max-width: $md)
         background-color: white;
 
+    &:last-child .editionContainerWrapper .edition
+      @media (max-width: $md)
+        border-bottom: none;
+
     .editionContainerWrapper
       max-width: $boxed_content_max_width;
       margin: 0 auto;
@@ -24,8 +28,8 @@ $height = 300px;
 
       .edition
         box-sizing: content-box;
-        height: $height;
-        padding: 3em 0;
+        height: $edition_height;
+        padding: 1em 0;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
@@ -37,7 +41,7 @@ $height = 300px;
 
         .editionInfo, .editionMedia
           width: 50%;
-          height: $height;
+          height: $edition_height;
 
           @media (max-width: $md)
             width: 100%;
@@ -49,13 +53,16 @@ $height = 300px;
           overflow-y: auto;
 
           .editionName
-            margin-top: 0;
-            margin-bottom: 10px;
+            margin: 5px 0 10px 0;
             text-align: left;
+
+            @media (max-width: $md)
+              font-size: 20px;
+              height: auto;
 
             &:hover
               text-decoration: underline;
-              cursor pointer
+              cursor: pointer;
 
           .editionDate
             color: $latest_posts_grey;
@@ -79,6 +86,6 @@ $height = 300px;
                 margin-left: 10px;
 
         .editionMedia
-          height: $height;
+          height: $edition_height;
           padding: 0;
           background-color: $blue;

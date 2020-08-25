@@ -68,7 +68,7 @@
 
   .workshopsAbstract
     @media (max-width: $md)
-      padding: 1em;
+      padding: $mobile_padding;
 
   .workshopsTabsTitle
     justify-content: center;

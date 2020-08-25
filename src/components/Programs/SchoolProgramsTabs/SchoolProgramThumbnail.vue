@@ -91,7 +91,7 @@ export default SchoolProgramThumbnail;
 
     @media (max-width: $md)
       width: auto;
-      margin: 0 1em;
+      margin: 0 $mobile_padding;
 
   .schoolProgramInfo
     padding-right: 0;

@@ -68,7 +68,7 @@
 
   .schoolProgramsAbstract
     @media (max-width: $md)
-      padding: 1em;
+      padding: $mobile_padding;
 
   .schoolProgramTabsTitle
     justify-content: center;

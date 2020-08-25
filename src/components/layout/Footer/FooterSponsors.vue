@@ -146,7 +146,7 @@ $sponsor_height = 100px;
   min-height: 300px;
 
   @media (max-width: $md)
-    padding: 1em !important;
+    padding: $mobile_padding !important;
     min-height: auto !important;
     margin-bottom: 0;
 

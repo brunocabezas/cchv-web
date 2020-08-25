@@ -55,6 +55,7 @@
   .newsList
     display: flex;
     padding: 0 10px;
+    min-height: 360px;
 
     @media (max-width: $md)
       flex-direction: column;
@@ -73,6 +74,9 @@
       padding: 10px;
       margin: 0 auto;
       display: block;
+
+      @media (max-width: $md)
+        padding: 5px $mobile_padding;
 </style>
 <style lang="stylus">
 .news .newsList .newsPostPreview

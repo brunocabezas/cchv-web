@@ -80,11 +80,11 @@ $margin_between_videos = 2em;
 
     @media (max-width: $md)
       width: 100%;
-      margin-bottom: 1em;
+      margin-bottom: $mobile_padding;
 
     .pageTitleText, .residencyDate, .pageBody
       @media (max-width: $md)
-        padding: 0 10px;
+        padding: 0 $mobile_padding;
 
     .pageTitleText
       margin-bottom: 0;
@@ -99,7 +99,7 @@ $margin_between_videos = 2em;
   .latestResidencies
     @media (max-width: $md)
       width: 100%;
-      padding: 0 10px;
+      padding: 0 $mobile_padding;
 
     .latestPostsItem
       @media (max-width: $md)
@@ -108,7 +108,7 @@ $margin_between_videos = 2em;
       .latestPostMedia, .latestPostInfo
         @media (max-width: $md)
           flex: 1;
-          padding-bottom: 10px;
+          padding-bottom: $mobile_padding;
           border-bottom: 1px solid black;
 
       .latestPostInfo

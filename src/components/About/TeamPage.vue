@@ -69,7 +69,7 @@ export default defineComponent({
     padding: 0 !important;
 
     @media (max-width: $md)
-      padding: 10px;
+      padding: $mobile_padding;
 
     .teamPosition
       width: 50%;

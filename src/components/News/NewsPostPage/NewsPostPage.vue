@@ -2,7 +2,11 @@
   <div class="page">
     <div class="newsPostPage">
       <div v-if="post && !isLoading" class="newsPostPageLeft">
-        <Media :youtubeUrl="post.video_url" :gallery="post.gallery" />
+        <Media
+          :height="mediaHeight"
+          :youtubeUrl="post.video_url"
+          :gallery="post.gallery"
+        />
 
         <h1 v-html="post.title" class="pageTitleText"></h1>
         <ActivitySchedule
@@ -16,6 +20,7 @@
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 
         <div class="pageBody" v-html="post.text"></div>
+        <hr v-if="!onBigScreen" />
       </div>
       <div
         v-if="latestNews.length && onBigScreen && !isLoading"
@@ -71,7 +76,7 @@
 
   @media (max-width: $md)
     flex-direction: column;
-    padding: 1em;
+    padding: 0;
 
   // Single news post content
   .newsPostPageLeft
@@ -81,22 +86,46 @@
 
     @media (max-width: $md)
       width: 100%;
-      border-bottom: 2px solid $blue;
-      margin-bottom: 1em;
+      display: block;
+
+    hr
+      display: none;
+
+      @media (max-width: $md)
+        display: block;
+        // width: 'calc(100% - (%s * 2))' % $mobile_padding;
+        margin-left: $mobile_padding;
+        margin-right: $mobile_padding;
+        border-bottom: 2px solid $blue;
+        margin-bottom: 1em;
 
     .pageTitleText
       color: $blue;
 
+      @media (max-width: $md)
+        padding: 0 10px;
+
     .newsPostAbstract
       font-weight: bold;
 
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
+
     .newsPostDate
       color: $latest_posts_grey;
+
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
+
+    .pageBody
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
 
   // Latest news
   .newsPostPageRight
     @media (max-width: $md)
       width: 100%;
+      padding: 0 $mobile_padding;
 
     .latestPostsTitle
       @media (max-width: $md)

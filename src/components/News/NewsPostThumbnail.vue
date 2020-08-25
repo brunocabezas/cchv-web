@@ -81,15 +81,13 @@ export default defineComponent({
   position: relative;
   max-width: 50%;
 
+  hr
+    @media (max-width: $md)
+      display: none;
+
   @media (max-width: $md)
     max-width: none;
     padding: 5px 15px;
-
-  hr
-    position: absolute;
-    bottom: 0;
-    color: #344284;
-    width: calc(100% - 30px);
 
   &__date, &__abstract
     margin: 10px 0;
@@ -107,7 +105,7 @@ export default defineComponent({
 
     @media (max-width: $md)
       color: black;
-      padding-bottom: 10px;
+      padding-bottom: $mobile_padding;
       border-bottom: 1px solid $blue;
 
   &__title

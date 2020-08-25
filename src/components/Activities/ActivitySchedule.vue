@@ -66,7 +66,7 @@ export default defineComponent({
   justify-content: flex-end;
 
   @media (max-width: $md)
-    padding: 1em;
+    padding: $mobile_padding;
 
   .activityDate, .activityCalendar
     font-weight: bold;
