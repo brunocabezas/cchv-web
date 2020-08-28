@@ -6,7 +6,7 @@
         :title="post.name"
         :to="getNewsPostUrlBySlug(post.slug)"
       >
-        <ProgressiveImage height="110px" :src="post.gallery[0].url" />
+        <ProgressiveImage height="100px" :src="post.gallery[0].url" />
       </router-link>
     </div>
     <div v-if="post" class="newsPostInfo">
@@ -65,20 +65,20 @@ export default NewsPostMobileThumbnail;
     border-bottom: none;
 
   .newsPostMedia
-    flex: 3;
-    min-width: 200px;
+    flex: 6;
+    // min-width: 200px;
     padding-left: 0;
 
   .newsPostInfo
     flex: 5;
     padding-right: 0;
     font-size: 18px;
-    padding: 0 1em;
+    padding: 0 0 0 1em;
 
   .newsPostBadge
     background-color: $blue;
     color: white;
-    padding: 5px 10px;
+    padding: 4px 10px;
     display: inline-block;
     font-size: 14px;
     margin-bottom: 5px;
@@ -89,6 +89,7 @@ export default NewsPostMobileThumbnail;
   .newsPostTitle
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 16px;
 
     p
       a

@@ -22,6 +22,7 @@
       <infinite-loading @infinite="infiniteHandler">
         <div slot="spinner"></div>
         <div slot="no-more"></div>
+        <div slot="no-results"></div>
       </infinite-loading>
       <Loader
         v-if="!initialDataLoading && news.length"

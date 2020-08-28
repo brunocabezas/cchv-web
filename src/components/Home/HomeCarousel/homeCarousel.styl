@@ -1,0 +1,90 @@
+
+@import '../../../styles/variables.styl';
+
+// Viewport height less header height
+$carousel_height = 'calc(100vh - %s)' % $header_height;
+$mobile_carousel_height = 200px;
+
+.homeCarousel, .homeCarousel
+  background-color: $blue;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $carousel_height;
+
+  @media (max-width: $md)
+    height: $mobile_carousel_height;
+    width: 100%;
+
+  .carouselImage
+    display: block;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (max-width: $md)
+      height: $mobile_carousel_height;
+
+    height: 100vh;
+
+  .VueCarousel
+    height: 100%;
+    width: 100%;
+    background-color: $blue;
+
+    @media (max-width: $md)
+      height: $mobile_carousel_height;
+
+    .VueCarousel-slide
+      position: relative;
+
+    .VueCarousel-pagination
+      position: absolute;
+      bottom: 4em;
+
+      @media (max-width: $md)
+        bottom: 0;
+        padding: 10px 5px 5px 5px;
+
+    .loaderContainer, .carouselButton
+      top: 'calc((%s / 2) - 13px)' % $carousel_height;
+
+  .VueCarousel-wrapper
+    height: $carousel_height;
+
+    @media (max-width: $md)
+      height: auto;
+      width: 100%;
+
+.carouselButton
+  z-index: 1;
+  background-color: $blue;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  padding: 8px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+
+  @media (max-width: $md)
+    width: 28px;
+
+  &.carouselButton--next
+    right: 15px;
+
+    @media (max-width: $md)
+      right: 10px;
+
+  &.carouselButton--prev
+    left: 15px;
+
+    @media (max-width: $md)
+      left: 10px;
+
+  &:hover
+    background-color: darken($blue, 10);

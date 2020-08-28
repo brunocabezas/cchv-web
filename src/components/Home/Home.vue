@@ -36,6 +36,6 @@ export default defineComponent({
     margin-bottom: 15px;
 
     @media (max-width: $md)
-      padding: 0 15px;
+      padding: 0 10px;
       margin: 10px 0;
 </style>

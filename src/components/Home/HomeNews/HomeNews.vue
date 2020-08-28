@@ -55,12 +55,18 @@
   .newsList
     display: flex;
     padding: 0 10px;
-    min-height: 360px;
 
+    // min-height: 360px;
     @media (max-width: $md)
       flex-direction: column;
 
     .newsPostPreview
+      &:first-child
+        padding-right: 1em;
+
+      &:last-child
+        padding-left: 1em;
+
       hr
         width: 99%;
 
@@ -77,9 +83,4 @@
 
       @media (max-width: $md)
         padding: 5px $mobile_padding;
-</style>
-<style lang="stylus">
-.news .newsList .newsPostPreview
-  hr
-    width: 98.5%;
 </style>

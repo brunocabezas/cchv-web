@@ -107,6 +107,7 @@ export default defineComponent({
       color: black;
       padding-bottom: $mobile_padding;
       border-bottom: 1px solid $blue;
+      margin-bottom: 0;
 
   &__title
     margin-bottom: 0;

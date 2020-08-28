@@ -39,6 +39,6 @@ export default Logo;
 
     @media (max-width: $md)
       width: auto;
-      height: 50px;
+      height: 40px;
       padding: 0;
 </style>
