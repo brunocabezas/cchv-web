@@ -29,7 +29,7 @@
             >
               <ProgressiveImage
                 :src="post.gallery ? post.gallery[0].url : ''"
-                height="100px"
+                :height="MOBILE_IMG_HEIGHT"
               />
             </router-link>
           </div>

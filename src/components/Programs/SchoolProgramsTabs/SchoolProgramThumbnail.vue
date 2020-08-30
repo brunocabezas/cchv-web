@@ -40,7 +40,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import DownloadLink from "@/components/DownloadLink.vue";
 import useSchoolPrograms from "@/models/useSchoolPrograms";
 import { SchoolProgram } from "@/types";
-import useMediaQueries from '@/hooks/useMediaQueries';
+import useMediaQueries from "@/hooks/useMediaQueries";
 
 const SchoolProgramThumbnail = defineComponent({
   name: "SchoolProgramThumbnail",
@@ -56,7 +56,7 @@ const SchoolProgramThumbnail = defineComponent({
     }
   },
   setup(props) {
-    const { onBigScreen } = useMediaQueries()
+    const { onBigScreen } = useMediaQueries();
     const {
       getSchoolProgramUrlBySlug,
       getWorkshopUrlBySlug
@@ -65,7 +65,7 @@ const SchoolProgramThumbnail = defineComponent({
       getUrlBySlug: computed(() =>
         props.isWorkshop ? getWorkshopUrlBySlug : getSchoolProgramUrlBySlug
       ),
-      mediaHeight: computed(() => (onBigScreen.value ? "300px" : "180px")),
+      mediaHeight: computed(() => (onBigScreen.value ? "300px" : "180px"))
     };
   }
 });
@@ -81,6 +81,10 @@ export default SchoolProgramThumbnail;
 
   @media (max-width: $md)
     flex-direction: column;
+
+  &:not(:first-child)
+    @media (max-width: $md)
+      margin-top: 1.5em;
 
   .schoolProgramMedia, .schoolProgramInfo
     flex: 1;
@@ -110,4 +114,7 @@ export default SchoolProgramThumbnail;
       color: $blue;
       margin-top: 0;
       margin-bottom: 0;
+
+      @media (max-width: $md)
+        margin-top: 5px;
 </style>

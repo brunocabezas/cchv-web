@@ -1,8 +1,7 @@
 <template>
   <div
     v-bind:class="{
-      'program--full-width': pageHasFullWidth,
-      'program--small-title': displaySmallTitle
+      'program--full-width': pageHasFullWidth
     }"
     class="page program"
   >
@@ -39,10 +38,6 @@
 .program
   .programText.pageRow
     display: block;
-
-&.program--small-title
-  .pageTitleText
-    font-size: 38px;
 
   &.program--full-width
     width: 100% !important;

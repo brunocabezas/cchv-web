@@ -11,7 +11,7 @@
       <ProgressiveImage
         class="newsPostPreview__thumbnail"
         :src="post.thumbnail"
-        :height="small ? `150px` : `300px`"
+        :height="imageHeight"
       />
     </router-link>
     <h3 class="newsPostPreview__title">
@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "@vue/composition-api";
+import { defineComponent, PropType, computed } from "@vue/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { NewsPost } from "@/types";
 import Urls from "@/utils/urls";
@@ -65,10 +65,14 @@ export default defineComponent({
     }
   },
   components: { ProgressiveImage, "v-icon": Icon },
-  setup() {
+  setup(props) {
     const { getNewsPostUrlBySlug } = useNews();
 
-    return { getNewsPostUrlBySlug, MAIN_COLOR };
+    return {
+      getNewsPostUrlBySlug,
+      MAIN_COLOR,
+      imageHeight: computed(() => (props.small ? `190px` : `300px`))
+    };
   }
 });
 </script>

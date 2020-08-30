@@ -33,7 +33,7 @@
             :title="post.title"
             :to="getNewsPostUrlBySlug(post.slug)"
           >
-            <ProgressiveImage :src="post.thumbnail" height="100px" />
+            <ProgressiveImage :src="post.thumbnail" :height="MOBILE_IMG_HEIGHT" />
           </router-link>
           <h4 class="latestPostsItem__title">
             <router-link
@@ -89,7 +89,6 @@
 
       @media (max-width: $md)
         display: block;
-        // width: 'calc(100% - (%s * 2))' % $mobile_padding;
         margin-left: $mobile_padding;
         margin-right: $mobile_padding;
         border-bottom: 2px solid $blue;

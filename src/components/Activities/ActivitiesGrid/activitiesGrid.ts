@@ -8,6 +8,7 @@ import useWpCategories from "@/models/useWpCategories"
 import { WpCategory } from "@/types/wordpressTypes"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
+import { MOBILE_IMG_HEIGHT } from '@/utils/static'
 
 // While onPages prop is set false, max acitivities to be displayed will be determined by MAX_ACTIVITIES
 const MAX_ACTIVITIES = 3
@@ -76,7 +77,7 @@ const ActivitiesGrid = defineComponent({
       getActivityUrlBySlug,
       activitiesGridUrl,
       pageLinkTitle,
-      imageSize: computed(() => (onBigScreen.value ? "200px" : "110px")),
+      imageSize: computed(() => (onBigScreen.value ? "200px" : MOBILE_IMG_HEIGHT)),
     }
   },
 })

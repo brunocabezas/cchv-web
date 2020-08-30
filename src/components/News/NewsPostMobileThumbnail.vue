@@ -6,7 +6,7 @@
         :title="post.name"
         :to="getNewsPostUrlBySlug(post.slug)"
       >
-        <ProgressiveImage height="100px" :src="post.gallery[0].url" />
+        <ProgressiveImage :height="MOBILE_IMG_HEIGHT" :src="post.gallery[0].url" />
       </router-link>
     </div>
     <div v-if="post" class="newsPostInfo">
@@ -28,6 +28,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import useNews from "@/models/useNews";
 import useActivities from "@/models/useActivities";
+import { MOBILE_IMG_HEIGHT } from '@/utils/static';
 
 const NewsPostMobileThumbnail = defineComponent({
   name: "NewsPostMobileThumbnail",
@@ -42,7 +43,8 @@ const NewsPostMobileThumbnail = defineComponent({
     const { getNewsPostUrlBySlug } = useNews();
     return {
       getNewsPostUrlBySlug,
-      getActvitiesGridTitleByType
+      getActvitiesGridTitleByType,
+      MOBILE_IMG_HEIGHT,
     };
   }
 });

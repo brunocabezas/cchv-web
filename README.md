@@ -1,10 +1,10 @@
 # web-cchv
 
-Website of Corporacion Chilena de Video: https://www.cchv.cl
+Website of Corporación Chilena de Video: https://www.cchv.cl
 
 Based on [VUE CLI](https://cli.vuejs.org)
 
-![Web Corporacion Chilena de Video](web-cchv.jpg)
+![Web Corporación Chilena de Video](web-cchv.jpg)
 
 ## Setup
 
@@ -24,7 +24,7 @@ The following environment variables can be defined on a `.env` file to enable sp
 
 ```javascript
 VUE_APP_BASE_URL // Base url used to query the API
-VUE_APP_ENABLE_MOCKS // Whether if mock API data or not. Enables access to the app without the need of a real backend.
+VUE_APP_ENABLE_MOCKS // Enables access to the app without the need of an API. Mocks the API responses.
 VUE_APP_ASSETS_URL // Url to look for static assets, used for gzip comprression
 VUE_APP_GOOGLE_ANALYTICS // Google analytics tracking id
 ```
@@ -37,7 +37,9 @@ The application can be used with mocks to facilitate development, thanks to `axi
 npm run serve:mocks
 ```
 
-A delay of 5 seconds is set by default. For more information look at [api/mocks](./api/mocks.ts).
+A 5 seconds delay is set by default for mocked network requests. For more information look at [api/mocks](./api/mocks.ts).
+
+Every route is mocked on 
 
 ### Production
 

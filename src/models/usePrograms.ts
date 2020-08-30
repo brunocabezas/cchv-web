@@ -69,11 +69,19 @@ export default function usePrograms() {
     return programs.value.find((p) => p.slug === slug)
   }
 
+  function matchContentTypeWithProgram(
+    contentType: ProgramExtraContent,
+    program: Program
+  ) {
+    return !!(program && program.extra_content === contentType)
+  }
+
   return {
     fetchPrograms,
     // Used on nav menu
     programs,
     isLoading,
     getProgramBySlug,
+    matchContentTypeWithProgram,
   }
 }

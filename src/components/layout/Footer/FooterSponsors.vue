@@ -117,7 +117,7 @@ export default defineComponent({
 <style lang="stylus" scoped>
 @import '../../../styles/variables.styl';
 
-// Related to BIG_SPONSOR_CATEGORY_LABEL
+// To display BIG_SPONSOR_CATEGORY_LABEL
 $big_sponsor_category_height = 200px;
 $sponsor_height = 100px;
 

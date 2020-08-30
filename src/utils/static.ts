@@ -13,7 +13,7 @@ export const NEWSLETTER_SUSCRIBE_URL =
 export const DEFAULT_ORDER = 0
 
 // Styles
-export const MOBILE_IMG_HEIGHT = "110px"
+export const MOBILE_IMG_HEIGHT = "100px"
 export const MAIN_COLOR = "#344284"
 export const DARKER_MAIN_COLOR = "#1a2142"
 export const MEDIA_MOBILE_HEIGHT = "250px"
