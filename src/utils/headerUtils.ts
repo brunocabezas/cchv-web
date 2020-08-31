@@ -18,7 +18,7 @@ export const addPagesToProgramsNavigationMenu = (
     if (navMenu.id === NavMenu.Programs) {
       const externalProgramsFromAPI = programs.map((p) => ({
         is_external: p.is_external,
-        label: !onBigScreen ? p.short_name || p.name : p.name,
+        label: p.name,
         url: p[ProgramKeys.url],
       }))
       return Object.assign({}, navMenu, {

@@ -18,12 +18,14 @@ const HomeNews = defineComponent({
   },
   setup() {
     const { onBigScreen } = useMediaQueries()
-    const { homeNews: news, fetchNews, isLoading } = useNews()
+    const { news, highlightedNews, fetchNews, isLoading } = useNews()
 
-    // TODO add description; remove homeNews from useNews()
     const newsPosts = computed(() => {
       const numberOfPosts = onBigScreen.value ? 2 : 5
-      return news.value.slice(0, numberOfPosts)
+      if (onBigScreen) {
+        return [...highlightedNews.value, ...news.value].slice(0, numberOfPosts)
+      }
+      return highlightedNews.value.slice(0, numberOfPosts)
     })
 
     fetchNews({ per_page: 5 })

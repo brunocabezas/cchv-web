@@ -14,9 +14,7 @@
         {{ getActvitiesGridTitleByType(post.is_activity).slice(0, -1) }}
       </div>
       <h4 class="newsPostTitle">
-        <router-link :title="post.name" :to="getNewsPostUrlBySlug(post.slug)">{{
-          post.title
-        }}</router-link>
+        <router-link v-html="post.title" :title="post.name" :to="getNewsPostUrlBySlug(post.slug)"> </router-link>
       </h4>
       <p class="newsPostDate">{{ post.date }}</p>
     </div>

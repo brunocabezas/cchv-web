@@ -22,7 +22,7 @@ export default defineComponent({
   setup() {
     const {
       news,
-      homeNews,
+      highlightedNews,
       fetchNews,
       isLoading,
       currentPage: page,
@@ -69,7 +69,7 @@ export default defineComponent({
 
     return {
       news,
-      homeNews,
+      homeNews: highlightedNews,
       infiniteHandler,
       initialDataLoading,
       isLoading: computed(() => isLoading.value),

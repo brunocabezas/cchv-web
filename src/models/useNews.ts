@@ -43,12 +43,16 @@ export default function useNews() {
     newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
   )
 
-  const homeNews = computed<NewsPost[]>(() => {
-    return news.value.map((n) => n)
-  })
+  // Highlighted news are displayed on:
+  // - homepage on regular viewports
+  // - news page
+  const highlightedNews = computed<NewsPost[]>(() =>
+    news.value.filter((p) => p.is_highlighted).slice(0, 2)
+  )
 
+  // All news that are not highlighted
   const newsToGrid = computed(() =>
-    news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
+    news.value.filter((p) => !highlightedNews.value.find((n) => n.id === p.id))
   )
 
   function getNewsPostUrlBySlug(postSlug: string): string {
@@ -77,7 +81,7 @@ export default function useNews() {
 
   return {
     news: newsToGrid,
-    homeNews,
+    highlightedNews,
     singleNewsPost,
     getLatestNews,
     isLoading,

@@ -96,7 +96,8 @@ export default SchoolProgramThumbnail;
 
     @media (max-width: $md)
       width: auto;
-      margin: 0 $mobile_padding;
+      padding: 0 $mobile_padding;
+      margin: 0;
 
   .schoolProgramInfo
     padding-right: 0;
@@ -105,6 +106,7 @@ export default SchoolProgramThumbnail;
 
     @media (max-width: $md)
       width: 100%;
+      padding: 0 $mobile_padding;
 
     .schoolProgramAbstract
       margin-top: 0;
@@ -117,4 +119,7 @@ export default SchoolProgramThumbnail;
 
       @media (max-width: $md)
         margin-top: 5px;
+
+      &:hover
+        text-decoration underline
 </style>
