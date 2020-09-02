@@ -12,7 +12,7 @@
           <div class="programVideo__meta">
             <div v-if="!onBigScreen" class="programVideo__player">
               <Media
-                :gallery="[{ url: video.thumbnail }]"
+                :gallery="video.thumbnail ? [{ url: video.thumbnail }] : []"
                 :youtubeUrl="video.url"
                 height="100%"
               />
@@ -34,7 +34,7 @@
           </div>
           <div v-if="onBigScreen" class="programVideo__player">
             <Media
-              :gallery="[{ url: video.thumbnail }]"
+              :gallery="video.thumbnail ? [{ url: video.thumbnail }] : []"
               :youtubeUrl="video.url"
               height="100%"
             />

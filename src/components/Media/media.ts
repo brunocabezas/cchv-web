@@ -8,7 +8,7 @@ import { WpImage } from "@/types/wordpressTypes"
 import { getIdFromUrl } from "vue-youtube"
 import useCarousel from "@/hooks/useCarousel"
 import useMediaQueries from "@/hooks/useMediaQueries"
-import { MEDIA_MOBILE_HEIGHT } from '@/utils/static'
+import { MEDIA_MOBILE_HEIGHT } from "@/utils/static"
 
 type LightBoxItem = {
   src: string
@@ -30,7 +30,7 @@ const Media = defineComponent({
     },
     height: {
       type: String,
-      default: "500px",
+      default: "400px",
       required: false,
     },
     hideLightBox: {
@@ -54,42 +54,41 @@ const Media = defineComponent({
     const lightBoxData = computed<LightBoxItem[]>(() =>
       props.gallery.map((img) => ({ src: img.url, thumb: img.url }))
     )
-    // If video is available, add to carousel data array
-    const carouselLength = computed<number>(() =>
-      props.youtubeUrl.length > 0
-        ? props.gallery.length + 1
-        : props.gallery.length
+    // If video is available, include in count of carousel length
+    const carouselLength = computed<number>(
+      () => props.gallery.length + (!!props.youtubeUrl ? 1 : 0)
     )
-
-    const youtubeVideoId = computed<string>(() =>
-      props.youtubeUrl.length ? getIdFromUrl(props.youtubeUrl) : ""
-    )
-
     const {
       goToNextSlide,
       activeSlide: currentImage,
       goToPrevSlide,
     } = useCarousel(carouselLength)
 
-    function openLightBox(index: number) {
-      lightBoxRef.value.showImage(index)
-    }
+    const youtubeVideoId = computed<string>(() =>
+      props.youtubeUrl.length ? getIdFromUrl(props.youtubeUrl) : ""
+    )
 
     const mediaHeight = computed(() => {
       return onBigScreen.value ? props.height : MEDIA_MOBILE_HEIGHT
     })
 
+    function openLightBox(index: number) {
+      lightBoxRef.value.showImage(index)
+    }
+    
     return {
       youtubeVideoId,
       // Carousel state
       currentImage,
       goToPrevItem: goToPrevSlide,
       goToNextItem: goToNextSlide,
+      carouselLength,
       // Lightbox for images
       lightBoxData,
       lightBoxRef,
       openLightBox,
       mediaHeight,
+      onBigScreen,
     }
   },
 })

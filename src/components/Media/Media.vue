@@ -49,7 +49,7 @@
       </slide>
     </vue-carousel>
     <button
-      v-if="gallery.length > 1"
+      v-if="carouselLength > 1"
       title="Imagen anterior"
       class="carouselButton carouselButton--prev"
       type="button"
@@ -58,7 +58,7 @@
       <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
     </button>
     <button
-      v-if="gallery.length > 1"
+      v-if="carouselLength > 1"
       title="Siguiente imagen"
       class="carouselButton carouselButton--next"
       type="button"

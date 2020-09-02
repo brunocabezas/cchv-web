@@ -15,30 +15,34 @@
             v-if="video && video.video_url"
             height="100%"
             width="100%"
+            :resize="true"
+            @playing="onPlay"
+            @paused="onPause"
+            @ended="onStop"
             :video-id="getYoutubeIdFromUrl(video.video_url)"
           >
           </youtube>
         </slide>
       </carousel>
       <button
-        v-if="videos.length > 1"
+        v-if="videos.length > 1 && displayControls"
         title="Atrás"
         class="carouselButton carouselButton--prev"
         type="button"
         @click="goToPrevSlide"
         @keyup.left="goToNextSlide"
       >
-        <v-icon color="white" name="chevron-left" scale="1.5"> </v-icon>
+        <v-icon color="white" name="chevron-left" :scale="iconScale"> </v-icon>
       </button>
       <button
-        v-if="videos.length > 1"
+        v-if="videos.length > 1 && displayControls"
         title="Siguiente"
         class="carouselButton carouselButton--next"
         type="button"
         @keyup.right="goToNextSlide"
         @click="goToNextSlide"
       >
-        <v-icon color="white" name="chevron-right" scale="1.5"> </v-icon>
+        <v-icon color="white" name="chevron-right" :scale="iconScale"> </v-icon>
       </button>
     </div>
   </div>
@@ -86,11 +90,11 @@
       right: -60px;
 
       @media (max-width: $md)
-        display: none;
+        right: 5px;
 
     &--prev
       left: -60px;
 
       @media (max-width: $md)
-        display: none;
+        left: 5px;
 </style>

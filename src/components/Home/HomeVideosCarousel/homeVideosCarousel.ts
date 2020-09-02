@@ -6,6 +6,7 @@ import Loader from "@/components/Loader.vue"
 import { YOUTUBE_CHANNEL_LABEL } from "@/utils/static"
 import useCarousel from "@/hooks/useCarousel"
 import { getIdFromUrl as getYoutubeIdFromUrl } from "vue-youtube"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 const HomeVideosCarousel = defineComponent({
   name: "HomeVideosCarousel",
@@ -13,11 +14,13 @@ const HomeVideosCarousel = defineComponent({
   setup() {
     const { videos, fetchVideos, isLoading } = useVideos()
     const carouselLength = computed<number>(() => videos.value.length)
+    const displayControls = ref(true)
     const {
       goToNextSlide,
       activeSlide: activeVideo,
       goToPrevSlide,
     } = useCarousel(carouselLength)
+    const { onBigScreen } = useMediaQueries()
 
     fetchVideos()
 
@@ -26,8 +29,19 @@ const HomeVideosCarousel = defineComponent({
       goToPrevSlide,
       activeVideo,
       videos,
+      onPlay: () => {
+        displayControls.value = false
+      },
+      onPause: () => {
+        displayControls.value = true
+      },
+      onStop: () => {
+        displayControls.value = true
+      },
+      displayControls,
       isLoading,
       getYoutubeIdFromUrl,
+      iconScale: computed(() => (onBigScreen.value ? "1.5" : "0.8")),
       YOUTUBE_CHANNEL_LABEL,
     }
   },

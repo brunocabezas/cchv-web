@@ -6,6 +6,7 @@
       v-if="!isLoading"
       class="carousel"
       :navigate-to="activeImg"
+      :paginationSize="paginationDotSize"
       :perPage="1"
     >
       <slide v-bind:key="img.id" v-for="img in carousel">

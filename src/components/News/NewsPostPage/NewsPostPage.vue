@@ -33,7 +33,10 @@
             :title="post.title"
             :to="getNewsPostUrlBySlug(post.slug)"
           >
-            <ProgressiveImage :src="post.thumbnail" :height="MOBILE_IMG_HEIGHT" />
+            <ProgressiveImage
+              :src="post.thumbnail"
+              :height="MOBILE_IMG_HEIGHT"
+            />
           </router-link>
           <h4 class="latestPostsItem__title">
             <router-link
@@ -57,6 +60,7 @@
           :post="post"
         />
       </div>
+      <div v-else class="newsPostPageRight latestNews"></div>
       <Loader v-if="isLoading" />
     </div>
   </div>
@@ -76,8 +80,8 @@
 
   // Single news post content
   .newsPostPageLeft
-    width: 80%;
-    flex-grow: 1;
+    // .newsPostPageRight is same but with 0.2 as ratio
+    width: 'calc(%s * 0.8)' % $boxed_content_max_width;
     margin-right: 25px;
 
     @media (max-width: $md)

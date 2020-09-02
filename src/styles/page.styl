@@ -19,7 +19,7 @@
 
     @media (max-width: $md)
       padding: 10px 0;
-      margin: 0 10px;
+      margin: 0 $mobile_padding;
 
     .pageTitleText
       font-size: 38px;
@@ -61,6 +61,10 @@
       display: block;
       max-width: 100%;
       margin: 0 auto;
+
+    p
+      &:first-child
+        margin-top: 0;
 
   hr
     color: $blue;

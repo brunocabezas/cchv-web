@@ -32,6 +32,7 @@ const HomeCarousel = defineComponent({
       getYoutubeIdFromUrl,
       goToNextImg: goToNextSlide,
       goToPrevImg: goToPrevSlide,
+      paginationDotSize: computed(() => (onBigScreen.value ? 10 : 7)),
     }
   },
 })
