@@ -9,7 +9,7 @@ import {
   DEFAULT_WP_DOCUMENT,
 } from "@/types/wordpressTypes"
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 import { DocumentKeys } from "@/types/customFieldsKeysTypes"
 import { sortByOrder } from "@/utils/arrays"
 

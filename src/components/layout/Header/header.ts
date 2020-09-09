@@ -8,7 +8,7 @@ import {
   YOUTUBE_CHANNEL_LABEL,
   YOUTUBE_CHANNEL_URL,
   CONTACT_EMAIL,
-} from "@/utils/static"
+} from "@/utils/constants"
 import useMediaQueries from "@/hooks/useMediaQueries"
 import "vue-burger-button/dist/vue-burger-button.css"
 

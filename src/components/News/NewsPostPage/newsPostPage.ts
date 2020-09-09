@@ -7,7 +7,7 @@ import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import { INITIAL_NEWS_BY_PAGE } from "../NewsPage/newsPage"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
-import { MOBILE_IMG_HEIGHT } from '@/utils/static'
+import { MOBILE_IMG_HEIGHT } from '@/utils/constants'
 
 export default defineComponent({
   name: "NewsPostPage",

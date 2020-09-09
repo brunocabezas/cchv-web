@@ -32,7 +32,7 @@
 <script>
 import { defineComponent, PropType } from "@vue/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
-import { MAIN_COLOR } from "@/utils/static";
+import { MAIN_COLOR } from "@/utils/constants";
 
 export default defineComponent({
   components: { "v-icon": Icon },

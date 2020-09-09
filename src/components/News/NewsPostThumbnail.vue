@@ -50,7 +50,7 @@ import { NewsPost } from "@/types";
 import Urls from "@/utils/urls";
 import useNews from "@/models/useNews";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import { MAIN_COLOR } from "@/utils/static";
+import { MAIN_COLOR } from "@/utils/constants";
 
 export default defineComponent({
   name: "NewsPostThumbnail",

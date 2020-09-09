@@ -12,7 +12,7 @@ import {
   DATE_FORMAT,
   SHORT_DATE_FORMAT,
   CUSTOM_FIELDS_DATE_FORMAT,
-} from "@/utils/static"
+} from "@/utils/constants"
 import dayjs from "dayjs"
 
 Vue.use(VueCompositionApi)

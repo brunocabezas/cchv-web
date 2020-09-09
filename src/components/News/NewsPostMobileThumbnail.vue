@@ -26,7 +26,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import useNews from "@/models/useNews";
 import useActivities from "@/models/useActivities";
-import { MOBILE_IMG_HEIGHT } from '@/utils/static';
+import { MOBILE_IMG_HEIGHT } from '@/utils/constants';
 
 const NewsPostMobileThumbnail = defineComponent({
   name: "NewsPostMobileThumbnail",

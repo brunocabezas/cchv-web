@@ -13,7 +13,7 @@ import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import Urls from "@/utils/urls"
 import { sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 

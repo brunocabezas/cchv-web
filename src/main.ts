@@ -18,14 +18,13 @@ import * as dayjs from "dayjs"
 import customParseFormat from "dayjs/plugin/customParseFormat"
 import updateLocale from "dayjs/plugin/updateLocale"
 import "dayjs/locale/es" // import locale
+import { DATE_LOCALE } from './utils/constants'
 
-const LOCALE = "es"
-
-dayjs.locale(LOCALE)
+dayjs.locale(DATE_LOCALE)
 dayjs.extend(customParseFormat)
 dayjs.extend(updateLocale)
 // Uppercase short spanish month names
-dayjs.updateLocale(LOCALE, {
+dayjs.updateLocale(DATE_LOCALE, {
   monthsShort: [
     "Ene",
     "Feb",

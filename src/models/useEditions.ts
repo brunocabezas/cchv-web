@@ -7,7 +7,7 @@ import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { EditionKeys } from "@/types/customFieldsKeysTypes"
 import { Edition } from "@/types"
 import { sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 

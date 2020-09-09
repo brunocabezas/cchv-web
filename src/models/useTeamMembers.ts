@@ -12,7 +12,7 @@ import {
   groupTeamMembersByPosition,
   sortGrouptedTeamMembers,
 } from "@/utils/teamMembers"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 

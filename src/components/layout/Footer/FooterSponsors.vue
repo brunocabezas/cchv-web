@@ -75,7 +75,7 @@ import { defineComponent, computed, ref } from "@vue/composition-api";
 import useSponsors from "@/models/useSponsors";
 import Icon from "vue-awesome/components/Icon.vue";
 import CollapseTransition from "@ivanv/vue-collapse-transition";
-import { BIG_SPONSOR_CATEGORY_LABEL } from "@/utils/static";
+import { BIG_SPONSOR_CATEGORY_LABEL } from "@/utils/constants";
 import { AsyncDataStatus } from "@/hooks/useAsyncData";
 import Loader from "@/components/Loader.vue";
 import useMediaQueries from "@/hooks/useMediaQueries";

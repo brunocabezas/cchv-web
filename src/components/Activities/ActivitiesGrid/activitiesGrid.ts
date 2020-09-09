@@ -8,7 +8,7 @@ import useWpCategories from "@/models/useWpCategories"
 import { WpCategory } from "@/types/wordpressTypes"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
-import { MOBILE_IMG_HEIGHT } from '@/utils/static'
+import { MOBILE_IMG_HEIGHT } from '@/utils/constants'
 
 // While onPages prop is set false, max acitivities to be displayed will be determined by MAX_ACTIVITIES
 const MAX_ACTIVITIES = 3

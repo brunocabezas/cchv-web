@@ -1,6 +1,6 @@
 import VueRouter, { Route } from "vue-router"
 import Vue from "vue"
-import { DEFAULT_TITLE } from "@/utils/static"
+import { DEFAULT_TITLE } from "@/utils/constants"
 import Urls from "./urls"
 import Home from "@/components/Home/Home.vue"
 import NewsPage from "@/components/News/NewsPage/NewsPage.vue"

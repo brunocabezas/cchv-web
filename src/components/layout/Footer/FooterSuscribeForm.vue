@@ -77,13 +77,13 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-import { NEWSLETTER_SUSCRIBE_URL } from "../../../utils/static";
+import { NEWSLETTER_SUSCRIBE_URL } from "@/utils/constants";
 
 export default defineComponent({
   name: "FooterSuscribeForm",
   setup() {
     return { suscribeUrl: NEWSLETTER_SUSCRIBE_URL };
-  }
+  },
 });
 </script>
 

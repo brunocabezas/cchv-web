@@ -8,7 +8,7 @@ import { WpImage } from "@/types/wordpressTypes"
 import { getIdFromUrl } from "vue-youtube"
 import useCarousel from "@/hooks/useCarousel"
 import useMediaQueries from "@/hooks/useMediaQueries"
-import { MEDIA_MOBILE_HEIGHT } from "@/utils/static"
+import { MEDIA_MOBILE_HEIGHT } from "@/utils/constants"
 
 type LightBoxItem = {
   src: string

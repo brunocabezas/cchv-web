@@ -20,7 +20,7 @@
 // https://github.com/MatteoGabriele/vue-progressive-image
 import { defineComponent } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
-import { DARKER_MAIN_COLOR } from "../utils/static";
+import { DARKER_MAIN_COLOR } from "@/utils/constants"
 
 const ProgressiveImage = defineComponent({
   name: "ProgressiveImage",

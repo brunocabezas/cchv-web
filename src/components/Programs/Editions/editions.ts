@@ -1,6 +1,6 @@
 import { defineComponent } from "@vue/composition-api"
 import Loader from "@/components/Loader.vue"
-import { MAIN_COLOR } from "@/utils/static"
+import { MAIN_COLOR } from "@/utils/constants"
 import useEditions from "@/models/useEditions"
 import Edition from "@/components/Programs/Editions/Edition.vue"
 

@@ -6,7 +6,7 @@ import useAsyncData from "@/hooks/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { VideoKeys } from "@/types/customFieldsKeysTypes"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 

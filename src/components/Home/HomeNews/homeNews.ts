@@ -1,6 +1,6 @@
 import { defineComponent, computed } from "@vue/composition-api"
 import Icon from "vue-awesome/components/Icon.vue"
-import { MAIN_COLOR } from "@/utils/static"
+import { MAIN_COLOR } from "@/utils/constants"
 import Loader from "@/components/Loader.vue"
 import NewsPostThumbnail from "@/components/News/NewsPostThumbnail.vue"
 import NewsPostMobileThumbnail from "@/components/News/NewsPostMobileThumbnail.vue"

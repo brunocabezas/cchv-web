@@ -5,7 +5,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import useResidencies from "@/models/useResidencies"
 import { Residency } from "../../../types"
 import { sortByDate } from "@/utils/arrays"
-import { MOBILE_IMG_HEIGHT } from "@/utils/static"
+import { MOBILE_IMG_HEIGHT } from "@/utils/constants"
 import useMediaQueries from "@/hooks/useMediaQueries"
 
 const Residency = defineComponent({

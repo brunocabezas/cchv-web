@@ -6,7 +6,7 @@ import { WPResponseItem } from "@/types/wordpressTypes"
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
 import { CarouselImage } from "@/types"
-import { DEFAULT_ORDER, DOMAIN } from "@/utils/static"
+import { DEFAULT_ORDER, DOMAIN } from "@/utils/constants"
 import { sortByOrder } from "@/utils/arrays"
 
 Vue.use(VueCompositionApi)

@@ -7,7 +7,7 @@ import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
 import { Sponsor, SponsorsCategory } from "@/types"
 import { filterUndef, sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 
