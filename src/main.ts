@@ -8,17 +8,39 @@ import VueLazyLoad from "vue-lazyload"
 import VueAnalytics from "vue-ua"
 import InfiniteLoading from "vue-infinite-loading"
 import VueProgressiveImage from "vue-progressive-image"
-import customParseFormat from "dayjs/plugin/customParseFormat"
 import router from "@/utils/router"
 import "vue-image-lightbox/dist/vue-image-lightbox.min.css"
 import "./styles/main.styl"
 import "./types"
 import "./utils/icons"
+// dayjs
 import * as dayjs from "dayjs"
+import customParseFormat from "dayjs/plugin/customParseFormat"
+import updateLocale from "dayjs/plugin/updateLocale"
 import "dayjs/locale/es" // import locale
 
-dayjs.locale("es") // use locale
+const LOCALE = "es"
+
+dayjs.locale(LOCALE)
 dayjs.extend(customParseFormat)
+dayjs.extend(updateLocale)
+// Uppercase short spanish month names
+dayjs.updateLocale(LOCALE, {
+  monthsShort: [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ],
+})
 
 Vue.use(VueEllipsis)
 Vue.use(VueRouter)

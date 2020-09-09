@@ -1,4 +1,5 @@
 import { ref, Ref, computed } from "@vue/composition-api"
+import useMediaQueries from './useMediaQueries'
 
 export type Tabs = Tab[]
 export type Tab = {
@@ -8,6 +9,8 @@ export type Tab = {
 
 // carouselLength as computed
 export default function useCarousel(carouselLength: Ref<Readonly<number>>) {
+  
+  const { onBigScreen } = useMediaQueries()
   const activeSlide = ref(0)
 
   function goToNextSlide() {
@@ -30,11 +33,15 @@ export default function useCarousel(carouselLength: Ref<Readonly<number>>) {
   const isOnLastSlide = computed(
     () => activeSlide.value + 1 === carouselLength.value
   )
+
+  const paginationSize = computed(() => (onBigScreen.value ? 10 : 7))
+
   return {
     activeSlide,
     isOnFirstSlide,
     isOnLastSlide,
     goToNextSlide,
     goToPrevSlide,
+    paginationSize,
   }
 }

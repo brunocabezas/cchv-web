@@ -3,7 +3,7 @@ import { Carousel, Slide } from "vue-carousel"
 import Icon from "vue-awesome/components/Icon.vue"
 import useVideos from "@/models/useVideos"
 import Loader from "@/components/Loader.vue"
-import { YOUTUBE_CHANNEL_LABEL } from "@/utils/static"
+import { YOUTUBE_CHANNEL_LABEL, MAIN_COLOR } from "@/utils/static"
 import useCarousel from "@/hooks/useCarousel"
 import { getIdFromUrl as getYoutubeIdFromUrl } from "vue-youtube"
 import useMediaQueries from "@/hooks/useMediaQueries"
@@ -19,6 +19,7 @@ const HomeVideosCarousel = defineComponent({
       goToNextSlide,
       activeSlide: activeVideo,
       goToPrevSlide,
+      paginationSize,
     } = useCarousel(carouselLength)
     const { onBigScreen } = useMediaQueries()
 
@@ -43,6 +44,8 @@ const HomeVideosCarousel = defineComponent({
       getYoutubeIdFromUrl,
       iconScale: computed(() => (onBigScreen.value ? "1.5" : "0.8")),
       YOUTUBE_CHANNEL_LABEL,
+      MAIN_COLOR,
+      paginationSize,
     }
   },
 })

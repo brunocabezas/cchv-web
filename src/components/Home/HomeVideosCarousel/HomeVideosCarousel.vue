@@ -9,11 +9,17 @@
         class="carousel"
         :navigate-to="activeVideo"
         :perPage="1"
+        :paginationSize="paginationSize"
+        :paginationActiveColor="MAIN_COLOR"
       >
-        <slide v-bind:key="video.id" v-for="video in videos">
+        <slide
+          class="homeVideosCarousel"
+          v-bind:key="video.id"
+          v-for="video in videos"
+        >
           <youtube
+            class="homeVideosCarouselItem"
             v-if="video && video.video_url"
-            height="100%"
             width="100%"
             :resize="true"
             @playing="onPlay"
@@ -68,16 +74,25 @@
     @media (max-width: $md)
       height: 300px;
 
+      .VueCarousel
+        .VueCarousel-pagination
+          display: block;
+
+    // Pagination dots are displayed only on hover
     &:hover
       .VueCarousel
         .VueCarousel-pagination
           display: block;
 
+    // Carousel dots
     .VueCarousel
       .VueCarousel-pagination
         display: none;
         position: absolute;
         bottom: 10px;
+
+    .homeVideosCarouselItem
+      height: 100%;
 
   .carouselButton
     position: absolute;
@@ -91,10 +106,12 @@
 
       @media (max-width: $md)
         right: 5px;
+        opacity .9
 
     &--prev
       left: -60px;
 
       @media (max-width: $md)
         left: 5px;
+        opacity .9
 </style>

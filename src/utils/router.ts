@@ -10,7 +10,7 @@ import HistoryPage from "@/components/About/HistoryPage.vue"
 import TransparencyPage from "@/components/About/TransparencyPage.vue"
 import ResidencyPage from "@/components/Programs/Residencies/Residency.vue"
 import ProgramPage from "@/components/Programs/ProgramPage/ProgramPage.vue"
-import ActivitiesGridPage from "@/components/Activities/ActivitiesGridPage.vue"
+import ActivitiesPage from "@/components/Activities/ActivitiesPage.vue"
 import SinglePostPage, {
   SinglePostDataType,
 } from "@/components/common/SinglePostPage/SinglePostPage.vue"
@@ -57,9 +57,9 @@ const programRoutes = [
   // Program Activities
   {
     path: `${Urls.Programs}campos-magneticos/:activityType`,
-    component: ActivitiesGridPage,
+    component: ActivitiesPage,
     props: (route: Route) => ({
-      // Prop of ActivitiesGridPage
+      // Prop of ActivitiesPage
       activityType: getTypeBySlug(route.params.activityType),
     }),
     meta: {
