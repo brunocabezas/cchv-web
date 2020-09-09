@@ -15,9 +15,38 @@ const { data, fetch: fetchSocialNetworks, isLoading } = useAsyncData<
 >(apiRoutes.SocialNetworks)
 
 export default function useSocialNetworks() {
-  const getIconNameByType = (
+  const mapSocialNetworkFromWpPost = (
+    socialNetworkPost: WPResponseItem
+  ): SocialNetwork => {
+    const type = getCustomFieldFromPost<
+      WPSelectCustomFieldValue<SocialNetworkType>
+    >(socialNetworkPost, SocialNetworksKeys.type, {
+      value: SocialNetworkType.Facebook,
+      label: "",
+    })
+    const iconName = getIconNameByType(type)
+
+    return {
+      id: socialNetworkPost.id,
+      name: getWPTitle(socialNetworkPost),
+      iconName,
+      scale: getIconScaleByType(type),
+      [SocialNetworksKeys.type]: type,
+      url: getCustomFieldFromPost(
+        socialNetworkPost,
+        SocialNetworksKeys.url,
+        ""
+      ),
+    }
+  }
+
+  const socialNetworks = computed<SocialNetwork[]>(() =>
+    data.value.map(mapSocialNetworkFromWpPost)
+  )
+
+  function getIconNameByType(
     socialNetworkType: WPSelectCustomFieldValue<SocialNetworkType>
-  ): string => {
+  ): string {
     switch (socialNetworkType.value) {
       case SocialNetworkType.Facebook:
         return "brands/facebook-square"
@@ -29,9 +58,10 @@ export default function useSocialNetworks() {
         return ""
     }
   }
-  const getIconScaleByType = (
+  
+  function getIconScaleByType(
     socialNetworkType: WPSelectCustomFieldValue<SocialNetworkType>
-  ): number => {
+  ): number {
     switch (socialNetworkType.value) {
       // Youtube icon height is smaller than the rest; therefore
       // the ratio must be bigger to compensate and have same height as other icons
@@ -41,32 +71,6 @@ export default function useSocialNetworks() {
         return 2.7
     }
   }
-  const socialNetworks = computed<SocialNetwork[]>(() => {
-    return data.value.map(
-      (socialNetworkPost): SocialNetwork => {
-        const type = getCustomFieldFromPost<
-          WPSelectCustomFieldValue<SocialNetworkType>
-        >(socialNetworkPost, SocialNetworksKeys.type, {
-          value: SocialNetworkType.Facebook,
-          label: "",
-        })
-        const iconName = getIconNameByType(type)
-
-        return {
-          id: socialNetworkPost.id,
-          name: getWPTitle(socialNetworkPost),
-          iconName,
-          scale: getIconScaleByType(type),
-          [SocialNetworksKeys.type]: type,
-          url: getCustomFieldFromPost(
-            socialNetworkPost,
-            SocialNetworksKeys.url,
-            ""
-          ),
-        }
-      }
-    )
-  })
 
   return {
     fetchSocialNetworks,

@@ -23,6 +23,14 @@ export default function useActivities(fetchData?: ActivityType) {
   } = useWpCategories()
   const { fetchNews } = useNews()
   const isLoadingActivities = ref(false)
+
+  const activities = computed(() => [
+    ...getActvitiesByType(ActivityType.Concert),
+    ...getActvitiesByType(ActivityType.Performance),
+    ...getActvitiesByType(ActivityType.Movie),
+    ...getActvitiesByType(ActivityType.Conversation),
+  ])
+
   // Initial data fetch
   if (fetchData && fetchData !== ActivityType.None) {
     fetchCategories().then(() => {
@@ -72,15 +80,15 @@ export default function useActivities(fetchData?: ActivityType) {
       .finally(() => (isLoadingActivities.value = false))
   }
 
-  const getActivityUrlBySlug = (postSlug: string): string => {
+  function getActivityUrlBySlug(postSlug: string): string {
     return `${Urls.Activities}${postSlug}`
   }
 
-  const getActivitiesGridUrlByActivityType = (type: ActivityType): string => {
+  function getActivitiesGridUrlByActivityType(type: ActivityType): string {
     return `${Urls.Programs}campos-magneticos/${getSlugByType(type)}`
   }
 
-  const getActvitiesGridTitleByType = (type: ActivityType): string => {
+  function getActvitiesGridTitleByType(type: ActivityType): string {
     switch (type) {
       case ActivityType.Conversation:
         return "Conversatorios"
@@ -95,7 +103,7 @@ export default function useActivities(fetchData?: ActivityType) {
     }
   }
 
-  const getSlugByType = (type: ActivityType): string => {
+  function getSlugByType(type: ActivityType): string {
     switch (type) {
       case ActivityType.Conversation:
         return "conversatorios"
@@ -110,7 +118,7 @@ export default function useActivities(fetchData?: ActivityType) {
     }
   }
 
-  const getTypeBySlug = (slug: string): ActivityType => {
+  function getTypeBySlug(slug: string): ActivityType {
     switch (slug) {
       case "conversatorios":
         return ActivityType.Conversation
@@ -125,7 +133,7 @@ export default function useActivities(fetchData?: ActivityType) {
     }
   }
 
-  const getActvitiesByType = (type: ActivityType) => {
+  function getActvitiesByType(type: ActivityType) {
     switch (type) {
       case ActivityType.Concert:
         return newsHelpers.mapNewsPostsToActivityType(concerts.value)
@@ -139,13 +147,6 @@ export default function useActivities(fetchData?: ActivityType) {
         return []
     }
   }
-
-  const activities = computed(() => [
-    ...getActvitiesByType(ActivityType.Concert),
-    ...getActvitiesByType(ActivityType.Performance),
-    ...getActvitiesByType(ActivityType.Movie),
-    ...getActvitiesByType(ActivityType.Conversation),
-  ])
 
   return {
     activities,

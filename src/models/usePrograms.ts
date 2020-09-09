@@ -61,9 +61,9 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
 }
 
 export default function usePrograms() {
-  const programs = computed<Program[]>(() => {
-    return data.value.map(mapProgramFromWpPost).sort(sortByOrder)
-  })
+  const programs = computed<Program[]>(() =>
+    data.value.map(mapProgramFromWpPost).sort(sortByOrder)
+  )
 
   function getProgramBySlug(slug: string): Program | undefined {
     return programs.value.find((p) => p.slug === slug)

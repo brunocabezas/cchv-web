@@ -185,6 +185,7 @@ export interface Edition {
   [EditionKeys.text]: string
   [EditionKeys.date]: string
   [EditionKeys.brochure_url]: string
+  [EditionKeys.url]: string
 }
 
 export interface Residency {

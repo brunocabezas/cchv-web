@@ -63,9 +63,6 @@ export default function useSponsors() {
     isLoading: isLoadingCategories,
   } = useAsyncData<WPResponseItem>(apiRoutes.SponsorsCategories)
 
-  const fetchSponsorsAndCategories = () =>
-    Promise.all([fetchSponsorsCategories(), fetchSponsors()])
-
   const isLoading = computed<boolean>(
     () => isLoadingSponsors.value || isLoadingCategories.value
   )
@@ -76,6 +73,10 @@ export default function useSponsors() {
       .sort(sortByOrder)
   )
 
+  function fetchSponsorsAndCategories() {
+    return Promise.all([fetchSponsorsCategories(), fetchSponsors()])
+  }
+  
   return {
     fetchSponsorsAndCategories,
     sponsorsCategories,

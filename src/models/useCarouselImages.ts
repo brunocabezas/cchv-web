@@ -15,51 +15,51 @@ const { data, fetch: fetchCarouselImages, isLoading } = useAsyncData<
   WPResponseItem
 >(apiRoutes.CarouselImages)
 
+const mapCarouselImageFromWpPost = (
+  carouselImagePost: WPResponseItem
+): CarouselImage => {
+  const imgUrl = getCustomFieldFromPost(
+    carouselImagePost,
+    CarouselImageKeys.url,
+    ""
+  )
+  const isInternal = imgUrl.includes(DOMAIN)
+  let url: string = imgUrl
+
+  // Internal urls already inlcude DOMAIN,
+  // should be removed to be used with <router-link />
+  if (isInternal) {
+    const urlSlices = url.split(`${DOMAIN}/`)
+    urlSlices.shift() // remove domain name
+    url = urlSlices.join("")
+  }
+
+  return {
+    id: carouselImagePost.id,
+    name: getWPTitle(carouselImagePost),
+    image: getCustomFieldFromPost(
+      carouselImagePost,
+      CarouselImageKeys.image,
+      ""
+    ),
+    video_url: getCustomFieldFromPost(
+      carouselImagePost,
+      CarouselImageKeys.video_url,
+      ""
+    ),
+    order: getCustomFieldFromPost<number>(
+      carouselImagePost,
+      CarouselImageKeys.order,
+      DEFAULT_ORDER
+    ),
+    url,
+    isInternal,
+  }
+}
+
 export default function useCarouselImages() {
-  const carousel = computed<CarouselImage[]>(() => {
-    return data.value
-      .map(
-        (carouselImagePost): CarouselImage => {
-          const imgUrl = getCustomFieldFromPost(
-            carouselImagePost,
-            CarouselImageKeys.url,
-            ""
-          )
-          const isInternal = imgUrl.includes(DOMAIN)
-          let url: string = imgUrl
-
-          // Internal urls already inlcude DOMAIN,
-          // should be removed to be used with <router-link />
-          if (isInternal) {
-            const urlSlices = url.split(`${DOMAIN}/`)
-            urlSlices.shift() // remove domain name
-            url = urlSlices.join("")
-          }
-
-          return {
-            id: carouselImagePost.id,
-            name: getWPTitle(carouselImagePost),
-            image: getCustomFieldFromPost(
-              carouselImagePost,
-              CarouselImageKeys.image,
-              ""
-            ),
-            video_url: getCustomFieldFromPost(
-              carouselImagePost,
-              CarouselImageKeys.video_url,
-              ""
-            ),
-            order: getCustomFieldFromPost<number>(
-              carouselImagePost,
-              CarouselImageKeys.order,
-              DEFAULT_ORDER
-            ),
-            url,
-            isInternal,
-          }
-        }
-      )
-      .sort(sortByOrder)
-  })
+  const carousel = computed<CarouselImage[]>(() =>
+    data.value.map(mapCarouselImageFromWpPost).sort(sortByOrder)
+  )
   return { fetchCarouselImages, carousel, isLoading }
 }

@@ -27,6 +27,7 @@ const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
       EditionKeys.brochure_url,
       ""
     ),
+    url: getCustomFieldFromPost(editionPost, EditionKeys.url, ""),
     order: getCustomFieldFromPost(
       editionPost,
       EditionKeys.order,
