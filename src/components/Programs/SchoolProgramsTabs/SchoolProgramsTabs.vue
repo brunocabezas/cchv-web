@@ -40,6 +40,7 @@
     >
       <SchoolProgramThumbnail :program="activeProgram" />
     </div>
+    <!-- displayed on mobile view -->
     <div v-if="!onBigScreen">
       <SchoolProgramThumbnail
         v-for="program in schoolPrograms"

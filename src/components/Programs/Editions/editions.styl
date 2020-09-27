@@ -37,7 +37,7 @@ $edition_height = 300px;
         @media (max-width: $md)
           height: auto;
           flex-direction: column-reverse;
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid $black;
 
         .editionInfo, .editionMedia
           width: 50%;
@@ -52,20 +52,36 @@ $edition_height = 300px;
           padding-right: 1em;
           overflow-y: auto;
 
+          @media (max-width: $md)
+            padding-right: 0;
+
           .editionName
             margin: 5px 0 5px 0;
             text-align: left;
+            transition: 0.2s background-color;
+
+            .fa-icon
+              @media (max-width: $md)
+                margin-left: 5px;
 
             @media (max-width: $md)
               font-size: 20px;
               height: auto;
+              display: flex;
+              align-items: center;
+              width: 100%;
+
+            &:hover
+              @media (max-width: $md)
+                background-color: $grey;
+                cursor: pointer;
 
             &.editionName--with-link:hover
               text-decoration: underline;
               cursor: pointer;
 
           .editionDate
-            color: $latest_posts_grey;
+            color: $blue;
             font-size: 16px;
             margin-top: 0;
             margin-bottom: 10px;
@@ -73,7 +89,7 @@ $edition_height = 300px;
           .editionBrochure
             display: flex;
             margin: 0 0 10px 0;
-            font-size 14px
+            font-size: 14px;
             align-items: center;
             justify-content: flex-start;
 

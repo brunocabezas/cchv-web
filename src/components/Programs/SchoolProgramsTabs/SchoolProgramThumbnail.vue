@@ -1,6 +1,7 @@
 <template>
   <div class="schoolProgramThumbnail">
     <div v-if="program" class="schoolProgramMedia">
+      <!-- displayed link on <ProgressiveImage/> only if program is active -->
       <router-link
         v-if="program.is_active && program.gallery && program.gallery[0]"
         :title="program.name"
@@ -16,6 +17,7 @@
     </div>
     <div v-if="program" class="schoolProgramInfo">
       <h3 class="schoolProgramName">
+        <!-- displayed link on name only if program is active -->
         <router-link
           v-if="program.is_active"
           :title="program.name"
@@ -30,6 +32,7 @@
         label="Descargar programa completo"
         :url="program.pdf"
       />
+      <hr class="schoolProgramThumbnailSeparator" />
     </div>
   </div>
 </template>
@@ -86,6 +89,13 @@ export default SchoolProgramThumbnail;
     @media (max-width: $md)
       margin-top: 1.5em;
 
+  &:last-child
+    .schoolProgramThumbnailSeparator
+      display: none;
+
+  .schoolProgramThumbnailSeparator
+    border: 1px solid darken($grey, 10);
+
   .schoolProgramMedia, .schoolProgramInfo
     flex: 1;
 
@@ -121,5 +131,5 @@ export default SchoolProgramThumbnail;
         margin-top: 5px;
 
       &:hover
-        text-decoration underline
+        text-decoration: underline;
 </style>

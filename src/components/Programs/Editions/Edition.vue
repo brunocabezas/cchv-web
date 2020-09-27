@@ -27,6 +27,9 @@
         <a :href="edition.url" target="_blank">{{ edition.name }}</a>
       </h1>
 
+      <p class="editionDate" v-if="edition.date && onBigScreen">
+        {{ edition.date }}
+      </p>
       <div v-if="!!edition.brochure_url && onBigScreen" class="editionBrochure">
         <a
           class="editionBrochureLink"
@@ -38,13 +41,12 @@
           </v-icon
         ></a>
       </div>
-      <p class="editionDate" v-if="edition.date && onBigScreen">
-        {{ edition.date }}
-      </p>
       <div>
         <collapse-transition>
           <div v-show="isOpen">
-            <div class="pageBody" v-html="edition.text"></div>
+            <p class="editionDate" v-if="edition.date">
+              {{ edition.date }}
+            </p>
             <div v-if="!!edition.brochure_url" class="editionBrochure">
               <a
                 class="editionBrochureLink"
@@ -52,9 +54,15 @@
                 title="Ver el catálogo"
                 :href="edition.brochure_url"
                 >Ver catálogo
-                <v-icon :color="MAIN_COLOR" name="external-link-alt"> </v-icon
+                <v-icon
+                  :color="MAIN_COLOR"
+                  :scale="0.8"
+                  name="external-link-alt"
+                >
+                </v-icon
               ></a>
             </div>
+            <div class="pageBody" v-html="edition.text"></div>
           </div>
         </collapse-transition>
       </div>
