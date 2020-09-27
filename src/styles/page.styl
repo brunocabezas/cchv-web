@@ -16,10 +16,14 @@
   .pageTitle
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     @media (max-width: $md)
       padding: 10px 0;
       margin: 0 $mobile_padding;
+
+    .pageTitleLink + .pageTitleText
+      margin-top: 0;
 
     .pageTitleText
       font-size: 38px;
@@ -29,6 +33,26 @@
         margin: 10px 0 0 0;
         font-size: 32px;
         padding: 0;
+
+    .pageTitleLink
+      margin-top: 10px;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      position: relative;
+
+      &:hover
+        opacity: 0.8;
+
+      .fa-icon
+        position: absolute;
+        left: -13px;
+        margin-right: 5px;
+
+        @media (max-width: $md)
+          position: initial;
+          left: auto;
 
   .pageRow
     display: flex;

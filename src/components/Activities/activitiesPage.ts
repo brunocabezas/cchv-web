@@ -4,11 +4,12 @@ import { ActivityType } from "@/types/customFieldsTypes"
 import Loader from "@/components/Loader.vue"
 import ActivitiesGrid from "@/components/Activities/ActivitiesGrid/ActivitiesGrid.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
-import Urls from '@/utils/urls'
+import Icon from "vue-awesome/components/Icon.vue";
+import Urls from "@/utils/urls"
 
 const ActivitiesPage = defineComponent({
   name: "ActivitiesPage",
-  components: { ProgressiveImage, Loader, ActivitiesGrid },
+  components: { ProgressiveImage, Loader, ActivitiesGrid, "v-icon": Icon },
   props: {
     activityType: {
       type: String as PropType<ActivityType>,

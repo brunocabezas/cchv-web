@@ -1,4 +1,4 @@
-import { defineComponent, ref } from "@vue/composition-api"
+import { defineComponent, ref, computed } from "@vue/composition-api"
 import CollapseTransition from "@ivanv/vue-collapse-transition"
 import Media from "@/components/Media/Media.vue"
 import { MAIN_COLOR } from "@/utils/constants"
@@ -27,6 +27,7 @@ const Edition = defineComponent({
       toggleIsOpen,
       MAIN_COLOR,
       onBigScreen,
+      mediaHeight: computed(() => onBigScreen.value ? '300px' : '200px')
     }
   },
 })

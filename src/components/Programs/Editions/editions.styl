@@ -53,26 +53,29 @@ $edition_height = 300px;
           overflow-y: auto;
 
           .editionName
-            margin: 5px 0 10px 0;
+            margin: 5px 0 5px 0;
             text-align: left;
 
             @media (max-width: $md)
               font-size: 20px;
               height: auto;
 
-            &:hover
+            &.editionName--with-link:hover
               text-decoration: underline;
               cursor: pointer;
 
           .editionDate
             color: $latest_posts_grey;
             font-size: 16px;
-            margin-top: 10px;
+            margin-top: 0;
+            margin-bottom: 10px;
 
           .editionBrochure
             display: flex;
+            margin: 0 0 10px 0;
+            font-size 14px
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
 
             .editionBrochureLink
               display: flex;
