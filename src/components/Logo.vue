@@ -33,9 +33,9 @@ export default Logo;
   width: 300px;
   align-items: center;
 
-  @media (max-width: $md)
-    width: auto;
-    
+  @media (max-width: 810px)
+    width: 260px;
+
   img
     width: 100%;
     padding: 0 30px;
@@ -43,5 +43,7 @@ export default Logo;
     @media (max-width: $md)
       width: auto;
       height: 40px;
+
+    @media (max-width: 810px)
       padding: 0;
 </style>
