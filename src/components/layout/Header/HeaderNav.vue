@@ -47,4 +47,4 @@
   </div>
 </template>
 <script lang="ts" src="./headerNav.ts"></script>
-<style scoped lang="stylus" src="./headerNav.styl"></style>
+<style lang="stylus" src="./headerNav.styl"></style>

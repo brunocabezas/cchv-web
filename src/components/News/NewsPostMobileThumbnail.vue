@@ -6,7 +6,7 @@
         :title="post.name"
         :to="getNewsPostUrlBySlug(post.slug)"
       >
-        <ProgressiveImage height="100%" :src="post.gallery[0].url" />
+        <ProgressiveImage :height="MOBILE_IMG_HEIGHT" :src="post.gallery[0].url" />
       </router-link>
     </div>
     <div v-if="post" class="newsPostInfo">
@@ -14,11 +14,9 @@
         {{ getActvitiesGridTitleByType(post.is_activity).slice(0, -1) }}
       </div>
       <h4 class="newsPostTitle">
-        <router-link :title="post.name" :to="getNewsPostUrlBySlug(post.slug)">{{
-          post.title
-        }}</router-link>
+        <router-link v-html="post.title" :title="post.name" :to="getNewsPostUrlBySlug(post.slug)"> </router-link>
       </h4>
-      <p>{{ post.date }}</p>
+      <p class="newsPostDate">{{ post.date }}</p>
     </div>
   </div>
 </template>
@@ -28,6 +26,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import useNews from "@/models/useNews";
 import useActivities from "@/models/useActivities";
+import { MOBILE_IMG_HEIGHT } from '@/utils/constants';
 
 const NewsPostMobileThumbnail = defineComponent({
   name: "NewsPostMobileThumbnail",
@@ -42,13 +41,15 @@ const NewsPostMobileThumbnail = defineComponent({
     const { getNewsPostUrlBySlug } = useNews();
     return {
       getNewsPostUrlBySlug,
-      getActvitiesGridTitleByType
+      getActvitiesGridTitleByType,
+      MOBILE_IMG_HEIGHT,
     };
   }
 });
 
 export default NewsPostMobileThumbnail;
 </script>
+
 <style lang="stylus">
 @import '../../styles/variables.styl';
 
@@ -61,31 +62,36 @@ export default NewsPostMobileThumbnail;
 
   &:last-child
     margin-bottom: 0;
+    border-bottom: none;
 
   .newsPostMedia
-    flex: 1;
-    width: 250px;
+    flex: 6;
+    // min-width: 200px;
     padding-left: 0;
-    background-color: $blue;
 
   .newsPostInfo
-    flex: 2;
+    flex: 5;
     padding-right: 0;
     font-size: 18px;
-    padding: 0 1em;
+    padding: 0 0 0 1em;
 
-    .newsPostBadge
-      background-color: $blue;
-      color: white;
-      padding: 5px 10px;
-      display: inline-block;
-      font-size: 14px;
-      margin-bottom: 5px;
+  .newsPostBadge
+    background-color: $blue;
+    color: white;
+    padding: 4px 10px;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
 
-    .newsPostTitle
-      margin-top: 0;
-      margin-bottom: 0;
+  .newsPostDate
+    margin-bottom: 0;
 
+  .newsPostTitle
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+
+    p
       a
         color: black;
         font-family: MontSerrat;

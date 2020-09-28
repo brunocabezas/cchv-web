@@ -5,7 +5,7 @@ import { NewsPost } from "@/types"
 import useAsyncData from "@/hooks/useAsyncData"
 import { WPResponseItem } from "@/types/wordpressTypes"
 import Urls from "@/utils/urls"
-import { DATE_FORMAT } from "@/utils/static"
+import { DATE_FORMAT } from "@/utils/constants"
 import dayjs from "dayjs"
 import useWpCategories from "@/models/useWpCategories"
 import newsHelpers from "@/utils/news"
@@ -43,13 +43,16 @@ export default function useNews() {
     newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
   )
 
-  // Home news are highlighted with is_highlighted set to true. Limit to two
-  const homeNews = computed<NewsPost[]>(() =>
+  // Highlighted news are displayed on:
+  // - homepage on regular viewports
+  // - news page
+  const highlightedNews = computed<NewsPost[]>(() =>
     news.value.filter((p) => p.is_highlighted).slice(0, 2)
   )
 
+  // All news that are not highlighted
   const newsToGrid = computed(() =>
-    news.value.filter((p) => !homeNews.value.find((n) => n.id === p.id))
+    news.value.filter((p) => !highlightedNews.value.find((n) => n.id === p.id))
   )
 
   function getNewsPostUrlBySlug(postSlug: string): string {
@@ -78,7 +81,7 @@ export default function useNews() {
 
   return {
     news: newsToGrid,
-    homeNews,
+    highlightedNews,
     singleNewsPost,
     getLatestNews,
     isLoading,

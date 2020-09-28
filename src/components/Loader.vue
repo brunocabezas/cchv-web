@@ -11,7 +11,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import BounceLoader from "vue-spinner/src/BounceLoader.vue";
-import { MAIN_COLOR } from "@/utils/static";
+import { MAIN_COLOR } from "@/utils/constants";
 
 const Loader = defineComponent({
   components: { BounceLoader },

@@ -3,7 +3,7 @@
 
 // burger menu
 .bm-menu
-  background-color: $dark-blue !important; 
+  background-color: $dark-blue !important;
   // Height is determined by its content
   height: auto !important;
   max-height: 'calc(100vh - %s)' % $header_mobile_height !important;
@@ -62,6 +62,8 @@ header.header
     @media (max-width: $md)
       width: 100%;
       height: auto;
+      padding-left: 0;
+      padding-right: 0;
 
     &--with-button
       @media (max-width: $md)

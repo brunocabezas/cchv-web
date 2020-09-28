@@ -14,26 +14,20 @@ const { data, fetch: fetchPages, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Pages
 )
 
+const mapPagesFromWp = (pagePost: WPResponseItem): Page => ({
+  id: pagePost.id,
+  name: getWPTitle(pagePost),
+  text: getCustomFieldFromPost(pagePost, PageKeys.text, ""),
+  gallery: getCustomFieldFromPost<WpImage[]>(pagePost, PageKeys.gallery, []),
+  extra_content: getCustomFieldFromPost<PageExtraContent>(
+    pagePost,
+    PageKeys.extra_content,
+    PageExtraContent.None
+  ),
+})
+
 export default function usePages() {
-  const pages = computed<Page[]>(() => {
-    return data.value.map(
-      (pagePost): Page => ({
-        id: pagePost.id,
-        name: getWPTitle(pagePost),
-        text: getCustomFieldFromPost(pagePost, PageKeys.text, ""),
-        gallery: getCustomFieldFromPost<WpImage[]>(
-          pagePost,
-          PageKeys.gallery,
-          []
-        ),
-        extra_content: getCustomFieldFromPost<PageExtraContent>(
-          pagePost,
-          PageKeys.extra_content,
-          PageExtraContent.None
-        ),
-      })
-    )
-  })
+  const pages = computed<Page[]>(() => data.value.map(mapPagesFromWp))
 
   const transparencyPage = computed<Page | null>(() => {
     return (

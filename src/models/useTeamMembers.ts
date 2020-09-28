@@ -12,7 +12,7 @@ import {
   groupTeamMembersByPosition,
   sortGrouptedTeamMembers,
 } from "@/utils/teamMembers"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 
@@ -20,30 +20,32 @@ const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
   WPResponseItem
 >(apiRoutes.Team)
 
+const mapTeamMemberFromWpPost = (
+  teamMemberPost: WPResponseItem
+): TeamMember => ({
+  id: teamMemberPost.id,
+  name: getWPTitle(teamMemberPost),
+  position: getCustomFieldFromPost(
+    teamMemberPost,
+    TeamMembersKeys.position,
+    ""
+  ),
+  order: getCustomFieldFromPost<number>(
+    teamMemberPost,
+    TeamMembersKeys.order,
+    DEFAULT_ORDER
+  ),
+  type: getCustomFieldFromPost(
+    teamMemberPost,
+    TeamMembersKeys.type,
+    TeamMemberType.Staff
+  ),
+})
+
 export default function useTeamMembers() {
-  const teamMembers = computed<TeamMember[]>(() => {
-    return data.value.map(
-      (teamMemberPost): TeamMember => ({
-        id: teamMemberPost.id,
-        name: getWPTitle(teamMemberPost),
-        position: getCustomFieldFromPost(
-          teamMemberPost,
-          TeamMembersKeys.position,
-          ""
-        ),
-        order: getCustomFieldFromPost<number>(
-          teamMemberPost,
-          TeamMembersKeys.order,
-          DEFAULT_ORDER
-        ),
-        type: getCustomFieldFromPost(
-          teamMemberPost,
-          TeamMembersKeys.type,
-          TeamMemberType.Staff
-        ),
-      })
-    )
-  })
+  const teamMembers = computed<TeamMember[]>(() =>
+    data.value.map(mapTeamMemberFromWpPost)
+  )
 
   const team = computed(() => {
     const team = teamMembers.value.filter(

@@ -17,7 +17,7 @@
     </div>
     <Slide
       v-if="!onBigScreen"
-      width="300"
+      width="320"
       @closeMenu="onMenuChange"
       :isOpen="isNavOpen"
       :right="true"
@@ -52,9 +52,9 @@
             <div class="contactContainerTitle headerNavItem">
               Contacto
             </div>
-            <a class="headerNavItemLink" href="mailto:info@cchv.cl"
-              >info@cchv.cl</a
-            >
+            <a class="headerNavItemLink" :href="`mailto:${CONTACT_EMAIL}`">{{
+              CONTACT_EMAIL
+            }}</a>
           </div>
         </div>
       </div>

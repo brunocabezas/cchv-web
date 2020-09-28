@@ -13,10 +13,16 @@
       />
     </div>
     <div class="newsPage__grid">
-      <NewsPostThumbnail small :post="post" v-bind:key="post.id" v-for="post in news" />
+      <NewsPostThumbnail
+        small
+        :post="post"
+        v-bind:key="post.id"
+        v-for="post in news"
+      />
       <infinite-loading @infinite="infiniteHandler">
         <div slot="spinner"></div>
         <div slot="no-more"></div>
+        <div slot="no-results"></div>
       </infinite-loading>
       <Loader
         v-if="!initialDataLoading && news.length"
@@ -31,7 +37,7 @@
 @import '../../../styles/variables.styl';
 
 $grid_padding = 25px;
-$mobile_grid_padding = '10px %s' % $grid_padding;
+// $mobile_grid_padding = '10px %s' % $grid_padding;
 
 .newsPage
   .pageTitleText
@@ -60,19 +66,21 @@ $mobile_grid_padding = '10px %s' % $grid_padding;
 
         @media (max-width: $md)
           margin: 0;
-          padding: $mobile_grid_padding;
+          padding: $mobile_padding;
 
       &:first-child
         padding-left: 0;
 
         @media (max-width: $md)
-          padding-left: $grid_padding;
+          padding-left: $mobile_padding;
+          padding-right: $mobile_padding;
 
       &:last-child
         padding-right: 0;
 
         @media (max-width: $md)
-          padding-left: $grid_padding;
+          padding-left: $mobile_padding;
+          padding-right: $mobile_padding;
 
       hr
         width: 99%;
@@ -102,7 +110,7 @@ $mobile_grid_padding = '10px %s' % $grid_padding;
         padding: $grid_padding;
 
         @media (max-width: $md)
-          padding: $mobile_grid_padding;
+          padding: $mobile_padding;
           margin: 0;
 
       // Grid of 3 items
@@ -112,13 +120,7 @@ $mobile_grid_padding = '10px %s' % $grid_padding;
           padding-left: 0;
 
           @media (max-width: $md)
-            padding-left: $grid_padding;
-
-      // item in the middle
-      &:nth-child(3n + 2)
-        &.newsPostPreview
-          hr
-            width: calc(100% - 50px);
+            padding-left: $mobile_padding;
 
       // last in the middle
       &:nth-child(3n)
@@ -126,5 +128,5 @@ $mobile_grid_padding = '10px %s' % $grid_padding;
           padding-right: 0;
 
           @media (max-width: $md)
-            padding-right: $grid_padding;
+            padding-right: $mobile_padding;
 </style>

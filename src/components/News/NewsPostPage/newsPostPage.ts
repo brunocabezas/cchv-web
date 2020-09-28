@@ -7,6 +7,7 @@ import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
 import { INITIAL_NEWS_BY_PAGE } from "../NewsPage/newsPage"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
+import { MOBILE_IMG_HEIGHT } from '@/utils/constants'
 
 export default defineComponent({
   name: "NewsPostPage",
@@ -46,13 +47,13 @@ export default defineComponent({
         fetchSingleNewsPost({ per_page: 1, slug }, false, true)
       }
     )
-
     return {
       getNewsPostUrlBySlug,
       latestNews: filteredLatestNews,
       post,
       isLoading,
       onBigScreen,
+      MOBILE_IMG_HEIGHT
     }
   },
 })

@@ -40,6 +40,7 @@
     >
       <SchoolProgramThumbnail :program="activeProgram" />
     </div>
+    <!-- displayed on mobile view -->
     <div v-if="!onBigScreen">
       <SchoolProgramThumbnail
         v-for="program in schoolPrograms"
@@ -68,7 +69,7 @@
 
   .schoolProgramsAbstract
     @media (max-width: $md)
-      padding: 1em;
+      padding: $mobile_padding;
 
   .schoolProgramTabsTitle
     justify-content: center;

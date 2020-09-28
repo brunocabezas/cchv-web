@@ -91,7 +91,7 @@ export enum ProgramKeys {
   gallery = "gallery",
   extra_content = "extra_content",
   order = "order",
-  short_name = "short_name"
+  short_name = "short_name",
 }
 
 // Concurso juan downey videos
@@ -134,6 +134,7 @@ export enum EditionKeys {
   order = "order",
   date = "date",
   brochure_url = "brochure_url",
+  url = "url",
 }
 
 export enum ResidencyKeys {

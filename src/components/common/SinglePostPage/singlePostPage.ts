@@ -35,8 +35,7 @@ const SinglePostPage = defineComponent({
       workshops,
       fetchSchoolPrograms,
     } = useSchoolPrograms()
-    const { activities, isLoading: isLoadingActivities } = useActivities()
-
+    const { isLoading: isLoadingActivities } = useActivities()
     if (
       props.pageType === SinglePostDataType.SchoolProgram ||
       props.pageType === SinglePostDataType.Workshop
@@ -71,7 +70,6 @@ const SinglePostPage = defineComponent({
     return {
       page,
       isLoading,
-      MEDIA_HEIGHT,
     }
   },
 })

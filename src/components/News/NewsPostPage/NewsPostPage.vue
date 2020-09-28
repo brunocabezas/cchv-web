@@ -16,6 +16,7 @@
         <p v-html="post.abstract" class="newsPostAbstract"></p>
 
         <div class="pageBody" v-html="post.text"></div>
+        <hr v-if="!onBigScreen" />
       </div>
       <div
         v-if="latestNews.length && onBigScreen && !isLoading"
@@ -32,7 +33,10 @@
             :title="post.title"
             :to="getNewsPostUrlBySlug(post.slug)"
           >
-            <ProgressiveImage :src="post.thumbnail" height="100px" />
+            <ProgressiveImage
+              :src="post.thumbnail"
+              :height="MOBILE_IMG_HEIGHT"
+            />
           </router-link>
           <h4 class="latestPostsItem__title">
             <router-link
@@ -56,6 +60,7 @@
           :post="post"
         />
       </div>
+      <div v-else class="newsPostPageRight latestNews"></div>
       <Loader v-if="isLoading" />
     </div>
   </div>
@@ -71,32 +76,55 @@
 
   @media (max-width: $md)
     flex-direction: column;
-    padding: 1em;
+    padding: 0;
 
   // Single news post content
   .newsPostPageLeft
-    width: 80%;
-    flex-grow: 1;
+    // .newsPostPageRight is same but with 0.2 as ratio
+    width: 'calc(%s * 0.8)' % $boxed_content_max_width;
     margin-right: 25px;
 
     @media (max-width: $md)
       width: 100%;
-      border-bottom: 2px solid $blue;
-      margin-bottom: 1em;
+      display: block;
+
+    hr
+      display: none;
+
+      @media (max-width: $md)
+        display: block;
+        margin-left: $mobile_padding;
+        margin-right: $mobile_padding;
+        border-bottom: 2px solid $blue;
+        margin-bottom: 1em;
 
     .pageTitleText
       color: $blue;
 
+      @media (max-width: $md)
+        padding: 0 10px;
+
     .newsPostAbstract
       font-weight: bold;
 
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
+
     .newsPostDate
       color: $latest_posts_grey;
+
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
+
+    .pageBody
+      @media (max-width: $md)
+        padding: 0 $mobile_padding;
 
   // Latest news
   .newsPostPageRight
     @media (max-width: $md)
       width: 100%;
+      padding: 0 $mobile_padding;
 
     .latestPostsTitle
       @media (max-width: $md)

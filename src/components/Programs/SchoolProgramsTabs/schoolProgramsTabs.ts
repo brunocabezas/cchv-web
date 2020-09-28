@@ -6,7 +6,7 @@ import useSchoolPrograms from "@/models/useSchoolPrograms"
 import SchoolProgramThumbnail from "@/components/Programs/SchoolProgramsTabs/SchoolProgramThumbnail.vue"
 import useTabs from "@/hooks/useTabs"
 import { SchoolProgram } from "@/types"
-import useMediaQueries from '@/hooks/useMediaQueries'
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 const SchoolProgramsTabs = defineComponent({
   name: "SchoolProgramsTabs",

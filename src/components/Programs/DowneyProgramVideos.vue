@@ -10,6 +10,13 @@
       >
         <div class="programVideo">
           <div class="programVideo__meta">
+            <div v-if="!onBigScreen" class="programVideo__player">
+              <Media
+                :gallery="video.thumbnail ? [{ url: video.thumbnail }] : []"
+                :youtubeUrl="video.url"
+                height="100%"
+              />
+            </div>
             <h2 v-if="video.event" class="programVideo__title">
               {{ video.event }}
             </h2>
@@ -25,9 +32,9 @@
               v-html="video.text"
             />
           </div>
-          <div class="programVideo__player">
+          <div v-if="onBigScreen" class="programVideo__player">
             <Media
-              :gallery="[{ url: video.thumbnail }]"
+              :gallery="video.thumbnail ? [{ url: video.thumbnail }] : []"
               :youtubeUrl="video.url"
               height="100%"
             />
@@ -44,6 +51,7 @@ import { defineComponent, computed } from "@vue/composition-api";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import useProgramVideos from "@/models/useProgramVideos";
+import useMediaQueries from "@/hooks/useMediaQueries";
 
 const DowneyProgramVideos = defineComponent({
   name: "DowneyProgramVideos",
@@ -52,11 +60,12 @@ const DowneyProgramVideos = defineComponent({
     Media
   },
   setup(props) {
+    const { onBigScreen } = useMediaQueries();
     const { programVideos, isLoading, fetchProgramVideos } = useProgramVideos();
 
     fetchProgramVideos();
 
-    return { programVideos, isLoading };
+    return { programVideos, isLoading, onBigScreen };
   }
 });
 
@@ -83,11 +92,14 @@ $margin_between_videos = 2em;
 
       @media (max-width: $md)
         flex-direction: column;
-        height auto
+        height: auto;
 
       &__title
         margin-top: 0;
         margin-bottom: 5px;
+
+        @media (max-width: $md)
+          margin-top: 5px;
 
       &__text
         text-align: justify;
@@ -103,17 +115,15 @@ $margin_between_videos = 2em;
 
         @media (max-width: $md)
           width: 100%;
-          padding-right 0
+          padding-right: 0;
 
       &__player
         margin-left: 15px;
-        height: 100%;
         width: 60%;
 
         @media (max-width: $md)
           width: 100%;
-          margin-left 0
-          height 300px
+          margin-left: 0;
 
   hr
     width: 100%;

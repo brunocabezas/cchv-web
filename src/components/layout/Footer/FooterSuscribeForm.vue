@@ -77,32 +77,51 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-import { NEWSLETTER_SUSCRIBE_URL } from "../../../utils/static";
+import { NEWSLETTER_SUSCRIBE_URL } from "@/utils/constants";
 
 export default defineComponent({
   name: "FooterSuscribeForm",
   setup() {
     return { suscribeUrl: NEWSLETTER_SUSCRIBE_URL };
-  }
+  },
 });
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../../../styles/variables.styl';
 
+$media_query = 1100px;
+
 .footerSuscribeForm
+  height: $footer_form_height;
+
+  @media (max-width: $media_query)
+    height: auto;
+    min-height: $footer_form_height;
+
   #mc_embed_signup_scroll
     height: $footer_form_height;
     display: flex;
     flex-wrap: wrap;
+
+    @media (max-width: $media_query)
+      display: block;
+      height: auto;
 
     .mc-field-group
       display: inline-flex;
       align-items: center;
       position: relative;
 
+      @media (max-width: $media_query)
+        display: block;
+        margin-top: 40px;
+
       &:not(.clear)
         margin-right: 2.5em;
+
+        @media (max-width: 1265px)
+          margin-right: 10px;
 
       &:first-child
         margin-left: 0;
@@ -140,6 +159,9 @@ export default defineComponent({
   border: 0;
   font-size: 14px;
   cursor: pointer;
+
+  @media (max-width: 1265px)
+    margin-top: 10px;
 
   &:hover
     background-color: darken($blue, 10);

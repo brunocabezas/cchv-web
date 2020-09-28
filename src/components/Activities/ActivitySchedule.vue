@@ -32,7 +32,7 @@
 <script>
 import { defineComponent, PropType } from "@vue/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
-import { MAIN_COLOR } from "@/utils/static";
+import { MAIN_COLOR } from "@/utils/constants";
 
 export default defineComponent({
   components: { "v-icon": Icon },
@@ -65,9 +65,8 @@ export default defineComponent({
   align-items: center;
   justify-content: flex-end;
 
-  // Hide on small screens
   @media (max-width: $md)
-    display: none;
+    padding: $mobile_padding;
 
   .activityDate, .activityCalendar
     font-weight: bold;

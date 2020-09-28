@@ -5,18 +5,12 @@ import Loader from "@/components/Loader.vue"
 import Media from "@/components/Media/Media.vue"
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue"
 import ProgramActivites from "@/components/Programs/ProgramActivities.vue"
-import Editions from "@/components/Programs/Editions/Editions.vue"
+import Editions from "@/components/Programs/Editions/EditionsList.vue"
 import Residencies from "@/components/Programs/Residencies/Residencies.vue"
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue"
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import useMediaQueries from "@/hooks/useMediaQueries"
-
-// Returns true if program has contentType
-const matchProgramContent = (
-  contentType: ProgramExtraContent,
-  program: Program
-) => !!(program && program.extra_content === contentType)
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
@@ -38,7 +32,11 @@ const ProgramPage = defineComponent({
   },
   setup(props) {
     const { onBigScreen } = useMediaQueries()
-    const { getProgramBySlug, isLoading } = usePrograms()
+    const {
+      getProgramBySlug,
+      isLoading,
+      matchContentTypeWithProgram,
+    } = usePrograms()
 
     const program = computed<Program | undefined>(() =>
       getProgramBySlug(props.slug)
@@ -46,7 +44,7 @@ const ProgramPage = defineComponent({
 
     const isArtScienceAndCultureProgram = computed<boolean>(() =>
       program.value
-        ? matchProgramContent(
+        ? matchContentTypeWithProgram(
             ProgramExtraContent.ArtScienceAndCulture,
             program.value
           )
@@ -55,29 +53,38 @@ const ProgramPage = defineComponent({
 
     return {
       program,
-      displaySmallTitle: computed<boolean>(
-        () => isArtScienceAndCultureProgram.value
-      ),
       isLoading,
       onBigScreen,
       isMagneticFieldsProgram: computed<boolean>(() =>
         program.value
-          ? matchProgramContent(ProgramExtraContent.Activities, program.value)
+          ? matchContentTypeWithProgram(
+              ProgramExtraContent.Activities,
+              program.value
+            )
           : false
       ),
       isSchoolProgram: computed<boolean>(() =>
         program.value
-          ? matchProgramContent(ProgramExtraContent.Schools, program.value)
+          ? matchContentTypeWithProgram(
+              ProgramExtraContent.Schools,
+              program.value
+            )
           : false
       ),
       isDowneyProgram: computed<boolean>(() =>
         program.value
-          ? matchProgramContent(ProgramExtraContent.Videos, program.value)
+          ? matchContentTypeWithProgram(
+              ProgramExtraContent.Videos,
+              program.value
+            )
           : false
       ),
       isResidencies: computed<boolean>(() =>
         program.value
-          ? matchProgramContent(ProgramExtraContent.Residencies, program.value)
+          ? matchContentTypeWithProgram(
+              ProgramExtraContent.Residencies,
+              program.value
+            )
           : false
       ),
       isArtScienceAndCultureProgram: isArtScienceAndCultureProgram,

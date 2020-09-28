@@ -3,11 +3,13 @@ import { NewsKeys } from "@/types/customFieldsKeysTypes"
 import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
 import { NewsPost, Activity } from "@/types"
 import dayjs from "dayjs"
-import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./static"
+import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./constants"
 import { ActivityType } from "@/types/customFieldsTypes"
 import { dateIsPast } from "./date"
+import useMediaQueries from "@/hooks/useMediaQueries"
 
 const mapNewsCustomFieldsToNews = (newsPost: WPResponseItem): NewsPost => {
+  const { onBigScreen } = useMediaQueries()
   const gallery = getCustomField<WpImage[]>(newsPost, NewsKeys.gallery, [])
   const activityDate = getCustomField<string>(
     newsPost,
@@ -16,7 +18,9 @@ const mapNewsCustomFieldsToNews = (newsPost: WPResponseItem): NewsPost => {
   )
 
   const activity_date = activityDate
-    ? dayjs(activityDate, CUSTOM_FIELDS_DATE_FORMAT).format(DATE_FORMAT)
+    ? dayjs(activityDate, CUSTOM_FIELDS_DATE_FORMAT).format(
+        onBigScreen.value ? "DD MMM, YYYY" : DATE_FORMAT
+      )
     : ""
 
   const activity_calendar_url = getCustomField<string>(

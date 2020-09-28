@@ -13,7 +13,7 @@ import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import Urls from "@/utils/urls"
 import { sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 
@@ -61,12 +61,19 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
 }
 
 export default function usePrograms() {
-  const programs = computed<Program[]>(() => {
-    return data.value.map(mapProgramFromWpPost).sort(sortByOrder)
-  })
+  const programs = computed<Program[]>(() =>
+    data.value.map(mapProgramFromWpPost).sort(sortByOrder)
+  )
 
   function getProgramBySlug(slug: string): Program | undefined {
     return programs.value.find((p) => p.slug === slug)
+  }
+
+  function matchContentTypeWithProgram(
+    contentType: ProgramExtraContent,
+    program: Program
+  ) {
+    return !!(program && program.extra_content === contentType)
   }
 
   return {
@@ -75,5 +82,6 @@ export default function usePrograms() {
     programs,
     isLoading,
     getProgramBySlug,
+    matchContentTypeWithProgram,
   }
 }

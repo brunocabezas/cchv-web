@@ -11,7 +11,7 @@
       <ProgressiveImage
         class="newsPostPreview__thumbnail"
         :src="post.thumbnail"
-        :height="small ? `150px` : `300px`"
+        :height="imageHeight"
       />
     </router-link>
     <h3 class="newsPostPreview__title">
@@ -44,13 +44,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "@vue/composition-api";
+import { defineComponent, PropType, computed } from "@vue/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { NewsPost } from "@/types";
 import Urls from "@/utils/urls";
 import useNews from "@/models/useNews";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
-import { MAIN_COLOR } from "@/utils/static";
+import { MAIN_COLOR } from "@/utils/constants";
 
 export default defineComponent({
   name: "NewsPostThumbnail",
@@ -65,10 +65,14 @@ export default defineComponent({
     }
   },
   components: { ProgressiveImage, "v-icon": Icon },
-  setup() {
+  setup(props) {
     const { getNewsPostUrlBySlug } = useNews();
 
-    return { getNewsPostUrlBySlug, MAIN_COLOR };
+    return {
+      getNewsPostUrlBySlug,
+      MAIN_COLOR,
+      imageHeight: computed(() => (props.small ? `190px` : `300px`))
+    };
   }
 });
 </script>
@@ -81,15 +85,13 @@ export default defineComponent({
   position: relative;
   max-width: 50%;
 
+  hr
+    @media (max-width: $md)
+      display: none;
+
   @media (max-width: $md)
     max-width: none;
     padding: 5px 15px;
-
-  hr
-    position: absolute;
-    bottom: 0;
-    color: #344284;
-    width: calc(100% - 30px);
 
   &__date, &__abstract
     margin: 10px 0;
@@ -107,8 +109,9 @@ export default defineComponent({
 
     @media (max-width: $md)
       color: black;
-      padding-bottom: 10px;
+      padding-bottom: $mobile_padding;
       border-bottom: 1px solid $blue;
+      margin-bottom: 0;
 
   &__title
     margin-bottom: 0;

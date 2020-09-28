@@ -11,7 +11,7 @@ import { TeamMember } from "@/types/customFieldsTypes"
 import { TeamMemberPosition } from "@/utils/teamMembers"
 import dayjs from "dayjs"
 import customParseFormat from "dayjs/plugin/customParseFormat"
-import { CUSTOM_FIELDS_DATE_FORMAT } from "./static"
+import { CUSTOM_FIELDS_DATE_FORMAT } from "./constants"
 
 dayjs.extend(customParseFormat)
 

@@ -1,7 +1,7 @@
 <template>
   <div class="editions">
-    <Loader :loading="isLoading" />
-    <div class="editionsList">
+    <Loader size="20px" :loading="isLoading" />
+    <div v-if="!isLoading" class="editionsList">
       <div
         v-bind:key="event.id"
         v-for="event in editions"
@@ -15,5 +15,5 @@
   </div>
 </template>
 
-<script lang="ts" src="./editions.ts"></script>
-<style lang="stylus" src="./editions.styl"></style>
+<script lang="ts" src="./editionsList.ts"></script>
+<style lang="stylus" src="./editionsList.styl"></style>

@@ -7,7 +7,7 @@ import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
 import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
 import { Sponsor, SponsorsCategory } from "@/types"
 import { filterUndef, sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/static"
+import { DEFAULT_ORDER } from "@/utils/constants"
 
 Vue.use(VueCompositionApi)
 
@@ -63,9 +63,6 @@ export default function useSponsors() {
     isLoading: isLoadingCategories,
   } = useAsyncData<WPResponseItem>(apiRoutes.SponsorsCategories)
 
-  const fetchSponsorsAndCategories = () =>
-    Promise.all([fetchSponsorsCategories(), fetchSponsors()])
-
   const isLoading = computed<boolean>(
     () => isLoadingSponsors.value || isLoadingCategories.value
   )
@@ -76,6 +73,10 @@ export default function useSponsors() {
       .sort(sortByOrder)
   )
 
+  function fetchSponsorsAndCategories() {
+    return Promise.all([fetchSponsorsCategories(), fetchSponsors()])
+  }
+  
   return {
     fetchSponsorsAndCategories,
     sponsorsCategories,

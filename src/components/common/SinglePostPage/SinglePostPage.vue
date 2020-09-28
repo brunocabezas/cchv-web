@@ -2,11 +2,7 @@
   <div class="page singlePostPage">
     <Loader :loading="isLoading" />
     <div v-if="page">
-      <Media
-        :height="MEDIA_HEIGHT"
-        :youtubeUrl="page.video_url"
-        :gallery="page.gallery"
-      />
+      <Media :youtubeUrl="page.video_url" :gallery="page.gallery" />
       <h1 v-html="page.name" class="pageTitleText"></h1>
       <div class="pageBody" v-html="page.text"></div>
       <div v-if="page.pdf" class="pageBody">

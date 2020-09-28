@@ -96,7 +96,7 @@ export default Residencies;
 
     .residencyInfo
       @media (max-width: $md)
-        padding: 0 1em;
+        padding: 0 $mobile_padding;
 
     .residencyMedia, .residencyInfo
       flex: 1;

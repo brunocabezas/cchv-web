@@ -22,7 +22,7 @@ export default defineComponent({
 @import '../../styles/variables.styl';
 
 .homeSection
-  width: $boxed_content_max_width;
+  max-width: $boxed_content_max_width;
   page_padding();
   position: relative;
   margin: 0 auto;
@@ -36,6 +36,6 @@ export default defineComponent({
     margin-bottom: 15px;
 
     @media (max-width: $md)
-      padding: 0 15px;
+      padding: 0 10px;
       margin: 10px 0;
 </style>

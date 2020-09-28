@@ -1,9 +1,10 @@
-import { defineComponent, ref } from "@vue/composition-api"
+import { defineComponent, ref, computed, PropType } from "@vue/composition-api"
 import CollapseTransition from "@ivanv/vue-collapse-transition"
 import Media from "@/components/Media/Media.vue"
-import { MAIN_COLOR } from "@/utils/static"
+import { MAIN_COLOR } from "@/utils/constants"
 import Icon from "vue-awesome/components/Icon.vue"
 import useMediaQueries from "@/hooks/useMediaQueries"
+import { Edition } from "@/types"
 
 const Edition = defineComponent({
   name: "Edition",
@@ -12,21 +13,25 @@ const Edition = defineComponent({
     "v-icon": Icon,
     "collapse-transition": CollapseTransition,
   },
-  props: { 
-    edition: Object
+  props: {
+    edition: {
+      type: Object as PropType<Edition>,
+      required: true,
+    },
   },
   setup() {
     const isOpen = ref(false)
     const { onBigScreen } = useMediaQueries()
-
     function toggleIsOpen() {
       isOpen.value = !isOpen.value
     }
+
     return {
       isOpen,
       toggleIsOpen,
       MAIN_COLOR,
       onBigScreen,
+      mediaHeight: computed(() => (onBigScreen.value ? "300px" : "200px")),
     }
   },
 })

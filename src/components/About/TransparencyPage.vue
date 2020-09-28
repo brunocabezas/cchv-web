@@ -15,7 +15,7 @@
         ></div>
       </div>
       <div class="pageRight">
-        <ul v-if="!isLoading">
+        <ul class="transparencyDocumentList" v-if="!isLoading">
           <li
             class="transparencyDocument"
             v-for="doc in documents"
@@ -74,6 +74,10 @@ export default defineComponent({
   .pageRight
     position: relative;
     margin-left: 20px;
+
+  .transparencyDocumentList
+    @media (min-width: $md)
+      margin-top: 0;
 
   .transparencyDocument
     margin-bottom: 5px;
