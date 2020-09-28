@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import FooterSponsors from "@/components/layout/Footer/FooterSponsors.vue";
+import FooterSponsors from "@/components/layout/Footer/FooterSponsors/FooterSponsors.vue";
 import SocialNetworks from "@/components/SocialNetworks.vue";
 import FooterSuscribeForm from "@/components/layout/Footer/FooterSuscribeForm.vue";
 import { CONTACT_EMAIL } from "@/utils/constants";
