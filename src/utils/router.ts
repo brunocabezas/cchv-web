@@ -22,23 +22,17 @@ const aboutRoutes = [
   {
     path: Urls.AboutHistory,
     component: HistoryPage,
-    meta: {
-      title: "Historia",
-    },
+    name: "Historia",
   },
   {
     path: Urls.AboutTeam,
     component: TeamPage,
-    meta: {
-      title: "Equipo",
-    },
+    name: "Equipo",
   },
   {
     path: Urls.AboutTransparency,
     component: TransparencyPage,
-    meta: {
-      title: "Transparencia",
-    },
+    name: "Transparencia",
   },
 ]
 
@@ -50,9 +44,7 @@ const programRoutes = [
     props: (route: Route) => ({
       slug: route.params.slug,
     }),
-    meta: {
-      title: "Programas",
-    },
+    name: "Programas",
   },
   // Program Activities
   {
@@ -62,9 +54,7 @@ const programRoutes = [
       // Prop of ActivitiesPage
       activityType: getTypeBySlug(route.params.activityType),
     }),
-    meta: {
-      title: "Actividades",
-    },
+    name: "Actividades",
   },
   // School Program Single Page
   {
@@ -74,9 +64,7 @@ const programRoutes = [
       slug: route.params.slug,
       pageType: SinglePostDataType.SchoolProgram,
     }),
-    meta: {
-      title: "Escuelas",
-    },
+    name: "Escuelas",
   },
 ]
 
@@ -84,9 +72,7 @@ const newsRoutes = [
   {
     path: Urls.News,
     component: NewsPage,
-    meta: {
-      title: "Noticias",
-    },
+    name: "Noticias",
   },
   {
     path: `${Urls.NewsPost}:postSlug`,
@@ -94,42 +80,41 @@ const newsRoutes = [
     props: (route: Route) => ({
       postSlug: route.params.postSlug,
     }),
-    meta: {
-      title: "Noticias",
-    },
+    name: "Noticias",
   },
 ]
+// Workshops Single Page
+
+const singleWorkshopPage = {
+  path: `${Urls.Workshop}:slug`,
+  component: SinglePostPage,
+  props: (route: Route) => ({
+    slug: route.params.slug,
+    pageType: SinglePostDataType.Workshop,
+  }),
+  name: "Mandragoras",
+}
+
+const singleResidencyPage =
+  // Residency Single Page
+  {
+    path: `${Urls.Residencies}/:slug`,
+    component: ResidencyPage,
+    props: (route: Route) => ({
+      slug: route.params.slug,
+    }),
+    name: "Residencias",
+  }
 
 const router = new VueRouter({
   mode: "history",
-  routes:  [
-    { path: Urls.Home, component: Home },
+  routes: [
+    { path: Urls.Home, component: Home, name: "Inicio" },
     ...newsRoutes,
     ...aboutRoutes,
     ...programRoutes,
-    // Workshops Single Page
-    {
-      path: `${Urls.Workshop}:slug`,
-      component: SinglePostPage,
-      props: (route: Route) => ({
-        slug: route.params.slug,
-        pageType: SinglePostDataType.Workshop,
-      }),
-      meta: {
-        title: "Mandragoras",
-      },
-    },
-    // Residency Single Page
-    {
-      path: `${Urls.Residencies}/:slug`,
-      component: ResidencyPage,
-      props: (route: Route) => ({
-        slug: route.params.slug,
-      }),
-      meta: {
-        title: "Residencias",
-      },
-    },
+    singleWorkshopPage,
+    singleResidencyPage,
   ],
   // Always set page to top when changing route
   scrollBehavior(to, from, savedPosition) {
@@ -141,9 +126,8 @@ router.afterEach((to, from) => {
   // Use next tick to handle router history correctly
   // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
   Vue.nextTick(() => {
-    // Display title depending on each route meta information meta.title
-    const metaTitle = to.meta.title ? ` | ${to.meta.title}` : ""
-    document.title = `${DEFAULT_TITLE}${metaTitle}`
+    // Use route name for the title
+    document.title = `${DEFAULT_TITLE}${to.name ? ` | ${to.name}` : ""}`
   })
 })
 
