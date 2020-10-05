@@ -51,15 +51,10 @@ export default function useAsyncData<T>(url: apiRoutes): asyncData<T[]> {
       status.value = AsyncDataStatus.Loading
 
       return client
-        .get(url, {
-          params: {
-            per_page: 100,
-            ...urlParams,
-          },
-        })
+        .get(url, { params: { per_page: 100, ...urlParams } })
         .then((res: AxiosResponse<WpResponseData<T>>) => {
-          const val = [...data.value, ...res.data]
-          data.value = !usePagination ? res.data : val
+          const arrayWithDataAndResponse = [...data.value, ...res.data]
+          data.value = !usePagination ? res.data : arrayWithDataAndResponse
           status.value = AsyncDataStatus.Success
 
           return res
@@ -71,14 +66,10 @@ export default function useAsyncData<T>(url: apiRoutes): asyncData<T[]> {
         })
     } else {
       return new Promise((resolve) => resolve())
-
     }
-
   }
 
-  const isLoading = computed(() => {
-    return status.value === AsyncDataStatus.Loading
-  })
+  const isLoading = computed(() => status.value === AsyncDataStatus.Loading)
 
   return {
     status: computed(() => status.value),

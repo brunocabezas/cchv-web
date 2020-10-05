@@ -43,29 +43,27 @@ export default defineComponent({
     const totalPages = ref(-1)
     const initialDataLoading = ref(false)
 
+    // Fetching data initially
     onMounted(() => {
-      // Fetching data initially
-      if (news.value.length === 0) {
-        initialDataLoading.value = true
-        const options = { per_page: 6, page: page.value }
-        fetchNews(options, true)
-          .then((response) => {
-            const totalPagesFromHeader =
-              (response &&
-                response.headers &&
-                response.headers[TOTAL_PAGES_HEADER]) ||
-              NO_PAGES_INDICATOR
-            // Set total pages from response header
-            totalPages.value = parseInt(totalPagesFromHeader, 10)
-            setNewsPage(page.value + 1)
-          })
-          .catch(() => {
-            totalPages.value = NO_PAGES_INDICATOR
-          })
-          .finally(() => {
-            initialDataLoading.value = false
-          })
-      }
+      initialDataLoading.value = true
+      const options = { per_page: 6, page: page.value }
+      fetchNews(options, true)
+        .then((response) => {
+          const totalPagesFromHeader =
+            (response &&
+              response.headers &&
+              response.headers[TOTAL_PAGES_HEADER]) ||
+            NO_PAGES_INDICATOR
+          // Set total pages from response header
+          totalPages.value = parseInt(totalPagesFromHeader, 10)
+          setNewsPage(page.value + 1)
+        })
+        .catch(() => {
+          totalPages.value = NO_PAGES_INDICATOR
+        })
+        .finally(() => {
+          initialDataLoading.value = false
+        })
     })
 
     function infiniteHandler($state: infiniteHandlerState) {

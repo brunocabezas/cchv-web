@@ -37,6 +37,11 @@ export default function useNews() {
       .sort((a: NewsPost, b: NewsPost): number => {
         return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT))
       })
+      // Filter duplicated ids
+      .filter(
+        (thing, index, self) =>
+          index === self.findIndex((t) => t.id === thing.id)
+      )
   )
 
   const singleNewsPost = computed(() =>
