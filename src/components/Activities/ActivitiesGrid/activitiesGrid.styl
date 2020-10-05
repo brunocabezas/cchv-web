@@ -30,7 +30,7 @@
         padding-right: $mobile_padding;
         margin-bottom: 15px;
         padding-bottom: 15px;
-        padding-top 0
+        padding-top: 0;
 
         &:not(:last-child)
           border-bottom: 2px solid darken($grey, 10);
@@ -47,16 +47,22 @@
           @media (max-width: $md)
             display: none;
 
+      // Section displayed only on mobile via "display: block;"
       .activitiesMobileSchedule
         flex: 1.5;
         text-align: left;
         padding: 0 10px;
         display: none;
-        flex-direction: column;
 
+        // Display on mobile
         @media (max-width: $md)
-          display: flex;
+          display: block;
 
+        // This section contains 3 blocks of information
+        .activitiesGridLink, .activitiesMobileScheduleDate, .activitiesMobileScheduleCalendarLinkContainer
+          display: block;
+
+        // Text with link to the page of the activity
         .activitiesMobileScheduleTitle
           margin-top: 0;
           color: black;
@@ -66,12 +72,9 @@
             text-decoration: underline;
 
         .activitiesMobileScheduleDate
-          margin: 0;
+          margin: 0 0 10px 0;
 
         .activitiesMobileScheduleCalendarLinkContainer
-          flex-grow: 1;
-          display: flex;
-
           .activitiesMobileScheduleCalendarLink
             background-color: $blue;
             color: white;
