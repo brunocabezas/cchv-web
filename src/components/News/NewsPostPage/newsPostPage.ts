@@ -4,7 +4,7 @@ import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Media from "@/components/Media/Media.vue"
 import NewsPostMobileThumbnail from "@/components/News/NewsPostMobileThumbnail.vue"
 import ActivitySchedule from "@/components/Activities/ActivitySchedule.vue"
-import { INITIAL_NEWS_BY_PAGE } from "../NewsPage/newsPage"
+import { INITIAL_NEWS } from "../NewsPage/newsPage"
 import useNews from "@/models/useNews"
 import useMediaQueries from "@/hooks/useMediaQueries"
 import { MOBILE_IMG_HEIGHT } from '@/utils/constants'
@@ -35,7 +35,7 @@ export default defineComponent({
     } = useNews()
     const { onBigScreen } = useMediaQueries()
     fetchSingleNewsPost({ per_page: 1, slug: props.postSlug })
-    fetchNews({ per_page: INITIAL_NEWS_BY_PAGE, page: 1 })
+    fetchNews({ per_page: INITIAL_NEWS, page: 1 })
 
     const filteredLatestNews = computed(() => getLatestNews(post))
 
