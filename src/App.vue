@@ -13,7 +13,26 @@ import Footer from "@/components/layout/Footer/Footer.vue";
 
 const App = defineComponent({
   components: { Header, Footer },
-  name: "App"
+  name: "App",
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Inicio",
+    // all titles will be injected into this template
+    titleTemplate: "CChV | %s",
+    meta: [
+      {
+        property: "og:title",
+        content: "Title",
+        // following template options are identical
+        // template: '%s - My page',
+        template: (chunk: any) => {
+          console.log(chunk);
+          return `${chunk} - My page`;
+        },
+        vmid: "og:title"
+      }
+    ]
+  }
 });
 
 export default App;
