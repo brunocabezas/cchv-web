@@ -35,7 +35,7 @@ const Loader = defineComponent({
 export default Loader;
 </script>
 <style lang="stylus">
-@import '../styles/variables.styl';
+@import '~assets/variables.styl';
 
 .loader
   left: 50%;
