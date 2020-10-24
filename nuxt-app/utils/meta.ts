@@ -38,6 +38,8 @@ export default (meta: Meta) => [
     property: "og:image",
     content: meta.mainImage
   },
+  { name: "twitter:site", content: "@bobross" },
+  { name: "twitter:card", content: "summary_large_image" },
   {
     hid: "twitter:url",
     name: "twitter:url",
