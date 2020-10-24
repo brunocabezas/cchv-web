@@ -28,11 +28,11 @@ export default defineComponent({
   setup() {
     const { isLoading, fetchPages, historyPage } = usePages();
 
-    // fetchPages();
+    fetchPages();
 
     return {
-      isLoading: true,
-      historyPage: []
+      isLoading,
+      historyPage,
     };
   }
 });
