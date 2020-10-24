@@ -16,23 +16,43 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "@nuxtjs/composition-api";
+import { defineComponent, onMounted, useMeta } from "@nuxtjs/composition-api";
 import usePages from "@/models/usePages";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import Urls from "@/utils/urls";
+import { stripHtmlFromString } from "@/utils/strings";
+import meta from "@/utils/meta";
 
 export default defineComponent({
   name: "HistoryPage",
   components: { Loader, Media },
+  head: {},
   setup() {
     const { isLoading, fetchPages, historyPage } = usePages();
 
-    fetchPages();
+    useMeta(() => {
+      if (!historyPage.value) {
+        return { title: "Historia" };
+      } else {
+        const mainImg = historyPage.value.gallery[0];
+        return {
+          title: historyPage.value.name,
+          meta: meta({
+            title: historyPage.value.name,
+            url: "https://bobross.com",
+            description: stripHtmlFromString(historyPage.value.text),
+            mainImage: mainImg.url || "@/assets/logo.png"
+          })
+        };
+      }
+    });
 
+    fetchPages();
     return {
       isLoading,
       historyPage,
+      title: "History"
     };
   }
 });
