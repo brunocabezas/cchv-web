@@ -1,0 +1,915 @@
+[
+  {
+    "id": 539,
+    "date": "2020-06-11T18:02:30",
+    "date_gmt": "2020-06-11T22:02:30",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=539"
+    },
+    "modified": "2020-06-20T18:57:12",
+    "modified_gmt": "2020-06-20T22:57:12",
+    "slug": "balances-y-estado-de-resultados-segundo-semestre-2019",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/balances-y-estado-de-resultados-segundo-semestre-2019\/",
+    "title": {
+      "rendered": "Balances y Estado de Resultados 2\u00ba Semestre 2019"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 540,
+        "id": 540,
+        "title": "Balance-Clasificado-2do-Semestre-2019",
+        "filename": "Balance-Clasificado-2do-Semestre-2019.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Balance-Clasificado-2do-Semestre-2019.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "balance-clasificado-2do-semestre-2019",
+        "date": "2020-06-11 22:02:23",
+        "modified": "2020-06-11 22:02:30",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "11"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/539"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=539"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=539"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 537,
+    "date": "2020-06-11T18:01:01",
+    "date_gmt": "2020-06-11T22:01:01",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=537"
+    },
+    "modified": "2020-06-20T18:57:01",
+    "modified_gmt": "2020-06-20T22:57:01",
+    "slug": "balances-y-estado-de-resultados-primer-semestre-2019",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/balances-y-estado-de-resultados-primer-semestre-2019\/",
+    "title": {
+      "rendered": "Balances y Estado de Resultados 1\u00ba Semestre 2019"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 538,
+        "id": 538,
+        "title": "Balance-Clasificado-1er-Semestre-2019",
+        "filename": "Balance-Clasificado-1er-Semestre-2019.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Balance-Clasificado-1er-Semestre-2019.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "balance-clasificado-1er-semestre-2019",
+        "date": "2020-06-11 22:00:54",
+        "modified": "2020-06-11 22:01:01",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "10"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/537"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=537"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=537"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 535,
+    "date": "2020-06-11T18:00:00",
+    "date_gmt": "2020-06-11T22:00:00",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=535"
+    },
+    "modified": "2020-06-20T18:56:50",
+    "modified_gmt": "2020-06-20T22:56:50",
+    "slug": "balances-y-estado-de-resultados-segundo-semestre-2018",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/balances-y-estado-de-resultados-segundo-semestre-2018\/",
+    "title": {
+      "rendered": "Balances y Estado de Resultados 2\u00ba Semestre 2018"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 536,
+        "id": 536,
+        "title": "Transparencia CChV_EE RR 2do. Semestre 2018",
+        "filename": "Transparencia-CChV_EE-RR-2do.-Semestre-2018.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Transparencia-CChV_EE-RR-2do.-Semestre-2018.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "transparencia-cchv_ee-rr-2do-semestre-2018",
+        "date": "2020-06-11 21:59:49",
+        "modified": "2020-06-11 22:00:00",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "9"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/535"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=535"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=535"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 533,
+    "date": "2020-06-11T17:58:58",
+    "date_gmt": "2020-06-11T21:58:58",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=533"
+    },
+    "modified": "2020-06-20T18:56:39",
+    "modified_gmt": "2020-06-20T22:56:39",
+    "slug": "balances-y-estado-de-resultados-primer-semestre-2018",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/balances-y-estado-de-resultados-primer-semestre-2018\/",
+    "title": {
+      "rendered": "Balances y Estado de Resultados 1\u00ba Semestre 2018"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 534,
+        "id": 534,
+        "title": "Presupuesto transparencia",
+        "filename": "Presupuesto-transparencia.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Presupuesto-transparencia.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "presupuesto-transparencia",
+        "date": "2020-06-11 21:58:50",
+        "modified": "2020-06-11 21:58:58",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "8"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/533"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=533"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=533"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 532,
+    "date": "2020-06-11T17:57:38",
+    "date_gmt": "2020-06-11T21:57:38",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=532"
+    },
+    "modified": "2020-06-20T18:56:21",
+    "modified_gmt": "2020-06-20T22:56:21",
+    "slug": "memoria-anual-2019-exposiciones",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/memoria-anual-2019-exposiciones\/",
+    "title": {
+      "rendered": "Memoria anual 2019. Exposiciones"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 530,
+        "id": 530,
+        "title": "Memoria CChV 2018_Final",
+        "filename": "Memoria-CChV-2018_Final.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Memoria-CChV-2018_Final.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "memoria-cchv-2018_final",
+        "date": "2020-06-11 21:56:25",
+        "modified": "2020-06-11 21:56:33",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "7"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/532"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=532"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=532"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 531,
+    "date": "2020-06-11T17:57:11",
+    "date_gmt": "2020-06-11T21:57:11",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=531"
+    },
+    "modified": "2020-06-20T18:56:10",
+    "modified_gmt": "2020-06-20T22:56:10",
+    "slug": "memoria-anual-2019-actividades",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/memoria-anual-2019-actividades\/",
+    "title": {
+      "rendered": "Memoria anual 2019. Actividades"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 530,
+        "id": 530,
+        "title": "Memoria CChV 2018_Final",
+        "filename": "Memoria-CChV-2018_Final.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Memoria-CChV-2018_Final.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "memoria-cchv-2018_final",
+        "date": "2020-06-11 21:56:25",
+        "modified": "2020-06-11 21:56:33",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "6"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/531"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=531"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=531"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 529,
+    "date": "2020-06-11T17:56:33",
+    "date_gmt": "2020-06-11T21:56:33",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=529"
+    },
+    "modified": "2020-06-20T18:56:00",
+    "modified_gmt": "2020-06-20T22:56:00",
+    "slug": "memoria-anual-2018",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/memoria-anual-2018\/",
+    "title": {
+      "rendered": "Memoria anual 2018"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 530,
+        "id": 530,
+        "title": "Memoria CChV 2018_Final",
+        "filename": "Memoria-CChV-2018_Final.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/Memoria-CChV-2018_Final.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "memoria-cchv-2018_final",
+        "date": "2020-06-11 21:56:25",
+        "modified": "2020-06-11 21:56:33",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "5"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/529"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=529"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=529"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 528,
+    "date": "2020-06-11T17:47:00",
+    "date_gmt": "2020-06-11T21:47:00",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=528"
+    },
+    "modified": "2020-06-24T18:20:55",
+    "modified_gmt": "2020-06-24T22:20:55",
+    "slug": "rex-xxx-ano-2020",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/rex-xxx-ano-2020\/",
+    "title": {
+      "rendered": "Rex 2764. A\u00f1o 2020"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 527,
+        "id": 527,
+        "title": "POIC-2019_Rex-2764_Gestio\u0301n2020",
+        "filename": "POIC-2019_Rex-2764_Gestio\u0301n2020.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/POIC-2019_Rex-2764_Gestio\u0301n2020.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "poic-2019_rex-2764_gestion2020",
+        "date": "2020-06-11 21:45:01",
+        "modified": "2020-06-11 21:45:12",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "4"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/528"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=528"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=528"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 526,
+    "date": "2020-06-11T17:45:12",
+    "date_gmt": "2020-06-11T21:45:12",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=526"
+    },
+    "modified": "2020-06-24T18:21:42",
+    "modified_gmt": "2020-06-24T22:21:42",
+    "slug": "rex-2764-ano-2019",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/rex-2764-ano-2019\/",
+    "title": {
+      "rendered": "Rex 1982. A\u00f1o 2019"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 525,
+        "id": 525,
+        "title": "POIC-2018_Rex-1982_Gestio\u0301n2019",
+        "filename": "POIC-2018_Rex-1982_Gestio\u0301n2019.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/POIC-2018_Rex-1982_Gestio\u0301n2019.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "poic-2018_rex-1982_gestion2019",
+        "date": "2020-06-11 21:39:12",
+        "modified": "2020-06-11 21:39:20",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "3"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/526"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=526"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=526"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 524,
+    "date": "2020-06-11T17:39:20",
+    "date_gmt": "2020-06-11T21:39:20",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=524"
+    },
+    "modified": "2020-06-24T18:22:10",
+    "modified_gmt": "2020-06-24T22:22:10",
+    "slug": "rex-2749-an%cc%83o-2018",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/rex-2749-an%cc%83o-2018\/",
+    "title": {
+      "rendered": "Rex 2749. An\u0303o 2018"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 769,
+        "id": 769,
+        "title": "POIC 2017_Rex 2749_Gestio\u0301n 2018",
+        "filename": "POIC-2017_Rex-2749_Gestio\u0301n-2018.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/POIC-2017_Rex-2749_Gestio\u0301n-2018.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "poic-2017_rex-2749_gestion-2018",
+        "date": "2020-06-24 22:19:42",
+        "modified": "2020-06-24 22:22:10",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "2"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/524"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=524"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=524"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 522,
+    "date": "2020-06-11T17:37:21",
+    "date_gmt": "2020-06-11T21:37:21",
+    "guid": {
+      "rendered": "https:\/\/cchv.cl\/futuro\/?post_type=document&#038;p=522"
+    },
+    "modified": "2020-06-20T18:55:05",
+    "modified_gmt": "2020-06-20T22:55:05",
+    "slug": "politicas-de-acceso-3",
+    "status": "publish",
+    "type": "document",
+    "link": "https:\/\/cchv.cl\/futuro\/document\/politicas-de-acceso-3\/",
+    "title": {
+      "rendered": "Pol\u00edticas de acceso"
+    },
+    "author": 2,
+    "parent": 0,
+    "template": "",
+    "categories": [],
+    "acf_fields": {
+      "url": {
+        "ID": 523,
+        "id": 523,
+        "title": "politicas de acceso",
+        "filename": "politicas-de-acceso.pdf",
+        "url": "https:\/\/cchv.cl\/futuro\/wp-content\/uploads\/2020\/06\/politicas-de-acceso.pdf",
+        "alt": "",
+        "author": "2",
+        "description": "",
+        "caption": "",
+        "name": "politicas-de-acceso-2",
+        "date": "2020-06-11 21:37:11",
+        "modified": "2020-06-11 21:37:21",
+        "mime_type": "application\/pdf",
+        "type": "application",
+        "icon": "https:\/\/cchv.cl\/futuro\/wp-includes\/images\/media\/document.png"
+      },
+      "order": "1"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents\/522"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/documents"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/types\/document"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/users\/2"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/media?parent=522"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https:\/\/cchv.cl\/futuro\/wp-json\/wp\/v2\/categories?post=522"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
