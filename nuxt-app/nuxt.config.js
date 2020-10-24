@@ -37,6 +37,8 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
