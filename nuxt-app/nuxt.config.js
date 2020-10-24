@@ -19,11 +19,20 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // CSS file in the project
-    "~/assets/variables.styl"
+    "~/assets/variables.styl",
+    "~/assets/main.styl"
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    "@/plugins/vue-awesome",
+    "@/plugins/day-js",
+    "@/plugins/vue-progressive-image",
+    "@/plugins/vue-image-lightbox",
+    "@/plugins/vue-ellipsis",
+    "@/plugins/vue-youtube",
+    "@/plugins/vue-infinite-loading"
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -38,7 +47,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+    "@nuxtjs/dotenv",
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
