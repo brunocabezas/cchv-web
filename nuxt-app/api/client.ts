@@ -4,7 +4,7 @@ import axios from "axios";
 const BASE_URL: string =
   "https://www.cchv.cl/futuro/wp-json/wp/v2" || "http://localhost";
 
-console.log(process.env);
+// console.log(process.env);
 if (!process.env.VUE_APP_BASE_URL) {
   console.warn(`API base url is not defined, it will default to ${BASE_URL}`);
 }

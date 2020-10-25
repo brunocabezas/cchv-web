@@ -1,17 +1,8 @@
-import Vue from "vue";
-import VueCompositionApi, {
-  ref,
-  computed,
-  Ref,
-  unref
-} from "@vue/composition-api";
+import { ref, computed, Ref, unref, reqSsrRef } from "@nuxtjs/composition-api";
 import apiRoutes from "@/api/apiRoutes";
 import client from "@/api/client";
 import { AxiosResponse } from "axios";
 import { WpResponseData } from "@/types/wordpressTypes";
-// import { reactive } from "@vue/composition-api";
-
-Vue.use(VueCompositionApi);
 
 export enum AsyncDataStatus {
   Initial,
@@ -35,9 +26,10 @@ interface AxiosParams {
   [paramKey: string]: string | number;
 }
 
+ 
 export default function useAsyncData<T>(url: apiRoutes): asyncData<T> {
   const status = ref(AsyncDataStatus.Initial);
-  const data = ref<WpResponseData<T>>([]);
+  const data = reqSsrRef<WpResponseData<T>>([]);
   // Fetch data from the url with GET
   function fetch(
     urlParams?: AxiosParams,

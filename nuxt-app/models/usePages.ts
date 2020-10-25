@@ -1,5 +1,4 @@
-import Vue from "vue";
-import VueCompositionApi, { computed } from "@vue/composition-api";
+import { computed, reactive } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { Page } from "@/types";
 import useAsyncData from "@/hooks/useAsyncData";
@@ -7,8 +6,6 @@ import { WPResponseItem, WpImage } from "@/types/wordpressTypes";
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
 import { PageKeys } from "@/types/customFieldsKeysTypes";
 import { PageExtraContent } from "@/types/customFieldsTypes";
-
-Vue.use(VueCompositionApi);
 
 const { data, fetch: fetchPages, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Pages
@@ -38,13 +35,18 @@ export default function usePages() {
     );
   });
 
-  const historyPage = computed<Page | null>(() => {
-    return (
+  const historyPage = computed<Page>(
+    () =>
       pages.value.find(page =>
         page.name.toLocaleLowerCase().includes("historia")
-      ) || null
-    );
-  });
+      ) || {
+        name: "",
+        id: 0,
+        text: "",
+        gallery: [],
+        extra_content: PageExtraContent.None
+      }
+  );
 
   return {
     fetchPages,

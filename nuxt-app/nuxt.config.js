@@ -3,17 +3,21 @@ export default {
   ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
-  target: "static",
+  target: "server",
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "CChV",
+    // title: "CChV",
     meta: [
       { charset: "utf-8" },
+      { name: "HandheldFriendly", content: "True" },
       { name: "viewport", content: "width=device-width, initial-scale=1" }
-      // { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }, {
+      hid: "canonical",
+      rel: "canonical",
+      href: "https://cchv.cl"
+    }]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -29,6 +33,7 @@ export default {
     "@/plugins/day-js",
     { src: "@/plugins/vue-progressive-image", ssr: false },
     { src: "@/plugins/vue-image-lightbox", ssr: false },
+    { src: "@/plugins/useWindowsSize.client", ssr: false },
     "@/plugins/vue-ellipsis",
     "@/plugins/vue-youtube",
     "@/plugins/vue-infinite-loading"
@@ -50,8 +55,6 @@ export default {
     "@nuxtjs/dotenv",
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa"
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

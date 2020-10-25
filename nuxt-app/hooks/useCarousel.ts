@@ -1,4 +1,4 @@
-import { ref, Ref, computed } from "@vue/composition-api"
+import { ref, Ref, computed } from "@nuxtjs/composition-api"
 import useMediaQueries from './useMediaQueries'
 
 export type Tabs = Tab[]

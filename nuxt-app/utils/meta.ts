@@ -8,17 +8,12 @@ type Meta = {
 };
 
 export default (meta: Meta) => [
-  { name: "twitter:card", content: "summary of the twitter card" },
   {
     hid: "description",
     name: "description",
     content: meta.description
   },
-  {
-    hid: "title",
-    name: "title",
-    content: meta.title
-  },
+  { property: "og:site_name", content: "CChvV site name" },
   {
     hid: "og:type",
     property: "og:type",
@@ -44,7 +39,10 @@ export default (meta: Meta) => [
     property: "og:image",
     content: meta.mainImage
   },
-  // { name: "twitter:site", content: "@bobross" },
+  { property: "og:image:width", content: "740" },
+  { property: "og:image:height", content: "300" },
+  { name: "twitter:site", content: "@cchv" },
+  { name: "twitter:card", content: "summary_large_image" },
   {
     hid: "twitter:url",
     name: "twitter:url",

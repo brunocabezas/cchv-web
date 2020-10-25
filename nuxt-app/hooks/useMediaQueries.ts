@@ -1,5 +1,5 @@
-import { computed } from "@vue/composition-api"
-import useWindowSize from "./useWindowsSize"
+import { computed } from "@nuxtjs/composition-api"
+import useWindowSize from "~/plugins/useWindowsSize.client"
 
 export enum Viewport {
   SM = 550,

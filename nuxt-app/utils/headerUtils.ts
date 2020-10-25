@@ -1,6 +1,6 @@
 import { NAVIGATION_MENU } from "./navigationMenu"
 import { Program } from "@/types"
-import { Ref } from "@vue/composition-api"
+import { Ref } from "@nuxtjs/composition-api"
 import { NavMenu } from "@/types"
 import { ProgramKeys } from "@/types/customFieldsKeysTypes"
 

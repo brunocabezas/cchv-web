@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { computed, ref } from "@vue/composition-api"
+import VueCompositionApi, { computed, ref } from "@nuxtjs/composition-api"
 import Urls from "@/utils/urls"
 import { ActivityType } from "@/types/customFieldsTypes"
 import useNews from "./useNews"

@@ -16,12 +16,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, useMeta } from "@nuxtjs/composition-api";
+import {
+  computed,
+  defineComponent,
+  onMounted,
+  useMeta,
+  watch
+} from "@nuxtjs/composition-api";
 import usePages from "@/models/usePages";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import Urls from "@/utils/urls";
-// import { stripHtmlFromString} from "@/utils/strings";
+import { stripHtmlFromString } from "@/utils/strings";
 import meta from "@/utils/meta";
 
 export default defineComponent({
@@ -31,22 +37,57 @@ export default defineComponent({
   setup() {
     const { isLoading, fetchPages, historyPage } = usePages();
 
+    const desc = computed(() =>
+      historyPage.value && historyPage.value.id
+        ? stripHtmlFromString(historyPage.value.text)
+        : ""
+    );
     useMeta(() => ({
-      title: historyPage.value.name,
-      meta: !historyPage.value
-        ? []
-        : meta({
-            title: historyPage.value.name,
-            url: "https://bobross.com",
-            description: historyPage.value.text,
-            mainImage:
-              (historyPage.value.gallery[0] &&
-                historyPage.value.gallery[0].url) ||
-              "@/assets/logo.png"
-          })
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "Historia"
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: desc.value
+        },
+        { property: "og:site_name", content: "Redfern Dev" },
+        { hid: "og:type", property: "og:type", content: "website" },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://bobross.com"
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: desc.value
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content:
+            historyPage.value && historyPage.value.id
+              ? stripHtmlFromString(historyPage.value.text)
+              : ""
+        },
+        {
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: "Historia"
+        }
+      ]
     }));
 
     fetchPages();
+
     return {
       isLoading,
       historyPage,

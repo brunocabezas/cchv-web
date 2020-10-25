@@ -1,4 +1,4 @@
-import { defineComponent, PropType, ref, computed } from "@vue/composition-api"
+import { defineComponent, PropType, ref, computed } from "@nuxtjs/composition-api"
 import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue"

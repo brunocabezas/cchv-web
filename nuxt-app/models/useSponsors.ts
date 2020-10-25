@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/hooks/useAsyncData"
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"

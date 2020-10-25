@@ -1,4 +1,4 @@
-import { defineComponent, PropType, computed } from "@vue/composition-api"
+import { defineComponent, PropType, computed } from "@nuxtjs/composition-api"
 import { SchoolProgram, Activity } from "@/types"
 import Loader from "@/components/Loader.vue"
 import useActivities from "@/models/useActivities"

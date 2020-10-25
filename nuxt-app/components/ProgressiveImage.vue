@@ -18,7 +18,7 @@
 
 <script lang="ts">
 // https://github.com/MatteoGabriele/vue-progressive-image
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import Loader from "@/components/Loader.vue";
 import { DARKER_MAIN_COLOR } from "@/utils/constants"
 

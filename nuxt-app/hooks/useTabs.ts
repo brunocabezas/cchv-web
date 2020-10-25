@@ -1,4 +1,4 @@
-import { Ref, watch, computed, reactive } from "@vue/composition-api"
+import { Ref, watch, computed, reactive } from "@nuxtjs/composition-api"
 
 export type Tabs = Tab[]
 export type Tab = {

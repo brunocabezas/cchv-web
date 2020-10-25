@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { computed } from "@vue/composition-api"
+import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { ProgramVideo } from "@/types"
 import useAsyncData from "@/hooks/useAsyncData"

@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import { MAIN_COLOR } from "@/utils/constants";
 import Icon from "vue-awesome/components/Icon.vue";
 import useSocialNetworks from "@/models/useSocialNetworks";

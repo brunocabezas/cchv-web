@@ -1,4 +1,4 @@
-import { computed } from "@vue/composition-api"
+import { computed } from "@nuxtjs/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import useAsyncData from "@/hooks/useAsyncData"
 import {

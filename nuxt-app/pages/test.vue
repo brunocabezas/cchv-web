@@ -2,7 +2,7 @@
   <div class="container">
     <meta
       name="twitter:card"
-      content="sumamry of the twiiter card"
+      content="summary"
       key="twcard"
     />
     <meta name="twitter:creator" content="Twitter creator" key="twhandle" />
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import Vue from "vue";
 
 export default defineComponent({ name: "testPage" });

@@ -1,5 +1,5 @@
 import Vue from "vue"
-import VueCompositionApi, { computed, Ref, ref } from "@vue/composition-api"
+import VueCompositionApi, { computed, Ref, ref } from "@nuxtjs/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { NewsPost } from "@/types"
 import useAsyncData from "@/hooks/useAsyncData"

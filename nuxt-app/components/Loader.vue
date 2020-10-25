@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import BounceLoader from "vue-spinner/src/BounceLoader.vue";
 import { MAIN_COLOR } from "@/utils/constants";
 
