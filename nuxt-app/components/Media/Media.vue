@@ -1,11 +1,11 @@
 <template>
   <div class="media carousel" v-bind:style="{ height: mediaHeight }">
-    <LightBox
+    <light-box
       v-if="!hideLightBox"
       ref="lightBoxRef"
       :showLightBox="false"
       :media="lightBoxData"
-    ></LightBox>
+    />
     <vue-carousel
       :paginationEnabled="false"
       :perPage="1"

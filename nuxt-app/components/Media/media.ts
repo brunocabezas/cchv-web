@@ -1,6 +1,4 @@
 import { defineComponent, PropType, ref, computed } from "@vue/composition-api"
-import { Carousel as VueCarousel, Slide } from "vue-carousel"
-import LightBox from "vue-image-lightbox"
 import Loader from "@/components/Loader.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue"
@@ -9,6 +7,8 @@ import { getIdFromUrl } from "vue-youtube"
 import useCarousel from "@/hooks/useCarousel"
 import useMediaQueries from "@/hooks/useMediaQueries"
 import { MEDIA_MOBILE_HEIGHT } from "@/utils/constants"
+import { Carousel, Slide } from '@jambonn/vue-concise-carousel';
+import '@jambonn/vue-concise-carousel/dist/vue-concise-carousel.css'
 
 type LightBoxItem = {
   src: string
@@ -40,8 +40,7 @@ const Media = defineComponent({
     },
   },
   components: {
-    VueCarousel,
-    LightBox,
+    VueCarousel: Carousel,
     Loader,
     Slide,
     ProgressiveImage,

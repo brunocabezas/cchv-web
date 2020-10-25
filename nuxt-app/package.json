@@ -9,6 +9,7 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@jambonn/vue-concise-carousel": "^1.1.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/composition-api": "^0.13.5",
@@ -20,7 +21,6 @@
     "vue-awesome": "^4.0.2",
     "vue-burger-button": "^0.1.2",
     "vue-burger-menu": "^2.0.5",
-    "vue-carousel": "^0.18.0",
     "vue-ellipsis": "^1.2.0",
     "vue-image-lightbox": "^7.1.0",
     "vue-infinite-loading": "^2.4.5",

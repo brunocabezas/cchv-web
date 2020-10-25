@@ -1,6 +1,6 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
+  ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -27,8 +27,8 @@ export default {
   plugins: [
     "@/plugins/vue-awesome",
     "@/plugins/day-js",
-    "@/plugins/vue-progressive-image",
-    "@/plugins/vue-image-lightbox",
+    { src: "@/plugins/vue-progressive-image", ssr: false },
+    { src: "@/plugins/vue-image-lightbox", ssr: false },
     "@/plugins/vue-ellipsis",
     "@/plugins/vue-youtube",
     "@/plugins/vue-infinite-loading"
