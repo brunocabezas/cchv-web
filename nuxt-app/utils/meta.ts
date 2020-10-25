@@ -8,10 +8,16 @@ type Meta = {
 };
 
 export default (meta: Meta) => [
+  { name: "twitter:card", content: "summary of the twitter card" },
   {
     hid: "description",
     name: "description",
     content: meta.description
+  },
+  {
+    hid: "title",
+    name: "title",
+    content: meta.title
   },
   {
     hid: "og:type",
@@ -38,8 +44,7 @@ export default (meta: Meta) => [
     property: "og:image",
     content: meta.mainImage
   },
-  { name: "twitter:site", content: "@bobross" },
-  { name: "twitter:card", content: "summary_large_image" },
+  // { name: "twitter:site", content: "@bobross" },
   {
     hid: "twitter:url",
     name: "twitter:url",

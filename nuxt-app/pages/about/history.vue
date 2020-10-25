@@ -36,14 +36,16 @@ export default defineComponent({
         return { title: "Historia" };
       } else {
         const mainImg = historyPage.value.gallery[0];
+        const metaData = meta({
+          title: historyPage.value.name,
+          url: "https://bobross.com",
+          description: stripHtmlFromString(historyPage.value.text),
+          mainImage: mainImg.url || "@/assets/logo.png"
+        });
+        console.log(metaData);
         return {
           title: historyPage.value.name,
-          meta: meta({
-            title: historyPage.value.name,
-            url: "https://bobross.com",
-            description: stripHtmlFromString(historyPage.value.text),
-            mainImage: mainImg.url || "@/assets/logo.png"
-          })
+          meta: metaData
         };
       }
     });
