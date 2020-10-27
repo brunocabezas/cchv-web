@@ -3,7 +3,7 @@ export default {
   ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
-  // target: "server",
+  target: "server",
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {

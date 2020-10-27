@@ -64,7 +64,7 @@ export default function useSponsors() {
     !categories.value
       ? []
       : categories.value
-          .map((wp: any) => mapWpResponseToView(wp, sponsors.value))
+          .map((wp: any) => mapWpResponseToView(wp, sponsors.value || []))
           .sort(sortByOrder)
   );
 

@@ -13,7 +13,7 @@ import Header from "~/layouts/Header/Header";
 
 export default defineComponent({
   name: "Default",
-  components: { Footer, Header },
+  components: { Footer, Header }
 });
 </script>
 <style lang="stylus">
