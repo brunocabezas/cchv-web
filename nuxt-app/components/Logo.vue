@@ -1,29 +1,49 @@
 <template>
-  <svg class="NuxtLogo" width="245" height="180" viewBox="0 0 452 342" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z"
-      fill="#00C58E"
-    />
-    <path
-      d="M447 304L317 70c-2-2-9-15-22-15-6 0-15 3-22 15l-17 28v54l39-67 129 230h-49a23 23 0 0 1-2 14l-1 1c-6 11-21 12-23 12h76c3 0 17-1 24-12 3-5 5-14-2-26z"
-      fill="#108775"
-    />
-    <path
-      d="M376 330v-1l1-2c1-4 2-8 1-12l-4-12-102-178-15-27h-1l-15 27-102 178-4 12a24 24 0 0 0 2 15c4 6 10 12 24 12h190c3 0 18-1 25-12zM256 152l93 163H163l93-163z"
-      fill="#2F495E"
-    />
-  </svg>
+  <router-link class="logo" :to="homeUrl" title="Inicio">
+    <img v-if="onBigScreen" alt="Vue logo" src="~/assets/logo.png" />
+    <img v-else alt="Vue logo" src="~/assets/white-logo.png" />
+  </router-link>
 </template>
 
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
-}
+<script lang="ts">
+import { defineComponent, computed } from "@nuxtjs/composition-api";
+import Urls from "@/utils/urls";
+import useMediaQueries from "@/hooks/useMediaQueries";
 
-@keyframes appear {
-  0% {
-    opacity: 0;
+const Logo = defineComponent({
+  name: "Logo",
+  setup() {
+    const { onBigScreen } = useMediaQueries();
+
+    const logoUrl = computed<string>(() =>
+      onBigScreen.value ? "@/assets/logo.png" : "@/assets/white-logo.png"
+    );
+
+    return { onBigScreen, homeUrl: Urls.Home, logoUrl };
   }
-}
+});
+
+export default Logo;
+</script>
+<style lang="stylus">
+@import '~/assets/variables.styl';
+
+.logo
+  display: flex;
+  width: 300px;
+  align-items: center;
+
+  @media (max-width: 810px)
+    width: 260px;
+
+  img
+    width: 100%;
+    padding: 0 30px;
+
+    @media (max-width: $md)
+      width: auto;
+      height: 40px;
+
+    @media (max-width: 810px)
+      padding: 0;
 </style>

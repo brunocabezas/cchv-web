@@ -5,6 +5,7 @@ import { ScaleRotate } from 'vue-burger-menu'
 import { Reveal } from 'vue-burger-menu'
 import { Push } from 'vue-burger-menu'
 import { PushRotate } from 'vue-burger-menu'
+
 Vue.component('SlideMenu', Slide)
 Vue.component('ScaleDownMenu', ScaleDown)
 Vue.component('ScaleRotateMenu', ScaleRotate)

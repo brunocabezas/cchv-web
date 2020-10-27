@@ -14,7 +14,7 @@
 
 <script lang="ts" src="./singlePostPage.ts"></script>
 <style lang="stylus">
-@import '../../../styles/variables.styl';
+@import '~/assets/variables.styl';
 
 .page.singlePostPage
   padding-top: 2em;

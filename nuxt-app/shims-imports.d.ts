@@ -12,4 +12,5 @@ declare module "vue-spinner/src/BounceLoader.vue";
 declare module "vue-awesome/components/Icon.vue";
 declare module "@jambonn/vue-concise-carousel";
 declare module "@jambonn/vue-concise-carousel.css";
-declare module "@ivanv/vue-collapse-transition/src/CollapseTransition.vue"
+declare module "vue-burger-button/dist/vue-burger-button.css";
+declare module "@ivanv/vue-collapse-transition/src/CollapseTransition.vue";

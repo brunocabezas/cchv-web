@@ -1,24 +1,27 @@
-import { ref, computed, onMounted, onUnmounted } from "@vue/composition-api";
+import { ref, computed } from "@vue/composition-api";
 
 export default function useWindowSize() {
-  if (process.client) {
+  const isOnBrowser = process.client;
+  if (isOnBrowser) {
     const width = ref(window.innerWidth);
     const height = ref(window.innerHeight);
     const update = () => {
-      width.value = window.innerWidth;
-      height.value = window.innerHeight;
+      if (isOnBrowser) {
+        width.value = window.innerWidth;
+        height.value = window.innerHeight;
+      }
     };
 
     const widthPixel = computed(() => `${width.value}px`);
     const heightPixel = computed(() => `${height.value}px`);
 
-    onMounted(() => {
-      window.addEventListener("resize", update);
-    });
+    // onMounted(() => {
+    window.addEventListener("resize", update);
+    // });
 
-    onUnmounted(() => {
-      window.removeEventListener("resize", update);
-    });
+    // onUnmounted(() => {
+    // window.removeEventListener("resize", update);
+    // });
 
     return { width, height, widthPixel, heightPixel };
   } else {
