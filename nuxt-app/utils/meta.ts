@@ -1,3 +1,5 @@
+import { META_IMG_FALLBACK } from "./constants";
+
 type MetaType = "website";
 
 type Meta = {
@@ -37,7 +39,7 @@ export default (meta: Meta) => [
   {
     hid: "og:image",
     property: "og:image",
-    content: meta.mainImage
+    content: meta.mainImage || META_IMG_FALLBACK
   },
   { property: "og:image:width", content: "740" },
   { property: "og:image:height", content: "300" },
@@ -61,6 +63,6 @@ export default (meta: Meta) => [
   {
     hid: "twitter:image",
     name: "twitter:image",
-    content: meta.mainImage
+    content: meta.mainImage || META_IMG_FALLBACK
   }
 ];

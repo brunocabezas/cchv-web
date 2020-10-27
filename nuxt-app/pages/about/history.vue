@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="pageTitle">
-      <h1 class="pageTitleText">Historia</h1>
+      <h1 class="pageTitleText">{{ title }}</h1>
     </div>
     <div v-if="historyPage && historyPage.id" class="pageContent">
       <div v-if="historyPage.gallery" class="pageRow pageRow--with-media">
@@ -16,65 +16,89 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, useMeta } from "@nuxtjs/composition-api";
-import usePages from "@/models/usePages";
+import usePagesFetch from "@/models/usePagesFetch";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import Urls from "@/utils/urls";
-// import { stripHtmlFromString} from "@/utils/strings";
+import { stripHtmlFromString } from "@/utils/strings";
 import meta from "@/utils/meta";
+import {
+  computed,
+  defineComponent,
+  ref,
+  ssrRef,
+  useFetch,
+  useMeta
+} from "@nuxtjs/composition-api";
+import axios from "axios";
+import { Page, PageExtraContent } from "~/types/customFieldsTypes";
+import { WpImage, WPResponseItem } from "~/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "~/utils/api";
+import { PageKeys } from "~/types/customFieldsKeysTypes";
+import client from "~/api/client";
+import apiRoutes from "~/api/apiRoutes";
+import { META_IMG_FALLBACK } from "~/utils/constants";
+
+const mapPagesFromWp = (pagePost: any): any => ({
+  id: pagePost.id,
+  name: pagePost.title.rendered,
+  text: getCustomFieldFromPost(pagePost, PageKeys.text, ""),
+  gallery: getCustomFieldFromPost<WpImage[]>(pagePost, PageKeys.gallery, []),
+  extra_content: getCustomFieldFromPost<PageExtraContent>(
+    pagePost,
+    PageKeys.extra_content,
+    PageExtraContent.None
+  )
+});
+
+const initialPage = {
+  name: "",
+  id: 0,
+  text: "",
+  gallery: [],
+  extra_content: PageExtraContent.None
+};
 
 export default defineComponent({
   name: "HistoryPage",
   components: { Loader, Media },
   head: {},
   setup() {
-    const { isLoading, fetchPages, historyPage } = usePages();
+    const data = ref<any>(null);
+
+    const { fetch: fetchPages, fetchState } = useFetch(async () => {
+      const response = await client.get(apiRoutes.Pages);
+
+      data.value =
+        response.data
+          .map(mapPagesFromWp)
+          .find(
+            (page: any) =>
+              page &&
+              page.name &&
+              page.name.toLocaleLowerCase().includes("historia")
+          ) || initialPage;
+    });
+
+    fetchPages();
 
     useMeta(() => ({
-      title: historyPage.value.name,
-      meta: !historyPage.value
+      title: !data.value ? "Historia" : data.value.name,
+      meta: !data.value
         ? []
         : meta({
-            title: historyPage.value.name,
+            title: data.value.name,
             url: "https://bobross.com",
-            description: historyPage.value.text,
-            mainImage:
-              (historyPage.value.gallery[0] &&
-                historyPage.value.gallery[0].url) ||
-              "@/assets/logo.png"
+            description: data.value.text,
+            mainImage: data.value.gallery[0] && data.value.gallery[0].url
           })
     }));
 
-    fetchPages();
     return {
-      isLoading,
-      historyPage,
-      title: "History"
+      isLoading: computed(() => fetchState.pending && !data.value),
+      historyPage: data,
+      title: data.value ? data.value.name : "Historia"
     };
   }
 });
 </script>
-<style scoped lang="stylus">
-@import '~assets/variables.styl';
-
-.aboutSquareLink
-  background-color: $blue;
-  width: 50%;
-  color: white;
-  font-size: 36px;
-  padding: 1em;
-  text-align: center;
-  font-family: NoeDisplay;
-  margin: 15px;
-  transition: background-color 0.2s;
-
-  &:hover
-    background-color: darken($blue, 10);
-
-  &:first-child
-    margin-left: 0;
-
-  &:last-child
-    margin-right: 0;
-</style>
