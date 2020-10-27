@@ -9,6 +9,7 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@ivanv/vue-collapse-transition": "^0.2.1",
     "@jambonn/vue-concise-carousel": "^1.1.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
