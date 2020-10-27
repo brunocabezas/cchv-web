@@ -1,24 +1,20 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { TeamMembersKeys } from "@/types/customFieldsKeysTypes"
-import { TeamMember } from "@/types"
-import { TeamMemberPosition } from "@/utils/teamMembers"
-import { TeamMemberType } from "@/types/customFieldsTypes"
+import {
+  computed,
+  useAsync,
+} from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { WPResponseItem } from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { TeamMembersKeys } from "@/types/customFieldsKeysTypes";
+import { TeamMember } from "@/types";
+import { TeamMemberPosition } from "@/utils/teamMembers";
+import { TeamMemberType } from "@/types/customFieldsTypes";
 import {
   groupTeamMembersByPosition,
-  sortGrouptedTeamMembers,
-} from "@/utils/teamMembers"
-import { DEFAULT_ORDER } from "@/utils/constants"
-
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchTeamMembers, isLoading } = useAsyncData<
-  WPResponseItem
->(apiRoutes.Team)
+  sortGrouptedTeamMembers
+} from "@/utils/teamMembers";
+import { DEFAULT_ORDER } from "@/utils/constants";
+import client from "~/api/client";
 
 const mapTeamMemberFromWpPost = (
   teamMemberPost: WPResponseItem
@@ -39,33 +35,39 @@ const mapTeamMemberFromWpPost = (
     teamMemberPost,
     TeamMembersKeys.type,
     TeamMemberType.Staff
-  ),
-})
-
-export default function useTeamMembers() {
-  const teamMembers = computed<TeamMember[]>(() =>
-    data.value.map(mapTeamMemberFromWpPost)
   )
+});
+
+function useTeamMembers() {
+  const data = useAsync(() =>
+    client.get(apiRoutes.Team).then(res => res.data)
+  );
+
+  const teamMembers = computed<TeamMember[]>(() =>
+    data.value ? data.value.map(mapTeamMemberFromWpPost) : []
+  );
 
   const team = computed(() => {
-    const team = teamMembers.value.filter(
-      (person) => person.type === TeamMemberType.Team
-    )
-    return sortGrouptedTeamMembers(groupTeamMembersByPosition(team))
-  })
+    const team = [...teamMembers.value].filter(
+      person => person.type === TeamMemberType.Team
+    );
+    return sortGrouptedTeamMembers(groupTeamMembersByPosition(team));
+  });
 
   const staff = computed<TeamMemberPosition[]>(() => {
-    const staff = teamMembers.value.filter(
-      (person) => person.type === TeamMemberType.Staff
-    )
+    const staff = [...teamMembers.value].filter(
+      person => person.type === TeamMemberType.Staff
+    );
 
-    return sortGrouptedTeamMembers(groupTeamMembersByPosition(staff))
-  })
+    return sortGrouptedTeamMembers(groupTeamMembersByPosition(staff));
+  });
 
   return {
-    fetchTeamMembers,
+    fetch,
     team,
     staff,
-    isLoading,
-  }
+    isLoading: computed(() => false)
+  };
 }
+
+export default useTeamMembers;

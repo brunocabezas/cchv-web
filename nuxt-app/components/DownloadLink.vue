@@ -61,8 +61,6 @@ const DownloadLink = defineComponent({
 export default DownloadLink;
 </script>
 <style lang="stylus">
-@import '../styles/variables.styl';
-
 .downloadLink
   font-size: 18px;
   height: auto;

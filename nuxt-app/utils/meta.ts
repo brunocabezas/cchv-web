@@ -6,7 +6,7 @@ type Meta = {
   description: string;
   url: string;
   title: string;
-  mainImage: string;
+  mainImage?: string;
 };
 
 export default (meta: Meta) => [
