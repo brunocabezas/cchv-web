@@ -1,0 +1,86 @@
+
+
+// To display BIG_SPONSOR_CATEGORY_LABEL
+$big_sponsor_category_height = 200px;
+$sponsor_height = 100px;
+
+.footerToggleButton
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  padding: 1em;
+  justify-content: center;
+
+  .fa-icon
+    margin-left: 10px;
+
+  &:hover
+    opacity: 0.8;
+
+.footerSponsors
+  position: relative;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  padding: $footer_padding;
+  background-color: $black;
+  min-height: 300px;
+  justify-content: center;
+
+  @media (max-width: $md)
+    padding: $mobile_padding !important;
+    min-height: auto !important;
+    margin-bottom: 0;
+
+  &--loading
+    @media (max-width: $md)
+      .loader
+        transform: none;
+        position: initial;
+        width: auto;
+        margin-left: 10px;
+
+  .sponsorCategory
+    min-width: 100%;
+    display: block;
+    flex: 1;
+
+    .sponsorCategoryTitle
+      font-family: Montserrat;
+      color: white;
+
+    // First sponsor is bigger than others
+    &--big
+      .sponsorsGrid
+        .sponsor
+          height: $big_sponsor_category_height;
+          width: 50%;
+          margin-left: 84px;
+
+          @media (max-width: $md)
+            width: 100%;
+            margin: 0;
+
+  .sponsorsGrid
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @media (max-width: $md)
+      flex-wrap: no-wrap;
+
+    .sponsor
+      margin: 2em 15px;
+      width: 20%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $sponsor_height;
+
+      @media (max-width: $md)
+        width: 100%;
+        margin: 10px 0;
+        height: $sponsor_height * 2;

@@ -34,6 +34,7 @@ export default {
     { src: "@/plugins/vue-progressive-image", ssr: false },
     { src: "@/plugins/vue-image-lightbox", ssr: false },
     { src: "@/plugins/useWindowsSize.client", ssr: false },
+    { src: "@/plugins/vue-burger-menu", ssr: false },
     "@/plugins/vue-ellipsis",
     "@/plugins/vue-youtube",
     "@/plugins/vue-infinite-loading"

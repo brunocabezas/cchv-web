@@ -1,5 +1,4 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
+import { computed } from "@nuxtjs/composition-api"
 import apiRoutes from "../../api/apiRoutes"
 import { Program } from "@/types"
 import useAsyncData from "@/hooks/useAsyncData"
@@ -14,8 +13,6 @@ import { ProgramExtraContent } from "@/types/customFieldsTypes"
 import Urls from "@/utils/urls"
 import { sortByOrder } from "@/utils/arrays"
 import { DEFAULT_ORDER } from "@/utils/constants"
-
-Vue.use(VueCompositionApi)
 
 const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WPResponseItem>(
   apiRoutes.Programs

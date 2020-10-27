@@ -57,7 +57,7 @@ const SocialNetworks = defineComponent({
 export default SocialNetworks;
 </script>
 <style scoped lang="stylus">
-@import '../styles/variables.styl';
+@import '~/assets/variables.styl';
 
 .socialNetworks
   width: 100%;

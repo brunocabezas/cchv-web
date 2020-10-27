@@ -1,15 +1,15 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { SponsorCategoryKeys, SponsorKeys } from "@/types/customFieldsKeysTypes"
-import { Sponsor, SponsorsCategory } from "@/types"
-import { filterUndef, sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/constants"
-
-Vue.use(VueCompositionApi)
+import { computed, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import {
+  SponsorCategoryKeys,
+  SponsorKeys
+} from "@/types/customFieldsKeysTypes";
+import { Sponsor, SponsorsCategory } from "@/types";
+import { filterUndef, sortByOrder } from "@/utils/arrays";
+import { DEFAULT_ORDER } from "@/utils/constants";
+import client from "~/api/client";
 
 // Map WpResponseItem to SponsorsCategory
 const mapWpResponseToView = (
@@ -20,10 +20,11 @@ const mapWpResponseToView = (
     sponsorCategoryPost,
     SponsorCategoryKeys.sponsors,
     []
-  )
+  );
+  
   const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
-    sponsors.find((s) => s.id === sponsorId)
-  )
+    sponsors.find(s => s.id === sponsorId)
+  );
 
   const viewSponsors: Sponsor[] = filterUndef(sponsorsFromState).map(
     (sponsor): Sponsor => ({
@@ -34,9 +35,9 @@ const mapWpResponseToView = (
         DEFAULT_ORDER
       ),
       logo: getCustomFieldFromPost(sponsor, SponsorKeys.logo, ""),
-      url: getCustomFieldFromPost(sponsor, SponsorKeys.url, ""),
+      url: getCustomFieldFromPost(sponsor, SponsorKeys.url, "")
     })
-  )
+  );
 
   return {
     id: sponsorCategoryPost.id,
@@ -46,40 +47,29 @@ const mapWpResponseToView = (
       SponsorCategoryKeys.order,
       DEFAULT_ORDER
     ),
-    sponsors: viewSponsors.sort(sortByOrder),
-  }
-}
+    sponsors: viewSponsors.sort(sortByOrder)
+  };
+};
 
 export default function useSponsors() {
-  const {
-    data: sponsors,
-    fetch: fetchSponsors,
-    isLoading: isLoadingSponsors,
-  } = useAsyncData<WPResponseItem>(apiRoutes.Sponsors)
-
-  const {
-    data,
-    fetch: fetchSponsorsCategories,
-    isLoading: isLoadingCategories,
-  } = useAsyncData<WPResponseItem>(apiRoutes.SponsorsCategories)
-
-  const isLoading = computed<boolean>(
-    () => isLoadingSponsors.value || isLoadingCategories.value
-  )
+  const sponsors = useAsync(() =>
+    client.get(apiRoutes.Sponsors).then(res => res.data)
+  );
+  
+  const categories = useAsync(() =>
+    client.get(apiRoutes.SponsorsCategories).then(res => res.data)
+  ); 
 
   const sponsorsCategories = computed<SponsorsCategory[]>(() =>
-    data.value
-      .map((wp) => mapWpResponseToView(wp, sponsors.value))
-      .sort(sortByOrder)
-  )
+    !categories.value
+      ? []
+      : categories.value
+          .map((wp: any) => mapWpResponseToView(wp, sponsors.value))
+          .sort(sortByOrder)
+  );
 
-  function fetchSponsorsAndCategories() {
-    return Promise.all([fetchSponsorsCategories(), fetchSponsors()])
-  }
-  
   return {
-    fetchSponsorsAndCategories,
     sponsorsCategories,
-    isLoading,
-  }
+    isLoading: false
+  };
 }
