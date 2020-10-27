@@ -8,14 +8,14 @@
         'headerNavItem--nested': menu.pages && menu.pages.length
       }"
     >
-      <router-link
+      <nuxt-link
         class="headerNavItemLink"
         v-if="menu.url"
         :title="menu.label"
         :to="menu.url"
       >
         {{ menu.label }}
-      </router-link>
+      </nuxt-link>
 
       <span class="headerNavItemLink" v-else>{{ menu.label }}</span>
 
@@ -37,9 +37,9 @@
               :href="submenu.url"
               >{{ submenu.label }}</a
             >
-            <router-link class="headerNavItemLink" :to="submenu.url" v-else>{{
+            <nuxt-link class="headerNavItemLink" :to="submenu.url" v-else>{{
               submenu.label
-            }}</router-link>
+            }}</nuxt-link>
           </div>
         </div>
       </div>

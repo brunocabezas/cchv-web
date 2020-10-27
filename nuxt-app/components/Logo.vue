@@ -1,8 +1,8 @@
 <template>
-  <router-link class="logo" :to="homeUrl" title="Inicio">
+  <nuxt-link class="logo" :to="homeUrl" title="Inicio">
     <img v-if="onBigScreen" alt="Vue logo" src="~/assets/logo.png" />
     <img v-else alt="Vue logo" src="~/assets/white-logo.png" />
-  </router-link>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
