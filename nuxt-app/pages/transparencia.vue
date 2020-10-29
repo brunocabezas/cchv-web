@@ -8,11 +8,7 @@
     <Loader :loading="isLoading" />
     <div class="pageRow">
       <div class="pageLeft">
-        <div
-          class="pageBody"
-          v-if="page"
-          v-html="page.text"
-        ></div>
+        <div class="pageBody" v-if="page" v-html="page.text"></div>
       </div>
       <div class="pageRight">
         <ul class="transparencyDocumentList" v-if="!isLoading">
@@ -86,7 +82,9 @@ export default defineComponent({
     const data = ref<any>(null);
 
     const { fetch: fetchPages, fetchState } = useFetch(async () => {
-      const response = await client.get(apiRoutes.Pages);
+      const response = await client.get(apiRoutes.Pages).catch(() => ({
+        data: []
+      }));
 
       data.value =
         response.data

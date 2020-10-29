@@ -13,11 +13,14 @@ export default {
       { name: "HandheldFriendly", content: "True" },
       { name: "viewport", content: "width=device-width, initial-scale=1" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }, {
-      hid: "canonical",
-      rel: "canonical",
-      href: "https://cchv.cl"
-    }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: "https://cchv.cl"
+      }
+    ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -53,14 +56,8 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://github.com/nuxt-community/dotenv-module
-    "@nuxtjs/dotenv",
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
+    "@nuxtjs/dotenv"
   ],
-
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^vue-awesome/]

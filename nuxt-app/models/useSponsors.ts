@@ -21,7 +21,7 @@ const mapWpResponseToView = (
     SponsorCategoryKeys.sponsors,
     []
   );
-  
+
   const sponsorsFromState = sponsorsIds.map((sponsorId: number) =>
     sponsors.find(s => s.id === sponsorId)
   );
@@ -53,12 +53,21 @@ const mapWpResponseToView = (
 
 export default function useSponsors() {
   const sponsors = useAsync(() =>
-    client.get(apiRoutes.Sponsors).then(res => res.data)
+    client
+      .get(apiRoutes.Sponsors)
+      .then(res => {
+        throw "asd";
+        return res.data;
+      })
+      .catch(() => [])
   );
-  
+
   const categories = useAsync(() =>
-    client.get(apiRoutes.SponsorsCategories).then(res => res.data)
-  ); 
+    client
+      .get(apiRoutes.SponsorsCategories)
+      .then(res => res.data)
+      .catch(() => [])
+  );
 
   const sponsorsCategories = computed<SponsorsCategory[]>(() =>
     !categories.value

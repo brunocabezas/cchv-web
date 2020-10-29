@@ -1,7 +1,4 @@
-import {
-  computed,
-  useAsync,
-} from "@nuxtjs/composition-api";
+import { computed, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { WPResponseItem } from "@/types/wordpressTypes";
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
@@ -40,7 +37,12 @@ const mapTeamMemberFromWpPost = (
 
 function useTeamMembers() {
   const data = useAsync(() =>
-    client.get(apiRoutes.Team).then(res => res.data)
+    client
+      .get(apiRoutes.Team)
+      .then(res => res.data)
+      .catch(() => ({
+        data: []
+      }))
   );
 
   const teamMembers = computed<TeamMember[]>(() =>
