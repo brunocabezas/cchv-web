@@ -1,19 +1,12 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { CarouselImageKeys } from "@/types/customFieldsKeysTypes"
-import { CarouselImage } from "@/types"
-import { DEFAULT_ORDER, DOMAIN } from "@/utils/constants"
-import { sortByOrder } from "@/utils/arrays"
-
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchCarouselImages, isLoading } = useAsyncData<
-  WPResponseItem
->(apiRoutes.CarouselImages)
+import { computed, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { CarouselImageKeys } from "@/types/customFieldsKeysTypes";
+import { CarouselImage } from "@/types";
+import { DEFAULT_ORDER, DOMAIN } from "@/utils/constants";
+import { sortByOrder } from "@/utils/arrays";
+import client from "~/api/client";
 
 const mapCarouselImageFromWpPost = (
   carouselImagePost: WPResponseItem
@@ -22,16 +15,16 @@ const mapCarouselImageFromWpPost = (
     carouselImagePost,
     CarouselImageKeys.url,
     ""
-  )
-  const isInternal = imgUrl.includes(DOMAIN)
-  let url: string = imgUrl
+  );
+  const isInternal = imgUrl.includes(DOMAIN);
+  let url: string = imgUrl;
 
   // Internal urls already inlcude DOMAIN,
   // should be removed to be used with <router-link />
   if (isInternal) {
-    const urlSlices = url.split(`${DOMAIN}/`)
-    urlSlices.shift() // remove domain name
-    url = urlSlices.join("")
+    const urlSlices = url.split(`${DOMAIN}/`);
+    urlSlices.shift(); // remove domain name
+    url = urlSlices.join("");
   }
 
   return {
@@ -53,13 +46,21 @@ const mapCarouselImageFromWpPost = (
       DEFAULT_ORDER
     ),
     url,
-    isInternal,
-  }
-}
+    isInternal
+  };
+};
 
 export default function useCarouselImages() {
+  const data = useAsync<WpResponseData>(() =>
+    client
+      .get(apiRoutes.CarouselImages)
+      .then(res => res.data)
+      .catch(() => [])
+  );
   const carousel = computed<CarouselImage[]>(() =>
-    data.value.map(mapCarouselImageFromWpPost).sort(sortByOrder)
-  )
-  return { fetchCarouselImages, carousel, isLoading }
+    data.value
+      ? data.value.map(mapCarouselImageFromWpPost).sort(sortByOrder)
+      : []
+  );
+  return { carousel, isLoading: false };
 }
