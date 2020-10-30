@@ -1,23 +1,17 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import { Document } from "@/types"
-import useAsyncData from "@/hooks/useAsyncData"
+import { computed, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { Document } from "@/types";
 import {
   WPResponseItem,
   WPDocument,
   DEFAULT_WP_DOCUMENT,
-} from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { DEFAULT_ORDER } from "@/utils/constants"
-import { DocumentKeys } from "@/types/customFieldsKeysTypes"
-import { sortByOrder } from "@/utils/arrays"
-
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WPResponseItem>(
-  apiRoutes.Documents
-)
+  WpResponseData
+} from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { DEFAULT_ORDER } from "@/utils/constants";
+import { DocumentKeys } from "@/types/customFieldsKeysTypes";
+import { sortByOrder } from "@/utils/arrays";
+import client from "~/api/client";
 
 const mapDocumentsFromWpPost = (documentPost: WPResponseItem): Document => ({
   id: documentPost.id,
@@ -31,17 +25,23 @@ const mapDocumentsFromWpPost = (documentPost: WPResponseItem): Document => ({
     documentPost,
     DocumentKeys.order,
     DEFAULT_ORDER
-  ),
-})
-
-export default function useTransparencyDocuments() {
-  const documents = computed<Document[]>(() =>
-    data.value.map(mapDocumentsFromWpPost).sort(sortByOrder)
   )
+});
+
+export default function useDocuments() {
+  const data = useAsync<WpResponseData>(() =>
+    client
+      .get(apiRoutes.Documents)
+      .then(res => res.data)
+      .catch(() => [])
+  );
+
+  const documents = computed<Document[]>(() =>
+    data.value ? data.value.map(mapDocumentsFromWpPost).sort(sortByOrder) : []
+  );
 
   return {
-    fetchDocuments,
     documents,
-    isLoading,
-  }
+    isLoading: false
+  };
 }

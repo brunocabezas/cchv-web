@@ -42,10 +42,7 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
       : `${Urls.Programs}${programPost.slug}`,
     slug: programPost.slug,
     video_url: getCustomFieldFromPost(programPost, ProgramKeys.video_url, ""),
-    is_external: is
-    const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WPResponseItem>(
-      apiRoutes.Documents
-    )External,
+    is_external: isExternal,
     text: getCustomFieldFromPost(programPost, ProgramKeys.text, ""),
     gallery: getCustomFieldFromPost<WpImage[]>(
       programPost,
