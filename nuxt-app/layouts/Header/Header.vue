@@ -22,8 +22,6 @@
       :isOpen="isNavOpen"
       :right="true"
       :closeOnNavigation="true"
-      :burgerIcon="false"
-      :crossIcon="false"
     >
       <div class="headerRightSection">
         <div v-if="onBigScreen" class="socialNetworkContainer">
@@ -85,6 +83,15 @@
 <style lang="stylus">
 @import '~/assets/variables.styl';
 
+
+.bm-menu .bm-cross-button {
+  display: none;
+}
+
+.bm-burger-button {
+   display: none;
+}
+
 .header .headerRightSection
   .socialNetworks--small
     padding: 1em 2em 0 0;
@@ -92,4 +99,3 @@
     .socialNetwork:last-child
       margin-right: 0;
 </style>
-

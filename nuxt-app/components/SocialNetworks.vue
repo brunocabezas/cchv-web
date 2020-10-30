@@ -26,7 +26,7 @@
 import { defineComponent } from "@nuxtjs/composition-api";
 import { MAIN_COLOR } from "@/utils/constants";
 import Icon from "vue-awesome/components/Icon.vue";
-// import useSocialNetworks from "@/models/useSocialNetworks";
+import useSocialNetworks from "@/models/useSocialNetworks";
 
 const SocialNetworks = defineComponent({
   name: "SocialNetworks",
@@ -42,15 +42,13 @@ const SocialNetworks = defineComponent({
     }
   },
   setup() {
-    // const {
-    //   fetchSocialNetworks,
-    //   socialNetworks,
-    //   isLoading
-    // } = useSocialNetworks();
+    const {
+      socialNetworks,
+      isLoading
+    } = useSocialNetworks();
 
-    // fetchSocialNetworks();
 
-    return { socialNetworks:[], MAIN_COLOR };
+    return { socialNetworks, MAIN_COLOR };
   }
 });
 

@@ -1,36 +1,33 @@
-import { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import { Program } from "@/types"
-import useAsyncData from "@/hooks/useAsyncData"
+import { computed, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { Program } from "@/types";
+import client from "~/api/client";
 import {
   WPResponseItem,
   WpImage,
   WPSelectCustomFieldValue,
-} from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { ProgramKeys } from "@/types/customFieldsKeysTypes"
-import { ProgramExtraContent } from "@/types/customFieldsTypes"
-import Urls from "@/utils/urls"
-import { sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/constants"
-
-const { data, fetch: fetchPrograms, isLoading } = useAsyncData<WPResponseItem>(
-  apiRoutes.Programs
-)
+  WpResponseData
+} from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { ProgramKeys } from "@/types/customFieldsKeysTypes";
+import { ProgramExtraContent } from "@/types/customFieldsTypes";
+import Urls from "@/utils/urls";
+import { sortByOrder } from "@/utils/arrays";
+import { DEFAULT_ORDER } from "@/utils/constants";
 
 const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
   const extraContent = getCustomFieldFromPost<
     WPSelectCustomFieldValue<ProgramExtraContent>
   >(programPost, ProgramKeys.extra_content, {
     label: "",
-    value: ProgramExtraContent.None,
-  })
+    value: ProgramExtraContent.None
+  });
 
   const isExternal = getCustomFieldFromPost<boolean>(
     programPost,
     ProgramKeys.is_external,
     false
-  )
+  );
   return {
     id: programPost.id,
     name: getWPTitle(programPost),
@@ -45,7 +42,10 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
       : `${Urls.Programs}${programPost.slug}`,
     slug: programPost.slug,
     video_url: getCustomFieldFromPost(programPost, ProgramKeys.video_url, ""),
-    is_external: isExternal,
+    is_external: is
+    const { data, fetch: fetchDocuments, isLoading } = useAsyncData<WPResponseItem>(
+      apiRoutes.Documents
+    )External,
     text: getCustomFieldFromPost(programPost, ProgramKeys.text, ""),
     gallery: getCustomFieldFromPost<WpImage[]>(
       programPost,
@@ -53,32 +53,38 @@ const mapProgramFromWpPost = (programPost: WPResponseItem): Program => {
       []
     ),
     short_name: getCustomFieldFromPost(programPost, ProgramKeys.short_name, ""),
-    extra_content: (extraContent && extraContent.value) || "",
-  }
-}
+    extra_content: (extraContent && extraContent.value) || ""
+  };
+};
 
 export default function usePrograms() {
+  const data = useAsync<WpResponseData>(() =>
+    client
+      .get(apiRoutes.Programs)
+      .then(res => res.data)
+      .catch(() => [])
+  );
+
   const programs = computed<Program[]>(() =>
-    data.value.map(mapProgramFromWpPost).sort(sortByOrder)
-  )
+    data.value ? data.value.map(mapProgramFromWpPost).sort(sortByOrder) : []
+  );
 
   function getProgramBySlug(slug: string): Program | undefined {
-    return programs.value.find((p) => p.slug === slug)
+    return programs.value.find(p => p.slug === slug);
   }
 
   function matchContentTypeWithProgram(
     contentType: ProgramExtraContent,
     program: Program
   ) {
-    return !!(program && program.extra_content === contentType)
+    return !!(program && program.extra_content === contentType);
   }
 
   return {
-    fetchPrograms,
-    // Used on nav menu
+    // Programs are used to build the navigation menu
     programs,
-    isLoading,
+    isLoading: false,
     getProgramBySlug,
-    matchContentTypeWithProgram,
-  }
+    matchContentTypeWithProgram
+  };
 }

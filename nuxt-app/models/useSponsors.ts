@@ -52,17 +52,14 @@ const mapWpResponseToView = (
 };
 
 export default function useSponsors() {
-  const sponsors = useAsync(() =>
+  const sponsors = useAsync<WpResponseData>(() =>
     client
       .get(apiRoutes.Sponsors)
-      .then(res => {
-        throw "asd";
-        return res.data;
-      })
+      .then(res => res.data)
       .catch(() => [])
   );
 
-  const categories = useAsync(() =>
+  const categories = useAsync<WpResponseData>(() =>
     client
       .get(apiRoutes.SponsorsCategories)
       .then(res => res.data)
@@ -73,7 +70,7 @@ export default function useSponsors() {
     !categories.value
       ? []
       : categories.value
-          .map((wp: any) => mapWpResponseToView(wp, sponsors.value || []))
+          .map((wp: WPResponseItem) => mapWpResponseToView(wp, sponsors.value || []))
           .sort(sortByOrder)
   );
 
