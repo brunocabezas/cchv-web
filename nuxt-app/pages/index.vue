@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeCarousel />
+    <HomeNews />
     <HomeVideos />
   </div>
 </template>
