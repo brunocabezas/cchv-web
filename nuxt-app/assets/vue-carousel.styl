@@ -1,0 +1,32 @@
+
+.VueCarousel
+  height: 100%;
+  width: 100%;
+  background-color: $blue;
+
+  hr
+    display: none;
+
+  .carouselButton
+    &.carouselButton--next
+      right: 10px;
+
+    &.carouselButton--prev
+      left: 10px;
+
+  .VueCarousel-wrapper
+    position: relative;
+
+  .VueCarousel-wrapper, .VueCarousel-inner
+    height: 100% !important;
+    width: 100%;
+
+  .VueCarousel-slide
+    position relative
+    min-width: 100%;
+    width: 100%;
+
+  .VueCarousel-dot
+    @media (max-width: $md)
+      width: 5px;
+      height: 5px;
