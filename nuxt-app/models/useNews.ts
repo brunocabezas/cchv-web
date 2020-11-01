@@ -75,7 +75,6 @@ export default function useNews(slug?: string) {
         .get(apiRoutes.News, { params: { per_page: 1, slug } })
         .then((res: AxiosResponse<WpResponseData>) => {
           singleNewsPostData.value = res.data;
-          console.log(res.data);
           return res.data;
         })
         .catch(() => [])
@@ -94,11 +93,6 @@ export default function useNews(slug?: string) {
   );
 
   const singleNewsPost = computed<NewsPost>(() => {
-    console.log(
-      "singleNewsPost computed",
-      singleNewsPostData.value.length,
-      newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0])
-    );
     return newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0]);
   });
 
@@ -119,16 +113,12 @@ export default function useNews(slug?: string) {
   }
 
   // Top five latest news
-  function getLatestNews(
-    mainPost: Readonly<Ref<Readonly<NewsPost | undefined>>>
-  ): NewsPost[] {
+  function getLatestNews(singlePostActiveId: Number): NewsPost[] {
     return (
       news.value
         // Filter the main post id to not repeat it on latest news
         .filter(lastesNewsPost =>
-          mainPost && mainPost.value
-            ? lastesNewsPost.id !== mainPost.value.id
-            : true
+          singlePostActiveId ? lastesNewsPost.id !== singlePostActiveId : true
         )
         .slice(0, 5)
     );
