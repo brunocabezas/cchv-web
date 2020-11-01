@@ -3,7 +3,7 @@
     class="newsGridItem newsPostPreview"
     v-bind:class="{ 'newsPostPreview--small': small }"
   >
-    <router-link
+    <nuxt-link
       class="newsPostPreview__link"
       :title="post.title"
       :to="getNewsPostUrlBySlug(post.slug)"
@@ -13,14 +13,14 @@
         :src="post.thumbnail"
         :height="imageHeight"
       />
-    </router-link>
+    </nuxt-link>
     <h3 class="newsPostPreview__title">
-      <router-link
+      <nuxt-link
         v-html="post.title"
         class="newsPostPreview__link"
         :title="post.title"
         :to="getNewsPostUrlBySlug(post.slug)"
-      ></router-link>
+      ></nuxt-link>
     </h3>
     <p class="newsPostPreview__date">{{ post.date }}</p>
 
@@ -31,14 +31,14 @@
     >
     </ellipsis>
 
-    <router-link
+    <nuxt-link
       :title="post.title"
       class="newsPostPreview__link newsPostPreview__readMoreLink"
       :to="getNewsPostUrlBySlug(post.slug)"
     >
       <i>Leer más ...</i>
       <v-icon :color="MAIN_COLOR" name="chevron-right" scale="1 "> </v-icon>
-    </router-link>
+    </nuxt-link>
     <hr />
   </div>
 </template>
@@ -77,7 +77,7 @@ export default defineComponent({
 });
 </script>
 <style lang="stylus">
-@import '~assets/variables.styl';
+@import '~/assets/variables.styl';
 
 .newsPostPreview
   margin: 0 1px;

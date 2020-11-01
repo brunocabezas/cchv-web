@@ -40,7 +40,7 @@ export default {
     { src: "@/plugins/vue-burger-menu", ssr: false },
     "@/plugins/vue-ellipsis",
     "@/plugins/vue-youtube",
-    "@/plugins/vue-infinite-loading"
+    { src: "@/plugins/vue-infinite-loading", ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -61,6 +61,9 @@ export default {
   ],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: [/^vue-awesome/]
+    transpile: [/^vue-awesome/],
+    extend(config) {
+      config.resolve.alias["vue"] = "vue/dist/vue.common";
+    }
   }
 };

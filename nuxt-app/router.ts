@@ -4,6 +4,7 @@ import HomePage from "@/pages/index.vue";
 import HistoryPage from "@/pages/history.vue";
 import TransparencyPage from "@/pages/transparency/index.vue";
 import TeamPage from "@/pages/team.vue";
+import NewsPage from "@/pages/news/index.vue"
 import Urls from "./utils/urls";
 
 Vue.use(Router);
@@ -26,6 +27,22 @@ const aboutRoutes = [
   }
 ];
 
+const newsRoutes = [
+  {
+    path: Urls.News,
+    component: NewsPage,
+    name: "Noticias",
+  },
+  // {
+  //   path: `${Urls.NewsPost}:postSlug`,
+  //   component: NewsPostPage,
+  //   props: (route: Route) => ({
+  //     postSlug: route.params.postSlug,
+  //   }),
+  //   name: "Noticias",
+  // },
+]
+
 export function createRouter() {
   return new Router({
     mode: "history",
@@ -34,7 +51,8 @@ export function createRouter() {
         path: "/",
         component: HomePage
       },
-      ...aboutRoutes
+      ...aboutRoutes,
+      ...newsRoutes
     ]
   });
 }

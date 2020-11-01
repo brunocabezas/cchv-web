@@ -1,56 +1,84 @@
-import { computed, Ref, ref, useAsync } from "@nuxtjs/composition-api";
+import { computed, Ref, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { NewsPost } from "@/types";
-// import useAsyncData from "@/hooks/useAsyncData";
-import { WpResponseData } from "@/types/wordpressTypes";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 import Urls from "@/utils/urls";
 import { DATE_FORMAT } from "@/utils/constants";
 import dayjs from "dayjs";
-// import useWpCategories from "@/models/useWpCategories";
 import newsHelpers from "@/utils/news";
 import client from "~/api/client";
+import { AxiosOptions } from "@nuxtjs/axios";
+import { AxiosRequestConfig } from "axios";
 
-// state to a single news post
-// const {
-//   data: singleNewsPostData,
-//   fetch: fetchSingleNewsPost,
-//   isLoading: isLoadingSingleNewsPost
-// } = useAsyncData<WPResponseItem>(apiRoutes.News);
+// Number of news to fetch when the user scrolls down
+const NEWS_PER_PAGE = 6;
 
+// Used on the first network request, to initialize state with N news
+export const INITIAL_NEWS = 6;
+
+// Wordpress header containing the total amount of items to be fetched
+// https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/
+const TOTAL_PAGES_HEADER = "x-wp-totalpages";
+
+const NO_PAGES_INDICATOR = -9999;
+
+const mapNewsFromWpPosts = (array: WPResponseItem[]) =>
+  array
+    .map(newsPost => newsHelpers.mapNewsCustomFieldsToNews(newsPost))
+    .sort((a: NewsPost, b: NewsPost): number => {
+      return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT));
+    })
+    // Filter duplicated ids
+    .filter(
+      (thing, index, self) => index === self.findIndex(t => t.id === thing.id)
+    );
 // Page number used to fetch data using vue-infinite-loading
-const newsPage = ref<number>(1);
+const newsPage = ssrRef<number>(1);
+const totalPages = ssrRef(-1);
+
+interface AxiosParams {
+  [paramKey: string]: string | number;
+}
 
 export default function useNews() {
-  const singeNewsPostData = useAsync<WpResponseData>(() =>
+  // const singeNewsPostData = useAsync<WpResponseData>(() =>
+  //   client
+  //     .get(apiRoutes.News)
+  //     .then(res => res.data)
+  //     .catch(() => [])
+  // );
+
+  const options = { per_page: 6, page: 1 };
+  const newsData = ssrRef<WpResponseData<WPResponseItem>>([]);
+
+  // Fetch first batch of news, to display on homepage and news page
+  useAsync<WpResponseData>(() =>
     client
-      .get(apiRoutes.News)
-      .then(res => res.data)
+      .get(apiRoutes.News, { params: options })
+      .then(res => {
+        newsData.value = res.data;
+        newsPage.value = 2;
+        const totalPagesFromHeader =
+          (res && res.headers && res.headers[TOTAL_PAGES_HEADER]) ||
+          NO_PAGES_INDICATOR;
+        // Set total pages from response header
+        totalPages.value = parseInt(totalPagesFromHeader, 10);
+        return res.data;
+      })
       .catch(() => [])
   );
 
-  const newsData = useAsync<WpResponseData>(() =>
-    client
-      .get(apiRoutes.News)
-      .then(res => res.data)
-      .catch(() => [])
-  );
+  const setNewsData = (data: WpResponseData) => {
+    newsData.value = [...newsData.value, ...data];
+  };
+
+  console.log(newsData.value);
   // const { fetchCategories } = useWpCategories();
 
   // fetchCategories();
 
   const news = computed<NewsPost[]>(() =>
-    newsData.value
-      ? newsData.value
-          .map(newsPost => newsHelpers.mapNewsCustomFieldsToNews(newsPost))
-          .sort((a: NewsPost, b: NewsPost): number => {
-            return dayjs(b.date, DATE_FORMAT).diff(dayjs(a.date, DATE_FORMAT));
-          })
-          // Filter duplicated ids
-          .filter(
-            (thing, index, self) =>
-              index === self.findIndex(t => t.id === thing.id)
-          )
-      : []
+    newsData.value ? mapNewsFromWpPosts(newsData.value) : []
   );
 
   const singleNewsPost = computed(() =>
@@ -108,6 +136,8 @@ export default function useNews() {
     fetchSingleNewsPost: () => ({}),
     // Pagination
     setNewsPage,
+    totalPages,
+    setNewsData,
     currentPage: newsPage
   };
 }
