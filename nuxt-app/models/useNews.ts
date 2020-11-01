@@ -10,9 +10,6 @@ import client from "~/api/client";
 import { AxiosOptions } from "@nuxtjs/axios";
 import { AxiosRequestConfig } from "axios";
 
-// Number of news to fetch when the user scrolls down
-const NEWS_PER_PAGE = 6;
-
 // Used on the first network request, to initialize state with N news
 export const INITIAL_NEWS = 6;
 
@@ -32,13 +29,10 @@ const mapNewsFromWpPosts = (array: WPResponseItem[]) =>
     .filter(
       (thing, index, self) => index === self.findIndex(t => t.id === thing.id)
     );
-// Page number used to fetch data using vue-infinite-loading
-const newsPage = ssrRef<number>(1);
-const totalPages = ssrRef(-1);
 
-interface AxiosParams {
-  [paramKey: string]: string | number;
-}
+// Page number used to fetch data using vue-infinite-loading
+const currentPage = ssrRef<number>(1);
+const totalPages = ssrRef(-1);
 
 export default function useNews() {
   // const singeNewsPostData = useAsync<WpResponseData>(() =>
@@ -47,9 +41,10 @@ export default function useNews() {
   //     .then(res => res.data)
   //     .catch(() => [])
   // );
-
-  const options = { per_page: 6, page: 1 };
   const newsData = ssrRef<WpResponseData<WPResponseItem>>([]);
+  const singleNewsPostData = ssrRef<WpResponseData<WPResponseItem>>([]);
+
+  const options = { per_page: INITIAL_NEWS, page: 1 };
 
   // Fetch first batch of news, to display on homepage and news page
   useAsync<WpResponseData>(() =>
@@ -57,7 +52,7 @@ export default function useNews() {
       .get(apiRoutes.News, { params: options })
       .then(res => {
         newsData.value = res.data;
-        newsPage.value = 2;
+        currentPage.value = 2;
         const totalPagesFromHeader =
           (res && res.headers && res.headers[TOTAL_PAGES_HEADER]) ||
           NO_PAGES_INDICATOR;
@@ -81,10 +76,8 @@ export default function useNews() {
     newsData.value ? mapNewsFromWpPosts(newsData.value) : []
   );
 
-  const singleNewsPost = computed(() =>
-    // newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
-    // @ts-ignore
-    newsHelpers.mapNewsCustomFieldsToNews({})
+  const singleNewsPost = computed<NewsPost>(() =>
+    newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
   );
 
   // Highlighted news are displayed on:
@@ -119,8 +112,8 @@ export default function useNews() {
     );
   }
 
-  function setNewsPage(pageNumber: number) {
-    newsPage.value = pageNumber;
+  function setCurrentPage(pageNumber: number) {
+    currentPage.value = pageNumber;
   }
 
   return {
@@ -135,9 +128,9 @@ export default function useNews() {
     fetchNews: () => ({}),
     fetchSingleNewsPost: () => ({}),
     // Pagination
-    setNewsPage,
+    setCurrentPage,
     totalPages,
     setNewsData,
-    currentPage: newsPage
+    currentPage
   };
 }

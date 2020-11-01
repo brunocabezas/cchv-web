@@ -1,33 +1,51 @@
-import { getWPTitle, getCustomFieldFromPost as getCustomField } from "./api"
-import { NewsKeys } from "@/types/customFieldsKeysTypes"
-import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
-import { NewsPost, Activity } from "@/types"
-import dayjs from "dayjs"
-import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./constants"
-import { ActivityType } from "@/types/customFieldsTypes"
-import { dateIsPast } from "./date"
-import useMediaQueries from "@/hooks/useMediaQueries"
+import { getWPTitle, getCustomFieldFromPost as getCustomField } from "./api";
+import { NewsKeys } from "@/types/customFieldsKeysTypes";
+import { WpImage, WPResponseItem } from "@/types/wordpressTypes";
+import { NewsPost, Activity } from "@/types";
+import dayjs from "dayjs";
+import { DATE_FORMAT, CUSTOM_FIELDS_DATE_FORMAT } from "./constants";
+import { ActivityType } from "@/types/customFieldsTypes";
+import { dateIsPast } from "./date";
+import useMediaQueries from "@/hooks/useMediaQueries";
 
-const mapNewsCustomFieldsToNews = (newsPost: WPResponseItem): NewsPost => {
-  const { onBigScreen } = useMediaQueries()
-  const gallery = getCustomField<WpImage[]>(newsPost, NewsKeys.gallery, [])
+const mapNewsCustomFieldsToNews = (newsPost?: WPResponseItem): NewsPost => {
+  if (!newsPost) {
+    return {
+      id: 0,
+      title: "",
+      slug: "",
+      date: "",
+      thumbnail: "",
+      abstract: "",
+      is_activity: ActivityType.None,
+      text: "",
+      is_highlighted: false,
+      video_url: "",
+      gallery: [],
+      activity_calendar_url: "",
+      activity_date: "",
+      activity_date_has_passed: false
+    };
+  }
+  const { onBigScreen } = useMediaQueries();
+  const gallery = getCustomField<WpImage[]>(newsPost, NewsKeys.gallery, []);
   const activityDate = getCustomField<string>(
     newsPost,
     NewsKeys.activity_date,
     ""
-  )
+  );
 
   const activity_date = activityDate
     ? dayjs(activityDate, CUSTOM_FIELDS_DATE_FORMAT).format(
         onBigScreen.value ? "DD MMM, YYYY" : DATE_FORMAT
       )
-    : ""
+    : "";
 
   const activity_calendar_url = getCustomField<string>(
     newsPost,
     NewsKeys.activity_calendar_url,
     ""
-  )
+  );
 
   return {
     id: newsPost.id,
@@ -51,10 +69,9 @@ const mapNewsCustomFieldsToNews = (newsPost: WPResponseItem): NewsPost => {
     gallery,
     activity_calendar_url,
     activity_date,
-    activity_date_has_passed:
-      !activity_calendar_url || dateIsPast(activityDate),
-  }
-}
+    activity_date_has_passed: !activity_calendar_url || dateIsPast(activityDate)
+  };
+};
 
 // Some news can be defined as also activities
 // Map news with NewsKeys.is_activity field set !act.activity_calendar_url || dateInPast(activity_date)to true
@@ -69,19 +86,19 @@ const mapNewsToActivities = (newsPost: NewsPost): Activity => ({
   video_url: newsPost.video_url,
   activity_date: newsPost.activity_date,
   activity_date_has_passed: newsPost.activity_date_has_passed,
-  activity_calendar_url: newsPost.activity_calendar_url,
-})
+  activity_calendar_url: newsPost.activity_calendar_url
+});
 
 const mapNewsPostsToActivityType = (newsPosts: WPResponseItem[]): Activity[] =>
   newsPosts
-    .map((newsPost) => mapNewsCustomFieldsToNews(newsPost))
+    .map(newsPost => mapNewsCustomFieldsToNews(newsPost))
     .filter(
       (post: NewsPost) => post[NewsKeys.is_activity] !== ActivityType.None
     )
-    .map((newsPost) => mapNewsToActivities(newsPost))
+    .map(newsPost => mapNewsToActivities(newsPost));
 
 const newsHelpers = {
   mapNewsCustomFieldsToNews,
-  mapNewsPostsToActivityType,
-}
-export default newsHelpers
+  mapNewsPostsToActivityType
+};
+export default newsHelpers;
