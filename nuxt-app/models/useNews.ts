@@ -1,4 +1,11 @@
-import { computed, Ref, ssrRef, useAsync } from "@nuxtjs/composition-api";
+import {
+  computed,
+  ref,
+  Ref,
+  reqSsrRef,
+  ssrRef,
+  useAsync
+} from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { NewsPost } from "@/types";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
@@ -7,9 +14,7 @@ import { DATE_FORMAT } from "@/utils/constants";
 import dayjs from "dayjs";
 import newsHelpers from "@/utils/news";
 import client from "~/api/client";
-import { AxiosOptions } from "@nuxtjs/axios";
-import { AxiosRequestConfig } from "axios";
-
+import { AxiosResponse } from "axios";
 // Used on the first network request, to initialize state with N news
 export const INITIAL_NEWS = 6;
 
@@ -33,22 +38,18 @@ const mapNewsFromWpPosts = (array: WPResponseItem[]) =>
 // Page number used to fetch data using vue-infinite-loading
 const currentPage = ssrRef<number>(1);
 const totalPages = ssrRef(-1);
+const newsData = ssrRef<WpResponseData>([]);
+const isLoadingSinglePostData = ssrRef(false);
+const isLoading = ssrRef(false);
 
-export default function useNews() {
-  // const singeNewsPostData = useAsync<WpResponseData>(() =>
-  //   client
-  //     .get(apiRoutes.News)
-  //     .then(res => res.data)
-  //     .catch(() => [])
-  // );
-  const newsData = ssrRef<WpResponseData<WPResponseItem>>([]);
-  const singleNewsPostData = ssrRef<WpResponseData<WPResponseItem>>([]);
-
+export default function useNews(slug?: string) {
   const options = { per_page: INITIAL_NEWS, page: 1 };
+  const singleNewsPostData = reqSsrRef<WpResponseData<WPResponseItem>>([]);
 
-  // Fetch first batch of news, to display on homepage and news page
-  useAsync<WpResponseData>(() =>
-    client
+  // Fetch initial news batch, they're displayed on home and news pages
+  useAsync<WpResponseData>(() => {
+    isLoading.value = true;
+    return client
       .get(apiRoutes.News, { params: options })
       .then(res => {
         newsData.value = res.data;
@@ -61,24 +62,45 @@ export default function useNews() {
         return res.data;
       })
       .catch(() => [])
-  );
+      .finally(() => {
+        isLoading.value = false;
+      });
+  });
+
+  if (slug) {
+    // If slug is present, load the single post data
+    useAsync<WpResponseData>(() => {
+      isLoadingSinglePostData.value = true;
+      return client
+        .get(apiRoutes.News, { params: { per_page: 1, slug } })
+        .then((res: AxiosResponse<WpResponseData>) => {
+          singleNewsPostData.value = res.data;
+          console.log(res.data);
+          return res.data;
+        })
+        .catch(() => [])
+        .finally(() => {
+          isLoadingSinglePostData.value = false;
+        });
+    }, slug);
+  }
 
   const setNewsData = (data: WpResponseData) => {
     newsData.value = [...newsData.value, ...data];
   };
 
-  console.log(newsData.value);
-  // const { fetchCategories } = useWpCategories();
-
-  // fetchCategories();
-
   const news = computed<NewsPost[]>(() =>
     newsData.value ? mapNewsFromWpPosts(newsData.value) : []
   );
 
-  const singleNewsPost = computed<NewsPost>(() =>
-    newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0] || [])
-  );
+  const singleNewsPost = computed<NewsPost>(() => {
+    console.log(
+      "singleNewsPost computed",
+      singleNewsPostData.value.length,
+      newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0])
+    );
+    return newsHelpers.mapNewsCustomFieldsToNews(singleNewsPostData.value[0]);
+  });
 
   // Highlighted news are displayed on:
   // - homepage on regular viewports
@@ -121,12 +143,11 @@ export default function useNews() {
     highlightedNews,
     singleNewsPost,
     getLatestNews,
-    isLoading: false,
-    isLoadingSingleNewsPost: false,
+    isLoading,
+    isLoadingSingleNewsPost: isLoadingSinglePostData,
     getNewsPostUrlBySlug,
     // Fetch methods
     fetchNews: () => ({}),
-    fetchSingleNewsPost: () => ({}),
     // Pagination
     setCurrentPage,
     totalPages,

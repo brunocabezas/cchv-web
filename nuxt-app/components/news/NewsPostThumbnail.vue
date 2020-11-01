@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from "@vue/composition-api";
+import { defineComponent, PropType, computed } from "@nuxtjs/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { NewsPost } from "@/types";
 import Urls from "@/utils/urls";

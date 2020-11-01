@@ -1,10 +1,10 @@
 <template>
   <div class="news homeSection">
     <div title="Ir a noticias" class="homeSection__title">
-      <router-link :to="newsGridUrl"><h1>Noticias</h1> </router-link>
-      <router-link v-if="onBigScreen" :to="newsGridUrl"
+      <nuxt-link :to="newsGridUrl"><h1>Noticias</h1> </nuxt-link>
+      <nuxt-link v-if="onBigScreen" :to="newsGridUrl"
         ><v-icon :color="MAIN_COLOR" name="chevron-right" scale="1.5"> </v-icon>
-      </router-link>
+      </nuxt-link>
     </div>
     <Loader size="30px" v-if="isLoading" />
     <div v-if="!isLoading && onBigScreen" class="newsList">
@@ -22,7 +22,7 @@
       />
     </div>
     <div class="newsLinkContainer" v-if="!onBigScreen">
-      <router-link class="newsLink" :to="newsGridUrl">Ver todas</router-link>
+      <nuxt-link class="newsLink" :to="newsGridUrl">Ver todas</nuxt-link>
     </div>
   </div>
 </template>

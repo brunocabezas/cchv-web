@@ -11,13 +11,13 @@
       :perPage="1"
     >
       <slide v-bind:key="img.id" v-for="img in carousel">
-        <router-link
+        <nuxt-link
           v-if="img.image && img.url && img.isInternal"
           :title="img.name"
           :to="img.url"
         >
           <ProgressiveImage :src="img.image" height="100%" />
-        </router-link>
+        </nuxt-link>
         <a
           v-if="img.image && img.url && !img.isInternal"
           :title="img.name"

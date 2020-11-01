@@ -1,4 +1,4 @@
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
 import NewsPostThumbnail from "@/components/news/NewsPostThumbnail.vue";
 import Loader from "@/components/Loader.vue";
 import useNews from "@/models/useNews";

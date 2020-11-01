@@ -1,4 +1,4 @@
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, computed } from "@nuxtjs/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { MAIN_COLOR } from "@/utils/constants";
 import Loader from "@/components/Loader.vue";

@@ -1,4 +1,4 @@
-import { defineComponent, ref, computed } from "@vue/composition-api";
+import { defineComponent, ref, computed } from "@nuxtjs/composition-api";
 import { Carousel, Slide } from "@jambonn/vue-concise-carousel";
 import Icon from "vue-awesome/components/Icon.vue";
 import Loader from "@/components/Loader.vue";

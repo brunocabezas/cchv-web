@@ -1,20 +1,28 @@
 <template>
   <div class="newsPostMobileThumbnail">
     <div v-if="post" class="newsPostMedia">
-      <router-link
+      <nuxt-link
         v-if="post.gallery && post.gallery[0]"
         :title="post.name"
         :to="getNewsPostUrlBySlug(post.slug)"
       >
-        <ProgressiveImage :height="MOBILE_IMG_HEIGHT" :src="post.gallery[0].url" />
-      </router-link>
+        <ProgressiveImage
+          :height="MOBILE_IMG_HEIGHT"
+          :src="post.gallery[0].url"
+        />
+      </nuxt-link>
     </div>
     <div v-if="post" class="newsPostInfo">
       <div class="newsPostBadge">
         {{ getActvitiesGridTitleByType(post.is_activity).slice(0, -1) }}
       </div>
       <h4 class="newsPostTitle">
-        <router-link v-html="post.title" :title="post.name" :to="getNewsPostUrlBySlug(post.slug)"> </router-link>
+        <nuxt-link
+          v-html="post.title"
+          :title="post.name"
+          :to="getNewsPostUrlBySlug(post.slug)"
+        >
+        </nuxt-link>
       </h4>
       <p class="newsPostDate">{{ post.date }}</p>
     </div>
@@ -22,11 +30,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, computed } from "@nuxtjs/composition-api";
 import ProgressiveImage from "@/components/ProgressiveImage.vue";
 import useNews from "@/models/useNews";
 import useActivities from "@/models/useActivities";
-import { MOBILE_IMG_HEIGHT } from '@/utils/constants';
+import { MOBILE_IMG_HEIGHT } from "@/utils/constants";
 
 const NewsPostMobileThumbnail = defineComponent({
   name: "NewsPostMobileThumbnail",
@@ -42,7 +50,7 @@ const NewsPostMobileThumbnail = defineComponent({
     return {
       getNewsPostUrlBySlug,
       getActvitiesGridTitleByType,
-      MOBILE_IMG_HEIGHT,
+      MOBILE_IMG_HEIGHT
     };
   }
 });
