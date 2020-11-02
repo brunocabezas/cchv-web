@@ -23,7 +23,7 @@
           v-for="(post, index) in latestResidencies"
         >
           <div class="latestPostMedia">
-            <router-link
+            <nuxt-link
               :title="post.name"
               :to="getResidencyUrlBySlug(post.slug)"
             >
@@ -31,15 +31,15 @@
                 :src="post.gallery ? post.gallery[0].url : ''"
                 :height="MOBILE_IMG_HEIGHT"
               />
-            </router-link>
+            </nuxt-link>
           </div>
           <div class="latestPostInfo">
             <h4 class="latestPostsItem__title">
-              <router-link
+              <nuxt-link
                 v-html="post.name"
                 :title="post.name"
                 :to="getResidencyUrlBySlug(post.slug)"
-              ></router-link>
+              ></nuxt-link>
             </h4>
             <p v-if="post.end_date" class="latestPostsItem__date">
               {{ post.short_date }}

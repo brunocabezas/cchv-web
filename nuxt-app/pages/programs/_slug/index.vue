@@ -22,6 +22,10 @@
         v-html="program.text"
       ></div>
       <DowneyProgramVideos v-if="isDowneyProgram" />
+      <SchoolProgramsTabs v-if="isSchoolProgram" />
+      <SchoolProgramWorkshopsTabs v-if="isSchoolProgram" />
+      <ProgramActivities v-if="isMagneticFieldsProgram" />
+      <Residencies v-if="isResidencies" />
     </div>
     <Editions v-if="isArtScienceAndCultureProgram" />
   </div>

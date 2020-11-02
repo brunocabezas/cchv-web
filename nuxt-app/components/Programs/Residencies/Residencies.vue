@@ -7,7 +7,7 @@
       v-for="residency in residencies"
     >
       <div class="residencyMedia">
-        <router-link
+        <nuxt-link
           :title="residency.name"
           :to="getResidencyUrlBySlug(residency.slug)"
         >
@@ -15,14 +15,14 @@
             :src="residency.gallery[0].url"
             :height="onBigScreen ? '200px' : '120px'"
           />
-        </router-link>
+        </nuxt-link>
       </div>
       <div class="residencyInfo">
         <h2 class="residencyName">
-          <router-link
+          <nuxt-link
             :title="residency.name"
             :to="getResidencyUrlBySlug(residency.slug)"
-            >{{ residency.name }}</router-link
+            >{{ residency.name }}</nuxt-link
           >
         </h2>
         <p

@@ -4,7 +4,7 @@ import { Program } from "@/types";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import DowneyProgramVideos from "@/components/Programs/DowneyProgramVideos.vue";
-import ProgramActivites from "@/components/Programs/ProgramActivities.vue";
+import ProgramActivities from "@/components/Programs/ProgramActivities.vue";
 import Editions from "@/components/Programs/Editions/EditionsList.vue";
 import Residencies from "@/components/Programs/Residencies/Residencies.vue";
 import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramsTabs.vue";
@@ -18,7 +18,7 @@ const ProgramPage = defineComponent({
     Loader,
     DowneyProgramVideos,
     SchoolProgramsTabs,
-    ProgramActivites,
+    ProgramActivities,
     SchoolProgramWorkshopsTabs,
     Media,
     Residencies,

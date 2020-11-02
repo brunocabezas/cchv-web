@@ -1,9 +1,9 @@
 <template>
   <div v-if="noActivitiesToDisplay" class="activitiesGrid">
     <h1 v-if="!onPage" class="activitiesGridTitle">
-      <router-link :title="pageLinkTitle" :to="activitiesGridUrl">
-        {{ title }}</router-link
-      >
+      <nuxt-link :title="pageLinkTitle" :to="activitiesGridUrl">
+        {{ title }}
+      </nuxt-link>
     </h1>
     <div class="activitiesGridContainer">
       <div v-for="act in activities" v-bind:key="act.id" class="activity">
@@ -14,7 +14,7 @@
           :date="act.activity_date"
           :isDisabled="act.activity_date_has_passed"
         />
-        <router-link
+        <nuxt-link
           class="activitiesGridLink"
           :title="act.name"
           :to="getNewsPostUrlBySlug(act.slug)"
@@ -25,15 +25,15 @@
             :src="act.gallery[0].url"
           />
           <h3 v-html="act.name" class="activitiesGridTitle"></h3>
-        </router-link>
+        </nuxt-link>
         <div class="activitiesMobileSchedule">
-          <router-link
+          <nuxt-link
             class="activitiesGridLink"
             :title="act.name"
             :to="getNewsPostUrlBySlug(act.slug)"
           >
             <h4 v-html="act.name" class="activitiesMobileScheduleTitle"></h4>
-          </router-link>
+          </nuxt-link>
           <p class="activitiesMobileScheduleDate">
             {{ act.activity_date }}
           </p>
@@ -49,13 +49,13 @@
         </div>
       </div>
       <div v-if="!onPage" class="activitiesGridGoToPageButtonContainer">
-        <router-link
+        <nuxt-link
           class="activitiesGridGoToPageButton"
           :title="pageLinkTitle"
           :to="activitiesGridUrl"
         >
-          Ver más</router-link
-        >
+          Ver más
+        </nuxt-link>
       </div>
     </div>
   </div>

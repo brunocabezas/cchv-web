@@ -2,7 +2,7 @@ import { defineComponent, computed, PropType } from "@nuxtjs/composition-api"
 import useActivities from "@/models/useActivities"
 import { ActivityType } from "@/types/customFieldsTypes"
 import Loader from "@/components/Loader.vue"
-import ActivitiesGrid from "@/components/Activities/ActivitiesGrid/ActivitiesGrid.vue"
+import ActivitiesGrid from "@/components/news/activities/ActivitiesGrid/ActivitiesGrid.vue"
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue";
 import Urls from "@/utils/urls"

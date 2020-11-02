@@ -2,13 +2,13 @@
   <div class="schoolProgramThumbnail">
     <div v-if="program" class="schoolProgramMedia">
       <!-- displayed link on <ProgressiveImage/> only if program is active -->
-      <router-link
+      <nuxt-link
         v-if="program.is_active && program.gallery && program.gallery[0]"
         :title="program.name"
         :to="getUrlBySlug(program.slug)"
       >
         <ProgressiveImage :height="mediaHeight" :src="program.gallery[0].url" />
-      </router-link>
+      </nuxt-link>
       <ProgressiveImage
         v-else-if="program.gallery && program.gallery[0]"
         :height="mediaHeight"
@@ -18,11 +18,11 @@
     <div v-if="program" class="schoolProgramInfo">
       <h3 class="schoolProgramName">
         <!-- displayed link on name only if program is active -->
-        <router-link
+        <nuxt-link
           v-if="program.is_active"
           :title="program.name"
           :to="getUrlBySlug(program.slug)"
-          >{{ program.name }}</router-link
+          >{{ program.name }}</nuxt-link
         >
         {{ !program.is_active ? program.name : "" }}
       </h3>
