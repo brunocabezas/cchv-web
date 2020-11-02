@@ -1,30 +1,32 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import { SchoolProgram } from "@/types"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WpImage, WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes"
-import { Tab } from "@/hooks/useTabs"
-import Urls from "@/utils/urls"
-
-Vue.use(VueCompositionApi)
+import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { SchoolProgram } from "@/types";
+import useAsyncData from "@/hooks/useAsyncData";
+import {
+  WpImage,
+  WpResponseData,
+  WPResponseItem
+} from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes";
+import { Tab } from "@/hooks/useTabs";
+import Urls from "@/utils/urls";
+import client from "~/api/client";
 
 export interface SchoolProgramTab extends Tab {
-  logo: string
-  active_school_logo: string
+  logo: string;
+  active_school_logo: string;
 }
-type SchoolProgramTabs = SchoolProgramTab[]
+type SchoolProgramTabs = SchoolProgramTab[];
 
 const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
   WPResponseItem
->(apiRoutes.SchoolPrograms)
+>(apiRoutes.SchoolPrograms);
 
 // The text to introduce workshops (displayed above the workshop tabs)
 // is included on a workshop from schoolPrograms with this specific title
-const WORKSHOP_ABSTRACT_POST_NAME = "MANDRAGORA_TEXTO"
-const SCHOOL_ABSTRACT_POST_NAME = "ESCUELAS_TEXTO"
+const WORKSHOP_ABSTRACT_POST_NAME = "MANDRAGORA_TEXTO";
+const SCHOOL_ABSTRACT_POST_NAME = "ESCUELAS_TEXTO";
 
 const mapSchoolProgramFromWpPost = (
   schoolProgramPost: WPResponseItem
@@ -74,70 +76,82 @@ const mapSchoolProgramFromWpPost = (
     schoolProgramPost,
     SchoolProgramKeys.abstract,
     ""
-  ),
-})
+  )
+});
 
 const mapProgramTitleFromName = (t: SchoolProgram) => ({
   ...t,
-  title: t.name,
-})
+  title: t.name
+});
 
+const loading = ssrRef(false);
 export default function useSchoolPrograms() {
+  const data = useAsync<WpResponseData>(() => {
+    loading.value = true;
+    return client
+      .get(apiRoutes.SchoolPrograms)
+      .then(res => res.data)
+      .catch(() => [])
+      .finally(() => {
+        loading.value = false;
+      });
+  });
+
   const schoolPrograms = computed<SchoolProgram[]>(() =>
-    data.value.map(mapSchoolProgramFromWpPost)
-  )
+    data.value ? data.value.map(mapSchoolProgramFromWpPost) : []
+  );
 
   // Programs have is_workshop set false
   const programs = computed<SchoolProgram[]>(() =>
     schoolPrograms.value
-      .filter((program) => !program.is_workshop)
+      .filter(program => !program.is_workshop)
       // Remove workshop that contains the abstract text
-      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
-      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
-  )
+      .filter(p => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter(p => p.name !== SCHOOL_ABSTRACT_POST_NAME)
+  );
 
   const workshops = computed<SchoolProgram[]>(() =>
     schoolPrograms.value
-      .filter((program) => program.is_workshop)
+      .filter(program => program.is_workshop)
       // Remove workshop that contains the abstract text
-      .filter((p) => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
-      .filter((p) => p.name !== SCHOOL_ABSTRACT_POST_NAME)
-  )
+      .filter(p => p.name !== WORKSHOP_ABSTRACT_POST_NAME)
+      .filter(p => p.name !== SCHOOL_ABSTRACT_POST_NAME)
+  );
 
   const workshopsAbstract = computed(() => {
     const postWithText = schoolPrograms.value.find(
-      (p) => p.name === WORKSHOP_ABSTRACT_POST_NAME
-    )
+      p => p.name === WORKSHOP_ABSTRACT_POST_NAME
+    );
 
-    return postWithText ? postWithText.text : ""
-  })
+    return postWithText ? postWithText.text : "";
+  });
 
   const schoolProgramsAbstract = computed(() => {
     const postWithText = schoolPrograms.value.find(
-      (p) => p.name === SCHOOL_ABSTRACT_POST_NAME
-    )
+      p => p.name === SCHOOL_ABSTRACT_POST_NAME
+    );
 
-    return postWithText ? postWithText.text : ""
-  })
+    return postWithText ? postWithText.text : "";
+  });
 
   const schoolProgramsTabs = computed<SchoolProgramTabs>(() =>
     programs.value.map(mapProgramTitleFromName)
-  )
+  );
 
   const workshopsTabs = computed<SchoolProgramTabs>(() =>
     workshops.value.map(mapProgramTitleFromName)
-  )
+  );
 
   function getSchoolProgramById(programId: number): SchoolProgram | undefined {
-    return schoolPrograms.value.find((p) => p.id === programId)
+    return schoolPrograms.value.find(p => p.id === programId);
   }
 
   function getSchoolProgramUrlBySlug(slug: string) {
-    return `${Urls.SchoolProgram}${slug}`
+    return `${Urls.SchoolProgram}${slug}`;
   }
 
   function getWorkshopUrlBySlug(slug: string) {
-    return `${Urls.Workshop}${slug}`
+    return `${Urls.Workshop}${slug}`;
   }
 
   return {
@@ -151,6 +165,6 @@ export default function useSchoolPrograms() {
     schoolProgramsTabs,
     getSchoolProgramById,
     getSchoolProgramUrlBySlug,
-    getWorkshopUrlBySlug,
-  }
+    getWorkshopUrlBySlug
+  };
 }

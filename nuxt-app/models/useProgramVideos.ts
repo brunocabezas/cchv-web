@@ -1,17 +1,10 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import { ProgramVideo } from "@/types"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { ProgramVideoKeys } from "@/types/customFieldsKeysTypes"
-
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchProgramVideos, isLoading } = useAsyncData<
-  WPResponseItem
->(apiRoutes.ProgramVideos)
+import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { ProgramVideo } from "@/types";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { ProgramVideoKeys } from "@/types/customFieldsKeysTypes";
+import client from "~/api/client";
 
 const mapProgramVideoFromWpPost = (
   programVideoPost: WPResponseItem
@@ -37,17 +30,29 @@ const mapProgramVideoFromWpPost = (
     programVideoPost,
     ProgramVideoKeys.duration,
     ""
-  ),
-})
+  )
+});
+
+const loading = ssrRef(false);
 
 export default function usePrograms() {
+  const data = useAsync<WpResponseData>(() => {
+    loading.value = true;
+    return client
+      .get(apiRoutes.ProgramVideos)
+      .then(res => res.data)
+      .catch(() => [])
+      .finally(() => {
+        loading.value = false;
+      });
+  });
   const programVideos = computed<ProgramVideo[]>(() =>
-    data.value.map(mapProgramVideoFromWpPost)
-  )
+    data.value ? data.value.map(mapProgramVideoFromWpPost) : []
+  );
 
   return {
-    fetchProgramVideos,
+    // fetchProgramVideos,
     programVideos,
-    isLoading,
-  }
+    isLoading: false
+  };
 }

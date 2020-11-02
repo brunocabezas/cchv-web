@@ -6,6 +6,7 @@ import TransparencyPage from "@/pages/transparency/index.vue";
 import TeamPage from "@/pages/team.vue";
 import NewsPage from "@/pages/news/index.vue";
 import NewsPostPage from "@/pages/news/_slug/index.vue";
+import ProgramPage from "@/pages/programs/_slug/index.vue";
 import Urls from "./utils/urls";
 
 Vue.use(Router);
@@ -26,6 +27,38 @@ const aboutRoutes = [
     component: TransparencyPage,
     name: "transparency"
   }
+];
+
+const programRoutes = [
+  // Programs
+  {
+    path: `${Urls.Programs}:slug`,
+    component: ProgramPage,
+    // props: (route: Route) => ({
+    //   slug: route.params.slug,
+    // }),
+    name: "Programas"
+  }
+  // // Program Activities
+  // {
+  //   path: `${Urls.Programs}campos-magneticos/:activityType`,
+  //   component: ActivitiesPage,
+  //   props: (route: Route) => ({
+  //     // Prop of ActivitiesPage
+  //     activityType: getTypeBySlug(route.params.activityType),
+  //   }),
+  //   name: "Actividades",
+  // },
+  // // School Program Single Page
+  // {
+  //   path: `${Urls.SchoolProgram}:slug`,
+  //   component: SinglePostPage,
+  //   props: (route: Route) => ({
+  //     slug: route.params.slug,
+  //     pageType: SinglePostDataType.SchoolProgram,
+  //   }),
+  //   name: "Escuelas",
+  // },
 ];
 
 const newsRoutes = [
@@ -50,7 +83,8 @@ export function createRouter() {
         component: HomePage
       },
       ...aboutRoutes,
-      ...newsRoutes
+      ...newsRoutes,
+      ...programRoutes
     ]
   });
 }

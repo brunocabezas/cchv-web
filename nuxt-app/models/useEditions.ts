@@ -1,19 +1,12 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WPResponseItem } from "@/types/wordpressTypes"
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api"
-import { EditionKeys } from "@/types/customFieldsKeysTypes"
-import { Edition } from "@/types"
-import { sortByOrder } from "@/utils/arrays"
-import { DEFAULT_ORDER } from "@/utils/constants"
-
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchEditions, isLoading } = useAsyncData<WPResponseItem>(
-  apiRoutes.Editions
-)
+import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
+import apiRoutes from "../../api/apiRoutes";
+import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
+import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { EditionKeys } from "@/types/customFieldsKeysTypes";
+import { Edition } from "@/types";
+import { sortByOrder } from "@/utils/arrays";
+import { DEFAULT_ORDER } from "@/utils/constants";
+import client from "~/api/client";
 
 const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
   return {
@@ -33,18 +26,30 @@ const mapEditionsFromWpPost = (editionPost: WPResponseItem): Edition => {
       EditionKeys.order,
       DEFAULT_ORDER
     ),
-    date: getCustomFieldFromPost(editionPost, EditionKeys.date, ""),
-  }
-}
+    date: getCustomFieldFromPost(editionPost, EditionKeys.date, "")
+  };
+};
+
+const loading = ssrRef(false);
 
 export default function useEditions() {
+  const data = useAsync<WpResponseData>(() => {
+    loading.value = true;
+    return client
+      .get(apiRoutes.Editions)
+      .then(res => res.data)
+      .catch(() => [])
+      .finally(() => {
+        loading.value = false;
+      });
+  });
   const editions = computed<Edition[]>(() =>
-    data.value.map(mapEditionsFromWpPost).sort(sortByOrder)
-  )
+    data.value ? data.value.map(mapEditionsFromWpPost).sort(sortByOrder) : []
+  );
 
   return {
-    fetchEditions,
+    // fetchEditions,
     editions,
-    isLoading,
-  }
+    isLoading: loading
+  };
 }

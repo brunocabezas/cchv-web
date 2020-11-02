@@ -1,33 +1,38 @@
-import Vue from "vue"
-import VueCompositionApi, { computed } from "@nuxtjs/composition-api"
-import apiRoutes from "../../api/apiRoutes"
-import useAsyncData from "@/hooks/useAsyncData"
-import { WpCategory } from "@/types/wordpressTypes"
-import { ActivityType } from "@/types/customFieldsTypes"
+import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
+import { WpCategory } from "@/types/wordpressTypes";
+import { ActivityType } from "@/types/customFieldsTypes";
+import client from "~/api/client";
+import apiRoutes from "~/api/apiRoutes";
 
-Vue.use(VueCompositionApi)
-
-const { data, fetch: fetchCategories, isLoading } = useAsyncData<WpCategory>(
-  apiRoutes.WpCategories
-)
+const loading = ssrRef(false);
 
 export default function useWpCategories() {
-  const categories = computed<WpCategory[]>(() => data.value)
+  const categories = useAsync<WpCategory[]>(() => {
+    loading.value = true;
+    return client
+      .get(apiRoutes.WpCategories)
+      .then(res => res.data)
+      .catch(() => [])
+      .finally(() => {
+        loading.value = false;
+      });
+  });
 
   const activityCategories = computed<WpCategory[]>(() =>
-    categories.value.filter(
-      (cat) =>
-        cat.slug === ActivityType.Concert ||
-        cat.slug === ActivityType.Conversation ||
-        cat.slug === ActivityType.Performance ||
-        cat.slug === ActivityType.Movie
-    )
-  )
+    categories.value
+      ? categories.value.filter(
+          cat =>
+            cat.slug === ActivityType.Concert ||
+            cat.slug === ActivityType.Conversation ||
+            cat.slug === ActivityType.Performance ||
+            cat.slug === ActivityType.Movie
+        )
+      : []
+  );
 
   return {
-    fetchCategories,
     categories,
     activityCategories,
-    isLoading,
-  }
+    isLoading: loading
+  };
 }

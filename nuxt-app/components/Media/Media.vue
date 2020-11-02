@@ -1,6 +1,6 @@
 <template>
   <div class="media carousel" v-bind:style="{ height: mediaHeight }">
-    <client-only>
+    <client-only v-if="lightBoxData.length">
       <light-box
         v-if="!hideLightBox"
         ref="lightBoxRef"
