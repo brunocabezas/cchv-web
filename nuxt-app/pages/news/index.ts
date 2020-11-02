@@ -1,12 +1,13 @@
-import { defineComponent, ref } from "@nuxtjs/composition-api";
+import { defineComponent, ref, useMeta } from "@nuxtjs/composition-api";
 import NewsPostThumbnail from "@/components/news/NewsPostThumbnail.vue";
 import Loader from "@/components/Loader.vue";
 import useNews from "@/models/useNews";
 import useMediaQueries from "@/hooks/useMediaQueries";
 import apiRoutes from "~/api/apiRoutes";
 import client from "~/api/client";
+import meta from "~/utils/meta";
 
-// TODO move to constans
+// TODO move to constants
 // Number of news to fetch when the user scrolls down
 const NEWS_PER_PAGE = 6;
 const NO_PAGES_INDICATOR = -9999;
@@ -20,6 +21,7 @@ interface infiniteHandlerState {
 
 export default defineComponent({
   name: "NewsPage",
+  head: {},
   components: { NewsPostThumbnail, Loader },
   setup() {
     const {
@@ -65,6 +67,16 @@ export default defineComponent({
           isLoading.value = false;
         });
     };
+
+    useMeta(() => ({
+      title: "Noticias",
+      meta: meta({
+        title: 'Noticias',
+        url: "https://bobross.com",
+        description: 'Noticias de la corporacion chilena de video',
+        mainImage: highlightedNews.value[0].thumbnail
+      })
+    }));
 
     return {
       news,

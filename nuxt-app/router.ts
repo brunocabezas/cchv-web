@@ -12,7 +12,7 @@ import Urls from "./utils/urls";
 import SinglePostPage, {
   SinglePostDataType
 } from "@/components/SinglePostPage/SinglePostPage.vue";
-import ResidencyPage from "@/components/Programs/Residencies/Residency.vue"
+import ResidencyPage from "@/components/Programs/Residencies/Residency.vue";
 import { getTypeBySlug } from "./models/useActivities";
 
 Vue.use(Router);
@@ -52,6 +52,15 @@ const programRoutes = [
     }),
     name: "Actividades"
   },
+  // Residency Single Page
+  {
+    path: `${Urls.Residencies}/:slug`,
+    component: ResidencyPage,
+    props: (route: Route) => ({
+      slug: route.params.slug
+    }),
+    name: "Residencias"
+  },
   // School Program Single Page
   {
     path: `${Urls.SchoolProgram}:slug`,
@@ -70,15 +79,6 @@ const programRoutes = [
       pageType: SinglePostDataType.Workshop
     }),
     name: "Mandragoras"
-  },
-  // Residency Single Page
-  {
-    path: `${Urls.Residencies}/:slug`,
-    component: ResidencyPage,
-    props: (route: Route) => ({
-      slug: route.params.slug
-    }),
-    name: "Residencias"
   }
 ];
 

@@ -1,4 +1,4 @@
-import { defineComponent, computed, PropType } from "@nuxtjs/composition-api"
+import { defineComponent, computed, PropType, useMeta } from "@nuxtjs/composition-api"
 import useActivities from "@/models/useActivities"
 import { ActivityType } from "@/types/customFieldsTypes"
 import Loader from "@/components/Loader.vue"
@@ -6,9 +6,11 @@ import ActivitiesGrid from "@/components/news/activities/ActivitiesGrid/Activiti
 import ProgressiveImage from "@/components/ProgressiveImage.vue"
 import Icon from "vue-awesome/components/Icon.vue";
 import Urls from "@/utils/urls"
+import meta from "~/utils/meta"
 
 const ActivitiesPage = defineComponent({
   name: "ActivitiesPage",
+  head: {},
   components: { ProgressiveImage, Loader, ActivitiesGrid, "v-icon": Icon },
   props: {
     activityType: {
@@ -21,6 +23,18 @@ const ActivitiesPage = defineComponent({
     const title = computed(() =>
       getActvitiesGridTitleByType(props.activityType)
     )
+    
+    useMeta(() => ({
+      title: title.value,
+      meta: !title.value
+        ? []
+        : meta({
+            title: title.value,
+            url: "https://bobross.com",
+            description: 'Actividades de campos magneticos',
+          })
+    }));
+
     return { title, isLoading, backUrl: Urls.MagneticFieldsProgram }
   },
 })

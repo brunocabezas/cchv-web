@@ -1,4 +1,4 @@
-import { defineComponent, computed, useContext } from "@nuxtjs/composition-api";
+import { defineComponent, computed, useContext, useMeta } from "@nuxtjs/composition-api";
 import usePrograms from "@/models/usePrograms";
 import { Program } from "@/types";
 import Loader from "@/components/Loader.vue";
@@ -11,9 +11,11 @@ import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolP
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue";
 import { ProgramExtraContent } from "@/types/customFieldsTypes";
 import useMediaQueries from "@/hooks/useMediaQueries";
+import meta from "~/utils/meta";
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
+  head: {},
   components: {
     Loader,
     DowneyProgramVideos,
@@ -25,7 +27,7 @@ const ProgramPage = defineComponent({
     Editions
   },
   setup() {
-    const { params }= useContext()
+    const { params } = useContext();
     const { onBigScreen } = useMediaQueries();
     const {
       getProgramBySlug,
@@ -45,6 +47,22 @@ const ProgramPage = defineComponent({
           )
         : false
     );
+
+    useMeta(() => ({
+      title: !program.value ? "Programas" : program.value.name,
+      meta: !program.value
+        ? []
+        : meta({
+            title: program.value.name,
+            url: "https://bobross.com",
+            description: program.value.text,
+            mainImage:
+              (program.value.gallery &&
+                program.value.gallery[0] &&
+                program.value.gallery[0].url) ||
+              ""
+          })
+    }));
 
     return {
       program,
