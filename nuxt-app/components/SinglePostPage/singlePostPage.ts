@@ -44,12 +44,10 @@ const SinglePostPage = defineComponent({
     }
 
     const page = computed<FullWidthPageData | undefined>(() => {
-      console.log(props.pageType)
       switch (props.pageType) {
         case SinglePostDataType.Workshop:
           return workshops.value.find((p) => p.slug === props.slug)
         case SinglePostDataType.SchoolProgram:
-          console.log(schoolPrograms.value)
           return schoolPrograms.value.find((p) => p.slug === props.slug)
         default:
           return undefined

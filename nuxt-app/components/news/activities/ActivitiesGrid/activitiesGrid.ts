@@ -67,7 +67,6 @@ const ActivitiesGrid = defineComponent({
           props.type === ActivityType.Performance ? `todas` : `todos`
         } los ${title.value}`
     );
-    console.log(activities.value);
     return {
       activities,
       title,

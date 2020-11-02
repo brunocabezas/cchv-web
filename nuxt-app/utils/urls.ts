@@ -7,13 +7,13 @@ enum Urls {
   SchoolPrograms = "/programas/escuela-de-la-intuicion",
   SchoolProgram = "/programas/escuelas/",
   Workshop = "/programas/mandragoras/",
+  Residencies = "/programas/residencias",
   MagneticFieldsProgram = "/programas/campos-magneticos",
   Programs = "/programas/",
   Activities = "/actividades/",
   AboutHistory = "/historia",
   AboutTeam = "/equipo",
   AboutTransparency = "/transparencia",
-  Residencies = "/residencias",
 }
 
 export default Urls

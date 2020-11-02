@@ -37,8 +37,6 @@ const ProgramPage = defineComponent({
       getProgramBySlug(params.value.slug)
     );
 
-    console.log(params.value.slug, program.value);
-
     const isArtScienceAndCultureProgram = computed<boolean>(() =>
       program.value
         ? matchContentTypeWithProgram(

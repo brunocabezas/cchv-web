@@ -63,8 +63,6 @@ const DowneyProgramVideos = defineComponent({
     // const { onBigScreen } = useMediaQueries();
     const { programVideos, isLoading } = useProgramVideos();
 
-    console.log(programVideos.value);
-
     return { programVideos, isLoading, onBigScreen: false };
   }
 });
