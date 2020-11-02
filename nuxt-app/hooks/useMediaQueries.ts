@@ -1,10 +1,10 @@
 import { computed } from "@nuxtjs/composition-api"
-import useWindowSize from "~/plugins/useWindowsSize.client"
+import useWindowSize from "~/plugins/useWindowSize"
 
 export enum Viewport {
   SM = 550,
   MD = 750,
-  LG = 1280,
+  LG = 1280
 }
 
 // interface ViewportSize {
@@ -39,7 +39,7 @@ const getViewportSizeByWidth = (width: number): Viewport => {
 
 export default function useMediaQueries() {
   const { width } = useWindowSize()
-  // const viewport = computed<Viewport>(() => getViewportSizeByWidth(width.value))
+  const viewport = computed<Viewport>(() => getViewportSizeByWidth(width.value))
   const onSmallScreen = computed<boolean>(() => width.value <= Viewport.SM)
   const onMediumScreen = computed<boolean>(
     () => width.value < Viewport.MD && width.value > Viewport.SM
@@ -48,16 +48,14 @@ export default function useMediaQueries() {
     () => width.value >= Viewport.LG || width.value >= Viewport.MD
   )
   const onScreenBiggerThanSmall = computed<boolean>(() => {
-    console.log(width.value)
-    console.log(onBigScreen.value || onMediumScreen.value)
     return onBigScreen.value || onMediumScreen.value
   })
 
   return {
-    // viewport,
+    viewport,
     onSmallScreen,
     onBigScreen,
     onMediumScreen,
-    onScreenBiggerThanSmall,
+    onScreenBiggerThanSmall
   }
 }

@@ -1,4 +1,5 @@
-import { ref, computed } from "@vue/composition-api";
+import { ref, computed } from "@nuxtjs/composition-api";
+import { Viewport } from "~/hooks/useMediaQueries";
 
 export default function useWindowSize() {
   const isOnBrowser = process.client;
@@ -15,18 +16,12 @@ export default function useWindowSize() {
     const widthPixel = computed(() => `${width.value}px`);
     const heightPixel = computed(() => `${height.value}px`);
 
-    // onMounted(() => {
     window.addEventListener("resize", update);
-    // });
-
-    // onUnmounted(() => {
-    // window.removeEventListener("resize", update);
-    // });
 
     return { width, height, widthPixel, heightPixel };
   } else {
     return {
-      width: ref(0),
+      width: ref(Viewport.LG),
       height: ref(0),
       widthPixel: ref(0),
       heightPixel: ref(0)

@@ -26,7 +26,6 @@ const mapPagesFromWp = (pagePost: WPResponseItem): Page => ({
 export default function usePages() {
   const pages = computed<Page[]>(() => data.value.map(mapPagesFromWp));
 
-  console.log(pages, data);
   const transparencyPage = computed<Page | null>(() => {
     return (
       pages.value.find(page =>

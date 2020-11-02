@@ -51,7 +51,7 @@ import { defineComponent, computed } from "@nuxtjs/composition-api";
 import Loader from "@/components/Loader.vue";
 import Media from "@/components/Media/Media.vue";
 import useProgramVideos from "@/models/useProgramVideos";
-// import useMediaQueries from "@/hooks/useMediaQueries";
+import useMediaQueries from "~/hooks/useMediaQueries";
 
 const DowneyProgramVideos = defineComponent({
   name: "DowneyProgramVideos",
@@ -60,10 +60,10 @@ const DowneyProgramVideos = defineComponent({
     Media
   },
   setup(props) {
-    // const { onBigScreen } = useMediaQueries();
+    const { onBigScreen } = useMediaQueries();
     const { programVideos, isLoading } = useProgramVideos();
 
-    return { programVideos, isLoading, onBigScreen: false };
+    return { programVideos, isLoading, onBigScreen };
   }
 });
 
