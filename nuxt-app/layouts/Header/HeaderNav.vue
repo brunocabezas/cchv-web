@@ -37,9 +37,9 @@
               :href="submenu.url"
               >{{ submenu.label }}</a
             >
-            <nuxt-link class="headerNavItemLink" :to="submenu.url" v-else>{{
-              submenu.label
-            }}</nuxt-link>
+            <nuxt-link class="headerNavItemLink" :to="submenu.url" v-else>
+              {{ submenu.label }}
+            </nuxt-link>
           </div>
         </div>
       </div>

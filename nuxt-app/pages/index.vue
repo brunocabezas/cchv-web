@@ -8,9 +8,9 @@
 
 <script lang="ts">
 import { defineComponent } from "@nuxtjs/composition-api";
-import HomeCarousel from "@/components/Home/HomeCarousel/HomeCarousel.vue";
-import HomeNews from "@/components/Home/HomeNews/HomeNews.vue";
-import HomeVideos from "@/components/Home/HomeVideosCarousel/HomeVideosCarousel.vue";
+import HomeCarousel from "@/components/home/HomeCarousel/HomeCarousel.vue";
+import HomeNews from "@/components/home/HomeNews/HomeNews.vue";
+import HomeVideos from "@/components/home/HomeVideosCarousel/HomeVideosCarousel.vue";
 
 import Vue from "vue";
 

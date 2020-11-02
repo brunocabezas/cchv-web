@@ -1,11 +1,13 @@
 <template>
   <div class="media carousel" v-bind:style="{ height: mediaHeight }">
-    <light-box
-      v-if="!hideLightBox"
-      ref="lightBoxRef"
-      :showLightBox="false"
-      :media="lightBoxData"
-    />
+    <client-only>
+      <light-box
+        v-if="!hideLightBox"
+        ref="lightBoxRef"
+        :showLightBox="false"
+        :media="lightBoxData"
+      />
+    </client-only>
     <vue-carousel
       :paginationEnabled="false"
       :perPage="1"
@@ -34,15 +36,19 @@
           class="carouselLightboxOverlay"
           @click="openLightBox(index)"
         >
-          <ProgressiveImage :height="mediaHeight" :src="image.url">
-          </ProgressiveImage>
+          <client-only>
+            <ProgressiveImage :height="mediaHeight" :src="image.url">
+            </ProgressiveImage>
+          </client-only>
         </button>
-        <ProgressiveImage
-          v-if="image.url && hideLightBox"
-          :height="mediaHeight"
-          :src="image.url"
-        >
-        </ProgressiveImage>
+        <client-only>
+          <ProgressiveImage
+            v-if="image.url && hideLightBox"
+            :height="mediaHeight"
+            :src="image.url"
+          >
+          </ProgressiveImage>
+        </client-only>
         <span v-if="image.description" class="carouselItemLegend">{{
           image.description
         }}</span>

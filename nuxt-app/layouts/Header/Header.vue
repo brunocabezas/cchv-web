@@ -15,48 +15,6 @@
         type="button"
       />
     </div>
-    <SlideMenu
-      v-if="!onBigScreen"
-      width="320"
-      @closeMenu="onMenuChange"
-      :isOpen="isNavOpen"
-      :right="true"
-      :closeOnNavigation="true"
-    >
-      <div class="headerRightSection">
-        <div v-if="onBigScreen" class="socialNetworkContainer">
-          <SocialNetworks small />
-        </div>
-        <div class="headerNavContainer">
-          <HeaderNav />
-          <div class="customHeaderNavItem">
-            <a
-              class="headerNavItemLink youtubeChannelLink"
-              title="Canal de YouTube"
-              :href="YOUTUBE_CHANNEL_URL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ YOUTUBE_CHANNEL_LABEL }}
-            </a>
-          </div>
-          <div v-if="!onBigScreen" class="socialNetworkContainer">
-            <div class="socialNetworkContainerTitle headerNavItem">
-              Redes Sociales
-            </div>
-            <SocialNetworks color="white" />
-          </div>
-          <div class="contactContainer">
-            <div class="contactContainerTitle headerNavItem">
-              Contacto
-            </div>
-            <a class="headerNavItemLink" :href="`mailto:${CONTACT_EMAIL}`">{{
-              CONTACT_EMAIL
-            }}</a>
-          </div>
-        </div>
-      </div>
-    </SlideMenu>
     <div v-else class="headerRightSection">
       <div class="socialNetworkContainer">
         <SocialNetworks small />
@@ -75,6 +33,54 @@
           </a>
         </div>
       </div>
+    </div>
+
+    <div v-if="!onBigScreen">
+      <no-ssr>
+        <SlideMenu
+          width="320"
+          @closeMenu="onMenuChange"
+          :isOpen="isNavOpen"
+          :right="true"
+          :closeOnNavigation="true"
+        >
+          <div class="headerRightSection">
+            <div v-if="onBigScreen" class="socialNetworkContainer">
+              <SocialNetworks small />
+            </div>
+            <div class="headerNavContainer">
+              <HeaderNav />
+              <div class="customHeaderNavItem">
+                <a
+                  class="headerNavItemLink youtubeChannelLink"
+                  title="Canal de YouTube"
+                  :href="YOUTUBE_CHANNEL_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ YOUTUBE_CHANNEL_LABEL }}
+                </a>
+              </div>
+              <div v-if="!onBigScreen" class="socialNetworkContainer">
+                <div class="socialNetworkContainerTitle headerNavItem">
+                  Redes Sociales
+                </div>
+                <SocialNetworks color="white" />
+              </div>
+              <div class="contactContainer">
+                <div class="contactContainerTitle headerNavItem">
+                  Contacto
+                </div>
+                <a
+                  class="headerNavItemLink"
+                  :href="`mailto:${CONTACT_EMAIL}`"
+                  >{{ CONTACT_EMAIL }}</a
+                >
+              </div>
+            </div>
+          </div>
+        </SlideMenu>
+      </no-ssr>
     </div>
   </header>
 </template>
