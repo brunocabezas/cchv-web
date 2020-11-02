@@ -9,11 +9,15 @@ type Meta = {
   mainImage?: string;
 };
 
+export function extractContent(html: string): string {
+  return html;
+}
+
 export default (meta: Meta) => [
   {
     hid: "description",
     name: "description",
-    content: meta.description
+    content: extractContent(meta.description)
   },
   { property: "og:site_name", content: "CChvV site name" },
   {
@@ -29,12 +33,12 @@ export default (meta: Meta) => [
   {
     hid: "og:title",
     property: "og:title",
-    content: meta.title
+    content: extractContent(meta.title)
   },
   {
     hid: "og:description",
     property: "og:description",
-    content: meta.description
+    content: extractContent(meta.description)
   },
   {
     hid: "og:image",
@@ -53,12 +57,12 @@ export default (meta: Meta) => [
   {
     hid: "twitter:title",
     name: "twitter:title",
-    content: meta.title
+    content: extractContent(meta.title)
   },
   {
     hid: "twitter:description",
     name: "twitter:description",
-    content: meta.description
+    content: extractContent(meta.description)
   },
   {
     hid: "twitter:image",

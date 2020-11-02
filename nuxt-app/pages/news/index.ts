@@ -71,10 +71,14 @@ export default defineComponent({
     useMeta(() => ({
       title: "Noticias",
       meta: meta({
-        title: 'Noticias',
+        title: "Noticias",
         url: "https://bobross.com",
-        description: 'Noticias de la corporacion chilena de video',
-        mainImage: highlightedNews.value[0].thumbnail
+        description: "Noticias de la corporacion chilena de video",
+        mainImage:
+          (highlightedNews.value &&
+            highlightedNews.value[0] &&
+            highlightedNews.value[0].thumbnail) ||
+          ""
       })
     }));
 

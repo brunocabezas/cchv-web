@@ -1,4 +1,9 @@
-import { defineComponent, computed, useContext, useMeta } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  computed,
+  useContext,
+  useMeta
+} from "@nuxtjs/composition-api";
 import usePrograms from "@/models/usePrograms";
 import { Program } from "@/types";
 import Loader from "@/components/Loader.vue";
@@ -11,7 +16,7 @@ import SchoolProgramsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolP
 import SchoolProgramWorkshopsTabs from "@/components/Programs/SchoolProgramsTabs/SchoolProgramWorkshopsTabs.vue";
 import { ProgramExtraContent } from "@/types/customFieldsTypes";
 import useMediaQueries from "@/hooks/useMediaQueries";
-import meta from "~/utils/meta";
+import meta, { extractContent } from "~/utils/meta";
 
 const ProgramPage = defineComponent({
   name: "ProgramPage",
@@ -49,11 +54,11 @@ const ProgramPage = defineComponent({
     );
 
     useMeta(() => ({
-      title: !program.value ? "Programas" : program.value.name,
+      title: !program.value ? "Programas" : extractContent(program.value.name),
       meta: !program.value
         ? []
         : meta({
-            title: program.value.name,
+            title: extractContent(program.value.name),
             url: "https://bobross.com",
             description: program.value.text,
             mainImage:

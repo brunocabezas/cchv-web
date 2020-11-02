@@ -6,7 +6,7 @@ module.exports = {
       port: 3000,
       instances: 'max', // Or a number of instances
       script: './node_modules/nuxt/bin/nuxt.js',
-      cwd: '/home/bienal2019/cchv-web-add-nuxtjs/nuxt-app',
+      cwd: '/home/bienal2019/nuxtjs/cchv-web-add_nuxtjs/nuxt-app',
       args: 'start',
       env: {
         NODE_ENV: 'development'

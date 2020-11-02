@@ -12,7 +12,7 @@ import ActivitySchedule from "@/components/news/activities/ActivitySchedule.vue"
 import useNews from "@/models/useNews";
 import useMediaQueries from "@/hooks/useMediaQueries";
 import { MOBILE_IMG_HEIGHT } from "@/utils/constants";
-import meta from "~/utils/meta";
+import meta, { extractContent } from "~/utils/meta";
 
 export default defineComponent({
   name: "NewsPostPage",
@@ -40,11 +40,11 @@ export default defineComponent({
     );
 
     useMeta(() => ({
-      title: !data.value.id ? "Noticias" : data.value.title,
+      title: !data.value.id ? "Noticias" : extractContent(data.value.title),
       meta: !data.value
         ? []
         : meta({
-            title: data.value.title,
+            title: extractContent(data.value.title),
             url: "https://bobross.com",
             description: data.value.text,
             mainImage: data.value.gallery[0] && data.value.gallery[0].url

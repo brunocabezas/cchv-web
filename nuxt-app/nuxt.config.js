@@ -7,7 +7,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    // title: "CChV",
+    title: "CChV",
     meta: [
       { charset: "utf-8" },
       { name: "HandheldFriendly", content: "True" },
@@ -35,9 +35,9 @@ export default {
     "@/plugins/vue-awesome",
     "@/plugins/day-js",
     { src: "@/plugins/vue-progressive-image", ssr: false },
-    { src: "@/plugins/vue-image-lightbox", ssr: false },
-    { src: "@/plugins/useWindowsSize.client", ssr: false },
-    { src: "@/plugins/vue-burger-menu", ssr: false },
+    { src: "@/plugins/vue-image-lightbox", mode: "client" },
+    { src: "@/plugins/useWindowSize", mode: "client" },
+    { src: "@/plugins/vue-burger-menu", mode: "client" },
     "@/plugins/vue-ellipsis",
     "@/plugins/vue-youtube",
     { src: "@/plugins/vue-infinite-loading", ssr: false }
