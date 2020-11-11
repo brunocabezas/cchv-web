@@ -104,10 +104,9 @@ export default defineComponent({
     } = useTeamMembers()
 
     useMeta(() => ({
-      title: !data.value ? "Equipo" : "",
+      title: "Equipo",
       meta: !data.value ? [] : meta({
         title: 'Equipo',
-        url: "https://bobross.com",
         description: data.value.length ? data.value[0].name : 'description'
       })
     }));

@@ -41,7 +41,6 @@ const Residency = defineComponent({
         ? []
         : meta({
             title: residency.value.name,
-            url: "https://bobross.com",
             description: residency.value.text,
             mainImage: residency.value.gallery[0] && residency.value.gallery[0].url
           })

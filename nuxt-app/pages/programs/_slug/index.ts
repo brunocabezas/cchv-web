@@ -59,7 +59,6 @@ const ProgramPage = defineComponent({
         ? []
         : meta({
             title: extractContent(program.value.name),
-            url: "https://bobross.com",
             description: program.value.text,
             mainImage:
               (program.value.gallery &&

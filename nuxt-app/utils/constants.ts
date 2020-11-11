@@ -1,4 +1,5 @@
 export const DOMAIN = "cchv.cl";
+export const APP_URL = "https://cchv.cl"
 export const DEFAULT_TITLE = "CChV";
 export const CONTACT_EMAIL = "contacto@cchv.cl";
 // A specific sponsor is bigger than others; this is due it's category

@@ -72,7 +72,6 @@ export default defineComponent({
         ? []
         : meta({
             title: data.value.name,
-            url: "https://bobross.com",
             description: data.value.text,
             mainImage: data.value.gallery[0] && data.value.gallery[0].url
           })

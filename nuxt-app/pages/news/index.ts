@@ -72,8 +72,7 @@ export default defineComponent({
       title: "Noticias",
       meta: meta({
         title: "Noticias",
-        url: "https://bobross.com",
-        description: "Noticias de la corporacion chilena de video",
+        description: "Noticias de la corporación chilena de video",
         mainImage:
           (highlightedNews.value &&
             highlightedNews.value[0] &&

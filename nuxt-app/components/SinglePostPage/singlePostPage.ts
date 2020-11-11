@@ -67,7 +67,6 @@ const SinglePostPage = defineComponent({
         ? []
         : meta({
             title: page.value.name,
-            url: "https://bobross.com",
             description: page.value.text,
             mainImage: page.value.gallery[0] && page.value.gallery[0].url
           })

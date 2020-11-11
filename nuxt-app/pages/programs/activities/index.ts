@@ -30,8 +30,7 @@ const ActivitiesPage = defineComponent({
         ? []
         : meta({
             title: title.value,
-            url: "https://bobross.com",
-            description: 'Actividades de campos magneticos',
+            description: 'Actividades de campos magnéticos',
           })
     }));
 

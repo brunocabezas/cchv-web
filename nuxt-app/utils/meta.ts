@@ -1,10 +1,9 @@
-import { META_IMG_FALLBACK } from "./constants";
+import { APP_URL, META_IMG_FALLBACK } from "./constants";
 
 type MetaType = "website";
 
 type Meta = {
   description: string;
-  url: string;
   title: string;
   mainImage?: string;
 };
@@ -28,7 +27,7 @@ export default (meta: Meta) => [
   {
     hid: "og:url",
     property: "og:url",
-    content: meta.url
+    content: APP_URL
   },
   {
     hid: "og:title",
@@ -52,7 +51,7 @@ export default (meta: Meta) => [
   {
     hid: "twitter:url",
     name: "twitter:url",
-    content: meta.url
+    content: APP_URL
   },
   {
     hid: "twitter:title",

@@ -1,4 +1,4 @@
-import { computed, useAsync } from "@nuxtjs/composition-api";
+import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
 import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
@@ -51,16 +51,21 @@ const mapCarouselImageFromWpPost = (
 };
 
 export default function useCarouselImages() {
-  const data = useAsync<WpResponseData>(() =>
-    client
+  const loading = ssrRef(false);
+  const data = useAsync<WpResponseData>(() => {
+    loading.value = true;
+    return client
       .get(apiRoutes.CarouselImages)
       .then(res => res.data)
       .catch(() => [])
-  );
+      .finally(() => {
+        loading.value = false;
+      });
+  });
   const carousel = computed<CarouselImage[]>(() =>
     data.value
       ? data.value.map(mapCarouselImageFromWpPost).sort(sortByOrder)
       : []
   );
-  return { carousel, isLoading: false };
+  return { carousel, isLoading: computed(() => loading.value) };
 }

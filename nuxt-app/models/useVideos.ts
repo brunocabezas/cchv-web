@@ -1,4 +1,4 @@
-import { computed, useAsync } from "@nuxtjs/composition-api";
+ import { computed, ref, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { Video } from "@/types";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
@@ -15,12 +15,17 @@ const mapVideoFromWpPost = (video: WPResponseItem): Video => ({
 });
 
 export default function useVideos() {
-  const data = useAsync<WpResponseData>(() =>
-    client
+  const loading = ref(false);
+  const data = useAsync<WpResponseData>(() => {
+    loading.value = true;
+    return client
       .get(apiRoutes.Videos)
       .then(res => res.data)
       .catch(() => [])
-  );
+      .finally(() => {
+        loading.value = false;
+      });
+  });
   const videos = computed<Video[]>(() =>
     data.value ? data.value.map(mapVideoFromWpPost) : []
   );
@@ -28,6 +33,9 @@ export default function useVideos() {
   return {
     // fetchVideos,
     videos,
-    isLoading: false
+    isLoading: computed(() => {
+      // console.log(loading.value);
+      return loading.value
+    })
   };
 }
