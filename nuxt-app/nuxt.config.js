@@ -51,7 +51,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     "@nuxtjs/composition-api",
-    ["@nuxtjs/router", { fileName: "router.ts" }]
+    ["@nuxtjs/router", { fileName: "router.ts" }],
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -65,5 +66,8 @@ export default {
     extend(config) {
       config.resolve.alias["vue"] = "vue/dist/vue.common";
     }
+  },
+  googleAnalytics: {
+    id: process.env.VUE_APP_GOOGLE_ANALYTICS
   }
 };
