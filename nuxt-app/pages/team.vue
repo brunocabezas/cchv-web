@@ -119,3 +119,42 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped lang="stylus">
+@import '~/assets/variables.styl';
+
+.page
+  .teamPositions
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0 !important;
+
+    @media (max-width: $md)
+      padding: $mobile_padding;
+
+    .teamPosition
+      width: 50%;
+      padding: 0.5em 0;
+      font-size: 20px;
+
+      @media (max-width: $md)
+        width: 100%;
+        padding: 0.5em;
+
+      .teamPositionName
+        color: $blue;
+        margin-top: 0;
+        font-weight: bold;
+        font-family: OpenSans;
+        margin-bottom: 0;
+
+        @media (max-width: $md)
+          font-size: 20px;
+
+      .teamPositionMember
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        @media (max-width: $md)
+          font-size: 16px;
+</style>
