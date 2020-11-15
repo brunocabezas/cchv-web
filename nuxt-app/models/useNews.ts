@@ -1,11 +1,4 @@
-import {
-  computed,
-  ref,
-  Ref,
-  reqSsrRef,
-  ssrRef,
-  useAsync
-} from "@nuxtjs/composition-api";
+import { computed, reqSsrRef, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { NewsPost } from "@/types";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";

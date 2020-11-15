@@ -1,7 +1,6 @@
 import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "../../api/apiRoutes";
 import { SchoolProgram } from "@/types";
-import useAsyncData from "@/hooks/useAsyncData";
 import {
   WpImage,
   WpResponseData,
@@ -18,10 +17,6 @@ export interface SchoolProgramTab extends Tab {
   active_school_logo: string;
 }
 type SchoolProgramTabs = SchoolProgramTab[];
-
-const { data, fetch: fetchSchoolPrograms, isLoading } = useAsyncData<
-  WPResponseItem
->(apiRoutes.SchoolPrograms);
 
 // The text to introduce workshops (displayed above the workshop tabs)
 // is included on a workshop from schoolPrograms with this specific title
@@ -155,8 +150,6 @@ export default function useSchoolPrograms() {
   }
 
   return {
-    fetchSchoolPrograms,
-    isLoading,
     workshops,
     workshopsAbstract,
     workshopsTabs,

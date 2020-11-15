@@ -20,16 +20,12 @@ const SchoolProgramWorkshopsTabs = defineComponent({
     const {
       workshops,
       getSchoolProgramById,
-      isLoading,
       workshopsTabs,
       workshopsAbstract,
       getWorkshopUrlBySlug,
-      fetchSchoolPrograms,
     } = useSchoolPrograms()
     const { onBigScreen } = useMediaQueries()
     const { tabs, activeTabId, setActiveTab } = useTabs(workshopsTabs)
-
-    fetchSchoolPrograms()
 
     const activeWorkshop = computed<SchoolProgram | undefined>(() =>
       getSchoolProgramById(activeTabId.value)
@@ -48,7 +44,7 @@ const SchoolProgramWorkshopsTabs = defineComponent({
       activeWorkshop,
       displayActiveWorkshop,
       setActiveTab,
-      isLoading,
+      isLoading: false,
       getWorkshopUrlBySlug,
       onBigScreen,
     }

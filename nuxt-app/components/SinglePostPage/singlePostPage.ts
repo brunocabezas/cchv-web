@@ -17,7 +17,6 @@ export enum SinglePostDataType {
   Workshop = "workshop"
 }
 
-const MEDIA_HEIGHT = "500px";
 // Workshop is a variant of SchoolProgram
 type FullWidthPageData = SchoolProgram | Activity;
 
@@ -36,19 +35,8 @@ const SinglePostPage = defineComponent({
   },
   components: { Loader, Media, DownloadLink },
   setup(props) {
-    const {
-      isLoading: isLoadingSchoolPrograms,
-      schoolPrograms,
-      workshops,
-      fetchSchoolPrograms
-    } = useSchoolPrograms();
+    const { schoolPrograms, workshops } = useSchoolPrograms();
     const { isLoading: isLoadingActivities } = useActivities();
-    if (
-      props.pageType === SinglePostDataType.SchoolProgram ||
-      props.pageType === SinglePostDataType.Workshop
-    ) {
-      fetchSchoolPrograms();
-    }
 
     const page = computed<FullWidthPageData | undefined>(() => {
       switch (props.pageType) {
@@ -76,8 +64,6 @@ const SinglePostPage = defineComponent({
       switch (props.pageType) {
         case SinglePostDataType.Workshop:
           return !!isLoadingActivities.value;
-        case SinglePostDataType.SchoolProgram:
-          return !!isLoadingSchoolPrograms.value;
         default:
           return false;
       }
