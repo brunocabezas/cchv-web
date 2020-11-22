@@ -2,7 +2,7 @@ import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { ProgramVideo } from "@/types";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { ProgramVideoKeys } from "@/types/customFieldsKeysTypes";
 import client from "~/api/client";
 
@@ -41,7 +41,7 @@ export default function usePrograms() {
     return client
       .get(apiRoutes.ProgramVideos)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

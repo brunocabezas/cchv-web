@@ -9,6 +9,7 @@ import newsHelpers from "@/utils/news";
 import client from "~/api/client";
 import { AxiosResponse } from "axios";
 import useMediaQueries from "~/hooks/useMediaQueries";
+import { handleErrorResponse } from "~/utils/api";
 // Used on the first network request, to initialize state with N news
 export const INITIAL_NEWS = 6;
 
@@ -56,7 +57,7 @@ export default function useNews(slug?: string) {
         totalPages.value = parseInt(totalPagesFromHeader, 10);
         return res.data;
       })
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         isLoading.value = false;
       });
@@ -72,7 +73,7 @@ export default function useNews(slug?: string) {
           singleNewsPostData.value = res.data;
           return res.data;
         })
-        .catch(() => [])
+        .catch(handleErrorResponse)
         .finally(() => {
           isLoadingSinglePostData.value = false;
         });

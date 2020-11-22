@@ -1,7 +1,11 @@
 import { computed, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import {
+  getCustomFieldFromPost,
+  getWPTitle,
+  handleErrorResponse
+} from "@/utils/api";
 import {
   SponsorCategoryKeys,
   SponsorKeys
@@ -56,21 +60,23 @@ export default function useSponsors() {
     client
       .get(apiRoutes.Sponsors)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
   );
 
   const categories = useAsync<WpResponseData>(() =>
     client
       .get(apiRoutes.SponsorsCategories)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
   );
 
   const sponsorsCategories = computed<SponsorsCategory[]>(() =>
     !categories.value
       ? []
       : categories.value
-          .map((wp: WPResponseItem) => mapWpResponseToView(wp, sponsors.value || []))
+          .map((wp: WPResponseItem) =>
+            mapWpResponseToView(wp, sponsors.value || [])
+          )
           .sort(sortByOrder)
   );
 

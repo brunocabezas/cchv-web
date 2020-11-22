@@ -1,7 +1,7 @@
 import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { CarouselImageKeys } from "@/types/customFieldsKeysTypes";
 import { CarouselImage } from "@/types";
 import { DEFAULT_ORDER, DOMAIN } from "@/utils/constants";
@@ -57,7 +57,7 @@ export default function useCarouselImages() {
     return client
       .get(apiRoutes.CarouselImages)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

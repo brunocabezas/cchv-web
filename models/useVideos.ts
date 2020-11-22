@@ -2,7 +2,7 @@
 import apiRoutes from "~/api/apiRoutes";
 import { Video } from "@/types";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { VideoKeys } from "@/types/customFieldsKeysTypes";
 import { DEFAULT_ORDER } from "@/utils/constants";
 import client from "~/api/client";
@@ -21,7 +21,7 @@ export default function useVideos() {
     return client
       .get(apiRoutes.Videos)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

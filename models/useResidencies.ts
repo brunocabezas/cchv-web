@@ -1,7 +1,7 @@
 import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import Urls from "@/utils/urls";
 import { ResidencyKeys } from "@/types/customFieldsKeysTypes";
 import { Residency } from "@/types";
@@ -65,7 +65,7 @@ export default function useResidencies() {
     return client
       .get(apiRoutes.Residencies)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

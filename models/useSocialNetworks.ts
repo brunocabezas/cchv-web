@@ -5,7 +5,7 @@ import {
   WPResponseItem,
   WpResponseData
 } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { SocialNetworksKeys } from "@/types/customFieldsKeysTypes";
 import { SocialNetwork } from "@/types";
 import { SocialNetworkType } from "@/types/customFieldsTypes";
@@ -65,7 +65,7 @@ export default function useSocialNetworks() {
     client
       .get(apiRoutes.SocialNetworks)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
   );
   const socialNetworks = computed<SocialNetwork[]>(() =>
     data.value ? data.value.map(mapSocialNetworkFromWpPost) : []

@@ -1,7 +1,7 @@
 import { computed, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { TeamMembersKeys } from "@/types/customFieldsKeysTypes";
 import { TeamMember } from "@/types";
 import { TeamMemberPosition } from "@/utils/teamMembers";
@@ -40,9 +40,7 @@ function useTeamMembers() {
     client
       .get(apiRoutes.Team)
       .then(res => res.data)
-      .catch(() => ({
-        data: []
-      }))
+      .catch(handleErrorResponse)
   );
 
   const teamMembers = computed<TeamMember[]>(() =>

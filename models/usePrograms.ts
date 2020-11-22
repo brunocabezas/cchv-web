@@ -8,7 +8,7 @@ import {
   WPSelectCustomFieldValue,
   WpResponseData
 } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { ProgramKeys } from "@/types/customFieldsKeysTypes";
 import { ProgramExtraContent } from "@/types/customFieldsTypes";
 import Urls from "@/utils/urls";
@@ -59,7 +59,7 @@ export default function usePrograms() {
     client
       .get(apiRoutes.Programs)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
   );
 
   const programs = computed<Program[]>(() =>

@@ -7,7 +7,7 @@ import {
   DEFAULT_WP_DOCUMENT,
   WpResponseData
 } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { DEFAULT_ORDER } from "@/utils/constants";
 import { DocumentKeys } from "@/types/customFieldsKeysTypes";
 import { sortByOrder } from "@/utils/arrays";
@@ -33,7 +33,7 @@ export default function useDocuments() {
     client
       .get(apiRoutes.Documents)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
   );
 
   const documents = computed<Document[]>(() =>
