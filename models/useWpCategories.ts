@@ -3,6 +3,7 @@ import { WpCategory } from "@/types/wordpressTypes";
 import { ActivityType } from "@/types/customFieldsTypes";
 import client from "~/api/client";
 import apiRoutes from "~/api/apiRoutes";
+import { handleErrorResponse } from "~/utils/api";
 
 const loading = ssrRef(false);
 
@@ -12,7 +13,7 @@ export default function useWpCategories() {
     return client
       .get(apiRoutes.WpCategories)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

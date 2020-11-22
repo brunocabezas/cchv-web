@@ -7,6 +7,7 @@ import client from "~/api/client";
 import apiRoutes from "~/api/apiRoutes";
 import { AxiosResponse } from "axios";
 import newsHelpers from "~/utils/news";
+import { handleErrorResponse } from "~/utils/api";
 
 const conversations = ssrRef<WPResponseItem[]>([]);
 const perfomances = ssrRef<WPResponseItem[]>([]);
@@ -73,7 +74,7 @@ export default function useActivities(fetchData?: ActivityType) {
               return;
           }
         })
-        .catch(() => [])
+        .catch(handleErrorResponse)
         .finally(() => {
           isLoadingActivities.value = false;
         });

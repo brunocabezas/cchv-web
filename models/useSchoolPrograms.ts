@@ -6,7 +6,7 @@ import {
   WpResponseData,
   WPResponseItem
 } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { SchoolProgramKeys } from "@/types/customFieldsKeysTypes";
 import { Tab } from "@/hooks/useTabs";
 import Urls from "@/utils/urls";
@@ -86,7 +86,7 @@ export default function useSchoolPrograms() {
     return client
       .get(apiRoutes.SchoolPrograms)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });

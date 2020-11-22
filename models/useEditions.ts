@@ -1,7 +1,7 @@
 import { computed, ssrRef, useAsync } from "@nuxtjs/composition-api";
 import apiRoutes from "~/api/apiRoutes";
 import { WpResponseData, WPResponseItem } from "@/types/wordpressTypes";
-import { getCustomFieldFromPost, getWPTitle } from "@/utils/api";
+import { getCustomFieldFromPost, getWPTitle, handleErrorResponse } from "@/utils/api";
 import { EditionKeys } from "@/types/customFieldsKeysTypes";
 import { Edition } from "@/types";
 import { sortByOrder } from "@/utils/arrays";
@@ -38,7 +38,7 @@ export default function useEditions() {
     return client
       .get(apiRoutes.Editions)
       .then(res => res.data)
-      .catch(() => [])
+      .catch(handleErrorResponse)
       .finally(() => {
         loading.value = false;
       });
