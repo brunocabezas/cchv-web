@@ -1,0 +1,112 @@
+
+@import '~/assets/variables.styl';
+
+.headerNav
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  font-size: 18px;
+
+  @media (max-width: $md)
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+
+  .headerNavItem
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+
+    @media (max-width: $md)
+      flex-direction: column;
+      width: 100%;
+      // Display a line on the bottom of each menu
+      border-bottom: 1px solid white;
+      margin-bottom: 5px;
+      padding-bottom: 0;
+      align-items: flex-start;
+
+    &:hover
+      .headerNavItemSubMenuContainer
+        display: block;
+
+    .headerNavItemSubMenuContainer
+      display: none;
+
+      @media (max-width: $md)
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+
+    > div
+      height: 100%;
+
+    // also under .headerNavItemSubLevel;
+    .headerNavItemLink
+      color: $blue;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      font-family: Montserrat;
+      text-transform: uppercase;
+      padding: 1em 1em;
+      transition: all 0.2s;
+
+      @media (max-width: $md)
+        color: white;
+        width: 100%;
+        padding: 5px 0;
+
+      // Direct childs of .headerNavItem are titles
+      &:not(:only-child)
+        @media (max-width: $md)
+          padding-bottom: 0 !important;
+          underline();
+
+    .headerNavItemSubLevel
+      position: absolute;
+      background-color: white;
+      top: 57px;
+      left: 0;
+      z-index: 2;
+      white-space: nowrap;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+      @media (max-width: $md)
+        position: initial;
+        text-align: left;
+        box-shadow: none;
+        background-color: $dark-blue;
+        white-space: normal;
+
+      .headerNavItemSubMenu
+        border-top: 1px solid $blue;
+        text-transform: uppercase;
+        font-size: 14px;
+
+        @media (max-width: $md)
+          border-top: 1px solid transparent;
+
+        .headerNavItemLink
+          padding-left: 5px;
+          padding-right: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          box-sizing: content-box;
+          display: block;
+
+          @media (max-width: $md)
+            font-size: 13px;
+
+        &:hover
+          background-color: darken($grey, 3);
+
+          @media (max-width: $md)
+            background-color: $dark-blue;
+
+      .headerNavItemLink
+        &:hover
+          @media (max-width: $md)
+            text-decoration: underline;

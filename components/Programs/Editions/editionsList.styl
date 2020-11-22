@@ -1,0 +1,148 @@
+@import '~/assets/variables.styl';
+
+$margin_between_videos = 2em;
+$edition_height = 300px;
+
+.editions
+  position: relative;
+
+  @media (max-width: $md)
+    padding: 0 $mobile_padding;
+
+  .loader
+    margin-top: 2em;
+
+  // edition has different background colors
+  .editionContainer
+    &:nth-child(odd)
+      background-color: $grey;
+
+      @media (max-width: $md)
+        background-color: white;
+
+    &:last-child .editionContainerWrapper .edition
+      @media (max-width: $md)
+        border-bottom: none;
+
+    .editionContainerWrapper
+      max-width: $boxed_content_max_width;
+      margin: 0 auto;
+      page_padding(0, 0);
+
+      .edition
+        box-sizing: content-box;
+        padding: 1em 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: $md)
+          height: auto;
+          flex-direction: column-reverse;
+          border-bottom: 1px solid $black;
+
+        .editionLeft, .editionMedia
+          width: 50%;
+
+          @media (max-width: $md)
+            width: 100%;
+            height: auto;
+
+        // Contains images or videos
+        .editionMedia
+          padding: 0;
+          max-height: $edition_height;
+
+        .editionLeft
+          position: relative;
+          padding-bottom: 32px;
+
+          @media (max-width: $md)
+            padding-bottom: 0;
+
+          .toggleEditionTextButton
+            position: absolute;
+            right: 1em;
+            bottom: 0;
+            border: none;
+            display: flex;
+            background: darken($grey, 7);
+            padding: 8px 9px;
+            transition: all 0.2s;
+            cursor: pointer;
+            align-items: center;
+
+            &:hover
+              background: darken($grey, 10);
+
+            @media (max-width: $md)
+              display: none;
+
+          .editionInfo
+            max-height: $edition_height - 32px - 7px;
+            position: relative;
+            padding-right: 1em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: max-height 0.65s ease-out;
+
+            @media (max-width: $md)
+              padding-right: 0;
+
+            &.editionInfo--expanded
+              height: auto;
+              max-height: 1500px;
+              transition: max-height 0.65s ease-out;
+
+            .editionName
+              margin: 5px 0 5px 0;
+              text-align: left;
+              transition: 0.2s background-color;
+
+              .fa-icon
+                @media (max-width: $md)
+                  margin-left: 5px;
+
+              @media (max-width: $md)
+                font-size: 20px;
+                height: auto;
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+              &:hover
+                @media (max-width: $md)
+                  background-color: $grey;
+                  cursor: pointer;
+
+              &.editionName--with-link:hover
+                text-decoration: underline;
+                cursor: pointer;
+
+            .editionDate
+              color: $blue;
+              font-size: 16px;
+              margin-top: 0;
+              margin-bottom: 10px;
+
+            .editionBrochure
+              display: flex;
+              margin: 0 0 10px 0;
+              font-size: 14px;
+              align-items: center;
+              justify-content: flex-start;
+
+              .editionBrochureLink
+                display: flex;
+                align-items: center;
+                transition: all 0.2s;
+
+                &:hover
+                  opacity: 0.7;
+
+                .fa-icon
+                  margin-left: 10px;
+
+            .editionText
+              display: flex;
+              flex-direction: column;
