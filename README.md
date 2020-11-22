@@ -14,7 +14,7 @@ npm install
 
 ### Development
 
-To start the development server use:
+Serve with hot reload on `localhost:3000` with:
 
 ```
 npm run dev
@@ -34,6 +34,13 @@ Compiles and minifies for production:
 
 ```
 npm run build
+npm run start // Serves production bundle
+```
+
+Generate static project:
+
+```
+npm run generate
 ```
 
 ## References
