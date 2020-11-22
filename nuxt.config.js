@@ -14,7 +14,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/cchv_favicon.ico" },
       {
         hid: "canonical",
         rel: "canonical",
@@ -52,7 +52,7 @@ export default {
     "@nuxt/typescript-build",
     "@nuxtjs/composition-api",
     ["@nuxtjs/router", { fileName: "router.ts" }],
-    '@nuxtjs/google-analytics',
+    "@nuxtjs/google-analytics"
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -68,6 +68,14 @@ export default {
     }
   },
   googleAnalytics: {
-    id: process.env.VUE_APP_GOOGLE_ANALYTICS
+    id: process.env.VUE_APP_GOOGLE_ANALYTICS, // Use as fallback if no runtime config is provided
+    debug: {
+      enabled: true
+    }
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.VUE_APP_GOOGLE_ANALYTICS
+    }
   }
 };
