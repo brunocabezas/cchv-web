@@ -8,7 +8,7 @@
         :small="!onBigScreen"
         :post="post"
         v-bind:key="post.id"
-        v-for="post in homeNews"
+        v-for="post in highlightedNews"
       />
     </div>
     <div class="newsPage__grid">

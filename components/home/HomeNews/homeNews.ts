@@ -1,4 +1,4 @@
-import { defineComponent, computed } from "@nuxtjs/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 import Icon from "vue-awesome/components/Icon.vue";
 import { MAIN_COLOR } from "@/utils/constants";
 import Loader from "@/components/Loader.vue";
@@ -18,24 +18,11 @@ const HomeNews = defineComponent({
   },
   setup() {
     const { onBigScreen } = useMediaQueries();
-    const { news, highlightedNews, isLoading } = useNews();
-
-    const newsPosts = computed(() => {
-      const numberOfPosts = onBigScreen.value ? 2 : 5;
-      if (onBigScreen) {
-        return [...highlightedNews.value, ...news.value].slice(
-          0,
-          numberOfPosts
-        );
-      }
-      return highlightedNews.value.slice(0, numberOfPosts);
-    });
-
-    // fetchNews()
+    const { highlightedNews, isLoading } = useNews();
 
     return {
       isLoading,
-      news: newsPosts,
+      news: highlightedNews,
       newsGridUrl: Urls.News,
       MAIN_COLOR,
       onBigScreen

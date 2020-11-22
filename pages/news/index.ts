@@ -7,7 +7,6 @@ import apiRoutes from "~/api/apiRoutes";
 import client from "~/api/client";
 import meta from "~/utils/meta";
 
-// TODO move to constants
 // Number of news to fetch when the user scrolls down
 const NEWS_PER_PAGE = 6;
 const NO_PAGES_INDICATOR = -9999;
@@ -52,11 +51,11 @@ export default defineComponent({
             }
             setNewsData(res.data);
           } else {
-            // If NO_PAGES_INDICATOR is used, there are no news available
+            // If NO_PAGES_INDICATOR is found, no more news are available
             if (totalPages.value === NO_PAGES_INDICATOR) {
               $state.complete();
             } else {
-              // handler state will be reseted unit onMounted
+              // Reset handler state 
               $state.reset();
             }
           }
@@ -83,7 +82,7 @@ export default defineComponent({
 
     return {
       news,
-      homeNews: highlightedNews,
+      highlightedNews,
       infiniteHandler,
       isLoading,
       onBigScreen,

@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 import newsHelpers from "@/utils/news";
 import client from "~/api/client";
 import { AxiosResponse } from "axios";
+import useMediaQueries from "~/hooks/useMediaQueries";
 // Used on the first network request, to initialize state with N news
 export const INITIAL_NEWS = 6;
 
@@ -37,6 +38,7 @@ const isLoading = ssrRef(false);
 
 export default function useNews(slug?: string) {
   const options = { per_page: INITIAL_NEWS, page: 1 };
+  const { onBigScreen } = useMediaQueries();
   const singleNewsPostData = reqSsrRef<WpResponseData<WPResponseItem>>([]);
 
   // Fetch initial news batch, they're displayed on home and news pages
@@ -92,9 +94,10 @@ export default function useNews(slug?: string) {
   // Highlighted news are displayed on:
   // - homepage on regular viewports
   // - news page
-  const highlightedNews = computed<NewsPost[]>(() =>
-    news.value.filter(p => p.is_highlighted).slice(0, 2)
-  );
+  const highlightedNews = computed<NewsPost[]>(() => {
+    const numberOfPosts = onBigScreen.value ? 2 : 5;
+    return news.value.filter(p => p.is_highlighted).slice(0, numberOfPosts);
+  });
 
   // All news that are not highlighted
   const newsToGrid = computed(() =>
@@ -129,8 +132,6 @@ export default function useNews(slug?: string) {
     isLoading,
     isLoadingSingleNewsPost: isLoadingSinglePostData,
     getNewsPostUrlBySlug,
-    // Fetch methods
-    fetchNews: () => ({}),
     // Pagination
     setCurrentPage,
     totalPages,
