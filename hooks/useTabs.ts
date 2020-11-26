@@ -8,12 +8,12 @@ export type Tab = {
 
 // recieves tabs with reference
 export default function useTabs(tabs: Readonly<Ref<Readonly<Tabs>>>) {
-  const firstTabId = computed(() => (tabs.value[0] && tabs.value[0].id) || 0)
+  const firstTabId = computed(() => (tabs.value[0]?.id) || 0)
   const activeTab = reactive({ id: firstTabId.value })
 
   // Every time tabs change, the activeTabId is set to the first tab
   watch(tabs, (tabs) => {
-    const firstTabId = (tabs[0] && tabs[0].id) || undefined
+    const firstTabId = tabs[0]?.id
     activeTab.id = firstTabId || 0
   })
 
